@@ -1,6 +1,6 @@
 {
   "name": "openint-v1",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "The official TypeScript library for the Openint V1 API",
   "author": "Openint V1 <dev-feedback@openint-v1.com>",
   "types": "dist/index.d.ts",
