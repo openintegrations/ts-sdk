@@ -1,5 +1,5 @@
 {
-  "name": "openint",
+  "name": "@openint/sdk",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Openint API",
   "author": "Openint <dev-feedback@openint.com>",
@@ -47,8 +47,8 @@
     "typescript": "^4.8.2"
   },
   "imports": {
-    "openint": ".",
-    "openint/*": "./src/*"
+    "@openint/sdk": ".",
+    "@openint/sdk/*": "./src/*"
   },
   "exports": {
     ".": {

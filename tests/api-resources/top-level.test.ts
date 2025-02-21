@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Openint from 'openint';
+import Openint from '@openint/sdk';
 
 const client = new Openint({
   bearerToken: 'My Bearer Token',
