@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'openint-v1/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'openint/internal/utils/path';
 import { inspect } from 'node:util';
 
 describe('path template tag function', () => {

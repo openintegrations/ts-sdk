@@ -42,25 +42,25 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/openint-v1-typescript.git
+$ npm install git+ssh://git@github.com:stainless-sdks/openint-typescript.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/openint-v1-typescript
-$ cd openint-v1-typescript
+$ git clone https://www.github.com/stainless-sdks/openint-typescript
+$ cd openint-typescript
 
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link openint-v1
+$ yarn link openint
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global openint-v1
+$ pnpm link -—global openint
 ```
 
 ## Running tests

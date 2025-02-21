@@ -14,7 +14,11 @@ import { VERSION } from './version';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
-import { GetConnectionResponse, GetConnectorConfigResponse, GetHealthResponse } from './resources/top-level';
+import {
+  CheckHealthResponse,
+  RetrieveConnectionResponse,
+  RetrieveConnectorConfigResponse,
+} from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -42,7 +46,7 @@ export type LogLevel = 'off' | 'error' | 'warn' | 'info' | 'debug';
 const parseLogLevel = (
   maybeLevel: string | undefined,
   sourceName: string,
-  client: OpenintV1,
+  client: Openint,
 ): LogLevel | undefined => {
   if (!maybeLevel) {
     return undefined;
@@ -67,14 +71,14 @@ const parseLogLevel = (
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['OPENINT_V1_BEARER_TOKEN'].
+   * Defaults to process.env['OPENINT_BEARER_TOKEN'].
    */
   bearerToken?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['OPENINT_V1_BASE_URL'].
+   * Defaults to process.env['OPENINT_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -126,7 +130,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['OPENINT_V1_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['OPENINT_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -141,9 +145,9 @@ export interface ClientOptions {
 type FinalizedRequestInit = RequestInit & { headers: Headers };
 
 /**
- * API Client for interfacing with the Openint V1 API.
+ * API Client for interfacing with the Openint API.
  */
-export class OpenintV1 {
+export class Openint {
   bearerToken: string;
 
   baseURL: string;
@@ -159,10 +163,10 @@ export class OpenintV1 {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Openint V1 API.
+   * API Client for interfacing with the Openint API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['OPENINT_V1_BEARER_TOKEN'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['OPENINT_V1_BASE_URL'] ?? http://localhost:3000] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.bearerToken=process.env['OPENINT_BEARER_TOKEN'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? http://localhost:3000] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -171,13 +175,13 @@ export class OpenintV1 {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('OPENINT_V1_BASE_URL'),
-    bearerToken = readEnv('OPENINT_V1_BEARER_TOKEN'),
+    baseURL = readEnv('OPENINT_BASE_URL'),
+    bearerToken = readEnv('OPENINT_BEARER_TOKEN'),
     ...opts
   }: ClientOptions = {}) {
     if (bearerToken === undefined) {
-      throw new Errors.OpenintV1Error(
-        "The OPENINT_V1_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the OpenintV1 client with an bearerToken option, like new OpenintV1({ bearerToken: 'My Bearer Token' }).",
+      throw new Errors.OpenintError(
+        "The OPENINT_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Openint client with an bearerToken option, like new Openint({ bearerToken: 'My Bearer Token' }).",
       );
     }
 
@@ -188,14 +192,14 @@ export class OpenintV1 {
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? OpenintV1.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? Openint.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('OPENINT_V1_LOG'), "process.env['OPENINT_V1_LOG']", this) ??
+      parseLogLevel(readEnv('OPENINT_LOG'), "process.env['OPENINT_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -207,16 +211,16 @@ export class OpenintV1 {
     this.bearerToken = bearerToken;
   }
 
-  getConnection(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionResponse> {
+  checkHealth(options?: RequestOptions): APIPromise<string> {
+    return this.get('/health', options);
+  }
+
+  retrieveConnection(options?: RequestOptions): APIPromise<TopLevelAPI.RetrieveConnectionResponse> {
     return this.get('/connection', options);
   }
 
-  getConnectorConfig(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectorConfigResponse> {
+  retrieveConnectorConfig(options?: RequestOptions): APIPromise<TopLevelAPI.RetrieveConnectorConfigResponse> {
     return this.get('/connector-config', options);
-  }
-
-  getHealth(options?: RequestOptions): APIPromise<string> {
-    return this.get('/health', options);
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -244,7 +248,7 @@ export class OpenintV1 {
         if (value === null) {
           return `${encodeURIComponent(key)}=`;
         }
-        throw new Errors.OpenintV1Error(
+        throw new Errors.OpenintError(
           `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
         );
       })
@@ -707,10 +711,10 @@ export class OpenintV1 {
     }
   }
 
-  static OpenintV1 = this;
+  static Openint = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static OpenintV1Error = Errors.OpenintV1Error;
+  static OpenintError = Errors.OpenintError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -726,12 +730,12 @@ export class OpenintV1 {
 
   static toFile = Uploads.toFile;
 }
-export declare namespace OpenintV1 {
+export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
-    type GetConnectionResponse as GetConnectionResponse,
-    type GetConnectorConfigResponse as GetConnectorConfigResponse,
-    type GetHealthResponse as GetHealthResponse,
+    type CheckHealthResponse as CheckHealthResponse,
+    type RetrieveConnectionResponse as RetrieveConnectionResponse,
+    type RetrieveConnectorConfigResponse as RetrieveConnectorConfigResponse,
   };
 }

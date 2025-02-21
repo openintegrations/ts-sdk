@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import type { OpenintV1 } from './client';
+import type { Openint } from './client';
 
 export class APIResource {
-  protected _client: OpenintV1;
+  protected _client: Openint;
 
-  constructor(client: OpenintV1) {
+  constructor(client: Openint) {
     this._client = client;
   }
 }

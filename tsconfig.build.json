@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "openint-v1/*": ["dist/src/*"],
-      "openint-v1": ["dist/src/index.ts"],
+      "openint/*": ["dist/src/*"],
+      "openint": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "openint-v1/*": ["src/*"],
-      "openint-v1": ["src/index.ts"]
+      "openint/*": ["src/*"],
+      "openint": ["src/index.ts"]
     },
     "noEmit": true,
 
