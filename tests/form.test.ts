@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'openint-v1/internal/uploads';
-import { toFile } from 'openint-v1/uploads';
+import { multipartFormRequestOptions, createForm } from '@openint/sdk/internal/uploads';
+import { toFile } from '@openint/sdk/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

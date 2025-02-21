@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
-  type GetConnectionResponse,
-  type GetConnectorConfigResponse,
-  type GetHealthResponse,
+  type CheckHealthResponse,
+  type RetrieveConnectionResponse,
+  type RetrieveConnectorConfigResponse,
 } from './top-level';

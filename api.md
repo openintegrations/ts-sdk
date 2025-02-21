@@ -1,13 +1,13 @@
-# OpenintV1
+# Openint
 
 Types:
 
-- <code><a href="./src/resources/top-level.ts">GetConnectionResponse</a></code>
-- <code><a href="./src/resources/top-level.ts">GetConnectorConfigResponse</a></code>
-- <code><a href="./src/resources/top-level.ts">GetHealthResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">CheckHealthResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">RetrieveConnectionResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">RetrieveConnectorConfigResponse</a></code>
 
 Methods:
 
-- <code title="get /connection">client.<a href="./src/index.ts">getConnection</a>() -> GetConnectionResponse</code>
-- <code title="get /connector-config">client.<a href="./src/index.ts">getConnectorConfig</a>() -> GetConnectorConfigResponse</code>
-- <code title="get /health">client.<a href="./src/index.ts">getHealth</a>() -> string</code>
+- <code title="get /health">client.<a href="./src/index.ts">checkHealth</a>() -> string</code>
+- <code title="get /connection">client.<a href="./src/index.ts">retrieveConnection</a>() -> RetrieveConnectionResponse</code>
+- <code title="get /connector-config">client.<a href="./src/index.ts">retrieveConnectorConfig</a>() -> RetrieveConnectorConfigResponse</code>

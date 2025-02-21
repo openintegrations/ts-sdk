@@ -1,6 +1,6 @@
 import fs from 'fs';
-import type { ResponseLike } from 'openint-v1/internal/uploads';
-import { toFile } from 'openint-v1/uploads';
+import type { ResponseLike } from '@openint/sdk/internal/uploads';
+import { toFile } from '@openint/sdk/uploads';
 
 class MyClass {
   name: string = 'foo';

@@ -1,10 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export interface GetConnectionResponse {
-  items: Array<GetConnectionResponse.PlaidConnection | GetConnectionResponse.GreenhouseConnection>;
+export type CheckHealthResponse = string;
+
+export interface RetrieveConnectionResponse {
+  items: Array<RetrieveConnectionResponse.PlaidConnection | RetrieveConnectionResponse.GreenhouseConnection>;
 }
 
-export namespace GetConnectionResponse {
+export namespace RetrieveConnectionResponse {
   /**
    * Plaid Connection
    */
@@ -60,13 +62,14 @@ export namespace GetConnectionResponse {
   }
 }
 
-export interface GetConnectorConfigResponse {
+export interface RetrieveConnectorConfigResponse {
   items: Array<
-    GetConnectorConfigResponse.PlaidConnectorConfig | GetConnectorConfigResponse.GreenhouseConnectorConfig
+    | RetrieveConnectorConfigResponse.PlaidConnectorConfig
+    | RetrieveConnectorConfigResponse.GreenhouseConnectorConfig
   >;
 }
 
-export namespace GetConnectorConfigResponse {
+export namespace RetrieveConnectorConfigResponse {
   /**
    * Plaid Connector Config
    */
@@ -120,12 +123,10 @@ export namespace GetConnectorConfigResponse {
   }
 }
 
-export type GetHealthResponse = string;
-
 export declare namespace TopLevel {
   export {
-    type GetConnectionResponse as GetConnectionResponse,
-    type GetConnectorConfigResponse as GetConnectorConfigResponse,
-    type GetHealthResponse as GetHealthResponse,
+    type CheckHealthResponse as CheckHealthResponse,
+    type RetrieveConnectionResponse as RetrieveConnectionResponse,
+    type RetrieveConnectorConfigResponse as RetrieveConnectorConfigResponse,
   };
 }
