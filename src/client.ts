@@ -231,6 +231,10 @@ export class Openint {
     return;
   }
 
+  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
+    return new Headers({ Authorization: `Bearer ${this.apiKey}` });
+  }
+
   /**
    * Basic re-implementation of `qs.stringify` for primitive types.
    */
@@ -659,6 +663,7 @@ export class Openint {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(options.timeout) } : {}),
         ...getPlatformHeaders(),
       },
+      this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
