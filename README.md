@@ -1,6 +1,6 @@
 # Openint TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/@openint/sdk.svg)](https://npmjs.org/package/@openint/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@openint/sdk)
+[![NPM version](https://img.shields.io/npm/v/openint.svg)](https://npmjs.org/package/openint) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/openint)
 
 This library provides convenient access to the Openint REST API from server-side TypeScript or JavaScript.
 
@@ -11,8 +11,11 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install @openint/sdk
+npm install git+ssh://git@github.com:stainless-sdks/openint-typescript.git
 ```
+
+> [!NOTE]
+> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install openint`
 
 ## Usage
 
@@ -20,16 +23,14 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 
-const client = new Openint({
-  bearerToken: process.env['OPENINT_BEARER_TOKEN'], // This is the default and can be omitted
-});
+const client = new Openint();
 
 async function main() {
-  const response = await client.retrieveConnection();
+  const connection = await client.connection.retrieve();
 
-  console.log(response.items);
+  console.log(connection.items);
 }
 
 main();
@@ -41,14 +42,12 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 
-const client = new Openint({
-  bearerToken: process.env['OPENINT_BEARER_TOKEN'], // This is the default and can be omitted
-});
+const client = new Openint();
 
 async function main() {
-  const response: Openint.RetrieveConnectionResponse = await client.retrieveConnection();
+  const connection: Openint.ConnectionRetrieveResponse = await client.connection.retrieve();
 }
 
 main();
@@ -65,7 +64,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const response = await client.retrieveConnection().catch(async (err) => {
+  const connection = await client.connection.retrieve().catch(async (err) => {
     if (err instanceof Openint.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -105,10 +104,11 @@ You can use the `maxRetries` option to configure or disable this:
 // Configure the default for all requests:
 const client = new Openint({
   maxRetries: 0, // default is 2
+  apiKey: 'My API Key',
 });
 
 // Or, configure per-request:
-await client.retrieveConnection({
+await client.connection.retrieve({
   maxRetries: 5,
 });
 ```
@@ -122,10 +122,11 @@ Requests time out after 1 minute by default. You can configure this with a `time
 // Configure the default for all requests:
 const client = new Openint({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
+  apiKey: 'My API Key',
 });
 
 // Override per-request:
-await client.retrieveConnection({
+await client.connection.retrieve({
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +147,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Openint();
 
-const response = await client.retrieveConnection().asResponse();
+const response = await client.connection.retrieve().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.retrieveConnection().withResponse();
+const { data: connection, response: raw } = await client.connection.retrieve().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.items);
+console.log(connection.items);
 ```
 
 ### Logging
@@ -169,7 +170,7 @@ The log level can be configured in two ways:
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 
 const client = new Openint({
   logLevel: 'debug', // Show all log messages
@@ -197,7 +198,7 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 import pino from 'pino';
 
 const logger = pino();
@@ -267,7 +268,7 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 import fetch from 'my-fetch';
 
 const client = new Openint({ fetch });
@@ -278,7 +279,7 @@ const client = new Openint({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 
 const client = new Openint({
   fetchOptions: {
@@ -295,7 +296,7 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
@@ -309,7 +310,7 @@ const client = new Openint({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import Openint from '@openint/sdk';
+import Openint from 'openint';
 
 const client = new Openint({
   fetchOptions: {
@@ -321,7 +322,7 @@ const client = new Openint({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import Openint from 'npm:@openint/sdk';
+import Openint from 'npm:openint';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
 const client = new Openint({
@@ -343,7 +344,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/openintegrations/ts-sdk/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/openint-typescript/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

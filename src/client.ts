@@ -13,16 +13,14 @@ import * as Opts from './internal/request-options';
 import { VERSION } from './version';
 import * as Errors from './error';
 import * as Uploads from './uploads';
-import * as TopLevelAPI from './resources/top-level';
-import {
-  CheckHealthResponse,
-  RetrieveConnectionResponse,
-  RetrieveConnectorConfigResponse,
-} from './resources/top-level';
+import * as API from './resources/index';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
+import { Connection, ConnectionRetrieveResponse } from './resources/connection';
+import { ConnectorConfig, ConnectorConfigRetrieveResponse } from './resources/connector-config';
+import { Health, HealthCheckResponse } from './resources/health';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
@@ -71,9 +69,9 @@ const parseLogLevel = (
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['OPENINT_BEARER_TOKEN'].
+   * Defaults to process.env['OPENINT_API_KEY'].
    */
-  bearerToken?: string | undefined;
+  apiKey?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -148,7 +146,7 @@ type FinalizedRequestInit = RequestInit & { headers: Headers };
  * API Client for interfacing with the Openint API.
  */
 export class Openint {
-  bearerToken: string;
+  apiKey: string;
 
   baseURL: string;
   maxRetries: number;
@@ -165,8 +163,8 @@ export class Openint {
   /**
    * API Client for interfacing with the Openint API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['OPENINT_BEARER_TOKEN'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? http://localhost:3000] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://localhost:3000] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -176,19 +174,19 @@ export class Openint {
    */
   constructor({
     baseURL = readEnv('OPENINT_BASE_URL'),
-    bearerToken = readEnv('OPENINT_BEARER_TOKEN'),
+    apiKey = readEnv('OPENINT_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
-    if (bearerToken === undefined) {
+    if (apiKey === undefined) {
       throw new Errors.OpenintError(
-        "The OPENINT_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Openint client with an bearerToken option, like new Openint({ bearerToken: 'My Bearer Token' }).",
+        "The OPENINT_API_KEY environment variable is missing or empty; either provide it, or instantiate the Openint client with an apiKey option, like new Openint({ apiKey: 'My API Key' }).",
       );
     }
 
     const options: ClientOptions = {
-      bearerToken,
+      apiKey,
       ...opts,
-      baseURL: baseURL || `http://localhost:3000`,
+      baseURL: baseURL || `https://localhost:3000`,
     };
 
     this.baseURL = options.baseURL!;
@@ -208,19 +206,7 @@ export class Openint {
 
     this._options = options;
 
-    this.bearerToken = bearerToken;
-  }
-
-  checkHealth(options?: RequestOptions): APIPromise<string> {
-    return this.get('/health', options);
-  }
-
-  retrieveConnection(options?: RequestOptions): APIPromise<TopLevelAPI.RetrieveConnectionResponse> {
-    return this.get('/connection', options);
-  }
-
-  retrieveConnectorConfig(options?: RequestOptions): APIPromise<TopLevelAPI.RetrieveConnectorConfigResponse> {
-    return this.get('/connector-config', options);
+    this.apiKey = apiKey;
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -229,10 +215,6 @@ export class Openint {
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
     return;
-  }
-
-  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
-    return new Headers({ Authorization: `Bearer ${this.bearerToken}` });
   }
 
   /**
@@ -663,7 +645,6 @@ export class Openint {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(options.timeout) } : {}),
         ...getPlatformHeaders(),
       },
-      this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
@@ -729,13 +710,23 @@ export class Openint {
   static UnprocessableEntityError = Errors.UnprocessableEntityError;
 
   static toFile = Uploads.toFile;
+
+  connection: API.Connection = new API.Connection(this);
+  connectorConfig: API.ConnectorConfig = new API.ConnectorConfig(this);
+  health: API.Health = new API.Health(this);
 }
+Openint.Connection = Connection;
+Openint.ConnectorConfig = ConnectorConfig;
+Openint.Health = Health;
 export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
+  export { Connection as Connection, type ConnectionRetrieveResponse as ConnectionRetrieveResponse };
+
   export {
-    type CheckHealthResponse as CheckHealthResponse,
-    type RetrieveConnectionResponse as RetrieveConnectionResponse,
-    type RetrieveConnectorConfigResponse as RetrieveConnectorConfigResponse,
+    ConnectorConfig as ConnectorConfig,
+    type ConnectorConfigRetrieveResponse as ConnectorConfigRetrieveResponse,
   };
+
+  export { Health as Health, type HealthCheckResponse as HealthCheckResponse };
 }
