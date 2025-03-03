@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^@openint/sdk(/.*)?',
+              regex: '^openint(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],
