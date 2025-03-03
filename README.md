@@ -27,7 +27,7 @@ const client = new Openint({
 });
 
 async function main() {
-  const response = await client.getConnection();
+  const response = await client.openint.getConnection();
 
   console.log(response.items);
 }
@@ -48,7 +48,7 @@ const client = new Openint({
 });
 
 async function main() {
-  const response: Openint.GetConnectionResponse = await client.getConnection();
+  const response: Openint.OpenintGetConnectionResponse = await client.openint.getConnection();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const response = await client.getConnection().catch(async (err) => {
+  const response = await client.openint.getConnection().catch(async (err) => {
     if (err instanceof Openint.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const client = new Openint({
 });
 
 // Or, configure per-request:
-await client.getConnection({
+await client.openint.getConnection({
   maxRetries: 5,
 });
 ```
@@ -125,7 +125,7 @@ const client = new Openint({
 });
 
 // Override per-request:
-await client.getConnection({
+await client.openint.getConnection({
   timeout: 5 * 1000,
 });
 ```
@@ -146,11 +146,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Openint();
 
-const response = await client.getConnection().asResponse();
+const response = await client.openint.getConnection().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.getConnection().withResponse();
+const { data: response, response: raw } = await client.openint.getConnection().withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.items);
 ```
