@@ -7,10 +7,10 @@ const client = new Openint({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource openint', () => {
+describe('top level methods', () => {
   // skipped: tests are disabled for the time being
   test.skip('checkHealth', async () => {
-    const responsePromise = client.openint.checkHealth();
+    const responsePromise = client.checkHealth();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('resource openint', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('getConnection', async () => {
-    const responsePromise = client.openint.getConnection();
+    const responsePromise = client.getConnection();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -34,7 +34,7 @@ describe('resource openint', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('getConnectionConfig', async () => {
-    const responsePromise = client.openint.getConnectionConfig();
+    const responsePromise = client.getConnectionConfig();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
