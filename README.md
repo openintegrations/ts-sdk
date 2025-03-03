@@ -28,9 +28,9 @@ import Openint from 'openint';
 const client = new Openint();
 
 async function main() {
-  const connection = await client.connection.retrieve();
+  const response = await client.getConnection();
 
-  console.log(connection.items);
+  console.log(response.items);
 }
 
 main();
@@ -47,7 +47,7 @@ import Openint from 'openint';
 const client = new Openint();
 
 async function main() {
-  const connection: Openint.ConnectionRetrieveResponse = await client.connection.retrieve();
+  const response: Openint.GetConnectionResponse = await client.getConnection();
 }
 
 main();
@@ -64,7 +64,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const connection = await client.connection.retrieve().catch(async (err) => {
+  const response = await client.getConnection().catch(async (err) => {
     if (err instanceof Openint.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const client = new Openint({
 });
 
 // Or, configure per-request:
-await client.connection.retrieve({
+await client.getConnection({
   maxRetries: 5,
 });
 ```
@@ -126,7 +126,7 @@ const client = new Openint({
 });
 
 // Override per-request:
-await client.connection.retrieve({
+await client.getConnection({
   timeout: 5 * 1000,
 });
 ```
@@ -147,13 +147,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Openint();
 
-const response = await client.connection.retrieve().asResponse();
+const response = await client.getConnection().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: connection, response: raw } = await client.connection.retrieve().withResponse();
+const { data: response, response: raw } = await client.getConnection().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(connection.items);
+console.log(response.items);
 ```
 
 ### Logging

@@ -13,14 +13,16 @@ import * as Opts from './internal/request-options';
 import { VERSION } from './version';
 import * as Errors from './error';
 import * as Uploads from './uploads';
-import * as API from './resources/index';
+import * as TopLevelAPI from './resources/top-level';
+import {
+  CheckHealthResponse,
+  GetConnectionConfigResponse,
+  GetConnectionResponse,
+} from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
-import { Connection, ConnectionRetrieveResponse } from './resources/connection';
-import { ConnectorConfig, ConnectorConfigRetrieveResponse } from './resources/connector-config';
-import { Health, HealthCheckResponse } from './resources/health';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
@@ -207,6 +209,18 @@ export class Openint {
     this._options = options;
 
     this.apiKey = apiKey;
+  }
+
+  checkHealth(options?: RequestOptions): APIPromise<string> {
+    return this.get('/health', options);
+  }
+
+  getConnection(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionResponse> {
+    return this.get('/connection', options);
+  }
+
+  getConnectionConfig(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
+    return this.get('/connector-config', options);
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -710,23 +724,13 @@ export class Openint {
   static UnprocessableEntityError = Errors.UnprocessableEntityError;
 
   static toFile = Uploads.toFile;
-
-  connection: API.Connection = new API.Connection(this);
-  connectorConfig: API.ConnectorConfig = new API.ConnectorConfig(this);
-  health: API.Health = new API.Health(this);
 }
-Openint.Connection = Connection;
-Openint.ConnectorConfig = ConnectorConfig;
-Openint.Health = Health;
 export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
-  export { Connection as Connection, type ConnectionRetrieveResponse as ConnectionRetrieveResponse };
-
   export {
-    ConnectorConfig as ConnectorConfig,
-    type ConnectorConfigRetrieveResponse as ConnectorConfigRetrieveResponse,
+    type CheckHealthResponse as CheckHealthResponse,
+    type GetConnectionResponse as GetConnectionResponse,
+    type GetConnectionConfigResponse as GetConnectionConfigResponse,
   };
-
-  export { Health as Health, type HealthCheckResponse as HealthCheckResponse };
 }
