@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.1-alpha.3 (2025-02-28)
+
+Full Changelog: [v0.0.1-alpha.2...v0.0.1-alpha.3](https://github.com/openintegrations/ts-sdk/compare/v0.0.1-alpha.2...v0.0.1-alpha.3)
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#15](https://github.com/openintegrations/ts-sdk/issues/15)) ([20170cb](https://github.com/openintegrations/ts-sdk/commit/20170cb651d84132ac7d3cdda34e8b4c9afa894b))
+
 ## 0.0.1-alpha.2 (2025-02-24)
 
 Full Changelog: [v0.0.1-alpha.1...v0.0.1-alpha.2](https://github.com/openintegrations/ts-sdk/compare/v0.0.1-alpha.1...v0.0.1-alpha.2)
