@@ -13,16 +13,17 @@ import * as Opts from './internal/request-options';
 import { VERSION } from './version';
 import * as Errors from './error';
 import * as Uploads from './uploads';
-import * as TopLevelAPI from './resources/top-level';
-import {
-  CheckHealthResponse,
-  GetConnectionConfigResponse,
-  GetConnectionResponse,
-} from './resources/top-level';
+import * as API from './resources/index';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
+import {
+  OpenintCheckHealthResponse,
+  OpenintGetConnectionConfigResponse,
+  OpenintGetConnectionResponse,
+  OpenintResource,
+} from './resources/openint';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
@@ -209,18 +210,6 @@ export class Openint {
     this._options = options;
 
     this.apiKey = apiKey;
-  }
-
-  checkHealth(options?: RequestOptions): APIPromise<string> {
-    return this.get('/health', options);
-  }
-
-  getConnection(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionResponse> {
-    return this.get('/connection', options);
-  }
-
-  getConnectionConfig(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
-    return this.get('/connector-config', options);
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -729,13 +718,17 @@ export class Openint {
   static UnprocessableEntityError = Errors.UnprocessableEntityError;
 
   static toFile = Uploads.toFile;
+
+  openint: API.OpenintResource = new API.OpenintResource(this);
 }
+Openint.OpenintResource = OpenintResource;
 export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
-    type CheckHealthResponse as CheckHealthResponse,
-    type GetConnectionResponse as GetConnectionResponse,
-    type GetConnectionConfigResponse as GetConnectionConfigResponse,
+    OpenintResource as OpenintResource,
+    type OpenintCheckHealthResponse as OpenintCheckHealthResponse,
+    type OpenintGetConnectionResponse as OpenintGetConnectionResponse,
+    type OpenintGetConnectionConfigResponse as OpenintGetConnectionConfigResponse,
   };
 }
