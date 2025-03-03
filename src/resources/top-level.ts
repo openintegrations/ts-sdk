@@ -1,86 +1,68 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import { APIPromise } from '../api-promise';
-import { RequestOptions } from '../internal/request-options';
+export type CheckHealthResponse = string;
 
-export class OpenintResource extends APIResource {
-  checkHealth(options?: RequestOptions): APIPromise<string> {
-    return this._client.get('/health', options);
-  }
-
-  getConnection(options?: RequestOptions): APIPromise<OpenintGetConnectionResponse> {
-    return this._client.get('/connection', options);
-  }
-
-  getConnectionConfig(options?: RequestOptions): APIPromise<OpenintGetConnectionConfigResponse> {
-    return this._client.get('/connector-config', options);
-  }
-}
-
-export type OpenintCheckHealthResponse = string;
-
-export interface OpenintGetConnectionResponse {
+export interface GetConnectionResponse {
   items: Array<
-    | OpenintGetConnectionResponse.ConnectorsAircallConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsAirtableConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsApolloConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsBeancountConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsBrexConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsCodaConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsConfluenceConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsDebugConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsDiscordConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsFinchConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsFirebaseConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsForeceiptConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsFsConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsGitHubConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsGongConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsGoogleConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsGreenhouseConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsHeronConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsHubspotConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsIntercomConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsJiraConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsKustomerConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsLeverConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsLinearConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsLunchmoneyConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsMercuryConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsMergeConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsMicrosoftConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsMongoDBConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsMootaConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsOnebrickConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsOutreachConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsPipedriveConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsPlaidConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsPostgresConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsQboConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsRampConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsRevertConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsSalesforceConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsSalesloftConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsSaltedgeConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsSlackConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsSplitwiseConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsSpreadsheetConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsStripeConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsTellerConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsTogglConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsTwentyConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsVenmoConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsWebhookConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsWiseConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsXeroConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsYodleeConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsZohodeskConnectionSettings
-    | OpenintGetConnectionResponse.ConnectorsGoogledriveConnectionSettings
+    | GetConnectionResponse.ConnectorsAircallConnectionSettings
+    | GetConnectionResponse.ConnectorsAirtableConnectionSettings
+    | GetConnectionResponse.ConnectorsApolloConnectionSettings
+    | GetConnectionResponse.ConnectorsBeancountConnectionSettings
+    | GetConnectionResponse.ConnectorsBrexConnectionSettings
+    | GetConnectionResponse.ConnectorsCodaConnectionSettings
+    | GetConnectionResponse.ConnectorsConfluenceConnectionSettings
+    | GetConnectionResponse.ConnectorsDebugConnectionSettings
+    | GetConnectionResponse.ConnectorsDiscordConnectionSettings
+    | GetConnectionResponse.ConnectorsFinchConnectionSettings
+    | GetConnectionResponse.ConnectorsFirebaseConnectionSettings
+    | GetConnectionResponse.ConnectorsForeceiptConnectionSettings
+    | GetConnectionResponse.ConnectorsFsConnectionSettings
+    | GetConnectionResponse.ConnectorsGitHubConnectionSettings
+    | GetConnectionResponse.ConnectorsGongConnectionSettings
+    | GetConnectionResponse.ConnectorsGoogleConnectionSettings
+    | GetConnectionResponse.ConnectorsGreenhouseConnectionSettings
+    | GetConnectionResponse.ConnectorsHeronConnectionSettings
+    | GetConnectionResponse.ConnectorsHubspotConnectionSettings
+    | GetConnectionResponse.ConnectorsIntercomConnectionSettings
+    | GetConnectionResponse.ConnectorsJiraConnectionSettings
+    | GetConnectionResponse.ConnectorsKustomerConnectionSettings
+    | GetConnectionResponse.ConnectorsLeverConnectionSettings
+    | GetConnectionResponse.ConnectorsLinearConnectionSettings
+    | GetConnectionResponse.ConnectorsLunchmoneyConnectionSettings
+    | GetConnectionResponse.ConnectorsMercuryConnectionSettings
+    | GetConnectionResponse.ConnectorsMergeConnectionSettings
+    | GetConnectionResponse.ConnectorsMicrosoftConnectionSettings
+    | GetConnectionResponse.ConnectorsMongoDBConnectionSettings
+    | GetConnectionResponse.ConnectorsMootaConnectionSettings
+    | GetConnectionResponse.ConnectorsOnebrickConnectionSettings
+    | GetConnectionResponse.ConnectorsOutreachConnectionSettings
+    | GetConnectionResponse.ConnectorsPipedriveConnectionSettings
+    | GetConnectionResponse.ConnectorsPlaidConnectionSettings
+    | GetConnectionResponse.ConnectorsPostgresConnectionSettings
+    | GetConnectionResponse.ConnectorsQboConnectionSettings
+    | GetConnectionResponse.ConnectorsRampConnectionSettings
+    | GetConnectionResponse.ConnectorsRevertConnectionSettings
+    | GetConnectionResponse.ConnectorsSalesforceConnectionSettings
+    | GetConnectionResponse.ConnectorsSalesloftConnectionSettings
+    | GetConnectionResponse.ConnectorsSaltedgeConnectionSettings
+    | GetConnectionResponse.ConnectorsSlackConnectionSettings
+    | GetConnectionResponse.ConnectorsSplitwiseConnectionSettings
+    | GetConnectionResponse.ConnectorsSpreadsheetConnectionSettings
+    | GetConnectionResponse.ConnectorsStripeConnectionSettings
+    | GetConnectionResponse.ConnectorsTellerConnectionSettings
+    | GetConnectionResponse.ConnectorsTogglConnectionSettings
+    | GetConnectionResponse.ConnectorsTwentyConnectionSettings
+    | GetConnectionResponse.ConnectorsVenmoConnectionSettings
+    | GetConnectionResponse.ConnectorsWebhookConnectionSettings
+    | GetConnectionResponse.ConnectorsWiseConnectionSettings
+    | GetConnectionResponse.ConnectorsXeroConnectionSettings
+    | GetConnectionResponse.ConnectorsYodleeConnectionSettings
+    | GetConnectionResponse.ConnectorsZohodeskConnectionSettings
+    | GetConnectionResponse.ConnectorsGoogledriveConnectionSettings
   >;
 }
 
-export namespace OpenintGetConnectionResponse {
+export namespace GetConnectionResponse {
   export interface ConnectorsAircallConnectionSettings {
     connector_name: 'aircall';
 
@@ -2621,67 +2603,67 @@ export namespace OpenintGetConnectionResponse {
   }
 }
 
-export interface OpenintGetConnectionConfigResponse {
+export interface GetConnectionConfigResponse {
   items: Array<
-    | OpenintGetConnectionConfigResponse.ConnectorsAircallConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsAirtableConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsApolloConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsBeancountConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsBrexConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsCodaConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsConfluenceConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsDebugConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsDiscordConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsFinchConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsFirebaseConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsForeceiptConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsFsConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsGitHubConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsGongConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsGoogleConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsGreenhouseConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsHeronConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsHubspotConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsIntercomConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsJiraConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsKustomerConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsLeverConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsLinearConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsLunchmoneyConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsMercuryConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsMergeConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsMicrosoftConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsMongoDBConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsMootaConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsOnebrickConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsOutreachConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsPipedriveConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsPlaidConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsPostgresConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsQboConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsRampConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsRevertConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsSalesforceConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsSalesloftConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsSaltedgeConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsSlackConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsSplitwiseConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsSpreadsheetConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsStripeConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsTellerConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsTogglConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsTwentyConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsVenmoConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsWebhookConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsWiseConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsXeroConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsYodleeConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsZohodeskConnectorConfig
-    | OpenintGetConnectionConfigResponse.ConnectorsGoogledriveConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsAircallConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsAirtableConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsApolloConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsBeancountConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsBrexConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsCodaConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsConfluenceConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsDebugConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsDiscordConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsFinchConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsFirebaseConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsForeceiptConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsFsConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsGitHubConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsGongConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsGoogleConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsGreenhouseConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsHeronConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsHubspotConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsIntercomConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsJiraConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsKustomerConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsLeverConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsLinearConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsLunchmoneyConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsMercuryConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsMergeConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsMicrosoftConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsMongoDBConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsMootaConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsOnebrickConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsOutreachConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsPipedriveConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsPlaidConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsPostgresConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsQboConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsRampConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsRevertConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsSalesforceConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsSalesloftConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsSaltedgeConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsSlackConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsSplitwiseConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsSpreadsheetConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsStripeConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsTellerConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsTogglConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsTwentyConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsVenmoConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsWebhookConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsWiseConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsXeroConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsYodleeConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsZohodeskConnectorConfig
+    | GetConnectionConfigResponse.ConnectorsGoogledriveConnectorConfig
   >;
 }
 
-export namespace OpenintGetConnectionConfigResponse {
+export namespace GetConnectionConfigResponse {
   export interface ConnectorsAircallConnectorConfig {
     config: null;
 
@@ -4147,10 +4129,10 @@ export namespace OpenintGetConnectionConfigResponse {
   }
 }
 
-export declare namespace OpenintResource {
+export declare namespace TopLevel {
   export {
-    type OpenintCheckHealthResponse as OpenintCheckHealthResponse,
-    type OpenintGetConnectionResponse as OpenintGetConnectionResponse,
-    type OpenintGetConnectionConfigResponse as OpenintGetConnectionConfigResponse,
+    type CheckHealthResponse as CheckHealthResponse,
+    type GetConnectionResponse as GetConnectionResponse,
+    type GetConnectionConfigResponse as GetConnectionConfigResponse,
   };
 }
