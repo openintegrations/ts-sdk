@@ -16,6 +16,7 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
+  CheckConnectionResponse,
   GetConnectionConfigParams,
   GetConnectionConfigResponse,
   GetConnectionParams,
@@ -80,7 +81,9 @@ export interface ClientOptions {
   /**
    * Defaults to process.env['OPENINT_API_KEY'].
    */
-  apiKey?: string | undefined;
+  apiKey?: string | null | undefined;
+
+  customerToken?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -155,7 +158,8 @@ type FinalizedRequestInit = RequestInit & { headers: Headers };
  * API Client for interfacing with the Openint API.
  */
 export class Openint {
-  apiKey: string;
+  apiKey: string | null;
+  customerToken: string | null;
 
   baseURL: string;
   maxRetries: number;
@@ -172,7 +176,8 @@ export class Openint {
   /**
    * API Client for interfacing with the Openint API.
    *
-   * @param {string | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? undefined]
+   * @param {string | null | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? null]
+   * @param {string | null | undefined} [opts.customerToken]
    * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://localhost:3000] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
@@ -183,17 +188,13 @@ export class Openint {
    */
   constructor({
     baseURL = readEnv('OPENINT_BASE_URL'),
-    apiKey = readEnv('OPENINT_API_KEY'),
+    apiKey = readEnv('OPENINT_API_KEY') ?? null,
+    customerToken = null,
     ...opts
   }: ClientOptions = {}) {
-    if (apiKey === undefined) {
-      throw new Errors.OpenintError(
-        "The OPENINT_API_KEY environment variable is missing or empty; either provide it, or instantiate the Openint client with an apiKey option, like new Openint({ apiKey: 'My API Key' }).",
-      );
-    }
-
     const options: ClientOptions = {
       apiKey,
+      customerToken,
       ...opts,
       baseURL: baseURL || `https://localhost:3000`,
     };
@@ -216,6 +217,11 @@ export class Openint {
     this._options = options;
 
     this.apiKey = apiKey;
+    this.customerToken = customerToken;
+  }
+
+  checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
+    return this.post(path`/connection/${id}/check`, options);
   }
 
   getConnection(
@@ -252,10 +258,22 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    return;
+    if (this.apiKey && values.get('authorization')) {
+      return;
+    }
+    if (nulls.has('authorization')) {
+      return;
+    }
+
+    throw new Error(
+      'Could not resolve authentication method. Expected the apiKey to be set. Or for the "Authorization" headers to be explicitly omitted',
+    );
   }
 
   protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
+    if (this.apiKey == null) {
+      return undefined;
+    }
     return new Headers({ Authorization: `Bearer ${this.apiKey}` });
   }
 
@@ -744,6 +762,7 @@ export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
+    type CheckConnectionResponse as CheckConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetConnectionConfigResponse as GetConnectionConfigResponse,
     type ListConnectionsResponse as ListConnectionsResponse,

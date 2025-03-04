@@ -1,5 +1,22 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+export interface CheckConnectionResponse {
+  id: string;
+
+  /**
+   * Connection status: healthy (all well), disconnected (needs reconnection), error
+   * (system issue), manual (import connection)
+   */
+  status: 'healthy' | 'disconnected' | 'error' | 'manual';
+
+  /**
+   * Error types: refresh_failed and unknown_external_error
+   */
+  error?: 'refresh_failed' | 'unknown_external_error';
+
+  errorMessage?: string;
+}
+
 export interface GetConnectionResponse {
   items: Array<
     | GetConnectionResponse.ConnectorsAircallConnectionSettings
@@ -6821,6 +6838,7 @@ export interface ListEventsParams {
 
 export declare namespace TopLevel {
   export {
+    type CheckConnectionResponse as CheckConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetConnectionConfigResponse as GetConnectionConfigResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
