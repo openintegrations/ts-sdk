@@ -1,5 +1,38 @@
 # Changelog
 
+## 0.1.0-alpha.1 (2025-03-04)
+
+Full Changelog: [v0.0.1-alpha.3...v0.1.0-alpha.1](https://github.com/openintegrations/ts-sdk/compare/v0.0.1-alpha.3...v0.1.0-alpha.1)
+
+### Features
+
+* **api:** manual updates ([60a8bcb](https://github.com/openintegrations/ts-sdk/commit/60a8bcb534d59c23da576d476a623e83a68c38e6))
+* **api:** manual updates ([df8e3c4](https://github.com/openintegrations/ts-sdk/commit/df8e3c4db4bf0938280580d361e3708547ab15dd))
+* **api:** manual updates ([99e486d](https://github.com/openintegrations/ts-sdk/commit/99e486d3d5c4053c057229ad2264f45cccebad5d))
+* **api:** manual updates ([#20](https://github.com/openintegrations/ts-sdk/issues/20)) ([256bca5](https://github.com/openintegrations/ts-sdk/commit/256bca5f78c95203ea2835aeaaa386cff7e099f4))
+* **api:** manual updates ([#21](https://github.com/openintegrations/ts-sdk/issues/21)) ([2abca04](https://github.com/openintegrations/ts-sdk/commit/2abca0468fc57e2dfd9236173cd3ef1f74f0c7d2))
+* **api:** manual updates ([#22](https://github.com/openintegrations/ts-sdk/issues/22)) ([c0e8dab](https://github.com/openintegrations/ts-sdk/commit/c0e8dab607a14f551f519d5a0f41afc85523393d))
+* **api:** manual updates ([#23](https://github.com/openintegrations/ts-sdk/issues/23)) ([8fbb188](https://github.com/openintegrations/ts-sdk/commit/8fbb1884286d9b711441c39ff161829d84c96e47))
+* **api:** manual updates ([#32](https://github.com/openintegrations/ts-sdk/issues/32)) ([138eef9](https://github.com/openintegrations/ts-sdk/commit/138eef93b2f5e84923c4d8d647df6f640ed3d0a2))
+* **api:** manual updates ([#33](https://github.com/openintegrations/ts-sdk/issues/33)) ([2322d6a](https://github.com/openintegrations/ts-sdk/commit/2322d6a4a5d72c03ef95d16c294d18450162b5b9))
+* **docs:** updating documented docs for mintlify ([#18](https://github.com/openintegrations/ts-sdk/issues/18)) ([8209496](https://github.com/openintegrations/ts-sdk/commit/82094964ffdd63125fd5b63effce19ace840b8d0))
+* **docs:** updating documented docs for mintlify ([#30](https://github.com/openintegrations/ts-sdk/issues/30)) ([5f2ba49](https://github.com/openintegrations/ts-sdk/commit/5f2ba4992d8d4418cf8602710355d1399b1511d0))
+* **docs:** updating documented docs for mintlify ([#31](https://github.com/openintegrations/ts-sdk/issues/31)) ([76bcf4f](https://github.com/openintegrations/ts-sdk/commit/76bcf4f86097a3e66208f60f15b944f5c5a0f36c))
+
+
+### Bug Fixes
+
+* **client:** fix TypeError with undefined File ([#27](https://github.com/openintegrations/ts-sdk/issues/27)) ([11b4ba9](https://github.com/openintegrations/ts-sdk/commit/11b4ba9d66d282c2e5daaf98cf797a0579001ceb))
+* **internal:** clean up undefined File test ([#28](https://github.com/openintegrations/ts-sdk/issues/28)) ([26af527](https://github.com/openintegrations/ts-sdk/commit/26af527a54909e5f7968cb2468f31782dd419e42))
+* **tests:** manually reset node:buffer File ([#29](https://github.com/openintegrations/ts-sdk/issues/29)) ([5a8bf39](https://github.com/openintegrations/ts-sdk/commit/5a8bf394122be56fdf75798ccd18839057afa345))
+
+
+### Chores
+
+* **client:** only accept standard types for file uploads ([#24](https://github.com/openintegrations/ts-sdk/issues/24)) ([742a9b4](https://github.com/openintegrations/ts-sdk/commit/742a9b4825470b0d1b592a6edfa441e4e177047a))
+* **internal:** constrain synckit dev dependency ([#26](https://github.com/openintegrations/ts-sdk/issues/26)) ([b0cc7a3](https://github.com/openintegrations/ts-sdk/commit/b0cc7a3a9b3d6c05fa93dc0d1849f7b1e7f12927))
+* **internal:** fix tests failing on node v18 ([#25](https://github.com/openintegrations/ts-sdk/issues/25)) ([1cd1e84](https://github.com/openintegrations/ts-sdk/commit/1cd1e840d332425d6558c4e928b4cdbb9e5a02fb))
+
 ## 0.0.1-alpha.3 (2025-02-28)
 
 Full Changelog: [v0.0.1-alpha.2...v0.0.1-alpha.3](https://github.com/openintegrations/ts-sdk/compare/v0.0.1-alpha.2...v0.0.1-alpha.3)
