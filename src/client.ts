@@ -17,10 +17,10 @@ import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckConnectionResponse,
-  GetConnectionConfigParams,
-  GetConnectionConfigResponse,
   GetConnectionParams,
   GetConnectionResponse,
+  ListConnectionConfigsParams,
+  ListConnectionConfigsResponse,
   ListConnectionsParams,
   ListConnectionsResponse,
   ListEventsParams,
@@ -231,10 +231,10 @@ export class Openint {
     return this.get('/connection', { query, ...options });
   }
 
-  getConnectionConfig(
-    query: TopLevelAPI.GetConnectionConfigParams | null | undefined = {},
+  listConnectionConfigs(
+    query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
+  ): APIPromise<TopLevelAPI.ListConnectionConfigsResponse> {
     return this.get('/connector-config', { query, ...options });
   }
 
@@ -764,11 +764,11 @@ export declare namespace Openint {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
-    type GetConnectionConfigResponse as GetConnectionConfigResponse,
+    type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
     type GetConnectionParams as GetConnectionParams,
-    type GetConnectionConfigParams as GetConnectionConfigParams,
+    type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListEventsParams as ListEventsParams,
   };
