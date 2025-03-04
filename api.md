@@ -8,6 +8,6 @@ Types:
 
 Methods:
 
-- <code title="get /health">client.<a href="./src/index.ts">checkHealth</a>() -> string</code>
+- <code title="get /health">client.<a href="./src/index.ts">checkHealth</a>() -> CheckHealthResponse</code>
 - <code title="get /connection">client.<a href="./src/index.ts">getConnection</a>() -> GetConnectionResponse</code>
 - <code title="get /connector-config">client.<a href="./src/index.ts">getConnectionConfig</a>() -> GetConnectionConfigResponse</code>
