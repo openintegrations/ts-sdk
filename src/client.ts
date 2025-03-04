@@ -10,13 +10,16 @@ import type { APIResponseProps } from './internal/parse';
 import { getPlatformHeaders } from './internal/detect-platform';
 import * as Shims from './internal/shims';
 import * as Opts from './internal/request-options';
+import * as qs from './internal/qs';
 import { VERSION } from './version';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckHealthResponse,
+  GetConnectionConfigParams,
   GetConnectionConfigResponse,
+  GetConnectionParams,
   GetConnectionResponse,
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
@@ -215,12 +218,18 @@ export class Openint {
     return this.get('/health', options);
   }
 
-  getConnection(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionResponse> {
-    return this.get('/connection', options);
+  getConnection(
+    query: TopLevelAPI.GetConnectionParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetConnectionResponse> {
+    return this.get('/connection', { query, ...options });
   }
 
-  getConnectionConfig(options?: RequestOptions): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
-    return this.get('/connector-config', options);
+  getConnectionConfig(
+    query: TopLevelAPI.GetConnectionConfigParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
+    return this.get('/connector-config', { query, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -235,24 +244,8 @@ export class Openint {
     return new Headers({ Authorization: `Bearer ${this.apiKey}` });
   }
 
-  /**
-   * Basic re-implementation of `qs.stringify` for primitive types.
-   */
   protected stringifyQuery(query: Record<string, unknown>): string {
-    return Object.entries(query)
-      .filter(([_, value]) => typeof value !== 'undefined')
-      .map(([key, value]) => {
-        if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-          return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-        }
-        if (value === null) {
-          return `${encodeURIComponent(key)}=`;
-        }
-        throw new Errors.OpenintError(
-          `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
-        );
-      })
-      .join('&');
+    return qs.stringify(query, { arrayFormat: 'comma' });
   }
 
   private getUserAgent(): string {
@@ -739,5 +732,7 @@ export declare namespace Openint {
     type CheckHealthResponse as CheckHealthResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetConnectionConfigResponse as GetConnectionConfigResponse,
+    type GetConnectionParams as GetConnectionParams,
+    type GetConnectionConfigParams as GetConnectionConfigParams,
   };
 }

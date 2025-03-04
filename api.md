@@ -9,5 +9,5 @@ Types:
 Methods:
 
 - <code title="get /health">client.<a href="./src/index.ts">checkHealth</a>() -> CheckHealthResponse</code>
-- <code title="get /connection">client.<a href="./src/index.ts">getConnection</a>() -> GetConnectionResponse</code>
-- <code title="get /connector-config">client.<a href="./src/index.ts">getConnectionConfig</a>() -> GetConnectionConfigResponse</code>
+- <code title="get /connection">client.<a href="./src/index.ts">getConnection</a>({ ...params }) -> GetConnectionResponse</code>
+- <code title="get /connector-config">client.<a href="./src/index.ts">getConnectionConfig</a>({ ...params }) -> GetConnectionConfigResponse</code>

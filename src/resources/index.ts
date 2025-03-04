@@ -4,4 +4,6 @@ export {
   type CheckHealthResponse,
   type GetConnectionResponse,
   type GetConnectionConfigResponse,
+  type GetConnectionParams,
+  type GetConnectionConfigParams,
 } from './top-level';
