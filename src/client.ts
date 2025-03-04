@@ -10,14 +10,21 @@ import type { APIResponseProps } from './internal/parse';
 import { getPlatformHeaders } from './internal/detect-platform';
 import * as Shims from './internal/shims';
 import * as Opts from './internal/request-options';
+import * as qs from './internal/qs';
 import { VERSION } from './version';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
-  CheckHealthResponse,
-  RetrieveConnectionResponse,
-  RetrieveConnectorConfigResponse,
+  CheckConnectionResponse,
+  GetConnectionConfigParams,
+  GetConnectionConfigResponse,
+  GetConnectionParams,
+  GetConnectionResponse,
+  ListConnectionsParams,
+  ListConnectionsResponse,
+  ListEventsParams,
+  ListEventsResponse,
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -25,6 +32,7 @@ import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
+import { path } from './internal/utils/path';
 import { isEmptyObj } from './internal/utils/values';
 
 const safeJSON = (text: string) => {
@@ -71,9 +79,11 @@ const parseLogLevel = (
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['OPENINT_BEARER_TOKEN'].
+   * Defaults to process.env['OPENINT_API_KEY'].
    */
-  bearerToken?: string | undefined;
+  apiKey?: string | null | undefined;
+
+  customerToken?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -148,7 +158,8 @@ type FinalizedRequestInit = RequestInit & { headers: Headers };
  * API Client for interfacing with the Openint API.
  */
 export class Openint {
-  bearerToken: string;
+  apiKey: string | null;
+  customerToken: string | null;
 
   baseURL: string;
   maxRetries: number;
@@ -165,8 +176,9 @@ export class Openint {
   /**
    * API Client for interfacing with the Openint API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['OPENINT_BEARER_TOKEN'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? http://localhost:3000] - Override the default base URL for the API.
+   * @param {string | null | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? null]
+   * @param {string | null | undefined} [opts.customerToken]
+   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://localhost:3000] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -176,19 +188,15 @@ export class Openint {
    */
   constructor({
     baseURL = readEnv('OPENINT_BASE_URL'),
-    bearerToken = readEnv('OPENINT_BEARER_TOKEN'),
+    apiKey = readEnv('OPENINT_API_KEY') ?? null,
+    customerToken = null,
     ...opts
   }: ClientOptions = {}) {
-    if (bearerToken === undefined) {
-      throw new Errors.OpenintError(
-        "The OPENINT_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Openint client with an bearerToken option, like new Openint({ bearerToken: 'My Bearer Token' }).",
-      );
-    }
-
     const options: ClientOptions = {
-      bearerToken,
+      apiKey,
+      customerToken,
       ...opts,
-      baseURL: baseURL || `http://localhost:3000`,
+      baseURL: baseURL || `https://localhost:3000`,
     };
 
     this.baseURL = options.baseURL!;
@@ -208,19 +216,41 @@ export class Openint {
 
     this._options = options;
 
-    this.bearerToken = bearerToken;
+    this.apiKey = apiKey;
+    this.customerToken = customerToken;
   }
 
-  checkHealth(options?: RequestOptions): APIPromise<string> {
-    return this.get('/health', options);
+  checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
+    return this.post(path`/connection/${id}/check`, options);
   }
 
-  retrieveConnection(options?: RequestOptions): APIPromise<TopLevelAPI.RetrieveConnectionResponse> {
-    return this.get('/connection', options);
+  getConnection(
+    query: TopLevelAPI.GetConnectionParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetConnectionResponse> {
+    return this.get('/connection', { query, ...options });
   }
 
-  retrieveConnectorConfig(options?: RequestOptions): APIPromise<TopLevelAPI.RetrieveConnectorConfigResponse> {
-    return this.get('/connector-config', options);
+  getConnectionConfig(
+    query: TopLevelAPI.GetConnectionConfigParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
+    return this.get('/connector-config', { query, ...options });
+  }
+
+  listConnections(
+    id: string,
+    query: TopLevelAPI.ListConnectionsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.ListConnectionsResponse> {
+    return this.get(path`/connection/${id}`, { query, ...options });
+  }
+
+  listEvents(
+    query: TopLevelAPI.ListEventsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.ListEventsResponse> {
+    return this.get('/event', { query, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -228,31 +258,27 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    return;
+    if (this.apiKey && values.get('authorization')) {
+      return;
+    }
+    if (nulls.has('authorization')) {
+      return;
+    }
+
+    throw new Error(
+      'Could not resolve authentication method. Expected the apiKey to be set. Or for the "Authorization" headers to be explicitly omitted',
+    );
   }
 
   protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
-    return new Headers({ Authorization: `Bearer ${this.bearerToken}` });
+    if (this.apiKey == null) {
+      return undefined;
+    }
+    return new Headers({ Authorization: `Bearer ${this.apiKey}` });
   }
 
-  /**
-   * Basic re-implementation of `qs.stringify` for primitive types.
-   */
   protected stringifyQuery(query: Record<string, unknown>): string {
-    return Object.entries(query)
-      .filter(([_, value]) => typeof value !== 'undefined')
-      .map(([key, value]) => {
-        if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-          return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-        }
-        if (value === null) {
-          return `${encodeURIComponent(key)}=`;
-        }
-        throw new Errors.OpenintError(
-          `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
-        );
-      })
-      .join('&');
+    return qs.stringify(query, { arrayFormat: 'comma' });
   }
 
   private getUserAgent(): string {
@@ -511,7 +537,9 @@ export class Openint {
 
     const timeout = setTimeout(() => controller.abort(), ms);
 
-    const isReadableBody = Shims.isReadableLike(options.body);
+    const isReadableBody =
+      ((globalThis as any).ReadableStream && options.body instanceof (globalThis as any).ReadableStream) ||
+      (typeof options.body === 'object' && options.body !== null && Symbol.asyncIterator in options.body);
 
     const fetchOptions: RequestInit = {
       signal: controller.signal as any,
@@ -734,8 +762,14 @@ export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
-    type CheckHealthResponse as CheckHealthResponse,
-    type RetrieveConnectionResponse as RetrieveConnectionResponse,
-    type RetrieveConnectorConfigResponse as RetrieveConnectorConfigResponse,
+    type CheckConnectionResponse as CheckConnectionResponse,
+    type GetConnectionResponse as GetConnectionResponse,
+    type GetConnectionConfigResponse as GetConnectionConfigResponse,
+    type ListConnectionsResponse as ListConnectionsResponse,
+    type ListEventsResponse as ListEventsResponse,
+    type GetConnectionParams as GetConnectionParams,
+    type GetConnectionConfigParams as GetConnectionConfigParams,
+    type ListConnectionsParams as ListConnectionsParams,
+    type ListEventsParams as ListEventsParams,
   };
 }

@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Openint REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [docs.openint.com](https://docs.openint.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.openint.dev](https://docs.openint.dev). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -23,11 +23,11 @@ The full API of this library can be found in [api.md](api.md).
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  bearerToken: process.env['OPENINT_BEARER_TOKEN'], // This is the default and can be omitted
+  apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const response = await client.retrieveConnection();
+  const response = await client.getConnection();
 
   console.log(response.items);
 }
@@ -44,11 +44,11 @@ This library includes TypeScript definitions for all request params and response
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  bearerToken: process.env['OPENINT_BEARER_TOKEN'], // This is the default and can be omitted
+  apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const response: Openint.RetrieveConnectionResponse = await client.retrieveConnection();
+  const response: Openint.GetConnectionResponse = await client.getConnection();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const response = await client.retrieveConnection().catch(async (err) => {
+  const response = await client.getConnection().catch(async (err) => {
     if (err instanceof Openint.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const client = new Openint({
 });
 
 // Or, configure per-request:
-await client.retrieveConnection({
+await client.getConnection({
   maxRetries: 5,
 });
 ```
@@ -125,7 +125,7 @@ const client = new Openint({
 });
 
 // Override per-request:
-await client.retrieveConnection({
+await client.getConnection({
   timeout: 5 * 1000,
 });
 ```
@@ -146,11 +146,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Openint();
 
-const response = await client.retrieveConnection().asResponse();
+const response = await client.getConnection().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.retrieveConnection().withResponse();
+const { data: response, response: raw } = await client.getConnection().withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.items);
 ```

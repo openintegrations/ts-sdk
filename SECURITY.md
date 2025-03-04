@@ -20,7 +20,7 @@ or products provided by Openint please follow the respective company's security 
 
 ### Openint Terms and Policies
 
-Please contact dev-feedback@openint.com for any questions or concerns regarding security of our services.
+Please contact support@openint.dev for any questions or concerns regarding security of our services.
 
 ---
 
