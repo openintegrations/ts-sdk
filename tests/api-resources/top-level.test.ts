@@ -4,7 +4,7 @@ import Openint from '@openint/sdk';
 
 const client = new Openint({
   apiKey: 'My API Key',
-  customerToken: 'My Customer Token',
+  customerToken: 'GENERATED_CUSTOMER_TOKEN',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
