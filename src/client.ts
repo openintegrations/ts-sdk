@@ -16,11 +16,14 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
-  CheckHealthResponse,
   GetConnectionConfigParams,
   GetConnectionConfigResponse,
   GetConnectionParams,
   GetConnectionResponse,
+  ListConnectionsParams,
+  ListConnectionsResponse,
+  ListEventsParams,
+  ListEventsResponse,
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -28,6 +31,7 @@ import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
+import { path } from './internal/utils/path';
 import { isEmptyObj } from './internal/utils/values';
 
 const safeJSON = (text: string) => {
@@ -214,10 +218,6 @@ export class Openint {
     this.apiKey = apiKey;
   }
 
-  checkHealth(options?: RequestOptions): APIPromise<TopLevelAPI.CheckHealthResponse> {
-    return this.get('/health', options);
-  }
-
   getConnection(
     query: TopLevelAPI.GetConnectionParams | null | undefined = {},
     options?: RequestOptions,
@@ -230,6 +230,21 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.GetConnectionConfigResponse> {
     return this.get('/connector-config', { query, ...options });
+  }
+
+  listConnections(
+    id: string,
+    query: TopLevelAPI.ListConnectionsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.ListConnectionsResponse> {
+    return this.get(path`/connection/${id}`, { query, ...options });
+  }
+
+  listEvents(
+    query: TopLevelAPI.ListEventsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.ListEventsResponse> {
+    return this.get('/event', { query, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -729,10 +744,13 @@ export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
-    type CheckHealthResponse as CheckHealthResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetConnectionConfigResponse as GetConnectionConfigResponse,
+    type ListConnectionsResponse as ListConnectionsResponse,
+    type ListEventsResponse as ListEventsResponse,
     type GetConnectionParams as GetConnectionParams,
     type GetConnectionConfigParams as GetConnectionConfigParams,
+    type ListConnectionsParams as ListConnectionsParams,
+    type ListEventsParams as ListEventsParams,
   };
 }

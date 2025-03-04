@@ -9,18 +9,6 @@ const client = new Openint({
 
 describe('top level methods', () => {
   // skipped: tests are disabled for the time being
-  test.skip('checkHealth', async () => {
-    const responsePromise = client.checkHealth();
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
   test.skip('getConnection', async () => {
     const responsePromise = client.getConnection();
     const rawResponse = await responsePromise.asResponse();
@@ -71,6 +59,50 @@ describe('top level methods', () => {
         { connector_name: 'connector_name', expand: ['connector'], limit: 1, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listConnections', async () => {
+    const responsePromise = client.listConnections('id');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listConnections: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listConnections(
+        'id',
+        { expand: ['connector'], include_secrets: 'none', refresh_policy: 'none' },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listEvents', async () => {
+    const responsePromise = client.listEvents();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listEvents: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listEvents({ limit: 1, offset: 0 }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Openint.NotFoundError);
   });
 });
