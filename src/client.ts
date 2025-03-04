@@ -211,7 +211,7 @@ export class Openint {
     this.apiKey = apiKey;
   }
 
-  checkHealth(options?: RequestOptions): APIPromise<string> {
+  checkHealth(options?: RequestOptions): APIPromise<TopLevelAPI.CheckHealthResponse> {
     return this.get('/health', options);
   }
 
