@@ -24,7 +24,7 @@ describe('instantiate client', () => {
       baseURL: 'http://localhost:5000/',
       defaultHeaders: { 'X-My-Default-Header': '2' },
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
     });
 
     test('they are used in the request', () => {
@@ -92,7 +92,7 @@ describe('instantiate client', () => {
         logger: logger,
         logLevel: 'debug',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
 
       await forceAPIResponseForClient(client);
@@ -100,7 +100,7 @@ describe('instantiate client', () => {
     });
 
     test('default logLevel is warn', async () => {
-      const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+      const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
       expect(client.logLevel).toBe('warn');
     });
 
@@ -117,7 +117,7 @@ describe('instantiate client', () => {
         logger: logger,
         logLevel: 'info',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
 
       await forceAPIResponseForClient(client);
@@ -137,7 +137,7 @@ describe('instantiate client', () => {
       const client = new Openint({
         logger: logger,
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.logLevel).toBe('debug');
 
@@ -158,7 +158,7 @@ describe('instantiate client', () => {
       const client = new Openint({
         logger: logger,
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.logLevel).toBe('warn');
       expect(warnMock).toHaveBeenCalledWith(
@@ -180,7 +180,7 @@ describe('instantiate client', () => {
         logger: logger,
         logLevel: 'off',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
 
       await forceAPIResponseForClient(client);
@@ -201,7 +201,7 @@ describe('instantiate client', () => {
         logger: logger,
         logLevel: 'debug',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.logLevel).toBe('debug');
       expect(warnMock).not.toHaveBeenCalled();
@@ -214,7 +214,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo' },
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo');
     });
@@ -224,7 +224,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo', hello: 'world' },
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo&hello=world');
     });
@@ -234,7 +234,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { hello: 'world' },
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
     });
@@ -244,7 +244,7 @@ describe('instantiate client', () => {
     const client = new Openint({
       baseURL: 'http://localhost:5000/',
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: (url) => {
         return Promise.resolve(
           new Response(JSON.stringify({ url, custom: true }), {
@@ -263,7 +263,7 @@ describe('instantiate client', () => {
     const client = new Openint({
       baseURL: 'http://localhost:5000/',
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: defaultFetch,
     });
   });
@@ -272,7 +272,7 @@ describe('instantiate client', () => {
     const client = new Openint({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: (...args) => {
         return new Promise((resolve, reject) =>
           setTimeout(
@@ -305,7 +305,7 @@ describe('instantiate client', () => {
     const client = new Openint({
       baseURL: 'http://localhost:5000/',
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
     });
 
@@ -318,7 +318,7 @@ describe('instantiate client', () => {
       const client = new Openint({
         baseURL: 'http://localhost:5000/custom/path/',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
@@ -327,7 +327,7 @@ describe('instantiate client', () => {
       const client = new Openint({
         baseURL: 'http://localhost:5000/custom/path',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
@@ -340,58 +340,62 @@ describe('instantiate client', () => {
       const client = new Openint({
         baseURL: 'https://example.com',
         apiKey: 'My API Key',
-        customerToken: 'My Customer Token',
+        customerToken: 'GENERATED_CUSTOMER_TOKEN',
       });
       expect(client.baseURL).toEqual('https://example.com');
     });
 
     test('env variable', () => {
       process.env['OPENINT_BASE_URL'] = 'https://example.com/from_env';
-      const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+      const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
       expect(client.baseURL).toEqual('https://example.com/from_env');
     });
 
     test('empty env variable', () => {
       process.env['OPENINT_BASE_URL'] = ''; // empty
-      const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+      const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
       expect(client.baseURL).toEqual('https://localhost:3000');
     });
 
     test('blank env variable', () => {
       process.env['OPENINT_BASE_URL'] = '  '; // blank
-      const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+      const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
       expect(client.baseURL).toEqual('https://localhost:3000');
     });
   });
 
   test('maxRetries option is correctly set', () => {
-    const client = new Openint({ maxRetries: 4, apiKey: 'My API Key', customerToken: 'My Customer Token' });
+    const client = new Openint({
+      maxRetries: 4,
+      apiKey: 'My API Key',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
+    });
     expect(client.maxRetries).toEqual(4);
 
     // default
-    const client2 = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+    const client2 = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
     expect(client2.maxRetries).toEqual(2);
   });
 
   test('with environment variable arguments', () => {
     // set options via env var
     process.env['OPENINT_API_KEY'] = 'My API Key';
-    const client = new Openint({ customerToken: 'My Customer Token' });
+    const client = new Openint({ customerToken: 'GENERATED_CUSTOMER_TOKEN' });
     expect(client.apiKey).toBe('My API Key');
-    expect(client.customerToken).toBe('My Customer Token');
+    expect(client.customerToken).toBe('GENERATED_CUSTOMER_TOKEN');
   });
 
   test('with overridden environment variable arguments', () => {
     // set options via env var
     process.env['OPENINT_API_KEY'] = 'another My API Key';
-    const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+    const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
     expect(client.apiKey).toBe('My API Key');
-    expect(client.customerToken).toBe('My Customer Token');
+    expect(client.customerToken).toBe('GENERATED_CUSTOMER_TOKEN');
   });
 });
 
 describe('request building', () => {
-  const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+  const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
 
   describe('custom headers', () => {
     test('handles undefined', () => {
@@ -410,7 +414,7 @@ describe('request building', () => {
 });
 
 describe('default encoder', () => {
-  const client = new Openint({ apiKey: 'My API Key', customerToken: 'My Customer Token' });
+  const client = new Openint({ apiKey: 'My API Key', customerToken: 'GENERATED_CUSTOMER_TOKEN' });
 
   class Serializable {
     toJSON() {
@@ -497,7 +501,7 @@ describe('retries', () => {
 
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       timeout: 10,
       fetch: testFetch,
     });
@@ -532,7 +536,7 @@ describe('retries', () => {
 
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
       maxRetries: 4,
     });
@@ -561,7 +565,7 @@ describe('retries', () => {
     };
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
       maxRetries: 4,
     });
@@ -595,7 +599,7 @@ describe('retries', () => {
     };
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
       maxRetries: 4,
       defaultHeaders: { 'X-Stainless-Retry-Count': null },
@@ -629,7 +633,7 @@ describe('retries', () => {
     };
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
       maxRetries: 4,
     });
@@ -664,7 +668,7 @@ describe('retries', () => {
 
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
     });
 
@@ -698,7 +702,7 @@ describe('retries', () => {
 
     const client = new Openint({
       apiKey: 'My API Key',
-      customerToken: 'My Customer Token',
+      customerToken: 'GENERATED_CUSTOMER_TOKEN',
       fetch: testFetch,
     });
 
