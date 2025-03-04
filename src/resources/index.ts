@@ -3,11 +3,11 @@
 export {
   type CheckConnectionResponse,
   type GetConnectionResponse,
-  type GetConnectionConfigResponse,
+  type ListConnectionConfigsResponse,
   type ListConnectionsResponse,
   type ListEventsResponse,
   type GetConnectionParams,
-  type GetConnectionConfigParams,
+  type ListConnectionConfigsParams,
   type ListConnectionsParams,
   type ListEventsParams,
 } from './top-level';

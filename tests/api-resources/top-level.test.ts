@@ -53,8 +53,8 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('getConnectionConfig', async () => {
-    const responsePromise = client.getConnectionConfig();
+  test.skip('listConnectionConfigs', async () => {
+    const responsePromise = client.listConnectionConfigs();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -65,10 +65,10 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('getConnectionConfig: request options and params are passed correctly', async () => {
+  test.skip('listConnectionConfigs: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.getConnectionConfig(
+      client.listConnectionConfigs(
         { connector_name: 'connector_name', expand: ['connector'], limit: 1, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
