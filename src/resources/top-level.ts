@@ -2624,63 +2624,63 @@ export namespace GetConnectionResponse {
   }
 }
 
-export interface GetConnectionConfigResponse {
+export interface ListConnectionConfigsResponse {
   items: Array<
-    | GetConnectionConfigResponse.ConnectorsAircallConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsAirtableConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsApolloConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsBeancountConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsBrexConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsCodaConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsConfluenceConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsDebugConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsDiscordConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsFinchConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsFirebaseConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsForeceiptConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsFsConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsGitHubConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsGongConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsGoogleConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsGreenhouseConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsHeronConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsHubspotConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsIntercomConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsJiraConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsKustomerConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsLeverConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsLinearConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsLunchmoneyConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsMercuryConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsMergeConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsMicrosoftConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsMongoDBConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsMootaConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsOnebrickConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsOutreachConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsPipedriveConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsPlaidConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsPostgresConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsQboConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsRampConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsRevertConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsSalesforceConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsSalesloftConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsSaltedgeConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsSlackConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsSplitwiseConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsSpreadsheetConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsStripeConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsTellerConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsTogglConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsTwentyConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsVenmoConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsWebhookConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsWiseConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsXeroConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsYodleeConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsZohodeskConnectorConfig
-    | GetConnectionConfigResponse.ConnectorsGoogledriveConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsAircallConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsAirtableConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsApolloConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsBeancountConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsDebugConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsFsConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsGoogleConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsGreenhouseConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsHeronConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsHubspotConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsIntercomConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsJiraConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsKustomerConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsLeverConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsLinearConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsLunchmoneyConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsMongoDBConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsPipedriveConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsPlaidConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsQboConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsRevertConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsSpreadsheetConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsWebhookConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig
+    | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig
   >;
 
   limit: number;
@@ -2690,7 +2690,7 @@ export interface GetConnectionConfigResponse {
   total: number;
 }
 
-export namespace GetConnectionConfigResponse {
+export namespace ListConnectionConfigsResponse {
   export interface ConnectorsAircallConnectorConfig {
     config: null;
 
@@ -6805,7 +6805,7 @@ export interface GetConnectionParams {
   offset?: number;
 }
 
-export interface GetConnectionConfigParams {
+export interface ListConnectionConfigsParams {
   connector_name?: string;
 
   expand?: Array<'connector'>;
@@ -6840,11 +6840,11 @@ export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
-    type GetConnectionConfigResponse as GetConnectionConfigResponse,
+    type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
     type GetConnectionParams as GetConnectionParams,
-    type GetConnectionConfigParams as GetConnectionConfigParams,
+    type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListEventsParams as ListEventsParams,
   };
