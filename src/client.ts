@@ -297,23 +297,7 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    if (this.apiKey && values.get('authorization')) {
-      return;
-    }
-    if (nulls.has('authorization')) {
-      return;
-    }
-
-    throw new Error(
-      'Could not resolve authentication method. Expected the apiKey to be set. Or for the "Authorization" headers to be explicitly omitted',
-    );
-  }
-
-  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
-    if (this.apiKey == null) {
-      return undefined;
-    }
-    return new Headers({ Authorization: `Bearer ${this.apiKey}` });
+    return;
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {
@@ -730,7 +714,6 @@ export class Openint {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(options.timeout) } : {}),
         ...getPlatformHeaders(),
       },
-      this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,

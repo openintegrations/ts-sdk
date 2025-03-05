@@ -2,11 +2,7 @@
 
 import Openint from '@openint/sdk';
 
-const client = new Openint({
-  apiKey: 'My API Key',
-  customerToken: 'GENERATED_CUSTOMER_TOKEN',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Openint({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('top level methods', () => {
   // skipped: tests are disabled for the time being
@@ -23,7 +19,7 @@ describe('top level methods', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('createMagicLink: only required params', async () => {
-    const responsePromise = client.createMagicLink({ customer_id: 'x', email: 'dev@stainless.com' });
+    const responsePromise = client.createMagicLink({ customer_id: 'x' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,9 +33,9 @@ describe('top level methods', () => {
   test.skip('createMagicLink: required and optional params', async () => {
     const response = await client.createMagicLink({
       customer_id: 'x',
-      email: 'dev@stainless.com',
       connection_id: 'connection_id',
       connector_names: 'aircall',
+      email: 'dev@stainless.com',
       redirect_url: 'redirect_url',
       theme: 'light',
       validity_in_seconds: 0,
