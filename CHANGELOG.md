@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-03-05)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Chores
+
+* **docs:** improve docs for withResponse/asResponse ([#49](https://github.com/openintegrations/ts-sdk/issues/49)) ([1c66a66](https://github.com/openintegrations/ts-sdk/commit/1c66a663dfca1edf297e75c5d1705b429ee21aa8))
+* **types:** improved go to definition on fetchOptions ([#47](https://github.com/openintegrations/ts-sdk/issues/47)) ([4f2a8b5](https://github.com/openintegrations/ts-sdk/commit/4f2a8b56fb9c4d68ac89d6b46ecdc12a835162a4))
+
 ## 0.1.0-alpha.5 (2025-03-05)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
