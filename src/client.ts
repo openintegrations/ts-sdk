@@ -30,6 +30,7 @@ import {
   ListConnectionConfigsResponsesOffsetPagination,
   ListConnectionsParams,
   ListConnectionsResponse,
+  ListConnectionsResponsesOffsetPagination,
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
@@ -256,13 +257,14 @@ export class Openint {
   }
 
   /**
-   * List all connections with optional filtering
+   * Get details of a specific connection
    */
   getConnection(
+    id: string,
     query: TopLevelAPI.GetConnectionParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.GetConnectionResponse> {
-    return this.get('/connection', { query, ...options });
+    return this.get(path`/connection/${id}`, { query, ...options });
   }
 
   /**
@@ -283,14 +285,16 @@ export class Openint {
   }
 
   /**
-   * Get details of a specific connection
+   * List all connections with optional filtering
    */
   listConnections(
-    id: string,
     query: TopLevelAPI.ListConnectionsParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.ListConnectionsResponse> {
-    return this.get(path`/connection/${id}`, { query, ...options });
+  ): Pagination.PagePromise<ListConnectionsResponsesOffsetPagination, TopLevelAPI.ListConnectionsResponse> {
+    return this.getAPIList('/connection', Pagination.OffsetPagination<TopLevelAPI.ListConnectionsResponse>, {
+      query,
+      ...options,
+    });
   }
 
   /**
@@ -876,6 +880,7 @@ export declare namespace Openint {
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
+    type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,

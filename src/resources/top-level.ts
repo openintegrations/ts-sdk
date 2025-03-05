@@ -4,6 +4,8 @@ import { OffsetPagination, type OffsetPaginationParams } from '../pagination';
 
 export type ListConnectionConfigsResponsesOffsetPagination = OffsetPagination<ListConnectionConfigsResponse>;
 
+export type ListConnectionsResponsesOffsetPagination = OffsetPagination<ListConnectionsResponse>;
+
 export type ListEventsResponsesOffsetPagination = OffsetPagination<ListEventsResponse>;
 
 export interface CheckConnectionResponse {
@@ -31,71 +33,62 @@ export interface CreateTokenResponse {
   token: string;
 }
 
-export interface GetConnectionResponse {
-  items: Array<
-    | GetConnectionResponse.ConnectorsAircallConnectionSettings
-    | GetConnectionResponse.ConnectorsAirtableConnectionSettings
-    | GetConnectionResponse.ConnectorsApolloConnectionSettings
-    | GetConnectionResponse.ConnectorsBeancountConnectionSettings
-    | GetConnectionResponse.ConnectorsBrexConnectionSettings
-    | GetConnectionResponse.ConnectorsCodaConnectionSettings
-    | GetConnectionResponse.ConnectorsConfluenceConnectionSettings
-    | GetConnectionResponse.ConnectorsDebugConnectionSettings
-    | GetConnectionResponse.ConnectorsDiscordConnectionSettings
-    | GetConnectionResponse.ConnectorsFinchConnectionSettings
-    | GetConnectionResponse.ConnectorsFirebaseConnectionSettings
-    | GetConnectionResponse.ConnectorsForeceiptConnectionSettings
-    | GetConnectionResponse.ConnectorsFsConnectionSettings
-    | GetConnectionResponse.ConnectorsGitHubConnectionSettings
-    | GetConnectionResponse.ConnectorsGongConnectionSettings
-    | GetConnectionResponse.ConnectorsGoogleConnectionSettings
-    | GetConnectionResponse.ConnectorsGreenhouseConnectionSettings
-    | GetConnectionResponse.ConnectorsHeronConnectionSettings
-    | GetConnectionResponse.ConnectorsHubspotConnectionSettings
-    | GetConnectionResponse.ConnectorsIntercomConnectionSettings
-    | GetConnectionResponse.ConnectorsJiraConnectionSettings
-    | GetConnectionResponse.ConnectorsKustomerConnectionSettings
-    | GetConnectionResponse.ConnectorsLeverConnectionSettings
-    | GetConnectionResponse.ConnectorsLinearConnectionSettings
-    | GetConnectionResponse.ConnectorsLunchmoneyConnectionSettings
-    | GetConnectionResponse.ConnectorsMercuryConnectionSettings
-    | GetConnectionResponse.ConnectorsMergeConnectionSettings
-    | GetConnectionResponse.ConnectorsMicrosoftConnectionSettings
-    | GetConnectionResponse.ConnectorsMongoDBConnectionSettings
-    | GetConnectionResponse.ConnectorsMootaConnectionSettings
-    | GetConnectionResponse.ConnectorsOnebrickConnectionSettings
-    | GetConnectionResponse.ConnectorsOutreachConnectionSettings
-    | GetConnectionResponse.ConnectorsPipedriveConnectionSettings
-    | GetConnectionResponse.ConnectorsPlaidConnectionSettings
-    | GetConnectionResponse.ConnectorsPostgresConnectionSettings
-    | GetConnectionResponse.ConnectorsQboConnectionSettings
-    | GetConnectionResponse.ConnectorsRampConnectionSettings
-    | GetConnectionResponse.ConnectorsRevertConnectionSettings
-    | GetConnectionResponse.ConnectorsSalesforceConnectionSettings
-    | GetConnectionResponse.ConnectorsSalesloftConnectionSettings
-    | GetConnectionResponse.ConnectorsSaltedgeConnectionSettings
-    | GetConnectionResponse.ConnectorsSlackConnectionSettings
-    | GetConnectionResponse.ConnectorsSplitwiseConnectionSettings
-    | GetConnectionResponse.ConnectorsSpreadsheetConnectionSettings
-    | GetConnectionResponse.ConnectorsStripeConnectionSettings
-    | GetConnectionResponse.ConnectorsTellerConnectionSettings
-    | GetConnectionResponse.ConnectorsTogglConnectionSettings
-    | GetConnectionResponse.ConnectorsTwentyConnectionSettings
-    | GetConnectionResponse.ConnectorsVenmoConnectionSettings
-    | GetConnectionResponse.ConnectorsWebhookConnectionSettings
-    | GetConnectionResponse.ConnectorsWiseConnectionSettings
-    | GetConnectionResponse.ConnectorsXeroConnectionSettings
-    | GetConnectionResponse.ConnectorsYodleeConnectionSettings
-    | GetConnectionResponse.ConnectorsZohodeskConnectionSettings
-    | GetConnectionResponse.ConnectorsGoogledriveConnectionSettings
-  >;
-
-  limit: number;
-
-  offset: number;
-
-  total: number;
-}
+export type GetConnectionResponse =
+  | GetConnectionResponse.ConnectorsAircallConnectionSettings
+  | GetConnectionResponse.ConnectorsAirtableConnectionSettings
+  | GetConnectionResponse.ConnectorsApolloConnectionSettings
+  | GetConnectionResponse.ConnectorsBeancountConnectionSettings
+  | GetConnectionResponse.ConnectorsBrexConnectionSettings
+  | GetConnectionResponse.ConnectorsCodaConnectionSettings
+  | GetConnectionResponse.ConnectorsConfluenceConnectionSettings
+  | GetConnectionResponse.ConnectorsDebugConnectionSettings
+  | GetConnectionResponse.ConnectorsDiscordConnectionSettings
+  | GetConnectionResponse.ConnectorsFinchConnectionSettings
+  | GetConnectionResponse.ConnectorsFirebaseConnectionSettings
+  | GetConnectionResponse.ConnectorsForeceiptConnectionSettings
+  | GetConnectionResponse.ConnectorsFsConnectionSettings
+  | GetConnectionResponse.ConnectorsGitHubConnectionSettings
+  | GetConnectionResponse.ConnectorsGongConnectionSettings
+  | GetConnectionResponse.ConnectorsGoogleConnectionSettings
+  | GetConnectionResponse.ConnectorsGreenhouseConnectionSettings
+  | GetConnectionResponse.ConnectorsHeronConnectionSettings
+  | GetConnectionResponse.ConnectorsHubspotConnectionSettings
+  | GetConnectionResponse.ConnectorsIntercomConnectionSettings
+  | GetConnectionResponse.ConnectorsJiraConnectionSettings
+  | GetConnectionResponse.ConnectorsKustomerConnectionSettings
+  | GetConnectionResponse.ConnectorsLeverConnectionSettings
+  | GetConnectionResponse.ConnectorsLinearConnectionSettings
+  | GetConnectionResponse.ConnectorsLunchmoneyConnectionSettings
+  | GetConnectionResponse.ConnectorsMercuryConnectionSettings
+  | GetConnectionResponse.ConnectorsMergeConnectionSettings
+  | GetConnectionResponse.ConnectorsMicrosoftConnectionSettings
+  | GetConnectionResponse.ConnectorsMongoDBConnectionSettings
+  | GetConnectionResponse.ConnectorsMootaConnectionSettings
+  | GetConnectionResponse.ConnectorsOnebrickConnectionSettings
+  | GetConnectionResponse.ConnectorsOutreachConnectionSettings
+  | GetConnectionResponse.ConnectorsPipedriveConnectionSettings
+  | GetConnectionResponse.ConnectorsPlaidConnectionSettings
+  | GetConnectionResponse.ConnectorsPostgresConnectionSettings
+  | GetConnectionResponse.ConnectorsQboConnectionSettings
+  | GetConnectionResponse.ConnectorsRampConnectionSettings
+  | GetConnectionResponse.ConnectorsRevertConnectionSettings
+  | GetConnectionResponse.ConnectorsSalesforceConnectionSettings
+  | GetConnectionResponse.ConnectorsSalesloftConnectionSettings
+  | GetConnectionResponse.ConnectorsSaltedgeConnectionSettings
+  | GetConnectionResponse.ConnectorsSlackConnectionSettings
+  | GetConnectionResponse.ConnectorsSplitwiseConnectionSettings
+  | GetConnectionResponse.ConnectorsSpreadsheetConnectionSettings
+  | GetConnectionResponse.ConnectorsStripeConnectionSettings
+  | GetConnectionResponse.ConnectorsTellerConnectionSettings
+  | GetConnectionResponse.ConnectorsTogglConnectionSettings
+  | GetConnectionResponse.ConnectorsTwentyConnectionSettings
+  | GetConnectionResponse.ConnectorsVenmoConnectionSettings
+  | GetConnectionResponse.ConnectorsWebhookConnectionSettings
+  | GetConnectionResponse.ConnectorsWiseConnectionSettings
+  | GetConnectionResponse.ConnectorsXeroConnectionSettings
+  | GetConnectionResponse.ConnectorsYodleeConnectionSettings
+  | GetConnectionResponse.ConnectorsZohodeskConnectionSettings
+  | GetConnectionResponse.ConnectorsGoogledriveConnectionSettings;
 
 export namespace GetConnectionResponse {
   export interface ConnectorsAircallConnectionSettings {
@@ -6883,6 +6876,85 @@ export interface CreateTokenParams {
 }
 
 export interface GetConnectionParams {
+  expand?: Array<'connector'>;
+
+  /**
+   * Controls secret inclusion: none (default), basic (auth only), or all secrets
+   */
+  include_secrets?: 'none' | 'basic' | 'all';
+
+  /**
+   * Controls credential refresh: none (never), force (always), or auto (when
+   * expired, default)
+   */
+  refresh_policy?: 'none' | 'force' | 'auto';
+}
+
+export interface ListConnectionConfigsParams extends OffsetPaginationParams {
+  /**
+   * The name of the connector
+   */
+  connector_name?:
+    | 'aircall'
+    | 'airtable'
+    | 'apollo'
+    | 'beancount'
+    | 'brex'
+    | 'coda'
+    | 'confluence'
+    | 'debug'
+    | 'discord'
+    | 'finch'
+    | 'firebase'
+    | 'foreceipt'
+    | 'fs'
+    | 'github'
+    | 'gong'
+    | 'google'
+    | 'greenhouse'
+    | 'heron'
+    | 'hubspot'
+    | 'intercom'
+    | 'jira'
+    | 'kustomer'
+    | 'lever'
+    | 'linear'
+    | 'lunchmoney'
+    | 'merge'
+    | 'microsoft'
+    | 'mongodb'
+    | 'moota'
+    | 'onebrick'
+    | 'outreach'
+    | 'pipedrive'
+    | 'plaid'
+    | 'postgres'
+    | 'qbo'
+    | 'ramp'
+    | 'revert'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'slack'
+    | 'splitwise'
+    | 'spreadsheet'
+    | 'stripe'
+    | 'teller'
+    | 'toggl'
+    | 'twenty'
+    | 'webhook'
+    | 'wise'
+    | 'xero'
+    | 'yodlee'
+    | 'zohodesk'
+    | 'googledrive';
+
+  expand?: Array<'connector'>;
+
+  limit?: number;
+}
+
+export interface ListConnectionsParams extends OffsetPaginationParams {
   connector_config_id?: string;
 
   /**
@@ -6953,87 +7025,6 @@ export interface GetConnectionParams {
   include_secrets?: 'none' | 'basic' | 'all';
 
   limit?: number;
-
-  offset?: number;
-}
-
-export interface ListConnectionConfigsParams extends OffsetPaginationParams {
-  /**
-   * The name of the connector
-   */
-  connector_name?:
-    | 'aircall'
-    | 'airtable'
-    | 'apollo'
-    | 'beancount'
-    | 'brex'
-    | 'coda'
-    | 'confluence'
-    | 'debug'
-    | 'discord'
-    | 'finch'
-    | 'firebase'
-    | 'foreceipt'
-    | 'fs'
-    | 'github'
-    | 'gong'
-    | 'google'
-    | 'greenhouse'
-    | 'heron'
-    | 'hubspot'
-    | 'intercom'
-    | 'jira'
-    | 'kustomer'
-    | 'lever'
-    | 'linear'
-    | 'lunchmoney'
-    | 'merge'
-    | 'microsoft'
-    | 'mongodb'
-    | 'moota'
-    | 'onebrick'
-    | 'outreach'
-    | 'pipedrive'
-    | 'plaid'
-    | 'postgres'
-    | 'qbo'
-    | 'ramp'
-    | 'revert'
-    | 'salesforce'
-    | 'salesloft'
-    | 'saltedge'
-    | 'slack'
-    | 'splitwise'
-    | 'spreadsheet'
-    | 'stripe'
-    | 'teller'
-    | 'toggl'
-    | 'twenty'
-    | 'webhook'
-    | 'wise'
-    | 'xero'
-    | 'yodlee'
-    | 'zohodesk'
-    | 'googledrive';
-
-  expand?: Array<'connector'>;
-
-  limit?: number;
-}
-
-export interface ListConnectionsParams {
-  expand?: Array<'connector'>;
-
-  /**
-   * Controls secret inclusion: none (default), basic (auth only), or all secrets
-   */
-  include_secrets?: 'none' | 'basic' | 'all';
-
-  /**
-   * Controls credential refresh: none (never), force (always), or auto (when
-   * expired, default)
-   */
-  refresh_policy?: 'none' | 'force' | 'auto';
 }
 
 export interface ListEventsParams extends OffsetPaginationParams {
@@ -7050,6 +7041,7 @@ export declare namespace TopLevel {
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
+    type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
