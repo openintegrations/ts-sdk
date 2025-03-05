@@ -7017,6 +7017,8 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'googledrive';
 
   expand?: Array<'connector'>;
+
+  limit?: number;
 }
 
 export interface ListConnectionsParams {
@@ -7034,7 +7036,9 @@ export interface ListConnectionsParams {
   refresh_policy?: 'none' | 'force' | 'auto';
 }
 
-export interface ListEventsParams extends OffsetPaginationParams {}
+export interface ListEventsParams extends OffsetPaginationParams {
+  limit?: number;
+}
 
 export declare namespace TopLevel {
   export {
