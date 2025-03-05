@@ -122,11 +122,6 @@ export interface OffsetPaginationParams {
    * The number of elements to skip.
    */
   offset?: number;
-
-  /**
-   * The maximum number of elements to fetch.
-   */
-  limit?: number;
 }
 
 export class OffsetPagination<Item> extends AbstractPage<Item> implements OffsetPaginationResponse<Item> {
