@@ -17,6 +17,14 @@ export interface CheckConnectionResponse {
   errorMessage?: string;
 }
 
+export interface CreateMagicLinkResponse {
+  url: string;
+}
+
+export interface CreateTokenResponse {
+  token: string;
+}
+
 export interface GetConnectionResponse {
   items: Array<
     | GetConnectionResponse.ConnectorsAircallConnectionSettings
@@ -6786,6 +6794,109 @@ export namespace ListEventsResponse {
   }
 }
 
+export interface CreateMagicLinkParams {
+  customer_id: string;
+
+  /**
+   * The email address of the customer
+   */
+  email: string;
+
+  connection_id?: string | null;
+
+  /**
+   * Filter integrations by comma separated connector names
+   */
+  connector_names?:
+    | 'aircall'
+    | 'airtable'
+    | 'apollo'
+    | 'beancount'
+    | 'brex'
+    | 'coda'
+    | 'confluence'
+    | 'debug'
+    | 'discord'
+    | 'finch'
+    | 'firebase'
+    | 'foreceipt'
+    | 'fs'
+    | 'github'
+    | 'gong'
+    | 'google'
+    | 'greenhouse'
+    | 'heron'
+    | 'hubspot'
+    | 'intercom'
+    | 'jira'
+    | 'kustomer'
+    | 'lever'
+    | 'linear'
+    | 'lunchmoney'
+    | 'merge'
+    | 'microsoft'
+    | 'mongodb'
+    | 'moota'
+    | 'onebrick'
+    | 'outreach'
+    | 'pipedrive'
+    | 'plaid'
+    | 'postgres'
+    | 'qbo'
+    | 'ramp'
+    | 'revert'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'slack'
+    | 'splitwise'
+    | 'spreadsheet'
+    | 'stripe'
+    | 'teller'
+    | 'toggl'
+    | 'twenty'
+    | 'webhook'
+    | 'wise'
+    | 'xero'
+    | 'yodlee'
+    | 'zohodesk'
+    | 'googledrive'
+    | null;
+
+  /**
+   * Where to send user to after connect / if they press back button
+   */
+  redirect_url?: string | null;
+
+  /**
+   * Magic Link display theme
+   */
+  theme?: 'light' | 'dark' | null;
+
+  /**
+   * How long the magic link will be valid for (in seconds) before it expires
+   */
+  validity_in_seconds?: number;
+
+  /**
+   * Magic Link tab view
+   */
+  view?: 'manage' | 'manage-deeplink' | 'add' | 'add-deeplink' | null;
+}
+
+export interface CreateTokenParams {
+  /**
+   * Anything that uniquely identifies the customer that you will be sending the
+   * token to
+   */
+  customer_id: string;
+
+  /**
+   * How long the token will be valid for (in seconds) before it expires
+   */
+  validity_in_seconds?: number;
+}
+
 export interface GetConnectionParams {
   connector_config_id?: string;
 
@@ -6951,10 +7062,14 @@ export interface ListEventsParams {
 export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
+    type CreateMagicLinkResponse as CreateMagicLinkResponse,
+    type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
+    type CreateMagicLinkParams as CreateMagicLinkParams,
+    type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
