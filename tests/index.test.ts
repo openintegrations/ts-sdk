@@ -23,6 +23,7 @@ describe('instantiate client', () => {
     const client = new Openint({
       baseURL: 'http://localhost:5000/',
       defaultHeaders: { 'X-My-Default-Header': '2' },
+      apiKey: 'My API Key',
     });
 
     test('they are used in the request', () => {
@@ -86,14 +87,14 @@ describe('instantiate client', () => {
         error: jest.fn(),
       };
 
-      const client = new Openint({ logger: logger, logLevel: 'debug' });
+      const client = new Openint({ logger: logger, logLevel: 'debug', apiKey: 'My API Key' });
 
       await forceAPIResponseForClient(client);
       expect(debugMock).toHaveBeenCalled();
     });
 
     test('default logLevel is warn', async () => {
-      const client = new Openint({});
+      const client = new Openint({ apiKey: 'My API Key' });
       expect(client.logLevel).toBe('warn');
     });
 
@@ -106,7 +107,7 @@ describe('instantiate client', () => {
         error: jest.fn(),
       };
 
-      const client = new Openint({ logger: logger, logLevel: 'info' });
+      const client = new Openint({ logger: logger, logLevel: 'info', apiKey: 'My API Key' });
 
       await forceAPIResponseForClient(client);
       expect(debugMock).not.toHaveBeenCalled();
@@ -122,7 +123,7 @@ describe('instantiate client', () => {
       };
 
       process.env['OPENINT_LOG'] = 'debug';
-      const client = new Openint({ logger: logger });
+      const client = new Openint({ logger: logger, apiKey: 'My API Key' });
       expect(client.logLevel).toBe('debug');
 
       await forceAPIResponseForClient(client);
@@ -139,7 +140,7 @@ describe('instantiate client', () => {
       };
 
       process.env['OPENINT_LOG'] = 'not a log level';
-      const client = new Openint({ logger: logger });
+      const client = new Openint({ logger: logger, apiKey: 'My API Key' });
       expect(client.logLevel).toBe('warn');
       expect(warnMock).toHaveBeenCalledWith(
         'process.env[\'OPENINT_LOG\'] was set to "not a log level", expected one of ["off","error","warn","info","debug"]',
@@ -156,7 +157,7 @@ describe('instantiate client', () => {
       };
 
       process.env['OPENINT_LOG'] = 'debug';
-      const client = new Openint({ logger: logger, logLevel: 'off' });
+      const client = new Openint({ logger: logger, logLevel: 'off', apiKey: 'My API Key' });
 
       await forceAPIResponseForClient(client);
       expect(debugMock).not.toHaveBeenCalled();
@@ -172,7 +173,7 @@ describe('instantiate client', () => {
       };
 
       process.env['OPENINT_LOG'] = 'not a log level';
-      const client = new Openint({ logger: logger, logLevel: 'debug' });
+      const client = new Openint({ logger: logger, logLevel: 'debug', apiKey: 'My API Key' });
       expect(client.logLevel).toBe('debug');
       expect(warnMock).not.toHaveBeenCalled();
     });
@@ -180,7 +181,11 @@ describe('instantiate client', () => {
 
   describe('defaultQuery', () => {
     test('with null query params given', () => {
-      const client = new Openint({ baseURL: 'http://localhost:5000/', defaultQuery: { apiVersion: 'foo' } });
+      const client = new Openint({
+        baseURL: 'http://localhost:5000/',
+        defaultQuery: { apiVersion: 'foo' },
+        apiKey: 'My API Key',
+      });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo');
     });
 
@@ -188,12 +193,17 @@ describe('instantiate client', () => {
       const client = new Openint({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo', hello: 'world' },
+        apiKey: 'My API Key',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo&hello=world');
     });
 
     test('overriding with `undefined`', () => {
-      const client = new Openint({ baseURL: 'http://localhost:5000/', defaultQuery: { hello: 'world' } });
+      const client = new Openint({
+        baseURL: 'http://localhost:5000/',
+        defaultQuery: { hello: 'world' },
+        apiKey: 'My API Key',
+      });
       expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
     });
   });
@@ -201,6 +211,7 @@ describe('instantiate client', () => {
   test('custom fetch', async () => {
     const client = new Openint({
       baseURL: 'http://localhost:5000/',
+      apiKey: 'My API Key',
       fetch: (url) => {
         return Promise.resolve(
           new Response(JSON.stringify({ url, custom: true }), {
@@ -216,12 +227,17 @@ describe('instantiate client', () => {
 
   test('explicit global fetch', async () => {
     // make sure the global fetch type is assignable to our Fetch type
-    const client = new Openint({ baseURL: 'http://localhost:5000/', fetch: defaultFetch });
+    const client = new Openint({
+      baseURL: 'http://localhost:5000/',
+      apiKey: 'My API Key',
+      fetch: defaultFetch,
+    });
   });
 
   test('custom signal', async () => {
     const client = new Openint({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+      apiKey: 'My API Key',
       fetch: (...args) => {
         return new Promise((resolve, reject) =>
           setTimeout(
@@ -251,7 +267,7 @@ describe('instantiate client', () => {
       return new Response(JSON.stringify({}), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Openint({ baseURL: 'http://localhost:5000/', fetch: testFetch });
+    const client = new Openint({ baseURL: 'http://localhost:5000/', apiKey: 'My API Key', fetch: testFetch });
 
     await client.patch('/foo');
     expect(capturedRequest?.method).toEqual('PATCH');
@@ -259,12 +275,12 @@ describe('instantiate client', () => {
 
   describe('baseUrl', () => {
     test('trailing slash', () => {
-      const client = new Openint({ baseURL: 'http://localhost:5000/custom/path/' });
+      const client = new Openint({ baseURL: 'http://localhost:5000/custom/path/', apiKey: 'My API Key' });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
 
     test('no trailing slash', () => {
-      const client = new Openint({ baseURL: 'http://localhost:5000/custom/path' });
+      const client = new Openint({ baseURL: 'http://localhost:5000/custom/path', apiKey: 'My API Key' });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
 
@@ -273,41 +289,55 @@ describe('instantiate client', () => {
     });
 
     test('explicit option', () => {
-      const client = new Openint({ baseURL: 'https://example.com' });
+      const client = new Openint({ baseURL: 'https://example.com', apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://example.com');
     });
 
     test('env variable', () => {
       process.env['OPENINT_BASE_URL'] = 'https://example.com/from_env';
-      const client = new Openint({});
+      const client = new Openint({ apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://example.com/from_env');
     });
 
     test('empty env variable', () => {
       process.env['OPENINT_BASE_URL'] = ''; // empty
-      const client = new Openint({});
+      const client = new Openint({ apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://localhost:3000');
     });
 
     test('blank env variable', () => {
       process.env['OPENINT_BASE_URL'] = '  '; // blank
-      const client = new Openint({});
+      const client = new Openint({ apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://localhost:3000');
     });
   });
 
   test('maxRetries option is correctly set', () => {
-    const client = new Openint({ maxRetries: 4 });
+    const client = new Openint({ maxRetries: 4, apiKey: 'My API Key' });
     expect(client.maxRetries).toEqual(4);
 
     // default
-    const client2 = new Openint({});
+    const client2 = new Openint({ apiKey: 'My API Key' });
     expect(client2.maxRetries).toEqual(2);
+  });
+
+  test('with environment variable arguments', () => {
+    // set options via env var
+    process.env['OPENINT_API_KEY'] = 'My API Key';
+    const client = new Openint();
+    expect(client.apiKey).toBe('My API Key');
+  });
+
+  test('with overridden environment variable arguments', () => {
+    // set options via env var
+    process.env['OPENINT_API_KEY'] = 'another My API Key';
+    const client = new Openint({ apiKey: 'My API Key' });
+    expect(client.apiKey).toBe('My API Key');
   });
 });
 
 describe('request building', () => {
-  const client = new Openint({});
+  const client = new Openint({ apiKey: 'My API Key' });
 
   describe('custom headers', () => {
     test('handles undefined', () => {
@@ -326,7 +356,7 @@ describe('request building', () => {
 });
 
 describe('default encoder', () => {
-  const client = new Openint({});
+  const client = new Openint({ apiKey: 'My API Key' });
 
   class Serializable {
     toJSON() {
@@ -411,7 +441,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Openint({ timeout: 10, fetch: testFetch });
+    const client = new Openint({ apiKey: 'My API Key', timeout: 10, fetch: testFetch });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
@@ -441,7 +471,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Openint({ fetch: testFetch, maxRetries: 4 });
+    const client = new Openint({ apiKey: 'My API Key', fetch: testFetch, maxRetries: 4 });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
 
@@ -465,7 +495,7 @@ describe('retries', () => {
       capturedRequest = init;
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
-    const client = new Openint({ fetch: testFetch, maxRetries: 4 });
+    const client = new Openint({ apiKey: 'My API Key', fetch: testFetch, maxRetries: 4 });
 
     expect(
       await client.request({
@@ -495,6 +525,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
     const client = new Openint({
+      apiKey: 'My API Key',
       fetch: testFetch,
       maxRetries: 4,
       defaultHeaders: { 'X-Stainless-Retry-Count': null },
@@ -526,7 +557,7 @@ describe('retries', () => {
       capturedRequest = init;
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
-    const client = new Openint({ fetch: testFetch, maxRetries: 4 });
+    const client = new Openint({ apiKey: 'My API Key', fetch: testFetch, maxRetries: 4 });
 
     expect(
       await client.request({
@@ -556,7 +587,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Openint({ fetch: testFetch });
+    const client = new Openint({ apiKey: 'My API Key', fetch: testFetch });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
@@ -586,7 +617,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Openint({ fetch: testFetch });
+    const client = new Openint({ apiKey: 'My API Key', fetch: testFetch });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
