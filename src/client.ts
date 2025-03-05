@@ -13,6 +13,8 @@ import * as Opts from './internal/request-options';
 import * as qs from './internal/qs';
 import { VERSION } from './version';
 import * as Errors from './error';
+import * as Pagination from './pagination';
+import { AbstractPage, type OffsetPaginationParams, OffsetPaginationResponse } from './pagination';
 import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
@@ -25,10 +27,12 @@ import {
   GetConnectionResponse,
   ListConnectionConfigsParams,
   ListConnectionConfigsResponse,
+  ListConnectionConfigsResponsesOffsetPagination,
   ListConnectionsParams,
   ListConnectionsResponse,
   ListEventsParams,
   ListEventsResponse,
+  ListEventsResponsesOffsetPagination,
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -267,8 +271,15 @@ export class Openint {
   listConnectionConfigs(
     query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.ListConnectionConfigsResponse> {
-    return this.get('/connector-config', { query, ...options });
+  ): Pagination.PagePromise<
+    ListConnectionConfigsResponsesOffsetPagination,
+    TopLevelAPI.ListConnectionConfigsResponse
+  > {
+    return this.getAPIList(
+      '/connector-config',
+      Pagination.OffsetPagination<TopLevelAPI.ListConnectionConfigsResponse>,
+      { query, ...options },
+    );
   }
 
   /**
@@ -288,8 +299,11 @@ export class Openint {
   listEvents(
     query: TopLevelAPI.ListEventsParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.ListEventsResponse> {
-    return this.get('/event', { query, ...options });
+  ): Pagination.PagePromise<ListEventsResponsesOffsetPagination, TopLevelAPI.ListEventsResponse> {
+    return this.getAPIList('/event', Pagination.OffsetPagination<TopLevelAPI.ListEventsResponse>, {
+      query,
+      ...options,
+    });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -593,6 +607,25 @@ export class Openint {
     return { response, options, controller, requestLogID, retryOfRequestLogID, startTime };
   }
 
+  getAPIList<Item, PageClass extends Pagination.AbstractPage<Item> = Pagination.AbstractPage<Item>>(
+    path: string,
+    Page: new (...args: any[]) => PageClass,
+    opts?: RequestOptions,
+  ): Pagination.PagePromise<PageClass, Item> {
+    return this.requestAPIList(Page, { method: 'get', path, ...opts });
+  }
+
+  requestAPIList<
+    Item = unknown,
+    PageClass extends Pagination.AbstractPage<Item> = Pagination.AbstractPage<Item>,
+  >(
+    Page: new (...args: ConstructorParameters<typeof Pagination.AbstractPage>) => PageClass,
+    options: FinalRequestOptions,
+  ): Pagination.PagePromise<PageClass, Item> {
+    const request = this.makeRequest(options, null, undefined);
+    return new Pagination.PagePromise<PageClass, Item>(this as any as Openint, request, Page);
+  }
+
   async fetchWithTimeout(
     url: RequestInfo,
     init: RequestInit | undefined,
@@ -828,6 +861,12 @@ export class Openint {
 export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 
+  export import OffsetPagination = Pagination.OffsetPagination;
+  export {
+    type OffsetPaginationParams as OffsetPaginationParams,
+    type OffsetPaginationResponse as OffsetPaginationResponse,
+  };
+
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
@@ -836,6 +875,8 @@ export declare namespace Openint {
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
+    type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
+    type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
