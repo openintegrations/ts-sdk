@@ -5,6 +5,7 @@ export { Openint as default } from './client';
 export { type Uploadable, toFile } from './uploads';
 export { APIPromise } from './api-promise';
 export { Openint, type ClientOptions } from './client';
+export { PagePromise } from './pagination';
 export {
   OpenintError,
   APIError,
