@@ -27,9 +27,8 @@ const client = new Openint({
 });
 
 async function main() {
-  const response = await client.getConnection();
-
-  console.log(response.items);
+  const page = await client.listConnections();
+  const listConnectionsResponse = page.items[0];
 }
 
 main();
@@ -48,7 +47,7 @@ const client = new Openint({
 });
 
 async function main() {
-  const response: Openint.GetConnectionResponse = await client.getConnection();
+  const [listConnectionsResponse]: [Openint.ListConnectionsResponse] = await client.listConnections();
 }
 
 main();
@@ -65,7 +64,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const response = await client.getConnection().catch(async (err) => {
+  const page = await client.listConnections().catch(async (err) => {
     if (err instanceof Openint.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +107,7 @@ const client = new Openint({
 });
 
 // Or, configure per-request:
-await client.getConnection({
+await client.listConnections({
   maxRetries: 5,
 });
 ```
@@ -125,7 +124,7 @@ const client = new Openint({
 });
 
 // Override per-request:
-await client.getConnection({
+await client.listConnections({
   timeout: 5 * 1000,
 });
 ```
@@ -148,13 +147,15 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Openint();
 
-const response = await client.getConnection().asResponse();
+const response = await client.listConnections().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.getConnection().withResponse();
+const { data: page, response: raw } = await client.listConnections().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.items);
+for await (const listConnectionsResponse of page) {
+  console.log(listConnectionsResponse);
+}
 ```
 
 ### Logging
