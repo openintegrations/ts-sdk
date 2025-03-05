@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2025-03-05)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Features
+
+* **api:** manual updates ([#63](https://github.com/openintegrations/ts-sdk/issues/63)) ([b01f4dc](https://github.com/openintegrations/ts-sdk/commit/b01f4dcb4f5cfa180f0589d5a450a637f10d6b01))
+
 ## 0.1.0-alpha.10 (2025-03-05)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
