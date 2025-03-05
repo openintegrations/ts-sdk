@@ -22,9 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Openint from '@openint/sdk';
 
-const client = new Openint({
-  apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
-});
+const client = new Openint();
 
 async function main() {
   const page = await client.listConnections();
@@ -42,9 +40,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Openint from '@openint/sdk';
 
-const client = new Openint({
-  apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
-});
+const client = new Openint();
 
 async function main() {
   const [listConnectionsResponse]: [Openint.ListConnectionsResponse] = await client.listConnections();
