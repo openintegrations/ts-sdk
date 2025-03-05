@@ -40,8 +40,8 @@ describe('top level methods', () => {
       client.getConnection(
         {
           connector_config_id: 'connector_config_id',
-          connector_name: 'connector_name',
-          customer_id: 'customer_id',
+          connector_name: 'aircall',
+          customer_id: 'x',
           expand: ['connector'],
           include_secrets: 'none',
           limit: 1,
@@ -69,7 +69,7 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectionConfigs(
-        { connector_name: 'connector_name', expand: ['connector'], limit: 1, offset: 0 },
+        { connector_name: 'aircall', expand: ['connector'], limit: 1, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
