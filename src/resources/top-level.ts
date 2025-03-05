@@ -6797,11 +6797,6 @@ export namespace ListEventsResponse {
 export interface CreateMagicLinkParams {
   customer_id: string;
 
-  /**
-   * The email address of the customer
-   */
-  email: string;
-
   connection_id?: string | null;
 
   /**
@@ -6862,6 +6857,11 @@ export interface CreateMagicLinkParams {
     | 'zohodesk'
     | 'googledrive'
     | null;
+
+  /**
+   * The email address of the customer
+   */
+  email?: string;
 
   /**
    * Where to send user to after connect / if they press back button
