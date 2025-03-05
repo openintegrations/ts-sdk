@@ -2,10 +2,7 @@
 
 import Openint from '@openint/sdk';
 
-const client = new Openint({
-  apiKey: 'My API Key',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Openint({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('top level methods', () => {
   // skipped: tests are disabled for the time being

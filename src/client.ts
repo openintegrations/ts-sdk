@@ -37,7 +37,7 @@ import {
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
-import { HeadersLike, NullableHeaders, buildHeaders, isEmptyHeaders } from './internal/headers';
+import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
@@ -257,7 +257,7 @@ export class Openint {
   }
 
   /**
-   * Get details of a specific connection
+   * Get details of a specific connection, including credentials
    */
   getConnection(
     id: string,
@@ -335,27 +335,19 @@ export class Openint {
   }
 
   protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
-    const organizationAuth = this.organizationAuth(opts);
-    const customerAuth = this.customerAuth(opts);
-
-    if (organizationAuth != null && !isEmptyHeaders(organizationAuth)) {
-      return organizationAuth;
-    }
-
-    if (customerAuth != null && !isEmptyHeaders(customerAuth)) {
-      return customerAuth;
-    }
+    const apiKeyAuth = this.apiKeyAuth(opts);
+    const customerTokenAuth = this.customerTokenAuth(opts);
     return undefined;
   }
 
-  protected organizationAuth(opts: FinalRequestOptions): Headers | undefined {
+  protected apiKeyAuth(opts: FinalRequestOptions): Headers | undefined {
     if (this.apiKey == null) {
       return undefined;
     }
     return new Headers({ authorization: this.apiKey });
   }
 
-  protected customerAuth(opts: FinalRequestOptions): Headers | undefined {
+  protected customerTokenAuth(opts: FinalRequestOptions): Headers | undefined {
     if (this.customerToken == null) {
       return undefined;
     }
