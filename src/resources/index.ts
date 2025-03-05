@@ -2,10 +2,14 @@
 
 export {
   type CheckConnectionResponse,
+  type CreateMagicLinkResponse,
+  type CreateTokenResponse,
   type GetConnectionResponse,
   type ListConnectionConfigsResponse,
   type ListConnectionsResponse,
   type ListEventsResponse,
+  type CreateMagicLinkParams,
+  type CreateTokenParams,
   type GetConnectionParams,
   type ListConnectionConfigsParams,
   type ListConnectionsParams,

@@ -17,6 +17,10 @@ import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckConnectionResponse,
+  CreateMagicLinkParams,
+  CreateMagicLinkResponse,
+  CreateTokenParams,
+  CreateTokenResponse,
   GetConnectionParams,
   GetConnectionResponse,
   ListConnectionConfigsParams,
@@ -225,6 +229,26 @@ export class Openint {
    */
   checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
     return this.post(path`/connection/${id}/check`, options);
+  }
+
+  /**
+   * Create a magic link for connecting integrations
+   */
+  createMagicLink(
+    body: TopLevelAPI.CreateMagicLinkParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateMagicLinkResponse> {
+    return this.post('/connect/magic-link', { body, ...options });
+  }
+
+  /**
+   * Create an authentication token for a customer
+   */
+  createToken(
+    body: TopLevelAPI.CreateTokenParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateTokenResponse> {
+    return this.post('/connect/token', { body, ...options });
   }
 
   /**
@@ -778,10 +802,14 @@ export declare namespace Openint {
 
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
+    type CreateMagicLinkResponse as CreateMagicLinkResponse,
+    type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
+    type CreateMagicLinkParams as CreateMagicLinkParams,
+    type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
