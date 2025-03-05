@@ -22,6 +22,49 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('createMagicLink: only required params', async () => {
+    const responsePromise = client.createMagicLink({ customer_id: 'x', email: 'dev@stainless.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('createMagicLink: required and optional params', async () => {
+    const response = await client.createMagicLink({
+      customer_id: 'x',
+      email: 'dev@stainless.com',
+      connection_id: 'connection_id',
+      connector_names: 'aircall',
+      redirect_url: 'redirect_url',
+      theme: 'light',
+      validity_in_seconds: 0,
+      view: 'manage',
+    });
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('createToken: only required params', async () => {
+    const responsePromise = client.createToken({ customer_id: 'x' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('createToken: required and optional params', async () => {
+    const response = await client.createToken({ customer_id: 'x', validity_in_seconds: 1 });
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('getConnection', async () => {
     const responsePromise = client.getConnection();
     const rawResponse = await responsePromise.asResponse();
