@@ -32,7 +32,7 @@ import {
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
-import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
+import { HeadersLike, NullableHeaders, buildHeaders, isEmptyHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
@@ -297,7 +297,51 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    return;
+    if (this.apiKey && values.get('authorization')) {
+      return;
+    }
+    if (nulls.has('authorization')) {
+      return;
+    }
+
+    if (this.customerToken && values.get('authorization')) {
+      return;
+    }
+    if (nulls.has('authorization')) {
+      return;
+    }
+
+    throw new Error(
+      'Could not resolve authentication method. Expected either apiKey or customerToken to be set. Or for one of the "authorization" or "Authorization" headers to be explicitly omitted',
+    );
+  }
+
+  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
+    const organizationAuth = this.organizationAuth(opts);
+    const customerAuth = this.customerAuth(opts);
+
+    if (organizationAuth != null && !isEmptyHeaders(organizationAuth)) {
+      return organizationAuth;
+    }
+
+    if (customerAuth != null && !isEmptyHeaders(customerAuth)) {
+      return customerAuth;
+    }
+    return undefined;
+  }
+
+  protected organizationAuth(opts: FinalRequestOptions): Headers | undefined {
+    if (this.apiKey == null) {
+      return undefined;
+    }
+    return new Headers({ authorization: this.apiKey });
+  }
+
+  protected customerAuth(opts: FinalRequestOptions): Headers | undefined {
+    if (this.customerToken == null) {
+      return undefined;
+    }
+    return new Headers({ Authorization: `Bearer ${this.customerToken}` });
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {
@@ -714,6 +758,7 @@ export class Openint {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(options.timeout) } : {}),
         ...getPlatformHeaders(),
       },
+      this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
