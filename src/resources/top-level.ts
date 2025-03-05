@@ -1,5 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { OffsetPagination, type OffsetPaginationParams } from '../pagination';
+
+export type ListConnectionConfigsResponsesOffsetPagination = OffsetPagination<ListConnectionConfigsResponse>;
+
+export type ListEventsResponsesOffsetPagination = OffsetPagination<ListEventsResponse>;
+
 export interface CheckConnectionResponse {
   id: string;
 
@@ -2632,71 +2638,62 @@ export namespace GetConnectionResponse {
   }
 }
 
-export interface ListConnectionConfigsResponse {
-  items: Array<
-    | ListConnectionConfigsResponse.ConnectorsAircallConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsAirtableConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsApolloConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsBeancountConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsDebugConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsFsConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsGoogleConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsGreenhouseConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsHeronConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsHubspotConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsIntercomConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsJiraConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsKustomerConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsLeverConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsLinearConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsLunchmoneyConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsMongoDBConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsPipedriveConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsPlaidConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsQboConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsRevertConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsSpreadsheetConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsWebhookConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig
-    | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig
-  >;
-
-  limit: number;
-
-  offset: number;
-
-  total: number;
-}
+export type ListConnectionConfigsResponse =
+  | ListConnectionConfigsResponse.ConnectorsAircallConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsAirtableConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsApolloConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsBeancountConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsDebugConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsFsConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGoogleConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGreenhouseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsHeronConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsHubspotConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsIntercomConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsJiraConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsKustomerConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLeverConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLinearConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLunchmoneyConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMongoDBConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsPipedriveConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsPlaidConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsQboConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsRevertConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSpreadsheetConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsWebhookConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig;
 
 export namespace ListConnectionConfigsResponse {
   export interface ConnectorsAircallConnectorConfig {
@@ -6763,35 +6760,23 @@ export namespace ListConnectionsResponse {
 }
 
 export interface ListEventsResponse {
-  items: Array<ListEventsResponse.Item>;
+  id: string;
 
-  limit: number;
+  customer_id: string | null;
 
-  offset: number;
+  data: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
-  total: number;
-}
+  name: string;
 
-export namespace ListEventsResponse {
-  export interface Item {
-    id: string;
+  org_id: string | null;
 
-    customer_id: string | null;
+  timestamp: string;
 
-    data: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+  user: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
-    name: string;
+  user_id: string | null;
 
-    org_id: string | null;
-
-    timestamp: string;
-
-    user: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-    user_id: string | null;
-
-    v: string | null;
-  }
+  v: string | null;
 }
 
 export interface CreateMagicLinkParams {
@@ -6972,7 +6957,7 @@ export interface GetConnectionParams {
   offset?: number;
 }
 
-export interface ListConnectionConfigsParams {
+export interface ListConnectionConfigsParams extends OffsetPaginationParams {
   /**
    * The name of the connector
    */
@@ -7032,10 +7017,6 @@ export interface ListConnectionConfigsParams {
     | 'googledrive';
 
   expand?: Array<'connector'>;
-
-  limit?: number;
-
-  offset?: number;
 }
 
 export interface ListConnectionsParams {
@@ -7053,11 +7034,7 @@ export interface ListConnectionsParams {
   refresh_policy?: 'none' | 'force' | 'auto';
 }
 
-export interface ListEventsParams {
-  limit?: number;
-
-  offset?: number;
-}
+export interface ListEventsParams extends OffsetPaginationParams {}
 
 export declare namespace TopLevel {
   export {
@@ -7068,6 +7045,8 @@ export declare namespace TopLevel {
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListEventsResponse as ListEventsResponse,
+    type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
+    type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
