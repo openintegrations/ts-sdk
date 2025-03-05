@@ -25,14 +25,6 @@ export interface CheckConnectionResponse {
   errorMessage?: string;
 }
 
-export interface CreateMagicLinkResponse {
-  url: string;
-}
-
-export interface CreateTokenResponse {
-  token: string;
-}
-
 export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorsAircallConnectionSettings
   | GetConnectionResponse.ConnectorsAirtableConnectionSettings
@@ -41,12 +33,10 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorsBrexConnectionSettings
   | GetConnectionResponse.ConnectorsCodaConnectionSettings
   | GetConnectionResponse.ConnectorsConfluenceConnectionSettings
-  | GetConnectionResponse.ConnectorsDebugConnectionSettings
   | GetConnectionResponse.ConnectorsDiscordConnectionSettings
   | GetConnectionResponse.ConnectorsFinchConnectionSettings
   | GetConnectionResponse.ConnectorsFirebaseConnectionSettings
   | GetConnectionResponse.ConnectorsForeceiptConnectionSettings
-  | GetConnectionResponse.ConnectorsFsConnectionSettings
   | GetConnectionResponse.ConnectorsGitHubConnectionSettings
   | GetConnectionResponse.ConnectorsGongConnectionSettings
   | GetConnectionResponse.ConnectorsGoogleConnectionSettings
@@ -62,7 +52,6 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorsMercuryConnectionSettings
   | GetConnectionResponse.ConnectorsMergeConnectionSettings
   | GetConnectionResponse.ConnectorsMicrosoftConnectionSettings
-  | GetConnectionResponse.ConnectorsMongoDBConnectionSettings
   | GetConnectionResponse.ConnectorsMootaConnectionSettings
   | GetConnectionResponse.ConnectorsOnebrickConnectionSettings
   | GetConnectionResponse.ConnectorsOutreachConnectionSettings
@@ -71,19 +60,16 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorsPostgresConnectionSettings
   | GetConnectionResponse.ConnectorsQboConnectionSettings
   | GetConnectionResponse.ConnectorsRampConnectionSettings
-  | GetConnectionResponse.ConnectorsRevertConnectionSettings
   | GetConnectionResponse.ConnectorsSalesforceConnectionSettings
   | GetConnectionResponse.ConnectorsSalesloftConnectionSettings
   | GetConnectionResponse.ConnectorsSaltedgeConnectionSettings
   | GetConnectionResponse.ConnectorsSlackConnectionSettings
   | GetConnectionResponse.ConnectorsSplitwiseConnectionSettings
-  | GetConnectionResponse.ConnectorsSpreadsheetConnectionSettings
   | GetConnectionResponse.ConnectorsStripeConnectionSettings
   | GetConnectionResponse.ConnectorsTellerConnectionSettings
   | GetConnectionResponse.ConnectorsTogglConnectionSettings
   | GetConnectionResponse.ConnectorsTwentyConnectionSettings
   | GetConnectionResponse.ConnectorsVenmoConnectionSettings
-  | GetConnectionResponse.ConnectorsWebhookConnectionSettings
   | GetConnectionResponse.ConnectorsWiseConnectionSettings
   | GetConnectionResponse.ConnectorsXeroConnectionSettings
   | GetConnectionResponse.ConnectorsYodleeConnectionSettings
@@ -347,20 +333,6 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsDebugConnectionSettings {
-    connector_name: 'debug';
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    settings?: unknown;
-
-    updated_at?: string;
-  }
-
   export interface ConnectorsDiscordConnectionSettings {
     connector_name: 'discord';
 
@@ -573,26 +545,6 @@ export namespace GetConnectionResponse {
       credentials?: unknown;
 
       options?: unknown;
-    }
-  }
-
-  export interface ConnectorsFsConnectionSettings {
-    connector_name: 'fs';
-
-    settings: ConnectorsFsConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsFsConnectionSettings {
-    export interface Settings {
-      basePath: string;
     }
   }
 
@@ -1476,28 +1428,6 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsMongoDBConnectionSettings {
-    connector_name: 'mongodb';
-
-    settings: ConnectorsMongoDBConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsMongoDBConnectionSettings {
-    export interface Settings {
-      databaseName: string;
-
-      databaseUrl: string;
-    }
-  }
-
   export interface ConnectorsMootaConnectionSettings {
     connector_name: 'moota';
 
@@ -1848,26 +1778,6 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsRevertConnectionSettings {
-    connector_name: 'revert';
-
-    settings: ConnectorsRevertConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsRevertConnectionSettings {
-    export interface Settings {
-      tenant_id: string;
-    }
-  }
-
   export interface ConnectorsSalesforceConnectionSettings {
     connector_name: 'salesforce';
 
@@ -2211,41 +2121,6 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsSpreadsheetConnectionSettings {
-    connector_name: 'spreadsheet';
-
-    settings: ConnectorsSpreadsheetConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSpreadsheetConnectionSettings {
-    export interface Settings {
-      accountExternalId: string;
-
-      preset:
-        | 'ramp'
-        | 'apple-card'
-        | 'alliant-credit-union'
-        | 'bbva-mexico'
-        | 'brex-cash'
-        | 'brex'
-        | 'capitalone-bank'
-        | 'capitalone'
-        | 'coinbase'
-        | 'coinkeeper'
-        | 'etrade'
-        | 'first-republic'
-        | 'wise';
-    }
-  }
-
   export interface ConnectorsStripeConnectionSettings {
     connector_name: 'stripe';
 
@@ -2349,26 +2224,6 @@ export namespace GetConnectionResponse {
       credentials?: unknown;
 
       me?: unknown;
-    }
-  }
-
-  export interface ConnectorsWebhookConnectionSettings {
-    connector_name: 'webhook';
-
-    settings: ConnectorsWebhookConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsWebhookConnectionSettings {
-    export interface Settings {
-      destinationUrl: string;
     }
   }
 
@@ -2639,12 +2494,10 @@ export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsDebugConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsFsConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsGoogleConnectorConfig
@@ -2660,7 +2513,6 @@ export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsMongoDBConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
@@ -2669,19 +2521,16 @@ export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsQboConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsRevertConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSpreadsheetConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsWebhookConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
@@ -2819,20 +2668,6 @@ export namespace ListConnectionConfigsResponse {
     }
   }
 
-  export interface ConnectorsDebugConnectorConfig {
-    connector_name: 'debug';
-
-    id?: string;
-
-    config?: unknown;
-
-    created_at?: string;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
   export interface ConnectorsDiscordConnectorConfig {
     config: ConnectorsDiscordConnectorConfig.Config;
 
@@ -2916,20 +2751,6 @@ export namespace ListConnectionConfigsResponse {
     config: null;
 
     connector_name: 'foreceipt';
-
-    id?: string;
-
-    created_at?: string;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorsFsConnectorConfig {
-    config: null;
-
-    connector_name: 'fs';
 
     id?: string;
 
@@ -3430,20 +3251,6 @@ export namespace ListConnectionConfigsResponse {
     }
   }
 
-  export interface ConnectorsMongoDBConnectorConfig {
-    config: null;
-
-    connector_name: 'mongodb';
-
-    id?: string;
-
-    created_at?: string;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
   export interface ConnectorsMootaConnectorConfig {
     config: ConnectorsMootaConnectorConfig.Config;
 
@@ -3705,28 +3512,6 @@ export namespace ListConnectionConfigsResponse {
     }
   }
 
-  export interface ConnectorsRevertConnectorConfig {
-    config: ConnectorsRevertConnectorConfig.Config;
-
-    connector_name: 'revert';
-
-    id?: string;
-
-    created_at?: string;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsRevertConnectorConfig {
-    export interface Config {
-      api_token: string;
-
-      api_version?: string;
-    }
-  }
-
   export interface ConnectorsSalesforceConnectorConfig {
     config: ConnectorsSalesforceConnectorConfig.Config;
 
@@ -3855,42 +3640,6 @@ export namespace ListConnectionConfigsResponse {
     updated_at?: string;
   }
 
-  export interface ConnectorsSpreadsheetConnectorConfig {
-    connector_name: 'spreadsheet';
-
-    id?: string;
-
-    config?: ConnectorsSpreadsheetConnectorConfig.Config | null;
-
-    created_at?: string;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSpreadsheetConnectorConfig {
-    export interface Config {
-      enabledPresets?: Array<
-        | 'ramp'
-        | 'apple-card'
-        | 'alliant-credit-union'
-        | 'bbva-mexico'
-        | 'brex-cash'
-        | 'brex'
-        | 'capitalone-bank'
-        | 'capitalone'
-        | 'coinbase'
-        | 'coinkeeper'
-        | 'etrade'
-        | 'first-republic'
-        | 'wise'
-      > | null;
-
-      sourceProviders?: Array<unknown> | null;
-    }
-  }
-
   export interface ConnectorsStripeConnectorConfig {
     config: ConnectorsStripeConnectorConfig.Config;
 
@@ -4001,20 +3750,6 @@ export namespace ListConnectionConfigsResponse {
         url: string;
       }
     }
-  }
-
-  export interface ConnectorsWebhookConnectorConfig {
-    config: null;
-
-    connector_name: 'webhook';
-
-    id?: string;
-
-    created_at?: string;
-
-    org_id?: string;
-
-    updated_at?: string;
   }
 
   export interface ConnectorsWiseConnectorConfig {
@@ -4162,12 +3897,10 @@ export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorsBrexConnectionSettings
   | ListConnectionsResponse.ConnectorsCodaConnectionSettings
   | ListConnectionsResponse.ConnectorsConfluenceConnectionSettings
-  | ListConnectionsResponse.ConnectorsDebugConnectionSettings
   | ListConnectionsResponse.ConnectorsDiscordConnectionSettings
   | ListConnectionsResponse.ConnectorsFinchConnectionSettings
   | ListConnectionsResponse.ConnectorsFirebaseConnectionSettings
   | ListConnectionsResponse.ConnectorsForeceiptConnectionSettings
-  | ListConnectionsResponse.ConnectorsFsConnectionSettings
   | ListConnectionsResponse.ConnectorsGitHubConnectionSettings
   | ListConnectionsResponse.ConnectorsGongConnectionSettings
   | ListConnectionsResponse.ConnectorsGoogleConnectionSettings
@@ -4183,7 +3916,6 @@ export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorsMercuryConnectionSettings
   | ListConnectionsResponse.ConnectorsMergeConnectionSettings
   | ListConnectionsResponse.ConnectorsMicrosoftConnectionSettings
-  | ListConnectionsResponse.ConnectorsMongoDBConnectionSettings
   | ListConnectionsResponse.ConnectorsMootaConnectionSettings
   | ListConnectionsResponse.ConnectorsOnebrickConnectionSettings
   | ListConnectionsResponse.ConnectorsOutreachConnectionSettings
@@ -4192,19 +3924,16 @@ export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorsPostgresConnectionSettings
   | ListConnectionsResponse.ConnectorsQboConnectionSettings
   | ListConnectionsResponse.ConnectorsRampConnectionSettings
-  | ListConnectionsResponse.ConnectorsRevertConnectionSettings
   | ListConnectionsResponse.ConnectorsSalesforceConnectionSettings
   | ListConnectionsResponse.ConnectorsSalesloftConnectionSettings
   | ListConnectionsResponse.ConnectorsSaltedgeConnectionSettings
   | ListConnectionsResponse.ConnectorsSlackConnectionSettings
   | ListConnectionsResponse.ConnectorsSplitwiseConnectionSettings
-  | ListConnectionsResponse.ConnectorsSpreadsheetConnectionSettings
   | ListConnectionsResponse.ConnectorsStripeConnectionSettings
   | ListConnectionsResponse.ConnectorsTellerConnectionSettings
   | ListConnectionsResponse.ConnectorsTogglConnectionSettings
   | ListConnectionsResponse.ConnectorsTwentyConnectionSettings
   | ListConnectionsResponse.ConnectorsVenmoConnectionSettings
-  | ListConnectionsResponse.ConnectorsWebhookConnectionSettings
   | ListConnectionsResponse.ConnectorsWiseConnectionSettings
   | ListConnectionsResponse.ConnectorsXeroConnectionSettings
   | ListConnectionsResponse.ConnectorsYodleeConnectionSettings
@@ -4468,20 +4197,6 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsDebugConnectionSettings {
-    connector_name: 'debug';
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    settings?: unknown;
-
-    updated_at?: string;
-  }
-
   export interface ConnectorsDiscordConnectionSettings {
     connector_name: 'discord';
 
@@ -4694,26 +4409,6 @@ export namespace ListConnectionsResponse {
       credentials?: unknown;
 
       options?: unknown;
-    }
-  }
-
-  export interface ConnectorsFsConnectionSettings {
-    connector_name: 'fs';
-
-    settings: ConnectorsFsConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsFsConnectionSettings {
-    export interface Settings {
-      basePath: string;
     }
   }
 
@@ -5597,28 +5292,6 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsMongoDBConnectionSettings {
-    connector_name: 'mongodb';
-
-    settings: ConnectorsMongoDBConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsMongoDBConnectionSettings {
-    export interface Settings {
-      databaseName: string;
-
-      databaseUrl: string;
-    }
-  }
-
   export interface ConnectorsMootaConnectionSettings {
     connector_name: 'moota';
 
@@ -5969,26 +5642,6 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsRevertConnectionSettings {
-    connector_name: 'revert';
-
-    settings: ConnectorsRevertConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsRevertConnectionSettings {
-    export interface Settings {
-      tenant_id: string;
-    }
-  }
-
   export interface ConnectorsSalesforceConnectionSettings {
     connector_name: 'salesforce';
 
@@ -6332,41 +5985,6 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsSpreadsheetConnectionSettings {
-    connector_name: 'spreadsheet';
-
-    settings: ConnectorsSpreadsheetConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSpreadsheetConnectionSettings {
-    export interface Settings {
-      accountExternalId: string;
-
-      preset:
-        | 'ramp'
-        | 'apple-card'
-        | 'alliant-credit-union'
-        | 'bbva-mexico'
-        | 'brex-cash'
-        | 'brex'
-        | 'capitalone-bank'
-        | 'capitalone'
-        | 'coinbase'
-        | 'coinkeeper'
-        | 'etrade'
-        | 'first-republic'
-        | 'wise';
-    }
-  }
-
   export interface ConnectorsStripeConnectionSettings {
     connector_name: 'stripe';
 
@@ -6470,26 +6088,6 @@ export namespace ListConnectionsResponse {
       credentials?: unknown;
 
       me?: unknown;
-    }
-  }
-
-  export interface ConnectorsWebhookConnectionSettings {
-    connector_name: 'webhook';
-
-    settings: ConnectorsWebhookConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string;
-
-    created_at?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsWebhookConnectionSettings {
-    export interface Settings {
-      destinationUrl: string;
     }
   }
 
@@ -6772,109 +6370,6 @@ export interface ListEventsResponse {
   v: string | null;
 }
 
-export interface CreateMagicLinkParams {
-  customer_id: string;
-
-  connection_id?: string | null;
-
-  /**
-   * Filter integrations by comma separated connector names
-   */
-  connector_names?:
-    | 'aircall'
-    | 'airtable'
-    | 'apollo'
-    | 'beancount'
-    | 'brex'
-    | 'coda'
-    | 'confluence'
-    | 'debug'
-    | 'discord'
-    | 'finch'
-    | 'firebase'
-    | 'foreceipt'
-    | 'fs'
-    | 'github'
-    | 'gong'
-    | 'google'
-    | 'greenhouse'
-    | 'heron'
-    | 'hubspot'
-    | 'intercom'
-    | 'jira'
-    | 'kustomer'
-    | 'lever'
-    | 'linear'
-    | 'lunchmoney'
-    | 'merge'
-    | 'microsoft'
-    | 'mongodb'
-    | 'moota'
-    | 'onebrick'
-    | 'outreach'
-    | 'pipedrive'
-    | 'plaid'
-    | 'postgres'
-    | 'qbo'
-    | 'ramp'
-    | 'revert'
-    | 'salesforce'
-    | 'salesloft'
-    | 'saltedge'
-    | 'slack'
-    | 'splitwise'
-    | 'spreadsheet'
-    | 'stripe'
-    | 'teller'
-    | 'toggl'
-    | 'twenty'
-    | 'webhook'
-    | 'wise'
-    | 'xero'
-    | 'yodlee'
-    | 'zohodesk'
-    | 'googledrive'
-    | null;
-
-  /**
-   * The email address of the customer
-   */
-  email?: string;
-
-  /**
-   * Where to send user to after connect / if they press back button
-   */
-  redirect_url?: string | null;
-
-  /**
-   * Magic Link display theme
-   */
-  theme?: 'light' | 'dark' | null;
-
-  /**
-   * How long the magic link will be valid for (in seconds) before it expires
-   */
-  validity_in_seconds?: number;
-
-  /**
-   * Magic Link tab view
-   */
-  view?: 'manage' | 'manage-deeplink' | 'add' | 'add-deeplink' | null;
-}
-
-export interface CreateTokenParams {
-  /**
-   * Anything that uniquely identifies the customer that you will be sending the
-   * token to
-   */
-  customer_id: string;
-
-  /**
-   * How long the token will be valid for (in seconds) before it expires
-   */
-  validity_in_seconds?: number;
-}
-
 export interface GetConnectionParams {
   expand?: Array<'connector'>;
 
@@ -6902,12 +6397,10 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'brex'
     | 'coda'
     | 'confluence'
-    | 'debug'
     | 'discord'
     | 'finch'
     | 'firebase'
     | 'foreceipt'
-    | 'fs'
     | 'github'
     | 'gong'
     | 'google'
@@ -6922,27 +6415,22 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'lunchmoney'
     | 'merge'
     | 'microsoft'
-    | 'mongodb'
     | 'moota'
     | 'onebrick'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
-    | 'postgres'
     | 'qbo'
     | 'ramp'
-    | 'revert'
     | 'salesforce'
     | 'salesloft'
     | 'saltedge'
     | 'slack'
     | 'splitwise'
-    | 'spreadsheet'
     | 'stripe'
     | 'teller'
     | 'toggl'
     | 'twenty'
-    | 'webhook'
     | 'wise'
     | 'xero'
     | 'yodlee'
@@ -6968,12 +6456,10 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'brex'
     | 'coda'
     | 'confluence'
-    | 'debug'
     | 'discord'
     | 'finch'
     | 'firebase'
     | 'foreceipt'
-    | 'fs'
     | 'github'
     | 'gong'
     | 'google'
@@ -6988,27 +6474,22 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'lunchmoney'
     | 'merge'
     | 'microsoft'
-    | 'mongodb'
     | 'moota'
     | 'onebrick'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
-    | 'postgres'
     | 'qbo'
     | 'ramp'
-    | 'revert'
     | 'salesforce'
     | 'salesloft'
     | 'saltedge'
     | 'slack'
     | 'splitwise'
-    | 'spreadsheet'
     | 'stripe'
     | 'teller'
     | 'toggl'
     | 'twenty'
-    | 'webhook'
     | 'wise'
     | 'xero'
     | 'yodlee'
@@ -7034,8 +6515,6 @@ export interface ListEventsParams extends OffsetPaginationParams {
 export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
-    type CreateMagicLinkResponse as CreateMagicLinkResponse,
-    type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
@@ -7043,8 +6522,6 @@ export declare namespace TopLevel {
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
-    type CreateMagicLinkParams as CreateMagicLinkParams,
-    type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
