@@ -15,5 +15,6 @@ export {
   type ListConnectionsParams,
   type ListEventsParams,
   type ListConnectionConfigsResponsesOffsetPagination,
+  type ListConnectionsResponsesOffsetPagination,
   type ListEventsResponsesOffsetPagination,
 } from './top-level';

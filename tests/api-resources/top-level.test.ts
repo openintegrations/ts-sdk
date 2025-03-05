@@ -65,7 +65,7 @@ describe('top level methods', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('getConnection', async () => {
-    const responsePromise = client.getConnection();
+    const responsePromise = client.getConnection('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -80,15 +80,8 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.getConnection(
-        {
-          connector_config_id: 'connector_config_id',
-          connector_name: 'aircall',
-          customer_id: 'x',
-          expand: ['connector'],
-          include_secrets: 'none',
-          limit: 1,
-          offset: 0,
-        },
+        'id',
+        { expand: ['connector'], include_secrets: 'none', refresh_policy: 'none' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -119,7 +112,7 @@ describe('top level methods', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('listConnections', async () => {
-    const responsePromise = client.listConnections('id');
+    const responsePromise = client.listConnections();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -134,8 +127,15 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnections(
-        'id',
-        { expand: ['connector'], include_secrets: 'none', refresh_policy: 'none' },
+        {
+          connector_config_id: 'connector_config_id',
+          connector_name: 'aircall',
+          customer_id: 'x',
+          expand: ['connector'],
+          include_secrets: 'none',
+          limit: 1,
+          offset: 0,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
