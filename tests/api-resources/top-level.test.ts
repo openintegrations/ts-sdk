@@ -38,7 +38,7 @@ describe('top level methods', () => {
       customer_id: 'x',
       connection_id: 'connection_id',
       connector_names: 'aircall',
-      email: 'dev@stainless.com',
+      email: 'email',
       redirect_url: 'redirect_url',
       theme: 'light',
       validity_in_seconds: 0,
