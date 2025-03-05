@@ -220,10 +220,16 @@ export class Openint {
     this.customerToken = customerToken;
   }
 
+  /**
+   * Verify that a connection is healthy
+   */
   checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
     return this.post(path`/connection/${id}/check`, options);
   }
 
+  /**
+   * List all connections with optional filtering
+   */
   getConnection(
     query: TopLevelAPI.GetConnectionParams | null | undefined = {},
     options?: RequestOptions,
@@ -231,6 +237,9 @@ export class Openint {
     return this.get('/connection', { query, ...options });
   }
 
+  /**
+   * List all connector configurations with optional filtering
+   */
   listConnectionConfigs(
     query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
     options?: RequestOptions,
@@ -238,6 +247,9 @@ export class Openint {
     return this.get('/connector-config', { query, ...options });
   }
 
+  /**
+   * Get details of a specific connection
+   */
   listConnections(
     id: string,
     query: TopLevelAPI.ListConnectionsParams | null | undefined = {},
@@ -246,6 +258,9 @@ export class Openint {
     return this.get(path`/connection/${id}`, { query, ...options });
   }
 
+  /**
+   * List all events for an organization
+   */
   listEvents(
     query: TopLevelAPI.ListEventsParams | null | undefined = {},
     options?: RequestOptions,

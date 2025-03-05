@@ -6789,7 +6789,63 @@ export namespace ListEventsResponse {
 export interface GetConnectionParams {
   connector_config_id?: string;
 
-  connector_name?: string;
+  /**
+   * The name of the connector
+   */
+  connector_name?:
+    | 'aircall'
+    | 'airtable'
+    | 'apollo'
+    | 'beancount'
+    | 'brex'
+    | 'coda'
+    | 'confluence'
+    | 'debug'
+    | 'discord'
+    | 'finch'
+    | 'firebase'
+    | 'foreceipt'
+    | 'fs'
+    | 'github'
+    | 'gong'
+    | 'google'
+    | 'greenhouse'
+    | 'heron'
+    | 'hubspot'
+    | 'intercom'
+    | 'jira'
+    | 'kustomer'
+    | 'lever'
+    | 'linear'
+    | 'lunchmoney'
+    | 'merge'
+    | 'microsoft'
+    | 'mongodb'
+    | 'moota'
+    | 'onebrick'
+    | 'outreach'
+    | 'pipedrive'
+    | 'plaid'
+    | 'postgres'
+    | 'qbo'
+    | 'ramp'
+    | 'revert'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'slack'
+    | 'splitwise'
+    | 'spreadsheet'
+    | 'stripe'
+    | 'teller'
+    | 'toggl'
+    | 'twenty'
+    | 'webhook'
+    | 'wise'
+    | 'xero'
+    | 'yodlee'
+    | 'zohodesk'
+    | 'googledrive';
 
   customer_id?: string;
 
@@ -6806,7 +6862,63 @@ export interface GetConnectionParams {
 }
 
 export interface ListConnectionConfigsParams {
-  connector_name?: string;
+  /**
+   * The name of the connector
+   */
+  connector_name?:
+    | 'aircall'
+    | 'airtable'
+    | 'apollo'
+    | 'beancount'
+    | 'brex'
+    | 'coda'
+    | 'confluence'
+    | 'debug'
+    | 'discord'
+    | 'finch'
+    | 'firebase'
+    | 'foreceipt'
+    | 'fs'
+    | 'github'
+    | 'gong'
+    | 'google'
+    | 'greenhouse'
+    | 'heron'
+    | 'hubspot'
+    | 'intercom'
+    | 'jira'
+    | 'kustomer'
+    | 'lever'
+    | 'linear'
+    | 'lunchmoney'
+    | 'merge'
+    | 'microsoft'
+    | 'mongodb'
+    | 'moota'
+    | 'onebrick'
+    | 'outreach'
+    | 'pipedrive'
+    | 'plaid'
+    | 'postgres'
+    | 'qbo'
+    | 'ramp'
+    | 'revert'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'slack'
+    | 'splitwise'
+    | 'spreadsheet'
+    | 'stripe'
+    | 'teller'
+    | 'toggl'
+    | 'twenty'
+    | 'webhook'
+    | 'wise'
+    | 'xero'
+    | 'yodlee'
+    | 'zohodesk'
+    | 'googledrive';
 
   expand?: Array<'connector'>;
 
