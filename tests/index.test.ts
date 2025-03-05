@@ -302,13 +302,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['OPENINT_BASE_URL'] = ''; // empty
       const client = new Openint({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://localhost:3000');
+      expect(client.baseURL).toEqual('https://api.openint.dev/v1');
     });
 
     test('blank env variable', () => {
       process.env['OPENINT_BASE_URL'] = '  '; // blank
       const client = new Openint({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://localhost:3000');
+      expect(client.baseURL).toEqual('https://api.openint.dev/v1');
     });
   });
 
