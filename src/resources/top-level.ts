@@ -6,9 +6,10 @@ export type ListConnectionConfigsResponsesOffsetPagination = OffsetPagination<Li
 
 export type ListConnectionsResponsesOffsetPagination = OffsetPagination<ListConnectionsResponse>;
 
-export type ListEventsResponsesOffsetPagination = OffsetPagination<ListEventsResponse>;
-
 export interface CheckConnectionResponse {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
   id: string;
 
   /**
@@ -22,9 +23,29 @@ export interface CheckConnectionResponse {
    */
   error?: 'refresh_failed' | 'unknown_external_error';
 
+  /**
+   * Optional expanded error message
+   */
   errorMessage?: string;
 }
 
+export interface CreateMagicLinkResponse {
+  /**
+   * The Connect magic link url to share with the user.
+   */
+  magic_link_url: string;
+}
+
+export interface CreateTokenResponse {
+  /**
+   * The authentication token to use for API requests
+   */
+  token: string;
+}
+
+/**
+ * The connection details
+ */
 export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorsAircallConnectionSettings
   | GetConnectionResponse.ConnectorsAirtableConnectionSettings
@@ -6350,24 +6371,90 @@ export namespace ListConnectionsResponse {
   }
 }
 
-export interface ListEventsResponse {
-  id: string;
+export interface CreateMagicLinkParams {
+  /**
+   * The specific connection id to load
+   */
+  connection_id?: string;
 
-  customer_id: string | null;
+  /**
+   * Filter integrations by connector names
+   */
+  connector_names?: Array<
+    | 'aircall'
+    | 'airtable'
+    | 'apollo'
+    | 'beancount'
+    | 'brex'
+    | 'coda'
+    | 'confluence'
+    | 'discord'
+    | 'finch'
+    | 'firebase'
+    | 'foreceipt'
+    | 'github'
+    | 'gong'
+    | 'google'
+    | 'greenhouse'
+    | 'heron'
+    | 'hubspot'
+    | 'intercom'
+    | 'jira'
+    | 'kustomer'
+    | 'lever'
+    | 'linear'
+    | 'lunchmoney'
+    | 'merge'
+    | 'microsoft'
+    | 'moota'
+    | 'onebrick'
+    | 'outreach'
+    | 'pipedrive'
+    | 'plaid'
+    | 'qbo'
+    | 'ramp'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'slack'
+    | 'splitwise'
+    | 'stripe'
+    | 'teller'
+    | 'toggl'
+    | 'twenty'
+    | 'wise'
+    | 'xero'
+    | 'yodlee'
+    | 'zohodesk'
+    | 'googledrive'
+  >;
 
-  data: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+  /**
+   * Where to send user to after connect / if they press back button
+   */
+  redirect_url?: string;
 
-  name: string;
+  /**
+   * Magic Link display theme
+   */
+  theme?: 'light' | 'dark';
 
-  org_id: string | null;
+  /**
+   * How long the magic link will be valid for (in seconds) before it expires
+   */
+  validity_in_seconds?: number;
 
-  timestamp: string;
+  /**
+   * Magic Link tab view to load in the connect magic link
+   */
+  view?: 'manage' | 'manage-deeplink' | 'add' | 'add-deeplink';
+}
 
-  user: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-  user_id: string | null;
-
-  v: string | null;
+export interface CreateTokenParams {
+  /**
+   * How long the token will be valid for (in seconds) before it expires
+   */
+  validity_in_seconds?: number;
 }
 
 export interface GetConnectionParams {
@@ -6439,10 +6526,16 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
 
   expand?: Array<'connector'>;
 
+  /**
+   * Limit the number of items returned
+   */
   limit?: number;
 }
 
 export interface ListConnectionsParams extends OffsetPaginationParams {
+  /**
+   * The id of the connector config, starts with `ccfg_`
+   */
   connector_config_id?: string;
 
   /**
@@ -6496,6 +6589,10 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'zohodesk'
     | 'googledrive';
 
+  /**
+   * The id of the customer in your application. Ensure it is unique for that
+   * customer.
+   */
   customer_id?: string;
 
   expand?: Array<'connector'>;
@@ -6505,26 +6602,26 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   include_secrets?: 'none' | 'basic' | 'all';
 
-  limit?: number;
-}
-
-export interface ListEventsParams extends OffsetPaginationParams {
+  /**
+   * Limit the number of items returned
+   */
   limit?: number;
 }
 
 export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
+    type CreateMagicLinkResponse as CreateMagicLinkResponse,
+    type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
-    type ListEventsResponse as ListEventsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
-    type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
+    type CreateMagicLinkParams as CreateMagicLinkParams,
+    type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
-    type ListEventsParams as ListEventsParams,
   };
 }
