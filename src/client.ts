@@ -19,6 +19,10 @@ import * as Uploads from './uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckConnectionResponse,
+  CreateMagicLinkParams,
+  CreateMagicLinkResponse,
+  CreateTokenParams,
+  CreateTokenResponse,
   GetConnectionParams,
   GetConnectionResponse,
   ListConnectionConfigsParams,
@@ -27,13 +31,10 @@ import {
   ListConnectionsParams,
   ListConnectionsResponse,
   ListConnectionsResponsesOffsetPagination,
-  ListEventsParams,
-  ListEventsResponse,
-  ListEventsResponsesOffsetPagination,
 } from './resources/top-level';
 import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
-import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
+import { HeadersLike, NullableHeaders, buildHeaders, isEmptyHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
@@ -233,6 +234,28 @@ export class Openint {
   }
 
   /**
+   * Create a magic link for connecting integrations
+   */
+  createMagicLink(
+    customerID: string,
+    body: TopLevelAPI.CreateMagicLinkParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateMagicLinkResponse> {
+    return this.post(path`/customer/${customerID}/magic-link`, { body, ...options });
+  }
+
+  /**
+   * Create an authentication token for a customer
+   */
+  createToken(
+    customerID: string,
+    body: TopLevelAPI.CreateTokenParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateTokenResponse> {
+    return this.post(path`/customer/${customerID}/token`, { body, ...options });
+  }
+
+  /**
    * Get details of a specific connection, including credentials
    */
   getConnection(
@@ -273,19 +296,6 @@ export class Openint {
     });
   }
 
-  /**
-   * List all events for an organization
-   */
-  listEvents(
-    query: TopLevelAPI.ListEventsParams | null | undefined = {},
-    options?: RequestOptions,
-  ): Pagination.PagePromise<ListEventsResponsesOffsetPagination, TopLevelAPI.ListEventsResponse> {
-    return this.getAPIList('/event', Pagination.OffsetPagination<TopLevelAPI.ListEventsResponse>, {
-      query,
-      ...options,
-    });
-  }
-
   protected defaultQuery(): Record<string, string | undefined> | undefined {
     return this._options.defaultQuery;
   }
@@ -313,6 +323,14 @@ export class Openint {
   protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
     const apiKeyAuth = this.apiKeyAuth(opts);
     const customerTokenAuth = this.customerTokenAuth(opts);
+
+    if (apiKeyAuth != null && !isEmptyHeaders(apiKeyAuth)) {
+      return apiKeyAuth;
+    }
+
+    if (customerTokenAuth != null && !isEmptyHeaders(customerTokenAuth)) {
+      return customerTokenAuth;
+    }
     return undefined;
   }
 
@@ -841,16 +859,17 @@ export declare namespace Openint {
 
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
+    type CreateMagicLinkResponse as CreateMagicLinkResponse,
+    type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
-    type ListEventsResponse as ListEventsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
-    type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
+    type CreateMagicLinkParams as CreateMagicLinkParams,
+    type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
-    type ListEventsParams as ListEventsParams,
   };
 }
