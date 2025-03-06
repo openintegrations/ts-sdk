@@ -324,7 +324,7 @@ export class Openint {
     }
 
     throw new Error(
-      'Could not resolve authentication method. Expected either apiKey or customerToken to be set. Or for one of the "authorization" or "Authorization" headers to be explicitly omitted',
+      'Could not resolve authentication method. Expected either apiKey or customerToken to be set. Or for one of the "Authorization" or "Authorization" headers to be explicitly omitted',
     );
   }
 
@@ -346,7 +346,7 @@ export class Openint {
     if (this.apiKey == null) {
       return undefined;
     }
-    return new Headers({ authorization: this.apiKey });
+    return new Headers({ Authorization: `Bearer ${this.apiKey}` });
   }
 
   protected customerTokenAuth(opts: FinalRequestOptions): Headers | undefined {
