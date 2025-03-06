@@ -2508,7 +2508,7 @@ export namespace GetConnectionResponse {
 }
 
 export interface GetCurrentUserResponse {
-  role: 'customer' | 'org' | 'anon';
+  role: 'customer' | 'org' | 'anon' | 'user';
 }
 
 export interface ListConnectionConfigsResponse {
