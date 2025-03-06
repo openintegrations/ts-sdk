@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-03-06)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Features
+
+* **api:** Updating viewer enum ([#93](https://github.com/openintegrations/ts-sdk/issues/93)) ([6279dba](https://github.com/openintegrations/ts-sdk/commit/6279dbae6e53809abe6fc9287764ec8aca01d812))
+
 ## 0.1.0-alpha.20 (2025-03-06)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
