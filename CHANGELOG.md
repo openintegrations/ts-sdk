@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-03-06)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Features
+
+* **api:** Fixing api key auth ([#90](https://github.com/openintegrations/ts-sdk/issues/90)) ([735948a](https://github.com/openintegrations/ts-sdk/commit/735948aa3431f1a20d12d5f220b604b9828d370e))
+
 ## 0.1.0-alpha.19 (2025-03-06)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
