@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-03-06)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Features
+
+* **docs:** updating documented docs for mintlify ([#81](https://github.com/openintegrations/ts-sdk/issues/81)) ([6e31ed3](https://github.com/openintegrations/ts-sdk/commit/6e31ed3581080820b22ff2739fd02d553bbef7b8))
+
 ## 0.1.0-alpha.16 (2025-03-06)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
