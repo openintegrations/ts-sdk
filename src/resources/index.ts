@@ -2,15 +2,16 @@
 
 export {
   type CheckConnectionResponse,
+  type CreateMagicLinkResponse,
+  type CreateTokenResponse,
   type GetConnectionResponse,
   type ListConnectionConfigsResponse,
   type ListConnectionsResponse,
-  type ListEventsResponse,
+  type CreateMagicLinkParams,
+  type CreateTokenParams,
   type GetConnectionParams,
   type ListConnectionConfigsParams,
   type ListConnectionsParams,
-  type ListEventsParams,
   type ListConnectionConfigsResponsesOffsetPagination,
   type ListConnectionsResponsesOffsetPagination,
-  type ListEventsResponsesOffsetPagination,
 } from './top-level';
