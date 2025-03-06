@@ -5,6 +5,7 @@ export {
   type CreateMagicLinkResponse,
   type CreateTokenResponse,
   type GetConnectionResponse,
+  type GetCurrentUserResponse,
   type ListConnectionConfigsResponse,
   type ListConnectionsResponse,
   type CreateMagicLinkParams,
