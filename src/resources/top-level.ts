@@ -2507,6 +2507,49 @@ export namespace GetConnectionResponse {
   }
 }
 
+export type GetCurrentUserResponse =
+  | GetCurrentUserResponse.Role
+  | GetCurrentUserResponse.UnionMember1
+  | GetCurrentUserResponse.UnionMember2
+  | GetCurrentUserResponse.UnionMember3
+  | GetCurrentUserResponse.Role;
+
+export namespace GetCurrentUserResponse {
+  export interface Role {
+    role: 'anon';
+  }
+
+  export interface UnionMember1 {
+    customerId: string;
+
+    orgId: string;
+
+    role: 'customer';
+  }
+
+  export interface UnionMember2 {
+    role: 'user';
+
+    userId: string;
+
+    extra?: Record<string, unknown>;
+
+    orgId?: string | null;
+  }
+
+  export interface UnionMember3 {
+    orgId: string;
+
+    role: 'org';
+
+    extra?: Record<string, unknown>;
+  }
+
+  export interface Role {
+    role: 'system';
+  }
+}
+
 export interface ListConnectionConfigsResponse {
   id: string;
 
@@ -5219,6 +5262,7 @@ export declare namespace TopLevel {
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
+    type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,

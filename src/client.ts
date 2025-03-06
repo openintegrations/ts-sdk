@@ -25,6 +25,7 @@ import {
   CreateTokenResponse,
   GetConnectionParams,
   GetConnectionResponse,
+  GetCurrentUserResponse,
   ListConnectionConfigsParams,
   ListConnectionConfigsResponse,
   ListConnectionConfigsResponsesOffsetPagination,
@@ -264,6 +265,13 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.GetConnectionResponse> {
     return this.get(path`/connection/${id}`, { query, ...options });
+  }
+
+  /**
+   * Get information about the current authenticated user
+   */
+  getCurrentUser(options?: RequestOptions): APIPromise<TopLevelAPI.GetCurrentUserResponse> {
+    return this.get('/viewer', options);
   }
 
   /**
@@ -862,6 +870,7 @@ export declare namespace Openint {
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
+    type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
