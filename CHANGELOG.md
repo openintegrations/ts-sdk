@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-03-09)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* **docs:** updating documented docs for mintlify ([#96](https://github.com/openintegrations/ts-sdk/issues/96)) ([66304b0](https://github.com/openintegrations/ts-sdk/commit/66304b094f2f375ab7a0745c9497f0d6b02c1b12))
+* **docs:** updating documented docs for stainless ([#98](https://github.com/openintegrations/ts-sdk/issues/98)) ([8098991](https://github.com/openintegrations/ts-sdk/commit/809899137754e55e6dae1d6902b8c8df7943a898))
+
 ## 0.1.0-alpha.21 (2025-03-06)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
