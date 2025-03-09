@@ -1696,6 +1696,9 @@ export namespace GetConnectionResponse {
 
     export namespace Settings {
       export interface SourceQueries {
+        /**
+         * Should order by lastModifiedAt and id descending
+         */
         invoice?: string | null;
       }
     }
@@ -2495,7 +2498,7 @@ export namespace GetConnectionResponse {
   export interface ConnectorsGoogledriveConnectionSettings {
     connector_name: 'googledrive';
 
-    settings: null;
+    settings: ConnectorsGoogledriveConnectionSettings.Settings;
 
     id?: string;
 
@@ -2504,6 +2507,20 @@ export namespace GetConnectionResponse {
     created_at?: string;
 
     updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      metadata?: Record<string, unknown>;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: unknown;
+      }
+    }
   }
 }
 
@@ -4169,6 +4186,9 @@ export namespace ListConnectionsResponse {
 
     export namespace Settings {
       export interface SourceQueries {
+        /**
+         * Should order by lastModifiedAt and id descending
+         */
         invoice?: string | null;
       }
     }
@@ -4968,7 +4988,7 @@ export namespace ListConnectionsResponse {
   export interface ConnectorsGoogledriveConnectionSettings {
     connector_name: 'googledrive';
 
-    settings: null;
+    settings: ConnectorsGoogledriveConnectionSettings.Settings;
 
     id?: string;
 
@@ -4977,6 +4997,20 @@ export namespace ListConnectionsResponse {
     created_at?: string;
 
     updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      metadata?: Record<string, unknown>;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: unknown;
+      }
+    }
   }
 }
 
