@@ -2528,12 +2528,2295 @@ export interface GetCurrentUserResponse {
   role: 'customer' | 'org' | 'anon' | 'user';
 }
 
-export interface ListConnectionConfigsResponse {
-  id: string;
+export type ListConnectionConfigsResponse =
+  | ListConnectionConfigsResponse.ConnectorsAircallConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsAirtableConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsApolloConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsBeancountConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGoogleConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGreenhouseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsHeronConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsHubspotConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsIntercomConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsJiraConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsKustomerConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLeverConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLinearConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLunchmoneyConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsPipedriveConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsPlaidConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsQboConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig;
 
-  connector_name: string;
+export namespace ListConnectionConfigsResponse {
+  export interface ConnectorsAircallConnectorConfig {
+    config: null;
 
-  org_id: string;
+    connector_name: 'aircall';
+
+    id?: string;
+
+    connector?: ConnectorsAircallConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsAircallConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsAirtableConnectorConfig {
+    config: null;
+
+    connector_name: 'airtable';
+
+    id?: string;
+
+    connector?: ConnectorsAirtableConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsAirtableConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsApolloConnectorConfig {
+    config: null;
+
+    connector_name: 'apollo';
+
+    id?: string;
+
+    connector?: ConnectorsApolloConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsApolloConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsBeancountConnectorConfig {
+    config: null;
+
+    connector_name: 'beancount';
+
+    id?: string;
+
+    connector?: ConnectorsBeancountConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsBeancountConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsBrexConnectorConfig {
+    config: ConnectorsBrexConnectorConfig.Config;
+
+    connector_name: 'brex';
+
+    id?: string;
+
+    connector?: ConnectorsBrexConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsBrexConnectorConfig {
+    export interface Config {
+      /**
+       * API key auth support
+       */
+      apikeyAuth?: boolean;
+
+      /**
+       * Configure oauth
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Configure oauth
+       */
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsCodaConnectorConfig {
+    config: null;
+
+    connector_name: 'coda';
+
+    id?: string;
+
+    connector?: ConnectorsCodaConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsCodaConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsConfluenceConnectorConfig {
+    config: ConnectorsConfluenceConnectorConfig.Config;
+
+    connector_name: 'confluence';
+
+    id?: string;
+
+    connector?: ConnectorsConfluenceConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsConfluenceConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsDiscordConnectorConfig {
+    config: ConnectorsDiscordConnectorConfig.Config;
+
+    connector_name: 'discord';
+
+    id?: string;
+
+    connector?: ConnectorsDiscordConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsDiscordConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsFinchConnectorConfig {
+    config: ConnectorsFinchConnectorConfig.Config;
+
+    connector_name: 'finch';
+
+    id?: string;
+
+    connector?: ConnectorsFinchConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFinchConnectorConfig {
+    export interface Config {
+      client_id: string;
+
+      client_secret: string;
+
+      /**
+       * Finch products to access, @see
+       * https://developer.tryfinch.com/api-reference/development-guides/Permissions
+       */
+      products: Array<
+        | 'company'
+        | 'directory'
+        | 'individual'
+        | 'ssn'
+        | 'employment'
+        | 'payment'
+        | 'pay_statement'
+        | 'benefits'
+      >;
+
+      /**
+       * Finch API version
+       */
+      api_version?: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsFirebaseConnectorConfig {
+    config: null;
+
+    connector_name: 'firebase';
+
+    id?: string;
+
+    connector?: ConnectorsFirebaseConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFirebaseConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsForeceiptConnectorConfig {
+    config: null;
+
+    connector_name: 'foreceipt';
+
+    id?: string;
+
+    connector?: ConnectorsForeceiptConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsForeceiptConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsGitHubConnectorConfig {
+    config: ConnectorsGitHubConnectorConfig.Config;
+
+    connector_name: 'github';
+
+    id?: string;
+
+    connector?: ConnectorsGitHubConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGitHubConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsGongConnectorConfig {
+    config: ConnectorsGongConnectorConfig.Config;
+
+    connector_name: 'gong';
+
+    id?: string;
+
+    connector?: ConnectorsGongConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGongConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsGoogleConnectorConfig {
+    config: ConnectorsGoogleConnectorConfig.Config;
+
+    connector_name: 'google';
+
+    id?: string;
+
+    connector?: ConnectorsGoogleConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogleConnectorConfig {
+    export interface Config {
+      integrations: Config.Integrations;
+
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface Integrations {
+        calendar?: Integrations.Calendar;
+
+        docs?: Integrations.Docs;
+
+        drive?: Integrations.Drive;
+
+        gmail?: Integrations.Gmail;
+
+        sheets?: Integrations.Sheets;
+
+        slides?: Integrations.Slides;
+      }
+
+      export namespace Integrations {
+        export interface Calendar {
+          enabled?: boolean;
+
+          /**
+           * calendar specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Docs {
+          enabled?: boolean;
+
+          /**
+           * docs specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Drive {
+          enabled?: boolean;
+
+          /**
+           * drive specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Gmail {
+          enabled?: boolean;
+
+          /**
+           * gmail specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Sheets {
+          enabled?: boolean;
+
+          /**
+           * sheets specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Slides {
+          enabled?: boolean;
+
+          /**
+           * slides specific space separated scopes
+           */
+          scopes?: string;
+        }
+      }
+
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        /**
+         * global google connector space separated scopes
+         */
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsGreenhouseConnectorConfig {
+    config: null;
+
+    connector_name: 'greenhouse';
+
+    id?: string;
+
+    connector?: ConnectorsGreenhouseConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGreenhouseConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsHeronConnectorConfig {
+    config: ConnectorsHeronConnectorConfig.Config;
+
+    connector_name: 'heron';
+
+    id?: string;
+
+    connector?: ConnectorsHeronConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsHeronConnectorConfig {
+    export interface Config {
+      apiKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsHubspotConnectorConfig {
+    config: ConnectorsHubspotConnectorConfig.Config;
+
+    connector_name: 'hubspot';
+
+    id?: string;
+
+    connector?: ConnectorsHubspotConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsHubspotConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsIntercomConnectorConfig {
+    config: ConnectorsIntercomConnectorConfig.Config;
+
+    connector_name: 'intercom';
+
+    id?: string;
+
+    connector?: ConnectorsIntercomConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsIntercomConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsJiraConnectorConfig {
+    config: ConnectorsJiraConnectorConfig.Config;
+
+    connector_name: 'jira';
+
+    id?: string;
+
+    connector?: ConnectorsJiraConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsJiraConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsKustomerConnectorConfig {
+    config: ConnectorsKustomerConnectorConfig.Config;
+
+    connector_name: 'kustomer';
+
+    id?: string;
+
+    connector?: ConnectorsKustomerConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsKustomerConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsLeverConnectorConfig {
+    config: ConnectorsLeverConnectorConfig.Config;
+
+    connector_name: 'lever';
+
+    id?: string;
+
+    connector?: ConnectorsLeverConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLeverConnectorConfig {
+    export interface Config {
+      envName: 'sandbox' | 'production';
+
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsLinearConnectorConfig {
+    config: ConnectorsLinearConnectorConfig.Config;
+
+    connector_name: 'linear';
+
+    id?: string;
+
+    connector?: ConnectorsLinearConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLinearConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsLunchmoneyConnectorConfig {
+    config: ConnectorsLunchmoneyConnectorConfig.Config;
+
+    connector_name: 'lunchmoney';
+
+    id?: string;
+
+    connector?: ConnectorsLunchmoneyConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLunchmoneyConnectorConfig {
+    export interface Config {
+      accessToken: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsMercuryConnectorConfig {
+    config: ConnectorsMercuryConnectorConfig.Config;
+
+    connector_name: 'mercury';
+
+    id?: string;
+
+    connector?: ConnectorsMercuryConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsMercuryConnectorConfig {
+    export interface Config {
+      /**
+       * API key auth support
+       */
+      apikeyAuth?: boolean;
+
+      /**
+       * Configure oauth
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Configure oauth
+       */
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsMergeConnectorConfig {
+    config: ConnectorsMergeConnectorConfig.Config;
+
+    connector_name: 'merge';
+
+    id?: string;
+
+    connector?: ConnectorsMergeConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsMergeConnectorConfig {
+    export interface Config {
+      apiKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsMicrosoftConnectorConfig {
+    config: ConnectorsMicrosoftConnectorConfig.Config;
+
+    connector_name: 'microsoft';
+
+    id?: string;
+
+    connector?: ConnectorsMicrosoftConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsMicrosoftConnectorConfig {
+    export interface Config {
+      integrations: Config.Integrations;
+
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface Integrations {
+        outlook?: Integrations.Outlook;
+
+        sharepoint?: Integrations.Sharepoint;
+
+        teams?: Integrations.Teams;
+      }
+
+      export namespace Integrations {
+        export interface Outlook {
+          enabled?: boolean;
+
+          /**
+           * outlook specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Sharepoint {
+          enabled?: boolean;
+
+          /**
+           * sharepoint specific space separated scopes
+           */
+          scopes?: string;
+        }
+
+        export interface Teams {
+          enabled?: boolean;
+
+          /**
+           * teams specific space separated scopes
+           */
+          scopes?: string;
+        }
+      }
+
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        /**
+         * global microsoft connector space separated scopes
+         */
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsMootaConnectorConfig {
+    config: ConnectorsMootaConnectorConfig.Config;
+
+    connector_name: 'moota';
+
+    id?: string;
+
+    connector?: ConnectorsMootaConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsMootaConnectorConfig {
+    export interface Config {
+      token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsOnebrickConnectorConfig {
+    config: ConnectorsOnebrickConnectorConfig.Config;
+
+    connector_name: 'onebrick';
+
+    id?: string;
+
+    connector?: ConnectorsOnebrickConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsOnebrickConnectorConfig {
+    export interface Config {
+      clientId: string;
+
+      clientSecret: string;
+
+      envName: 'sandbox' | 'production';
+
+      publicToken: string;
+
+      accessToken?: string | null;
+
+      redirectUrl?: string | null;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsOutreachConnectorConfig {
+    config: ConnectorsOutreachConnectorConfig.Config;
+
+    connector_name: 'outreach';
+
+    id?: string;
+
+    connector?: ConnectorsOutreachConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsOutreachConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsPipedriveConnectorConfig {
+    config: ConnectorsPipedriveConnectorConfig.Config;
+
+    connector_name: 'pipedrive';
+
+    id?: string;
+
+    connector?: ConnectorsPipedriveConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsPipedriveConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsPlaidConnectorConfig {
+    config: ConnectorsPlaidConnectorConfig.Config;
+
+    connector_name: 'plaid';
+
+    id?: string;
+
+    connector?: ConnectorsPlaidConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsPlaidConnectorConfig {
+    export interface Config {
+      /**
+       * The name of your application, as it should be displayed in Link. Maximum length
+       * of 30 characters. If a value longer than 30 characters is provided, Link will
+       * display "This Application" instead.
+       */
+      clientName: string;
+
+      countryCodes: Array<
+        | 'US'
+        | 'GB'
+        | 'ES'
+        | 'NL'
+        | 'FR'
+        | 'IE'
+        | 'CA'
+        | 'DE'
+        | 'IT'
+        | 'PL'
+        | 'DK'
+        | 'NO'
+        | 'SE'
+        | 'EE'
+        | 'LT'
+        | 'LV'
+      >;
+
+      envName: 'sandbox' | 'development' | 'production';
+
+      language: 'en' | 'fr' | 'es' | 'nl' | 'de';
+
+      products: Array<
+        | 'assets'
+        | 'auth'
+        | 'balance'
+        | 'identity'
+        | 'investments'
+        | 'liabilities'
+        | 'payment_initiation'
+        | 'identity_verification'
+        | 'transactions'
+        | 'credit_details'
+        | 'income'
+        | 'income_verification'
+        | 'deposit_switch'
+        | 'standing_orders'
+        | 'transfer'
+        | 'employment'
+        | 'recurring_transactions'
+      >;
+
+      credentials?: Config.Credentials | null;
+    }
+
+    export namespace Config {
+      export interface Credentials {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsPostgresConnectorConfig {
+    config: null;
+
+    connector_name: 'postgres';
+
+    id?: string;
+
+    connector?: ConnectorsPostgresConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsPostgresConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsQboConnectorConfig {
+    config: ConnectorsQboConnectorConfig.Config;
+
+    connector_name: 'qbo';
+
+    id?: string;
+
+    connector?: ConnectorsQboConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsQboConnectorConfig {
+    export interface Config {
+      envName: 'sandbox' | 'production';
+
+      oauth: Config.OAuth;
+
+      /**
+       * For proxies, not typically needed
+       */
+      url?: string | null;
+
+      /**
+       * For webhooks
+       */
+      verifierToken?: string | null;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsRampConnectorConfig {
+    config: ConnectorsRampConnectorConfig.Config;
+
+    connector_name: 'ramp';
+
+    id?: string;
+
+    connector?: ConnectorsRampConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsRampConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsSalesforceConnectorConfig {
+    config: ConnectorsSalesforceConnectorConfig.Config;
+
+    connector_name: 'salesforce';
+
+    id?: string;
+
+    connector?: ConnectorsSalesforceConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesforceConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsSalesloftConnectorConfig {
+    config: ConnectorsSalesloftConnectorConfig.Config;
+
+    connector_name: 'salesloft';
+
+    id?: string;
+
+    connector?: ConnectorsSalesloftConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesloftConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsSaltedgeConnectorConfig {
+    config: ConnectorsSaltedgeConnectorConfig.Config;
+
+    connector_name: 'saltedge';
+
+    id?: string;
+
+    connector?: ConnectorsSaltedgeConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSaltedgeConnectorConfig {
+    export interface Config {
+      appId: string;
+
+      secret: string;
+
+      url?: string | null;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsSlackConnectorConfig {
+    config: ConnectorsSlackConnectorConfig.Config;
+
+    connector_name: 'slack';
+
+    id?: string;
+
+    connector?: ConnectorsSlackConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSlackConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsSplitwiseConnectorConfig {
+    config: null;
+
+    connector_name: 'splitwise';
+
+    id?: string;
+
+    connector?: ConnectorsSplitwiseConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSplitwiseConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsStripeConnectorConfig {
+    config: ConnectorsStripeConnectorConfig.Config;
+
+    connector_name: 'stripe';
+
+    id?: string;
+
+    connector?: ConnectorsStripeConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsStripeConnectorConfig {
+    export interface Config {
+      /**
+       * API key auth support
+       */
+      apikeyAuth?: boolean;
+
+      /**
+       * Configure oauth
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Configure oauth
+       */
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsTellerConnectorConfig {
+    config: ConnectorsTellerConnectorConfig.Config;
+
+    connector_name: 'teller';
+
+    id?: string;
+
+    connector?: ConnectorsTellerConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTellerConnectorConfig {
+    export interface Config {
+      applicationId: string;
+
+      token?: string | null;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsTogglConnectorConfig {
+    config: null;
+
+    connector_name: 'toggl';
+
+    id?: string;
+
+    connector?: ConnectorsTogglConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTogglConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsTwentyConnectorConfig {
+    config: null;
+
+    connector_name: 'twenty';
+
+    id?: string;
+
+    connector?: ConnectorsTwentyConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTwentyConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsVenmoConnectorConfig {
+    config: ConnectorsVenmoConnectorConfig.Config;
+
+    connector_name: 'venmo';
+
+    id?: string;
+
+    connector?: ConnectorsVenmoConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsVenmoConnectorConfig {
+    export interface Config {
+      proxy?: Config.Proxy | null;
+
+      v1BaseURL?: string | null;
+
+      v5BaseURL?: string | null;
+    }
+
+    export namespace Config {
+      export interface Proxy {
+        cert: string;
+
+        url: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsWiseConnectorConfig {
+    config: null;
+
+    connector_name: 'wise';
+
+    id?: string;
+
+    connector?: ConnectorsWiseConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsWiseConnectorConfig {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsXeroConnectorConfig {
+    config: ConnectorsXeroConnectorConfig.Config;
+
+    connector_name: 'xero';
+
+    id?: string;
+
+    connector?: ConnectorsXeroConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsXeroConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsYodleeConnectorConfig {
+    config: ConnectorsYodleeConnectorConfig.Config;
+
+    connector_name: 'yodlee';
+
+    id?: string;
+
+    connector?: ConnectorsYodleeConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsYodleeConnectorConfig {
+    export interface Config {
+      adminLoginName: string;
+
+      clientId: string;
+
+      clientSecret: string;
+
+      envName: 'sandbox' | 'development' | 'production';
+
+      proxy?: Config.Proxy | null;
+
+      sandboxLoginName?: string | null;
+    }
+
+    export namespace Config {
+      export interface Proxy {
+        cert: string;
+
+        url: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsZohodeskConnectorConfig {
+    config: ConnectorsZohodeskConnectorConfig.Config;
+
+    connector_name: 'zohodesk';
+
+    id?: string;
+
+    connector?: ConnectorsZohodeskConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsZohodeskConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
+
+  export interface ConnectorsGoogledriveConnectorConfig {
+    config: ConnectorsGoogledriveConnectorConfig.Config;
+
+    connector_name: 'googledrive';
+
+    id?: string;
+
+    connector?: ConnectorsGoogledriveConnectorConfig.Connector;
+
+    created_at?: string;
+
+    integrations?: Record<string, Record<string, unknown>>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectorConfig {
+    export interface Config {
+      client_id: string;
+
+      client_secret: string;
+
+      scopes?: Array<string> | null;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<string>;
+
+      stage?: string;
+    }
+  }
 }
 
 export type ListConnectionsResponse =
@@ -5101,7 +7384,7 @@ export interface CreateTokenParams {
 }
 
 export interface GetConnectionParams {
-  expand?: Array<'connector'>;
+  expand?: Array<'connector' | 'enabled_integrations'>;
 
   /**
    * Controls secret inclusion: none (default), basic (auth only), or all secrets
@@ -5167,7 +7450,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'zohodesk'
     | 'googledrive';
 
-  expand?: Array<'connector'>;
+  expand?: Array<'connector' | 'enabled_integrations'>;
 
   /**
    * Limit the number of items returned
@@ -5238,7 +7521,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   customer_id?: string;
 
-  expand?: Array<'connector'>;
+  expand?: Array<'connector' | 'enabled_integrations'>;
 
   /**
    * Controls secret inclusion: none (default), basic (auth only), or all secrets

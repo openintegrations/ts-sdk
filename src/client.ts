@@ -275,7 +275,7 @@ export class Openint {
   }
 
   /**
-   * List all connector configurations with optional filtering
+   * List all connector configurations
    */
   listConnectionConfigs(
     query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
