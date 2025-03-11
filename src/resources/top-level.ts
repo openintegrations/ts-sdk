@@ -7450,7 +7450,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'zohodesk'
     | 'googledrive';
 
-  expand?: Array<'connector' | 'enabled_integrations'>;
+  expand?: string;
 
   /**
    * Limit the number of items returned
