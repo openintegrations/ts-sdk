@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-03-15)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#99](https://github.com/openintegrations/ts-sdk/issues/99)) ([26d82d3](https://github.com/openintegrations/ts-sdk/commit/26d82d3ecfb98f0a4fef00e72dfc31a614b8b6c1))
+* **client:** accept RFC6838 JSON content types ([#100](https://github.com/openintegrations/ts-sdk/issues/100)) ([3cadf79](https://github.com/openintegrations/ts-sdk/commit/3cadf792fcdcca3be69076488c028fa522a8f6bb))
+* **docs:** updating documented docs for mintlify ([#96](https://github.com/openintegrations/ts-sdk/issues/96)) ([66304b0](https://github.com/openintegrations/ts-sdk/commit/66304b094f2f375ab7a0745c9497f0d6b02c1b12))
+* **docs:** updating documented docs for stainless ([#101](https://github.com/openintegrations/ts-sdk/issues/101)) ([20c6d72](https://github.com/openintegrations/ts-sdk/commit/20c6d72103c5e14c4d264ea056799a63f95ae3f2))
+* **docs:** updating documented docs for stainless ([#98](https://github.com/openintegrations/ts-sdk/issues/98)) ([8098991](https://github.com/openintegrations/ts-sdk/commit/809899137754e55e6dae1d6902b8c8df7943a898))
+
+
+### Bug Fixes
+
+* **internal:** add mts file + crypto shim types ([#103](https://github.com/openintegrations/ts-sdk/issues/103)) ([5344f02](https://github.com/openintegrations/ts-sdk/commit/5344f0295b6cdbf99c6831fbefb38b04bfdd453b))
+
+
+### Chores
+
+* **internal:** remove extra empty newlines ([#102](https://github.com/openintegrations/ts-sdk/issues/102)) ([8a8e484](https://github.com/openintegrations/ts-sdk/commit/8a8e484475b648aa501651d712a8eadd34e16d83))
+
 ## 0.1.0-alpha.21 (2025-03-06)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
