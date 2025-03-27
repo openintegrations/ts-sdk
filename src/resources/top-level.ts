@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { OffsetPagination, type OffsetPaginationParams } from '../pagination';
+import { OffsetPagination, type OffsetPaginationParams } from '../core/pagination';
 
 export type ListConnectionConfigsResponsesOffsetPagination = OffsetPagination<ListConnectionConfigsResponse>;
 
