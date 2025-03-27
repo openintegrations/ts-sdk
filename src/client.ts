@@ -14,10 +14,10 @@ import * as Shims from './internal/shims';
 import * as Opts from './internal/request-options';
 import * as qs from './internal/qs';
 import { VERSION } from './version';
-import * as Errors from './error';
-import * as Pagination from './pagination';
-import { AbstractPage, type OffsetPaginationParams, OffsetPaginationResponse } from './pagination';
-import * as Uploads from './uploads';
+import * as Errors from './core/error';
+import * as Pagination from './core/pagination';
+import { AbstractPage, type OffsetPaginationParams, OffsetPaginationResponse } from './core/pagination';
+import * as Uploads from './core/uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckConnectionResponse,
@@ -35,7 +35,7 @@ import {
   ListConnectionsResponse,
   ListConnectionsResponsesOffsetPagination,
 } from './resources/top-level';
-import { APIPromise } from './api-promise';
+import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders, isEmptyHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
