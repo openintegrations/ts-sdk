@@ -50,52 +50,61 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorsAircallConnectionSettings
   | GetConnectionResponse.ConnectorsAirtableConnectionSettings
   | GetConnectionResponse.ConnectorsApolloConnectionSettings
-  | GetConnectionResponse.ConnectorsBeancountConnectionSettings
   | GetConnectionResponse.ConnectorsBrexConnectionSettings
   | GetConnectionResponse.ConnectorsCodaConnectionSettings
   | GetConnectionResponse.ConnectorsConfluenceConnectionSettings
   | GetConnectionResponse.ConnectorsDiscordConnectionSettings
+  | GetConnectionResponse.ConnectorsFacebookConnectionSettings
   | GetConnectionResponse.ConnectorsFinchConnectionSettings
   | GetConnectionResponse.ConnectorsFirebaseConnectionSettings
   | GetConnectionResponse.ConnectorsForeceiptConnectionSettings
   | GetConnectionResponse.ConnectorsGitHubConnectionSettings
   | GetConnectionResponse.ConnectorsGongConnectionSettings
-  | GetConnectionResponse.ConnectorsGoogleConnectionSettings
+  | GetConnectionResponse.ConnectorsGooglecalendarConnectionSettings
+  | GetConnectionResponse.ConnectorsGoogledocsConnectionSettings
+  | GetConnectionResponse.ConnectorsGoogledriveConnectionSettings
+  | GetConnectionResponse.ConnectorsGooglemailConnectionSettings
+  | GetConnectionResponse.ConnectorsGooglesheetConnectionSettings
   | GetConnectionResponse.ConnectorsGreenhouseConnectionSettings
   | GetConnectionResponse.ConnectorsHeronConnectionSettings
   | GetConnectionResponse.ConnectorsHubspotConnectionSettings
+  | GetConnectionResponse.ConnectorsInstagramConnectionSettings
   | GetConnectionResponse.ConnectorsIntercomConnectionSettings
   | GetConnectionResponse.ConnectorsJiraConnectionSettings
   | GetConnectionResponse.ConnectorsKustomerConnectionSettings
   | GetConnectionResponse.ConnectorsLeverConnectionSettings
   | GetConnectionResponse.ConnectorsLinearConnectionSettings
+  | GetConnectionResponse.ConnectorsLinkedinConnectionSettings
   | GetConnectionResponse.ConnectorsLunchmoneyConnectionSettings
   | GetConnectionResponse.ConnectorsMercuryConnectionSettings
   | GetConnectionResponse.ConnectorsMergeConnectionSettings
   | GetConnectionResponse.ConnectorsMicrosoftConnectionSettings
   | GetConnectionResponse.ConnectorsMootaConnectionSettings
+  | GetConnectionResponse.ConnectorsNotionConnectionSettings
   | GetConnectionResponse.ConnectorsOnebrickConnectionSettings
   | GetConnectionResponse.ConnectorsOutreachConnectionSettings
   | GetConnectionResponse.ConnectorsPipedriveConnectionSettings
   | GetConnectionResponse.ConnectorsPlaidConnectionSettings
   | GetConnectionResponse.ConnectorsPostgresConnectionSettings
-  | GetConnectionResponse.ConnectorsQboConnectionSettings
+  | GetConnectionResponse.ConnectorsQuickbooksConnectionSettings
   | GetConnectionResponse.ConnectorsRampConnectionSettings
+  | GetConnectionResponse.ConnectorsRedditConnectionSettings
   | GetConnectionResponse.ConnectorsSalesforceConnectionSettings
   | GetConnectionResponse.ConnectorsSalesloftConnectionSettings
   | GetConnectionResponse.ConnectorsSaltedgeConnectionSettings
+  | GetConnectionResponse.ConnectorsSharepointonlineConnectionSettings
   | GetConnectionResponse.ConnectorsSlackConnectionSettings
   | GetConnectionResponse.ConnectorsSplitwiseConnectionSettings
   | GetConnectionResponse.ConnectorsStripeConnectionSettings
   | GetConnectionResponse.ConnectorsTellerConnectionSettings
   | GetConnectionResponse.ConnectorsTogglConnectionSettings
   | GetConnectionResponse.ConnectorsTwentyConnectionSettings
+  | GetConnectionResponse.ConnectorsTwitterConnectionSettings
   | GetConnectionResponse.ConnectorsVenmoConnectionSettings
   | GetConnectionResponse.ConnectorsWiseConnectionSettings
   | GetConnectionResponse.ConnectorsXeroConnectionSettings
   | GetConnectionResponse.ConnectorsYodleeConnectionSettings
-  | GetConnectionResponse.ConnectorsZohodeskConnectionSettings
-  | GetConnectionResponse.ConnectorsGoogledriveConnectionSettings;
+  | GetConnectionResponse.ConnectorsZohodeskConnectionSettings;
 
 export namespace GetConnectionResponse {
   export interface ConnectorsAircallConnectionSettings {
@@ -105,18 +114,96 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsAircallConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
   export namespace ConnectorsAircallConnectionSettings {
     export interface Settings {
-      apiId: string;
+      oauth: Settings.OAuth;
+    }
 
-      apiToken: string;
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -127,9 +214,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsAirtableConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -140,6 +235,38 @@ export namespace GetConnectionResponse {
 
       apiKey: string;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsApolloConnectionSettings {
@@ -149,9 +276,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsApolloConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -191,8 +326,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -202,6 +335,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -219,20 +355,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
-  }
 
-  export interface ConnectorsBeancountConnectionSettings {
-    connector_name: 'beancount';
+    export interface Connector {
+      name: string;
 
-    settings: null;
+      display_name?: string;
 
-    id?: string;
+      logo_url?: string;
 
-    connector_config_id?: string;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-    created_at?: string;
+      schemas?: Connector.Schemas;
 
-    updated_at?: string;
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsBrexConnectionSettings {
@@ -242,9 +396,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsBrexConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -252,6 +414,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsBrexConnectionSettings {
     export interface Settings {
       accessToken: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -262,9 +456,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsCodaConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -272,6 +474,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsCodaConnectionSettings {
     export interface Settings {
       apiKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -282,9 +516,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsConfluenceConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -292,64 +534,77 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsConfluenceConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -361,14 +616,122 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsDiscordConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
   export namespace ConnectorsDiscordConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsFacebookConnectionSettings {
+    connector_name: 'facebook';
+
+    settings: ConnectorsFacebookConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsFacebookConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFacebookConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -403,8 +766,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -414,6 +775,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -431,6 +795,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsFinchConnectionSettings {
@@ -440,9 +836,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsFinchConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -450,6 +854,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsFinchConnectionSettings {
     export interface Settings {
       access_token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -462,9 +898,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsFirebaseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -541,6 +985,38 @@ export namespace GetConnectionResponse {
         storageBucket?: string;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsForeceiptConnectionSettings {
@@ -550,9 +1026,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsForeceiptConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -564,8 +1048,38 @@ export namespace GetConnectionResponse {
       _id?: unknown;
 
       credentials?: unknown;
+    }
 
-      options?: unknown;
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -576,9 +1090,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGitHubConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -586,64 +1108,77 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsGitHubConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -655,9 +1190,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGongConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -697,8 +1240,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -708,6 +1249,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -725,85 +1269,536 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
-  export interface ConnectorsGoogleConnectionSettings {
-    connector_name: 'google';
+  export interface ConnectorsGooglecalendarConnectionSettings {
+    connector_name: 'googlecalendar';
 
-    settings: ConnectorsGoogleConnectionSettings.Settings;
+    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGooglecalendarConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGoogleConnectionSettings {
+  export namespace ConnectorsGooglecalendarConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      client_id?: string;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledocsConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorsGoogledocsConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGoogledocsConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledocsConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledriveConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorsGoogledriveConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGoogledriveConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGooglemailConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorsGooglemailConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGooglemailConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglemailConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGooglesheetConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorsGooglesheetConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGooglesheetConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglesheetConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -815,9 +1810,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGreenhouseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -825,6 +1828,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsGreenhouseConnectionSettings {
     export interface Settings {
       apiKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -835,11 +1870,53 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsHeronConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsHeronConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsHubspotConnectionSettings {
@@ -849,9 +1926,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsHubspotConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -859,10 +1944,108 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsHubspotConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsInstagramConnectionSettings {
+    connector_name: 'instagram';
+
+    settings: ConnectorsInstagramConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsInstagramConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsInstagramConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
 
       error?: Settings.Error | null;
-
-      extra?: unknown;
     }
 
     export namespace Settings {
@@ -893,8 +2076,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -904,6 +2085,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -921,6 +2105,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsIntercomConnectionSettings {
@@ -930,9 +2146,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsIntercomConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -972,8 +2196,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -983,6 +2205,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1000,6 +2225,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsJiraConnectionSettings {
@@ -1009,9 +2266,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsJiraConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1051,8 +2316,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1062,6 +2325,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1079,6 +2345,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsKustomerConnectionSettings {
@@ -1088,9 +2386,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsKustomerConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1130,8 +2436,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1141,6 +2445,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1158,6 +2465,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsLeverConnectionSettings {
@@ -1167,9 +2506,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsLeverConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1209,8 +2556,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1220,6 +2565,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1235,6 +2583,38 @@ export namespace GetConnectionResponse {
         code: 'refresh_token_external_error' | (string & {});
 
         message?: string | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -1246,9 +2626,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsLinearConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1256,64 +2644,177 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsLinearConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsLinkedinConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorsLinkedinConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsLinkedinConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLinkedinConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -1325,11 +2826,53 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsLunchmoneyConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsLunchmoneyConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMercuryConnectionSettings {
@@ -1339,11 +2882,53 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMercuryConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsMercuryConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMergeConnectionSettings {
@@ -1353,9 +2938,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMergeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1366,6 +2959,38 @@ export namespace GetConnectionResponse {
 
       accountDetails?: unknown;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMicrosoftConnectionSettings {
@@ -1375,9 +3000,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMicrosoftConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1419,8 +3052,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1430,6 +3061,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1447,6 +3081,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMootaConnectionSettings {
@@ -1456,11 +3122,153 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMootaConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsMootaConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsNotionConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorsNotionConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsNotionConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsNotionConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsOnebrickConnectionSettings {
@@ -1470,9 +3278,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsOnebrickConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1480,6 +3296,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsOnebrickConnectionSettings {
     export interface Settings {
       accessToken: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -1490,9 +3338,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsOutreachConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1532,8 +3388,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1543,6 +3397,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1560,6 +3417,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsPipedriveConnectionSettings {
@@ -1569,9 +3458,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsPipedriveConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1611,8 +3508,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1622,6 +3517,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1639,6 +3537,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsPlaidConnectionSettings {
@@ -1648,9 +3578,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsPlaidConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1669,6 +3607,38 @@ export namespace GetConnectionResponse {
 
       webhookItemError?: null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsPostgresConnectionSettings {
@@ -1678,9 +3648,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsPostgresConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1688,8 +3666,6 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsPostgresConnectionSettings {
     export interface Settings {
       databaseUrl: string;
-
-      migrateTables?: boolean;
 
       sourceQueries?: Settings.SourceQueries;
     }
@@ -1702,80 +3678,141 @@ export namespace GetConnectionResponse {
         invoice?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
-  export interface ConnectorsQboConnectionSettings {
-    connector_name: 'qbo';
+  export interface ConnectorsQuickbooksConnectionSettings {
+    connector_name: 'quickbooks';
 
-    settings: ConnectorsQboConnectionSettings.Settings;
+    settings: ConnectorsQuickbooksConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsQuickbooksConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsQboConnectionSettings {
+  export namespace ConnectorsQuickbooksConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
-      error?: Settings.Error | null;
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
     }
 
     export namespace Settings {
       export interface OAuth {
-        connection_config: OAuth.ConnectionConfig;
+        created_at: string;
 
-        credentials: OAuth.Credentials;
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
-        export interface ConnectionConfig {
-          realmId: string;
-        }
-
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -1787,9 +3824,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsRampConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1800,23 +3845,63 @@ export namespace GetConnectionResponse {
 
       startAfterTransactionId?: string | null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
-  export interface ConnectorsSalesforceConnectionSettings {
-    connector_name: 'salesforce';
+  export interface ConnectorsRedditConnectionSettings {
+    connector_name: 'reddit';
 
-    settings: ConnectorsSalesforceConnectionSettings.Settings;
+    settings: ConnectorsRedditConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsRedditConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesforceConnectionSettings {
+  export namespace ConnectorsRedditConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -1851,8 +3936,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1862,6 +3945,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1879,6 +3965,143 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsSalesforceConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorsSalesforceConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsSalesforceConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesforceConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsSalesloftConnectionSettings {
@@ -1888,9 +4111,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSalesloftConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1930,8 +4161,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -1941,6 +4170,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -1956,6 +4188,38 @@ export namespace GetConnectionResponse {
         code: 'refresh_token_external_error' | (string & {});
 
         message?: string | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -1965,13 +4229,155 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSaltedgeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     settings?: unknown;
 
     updated_at?: string;
+  }
+
+  export namespace ConnectorsSaltedgeConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsSharepointonlineConnectionSettings {
+    connector_name: 'sharepointonline';
+
+    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsSharepointonlineConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSharepointonlineConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsSlackConnectionSettings {
@@ -1981,9 +4387,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSlackConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -1991,64 +4405,77 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsSlackConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -2060,9 +4487,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSplitwiseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2143,6 +4578,38 @@ export namespace GetConnectionResponse {
         }
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsStripeConnectionSettings {
@@ -2152,9 +4619,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsStripeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2162,6 +4637,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsStripeConnectionSettings {
     export interface Settings {
       secretKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -2172,9 +4679,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsTellerConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2182,6 +4697,38 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsTellerConnectionSettings {
     export interface Settings {
       token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -2192,9 +4739,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsTogglConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2207,6 +4762,38 @@ export namespace GetConnectionResponse {
 
       password?: string | null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsTwentyConnectionSettings {
@@ -2216,9 +4803,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsTwentyConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2226,6 +4821,158 @@ export namespace GetConnectionResponse {
   export namespace ConnectorsTwentyConnectionSettings {
     export interface Settings {
       access_token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsTwitterConnectionSettings {
+    connector_name: 'twitter';
+
+    settings: ConnectorsTwitterConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsTwitterConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTwitterConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -2236,9 +4983,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsVenmoConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2249,6 +5004,38 @@ export namespace GetConnectionResponse {
 
       me?: unknown;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsWiseConnectionSettings {
@@ -2258,9 +5045,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsWiseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2271,6 +5066,38 @@ export namespace GetConnectionResponse {
 
       apiToken?: string | null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsXeroConnectionSettings {
@@ -2280,9 +5107,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsXeroConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2322,8 +5157,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -2333,6 +5166,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -2350,6 +5186,38 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsYodleeConnectionSettings {
@@ -2359,9 +5227,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsYodleeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2414,6 +5290,38 @@ export namespace GetConnectionResponse {
         isDeleted?: boolean | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsZohodeskConnectionSettings {
@@ -2423,9 +5331,17 @@ export namespace GetConnectionResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsZohodeskConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -2465,8 +5381,6 @@ export namespace GetConnectionResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -2476,6 +5390,9 @@ export namespace GetConnectionResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -2493,32 +5410,36 @@ export namespace GetConnectionResponse {
         message?: string | null;
       }
     }
-  }
 
-  export interface ConnectorsGoogledriveConnectionSettings {
-    connector_name: 'googledrive';
+    export interface Connector {
+      name: string;
 
-    settings: ConnectorsGoogledriveConnectionSettings.Settings;
+      display_name?: string;
 
-    id?: string;
+      logo_url?: string;
 
-    connector_config_id?: string;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-    created_at?: string;
+      schemas?: Connector.Schemas;
 
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-
-      metadata?: Record<string, unknown>;
+      stage?: 'alpha' | 'beta' | 'ga';
     }
 
-    export namespace Settings {
-      export interface OAuth {
-        credentials: unknown;
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -2532,66 +5453,81 @@ export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorsAircallConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsAirtableConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsApolloConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsBeancountConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsFacebookConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGoogleConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGooglecalendarConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGoogledocsConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGooglemailConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsGooglesheetConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsGreenhouseConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsHeronConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsHubspotConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsInstagramConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsIntercomConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsJiraConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsKustomerConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsLeverConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsLinearConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsLinkedinConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsLunchmoneyConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsNotionConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsPipedriveConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsPlaidConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsQboConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsQuickbooksConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsRedditConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsSharepointonlineConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorsTwitterConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
   | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig;
+  | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig;
 
 export namespace ListConnectionConfigsResponse {
   export interface ConnectorsAircallConnectorConfig {
-    config: null;
+    config: ConnectorsAircallConnectorConfig.Config;
 
     connector_name: 'aircall';
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsAircallConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsAircallConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2599,6 +5535,26 @@ export namespace ListConnectionConfigsResponse {
   }
 
   export namespace ConnectorsAircallConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
     export interface Connector {
       name: string;
 
@@ -2606,9 +5562,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2619,11 +5614,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsAirtableConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsAirtableConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2638,9 +5639,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2651,11 +5691,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsApolloConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsApolloConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2670,41 +5716,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
     }
-  }
 
-  export interface ConnectorsBeancountConnectorConfig {
-    config: null;
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
 
-    connector_name: 'beancount';
+        connect_output?: unknown;
 
-    id?: string;
+        connection_settings?: unknown;
 
-    connector?: ConnectorsBeancountConnectorConfig.Connector;
+        connector_config?: unknown;
 
-    created_at?: string;
+        integration_data?: unknown;
 
-    integrations?: Record<string, Record<string, unknown>>;
+        pre_connect_input?: unknown;
 
-    org_id?: string;
+        webhook_input?: unknown;
+      }
+    }
 
-    updated_at?: string;
-  }
+    export interface Integrations {
+      connector_name: string;
 
-  export namespace ConnectorsBeancountConnectorConfig {
-    export interface Connector {
       name: string;
 
-      display_name?: string;
+      auth_type?: string | null;
 
-      logo_url?: string;
+      category?: string | null;
 
-      platforms?: Array<string>;
+      logo_url?: string | null;
 
-      stage?: string;
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2715,11 +5768,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsBrexConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsBrexConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2757,9 +5816,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2770,11 +5868,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsCodaConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsCodaConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2789,9 +5893,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2802,11 +5945,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsConfluenceConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsConfluenceConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2815,16 +5964,22 @@ export namespace ListConnectionConfigsResponse {
 
   export namespace ConnectorsConfluenceConnectorConfig {
     export interface Config {
-      oauth: Config.OAuth;
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
     }
 
     export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
       export interface OAuth {
-        client_id: string;
+        client_id?: string | null;
 
-        client_secret: string;
+        client_secret?: string | null;
 
-        scopes?: string;
+        scopes?: Array<string> | null;
       }
     }
 
@@ -2835,9 +5990,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2848,11 +6042,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsDiscordConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsDiscordConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2860,6 +6060,103 @@ export namespace ListConnectionConfigsResponse {
   }
 
   export namespace ConnectorsDiscordConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsFacebookConnectorConfig {
+    config: ConnectorsFacebookConnectorConfig.Config;
+
+    connector_name: 'facebook';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsFacebookConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsFacebookConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFacebookConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -2881,9 +6178,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2894,11 +6230,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsFinchConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsFinchConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2939,9 +6281,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2952,11 +6333,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsFirebaseConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsFirebaseConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -2971,9 +6358,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -2984,11 +6410,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsForeceiptConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsForeceiptConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3003,9 +6435,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3016,11 +6487,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsGitHubConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGitHubConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3029,16 +6506,22 @@ export namespace ListConnectionConfigsResponse {
 
   export namespace ConnectorsGitHubConnectorConfig {
     export interface Config {
-      oauth: Config.OAuth;
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
     }
 
     export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
       export interface OAuth {
-        client_id: string;
+        client_id?: string | null;
 
-        client_secret: string;
+        client_secret?: string | null;
 
-        scopes?: string;
+        scopes?: Array<string> | null;
       }
     }
 
@@ -3049,9 +6532,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3062,11 +6584,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsGongConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGongConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3095,117 +6623,93 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsGoogleConnectorConfig {
-    config: ConnectorsGoogleConnectorConfig.Config;
+  export interface ConnectorsGooglecalendarConnectorConfig {
+    config: ConnectorsGooglecalendarConnectorConfig.Config;
 
-    connector_name: 'google';
+    connector_name: 'googlecalendar';
 
     id?: string;
 
-    connector?: ConnectorsGoogleConnectorConfig.Connector;
+    connection_count?: number;
+
+    connector?: ConnectorsGooglecalendarConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGooglecalendarConnectorConfig.Integrations>;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGoogleConnectorConfig {
+  export namespace ConnectorsGooglecalendarConnectorConfig {
     export interface Config {
-      integrations: Config.Integrations;
-
-      oauth: Config.OAuth;
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
     }
 
     export namespace Config {
-      export interface Integrations {
-        calendar?: Integrations.Calendar;
-
-        docs?: Integrations.Docs;
-
-        drive?: Integrations.Drive;
-
-        gmail?: Integrations.Gmail;
-
-        sheets?: Integrations.Sheets;
-
-        slides?: Integrations.Slides;
-      }
-
-      export namespace Integrations {
-        export interface Calendar {
-          enabled?: boolean;
-
-          /**
-           * calendar specific space separated scopes
-           */
-          scopes?: string;
-        }
-
-        export interface Docs {
-          enabled?: boolean;
-
-          /**
-           * docs specific space separated scopes
-           */
-          scopes?: string;
-        }
-
-        export interface Drive {
-          enabled?: boolean;
-
-          /**
-           * drive specific space separated scopes
-           */
-          scopes?: string;
-        }
-
-        export interface Gmail {
-          enabled?: boolean;
-
-          /**
-           * gmail specific space separated scopes
-           */
-          scopes?: string;
-        }
-
-        export interface Sheets {
-          enabled?: boolean;
-
-          /**
-           * sheets specific space separated scopes
-           */
-          scopes?: string;
-        }
-
-        export interface Slides {
-          enabled?: boolean;
-
-          /**
-           * slides specific space separated scopes
-           */
-          scopes?: string;
-        }
-      }
-
+      /**
+       * Base oauth configuration for the connector
+       */
       export interface OAuth {
-        client_id: string;
+        client_id?: string | null;
 
-        client_secret: string;
+        client_secret?: string | null;
 
-        /**
-         * global google connector space separated scopes
-         */
-        scopes?: string;
+        scopes?: Array<string> | null;
       }
     }
 
@@ -3216,9 +6720,436 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsGoogledocsConnectorConfig {
+    config: ConnectorsGoogledocsConnectorConfig.Config;
+
+    connector_name: 'googledocs';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsGoogledocsConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGoogledocsConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledocsConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsGoogledriveConnectorConfig {
+    config: ConnectorsGoogledriveConnectorConfig.Config;
+
+    connector_name: 'googledrive';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsGoogledriveConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGoogledriveConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsGooglemailConnectorConfig {
+    config: ConnectorsGooglemailConnectorConfig.Config;
+
+    connector_name: 'googlemail';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsGooglemailConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGooglemailConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglemailConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsGooglesheetConnectorConfig {
+    config: ConnectorsGooglesheetConnectorConfig.Config;
+
+    connector_name: 'googlesheet';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsGooglesheetConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGooglesheetConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglesheetConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3229,11 +7160,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsGreenhouseConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsGreenhouseConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3248,9 +7185,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3261,11 +7237,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsHeronConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsHeronConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3284,9 +7266,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3297,11 +7318,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsHubspotConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsHubspotConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3309,6 +7336,103 @@ export namespace ListConnectionConfigsResponse {
   }
 
   export namespace ConnectorsHubspotConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsInstagramConnectorConfig {
+    config: ConnectorsInstagramConnectorConfig.Config;
+
+    connector_name: 'instagram';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsInstagramConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsInstagramConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsInstagramConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -3330,9 +7454,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3343,11 +7506,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsIntercomConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsIntercomConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3376,9 +7545,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3389,11 +7597,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsJiraConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsJiraConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3422,9 +7636,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3435,11 +7688,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsKustomerConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsKustomerConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3468,9 +7727,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3481,11 +7779,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsLeverConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsLeverConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3516,9 +7820,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3529,11 +7872,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsLinearConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsLinearConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3542,16 +7891,22 @@ export namespace ListConnectionConfigsResponse {
 
   export namespace ConnectorsLinearConnectorConfig {
     export interface Config {
-      oauth: Config.OAuth;
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
     }
 
     export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
       export interface OAuth {
-        client_id: string;
+        client_id?: string | null;
 
-        client_secret: string;
+        client_secret?: string | null;
 
-        scopes?: string;
+        scopes?: Array<string> | null;
       }
     }
 
@@ -3562,9 +7917,145 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsLinkedinConnectorConfig {
+    config: ConnectorsLinkedinConnectorConfig.Config;
+
+    connector_name: 'linkedin';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsLinkedinConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsLinkedinConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLinkedinConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3575,11 +8066,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsLunchmoneyConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsLunchmoneyConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3598,9 +8095,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3611,11 +8147,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsMercuryConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsMercuryConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3653,9 +8195,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3666,11 +8247,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsMergeConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsMergeConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3689,9 +8276,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3702,11 +8328,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsMicrosoftConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsMicrosoftConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3777,9 +8409,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3790,11 +8461,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsMootaConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsMootaConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3813,9 +8490,145 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsNotionConnectorConfig {
+    config: ConnectorsNotionConnectorConfig.Config;
+
+    connector_name: 'notion';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsNotionConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsNotionConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsNotionConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3826,11 +8639,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsOnebrickConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsOnebrickConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3859,9 +8678,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3872,11 +8730,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsOutreachConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsOutreachConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3905,9 +8769,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3918,11 +8821,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsPipedriveConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsPipedriveConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -3951,9 +8860,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -3964,11 +8912,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsPlaidConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsPlaidConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4045,9 +8999,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4058,11 +9051,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsPostgresConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsPostgresConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4077,54 +9076,93 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsQboConnectorConfig {
-    config: ConnectorsQboConnectorConfig.Config;
+  export interface ConnectorsQuickbooksConnectorConfig {
+    config: ConnectorsQuickbooksConnectorConfig.Config;
 
-    connector_name: 'qbo';
+    connector_name: 'quickbooks';
 
     id?: string;
 
-    connector?: ConnectorsQboConnectorConfig.Connector;
+    connection_count?: number;
+
+    connector?: ConnectorsQuickbooksConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsQuickbooksConnectorConfig.Integrations>;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsQboConnectorConfig {
+  export namespace ConnectorsQuickbooksConnectorConfig {
     export interface Config {
-      envName: 'sandbox' | 'production';
-
-      oauth: Config.OAuth;
-
       /**
-       * For proxies, not typically needed
+       * Base oauth configuration for the connector
        */
-      url?: string | null;
-
-      /**
-       * For webhooks
-       */
-      verifierToken?: string | null;
+      oauth: Config.OAuth | null;
     }
 
     export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
       export interface OAuth {
-        client_id: string;
+        client_id?: string | null;
 
-        client_secret: string;
+        client_secret?: string | null;
 
-        scopes?: string;
+        scopes?: Array<string> | null;
       }
     }
 
@@ -4135,9 +9173,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4148,11 +9225,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsRampConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsRampConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4179,31 +9262,76 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsSalesforceConnectorConfig {
-    config: ConnectorsSalesforceConnectorConfig.Config;
+  export interface ConnectorsRedditConnectorConfig {
+    config: ConnectorsRedditConnectorConfig.Config;
 
-    connector_name: 'salesforce';
+    connector_name: 'reddit';
 
     id?: string;
 
-    connector?: ConnectorsSalesforceConnectorConfig.Connector;
+    connection_count?: number;
+
+    connector?: ConnectorsRedditConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsRedditConnectorConfig.Integrations>;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesforceConnectorConfig {
+  export namespace ConnectorsRedditConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -4225,9 +9353,145 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsSalesforceConnectorConfig {
+    config: ConnectorsSalesforceConnectorConfig.Config;
+
+    connector_name: 'salesforce';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsSalesforceConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsSalesforceConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesforceConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4238,11 +9502,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsSalesloftConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsSalesloftConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4271,9 +9541,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4284,11 +9593,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsSaltedgeConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsSaltedgeConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4311,42 +9626,93 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsSlackConnectorConfig {
-    config: ConnectorsSlackConnectorConfig.Config;
+  export interface ConnectorsSharepointonlineConnectorConfig {
+    config: ConnectorsSharepointonlineConnectorConfig.Config;
 
-    connector_name: 'slack';
+    connector_name: 'sharepointonline';
 
     id?: string;
 
-    connector?: ConnectorsSlackConnectorConfig.Connector;
+    connection_count?: number;
+
+    connector?: ConnectorsSharepointonlineConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsSharepointonlineConnectorConfig.Integrations>;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSlackConnectorConfig {
+  export namespace ConnectorsSharepointonlineConnectorConfig {
     export interface Config {
-      oauth: Config.OAuth;
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
     }
 
     export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
       export interface OAuth {
-        client_id: string;
+        client_id?: string | null;
 
-        client_secret: string;
+        client_secret?: string | null;
 
-        scopes?: string;
+        scopes?: Array<string> | null;
       }
     }
 
@@ -4357,9 +9723,145 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsSlackConnectorConfig {
+    config: ConnectorsSlackConnectorConfig.Config;
+
+    connector_name: 'slack';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsSlackConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsSlackConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSlackConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4370,11 +9872,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsSplitwiseConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsSplitwiseConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4389,9 +9897,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4402,11 +9949,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsStripeConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsStripeConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4444,9 +9997,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4457,11 +10049,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsTellerConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsTellerConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4482,9 +10080,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4495,11 +10132,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsTogglConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsTogglConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4514,9 +10157,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4527,11 +10209,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsTwentyConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsTwentyConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4546,9 +10234,139 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+  }
+
+  export interface ConnectorsTwitterConnectorConfig {
+    config: ConnectorsTwitterConnectorConfig.Config;
+
+    connector_name: 'twitter';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorsTwitterConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsTwitterConnectorConfig.Integrations>;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTwitterConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        client_id: string;
+
+        client_secret: string;
+
+        scopes?: string;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4559,11 +10377,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsVenmoConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsVenmoConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4594,9 +10418,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4607,11 +10470,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsWiseConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsWiseConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4626,9 +10495,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4639,11 +10547,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsXeroConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsXeroConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4672,9 +10586,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4685,11 +10638,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsYodleeConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsYodleeConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4726,9 +10685,48 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 
@@ -4739,11 +10737,17 @@ export namespace ListConnectionConfigsResponse {
 
     id?: string;
 
+    connection_count?: number;
+
     connector?: ConnectorsZohodeskConnectorConfig.Connector;
 
     created_at?: string;
 
-    integrations?: Record<string, Record<string, unknown>>;
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorsZohodeskConnectorConfig.Integrations>;
 
     org_id?: string;
 
@@ -4772,103 +10776,114 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      platforms?: Array<string>;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-      stage?: string;
-    }
-  }
+      schemas?: Connector.Schemas;
 
-  export interface ConnectorsGoogledriveConnectorConfig {
-    config: ConnectorsGoogledriveConnectorConfig.Config;
-
-    connector_name: 'googledrive';
-
-    id?: string;
-
-    connector?: ConnectorsGoogledriveConnectorConfig.Connector;
-
-    created_at?: string;
-
-    integrations?: Record<string, Record<string, unknown>>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectorConfig {
-    export interface Config {
-      client_id: string;
-
-      client_secret: string;
-
-      scopes?: Array<string> | null;
+      stage?: 'alpha' | 'beta' | 'ga';
     }
 
-    export interface Connector {
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+
+    export interface Integrations {
+      connector_name: string;
+
       name: string;
 
-      display_name?: string;
+      auth_type?: string | null;
 
-      logo_url?: string;
+      category?: string | null;
 
-      platforms?: Array<string>;
+      logo_url?: string | null;
 
-      stage?: string;
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
     }
   }
 }
 
+/**
+ * The connection details
+ */
 export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorsAircallConnectionSettings
   | ListConnectionsResponse.ConnectorsAirtableConnectionSettings
   | ListConnectionsResponse.ConnectorsApolloConnectionSettings
-  | ListConnectionsResponse.ConnectorsBeancountConnectionSettings
   | ListConnectionsResponse.ConnectorsBrexConnectionSettings
   | ListConnectionsResponse.ConnectorsCodaConnectionSettings
   | ListConnectionsResponse.ConnectorsConfluenceConnectionSettings
   | ListConnectionsResponse.ConnectorsDiscordConnectionSettings
+  | ListConnectionsResponse.ConnectorsFacebookConnectionSettings
   | ListConnectionsResponse.ConnectorsFinchConnectionSettings
   | ListConnectionsResponse.ConnectorsFirebaseConnectionSettings
   | ListConnectionsResponse.ConnectorsForeceiptConnectionSettings
   | ListConnectionsResponse.ConnectorsGitHubConnectionSettings
   | ListConnectionsResponse.ConnectorsGongConnectionSettings
-  | ListConnectionsResponse.ConnectorsGoogleConnectionSettings
+  | ListConnectionsResponse.ConnectorsGooglecalendarConnectionSettings
+  | ListConnectionsResponse.ConnectorsGoogledocsConnectionSettings
+  | ListConnectionsResponse.ConnectorsGoogledriveConnectionSettings
+  | ListConnectionsResponse.ConnectorsGooglemailConnectionSettings
+  | ListConnectionsResponse.ConnectorsGooglesheetConnectionSettings
   | ListConnectionsResponse.ConnectorsGreenhouseConnectionSettings
   | ListConnectionsResponse.ConnectorsHeronConnectionSettings
   | ListConnectionsResponse.ConnectorsHubspotConnectionSettings
+  | ListConnectionsResponse.ConnectorsInstagramConnectionSettings
   | ListConnectionsResponse.ConnectorsIntercomConnectionSettings
   | ListConnectionsResponse.ConnectorsJiraConnectionSettings
   | ListConnectionsResponse.ConnectorsKustomerConnectionSettings
   | ListConnectionsResponse.ConnectorsLeverConnectionSettings
   | ListConnectionsResponse.ConnectorsLinearConnectionSettings
+  | ListConnectionsResponse.ConnectorsLinkedinConnectionSettings
   | ListConnectionsResponse.ConnectorsLunchmoneyConnectionSettings
   | ListConnectionsResponse.ConnectorsMercuryConnectionSettings
   | ListConnectionsResponse.ConnectorsMergeConnectionSettings
   | ListConnectionsResponse.ConnectorsMicrosoftConnectionSettings
   | ListConnectionsResponse.ConnectorsMootaConnectionSettings
+  | ListConnectionsResponse.ConnectorsNotionConnectionSettings
   | ListConnectionsResponse.ConnectorsOnebrickConnectionSettings
   | ListConnectionsResponse.ConnectorsOutreachConnectionSettings
   | ListConnectionsResponse.ConnectorsPipedriveConnectionSettings
   | ListConnectionsResponse.ConnectorsPlaidConnectionSettings
   | ListConnectionsResponse.ConnectorsPostgresConnectionSettings
-  | ListConnectionsResponse.ConnectorsQboConnectionSettings
+  | ListConnectionsResponse.ConnectorsQuickbooksConnectionSettings
   | ListConnectionsResponse.ConnectorsRampConnectionSettings
+  | ListConnectionsResponse.ConnectorsRedditConnectionSettings
   | ListConnectionsResponse.ConnectorsSalesforceConnectionSettings
   | ListConnectionsResponse.ConnectorsSalesloftConnectionSettings
   | ListConnectionsResponse.ConnectorsSaltedgeConnectionSettings
+  | ListConnectionsResponse.ConnectorsSharepointonlineConnectionSettings
   | ListConnectionsResponse.ConnectorsSlackConnectionSettings
   | ListConnectionsResponse.ConnectorsSplitwiseConnectionSettings
   | ListConnectionsResponse.ConnectorsStripeConnectionSettings
   | ListConnectionsResponse.ConnectorsTellerConnectionSettings
   | ListConnectionsResponse.ConnectorsTogglConnectionSettings
   | ListConnectionsResponse.ConnectorsTwentyConnectionSettings
+  | ListConnectionsResponse.ConnectorsTwitterConnectionSettings
   | ListConnectionsResponse.ConnectorsVenmoConnectionSettings
   | ListConnectionsResponse.ConnectorsWiseConnectionSettings
   | ListConnectionsResponse.ConnectorsXeroConnectionSettings
   | ListConnectionsResponse.ConnectorsYodleeConnectionSettings
-  | ListConnectionsResponse.ConnectorsZohodeskConnectionSettings
-  | ListConnectionsResponse.ConnectorsGoogledriveConnectionSettings;
+  | ListConnectionsResponse.ConnectorsZohodeskConnectionSettings;
 
 export namespace ListConnectionsResponse {
   export interface ConnectorsAircallConnectionSettings {
@@ -4878,18 +10893,96 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsAircallConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
   export namespace ConnectorsAircallConnectionSettings {
     export interface Settings {
-      apiId: string;
+      oauth: Settings.OAuth;
+    }
 
-      apiToken: string;
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -4900,9 +10993,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsAirtableConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -4913,6 +11014,38 @@ export namespace ListConnectionsResponse {
 
       apiKey: string;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsApolloConnectionSettings {
@@ -4922,9 +11055,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsApolloConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -4964,8 +11105,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -4975,6 +11114,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -4992,20 +11134,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
-  }
 
-  export interface ConnectorsBeancountConnectionSettings {
-    connector_name: 'beancount';
+    export interface Connector {
+      name: string;
 
-    settings: null;
+      display_name?: string;
 
-    id?: string;
+      logo_url?: string;
 
-    connector_config_id?: string;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-    created_at?: string;
+      schemas?: Connector.Schemas;
 
-    updated_at?: string;
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsBrexConnectionSettings {
@@ -5015,9 +11175,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsBrexConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5025,6 +11193,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsBrexConnectionSettings {
     export interface Settings {
       accessToken: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -5035,9 +11235,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsCodaConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5045,6 +11253,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsCodaConnectionSettings {
     export interface Settings {
       apiKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -5055,9 +11295,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsConfluenceConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5065,64 +11313,77 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsConfluenceConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -5134,14 +11395,122 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsDiscordConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
   export namespace ConnectorsDiscordConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsFacebookConnectionSettings {
+    connector_name: 'facebook';
+
+    settings: ConnectorsFacebookConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsFacebookConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFacebookConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -5176,8 +11545,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5187,6 +11554,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -5204,6 +11574,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsFinchConnectionSettings {
@@ -5213,9 +11615,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsFinchConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5223,6 +11633,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsFinchConnectionSettings {
     export interface Settings {
       access_token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -5235,9 +11677,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsFirebaseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5314,6 +11764,38 @@ export namespace ListConnectionsResponse {
         storageBucket?: string;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsForeceiptConnectionSettings {
@@ -5323,9 +11805,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsForeceiptConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5337,8 +11827,38 @@ export namespace ListConnectionsResponse {
       _id?: unknown;
 
       credentials?: unknown;
+    }
 
-      options?: unknown;
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -5349,9 +11869,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGitHubConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5359,64 +11887,77 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsGitHubConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -5428,9 +11969,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGongConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5470,8 +12019,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5481,6 +12028,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -5498,85 +12048,536 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
-  export interface ConnectorsGoogleConnectionSettings {
-    connector_name: 'google';
+  export interface ConnectorsGooglecalendarConnectionSettings {
+    connector_name: 'googlecalendar';
 
-    settings: ConnectorsGoogleConnectionSettings.Settings;
+    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGooglecalendarConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGoogleConnectionSettings {
+  export namespace ConnectorsGooglecalendarConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      client_id?: string;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledocsConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorsGoogledocsConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGoogledocsConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledocsConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledriveConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorsGoogledriveConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGoogledriveConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGooglemailConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorsGooglemailConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGooglemailConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglemailConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsGooglesheetConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorsGooglesheetConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsGooglesheetConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglesheetConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -5588,9 +12589,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsGreenhouseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5598,6 +12607,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsGreenhouseConnectionSettings {
     export interface Settings {
       apiKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -5608,11 +12649,53 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsHeronConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsHeronConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsHubspotConnectionSettings {
@@ -5622,9 +12705,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsHubspotConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5632,10 +12723,108 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsHubspotConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsInstagramConnectionSettings {
+    connector_name: 'instagram';
+
+    settings: ConnectorsInstagramConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsInstagramConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsInstagramConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
 
       error?: Settings.Error | null;
-
-      extra?: unknown;
     }
 
     export namespace Settings {
@@ -5666,8 +12855,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5677,6 +12864,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -5694,6 +12884,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsIntercomConnectionSettings {
@@ -5703,9 +12925,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsIntercomConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5745,8 +12975,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5756,6 +12984,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -5773,6 +13004,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsJiraConnectionSettings {
@@ -5782,9 +13045,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsJiraConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5824,8 +13095,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5835,6 +13104,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -5852,6 +13124,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsKustomerConnectionSettings {
@@ -5861,9 +13165,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsKustomerConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5903,8 +13215,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5914,6 +13224,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -5931,6 +13244,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsLeverConnectionSettings {
@@ -5940,9 +13285,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsLeverConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -5982,8 +13335,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -5993,6 +13344,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -6008,6 +13362,38 @@ export namespace ListConnectionsResponse {
         code: 'refresh_token_external_error' | (string & {});
 
         message?: string | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -6019,9 +13405,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsLinearConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6029,64 +13423,177 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsLinearConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsLinkedinConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorsLinkedinConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsLinkedinConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLinkedinConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -6098,11 +13605,53 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsLunchmoneyConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsLunchmoneyConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMercuryConnectionSettings {
@@ -6112,11 +13661,53 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMercuryConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsMercuryConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMergeConnectionSettings {
@@ -6126,9 +13717,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMergeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6139,6 +13738,38 @@ export namespace ListConnectionsResponse {
 
       accountDetails?: unknown;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMicrosoftConnectionSettings {
@@ -6148,9 +13779,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMicrosoftConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6192,8 +13831,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -6203,6 +13840,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -6220,6 +13860,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsMootaConnectionSettings {
@@ -6229,11 +13901,153 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsMootaConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
 
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
     updated_at?: string;
+  }
+
+  export namespace ConnectorsMootaConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsNotionConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorsNotionConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsNotionConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsNotionConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsOnebrickConnectionSettings {
@@ -6243,9 +14057,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsOnebrickConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6253,6 +14075,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsOnebrickConnectionSettings {
     export interface Settings {
       accessToken: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -6263,9 +14117,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsOutreachConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6305,8 +14167,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -6316,6 +14176,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -6333,6 +14196,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsPipedriveConnectionSettings {
@@ -6342,9 +14237,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsPipedriveConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6384,8 +14287,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -6395,6 +14296,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -6412,6 +14316,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsPlaidConnectionSettings {
@@ -6421,9 +14357,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsPlaidConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6442,6 +14386,38 @@ export namespace ListConnectionsResponse {
 
       webhookItemError?: null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsPostgresConnectionSettings {
@@ -6451,9 +14427,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsPostgresConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6461,8 +14445,6 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsPostgresConnectionSettings {
     export interface Settings {
       databaseUrl: string;
-
-      migrateTables?: boolean;
 
       sourceQueries?: Settings.SourceQueries;
     }
@@ -6475,80 +14457,141 @@ export namespace ListConnectionsResponse {
         invoice?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
-  export interface ConnectorsQboConnectionSettings {
-    connector_name: 'qbo';
+  export interface ConnectorsQuickbooksConnectionSettings {
+    connector_name: 'quickbooks';
 
-    settings: ConnectorsQboConnectionSettings.Settings;
+    settings: ConnectorsQuickbooksConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsQuickbooksConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsQboConnectionSettings {
+  export namespace ConnectorsQuickbooksConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
-      error?: Settings.Error | null;
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
     }
 
     export namespace Settings {
       export interface OAuth {
-        connection_config: OAuth.ConnectionConfig;
+        created_at: string;
 
-        credentials: OAuth.Credentials;
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
-        export interface ConnectionConfig {
-          realmId: string;
-        }
-
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -6560,9 +14603,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsRampConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6573,23 +14624,63 @@ export namespace ListConnectionsResponse {
 
       startAfterTransactionId?: string | null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
-  export interface ConnectorsSalesforceConnectionSettings {
-    connector_name: 'salesforce';
+  export interface ConnectorsRedditConnectionSettings {
+    connector_name: 'reddit';
 
-    settings: ConnectorsSalesforceConnectionSettings.Settings;
+    settings: ConnectorsRedditConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsRedditConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesforceConnectionSettings {
+  export namespace ConnectorsRedditConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -6624,8 +14715,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -6635,6 +14724,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -6652,6 +14744,143 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsSalesforceConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorsSalesforceConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsSalesforceConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesforceConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsSalesloftConnectionSettings {
@@ -6661,9 +14890,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSalesloftConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6703,8 +14940,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -6714,6 +14949,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -6729,6 +14967,38 @@ export namespace ListConnectionsResponse {
         code: 'refresh_token_external_error' | (string & {});
 
         message?: string | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -6738,13 +15008,155 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSaltedgeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     settings?: unknown;
 
     updated_at?: string;
+  }
+
+  export namespace ConnectorsSaltedgeConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsSharepointonlineConnectionSettings {
+    connector_name: 'sharepointonline';
+
+    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsSharepointonlineConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSharepointonlineConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsSlackConnectionSettings {
@@ -6754,9 +15166,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSlackConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6764,64 +15184,77 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsSlackConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      error?: Settings.Error | null;
     }
 
     export namespace Settings {
       export interface OAuth {
-        credentials: OAuth.Credentials;
+        created_at: string;
+
+        last_fetched_at: string;
 
         metadata: Record<string, unknown> | null;
 
-        connection_config?: OAuth.ConnectionConfig | null;
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
       }
 
       export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
         export interface Credentials {
-          raw: Credentials.Raw;
+          access_token: string;
 
-          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+          client_id: string;
 
-          access_token?: string;
+          raw: Record<string, unknown>;
 
-          api_key?: string | null;
+          scope: string;
 
           expires_at?: string;
 
+          expires_in?: number;
+
           refresh_token?: string;
-        }
 
-        export namespace Credentials {
-          export interface Raw {
-            access_token: string;
-
-            token_type: string;
-
-            expires_at?: string;
-
-            expires_in?: number;
-
-            refresh_token?: string | null;
-
-            refresh_token_expires_in?: number | null;
-
-            scope?: string;
-          }
-        }
-
-        export interface ConnectionConfig {
-          instance_url?: string | null;
-
-          portalId?: number | null;
-          [k: string]: unknown;
+          token_type?: string;
         }
       }
+    }
 
-      export interface Error {
-        code: 'refresh_token_external_error' | (string & {});
+    export interface Connector {
+      name: string;
 
-        message?: string | null;
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -6833,9 +15266,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsSplitwiseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6916,6 +15357,38 @@ export namespace ListConnectionsResponse {
         }
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsStripeConnectionSettings {
@@ -6925,9 +15398,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsStripeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6935,6 +15416,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsStripeConnectionSettings {
     export interface Settings {
       secretKey: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -6945,9 +15458,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsTellerConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6955,6 +15476,38 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsTellerConnectionSettings {
     export interface Settings {
       token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -6965,9 +15518,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsTogglConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6980,6 +15541,38 @@ export namespace ListConnectionsResponse {
 
       password?: string | null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsTwentyConnectionSettings {
@@ -6989,9 +15582,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsTwentyConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -6999,6 +15600,158 @@ export namespace ListConnectionsResponse {
   export namespace ConnectorsTwentyConnectionSettings {
     export interface Settings {
       access_token: string;
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
+  }
+
+  export interface ConnectorsTwitterConnectionSettings {
+    connector_name: 'twitter';
+
+    settings: ConnectorsTwitterConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorsTwitterConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTwitterConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
     }
   }
 
@@ -7009,9 +15762,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsVenmoConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -7022,6 +15783,38 @@ export namespace ListConnectionsResponse {
 
       me?: unknown;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsWiseConnectionSettings {
@@ -7031,9 +15824,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsWiseConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -7044,6 +15845,38 @@ export namespace ListConnectionsResponse {
 
       apiToken?: string | null;
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsXeroConnectionSettings {
@@ -7053,9 +15886,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsXeroConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -7095,8 +15936,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -7106,6 +15945,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -7123,6 +15965,38 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsYodleeConnectionSettings {
@@ -7132,9 +16006,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsYodleeConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -7187,6 +16069,38 @@ export namespace ListConnectionsResponse {
         isDeleted?: boolean | null;
       }
     }
+
+    export interface Connector {
+      name: string;
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      stage?: 'alpha' | 'beta' | 'ga';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+    }
   }
 
   export interface ConnectorsZohodeskConnectionSettings {
@@ -7196,9 +16110,17 @@ export namespace ListConnectionsResponse {
 
     id?: string;
 
-    connector_config_id?: string;
+    connector?: ConnectorsZohodeskConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
 
     created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
@@ -7238,8 +16160,6 @@ export namespace ListConnectionsResponse {
           export interface Raw {
             access_token: string;
 
-            token_type: string;
-
             expires_at?: string;
 
             expires_in?: number;
@@ -7249,6 +16169,9 @@ export namespace ListConnectionsResponse {
             refresh_token_expires_in?: number | null;
 
             scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
           }
         }
 
@@ -7266,32 +16189,36 @@ export namespace ListConnectionsResponse {
         message?: string | null;
       }
     }
-  }
 
-  export interface ConnectorsGoogledriveConnectionSettings {
-    connector_name: 'googledrive';
+    export interface Connector {
+      name: string;
 
-    settings: ConnectorsGoogledriveConnectionSettings.Settings;
+      display_name?: string;
 
-    id?: string;
+      logo_url?: string;
 
-    connector_config_id?: string;
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-    created_at?: string;
+      schemas?: Connector.Schemas;
 
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-
-      metadata?: Record<string, unknown>;
+      stage?: 'alpha' | 'beta' | 'ga';
     }
 
-    export namespace Settings {
-      export interface OAuth {
-        credentials: unknown;
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
       }
     }
   }
@@ -7310,49 +16237,58 @@ export interface CreateMagicLinkParams {
     | 'aircall'
     | 'airtable'
     | 'apollo'
-    | 'beancount'
     | 'brex'
     | 'coda'
     | 'confluence'
     | 'discord'
+    | 'facebook'
     | 'finch'
     | 'firebase'
     | 'foreceipt'
     | 'github'
     | 'gong'
-    | 'google'
+    | 'googlecalendar'
+    | 'googledocs'
+    | 'googledrive'
+    | 'googlemail'
+    | 'googlesheet'
     | 'greenhouse'
     | 'heron'
     | 'hubspot'
+    | 'instagram'
     | 'intercom'
     | 'jira'
     | 'kustomer'
     | 'lever'
     | 'linear'
+    | 'linkedin'
     | 'lunchmoney'
     | 'merge'
     | 'microsoft'
     | 'moota'
+    | 'notion'
     | 'onebrick'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
-    | 'qbo'
+    | 'quickbooks'
     | 'ramp'
+    | 'reddit'
     | 'salesforce'
     | 'salesloft'
     | 'saltedge'
+    | 'sharepointonline'
     | 'slack'
     | 'splitwise'
     | 'stripe'
     | 'teller'
     | 'toggl'
     | 'twenty'
+    | 'twitter'
     | 'wise'
     | 'xero'
     | 'yodlee'
     | 'zohodesk'
-    | 'googledrive'
   >;
 
   /**
@@ -7384,7 +16320,7 @@ export interface CreateTokenParams {
 }
 
 export interface GetConnectionParams {
-  expand?: Array<'connector' | 'enabled_integrations'>;
+  expand?: Array<'connector'>;
 
   /**
    * Controls secret inclusion: none (default), basic (auth only), or all secrets
@@ -7406,50 +16342,64 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'aircall'
     | 'airtable'
     | 'apollo'
-    | 'beancount'
     | 'brex'
     | 'coda'
     | 'confluence'
     | 'discord'
+    | 'facebook'
     | 'finch'
     | 'firebase'
     | 'foreceipt'
     | 'github'
     | 'gong'
-    | 'google'
+    | 'googlecalendar'
+    | 'googledocs'
+    | 'googledrive'
+    | 'googlemail'
+    | 'googlesheet'
     | 'greenhouse'
     | 'heron'
     | 'hubspot'
+    | 'instagram'
     | 'intercom'
     | 'jira'
     | 'kustomer'
     | 'lever'
     | 'linear'
+    | 'linkedin'
     | 'lunchmoney'
     | 'merge'
     | 'microsoft'
     | 'moota'
+    | 'notion'
     | 'onebrick'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
-    | 'qbo'
+    | 'quickbooks'
     | 'ramp'
+    | 'reddit'
     | 'salesforce'
     | 'salesloft'
     | 'saltedge'
+    | 'sharepointonline'
     | 'slack'
     | 'splitwise'
     | 'stripe'
     | 'teller'
     | 'toggl'
     | 'twenty'
+    | 'twitter'
     | 'wise'
     | 'xero'
     | 'yodlee'
-    | 'zohodesk'
-    | 'googledrive';
+    | 'zohodesk';
 
+  /**
+   * Comma separated list of fields to optionally expand.
+   *
+   * Available Options: `connector`, `enabled_integrations`
+   */
   expand?: string;
 
   /**
@@ -7471,49 +16421,58 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'aircall'
     | 'airtable'
     | 'apollo'
-    | 'beancount'
     | 'brex'
     | 'coda'
     | 'confluence'
     | 'discord'
+    | 'facebook'
     | 'finch'
     | 'firebase'
     | 'foreceipt'
     | 'github'
     | 'gong'
-    | 'google'
+    | 'googlecalendar'
+    | 'googledocs'
+    | 'googledrive'
+    | 'googlemail'
+    | 'googlesheet'
     | 'greenhouse'
     | 'heron'
     | 'hubspot'
+    | 'instagram'
     | 'intercom'
     | 'jira'
     | 'kustomer'
     | 'lever'
     | 'linear'
+    | 'linkedin'
     | 'lunchmoney'
     | 'merge'
     | 'microsoft'
     | 'moota'
+    | 'notion'
     | 'onebrick'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
-    | 'qbo'
+    | 'quickbooks'
     | 'ramp'
+    | 'reddit'
     | 'salesforce'
     | 'salesloft'
     | 'saltedge'
+    | 'sharepointonline'
     | 'slack'
     | 'splitwise'
     | 'stripe'
     | 'teller'
     | 'toggl'
     | 'twenty'
+    | 'twitter'
     | 'wise'
     | 'xero'
     | 'yodlee'
-    | 'zohodesk'
-    | 'googledrive';
+    | 'zohodesk';
 
   /**
    * The id of the customer in your application. Ensure it is unique for that
@@ -7521,7 +16480,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   customer_id?: string;
 
-  expand?: Array<'connector' | 'enabled_integrations'>;
+  expand?: Array<'connector'>;
 
   /**
    * Controls secret inclusion: none (default), basic (auth only), or all secrets
