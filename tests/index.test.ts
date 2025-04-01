@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from '@openint/sdk/api-promise';
+import { APIPromise } from '@openint/sdk/core/api-promise';
 
 import util from 'node:util';
 import Openint from '@openint/sdk';

@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.23 (2025-04-01)
+
+Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([#110](https://github.com/openintegrations/ts-sdk/issues/110)) ([29bbfe2](https://github.com/openintegrations/ts-sdk/commit/29bbfe2aea8f8a8c656c407cb233ad2db6bf1675))
+
+
+### Chores
+
+* **client:** move misc public files to new `core/` directory, deprecate old paths ([#109](https://github.com/openintegrations/ts-sdk/issues/109)) ([70cb1a5](https://github.com/openintegrations/ts-sdk/commit/70cb1a5c076baec3bd5bb9272f25e097d94f6626))
+* **exports:** cleaner resource index imports ([#107](https://github.com/openintegrations/ts-sdk/issues/107)) ([ca4e06f](https://github.com/openintegrations/ts-sdk/commit/ca4e06f812662c790e506194f645f58b72f07258))
+* **exports:** stop using path fallbacks ([#108](https://github.com/openintegrations/ts-sdk/issues/108)) ([8cc3641](https://github.com/openintegrations/ts-sdk/commit/8cc3641afabefa6eb437061254d5f18333585a17))
+* **internal:** minor client file refactoring ([#105](https://github.com/openintegrations/ts-sdk/issues/105)) ([39fbfd2](https://github.com/openintegrations/ts-sdk/commit/39fbfd2a899be337fe71b2cd9f22ddfdb671e4c3))
+
 ## 0.1.0-alpha.22 (2025-03-15)
 
 Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
