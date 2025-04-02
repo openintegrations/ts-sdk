@@ -21,6 +21,8 @@ import * as Uploads from './core/uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckConnectionResponse,
+  CreateConnectionParams,
+  CreateConnectionResponse,
   CreateMagicLinkParams,
   CreateMagicLinkResponse,
   CreateTokenParams,
@@ -190,6 +192,16 @@ export class Openint {
    */
   checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
     return this.post(path`/connection/${id}/check`, options);
+  }
+
+  /**
+   * Import an existing connection after validation
+   */
+  createConnection(
+    body: TopLevelAPI.CreateConnectionParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateConnectionResponse> {
+    return this.post('/connection', { body, ...options });
   }
 
   /**
@@ -825,6 +837,7 @@ export declare namespace Openint {
 
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
+    type CreateConnectionResponse as CreateConnectionResponse,
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
@@ -833,6 +846,7 @@ export declare namespace Openint {
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type CreateConnectionParams as CreateConnectionParams,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
