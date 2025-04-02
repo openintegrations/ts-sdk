@@ -1,4 +1,4 @@
-# OpenInt
+# Openint
 
 Types:
 
