@@ -27,6 +27,7 @@ import {
   CreateMagicLinkResponse,
   CreateTokenParams,
   CreateTokenResponse,
+  DeleteConnectionResponse,
   GetConnectionParams,
   GetConnectionResponse,
   GetCurrentUserResponse,
@@ -224,6 +225,10 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateTokenResponse> {
     return this.post(path`/customer/${customerID}/token`, { body, ...options });
+  }
+
+  deleteConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.DeleteConnectionResponse> {
+    return this.delete(path`/connection/${id}`, options);
   }
 
   /**
@@ -840,6 +845,7 @@ export declare namespace Openint {
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
+    type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
