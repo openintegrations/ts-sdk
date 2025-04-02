@@ -1,13 +1,13 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { OpenInt as default } from './client';
+export { Openint as default } from './client';
 
 export { type Uploadable, toFile } from './core/uploads';
 export { APIPromise } from './core/api-promise';
-export { OpenInt, type ClientOptions } from './client';
+export { Openint, type ClientOptions } from './client';
 export { PagePromise } from './core/pagination';
 export {
-  OpenIntError,
+  OpenintError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,
