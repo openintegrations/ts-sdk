@@ -21,6 +21,62 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('createConnection: only required params', async () => {
+    const responsePromise = client.createConnection({
+      connector_config_id: 'ccfg_',
+      customer_id: 'customer_id',
+      data: {
+        connector_name: 'aircall',
+        settings: {
+          oauth: {
+            created_at: 'created_at',
+            last_fetched_at: 'last_fetched_at',
+            metadata: { foo: 'bar' },
+            updated_at: 'updated_at',
+          },
+        },
+      },
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('createConnection: required and optional params', async () => {
+    const response = await client.createConnection({
+      connector_config_id: 'ccfg_',
+      customer_id: 'customer_id',
+      data: {
+        connector_name: 'aircall',
+        settings: {
+          oauth: {
+            created_at: 'created_at',
+            last_fetched_at: 'last_fetched_at',
+            metadata: { foo: 'bar' },
+            updated_at: 'updated_at',
+            credentials: {
+              access_token: 'access_token',
+              client_id: 'client_id',
+              raw: { foo: 'bar' },
+              scope: 'scope',
+              expires_at: 'expires_at',
+              expires_in: 0,
+              refresh_token: 'refresh_token',
+              token_type: 'token_type',
+            },
+          },
+        },
+      },
+      metadata: { foo: 'bar' },
+    });
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('createMagicLink', async () => {
     const responsePromise = client.createMagicLink('customer_id', {});
     const rawResponse = await responsePromise.asResponse();

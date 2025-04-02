@@ -29,6 +29,3423 @@ export interface CheckConnectionResponse {
   errorMessage?: string;
 }
 
+export type CreateConnectionResponse =
+  | CreateConnectionResponse.ConnectorsAircallConnectionSettings
+  | CreateConnectionResponse.ConnectorsAirtableConnectionSettings
+  | CreateConnectionResponse.ConnectorsApolloConnectionSettings
+  | CreateConnectionResponse.ConnectorsBrexConnectionSettings
+  | CreateConnectionResponse.ConnectorsCodaConnectionSettings
+  | CreateConnectionResponse.ConnectorsConfluenceConnectionSettings
+  | CreateConnectionResponse.ConnectorsDiscordConnectionSettings
+  | CreateConnectionResponse.ConnectorsFacebookConnectionSettings
+  | CreateConnectionResponse.ConnectorsFinchConnectionSettings
+  | CreateConnectionResponse.ConnectorsFirebaseConnectionSettings
+  | CreateConnectionResponse.ConnectorsForeceiptConnectionSettings
+  | CreateConnectionResponse.ConnectorsGitHubConnectionSettings
+  | CreateConnectionResponse.ConnectorsGongConnectionSettings
+  | CreateConnectionResponse.ConnectorsGooglecalendarConnectionSettings
+  | CreateConnectionResponse.ConnectorsGoogledocsConnectionSettings
+  | CreateConnectionResponse.ConnectorsGoogledriveConnectionSettings
+  | CreateConnectionResponse.ConnectorsGooglemailConnectionSettings
+  | CreateConnectionResponse.ConnectorsGooglesheetConnectionSettings
+  | CreateConnectionResponse.ConnectorsGreenhouseConnectionSettings
+  | CreateConnectionResponse.ConnectorsHeronConnectionSettings
+  | CreateConnectionResponse.ConnectorsHubspotConnectionSettings
+  | CreateConnectionResponse.ConnectorsInstagramConnectionSettings
+  | CreateConnectionResponse.ConnectorsIntercomConnectionSettings
+  | CreateConnectionResponse.ConnectorsJiraConnectionSettings
+  | CreateConnectionResponse.ConnectorsKustomerConnectionSettings
+  | CreateConnectionResponse.ConnectorsLeverConnectionSettings
+  | CreateConnectionResponse.ConnectorsLinearConnectionSettings
+  | CreateConnectionResponse.ConnectorsLinkedinConnectionSettings
+  | CreateConnectionResponse.ConnectorsLunchmoneyConnectionSettings
+  | CreateConnectionResponse.ConnectorsMercuryConnectionSettings
+  | CreateConnectionResponse.ConnectorsMergeConnectionSettings
+  | CreateConnectionResponse.ConnectorsMicrosoftConnectionSettings
+  | CreateConnectionResponse.ConnectorsMootaConnectionSettings
+  | CreateConnectionResponse.ConnectorsNotionConnectionSettings
+  | CreateConnectionResponse.ConnectorsOnebrickConnectionSettings
+  | CreateConnectionResponse.ConnectorsOutreachConnectionSettings
+  | CreateConnectionResponse.ConnectorsPipedriveConnectionSettings
+  | CreateConnectionResponse.ConnectorsPlaidConnectionSettings
+  | CreateConnectionResponse.ConnectorsPostgresConnectionSettings
+  | CreateConnectionResponse.ConnectorsQuickbooksConnectionSettings
+  | CreateConnectionResponse.ConnectorsRampConnectionSettings
+  | CreateConnectionResponse.ConnectorsRedditConnectionSettings
+  | CreateConnectionResponse.ConnectorsSalesforceConnectionSettings
+  | CreateConnectionResponse.ConnectorsSalesloftConnectionSettings
+  | CreateConnectionResponse.ConnectorsSaltedgeConnectionSettings
+  | CreateConnectionResponse.ConnectorsSharepointonlineConnectionSettings
+  | CreateConnectionResponse.ConnectorsSlackConnectionSettings
+  | CreateConnectionResponse.ConnectorsSplitwiseConnectionSettings
+  | CreateConnectionResponse.ConnectorsStripeConnectionSettings
+  | CreateConnectionResponse.ConnectorsTellerConnectionSettings
+  | CreateConnectionResponse.ConnectorsTogglConnectionSettings
+  | CreateConnectionResponse.ConnectorsTwentyConnectionSettings
+  | CreateConnectionResponse.ConnectorsTwitterConnectionSettings
+  | CreateConnectionResponse.ConnectorsVenmoConnectionSettings
+  | CreateConnectionResponse.ConnectorsWiseConnectionSettings
+  | CreateConnectionResponse.ConnectorsXeroConnectionSettings
+  | CreateConnectionResponse.ConnectorsYodleeConnectionSettings
+  | CreateConnectionResponse.ConnectorsZohodeskConnectionSettings;
+
+export namespace CreateConnectionResponse {
+  export interface ConnectorsAircallConnectionSettings {
+    connector_name: 'aircall';
+
+    settings: ConnectorsAircallConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsAircallConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsAirtableConnectionSettings {
+    connector_name: 'airtable';
+
+    settings: ConnectorsAirtableConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsAirtableConnectionSettings {
+    export interface Settings {
+      airtableBase: string;
+
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorsApolloConnectionSettings {
+    connector_name: 'apollo';
+
+    settings: ConnectorsApolloConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsApolloConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsBrexConnectionSettings {
+    connector_name: 'brex';
+
+    settings: ConnectorsBrexConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsBrexConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+    }
+  }
+
+  export interface ConnectorsCodaConnectionSettings {
+    connector_name: 'coda';
+
+    settings: ConnectorsCodaConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsCodaConnectionSettings {
+    export interface Settings {
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorsConfluenceConnectionSettings {
+    connector_name: 'confluence';
+
+    settings: ConnectorsConfluenceConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsConfluenceConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsDiscordConnectionSettings {
+    connector_name: 'discord';
+
+    settings: ConnectorsDiscordConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsDiscordConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsFacebookConnectionSettings {
+    connector_name: 'facebook';
+
+    settings: ConnectorsFacebookConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFacebookConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsFinchConnectionSettings {
+    connector_name: 'finch';
+
+    settings: ConnectorsFinchConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFinchConnectionSettings {
+    export interface Settings {
+      access_token: string;
+    }
+  }
+
+  export interface ConnectorsFirebaseConnectionSettings {
+    connector_name: 'firebase';
+
+    settings:
+      | ConnectorsFirebaseConnectionSettings.UnionMember0
+      | ConnectorsFirebaseConnectionSettings.UnionMember1;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsFirebaseConnectionSettings {
+    export interface UnionMember0 {
+      role: 'admin';
+
+      serviceAccount: UnionMember0.ServiceAccount;
+    }
+
+    export namespace UnionMember0 {
+      export interface ServiceAccount {
+        project_id: string;
+        [k: string]: unknown;
+      }
+    }
+
+    export interface UnionMember1 {
+      authData: UnionMember1.UnionMember0 | UnionMember1.UnionMember1 | UnionMember1.UnionMember2;
+
+      firebaseConfig: UnionMember1.FirebaseConfig;
+
+      role: 'user';
+    }
+
+    export namespace UnionMember1 {
+      export interface UnionMember0 {
+        method: 'userJson';
+
+        userJson: UnionMember0.UserJson;
+      }
+
+      export namespace UnionMember0 {
+        export interface UserJson {
+          appName: string;
+
+          stsTokenManager: Record<string, unknown>;
+
+          uid: string;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface UnionMember1 {
+        customToken: string;
+
+        method: 'customToken';
+      }
+
+      export interface UnionMember2 {
+        email: string;
+
+        method: 'emailPassword';
+
+        password: string;
+      }
+
+      export interface FirebaseConfig {
+        apiKey: string;
+
+        appId: string;
+
+        authDomain: string;
+
+        databaseURL: string;
+
+        projectId: string;
+
+        measurementId?: string;
+
+        messagingSenderId?: string;
+
+        storageBucket?: string;
+      }
+    }
+  }
+
+  export interface ConnectorsForeceiptConnectionSettings {
+    connector_name: 'foreceipt';
+
+    settings: ConnectorsForeceiptConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsForeceiptConnectionSettings {
+    export interface Settings {
+      envName: 'staging' | 'production';
+
+      _id?: unknown;
+
+      credentials?: unknown;
+    }
+  }
+
+  export interface ConnectorsGitHubConnectionSettings {
+    connector_name: 'github';
+
+    settings: ConnectorsGitHubConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGitHubConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGongConnectionSettings {
+    connector_name: 'gong';
+
+    settings: ConnectorsGongConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGongConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsGooglecalendarConnectionSettings {
+    connector_name: 'googlecalendar';
+
+    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglecalendarConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledocsConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorsGoogledocsConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledocsConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledriveConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorsGoogledriveConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGoogledriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGooglemailConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorsGooglemailConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglemailConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGooglesheetConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorsGooglesheetConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGooglesheetConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGreenhouseConnectionSettings {
+    connector_name: 'greenhouse';
+
+    settings: ConnectorsGreenhouseConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsGreenhouseConnectionSettings {
+    export interface Settings {
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorsHeronConnectionSettings {
+    connector_name: 'heron';
+
+    settings: null;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorsHubspotConnectionSettings {
+    connector_name: 'hubspot';
+
+    settings: ConnectorsHubspotConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsHubspotConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsInstagramConnectionSettings {
+    connector_name: 'instagram';
+
+    settings: ConnectorsInstagramConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsInstagramConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsIntercomConnectionSettings {
+    connector_name: 'intercom';
+
+    settings: ConnectorsIntercomConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsIntercomConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsJiraConnectionSettings {
+    connector_name: 'jira';
+
+    settings: ConnectorsJiraConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsJiraConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsKustomerConnectionSettings {
+    connector_name: 'kustomer';
+
+    settings: ConnectorsKustomerConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsKustomerConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsLeverConnectionSettings {
+    connector_name: 'lever';
+
+    settings: ConnectorsLeverConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLeverConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsLinearConnectionSettings {
+    connector_name: 'linear';
+
+    settings: ConnectorsLinearConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLinearConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsLinkedinConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorsLinkedinConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsLinkedinConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsLunchmoneyConnectionSettings {
+    connector_name: 'lunchmoney';
+
+    settings: null;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorsMercuryConnectionSettings {
+    connector_name: 'mercury';
+
+    settings: null;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorsMergeConnectionSettings {
+    connector_name: 'merge';
+
+    settings: ConnectorsMergeConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsMergeConnectionSettings {
+    export interface Settings {
+      accountToken: string;
+
+      accountDetails?: unknown;
+    }
+  }
+
+  export interface ConnectorsMicrosoftConnectionSettings {
+    connector_name: 'microsoft';
+
+    settings: ConnectorsMicrosoftConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsMicrosoftConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      client_id?: string;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsMootaConnectionSettings {
+    connector_name: 'moota';
+
+    settings: null;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorsNotionConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorsNotionConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsNotionConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsOnebrickConnectionSettings {
+    connector_name: 'onebrick';
+
+    settings: ConnectorsOnebrickConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsOnebrickConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+    }
+  }
+
+  export interface ConnectorsOutreachConnectionSettings {
+    connector_name: 'outreach';
+
+    settings: ConnectorsOutreachConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsOutreachConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsPipedriveConnectionSettings {
+    connector_name: 'pipedrive';
+
+    settings: ConnectorsPipedriveConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsPipedriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsPlaidConnectionSettings {
+    connector_name: 'plaid';
+
+    settings: ConnectorsPlaidConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsPlaidConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+
+      institution?: unknown;
+
+      item?: unknown;
+
+      itemId?: string | null;
+
+      status?: unknown;
+
+      webhookItemError?: null;
+    }
+  }
+
+  export interface ConnectorsPostgresConnectionSettings {
+    connector_name: 'postgres';
+
+    settings: ConnectorsPostgresConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsPostgresConnectionSettings {
+    export interface Settings {
+      databaseUrl: string;
+
+      sourceQueries?: Settings.SourceQueries;
+    }
+
+    export namespace Settings {
+      export interface SourceQueries {
+        /**
+         * Should order by lastModifiedAt and id descending
+         */
+        invoice?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsQuickbooksConnectionSettings {
+    connector_name: 'quickbooks';
+
+    settings: ConnectorsQuickbooksConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsQuickbooksConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsRampConnectionSettings {
+    connector_name: 'ramp';
+
+    settings: ConnectorsRampConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsRampConnectionSettings {
+    export interface Settings {
+      accessToken?: string | null;
+
+      startAfterTransactionId?: string | null;
+    }
+  }
+
+  export interface ConnectorsRedditConnectionSettings {
+    connector_name: 'reddit';
+
+    settings: ConnectorsRedditConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsRedditConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsSalesforceConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorsSalesforceConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesforceConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsSalesloftConnectionSettings {
+    connector_name: 'salesloft';
+
+    settings: ConnectorsSalesloftConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSalesloftConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsSaltedgeConnectionSettings {
+    connector_name: 'saltedge';
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorsSharepointonlineConnectionSettings {
+    connector_name: 'sharepointonline';
+
+    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSharepointonlineConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsSlackConnectionSettings {
+    connector_name: 'slack';
+
+    settings: ConnectorsSlackConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSlackConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsSplitwiseConnectionSettings {
+    connector_name: 'splitwise';
+
+    settings: ConnectorsSplitwiseConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsSplitwiseConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+
+      currentUser?: Settings.CurrentUser | null;
+    }
+
+    export namespace Settings {
+      export interface CurrentUser {
+        id: number;
+
+        country_code: string;
+
+        custom_picture: boolean;
+
+        date_format: string;
+
+        default_currency: string;
+
+        default_group_id: number;
+
+        email: string;
+
+        first_name: string;
+
+        force_refresh_at: string;
+
+        last_name: string;
+
+        locale: string;
+
+        notifications: CurrentUser.Notifications;
+
+        notifications_count: number;
+
+        notifications_read: string;
+
+        picture: CurrentUser.Picture;
+
+        registration_status: string;
+      }
+
+      export namespace CurrentUser {
+        export interface Notifications {
+          added_as_friend: boolean;
+
+          added_to_group: boolean;
+
+          announcements: boolean;
+
+          bills: boolean;
+
+          expense_added: boolean;
+
+          expense_updated: boolean;
+
+          monthly_summary: boolean;
+
+          payments: boolean;
+        }
+
+        export interface Picture {
+          large?: string | null;
+
+          medium?: string | null;
+
+          original?: string | null;
+
+          small?: string | null;
+
+          xlarge?: string | null;
+
+          xxlarge?: string | null;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsStripeConnectionSettings {
+    connector_name: 'stripe';
+
+    settings: ConnectorsStripeConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsStripeConnectionSettings {
+    export interface Settings {
+      secretKey: string;
+    }
+  }
+
+  export interface ConnectorsTellerConnectionSettings {
+    connector_name: 'teller';
+
+    settings: ConnectorsTellerConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTellerConnectionSettings {
+    export interface Settings {
+      token: string;
+    }
+  }
+
+  export interface ConnectorsTogglConnectionSettings {
+    connector_name: 'toggl';
+
+    settings: ConnectorsTogglConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTogglConnectionSettings {
+    export interface Settings {
+      apiToken: string;
+
+      email?: string | null;
+
+      password?: string | null;
+    }
+  }
+
+  export interface ConnectorsTwentyConnectionSettings {
+    connector_name: 'twenty';
+
+    settings: ConnectorsTwentyConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTwentyConnectionSettings {
+    export interface Settings {
+      access_token: string;
+    }
+  }
+
+  export interface ConnectorsTwitterConnectionSettings {
+    connector_name: 'twitter';
+
+    settings: ConnectorsTwitterConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsTwitterConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsVenmoConnectionSettings {
+    connector_name: 'venmo';
+
+    settings: ConnectorsVenmoConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsVenmoConnectionSettings {
+    export interface Settings {
+      credentials?: unknown;
+
+      me?: unknown;
+    }
+  }
+
+  export interface ConnectorsWiseConnectionSettings {
+    connector_name: 'wise';
+
+    settings: ConnectorsWiseConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsWiseConnectionSettings {
+    export interface Settings {
+      envName: 'sandbox' | 'live';
+
+      apiToken?: string | null;
+    }
+  }
+
+  export interface ConnectorsXeroConnectionSettings {
+    connector_name: 'xero';
+
+    settings: ConnectorsXeroConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsXeroConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsYodleeConnectionSettings {
+    connector_name: 'yodlee';
+
+    settings: ConnectorsYodleeConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsYodleeConnectionSettings {
+    export interface Settings {
+      loginName: string;
+
+      providerAccountId: number | string;
+
+      accessToken?: Settings.AccessToken | null;
+
+      provider?: null;
+
+      providerAccount?: Settings.ProviderAccount | null;
+
+      user?: null;
+    }
+
+    export namespace Settings {
+      export interface AccessToken {
+        accessToken: string;
+
+        expiresIn: number;
+
+        issuedAt: string;
+      }
+
+      export interface ProviderAccount {
+        id: number;
+
+        aggregationSource: string;
+
+        createdDate: string;
+
+        dataset: Array<unknown>;
+
+        isManual: boolean;
+
+        providerId: number;
+
+        status:
+          | 'LOGIN_IN_PROGRESS'
+          | 'USER_INPUT_REQUIRED'
+          | 'IN_PROGRESS'
+          | 'PARTIAL_SUCCESS'
+          | 'SUCCESS'
+          | 'FAILED';
+
+        isDeleted?: boolean | null;
+      }
+    }
+  }
+
+  export interface ConnectorsZohodeskConnectionSettings {
+    connector_name: 'zohodesk';
+
+    settings: ConnectorsZohodeskConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string;
+
+    integration_id?: string | null;
+
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorsZohodeskConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+}
+
 export interface CreateMagicLinkResponse {
   /**
    * The Connect magic link url to share with the user.
@@ -16224,6 +19641,2629 @@ export namespace ListConnectionsResponse {
   }
 }
 
+export interface CreateConnectionParams {
+  /**
+   * The id of the connector config, starts with `ccfg_`
+   */
+  connector_config_id: string;
+
+  /**
+   * The id of the customer in your application. Ensure it is unique for that
+   * customer.
+   */
+  customer_id: string;
+
+  /**
+   * Connector specific data
+   */
+  data:
+    | CreateConnectionParams.ConnectorsAircallConnectionSettings
+    | CreateConnectionParams.ConnectorsAirtableConnectionSettings
+    | CreateConnectionParams.ConnectorsApolloConnectionSettings
+    | CreateConnectionParams.ConnectorsBrexConnectionSettings
+    | CreateConnectionParams.ConnectorsCodaConnectionSettings
+    | CreateConnectionParams.ConnectorsConfluenceConnectionSettings
+    | CreateConnectionParams.ConnectorsDiscordConnectionSettings
+    | CreateConnectionParams.ConnectorsFacebookConnectionSettings
+    | CreateConnectionParams.ConnectorsFinchConnectionSettings
+    | CreateConnectionParams.ConnectorsFirebaseConnectionSettings
+    | CreateConnectionParams.ConnectorsForeceiptConnectionSettings
+    | CreateConnectionParams.ConnectorsGitHubConnectionSettings
+    | CreateConnectionParams.ConnectorsGongConnectionSettings
+    | CreateConnectionParams.ConnectorsGooglecalendarConnectionSettings
+    | CreateConnectionParams.ConnectorsGoogledocsConnectionSettings
+    | CreateConnectionParams.ConnectorsGoogledriveConnectionSettings
+    | CreateConnectionParams.ConnectorsGooglemailConnectionSettings
+    | CreateConnectionParams.ConnectorsGooglesheetConnectionSettings
+    | CreateConnectionParams.ConnectorsGreenhouseConnectionSettings
+    | CreateConnectionParams.ConnectorsHeronConnectionSettings
+    | CreateConnectionParams.ConnectorsHubspotConnectionSettings
+    | CreateConnectionParams.ConnectorsInstagramConnectionSettings
+    | CreateConnectionParams.ConnectorsIntercomConnectionSettings
+    | CreateConnectionParams.ConnectorsJiraConnectionSettings
+    | CreateConnectionParams.ConnectorsKustomerConnectionSettings
+    | CreateConnectionParams.ConnectorsLeverConnectionSettings
+    | CreateConnectionParams.ConnectorsLinearConnectionSettings
+    | CreateConnectionParams.ConnectorsLinkedinConnectionSettings
+    | CreateConnectionParams.ConnectorsLunchmoneyConnectionSettings
+    | CreateConnectionParams.ConnectorsMercuryConnectionSettings
+    | CreateConnectionParams.ConnectorsMergeConnectionSettings
+    | CreateConnectionParams.ConnectorsMicrosoftConnectionSettings
+    | CreateConnectionParams.ConnectorsMootaConnectionSettings
+    | CreateConnectionParams.ConnectorsNotionConnectionSettings
+    | CreateConnectionParams.ConnectorsOnebrickConnectionSettings
+    | CreateConnectionParams.ConnectorsOutreachConnectionSettings
+    | CreateConnectionParams.ConnectorsPipedriveConnectionSettings
+    | CreateConnectionParams.ConnectorsPlaidConnectionSettings
+    | CreateConnectionParams.ConnectorsPostgresConnectionSettings
+    | CreateConnectionParams.ConnectorsQuickbooksConnectionSettings
+    | CreateConnectionParams.ConnectorsRampConnectionSettings
+    | CreateConnectionParams.ConnectorsRedditConnectionSettings
+    | CreateConnectionParams.ConnectorsSalesforceConnectionSettings
+    | CreateConnectionParams.ConnectorsSalesloftConnectionSettings
+    | CreateConnectionParams.ConnectorsSaltedgeConnectionSettings
+    | CreateConnectionParams.ConnectorsSharepointonlineConnectionSettings
+    | CreateConnectionParams.ConnectorsSlackConnectionSettings
+    | CreateConnectionParams.ConnectorsSplitwiseConnectionSettings
+    | CreateConnectionParams.ConnectorsStripeConnectionSettings
+    | CreateConnectionParams.ConnectorsTellerConnectionSettings
+    | CreateConnectionParams.ConnectorsTogglConnectionSettings
+    | CreateConnectionParams.ConnectorsTwentyConnectionSettings
+    | CreateConnectionParams.ConnectorsTwitterConnectionSettings
+    | CreateConnectionParams.ConnectorsVenmoConnectionSettings
+    | CreateConnectionParams.ConnectorsWiseConnectionSettings
+    | CreateConnectionParams.ConnectorsXeroConnectionSettings
+    | CreateConnectionParams.ConnectorsYodleeConnectionSettings
+    | CreateConnectionParams.ConnectorsZohodeskConnectionSettings;
+
+  metadata?: Record<string, unknown>;
+}
+
+export namespace CreateConnectionParams {
+  export interface ConnectorsAircallConnectionSettings {
+    connector_name: 'aircall';
+
+    settings: ConnectorsAircallConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsAircallConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsAirtableConnectionSettings {
+    connector_name: 'airtable';
+
+    settings: ConnectorsAirtableConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsAirtableConnectionSettings {
+    export interface Settings {
+      airtableBase: string;
+
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorsApolloConnectionSettings {
+    connector_name: 'apollo';
+
+    settings: ConnectorsApolloConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsApolloConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsBrexConnectionSettings {
+    connector_name: 'brex';
+
+    settings: ConnectorsBrexConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsBrexConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+    }
+  }
+
+  export interface ConnectorsCodaConnectionSettings {
+    connector_name: 'coda';
+
+    settings: ConnectorsCodaConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsCodaConnectionSettings {
+    export interface Settings {
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorsConfluenceConnectionSettings {
+    connector_name: 'confluence';
+
+    settings: ConnectorsConfluenceConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsConfluenceConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsDiscordConnectionSettings {
+    connector_name: 'discord';
+
+    settings: ConnectorsDiscordConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsDiscordConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsFacebookConnectionSettings {
+    connector_name: 'facebook';
+
+    settings: ConnectorsFacebookConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsFacebookConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsFinchConnectionSettings {
+    connector_name: 'finch';
+
+    settings: ConnectorsFinchConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsFinchConnectionSettings {
+    export interface Settings {
+      access_token: string;
+    }
+  }
+
+  export interface ConnectorsFirebaseConnectionSettings {
+    connector_name: 'firebase';
+
+    settings:
+      | ConnectorsFirebaseConnectionSettings.UnionMember0
+      | ConnectorsFirebaseConnectionSettings.UnionMember1;
+  }
+
+  export namespace ConnectorsFirebaseConnectionSettings {
+    export interface UnionMember0 {
+      role: 'admin';
+
+      serviceAccount: UnionMember0.ServiceAccount;
+    }
+
+    export namespace UnionMember0 {
+      export interface ServiceAccount {
+        project_id: string;
+        [k: string]: unknown;
+      }
+    }
+
+    export interface UnionMember1 {
+      authData: UnionMember1.UnionMember0 | UnionMember1.UnionMember1 | UnionMember1.UnionMember2;
+
+      firebaseConfig: UnionMember1.FirebaseConfig;
+
+      role: 'user';
+    }
+
+    export namespace UnionMember1 {
+      export interface UnionMember0 {
+        method: 'userJson';
+
+        userJson: UnionMember0.UserJson;
+      }
+
+      export namespace UnionMember0 {
+        export interface UserJson {
+          appName: string;
+
+          stsTokenManager: Record<string, unknown>;
+
+          uid: string;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface UnionMember1 {
+        customToken: string;
+
+        method: 'customToken';
+      }
+
+      export interface UnionMember2 {
+        email: string;
+
+        method: 'emailPassword';
+
+        password: string;
+      }
+
+      export interface FirebaseConfig {
+        apiKey: string;
+
+        appId: string;
+
+        authDomain: string;
+
+        databaseURL: string;
+
+        projectId: string;
+
+        measurementId?: string;
+
+        messagingSenderId?: string;
+
+        storageBucket?: string;
+      }
+    }
+  }
+
+  export interface ConnectorsForeceiptConnectionSettings {
+    connector_name: 'foreceipt';
+
+    settings: ConnectorsForeceiptConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsForeceiptConnectionSettings {
+    export interface Settings {
+      envName: 'staging' | 'production';
+
+      _id?: unknown;
+
+      credentials?: unknown;
+    }
+  }
+
+  export interface ConnectorsGitHubConnectionSettings {
+    connector_name: 'github';
+
+    settings: ConnectorsGitHubConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGitHubConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGongConnectionSettings {
+    connector_name: 'gong';
+
+    settings: ConnectorsGongConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGongConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsGooglecalendarConnectionSettings {
+    connector_name: 'googlecalendar';
+
+    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGooglecalendarConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledocsConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorsGoogledocsConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGoogledocsConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGoogledriveConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorsGoogledriveConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGoogledriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGooglemailConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorsGooglemailConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGooglemailConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGooglesheetConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorsGooglesheetConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGooglesheetConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsGreenhouseConnectionSettings {
+    connector_name: 'greenhouse';
+
+    settings: ConnectorsGreenhouseConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsGreenhouseConnectionSettings {
+    export interface Settings {
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorsHeronConnectionSettings {
+    connector_name: 'heron';
+
+    settings: null;
+  }
+
+  export interface ConnectorsHubspotConnectionSettings {
+    connector_name: 'hubspot';
+
+    settings: ConnectorsHubspotConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsHubspotConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsInstagramConnectionSettings {
+    connector_name: 'instagram';
+
+    settings: ConnectorsInstagramConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsInstagramConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsIntercomConnectionSettings {
+    connector_name: 'intercom';
+
+    settings: ConnectorsIntercomConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsIntercomConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsJiraConnectionSettings {
+    connector_name: 'jira';
+
+    settings: ConnectorsJiraConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsJiraConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsKustomerConnectionSettings {
+    connector_name: 'kustomer';
+
+    settings: ConnectorsKustomerConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsKustomerConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsLeverConnectionSettings {
+    connector_name: 'lever';
+
+    settings: ConnectorsLeverConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsLeverConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsLinearConnectionSettings {
+    connector_name: 'linear';
+
+    settings: ConnectorsLinearConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsLinearConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsLinkedinConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorsLinkedinConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsLinkedinConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsLunchmoneyConnectionSettings {
+    connector_name: 'lunchmoney';
+
+    settings: null;
+  }
+
+  export interface ConnectorsMercuryConnectionSettings {
+    connector_name: 'mercury';
+
+    settings: null;
+  }
+
+  export interface ConnectorsMergeConnectionSettings {
+    connector_name: 'merge';
+
+    settings: ConnectorsMergeConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsMergeConnectionSettings {
+    export interface Settings {
+      accountToken: string;
+
+      accountDetails?: unknown;
+    }
+  }
+
+  export interface ConnectorsMicrosoftConnectionSettings {
+    connector_name: 'microsoft';
+
+    settings: ConnectorsMicrosoftConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsMicrosoftConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      client_id?: string;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsMootaConnectionSettings {
+    connector_name: 'moota';
+
+    settings: null;
+  }
+
+  export interface ConnectorsNotionConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorsNotionConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsNotionConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsOnebrickConnectionSettings {
+    connector_name: 'onebrick';
+
+    settings: ConnectorsOnebrickConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsOnebrickConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+    }
+  }
+
+  export interface ConnectorsOutreachConnectionSettings {
+    connector_name: 'outreach';
+
+    settings: ConnectorsOutreachConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsOutreachConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsPipedriveConnectionSettings {
+    connector_name: 'pipedrive';
+
+    settings: ConnectorsPipedriveConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsPipedriveConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsPlaidConnectionSettings {
+    connector_name: 'plaid';
+
+    settings: ConnectorsPlaidConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsPlaidConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+
+      institution?: unknown;
+
+      item?: unknown;
+
+      itemId?: string | null;
+
+      status?: unknown;
+
+      webhookItemError?: null;
+    }
+  }
+
+  export interface ConnectorsPostgresConnectionSettings {
+    connector_name: 'postgres';
+
+    settings: ConnectorsPostgresConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsPostgresConnectionSettings {
+    export interface Settings {
+      databaseUrl: string;
+
+      sourceQueries?: Settings.SourceQueries;
+    }
+
+    export namespace Settings {
+      export interface SourceQueries {
+        /**
+         * Should order by lastModifiedAt and id descending
+         */
+        invoice?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsQuickbooksConnectionSettings {
+    connector_name: 'quickbooks';
+
+    settings: ConnectorsQuickbooksConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsQuickbooksConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsRampConnectionSettings {
+    connector_name: 'ramp';
+
+    settings: ConnectorsRampConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsRampConnectionSettings {
+    export interface Settings {
+      accessToken?: string | null;
+
+      startAfterTransactionId?: string | null;
+    }
+  }
+
+  export interface ConnectorsRedditConnectionSettings {
+    connector_name: 'reddit';
+
+    settings: ConnectorsRedditConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsRedditConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsSalesforceConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorsSalesforceConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsSalesforceConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsSalesloftConnectionSettings {
+    connector_name: 'salesloft';
+
+    settings: ConnectorsSalesloftConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsSalesloftConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsSaltedgeConnectionSettings {
+    connector_name: 'saltedge';
+
+    settings?: unknown;
+  }
+
+  export interface ConnectorsSharepointonlineConnectionSettings {
+    connector_name: 'sharepointonline';
+
+    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsSharepointonlineConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsSlackConnectionSettings {
+    connector_name: 'slack';
+
+    settings: ConnectorsSlackConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsSlackConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at: string;
+
+        last_fetched_at: string;
+
+        metadata: Record<string, unknown> | null;
+
+        updated_at: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsSplitwiseConnectionSettings {
+    connector_name: 'splitwise';
+
+    settings: ConnectorsSplitwiseConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsSplitwiseConnectionSettings {
+    export interface Settings {
+      accessToken: string;
+
+      currentUser?: Settings.CurrentUser | null;
+    }
+
+    export namespace Settings {
+      export interface CurrentUser {
+        id: number;
+
+        country_code: string;
+
+        custom_picture: boolean;
+
+        date_format: string;
+
+        default_currency: string;
+
+        default_group_id: number;
+
+        email: string;
+
+        first_name: string;
+
+        force_refresh_at: string;
+
+        last_name: string;
+
+        locale: string;
+
+        notifications: CurrentUser.Notifications;
+
+        notifications_count: number;
+
+        notifications_read: string;
+
+        picture: CurrentUser.Picture;
+
+        registration_status: string;
+      }
+
+      export namespace CurrentUser {
+        export interface Notifications {
+          added_as_friend: boolean;
+
+          added_to_group: boolean;
+
+          announcements: boolean;
+
+          bills: boolean;
+
+          expense_added: boolean;
+
+          expense_updated: boolean;
+
+          monthly_summary: boolean;
+
+          payments: boolean;
+        }
+
+        export interface Picture {
+          large?: string | null;
+
+          medium?: string | null;
+
+          original?: string | null;
+
+          small?: string | null;
+
+          xlarge?: string | null;
+
+          xxlarge?: string | null;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorsStripeConnectionSettings {
+    connector_name: 'stripe';
+
+    settings: ConnectorsStripeConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsStripeConnectionSettings {
+    export interface Settings {
+      secretKey: string;
+    }
+  }
+
+  export interface ConnectorsTellerConnectionSettings {
+    connector_name: 'teller';
+
+    settings: ConnectorsTellerConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsTellerConnectionSettings {
+    export interface Settings {
+      token: string;
+    }
+  }
+
+  export interface ConnectorsTogglConnectionSettings {
+    connector_name: 'toggl';
+
+    settings: ConnectorsTogglConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsTogglConnectionSettings {
+    export interface Settings {
+      apiToken: string;
+
+      email?: string | null;
+
+      password?: string | null;
+    }
+  }
+
+  export interface ConnectorsTwentyConnectionSettings {
+    connector_name: 'twenty';
+
+    settings: ConnectorsTwentyConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsTwentyConnectionSettings {
+    export interface Settings {
+      access_token: string;
+    }
+  }
+
+  export interface ConnectorsTwitterConnectionSettings {
+    connector_name: 'twitter';
+
+    settings: ConnectorsTwitterConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsTwitterConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsVenmoConnectionSettings {
+    connector_name: 'venmo';
+
+    settings: ConnectorsVenmoConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsVenmoConnectionSettings {
+    export interface Settings {
+      credentials?: unknown;
+
+      me?: unknown;
+    }
+  }
+
+  export interface ConnectorsWiseConnectionSettings {
+    connector_name: 'wise';
+
+    settings: ConnectorsWiseConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsWiseConnectionSettings {
+    export interface Settings {
+      envName: 'sandbox' | 'live';
+
+      apiToken?: string | null;
+    }
+  }
+
+  export interface ConnectorsXeroConnectionSettings {
+    connector_name: 'xero';
+
+    settings: ConnectorsXeroConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsXeroConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+
+  export interface ConnectorsYodleeConnectionSettings {
+    connector_name: 'yodlee';
+
+    settings: ConnectorsYodleeConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsYodleeConnectionSettings {
+    export interface Settings {
+      loginName: string;
+
+      providerAccountId: number | string;
+
+      accessToken?: Settings.AccessToken | null;
+
+      provider?: null;
+
+      providerAccount?: Settings.ProviderAccount | null;
+
+      user?: null;
+    }
+
+    export namespace Settings {
+      export interface AccessToken {
+        accessToken: string;
+
+        expiresIn: number;
+
+        issuedAt: string;
+      }
+
+      export interface ProviderAccount {
+        id: number;
+
+        aggregationSource: string;
+
+        createdDate: string;
+
+        dataset: Array<unknown>;
+
+        isManual: boolean;
+
+        providerId: number;
+
+        status:
+          | 'LOGIN_IN_PROGRESS'
+          | 'USER_INPUT_REQUIRED'
+          | 'IN_PROGRESS'
+          | 'PARTIAL_SUCCESS'
+          | 'SUCCESS'
+          | 'FAILED';
+
+        isDeleted?: boolean | null;
+      }
+    }
+  }
+
+  export interface ConnectorsZohodeskConnectionSettings {
+    connector_name: 'zohodesk';
+
+    settings: ConnectorsZohodeskConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorsZohodeskConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      error?: Settings.Error | null;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        credentials: OAuth.Credentials;
+
+        metadata: Record<string, unknown> | null;
+
+        connection_config?: OAuth.ConnectionConfig | null;
+      }
+
+      export namespace OAuth {
+        export interface Credentials {
+          raw: Credentials.Raw;
+
+          type: 'OAUTH2' | 'OAUTH1' | 'BASIC' | 'API_KEY';
+
+          access_token?: string;
+
+          api_key?: string | null;
+
+          expires_at?: string;
+
+          refresh_token?: string;
+        }
+
+        export namespace Credentials {
+          export interface Raw {
+            access_token: string;
+
+            expires_at?: string;
+
+            expires_in?: number;
+
+            refresh_token?: string | null;
+
+            refresh_token_expires_in?: number | null;
+
+            scope?: string;
+
+            token_type?: string | null;
+            [k: string]: unknown;
+          }
+        }
+
+        export interface ConnectionConfig {
+          instance_url?: string | null;
+
+          portalId?: number | null;
+          [k: string]: unknown;
+        }
+      }
+
+      export interface Error {
+        code: 'refresh_token_external_error' | (string & {});
+
+        message?: string | null;
+      }
+    }
+  }
+}
+
 export interface CreateMagicLinkParams {
   /**
    * The specific connection id to load
@@ -16496,6 +22536,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
 export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
+    type CreateConnectionResponse as CreateConnectionResponse,
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type GetConnectionResponse as GetConnectionResponse,
@@ -16504,6 +22545,7 @@ export declare namespace TopLevel {
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type CreateConnectionParams as CreateConnectionParams,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
