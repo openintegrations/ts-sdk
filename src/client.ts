@@ -227,6 +227,9 @@ export class Openint {
     return this.post(path`/customer/${customerID}/token`, { body, ...options });
   }
 
+  /**
+   * Delete a connection
+   */
   deleteConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.DeleteConnectionResponse> {
     return this.delete(path`/connection/${id}`, options);
   }

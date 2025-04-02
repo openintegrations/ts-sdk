@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (2025-04-02)
+
+Full Changelog: [v0.1.0-alpha.27...v0.3.0](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.27...v0.3.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([#124](https://github.com/openintegrations/ts-sdk/issues/124)) ([1acfc7f](https://github.com/openintegrations/ts-sdk/commit/1acfc7fc3b4bc9c0fd37a645dfe5d934cd68704e))
+
 ## 0.1.0-alpha.27 (2025-04-02)
 
 Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
