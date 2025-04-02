@@ -3460,6 +3460,13 @@ export interface CreateTokenResponse {
   token: string;
 }
 
+export interface DeleteConnectionResponse {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
+  id: string;
+}
+
 /**
  * The connection details
  */
@@ -22539,6 +22546,7 @@ export declare namespace TopLevel {
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
+    type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
