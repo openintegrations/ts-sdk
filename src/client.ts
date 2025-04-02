@@ -58,7 +58,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['OPENINT_BASE_URL'].
+   * Defaults to process.env['OPEN_INT_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -110,7 +110,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['OPENINT_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['OPEN_INT_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -123,9 +123,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Openint API.
+ * API Client for interfacing with the Open Int API.
  */
-export class Openint {
+export class OpenInt {
   apiKey: string | null;
   customerToken: string | null;
 
@@ -142,11 +142,11 @@ export class Openint {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Openint API.
+   * API Client for interfacing with the Open Int API.
    *
    * @param {string | null | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? null]
    * @param {string | null | undefined} [opts.customerToken]
-   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://api.openint.dev/v1] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['OPEN_INT_BASE_URL'] ?? https://api.openint.dev/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -155,7 +155,7 @@ export class Openint {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('OPENINT_BASE_URL'),
+    baseURL = readEnv('OPEN_INT_BASE_URL'),
     apiKey = readEnv('OPENINT_API_KEY') ?? null,
     customerToken = null,
     ...opts
@@ -168,14 +168,14 @@ export class Openint {
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? Openint.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? OpenInt.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('OPENINT_LOG'), "process.env['OPENINT_LOG']", this) ??
+      parseLogLevel(readEnv('OPEN_INT_LOG'), "process.env['OPEN_INT_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -596,7 +596,7 @@ export class Openint {
     options: FinalRequestOptions,
   ): Pagination.PagePromise<PageClass, Item> {
     const request = this.makeRequest(options, null, undefined);
-    return new Pagination.PagePromise<PageClass, Item>(this as any as Openint, request, Page);
+    return new Pagination.PagePromise<PageClass, Item>(this as any as OpenInt, request, Page);
   }
 
   async fetchWithTimeout(
@@ -812,10 +812,10 @@ export class Openint {
     }
   }
 
-  static Openint = this;
+  static OpenInt = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static OpenintError = Errors.OpenintError;
+  static OpenIntError = Errors.OpenIntError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -831,7 +831,7 @@ export class Openint {
 
   static toFile = Uploads.toFile;
 }
-export declare namespace Openint {
+export declare namespace OpenInt {
   export type RequestOptions = Opts.RequestOptions;
 
   export import OffsetPagination = Pagination.OffsetPagination;
