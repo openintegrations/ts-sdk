@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Openint } from '@openint/sdk';
+import { OpenInt } from '@openint/sdk';
 
-const { stringifyQuery } = Openint.prototype as any;
+const { stringifyQuery } = OpenInt.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [

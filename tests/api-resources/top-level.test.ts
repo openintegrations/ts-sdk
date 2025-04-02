@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 
-const client = new Openint({
+const client = new OpenInt({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
@@ -133,7 +133,7 @@ describe('top level methods', () => {
         { expand: ['connector'], include_secrets: 'none', refresh_policy: 'none' },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(Openint.NotFoundError);
+    ).rejects.toThrow(OpenInt.NotFoundError);
   });
 
   // skipped: tests are disabled for the time being
@@ -168,7 +168,7 @@ describe('top level methods', () => {
         { connector_name: 'aircall', expand: 'expand', limit: 0, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(Openint.NotFoundError);
+    ).rejects.toThrow(OpenInt.NotFoundError);
   });
 
   // skipped: tests are disabled for the time being
@@ -199,6 +199,6 @@ describe('top level methods', () => {
         },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(Openint.NotFoundError);
+    ).rejects.toThrow(OpenInt.NotFoundError);
   });
 });

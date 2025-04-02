@@ -1,8 +1,8 @@
-# Openint TypeScript API Library
+# Open Int TypeScript API Library
 
 [![NPM version](https://img.shields.io/npm/v/@openint/sdk.svg)](https://npmjs.org/package/@openint/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@openint/sdk)
 
-This library provides convenient access to the Openint REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Open Int REST API from server-side TypeScript or JavaScript.
 
 The REST API documentation can be found on [docs.openint.dev](https://docs.openint.dev). The full API of this library can be found in [api.md](api.md).
 
@@ -20,9 +20,9 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 
-const client = new Openint({
+const client = new OpenInt({
   apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
@@ -40,14 +40,14 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 
-const client = new Openint({
+const client = new OpenInt({
   apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const [listConnectionsResponse]: [Openint.ListConnectionsResponse] = await client.listConnections();
+  const [listConnectionsResponse]: [OpenInt.ListConnectionsResponse] = await client.listConnections();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 ```ts
 async function main() {
   const page = await client.listConnections().catch(async (err) => {
-    if (err instanceof Openint.APIError) {
+    if (err instanceof OpenInt.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
       console.log(err.headers); // {server: 'nginx', ...}
@@ -102,7 +102,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new Openint({
+const client = new OpenInt({
   maxRetries: 0, // default is 2
 });
 
@@ -119,7 +119,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new Openint({
+const client = new OpenInt({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -145,7 +145,7 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new Openint();
+const client = new OpenInt();
 
 const response = await client.listConnections().asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -168,13 +168,13 @@ for await (const listConnectionsResponse of page) {
 
 The log level can be configured in two ways:
 
-1. Via the `OPENINT_LOG` environment variable
+1. Via the `OPEN_INT_LOG` environment variable
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 
-const client = new Openint({
+const client = new OpenInt({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -200,13 +200,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new Openint({
-  logger: logger.child({ name: 'Openint' }),
+const client = new OpenInt({
+  logger: logger.child({ name: 'OpenInt' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -270,10 +270,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 import fetch from 'my-fetch';
 
-const client = new Openint({ fetch });
+const client = new OpenInt({ fetch });
 ```
 
 ### Fetch options
@@ -281,9 +281,9 @@ const client = new Openint({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 
-const client = new Openint({
+const client = new OpenInt({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -298,11 +298,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new Openint({
+const client = new OpenInt({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -312,9 +312,9 @@ const client = new Openint({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import Openint from '@openint/sdk';
+import OpenInt from '@openint/sdk';
 
-const client = new Openint({
+const client = new OpenInt({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -324,10 +324,10 @@ const client = new Openint({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import Openint from 'npm:@openint/sdk';
+import OpenInt from 'npm:@openint/sdk';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new Openint({
+const client = new OpenInt({
   fetchOptions: {
     client: httpClient,
   },
