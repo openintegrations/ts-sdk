@@ -1,5 +1,88 @@
 # Changelog
 
+## 0.1.0-alpha.27 (2025-04-02)
+
+Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#99](https://github.com/openintegrations/ts-sdk/issues/99)) ([52f56c3](https://github.com/openintegrations/ts-sdk/commit/52f56c33d7aacfdd14e037c7d19af7db1382c789))
+* **api:** Adding viewer endpoint ([#87](https://github.com/openintegrations/ts-sdk/issues/87)) ([5f37758](https://github.com/openintegrations/ts-sdk/commit/5f37758a712d2a6ce090b9497ebf9e3f0dee64dd))
+* **api:** fix delete ([#115](https://github.com/openintegrations/ts-sdk/issues/115)) ([12e95dd](https://github.com/openintegrations/ts-sdk/commit/12e95dd0fb0e6ef052f4adc2e9b092c9d88dd24e))
+* **api:** Fixing api key auth ([#90](https://github.com/openintegrations/ts-sdk/issues/90)) ([a849f6d](https://github.com/openintegrations/ts-sdk/commit/a849f6dff806ac197b509d7ea478408c7112b4aa))
+* **api:** manual updates ([60a8bcb](https://github.com/openintegrations/ts-sdk/commit/60a8bcb534d59c23da576d476a623e83a68c38e6))
+* **api:** manual updates ([df8e3c4](https://github.com/openintegrations/ts-sdk/commit/df8e3c4db4bf0938280580d361e3708547ab15dd))
+* **api:** manual updates ([99e486d](https://github.com/openintegrations/ts-sdk/commit/99e486d3d5c4053c057229ad2264f45cccebad5d))
+* **api:** manual updates ([#112](https://github.com/openintegrations/ts-sdk/issues/112)) ([608d618](https://github.com/openintegrations/ts-sdk/commit/608d6180fdadd65f4a188a94f43ce8c96afe7fda))
+* **api:** manual updates ([#20](https://github.com/openintegrations/ts-sdk/issues/20)) ([256bca5](https://github.com/openintegrations/ts-sdk/commit/256bca5f78c95203ea2835aeaaa386cff7e099f4))
+* **api:** manual updates ([#21](https://github.com/openintegrations/ts-sdk/issues/21)) ([2abca04](https://github.com/openintegrations/ts-sdk/commit/2abca0468fc57e2dfd9236173cd3ef1f74f0c7d2))
+* **api:** manual updates ([#22](https://github.com/openintegrations/ts-sdk/issues/22)) ([c0e8dab](https://github.com/openintegrations/ts-sdk/commit/c0e8dab607a14f551f519d5a0f41afc85523393d))
+* **api:** manual updates ([#23](https://github.com/openintegrations/ts-sdk/issues/23)) ([8fbb188](https://github.com/openintegrations/ts-sdk/commit/8fbb1884286d9b711441c39ff161829d84c96e47))
+* **api:** manual updates ([#32](https://github.com/openintegrations/ts-sdk/issues/32)) ([138eef9](https://github.com/openintegrations/ts-sdk/commit/138eef93b2f5e84923c4d8d647df6f640ed3d0a2))
+* **api:** manual updates ([#33](https://github.com/openintegrations/ts-sdk/issues/33)) ([2322d6a](https://github.com/openintegrations/ts-sdk/commit/2322d6a4a5d72c03ef95d16c294d18450162b5b9))
+* **api:** manual updates ([#35](https://github.com/openintegrations/ts-sdk/issues/35)) ([5c01612](https://github.com/openintegrations/ts-sdk/commit/5c016125d0ae971d828431d301f723a69e0e5116))
+* **api:** manual updates ([#38](https://github.com/openintegrations/ts-sdk/issues/38)) ([aa45c0d](https://github.com/openintegrations/ts-sdk/commit/aa45c0d289cd30cb9747e52e3a4abe4d6388679a))
+* **api:** manual updates ([#44](https://github.com/openintegrations/ts-sdk/issues/44)) ([5a20496](https://github.com/openintegrations/ts-sdk/commit/5a2049692993274c1bce56c58ff51d7fb93f267f))
+* **api:** manual updates ([#51](https://github.com/openintegrations/ts-sdk/issues/51)) ([d3e5201](https://github.com/openintegrations/ts-sdk/commit/d3e52010db061af5bc9efa697cc416e0295e99a2))
+* **api:** manual updates ([#54](https://github.com/openintegrations/ts-sdk/issues/54)) ([b19d3e4](https://github.com/openintegrations/ts-sdk/commit/b19d3e41e0215884e400b7716da4b675c2d866ed))
+* **api:** manual updates ([#57](https://github.com/openintegrations/ts-sdk/issues/57)) ([2a78349](https://github.com/openintegrations/ts-sdk/commit/2a783492940595a7e13cdcf23d9496570e2a66dc))
+* **api:** manual updates ([#60](https://github.com/openintegrations/ts-sdk/issues/60)) ([b8b9444](https://github.com/openintegrations/ts-sdk/commit/b8b94446a876d474f01853302f4ae34b87eb1b66))
+* **api:** manual updates ([#63](https://github.com/openintegrations/ts-sdk/issues/63)) ([9e81034](https://github.com/openintegrations/ts-sdk/commit/9e81034a61abc60bb219791245a50eb70258155a))
+* **api:** manual updates ([#66](https://github.com/openintegrations/ts-sdk/issues/66)) ([99b563b](https://github.com/openintegrations/ts-sdk/commit/99b563b0076f29a6d4b8a836280f44a4d45f0ff8))
+* **api:** manual updates ([#69](https://github.com/openintegrations/ts-sdk/issues/69)) ([1409a0c](https://github.com/openintegrations/ts-sdk/commit/1409a0c06b3b554e923ae354aa8c83798791735a))
+* **api:** manual updates ([#72](https://github.com/openintegrations/ts-sdk/issues/72)) ([ce07afb](https://github.com/openintegrations/ts-sdk/commit/ce07afb0449742b75ba6c955fbeb0734fbce0a23))
+* **api:** manual updates ([#75](https://github.com/openintegrations/ts-sdk/issues/75)) ([d71c673](https://github.com/openintegrations/ts-sdk/commit/d71c6738e288ee848b9fca4de0c610fee765b809))
+* **api:** manual updates ([#78](https://github.com/openintegrations/ts-sdk/issues/78)) ([50e050e](https://github.com/openintegrations/ts-sdk/commit/50e050e47cbdf80c2a58b253df589387b701ba4e))
+* **api:** manual updates ([#84](https://github.com/openintegrations/ts-sdk/issues/84)) ([715fe74](https://github.com/openintegrations/ts-sdk/commit/715fe74b070295180c8f283375e20a63a003c285))
+* **api:** Reverting name update ([#121](https://github.com/openintegrations/ts-sdk/issues/121)) ([d9d7c77](https://github.com/openintegrations/ts-sdk/commit/d9d7c771998eaac06a805da02b3d473547dcb214))
+* **api:** Updating Name ([#118](https://github.com/openintegrations/ts-sdk/issues/118)) ([8f054f1](https://github.com/openintegrations/ts-sdk/commit/8f054f15d5af842d89983c6dd4bce468f41c9af3))
+* **api:** Updating viewer enum ([#93](https://github.com/openintegrations/ts-sdk/issues/93)) ([f042146](https://github.com/openintegrations/ts-sdk/commit/f0421464d75d5b3d593eda5f183fef422d053ba7))
+* **client:** accept RFC6838 JSON content types ([#100](https://github.com/openintegrations/ts-sdk/issues/100)) ([b862825](https://github.com/openintegrations/ts-sdk/commit/b862825eaaa7d446363704c809586fc12b1911f0))
+* **docs:** updating documented docs for mintlify ([#18](https://github.com/openintegrations/ts-sdk/issues/18)) ([8209496](https://github.com/openintegrations/ts-sdk/commit/82094964ffdd63125fd5b63effce19ace840b8d0))
+* **docs:** updating documented docs for mintlify ([#30](https://github.com/openintegrations/ts-sdk/issues/30)) ([5f2ba49](https://github.com/openintegrations/ts-sdk/commit/5f2ba4992d8d4418cf8602710355d1399b1511d0))
+* **docs:** updating documented docs for mintlify ([#31](https://github.com/openintegrations/ts-sdk/issues/31)) ([76bcf4f](https://github.com/openintegrations/ts-sdk/commit/76bcf4f86097a3e66208f60f15b944f5c5a0f36c))
+* **docs:** updating documented docs for mintlify ([#41](https://github.com/openintegrations/ts-sdk/issues/41)) ([32b68c2](https://github.com/openintegrations/ts-sdk/commit/32b68c2cc489ab96242bf8bc5c5a8415f1c940f1))
+* **docs:** updating documented docs for mintlify ([#81](https://github.com/openintegrations/ts-sdk/issues/81)) ([6e31ed3](https://github.com/openintegrations/ts-sdk/commit/6e31ed3581080820b22ff2739fd02d553bbef7b8))
+* **docs:** updating documented docs for mintlify ([#96](https://github.com/openintegrations/ts-sdk/issues/96)) ([8cff16a](https://github.com/openintegrations/ts-sdk/commit/8cff16a04a510fcdbcf9858e0541da02a4cb2e18))
+* **docs:** updating documented docs for stainless ([#101](https://github.com/openintegrations/ts-sdk/issues/101)) ([611cb20](https://github.com/openintegrations/ts-sdk/commit/611cb2085b0e458148576fbcc7fb5940d21c4aba))
+* **docs:** updating documented docs for stainless ([#110](https://github.com/openintegrations/ts-sdk/issues/110)) ([29bbfe2](https://github.com/openintegrations/ts-sdk/commit/29bbfe2aea8f8a8c656c407cb233ad2db6bf1675))
+* **docs:** updating documented docs for stainless ([#98](https://github.com/openintegrations/ts-sdk/issues/98)) ([043e7f0](https://github.com/openintegrations/ts-sdk/commit/043e7f0e46c40dad4557dad95f11fe90bb152591))
+
+
+### Bug Fixes
+
+* **client:** fix TypeError with undefined File ([#27](https://github.com/openintegrations/ts-sdk/issues/27)) ([11b4ba9](https://github.com/openintegrations/ts-sdk/commit/11b4ba9d66d282c2e5daaf98cf797a0579001ceb))
+* **internal:** add mts file + crypto shim types ([#103](https://github.com/openintegrations/ts-sdk/issues/103)) ([de02c54](https://github.com/openintegrations/ts-sdk/commit/de02c540e16142d9a7fc9741a96bce26305f1dcc))
+* **internal:** clean up undefined File test ([#28](https://github.com/openintegrations/ts-sdk/issues/28)) ([26af527](https://github.com/openintegrations/ts-sdk/commit/26af527a54909e5f7968cb2468f31782dd419e42))
+* **internal:** return in castToError instead of throwing ([#10](https://github.com/openintegrations/ts-sdk/issues/10)) ([4b7d0fb](https://github.com/openintegrations/ts-sdk/commit/4b7d0fb4381ef1f3599398cf0a56b1aae7326e56))
+* **tests:** manually reset node:buffer File ([#29](https://github.com/openintegrations/ts-sdk/issues/29)) ([5a8bf39](https://github.com/openintegrations/ts-sdk/commit/5a8bf394122be56fdf75798ccd18839057afa345))
+
+
+### Chores
+
+* **client:** move misc public files to new `core/` directory, deprecate old paths ([#109](https://github.com/openintegrations/ts-sdk/issues/109)) ([70cb1a5](https://github.com/openintegrations/ts-sdk/commit/70cb1a5c076baec3bd5bb9272f25e097d94f6626))
+* **client:** only accept standard types for file uploads ([#24](https://github.com/openintegrations/ts-sdk/issues/24)) ([742a9b4](https://github.com/openintegrations/ts-sdk/commit/742a9b4825470b0d1b592a6edfa441e4e177047a))
+* **docs:** add mintlify code samples ([#12](https://github.com/openintegrations/ts-sdk/issues/12)) ([7663fd2](https://github.com/openintegrations/ts-sdk/commit/7663fd2ba3098dee41f32fe7f76bc9f57bda1d4a))
+* **docs:** improve docs for withResponse/asResponse ([#49](https://github.com/openintegrations/ts-sdk/issues/49)) ([1c66a66](https://github.com/openintegrations/ts-sdk/commit/1c66a663dfca1edf297e75c5d1705b429ee21aa8))
+* **docs:** update docs ([#13](https://github.com/openintegrations/ts-sdk/issues/13)) ([0b44b1f](https://github.com/openintegrations/ts-sdk/commit/0b44b1f36ef627c9643dfad5639c5676d3969a0e))
+* **exports:** cleaner resource index imports ([#107](https://github.com/openintegrations/ts-sdk/issues/107)) ([ca4e06f](https://github.com/openintegrations/ts-sdk/commit/ca4e06f812662c790e506194f645f58b72f07258))
+* **exports:** stop using path fallbacks ([#108](https://github.com/openintegrations/ts-sdk/issues/108)) ([8cc3641](https://github.com/openintegrations/ts-sdk/commit/8cc3641afabefa6eb437061254d5f18333585a17))
+* go live ([#3](https://github.com/openintegrations/ts-sdk/issues/3)) ([4ec1efe](https://github.com/openintegrations/ts-sdk/commit/4ec1efe794d1991ea0733ad754f65aa99c0682ca))
+* **internal:** constrain synckit dev dependency ([#26](https://github.com/openintegrations/ts-sdk/issues/26)) ([b0cc7a3](https://github.com/openintegrations/ts-sdk/commit/b0cc7a3a9b3d6c05fa93dc0d1849f7b1e7f12927))
+* **internal:** fix devcontainers setup ([#8](https://github.com/openintegrations/ts-sdk/issues/8)) ([0492da4](https://github.com/openintegrations/ts-sdk/commit/0492da45a4814bf792f5f8d3220c82810a95d916))
+* **internal:** fix tests failing on node v18 ([#25](https://github.com/openintegrations/ts-sdk/issues/25)) ([1cd1e84](https://github.com/openintegrations/ts-sdk/commit/1cd1e840d332425d6558c4e928b4cdbb9e5a02fb))
+* **internal:** minor client file refactoring ([#105](https://github.com/openintegrations/ts-sdk/issues/105)) ([39fbfd2](https://github.com/openintegrations/ts-sdk/commit/39fbfd2a899be337fe71b2cd9f22ddfdb671e4c3))
+* **internal:** remove extra empty newlines ([#102](https://github.com/openintegrations/ts-sdk/issues/102)) ([a6f5609](https://github.com/openintegrations/ts-sdk/commit/a6f560960dcb228b261afe7f7238b4bb7cbd0817))
+* **internal:** remove unnecessary todo ([#11](https://github.com/openintegrations/ts-sdk/issues/11)) ([621c594](https://github.com/openintegrations/ts-sdk/commit/621c594ead5653c7e5929569cf942b9557e0aca1))
+* sync repo ([707fb68](https://github.com/openintegrations/ts-sdk/commit/707fb6827f0127ebae321acc0a967eaf0a972ae9))
+* **types:** improved go to definition on fetchOptions ([#47](https://github.com/openintegrations/ts-sdk/issues/47)) ([4f2a8b5](https://github.com/openintegrations/ts-sdk/commit/4f2a8b56fb9c4d68ac89d6b46ecdc12a835162a4))
+* update SDK settings ([#5](https://github.com/openintegrations/ts-sdk/issues/5)) ([3a3c6b9](https://github.com/openintegrations/ts-sdk/commit/3a3c6b92459d723c156d98e4713b5c7cf98057e5))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#15](https://github.com/openintegrations/ts-sdk/issues/15)) ([20170cb](https://github.com/openintegrations/ts-sdk/commit/20170cb651d84132ac7d3cdda34e8b4c9afa894b))
+
 ## 0.1.0-alpha.26 (2025-04-02)
 
 Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
