@@ -19648,6 +19648,66 @@ export namespace ListConnectionsResponse {
   }
 }
 
+/**
+ * List of connectors with selected fields
+ */
+export type ListConnectorsResponse = Array<ListConnectorsResponse.ListConnectorsResponseItem>;
+
+export namespace ListConnectorsResponse {
+  export interface ListConnectorsResponseItem {
+    name: string;
+
+    display_name?: string;
+
+    integrations?: Array<ListConnectorsResponseItem.Integration>;
+
+    logo_url?: string;
+
+    platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+    schemas?: ListConnectorsResponseItem.Schemas;
+
+    stage?: 'alpha' | 'beta' | 'ga';
+  }
+
+  export namespace ListConnectorsResponseItem {
+    export interface Integration {
+      connector_name: string;
+
+      name: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+      [k: string]: unknown;
+    }
+
+    export interface Schemas {
+      connect_input?: unknown;
+
+      connect_output?: unknown;
+
+      connection_settings?: unknown;
+
+      connector_config?: unknown;
+
+      integration_data?: unknown;
+
+      pre_connect_input?: unknown;
+
+      webhook_input?: unknown;
+    }
+  }
+}
+
 export interface CreateConnectionParams {
   /**
    * The id of the connector config, starts with `ccfg_`
@@ -22499,6 +22559,15 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
   limit?: number;
 }
 
+export interface ListConnectorsParams {
+  /**
+   * Comma separated list of fields to optionally expand.
+   *
+   * Available Options: `integrations`
+   */
+  expand?: string;
+}
+
 export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
@@ -22510,6 +22579,7 @@ export declare namespace TopLevel {
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
+    type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
@@ -22518,5 +22588,6 @@ export declare namespace TopLevel {
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
+    type ListConnectorsParams as ListConnectorsParams,
   };
 }
