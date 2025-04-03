@@ -22371,10 +22371,9 @@ export namespace CreateMagicLinkParams {
     debug?: boolean;
 
     /**
-     * The default tab to show when the magic link is opened. Defaults to
-     * "my-connections"
+     * The default view to show when the magic link is opened. Defaults to "add"
      */
-    tab?: 'my-connections' | 'add-connection';
+    view?: 'add' | 'manage';
   }
 }
 
