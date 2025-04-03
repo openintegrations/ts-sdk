@@ -78,7 +78,7 @@ describe('top level methods', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('createMagicLink', async () => {
-    const responsePromise = client.createMagicLink('customer_id', {});
+    const responsePromise = client.createMagicLink('x');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -89,8 +89,32 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('createMagicLink: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.createMagicLink(
+        'x',
+        {
+          client_options: {
+            '--background': '--background',
+            '--card': '--card',
+            '--card-foreground': '--card-foreground',
+            '--foreground': '--foreground',
+            '--primary': '--primary',
+            connector_name: 'plaid',
+            debug: true,
+            tab: 'my-connections',
+          },
+          validity_in_seconds: 0,
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('createToken', async () => {
-    const responsePromise = client.createToken('customer_id', {});
+    const responsePromise = client.createToken('customer_id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -98,6 +122,14 @@ describe('top level methods', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('createToken: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.createToken('customer_id', { validity_in_seconds: 1 }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Openint.NotFoundError);
   });
 
   // skipped: tests are disabled for the time being
