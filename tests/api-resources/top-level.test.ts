@@ -103,7 +103,7 @@ describe('top level methods', () => {
             '--primary': '--primary',
             connector_name: 'plaid',
             debug: true,
-            tab: 'my-connections',
+            view: 'add',
           },
           validity_in_seconds: 0,
         },
