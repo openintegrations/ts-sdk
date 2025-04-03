@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2025-04-03)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/openintegrations/ts-sdk/compare/v0.3.0...v0.3.1)
+
+### Bug Fixes
+
+* **client:** send `X-Stainless-Timeout` in seconds ([#127](https://github.com/openintegrations/ts-sdk/issues/127)) ([786bfac](https://github.com/openintegrations/ts-sdk/commit/786bfac1236ca3fe58eb7452e6159ebd09efd315))
+
 ## 0.3.0 (2025-04-02)
 
 Full Changelog: [v0.1.0-alpha.27...v0.3.0](https://github.com/openintegrations/ts-sdk/compare/v0.1.0-alpha.27...v0.3.0)
