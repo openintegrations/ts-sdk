@@ -1,6 +1,6 @@
 {
   "name": "@openint/sdk",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "The official TypeScript library for the Openint API",
   "author": "Openint <support@openint.dev>",
   "types": "dist/index.d.ts",

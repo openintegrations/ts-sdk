@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2 (2025-04-03)
+
+Full Changelog: [v0.3.1...v0.3.2](https://github.com/openintegrations/ts-sdk/compare/v0.3.1...v0.3.2)
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#130](https://github.com/openintegrations/ts-sdk/issues/130)) ([35f871e](https://github.com/openintegrations/ts-sdk/commit/35f871ee743efdbe5837b6e350dd692e04db85db))
+
 ## 0.3.1 (2025-04-03)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/openintegrations/ts-sdk/compare/v0.3.0...v0.3.1)
