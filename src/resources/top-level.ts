@@ -22273,90 +22273,49 @@ export namespace CreateConnectionParams {
 
 export interface CreateMagicLinkParams {
   /**
-   * The specific connection id to load
+   * Search params to configure the connect page. Not signed as part of JWT and
+   * therefore can be modified by client
    */
-  connection_id?: string;
-
-  /**
-   * Filter integrations by connector names
-   */
-  connector_names?: Array<
-    | 'aircall'
-    | 'airtable'
-    | 'apollo'
-    | 'brex'
-    | 'coda'
-    | 'confluence'
-    | 'discord'
-    | 'facebook'
-    | 'finch'
-    | 'firebase'
-    | 'foreceipt'
-    | 'github'
-    | 'gong'
-    | 'googlecalendar'
-    | 'googledocs'
-    | 'googledrive'
-    | 'googlemail'
-    | 'googlesheet'
-    | 'greenhouse'
-    | 'heron'
-    | 'hubspot'
-    | 'instagram'
-    | 'intercom'
-    | 'jira'
-    | 'kustomer'
-    | 'lever'
-    | 'linear'
-    | 'linkedin'
-    | 'lunchmoney'
-    | 'merge'
-    | 'microsoft'
-    | 'moota'
-    | 'notion'
-    | 'onebrick'
-    | 'outreach'
-    | 'pipedrive'
-    | 'plaid'
-    | 'quickbooks'
-    | 'ramp'
-    | 'reddit'
-    | 'salesforce'
-    | 'salesloft'
-    | 'saltedge'
-    | 'sharepointonline'
-    | 'slack'
-    | 'splitwise'
-    | 'stripe'
-    | 'teller'
-    | 'toggl'
-    | 'twenty'
-    | 'twitter'
-    | 'wise'
-    | 'xero'
-    | 'yodlee'
-    | 'zohodesk'
-  >;
-
-  /**
-   * Where to send user to after connect / if they press back button
-   */
-  redirect_url?: string;
-
-  /**
-   * Magic Link display theme
-   */
-  theme?: 'light' | 'dark';
+  client_options?: CreateMagicLinkParams.ClientOptions;
 
   /**
    * How long the magic link will be valid for (in seconds) before it expires
    */
   validity_in_seconds?: number;
+}
 
+export namespace CreateMagicLinkParams {
   /**
-   * Magic Link tab view to load in the connect magic link
+   * Search params to configure the connect page. Not signed as part of JWT and
+   * therefore can be modified by client
    */
-  view?: 'manage' | 'manage-deeplink' | 'add' | 'add-deeplink';
+  export interface ClientOptions {
+    '--background'?: string;
+
+    '--card'?: string;
+
+    '--card-foreground'?: string;
+
+    '--foreground'?: string;
+
+    '--primary'?: string;
+
+    /**
+     * The name of the connector to limit connection to. Default to all otherwise
+     */
+    connector_name?: 'plaid' | 'greenhouse';
+
+    /**
+     * Whether to enable debug mode
+     */
+    debug?: boolean;
+
+    /**
+     * The default tab to show when the magic link is opened. Defaults to
+     * "my-connections"
+     */
+    tab?: 'my-connections' | 'add-connection';
+  }
 }
 
 export interface CreateTokenParams {

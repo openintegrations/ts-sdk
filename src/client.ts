@@ -206,22 +206,24 @@ export class Openint {
   }
 
   /**
-   * Create a magic link for connecting integrations
+   * Create a magic link that is ready to be shared with customers who want to use
+   * Connect
    */
   createMagicLink(
     customerID: string,
-    body: TopLevelAPI.CreateMagicLinkParams,
+    body: TopLevelAPI.CreateMagicLinkParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateMagicLinkResponse> {
     return this.post(path`/customer/${customerID}/magic-link`, { body, ...options });
   }
 
   /**
-   * Create an authentication token for a customer
+   * Create a @Connect authentication token for a customer. This token can be used to
+   * embed @Connect in your application via the `@openint/connect` npm package.
    */
   createToken(
     customerID: string,
-    body: TopLevelAPI.CreateTokenParams,
+    body: TopLevelAPI.CreateTokenParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateTokenResponse> {
     return this.post(path`/customer/${customerID}/token`, { body, ...options });
@@ -253,7 +255,8 @@ export class Openint {
   }
 
   /**
-   * List all connector configurations
+   * List the connectors that are configured in your account and available for your
+   * customers
    */
   listConnectionConfigs(
     query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
@@ -270,7 +273,9 @@ export class Openint {
   }
 
   /**
-   * List all connections with optional filtering
+   * List all connections with optional filtering. Does not retrieve secrets or
+   * perform any connection healthcheck. For that use `getConnection` or
+   * `checkConnectionHealth`.
    */
   listConnections(
     query: TopLevelAPI.ListConnectionsParams | null | undefined = {},
