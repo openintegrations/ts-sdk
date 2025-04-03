@@ -11,6 +11,7 @@ Types:
 - <code><a href="./src/resources/top-level.ts">GetCurrentUserResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectionConfigsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectionsResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">ListConnectorsResponse</a></code>
 
 Methods:
 
@@ -23,3 +24,4 @@ Methods:
 - <code title="get /viewer">client.<a href="./src/index.ts">getCurrentUser</a>() -> GetCurrentUserResponse</code>
 - <code title="get /connector-config">client.<a href="./src/index.ts">listConnectionConfigs</a>({ ...params }) -> ListConnectionConfigsResponsesOffsetPagination</code>
 - <code title="get /connection">client.<a href="./src/index.ts">listConnections</a>({ ...params }) -> ListConnectionsResponsesOffsetPagination</code>
+- <code title="get /connector">client.<a href="./src/index.ts">listConnectors</a>({ ...params }) -> ListConnectorsResponse</code>
