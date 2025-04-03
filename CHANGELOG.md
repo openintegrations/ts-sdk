@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1 (2025-04-03)
+
+Full Changelog: [v1.2.0...v1.2.1](https://github.com/openintegrations/ts-sdk/compare/v1.2.0...v1.2.1)
+
+### Bug Fixes
+
+* **api:** adding list connectors ([#136](https://github.com/openintegrations/ts-sdk/issues/136)) ([ec0f393](https://github.com/openintegrations/ts-sdk/commit/ec0f3939e8cbfcc17609db6785974fab24ea9d7a))
+
 ## 1.2.0 (2025-04-03)
 
 Full Changelog: [v0.3.2...v1.2.0](https://github.com/openintegrations/ts-sdk/compare/v0.3.2...v1.2.0)
