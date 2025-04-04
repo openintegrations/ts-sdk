@@ -101,7 +101,7 @@ describe('top level methods', () => {
             '--card-foreground': '--card-foreground',
             '--foreground': '--foreground',
             '--primary': '--primary',
-            connector_name: 'plaid',
+            connector_name: 'aircall',
             debug: true,
             view: 'add',
           },

@@ -3605,11 +3605,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -3627,6 +3631,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -3667,11 +3679,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -3689,6 +3705,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -3787,11 +3811,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -3809,6 +3837,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -3847,11 +3883,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -3869,6 +3909,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -3907,11 +3955,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -3929,6 +3981,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4007,11 +4067,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4029,6 +4093,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4107,11 +4179,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4129,6 +4205,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4227,11 +4311,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4249,6 +4337,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4287,11 +4383,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4309,6 +4409,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4417,11 +4525,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4439,6 +4551,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4481,11 +4601,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4503,6 +4627,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4581,11 +4713,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4603,6 +4739,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4701,11 +4845,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4723,6 +4871,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4801,11 +4957,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4823,6 +4983,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -4901,11 +5069,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -4923,6 +5095,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5001,11 +5181,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5023,6 +5207,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5101,11 +5293,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5123,6 +5319,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5201,11 +5405,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5223,6 +5431,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5261,11 +5477,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5283,6 +5503,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5317,11 +5545,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5339,6 +5571,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5417,11 +5657,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5439,6 +5683,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5537,11 +5789,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5559,6 +5815,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5657,11 +5921,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5679,6 +5947,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5777,11 +6053,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5799,6 +6079,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -5897,11 +6185,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -5919,6 +6211,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6017,11 +6317,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6039,6 +6343,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6117,11 +6429,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6139,6 +6455,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6217,11 +6541,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6239,6 +6567,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6273,11 +6609,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6295,6 +6635,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6329,11 +6677,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6351,6 +6703,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6391,11 +6751,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6413,6 +6777,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6513,11 +6885,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6535,6 +6911,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6569,11 +6953,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6591,6 +6979,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6669,11 +7065,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6691,6 +7091,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6729,11 +7137,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6751,6 +7163,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6849,11 +7269,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6871,6 +7295,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -6969,11 +7401,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -6991,6 +7427,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7039,11 +7483,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7061,6 +7509,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7110,11 +7566,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7132,6 +7592,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7215,11 +7683,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7237,6 +7709,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7277,11 +7757,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7299,6 +7783,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7397,11 +7889,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7419,6 +7915,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7502,11 +8006,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7524,6 +8032,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7622,11 +8138,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7644,6 +8164,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7678,11 +8206,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7700,6 +8232,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7778,11 +8318,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7800,6 +8344,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -7878,11 +8430,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -7900,6 +8456,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8010,11 +8574,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8032,6 +8600,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8070,11 +8646,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8092,6 +8672,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8130,11 +8718,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8152,6 +8744,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8194,11 +8794,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8216,6 +8820,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8254,11 +8866,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8276,6 +8892,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8374,11 +8998,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8396,6 +9024,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8436,11 +9072,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8458,6 +9098,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8498,11 +9146,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8520,6 +9172,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8618,11 +9278,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8640,6 +9304,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8722,11 +9394,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8744,6 +9420,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8842,11 +9526,15 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -8864,6 +9552,14 @@ export namespace GetConnectionResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -8986,11 +9682,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9008,6 +9708,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9063,11 +9771,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9085,6 +9797,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9140,11 +9860,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9162,6 +9886,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9240,11 +9972,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9262,6 +9998,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9317,11 +10061,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9339,6 +10087,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9414,11 +10170,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9436,6 +10196,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9511,11 +10279,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9533,6 +10305,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9602,11 +10382,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9624,6 +10408,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9705,11 +10497,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9727,6 +10523,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9782,11 +10586,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9804,6 +10612,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9859,11 +10675,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9881,6 +10701,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -9956,11 +10784,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -9978,6 +10810,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10047,11 +10887,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10069,6 +10913,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10144,11 +10996,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10166,6 +11022,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10241,11 +11105,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10263,6 +11131,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10338,11 +11214,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10360,6 +11240,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10435,11 +11323,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10457,6 +11349,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10532,11 +11432,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10554,6 +11458,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10609,11 +11521,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10631,6 +11547,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10690,11 +11614,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10712,6 +11640,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10787,11 +11723,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10809,6 +11749,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10878,11 +11826,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10900,6 +11852,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -10969,11 +11929,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -10991,6 +11955,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11060,11 +12032,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11082,6 +12058,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11151,11 +12135,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11173,6 +12161,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11244,11 +12240,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11266,6 +12266,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11341,11 +12349,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11363,6 +12375,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11438,11 +12458,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11460,6 +12484,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11519,11 +12551,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11541,6 +12577,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11619,11 +12663,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11641,6 +12689,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11700,11 +12756,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11722,6 +12782,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11833,11 +12901,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11855,6 +12927,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -11914,11 +12994,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -11936,6 +13020,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12011,11 +13103,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12033,6 +13129,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12102,11 +13206,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12124,6 +13232,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12193,11 +13309,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12215,6 +13335,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12284,11 +13412,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12306,6 +13438,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12423,11 +13563,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12445,6 +13589,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12500,11 +13652,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12522,6 +13678,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12597,11 +13761,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12619,6 +13787,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12686,11 +13862,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12708,6 +13888,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12777,11 +13965,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12799,6 +13991,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12874,11 +14074,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12896,6 +14100,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -12965,11 +14177,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -12987,6 +14203,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13050,11 +14274,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13072,6 +14300,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13147,11 +14383,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13169,6 +14409,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13244,11 +14492,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13266,6 +14518,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13321,11 +14581,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13343,6 +14607,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13421,11 +14693,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13443,6 +14719,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13504,11 +14788,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13526,6 +14814,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13581,11 +14877,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13603,6 +14903,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13658,11 +14966,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13680,6 +14992,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13749,11 +15069,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13771,6 +15095,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13842,11 +15174,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13864,6 +15200,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -13919,11 +15263,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -13941,6 +15289,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -14010,11 +15366,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14032,6 +15392,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -14109,11 +15477,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14131,6 +15503,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -14200,11 +15580,15 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14222,6 +15606,14 @@ export namespace ListConnectionConfigsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
 
@@ -14384,11 +15776,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14406,6 +15802,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -14446,11 +15850,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14468,6 +15876,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -14566,11 +15982,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14588,6 +16008,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -14626,11 +16054,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14648,6 +16080,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -14686,11 +16126,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14708,6 +16152,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -14786,11 +16238,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14808,6 +16264,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -14886,11 +16350,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -14908,6 +16376,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15006,11 +16482,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15028,6 +16508,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15066,11 +16554,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15088,6 +16580,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15196,11 +16696,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15218,6 +16722,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15260,11 +16772,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15282,6 +16798,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15360,11 +16884,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15382,6 +16910,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15480,11 +17016,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15502,6 +17042,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15580,11 +17128,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15602,6 +17154,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15680,11 +17240,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15702,6 +17266,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15780,11 +17352,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15802,6 +17378,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15880,11 +17464,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -15902,6 +17490,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -15980,11 +17576,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16002,6 +17602,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16040,11 +17648,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16062,6 +17674,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16096,11 +17716,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16118,6 +17742,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16196,11 +17828,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16218,6 +17854,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16316,11 +17960,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16338,6 +17986,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16436,11 +18092,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16458,6 +18118,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16556,11 +18224,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16578,6 +18250,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16676,11 +18356,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16698,6 +18382,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16796,11 +18488,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16818,6 +18514,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16896,11 +18600,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -16918,6 +18626,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -16996,11 +18712,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17018,6 +18738,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17052,11 +18780,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17074,6 +18806,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17108,11 +18848,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17130,6 +18874,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17170,11 +18922,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17192,6 +18948,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17292,11 +19056,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17314,6 +19082,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17348,11 +19124,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17370,6 +19150,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17448,11 +19236,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17470,6 +19262,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17508,11 +19308,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17530,6 +19334,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17628,11 +19440,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17650,6 +19466,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17748,11 +19572,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17770,6 +19598,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17818,11 +19654,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17840,6 +19680,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17889,11 +19737,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -17911,6 +19763,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -17994,11 +19854,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18016,6 +19880,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18056,11 +19928,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18078,6 +19954,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18176,11 +20060,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18198,6 +20086,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18281,11 +20177,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18303,6 +20203,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18401,11 +20309,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18423,6 +20335,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18457,11 +20377,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18479,6 +20403,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18557,11 +20489,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18579,6 +20515,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18657,11 +20601,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18679,6 +20627,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18789,11 +20745,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18811,6 +20771,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18849,11 +20817,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18871,6 +20843,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18909,11 +20889,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18931,6 +20915,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -18973,11 +20965,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -18995,6 +20991,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19033,11 +21037,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19055,6 +21063,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19153,11 +21169,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19175,6 +21195,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19215,11 +21243,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19237,6 +21269,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19277,11 +21317,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19299,6 +21343,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19397,11 +21449,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19419,6 +21475,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19501,11 +21565,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19523,6 +21591,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19621,11 +21697,15 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
+      openint_scopes?: Array<string>;
+
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
       schemas?: Connector.Schemas;
 
-      stage?: 'alpha' | 'beta' | 'ga';
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
     }
 
     export namespace Connector {
@@ -19643,6 +21723,14 @@ export namespace ListConnectionsResponse {
         pre_connect_input?: unknown;
 
         webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
       }
     }
   }
@@ -19663,11 +21751,15 @@ export namespace ListConnectorsResponse {
 
     logo_url?: string;
 
+    openint_scopes?: Array<string>;
+
     platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
     schemas?: ListConnectorsResponseItem.Schemas;
 
-    stage?: 'alpha' | 'beta' | 'ga';
+    scopes?: Array<ListConnectorsResponseItem.Scope>;
+
+    stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
   }
 
   export namespace ListConnectorsResponseItem {
@@ -19704,6 +21796,14 @@ export namespace ListConnectorsResponse {
       pre_connect_input?: unknown;
 
       webhook_input?: unknown;
+    }
+
+    export interface Scope {
+      scope: string;
+
+      description?: string;
+
+      display_name?: string;
     }
   }
 }
@@ -22363,7 +24463,65 @@ export namespace CreateMagicLinkParams {
     /**
      * The name of the connector to limit connection to. Default to all otherwise
      */
-    connector_name?: 'plaid' | 'greenhouse';
+    connector_name?:
+      | 'aircall'
+      | 'airtable'
+      | 'apollo'
+      | 'brex'
+      | 'coda'
+      | 'confluence'
+      | 'discord'
+      | 'facebook'
+      | 'finch'
+      | 'firebase'
+      | 'foreceipt'
+      | 'github'
+      | 'gong'
+      | 'googlecalendar'
+      | 'googledocs'
+      | 'googledrive'
+      | 'googlemail'
+      | 'googlesheet'
+      | 'greenhouse'
+      | 'heron'
+      | 'hubspot'
+      | 'instagram'
+      | 'intercom'
+      | 'jira'
+      | 'kustomer'
+      | 'lever'
+      | 'linear'
+      | 'linkedin'
+      | 'lunchmoney'
+      | 'mercury'
+      | 'merge'
+      | 'microsoft'
+      | 'moota'
+      | 'notion'
+      | 'onebrick'
+      | 'outreach'
+      | 'pipedrive'
+      | 'plaid'
+      | 'postgres'
+      | 'quickbooks'
+      | 'ramp'
+      | 'reddit'
+      | 'salesforce'
+      | 'salesloft'
+      | 'saltedge'
+      | 'sharepointonline'
+      | 'slack'
+      | 'splitwise'
+      | 'stripe'
+      | 'teller'
+      | 'toggl'
+      | 'twenty'
+      | 'twitter'
+      | 'venmo'
+      | 'wise'
+      | 'xero'
+      | 'yodlee'
+      | 'zohodesk';
 
     /**
      * Whether to enable debug mode
@@ -22433,6 +24591,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'linear'
     | 'linkedin'
     | 'lunchmoney'
+    | 'mercury'
     | 'merge'
     | 'microsoft'
     | 'moota'
@@ -22441,6 +24600,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
+    | 'postgres'
     | 'quickbooks'
     | 'ramp'
     | 'reddit'
@@ -22455,6 +24615,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'toggl'
     | 'twenty'
     | 'twitter'
+    | 'venmo'
     | 'wise'
     | 'xero'
     | 'yodlee'
@@ -22512,6 +24673,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'linear'
     | 'linkedin'
     | 'lunchmoney'
+    | 'mercury'
     | 'merge'
     | 'microsoft'
     | 'moota'
@@ -22520,6 +24682,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
+    | 'postgres'
     | 'quickbooks'
     | 'ramp'
     | 'reddit'
@@ -22534,6 +24697,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'toggl'
     | 'twenty'
     | 'twitter'
+    | 'venmo'
     | 'wise'
     | 'xero'
     | 'yodlee'
