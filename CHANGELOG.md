@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.1 (2025-04-05)
+
+Full Changelog: [v1.3.0...v1.3.1](https://github.com/openintegrations/ts-sdk/compare/v1.3.0...v1.3.1)
+
+### Bug Fixes
+
+* **mcp:** remove unused tools.ts ([#145](https://github.com/openintegrations/ts-sdk/issues/145)) ([fbde313](https://github.com/openintegrations/ts-sdk/commit/fbde3130bb63922cbf631aef47ff45bd35414657))
+
 ## 1.3.0 (2025-04-05)
 
 Full Changelog: [v1.2.1...v1.3.0](https://github.com/openintegrations/ts-sdk/compare/v1.2.1...v1.3.0)
