@@ -250,6 +250,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -258,6 +259,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -520,6 +522,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -528,6 +531,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -598,6 +602,7 @@ export namespace CreateConnectionResponse {
     export namespace UnionMember0 {
       export interface ServiceAccount {
         project_id: string;
+
         [k: string]: unknown;
       }
     }
@@ -624,6 +629,7 @@ export namespace CreateConnectionResponse {
           stsTokenManager: Record<string, unknown>;
 
           uid: string;
+
           [k: string]: unknown;
         }
       }
@@ -824,6 +830,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -832,6 +839,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -1352,6 +1360,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -1360,6 +1369,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -1438,6 +1448,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -1446,6 +1457,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -1524,6 +1536,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -1532,6 +1545,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -1610,6 +1624,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -1618,6 +1633,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -1696,6 +1712,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -1704,6 +1721,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -1984,6 +2002,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -1992,6 +2011,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -2182,6 +2202,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -2190,6 +2211,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -2268,6 +2290,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -2276,6 +2299,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -2526,6 +2550,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -2534,6 +2559,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -2683,6 +2709,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -2691,6 +2718,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -3127,6 +3155,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -3135,6 +3164,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -3269,6 +3299,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -3277,6 +3308,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -3425,6 +3457,7 @@ export namespace CreateConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -3433,6 +3466,7 @@ export namespace CreateConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -3785,6 +3819,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -3793,6 +3828,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -4285,6 +4321,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -4293,6 +4330,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -4455,6 +4493,7 @@ export namespace GetConnectionResponse {
     export namespace UnionMember0 {
       export interface ServiceAccount {
         project_id: string;
+
         [k: string]: unknown;
       }
     }
@@ -4481,6 +4520,7 @@ export namespace GetConnectionResponse {
           stsTokenManager: Record<string, unknown>;
 
           uid: string;
+
           [k: string]: unknown;
         }
       }
@@ -4819,6 +4859,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -4827,6 +4868,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -5763,6 +5805,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -5771,6 +5814,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -5895,6 +5939,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -5903,6 +5948,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -6027,6 +6073,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -6035,6 +6082,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -6159,6 +6207,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -6167,6 +6216,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -6291,6 +6341,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -6299,6 +6350,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -6859,6 +6911,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -6867,6 +6920,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -7243,6 +7297,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -7251,6 +7306,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -7375,6 +7431,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -7383,6 +7440,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -7863,6 +7921,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -7871,6 +7930,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -8112,6 +8172,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -8120,6 +8181,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -8972,6 +9034,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -8980,6 +9043,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -9252,6 +9316,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -9260,6 +9325,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -9500,6 +9566,7 @@ export namespace GetConnectionResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -9508,6 +9575,7 @@ export namespace GetConnectionResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -9735,6 +9803,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -9824,6 +9893,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -9913,6 +9983,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10025,6 +10096,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10114,6 +10186,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10223,6 +10296,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10332,6 +10406,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10435,6 +10510,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10550,6 +10626,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10639,6 +10716,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10728,6 +10806,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10837,6 +10916,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -10940,6 +11020,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11049,6 +11130,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11158,6 +11240,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11267,6 +11350,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11376,6 +11460,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11485,6 +11570,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11574,6 +11660,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11667,6 +11754,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11776,6 +11864,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11879,6 +11968,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -11982,6 +12072,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12085,6 +12176,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12188,6 +12280,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12293,6 +12386,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12402,6 +12496,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12511,6 +12606,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12604,6 +12700,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12716,6 +12813,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12809,6 +12907,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -12954,6 +13053,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13047,6 +13147,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13156,6 +13257,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13259,6 +13361,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13362,6 +13465,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13465,6 +13569,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13616,6 +13721,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13705,6 +13811,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13814,6 +13921,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -13915,6 +14023,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14018,6 +14127,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14127,6 +14237,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14230,6 +14341,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14327,6 +14439,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14436,6 +14549,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14545,6 +14659,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14634,6 +14749,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14746,6 +14862,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14841,6 +14958,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -14930,6 +15048,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15019,6 +15138,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15122,6 +15242,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15227,6 +15348,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15316,6 +15438,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15419,6 +15542,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15530,6 +15654,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15633,6 +15758,7 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
   }
@@ -15956,6 +16082,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -15964,6 +16091,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -16456,6 +16584,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -16464,6 +16593,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -16626,6 +16756,7 @@ export namespace ListConnectionsResponse {
     export namespace UnionMember0 {
       export interface ServiceAccount {
         project_id: string;
+
         [k: string]: unknown;
       }
     }
@@ -16652,6 +16783,7 @@ export namespace ListConnectionsResponse {
           stsTokenManager: Record<string, unknown>;
 
           uid: string;
+
           [k: string]: unknown;
         }
       }
@@ -16990,6 +17122,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -16998,6 +17131,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -17934,6 +18068,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -17942,6 +18077,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -18066,6 +18202,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -18074,6 +18211,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -18198,6 +18336,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -18206,6 +18345,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -18330,6 +18470,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -18338,6 +18479,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -18462,6 +18604,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -18470,6 +18613,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -19030,6 +19174,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -19038,6 +19183,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -19414,6 +19560,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -19422,6 +19569,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -19546,6 +19694,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -19554,6 +19703,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -20034,6 +20184,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -20042,6 +20193,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -20283,6 +20435,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -20291,6 +20444,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -21143,6 +21297,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -21151,6 +21306,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -21423,6 +21579,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -21431,6 +21588,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -21671,6 +21829,7 @@ export namespace ListConnectionsResponse {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -21679,6 +21838,7 @@ export namespace ListConnectionsResponse {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -21779,6 +21939,7 @@ export namespace ListConnectorsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+
       [k: string]: unknown;
     }
 
@@ -22005,6 +22166,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -22013,6 +22175,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -22205,6 +22368,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -22213,6 +22377,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -22255,6 +22420,7 @@ export namespace CreateConnectionParams {
     export namespace UnionMember0 {
       export interface ServiceAccount {
         project_id: string;
+
         [k: string]: unknown;
       }
     }
@@ -22281,6 +22447,7 @@ export namespace CreateConnectionParams {
           stsTokenManager: Record<string, unknown>;
 
           uid: string;
+
           [k: string]: unknown;
         }
       }
@@ -22439,6 +22606,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -22447,6 +22615,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -22841,6 +23010,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -22849,6 +23019,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -22913,6 +23084,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -22921,6 +23093,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -22985,6 +23158,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -22993,6 +23167,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23057,6 +23232,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23065,6 +23241,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23129,6 +23306,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23137,6 +23315,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23333,6 +23512,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23341,6 +23521,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23475,6 +23656,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23483,6 +23665,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23547,6 +23730,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23555,6 +23739,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23735,6 +23920,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23743,6 +23929,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -23864,6 +24051,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -23872,6 +24060,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -24182,6 +24371,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -24190,6 +24380,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -24282,6 +24473,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -24290,6 +24482,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
@@ -24410,6 +24603,7 @@ export namespace CreateConnectionParams {
             scope?: string;
 
             token_type?: string | null;
+
             [k: string]: unknown;
           }
         }
@@ -24418,6 +24612,7 @@ export namespace CreateConnectionParams {
           instance_url?: string | null;
 
           portalId?: number | null;
+
           [k: string]: unknown;
         }
       }
