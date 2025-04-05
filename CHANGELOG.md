@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.3.0 (2025-04-05)
+
+Full Changelog: [v1.2.1...v1.3.0](https://github.com/openintegrations/ts-sdk/compare/v1.2.1...v1.3.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([#139](https://github.com/openintegrations/ts-sdk/issues/139)) ([6254149](https://github.com/openintegrations/ts-sdk/commit/6254149b70d8fb0896c07c57e51e982cb18c8be5))
+* **docs:** updating documented docs for stainless ([#141](https://github.com/openintegrations/ts-sdk/issues/141)) ([d3b7cfe](https://github.com/openintegrations/ts-sdk/commit/d3b7cfea6f6be5fea60e0944d82bf064a946013a))
+
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#142](https://github.com/openintegrations/ts-sdk/issues/142)) ([9576169](https://github.com/openintegrations/ts-sdk/commit/957616938746525b1c1a5c1f8ca451e1423e1b73))
+
+
+### Chores
+
+* **internal:** improve index signature formatting ([#143](https://github.com/openintegrations/ts-sdk/issues/143)) ([dda121f](https://github.com/openintegrations/ts-sdk/commit/dda121fcad22cfdeef1783749da12c67fe3cb3e9))
+
 ## 1.2.1 (2025-04-03)
 
 Full Changelog: [v1.2.0...v1.2.1](https://github.com/openintegrations/ts-sdk/compare/v1.2.0...v1.2.1)
