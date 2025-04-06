@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.0 (2025-04-06)
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/openintegrations/ts-sdk/compare/v1.3.0...v1.4.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([#147](https://github.com/openintegrations/ts-sdk/issues/147)) ([6cacafb](https://github.com/openintegrations/ts-sdk/commit/6cacafb12c831e707a9f0e5a36d7f0a741511260))
+
+
+### Bug Fixes
+
+* **mcp:** remove unused tools.ts ([#145](https://github.com/openintegrations/ts-sdk/issues/145)) ([fbde313](https://github.com/openintegrations/ts-sdk/commit/fbde3130bb63922cbf631aef47ff45bd35414657))
+
 ## 1.3.0 (2025-04-05)
 
 Full Changelog: [v1.2.1...v1.3.0](https://github.com/openintegrations/ts-sdk/compare/v1.2.1...v1.3.0)
