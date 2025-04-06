@@ -25,17 +25,7 @@ describe('top level methods', () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
-      data: {
-        connector_name: 'aircall',
-        settings: {
-          oauth: {
-            created_at: 'created_at',
-            last_fetched_at: 'last_fetched_at',
-            metadata: { foo: 'bar' },
-            updated_at: 'updated_at',
-          },
-        },
-      },
+      data: { connector_name: 'dummy-oauth2', settings: { oauth: {} } },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -52,13 +42,10 @@ describe('top level methods', () => {
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
       data: {
-        connector_name: 'aircall',
+        connector_name: 'dummy-oauth2',
         settings: {
           oauth: {
             created_at: 'created_at',
-            last_fetched_at: 'last_fetched_at',
-            metadata: { foo: 'bar' },
-            updated_at: 'updated_at',
             credentials: {
               access_token: 'access_token',
               client_id: 'client_id',
@@ -69,6 +56,9 @@ describe('top level methods', () => {
               refresh_token: 'refresh_token',
               token_type: 'token_type',
             },
+            last_fetched_at: 'last_fetched_at',
+            metadata: { foo: 'bar' },
+            updated_at: 'updated_at',
           },
         },
       },
@@ -197,7 +187,7 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectionConfigs(
-        { connector_name: 'aircall', expand: 'expand', limit: 0, offset: 0 },
+        { connector_name: 'aircall', expand: ['connector'], limit: 0, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -250,7 +240,7 @@ describe('top level methods', () => {
   test.skip('listConnectors: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.listConnectors({ expand: 'expand' }, { path: '/_stainless_unknown_path' }),
+      client.listConnectors({ expand: ['schemas'] }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Openint.NotFoundError);
   });
 });

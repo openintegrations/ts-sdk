@@ -30,105 +30,115 @@ export interface CheckConnectionResponse {
 }
 
 export type CreateConnectionResponse =
-  | CreateConnectionResponse.ConnectorsAircallConnectionSettings
-  | CreateConnectionResponse.ConnectorsAirtableConnectionSettings
-  | CreateConnectionResponse.ConnectorsApolloConnectionSettings
-  | CreateConnectionResponse.ConnectorsBrexConnectionSettings
-  | CreateConnectionResponse.ConnectorsCodaConnectionSettings
-  | CreateConnectionResponse.ConnectorsConfluenceConnectionSettings
-  | CreateConnectionResponse.ConnectorsDiscordConnectionSettings
-  | CreateConnectionResponse.ConnectorsFacebookConnectionSettings
-  | CreateConnectionResponse.ConnectorsFinchConnectionSettings
-  | CreateConnectionResponse.ConnectorsFirebaseConnectionSettings
-  | CreateConnectionResponse.ConnectorsForeceiptConnectionSettings
-  | CreateConnectionResponse.ConnectorsGitHubConnectionSettings
-  | CreateConnectionResponse.ConnectorsGongConnectionSettings
-  | CreateConnectionResponse.ConnectorsGooglecalendarConnectionSettings
-  | CreateConnectionResponse.ConnectorsGoogledocsConnectionSettings
-  | CreateConnectionResponse.ConnectorsGoogledriveConnectionSettings
-  | CreateConnectionResponse.ConnectorsGooglemailConnectionSettings
-  | CreateConnectionResponse.ConnectorsGooglesheetConnectionSettings
-  | CreateConnectionResponse.ConnectorsGreenhouseConnectionSettings
-  | CreateConnectionResponse.ConnectorsHeronConnectionSettings
-  | CreateConnectionResponse.ConnectorsHubspotConnectionSettings
-  | CreateConnectionResponse.ConnectorsInstagramConnectionSettings
-  | CreateConnectionResponse.ConnectorsIntercomConnectionSettings
-  | CreateConnectionResponse.ConnectorsJiraConnectionSettings
-  | CreateConnectionResponse.ConnectorsKustomerConnectionSettings
-  | CreateConnectionResponse.ConnectorsLeverConnectionSettings
-  | CreateConnectionResponse.ConnectorsLinearConnectionSettings
-  | CreateConnectionResponse.ConnectorsLinkedinConnectionSettings
-  | CreateConnectionResponse.ConnectorsLunchmoneyConnectionSettings
-  | CreateConnectionResponse.ConnectorsMercuryConnectionSettings
-  | CreateConnectionResponse.ConnectorsMergeConnectionSettings
-  | CreateConnectionResponse.ConnectorsMicrosoftConnectionSettings
-  | CreateConnectionResponse.ConnectorsMootaConnectionSettings
-  | CreateConnectionResponse.ConnectorsNotionConnectionSettings
-  | CreateConnectionResponse.ConnectorsOnebrickConnectionSettings
-  | CreateConnectionResponse.ConnectorsOutreachConnectionSettings
-  | CreateConnectionResponse.ConnectorsPipedriveConnectionSettings
-  | CreateConnectionResponse.ConnectorsPlaidConnectionSettings
-  | CreateConnectionResponse.ConnectorsPostgresConnectionSettings
-  | CreateConnectionResponse.ConnectorsQuickbooksConnectionSettings
-  | CreateConnectionResponse.ConnectorsRampConnectionSettings
-  | CreateConnectionResponse.ConnectorsRedditConnectionSettings
-  | CreateConnectionResponse.ConnectorsSalesforceConnectionSettings
-  | CreateConnectionResponse.ConnectorsSalesloftConnectionSettings
-  | CreateConnectionResponse.ConnectorsSaltedgeConnectionSettings
-  | CreateConnectionResponse.ConnectorsSharepointonlineConnectionSettings
-  | CreateConnectionResponse.ConnectorsSlackConnectionSettings
-  | CreateConnectionResponse.ConnectorsSplitwiseConnectionSettings
-  | CreateConnectionResponse.ConnectorsStripeConnectionSettings
-  | CreateConnectionResponse.ConnectorsTellerConnectionSettings
-  | CreateConnectionResponse.ConnectorsTogglConnectionSettings
-  | CreateConnectionResponse.ConnectorsTwentyConnectionSettings
-  | CreateConnectionResponse.ConnectorsTwitterConnectionSettings
-  | CreateConnectionResponse.ConnectorsVenmoConnectionSettings
-  | CreateConnectionResponse.ConnectorsWiseConnectionSettings
-  | CreateConnectionResponse.ConnectorsXeroConnectionSettings
-  | CreateConnectionResponse.ConnectorsYodleeConnectionSettings
-  | CreateConnectionResponse.ConnectorsZohodeskConnectionSettings;
+  | CreateConnectionResponse.ConnectorDummyOauth2DiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSharepointonlineDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSlackDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGitHubDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorQuickbooksDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGooglemailDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorNotionDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorLinkedinDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGoogledocsDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorAircallDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGooglecalendarDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGooglesheetDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorDiscordDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorHubspotDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSalesforceDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorLinearDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorConfluenceDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGoogledriveDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorAirtableDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorApolloDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorBrexDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorCodaDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorFacebookDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorFinchDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorFirebaseDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorForeceiptDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGongDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorGreenhouseDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorHeronDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorInstagramDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorIntercomDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorJiraDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorKustomerDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorLeverDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorLunchmoneyDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorMercuryDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorMergeDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorMicrosoftDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorMootaDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorOnebrickDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorOutreachDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorPipedriveDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorPlaidDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorPostgresDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorRampDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorRedditDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSalesloftDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSaltedgeDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSplitwiseDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorStripeDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorTellerDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorTogglDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorTwentyDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorTwitterDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorVenmoDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorWiseDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorXeroDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorYodleeDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorZohodeskDiscriminatedConnectionSettings;
 
 export namespace CreateConnectionResponse {
-  export interface ConnectorsAircallConnectionSettings {
-    connector_name: 'aircall';
+  export interface ConnectorDummyOauth2DiscriminatedConnectionSettings {
+    connector_name: 'dummy-oauth2';
 
-    settings: ConnectorsAircallConnectionSettings.Settings;
+    settings: ConnectorDummyOauth2DiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAircallConnectionSettings {
+  export namespace ConnectorDummyOauth2DiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
 
     export namespace Settings {
       export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
+        created_at?: string;
 
         /**
          * Output of the postConnect hook for oauth2 connectors
          */
         credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
       }
 
       export namespace OAuth {
@@ -138,6 +148,9 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
+          /**
+           * Client ID used for the connection
+           */
           client_id: string;
 
           raw: Record<string, unknown>;
@@ -156,27 +169,1372 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsAirtableConnectionSettings {
-    connector_name: 'airtable';
+  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    connector_name: 'sharepointonline';
 
-    settings: ConnectorsAirtableConnectionSettings.Settings;
+    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAirtableConnectionSettings {
+  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectionSettings {
+    connector_name: 'slack';
+
+    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectionSettings {
+    connector_name: 'github';
+
+    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
+    connector_name: 'quickbooks';
+
+    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGooglemailDiscriminatedConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorGooglemailDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglemailDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGoogledocsDiscriminatedConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorGoogledocsDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledocsDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectionSettings {
+    connector_name: 'aircall';
+
+    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    connector_name: 'googlecalendar';
+
+    settings: ConnectorGooglecalendarDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGooglesheetDiscriminatedConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorGooglesheetDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglesheetDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectionSettings {
+    connector_name: 'discord';
+
+    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectionSettings {
+    connector_name: 'hubspot';
+
+    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectionSettings {
+    connector_name: 'linear';
+
+    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectionSettings {
+    connector_name: 'confluence';
+
+    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGoogledriveDiscriminatedConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorGoogledriveDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledriveDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectionSettings {
+    connector_name: 'airtable';
+
+    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAirtableDiscriminatedConnectionSettings {
     export interface Settings {
       airtableBase: string;
 
@@ -184,27 +1542,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsApolloConnectionSettings {
+  export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
 
-    settings: ConnectorsApolloConnectionSettings.Settings;
+    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsApolloConnectionSettings {
+  export namespace ConnectorApolloDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -272,211 +1639,106 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsBrexConnectionSettings {
+  export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
 
-    settings: ConnectorsBrexConnectionSettings.Settings;
+    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsBrexConnectionSettings {
+  export namespace ConnectorBrexDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
   }
 
-  export interface ConnectorsCodaConnectionSettings {
+  export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
 
-    settings: ConnectorsCodaConnectionSettings.Settings;
+    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsCodaConnectionSettings {
+  export namespace ConnectorCodaDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
   }
 
-  export interface ConnectorsConfluenceConnectionSettings {
-    connector_name: 'confluence';
-
-    settings: ConnectorsConfluenceConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsConfluenceConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsDiscordConnectionSettings {
-    connector_name: 'discord';
-
-    settings: ConnectorsDiscordConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsDiscordConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsFacebookConnectionSettings {
+  export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
 
-    settings: ConnectorsFacebookConnectionSettings.Settings;
+    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFacebookConnectionSettings {
+  export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -544,55 +1806,73 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsFinchConnectionSettings {
+  export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
 
-    settings: ConnectorsFinchConnectionSettings.Settings;
+    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFinchConnectionSettings {
+  export namespace ConnectorFinchDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
   }
 
-  export interface ConnectorsFirebaseConnectionSettings {
+  export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
 
     settings:
-      | ConnectorsFirebaseConnectionSettings.UnionMember0
-      | ConnectorsFirebaseConnectionSettings.UnionMember1;
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFirebaseConnectionSettings {
+  export namespace ConnectorFirebaseDiscriminatedConnectionSettings {
     export interface UnionMember0 {
       role: 'admin';
 
@@ -668,27 +1948,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsForeceiptConnectionSettings {
+  export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
 
-    settings: ConnectorsForeceiptConnectionSettings.Settings;
+    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsForeceiptConnectionSettings {
+  export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'staging' | 'production';
 
@@ -698,93 +1987,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsGitHubConnectionSettings {
-    connector_name: 'github';
-
-    settings: ConnectorsGitHubConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGitHubConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGongConnectionSettings {
+  export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
 
-    settings: ConnectorsGongConnectionSettings.Settings;
+    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGongConnectionSettings {
+  export namespace ConnectorGongDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -852,469 +2084,100 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsGooglecalendarConnectionSettings {
-    connector_name: 'googlecalendar';
-
-    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglecalendarConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGoogledocsConnectionSettings {
-    connector_name: 'googledocs';
-
-    settings: ConnectorsGoogledocsConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledocsConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGoogledriveConnectionSettings {
-    connector_name: 'googledrive';
-
-    settings: ConnectorsGoogledriveConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGooglemailConnectionSettings {
-    connector_name: 'googlemail';
-
-    settings: ConnectorsGooglemailConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglemailConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGooglesheetConnectionSettings {
-    connector_name: 'googlesheet';
-
-    settings: ConnectorsGooglesheetConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglesheetConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGreenhouseConnectionSettings {
+  export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
 
-    settings: ConnectorsGreenhouseConnectionSettings.Settings;
+    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGreenhouseConnectionSettings {
+  export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
   }
 
-  export interface ConnectorsHeronConnectionSettings {
+  export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export interface ConnectorsHubspotConnectionSettings {
-    connector_name: 'hubspot';
-
-    settings: ConnectorsHubspotConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsHubspotConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsInstagramConnectionSettings {
+  export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
 
-    settings: ConnectorsInstagramConnectionSettings.Settings;
+    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsInstagramConnectionSettings {
+  export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -1382,27 +2245,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsIntercomConnectionSettings {
+  export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
 
-    settings: ConnectorsIntercomConnectionSettings.Settings;
+    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsIntercomConnectionSettings {
+  export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -1470,27 +2342,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsJiraConnectionSettings {
+  export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
 
-    settings: ConnectorsJiraConnectionSettings.Settings;
+    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsJiraConnectionSettings {
+  export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -1558,27 +2439,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsKustomerConnectionSettings {
+  export interface ConnectorKustomerDiscriminatedConnectionSettings {
     connector_name: 'kustomer';
 
-    settings: ConnectorsKustomerConnectionSettings.Settings;
+    settings: ConnectorKustomerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsKustomerConnectionSettings {
+  export namespace ConnectorKustomerDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -1646,27 +2536,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsLeverConnectionSettings {
+  export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
 
-    settings: ConnectorsLeverConnectionSettings.Settings;
+    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLeverConnectionSettings {
+  export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -1734,199 +2633,94 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsLinearConnectionSettings {
-    connector_name: 'linear';
-
-    settings: ConnectorsLinearConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinearConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsLinkedinConnectionSettings {
-    connector_name: 'linkedin';
-
-    settings: ConnectorsLinkedinConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinkedinConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsLunchmoneyConnectionSettings {
+  export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export interface ConnectorsMercuryConnectionSettings {
+  export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export interface ConnectorsMergeConnectionSettings {
+  export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorsMergeConnectionSettings.Settings;
+    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMergeConnectionSettings {
+  export namespace ConnectorMergeDiscriminatedConnectionSettings {
     export interface Settings {
       accountToken: string;
 
@@ -1934,27 +2728,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsMicrosoftConnectionSettings {
+  export interface ConnectorMicrosoftDiscriminatedConnectionSettings {
     connector_name: 'microsoft';
 
-    settings: ConnectorsMicrosoftConnectionSettings.Settings;
+    settings: ConnectorMicrosoftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMicrosoftConnectionSettings {
+  export namespace ConnectorMicrosoftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -2024,139 +2827,100 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsMootaConnectionSettings {
+  export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export interface ConnectorsNotionConnectionSettings {
-    connector_name: 'notion';
-
-    settings: ConnectorsNotionConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsNotionConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsOnebrickConnectionSettings {
+  export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorsOnebrickConnectionSettings.Settings;
+    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOnebrickConnectionSettings {
+  export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
   }
 
-  export interface ConnectorsOutreachConnectionSettings {
+  export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
 
-    settings: ConnectorsOutreachConnectionSettings.Settings;
+    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOutreachConnectionSettings {
+  export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -2224,27 +2988,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsPipedriveConnectionSettings {
+  export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
 
-    settings: ConnectorsPipedriveConnectionSettings.Settings;
+    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPipedriveConnectionSettings {
+  export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -2312,27 +3085,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsPlaidConnectionSettings {
+  export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
-    settings: ConnectorsPlaidConnectionSettings.Settings;
+    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPlaidConnectionSettings {
+  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -2348,27 +3130,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsPostgresConnectionSettings {
+  export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
 
-    settings: ConnectorsPostgresConnectionSettings.Settings;
+    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPostgresConnectionSettings {
+  export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
       databaseUrl: string;
 
@@ -2385,98 +3176,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsQuickbooksConnectionSettings {
-    connector_name: 'quickbooks';
-
-    settings: ConnectorsQuickbooksConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsQuickbooksConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsRampConnectionSettings {
+  export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
 
-    settings: ConnectorsRampConnectionSettings.Settings;
+    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRampConnectionSettings {
+  export namespace ConnectorRampDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken?: string | null;
 
@@ -2484,27 +3213,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsRedditConnectionSettings {
+  export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
 
-    settings: ConnectorsRedditConnectionSettings.Settings;
+    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRedditConnectionSettings {
+  export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -2572,98 +3310,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsSalesforceConnectionSettings {
-    connector_name: 'salesforce';
-
-    settings: ConnectorsSalesforceConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSalesforceConnectionSettings {
-    export interface Settings {
-      /**
-       * The instance URL of your Salesforce account (e.g., example)
-       */
-      instance_url: string;
-
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsSalesloftConnectionSettings {
+  export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
 
-    settings: ConnectorsSalesloftConnectionSettings.Settings;
+    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesloftConnectionSettings {
+  export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -2731,19 +3407,28 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsSaltedgeConnectionSettings {
+  export interface ConnectorSaltedgeDiscriminatedConnectionSettings {
     connector_name: 'saltedge';
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     settings?: unknown;
@@ -2751,159 +3436,36 @@ export namespace CreateConnectionResponse {
     updated_at?: string;
   }
 
-  export interface ConnectorsSharepointonlineConnectionSettings {
-    connector_name: 'sharepointonline';
-
-    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSharepointonlineConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsSlackConnectionSettings {
-    connector_name: 'slack';
-
-    settings: ConnectorsSlackConnectionSettings.Settings;
-
-    id?: string;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSlackConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsSplitwiseConnectionSettings {
+  export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorsSplitwiseConnectionSettings.Settings;
+    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSplitwiseConnectionSettings {
+  export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -2981,79 +3543,106 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsStripeConnectionSettings {
+  export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
 
-    settings: ConnectorsStripeConnectionSettings.Settings;
+    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsStripeConnectionSettings {
+  export namespace ConnectorStripeDiscriminatedConnectionSettings {
     export interface Settings {
       secretKey: string;
     }
   }
 
-  export interface ConnectorsTellerConnectionSettings {
+  export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
 
-    settings: ConnectorsTellerConnectionSettings.Settings;
+    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTellerConnectionSettings {
+  export namespace ConnectorTellerDiscriminatedConnectionSettings {
     export interface Settings {
       token: string;
     }
   }
 
-  export interface ConnectorsTogglConnectionSettings {
+  export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
 
-    settings: ConnectorsTogglConnectionSettings.Settings;
+    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTogglConnectionSettings {
+  export namespace ConnectorTogglDiscriminatedConnectionSettings {
     export interface Settings {
       apiToken: string;
 
@@ -3063,53 +3652,71 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsTwentyConnectionSettings {
+  export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
 
-    settings: ConnectorsTwentyConnectionSettings.Settings;
+    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwentyConnectionSettings {
+  export namespace ConnectorTwentyDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
   }
 
-  export interface ConnectorsTwitterConnectionSettings {
+  export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
 
-    settings: ConnectorsTwitterConnectionSettings.Settings;
+    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwitterConnectionSettings {
+  export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -3177,27 +3784,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsVenmoConnectionSettings {
+  export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
 
-    settings: ConnectorsVenmoConnectionSettings.Settings;
+    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsVenmoConnectionSettings {
+  export namespace ConnectorVenmoDiscriminatedConnectionSettings {
     export interface Settings {
       credentials?: unknown;
 
@@ -3205,27 +3821,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsWiseConnectionSettings {
+  export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
 
-    settings: ConnectorsWiseConnectionSettings.Settings;
+    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsWiseConnectionSettings {
+  export namespace ConnectorWiseDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'sandbox' | 'live';
 
@@ -3233,27 +3858,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsXeroConnectionSettings {
+  export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
 
-    settings: ConnectorsXeroConnectionSettings.Settings;
+    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsXeroConnectionSettings {
+  export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -3321,27 +3955,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsYodleeConnectionSettings {
+  export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
 
-    settings: ConnectorsYodleeConnectionSettings.Settings;
+    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsYodleeConnectionSettings {
+  export namespace ConnectorYodleeDiscriminatedConnectionSettings {
     export interface Settings {
       loginName: string;
 
@@ -3391,27 +4034,36 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorsZohodeskConnectionSettings {
+  export interface ConnectorZohodeskDiscriminatedConnectionSettings {
     connector_name: 'zohodesk';
 
-    settings: ConnectorsZohodeskConnectionSettings.Settings;
+    settings: ConnectorZohodeskDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsZohodeskConnectionSettings {
+  export namespace ConnectorZohodeskDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -3505,107 +4157,117 @@ export interface DeleteConnectionResponse {
  * The connection details
  */
 export type GetConnectionResponse =
-  | GetConnectionResponse.ConnectorsAircallConnectionSettings
-  | GetConnectionResponse.ConnectorsAirtableConnectionSettings
-  | GetConnectionResponse.ConnectorsApolloConnectionSettings
-  | GetConnectionResponse.ConnectorsBrexConnectionSettings
-  | GetConnectionResponse.ConnectorsCodaConnectionSettings
-  | GetConnectionResponse.ConnectorsConfluenceConnectionSettings
-  | GetConnectionResponse.ConnectorsDiscordConnectionSettings
-  | GetConnectionResponse.ConnectorsFacebookConnectionSettings
-  | GetConnectionResponse.ConnectorsFinchConnectionSettings
-  | GetConnectionResponse.ConnectorsFirebaseConnectionSettings
-  | GetConnectionResponse.ConnectorsForeceiptConnectionSettings
-  | GetConnectionResponse.ConnectorsGitHubConnectionSettings
-  | GetConnectionResponse.ConnectorsGongConnectionSettings
-  | GetConnectionResponse.ConnectorsGooglecalendarConnectionSettings
-  | GetConnectionResponse.ConnectorsGoogledocsConnectionSettings
-  | GetConnectionResponse.ConnectorsGoogledriveConnectionSettings
-  | GetConnectionResponse.ConnectorsGooglemailConnectionSettings
-  | GetConnectionResponse.ConnectorsGooglesheetConnectionSettings
-  | GetConnectionResponse.ConnectorsGreenhouseConnectionSettings
-  | GetConnectionResponse.ConnectorsHeronConnectionSettings
-  | GetConnectionResponse.ConnectorsHubspotConnectionSettings
-  | GetConnectionResponse.ConnectorsInstagramConnectionSettings
-  | GetConnectionResponse.ConnectorsIntercomConnectionSettings
-  | GetConnectionResponse.ConnectorsJiraConnectionSettings
-  | GetConnectionResponse.ConnectorsKustomerConnectionSettings
-  | GetConnectionResponse.ConnectorsLeverConnectionSettings
-  | GetConnectionResponse.ConnectorsLinearConnectionSettings
-  | GetConnectionResponse.ConnectorsLinkedinConnectionSettings
-  | GetConnectionResponse.ConnectorsLunchmoneyConnectionSettings
-  | GetConnectionResponse.ConnectorsMercuryConnectionSettings
-  | GetConnectionResponse.ConnectorsMergeConnectionSettings
-  | GetConnectionResponse.ConnectorsMicrosoftConnectionSettings
-  | GetConnectionResponse.ConnectorsMootaConnectionSettings
-  | GetConnectionResponse.ConnectorsNotionConnectionSettings
-  | GetConnectionResponse.ConnectorsOnebrickConnectionSettings
-  | GetConnectionResponse.ConnectorsOutreachConnectionSettings
-  | GetConnectionResponse.ConnectorsPipedriveConnectionSettings
-  | GetConnectionResponse.ConnectorsPlaidConnectionSettings
-  | GetConnectionResponse.ConnectorsPostgresConnectionSettings
-  | GetConnectionResponse.ConnectorsQuickbooksConnectionSettings
-  | GetConnectionResponse.ConnectorsRampConnectionSettings
-  | GetConnectionResponse.ConnectorsRedditConnectionSettings
-  | GetConnectionResponse.ConnectorsSalesforceConnectionSettings
-  | GetConnectionResponse.ConnectorsSalesloftConnectionSettings
-  | GetConnectionResponse.ConnectorsSaltedgeConnectionSettings
-  | GetConnectionResponse.ConnectorsSharepointonlineConnectionSettings
-  | GetConnectionResponse.ConnectorsSlackConnectionSettings
-  | GetConnectionResponse.ConnectorsSplitwiseConnectionSettings
-  | GetConnectionResponse.ConnectorsStripeConnectionSettings
-  | GetConnectionResponse.ConnectorsTellerConnectionSettings
-  | GetConnectionResponse.ConnectorsTogglConnectionSettings
-  | GetConnectionResponse.ConnectorsTwentyConnectionSettings
-  | GetConnectionResponse.ConnectorsTwitterConnectionSettings
-  | GetConnectionResponse.ConnectorsVenmoConnectionSettings
-  | GetConnectionResponse.ConnectorsWiseConnectionSettings
-  | GetConnectionResponse.ConnectorsXeroConnectionSettings
-  | GetConnectionResponse.ConnectorsYodleeConnectionSettings
-  | GetConnectionResponse.ConnectorsZohodeskConnectionSettings;
+  | GetConnectionResponse.ConnectorDummyOauth2DiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSharepointonlineDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSlackDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGitHubDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorQuickbooksDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGooglemailDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorNotionDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorLinkedinDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGoogledocsDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorAircallDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGooglecalendarDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGooglesheetDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorDiscordDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorHubspotDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSalesforceDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorLinearDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorConfluenceDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGoogledriveDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorAirtableDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorApolloDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorBrexDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorCodaDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorFacebookDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorFinchDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorFirebaseDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorForeceiptDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGongDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorGreenhouseDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorHeronDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorInstagramDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorIntercomDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorJiraDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorKustomerDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorLeverDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorLunchmoneyDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorMercuryDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorMergeDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorMicrosoftDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorMootaDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorOnebrickDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorOutreachDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorPipedriveDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorPlaidDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorPostgresDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorRampDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorRedditDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSalesloftDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSaltedgeDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSplitwiseDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorStripeDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorTellerDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorTogglDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorTwentyDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorTwitterDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorVenmoDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorWiseDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorXeroDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorYodleeDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorZohodeskDiscriminatedConnectionSettings;
 
 export namespace GetConnectionResponse {
-  export interface ConnectorsAircallConnectionSettings {
-    connector_name: 'aircall';
+  export interface ConnectorDummyOauth2DiscriminatedConnectionSettings {
+    connector_name: 'dummy-oauth2';
 
-    settings: ConnectorsAircallConnectionSettings.Settings;
+    settings: ConnectorDummyOauth2DiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsAircallConnectionSettings.Connector;
+    connector?: ConnectorDummyOauth2DiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAircallConnectionSettings {
+  export namespace ConnectorDummyOauth2DiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
 
     export namespace Settings {
       export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
+        created_at?: string;
 
         /**
          * Output of the postConnect hook for oauth2 connectors
          */
         credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
       }
 
       export namespace OAuth {
@@ -3615,6 +4277,9 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
+          /**
+           * Client ID used for the connection
+           */
           client_id: string;
 
           raw: Record<string, unknown>;
@@ -3634,6 +4299,8 @@ export namespace GetConnectionResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -3677,29 +4344,2190 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsAirtableConnectionSettings {
-    connector_name: 'airtable';
+  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    connector_name: 'sharepointonline';
 
-    settings: ConnectorsAirtableConnectionSettings.Settings;
+    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsAirtableConnectionSettings.Connector;
+    connector?: ConnectorSharepointonlineDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAirtableConnectionSettings {
+  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectionSettings {
+    connector_name: 'slack';
+
+    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorSlackDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectionSettings {
+    connector_name: 'github';
+
+    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGitHubDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
+    connector_name: 'quickbooks';
+
+    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorQuickbooksDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGooglemailDiscriminatedConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorGooglemailDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGooglemailDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglemailDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorNotionDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorLinkedinDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGoogledocsDiscriminatedConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorGoogledocsDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGoogledocsDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledocsDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectionSettings {
+    connector_name: 'aircall';
+
+    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorAircallDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    connector_name: 'googlecalendar';
+
+    settings: ConnectorGooglecalendarDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGooglecalendarDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGooglesheetDiscriminatedConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorGooglesheetDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGooglesheetDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglesheetDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectionSettings {
+    connector_name: 'discord';
+
+    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorDiscordDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectionSettings {
+    connector_name: 'hubspot';
+
+    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorHubspotDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorSalesforceDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectionSettings {
+    connector_name: 'linear';
+
+    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorLinearDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectionSettings {
+    connector_name: 'confluence';
+
+    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorConfluenceDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGoogledriveDiscriminatedConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorGoogledriveDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGoogledriveDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledriveDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectionSettings {
+    connector_name: 'airtable';
+
+    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorAirtableDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAirtableDiscriminatedConnectionSettings {
     export interface Settings {
       airtableBase: string;
 
@@ -3709,6 +6537,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -3751,29 +6581,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsApolloConnectionSettings {
+  export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
 
-    settings: ConnectorsApolloConnectionSettings.Settings;
+    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsApolloConnectionSettings.Connector;
+    connector?: ConnectorApolloDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsApolloConnectionSettings {
+  export namespace ConnectorApolloDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -3843,6 +6682,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -3885,29 +6726,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsBrexConnectionSettings {
+  export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
 
-    settings: ConnectorsBrexConnectionSettings.Settings;
+    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsBrexConnectionSettings.Connector;
+    connector?: ConnectorBrexDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsBrexConnectionSettings {
+  export namespace ConnectorBrexDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
@@ -3915,6 +6765,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -3957,29 +6809,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsCodaConnectionSettings {
+  export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
 
-    settings: ConnectorsCodaConnectionSettings.Settings;
+    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsCodaConnectionSettings.Connector;
+    connector?: ConnectorCodaDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsCodaConnectionSettings {
+  export namespace ConnectorCodaDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
@@ -3987,117 +6848,7 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsConfluenceConnectionSettings {
-    connector_name: 'confluence';
-
-    settings: ConnectorsConfluenceConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsConfluenceConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsConfluenceConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -4141,141 +6892,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsDiscordConnectionSettings {
-    connector_name: 'discord';
-
-    settings: ConnectorsDiscordConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsDiscordConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsDiscordConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsFacebookConnectionSettings {
+  export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
 
-    settings: ConnectorsFacebookConnectionSettings.Settings;
+    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsFacebookConnectionSettings.Connector;
+    connector?: ConnectorFacebookDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFacebookConnectionSettings {
+  export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -4345,6 +6993,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -4387,29 +7037,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsFinchConnectionSettings {
+  export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
 
-    settings: ConnectorsFinchConnectionSettings.Settings;
+    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsFinchConnectionSettings.Connector;
+    connector?: ConnectorFinchDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFinchConnectionSettings {
+  export namespace ConnectorFinchDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
@@ -4417,6 +7076,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -4459,31 +7120,40 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsFirebaseConnectionSettings {
+  export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
 
     settings:
-      | ConnectorsFirebaseConnectionSettings.UnionMember0
-      | ConnectorsFirebaseConnectionSettings.UnionMember1;
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
 
     id?: string;
 
-    connector?: ConnectorsFirebaseConnectionSettings.Connector;
+    connector?: ConnectorFirebaseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFirebaseConnectionSettings {
+  export namespace ConnectorFirebaseDiscriminatedConnectionSettings {
     export interface UnionMember0 {
       role: 'admin';
 
@@ -4561,6 +7231,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -4603,29 +7275,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsForeceiptConnectionSettings {
+  export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
 
-    settings: ConnectorsForeceiptConnectionSettings.Settings;
+    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsForeceiptConnectionSettings.Connector;
+    connector?: ConnectorForeceiptDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsForeceiptConnectionSettings {
+  export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'staging' | 'production';
 
@@ -4637,117 +7318,7 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGitHubConnectionSettings {
-    connector_name: 'github';
-
-    settings: ConnectorsGitHubConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGitHubConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGitHubConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -4791,29 +7362,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsGongConnectionSettings {
+  export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
 
-    settings: ConnectorsGongConnectionSettings.Settings;
+    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsGongConnectionSettings.Connector;
+    connector?: ConnectorGongDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGongConnectionSettings {
+  export namespace ConnectorGongDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -4883,117 +7463,7 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGooglecalendarConnectionSettings {
-    connector_name: 'googlecalendar';
-
-    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGooglecalendarConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglecalendarConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -5037,477 +7507,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsGoogledocsConnectionSettings {
-    connector_name: 'googledocs';
-
-    settings: ConnectorsGoogledocsConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGoogledocsConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledocsConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGoogledriveConnectionSettings {
-    connector_name: 'googledrive';
-
-    settings: ConnectorsGoogledriveConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGoogledriveConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGooglemailConnectionSettings {
-    connector_name: 'googlemail';
-
-    settings: ConnectorsGooglemailConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGooglemailConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglemailConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGooglesheetConnectionSettings {
-    connector_name: 'googlesheet';
-
-    settings: ConnectorsGooglesheetConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGooglesheetConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglesheetConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGreenhouseConnectionSettings {
+  export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
 
-    settings: ConnectorsGreenhouseConnectionSettings.Settings;
+    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsGreenhouseConnectionSettings.Connector;
+    connector?: ConnectorGreenhouseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGreenhouseConnectionSettings {
+  export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
@@ -5515,6 +7546,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -5557,31 +7590,42 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsHeronConnectionSettings {
+  export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsHeronConnectionSettings.Connector;
+    connector?: ConnectorHeronDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsHeronConnectionSettings {
+  export namespace ConnectorHeronDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -5625,141 +7669,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsHubspotConnectionSettings {
-    connector_name: 'hubspot';
-
-    settings: ConnectorsHubspotConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsHubspotConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsHubspotConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsInstagramConnectionSettings {
+  export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
 
-    settings: ConnectorsInstagramConnectionSettings.Settings;
+    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsInstagramConnectionSettings.Connector;
+    connector?: ConnectorInstagramDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsInstagramConnectionSettings {
+  export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -5829,6 +7770,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -5871,29 +7814,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsIntercomConnectionSettings {
+  export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
 
-    settings: ConnectorsIntercomConnectionSettings.Settings;
+    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsIntercomConnectionSettings.Connector;
+    connector?: ConnectorIntercomDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsIntercomConnectionSettings {
+  export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -5963,6 +7915,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -6005,29 +7959,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsJiraConnectionSettings {
+  export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
 
-    settings: ConnectorsJiraConnectionSettings.Settings;
+    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsJiraConnectionSettings.Connector;
+    connector?: ConnectorJiraDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsJiraConnectionSettings {
+  export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -6097,6 +8060,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -6139,29 +8104,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsKustomerConnectionSettings {
+  export interface ConnectorKustomerDiscriminatedConnectionSettings {
     connector_name: 'kustomer';
 
-    settings: ConnectorsKustomerConnectionSettings.Settings;
+    settings: ConnectorKustomerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsKustomerConnectionSettings.Connector;
+    connector?: ConnectorKustomerDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsKustomerConnectionSettings {
+  export namespace ConnectorKustomerDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -6231,6 +8205,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -6273,29 +8249,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsLeverConnectionSettings {
+  export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
 
-    settings: ConnectorsLeverConnectionSettings.Settings;
+    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsLeverConnectionSettings.Connector;
+    connector?: ConnectorLeverDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLeverConnectionSettings {
+  export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -6365,117 +8350,7 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsLinearConnectionSettings {
-    connector_name: 'linear';
-
-    settings: ConnectorsLinearConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsLinearConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinearConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -6519,143 +8394,42 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsLinkedinConnectionSettings {
-    connector_name: 'linkedin';
-
-    settings: ConnectorsLinkedinConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsLinkedinConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinkedinConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsLunchmoneyConnectionSettings {
+  export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsLunchmoneyConnectionSettings.Connector;
+    connector?: ConnectorLunchmoneyDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLunchmoneyConnectionSettings {
+  export namespace ConnectorLunchmoneyDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -6699,31 +8473,42 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsMercuryConnectionSettings {
+  export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsMercuryConnectionSettings.Connector;
+    connector?: ConnectorMercuryDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMercuryConnectionSettings {
+  export namespace ConnectorMercuryDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -6767,29 +8552,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsMergeConnectionSettings {
+  export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorsMergeConnectionSettings.Settings;
+    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsMergeConnectionSettings.Connector;
+    connector?: ConnectorMergeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMergeConnectionSettings {
+  export namespace ConnectorMergeDiscriminatedConnectionSettings {
     export interface Settings {
       accountToken: string;
 
@@ -6799,6 +8593,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -6841,29 +8637,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsMicrosoftConnectionSettings {
+  export interface ConnectorMicrosoftDiscriminatedConnectionSettings {
     connector_name: 'microsoft';
 
-    settings: ConnectorsMicrosoftConnectionSettings.Settings;
+    settings: ConnectorMicrosoftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsMicrosoftConnectionSettings.Connector;
+    connector?: ConnectorMicrosoftDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMicrosoftConnectionSettings {
+  export namespace ConnectorMicrosoftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -6935,6 +8740,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -6977,31 +8784,42 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsMootaConnectionSettings {
+  export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsMootaConnectionSettings.Connector;
+    connector?: ConnectorMootaDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMootaConnectionSettings {
+  export namespace ConnectorMootaDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -7045,141 +8863,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsNotionConnectionSettings {
-    connector_name: 'notion';
-
-    settings: ConnectorsNotionConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsNotionConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsNotionConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsOnebrickConnectionSettings {
+  export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorsOnebrickConnectionSettings.Settings;
+    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsOnebrickConnectionSettings.Connector;
+    connector?: ConnectorOnebrickDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOnebrickConnectionSettings {
+  export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
@@ -7187,6 +8902,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -7229,29 +8946,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsOutreachConnectionSettings {
+  export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
 
-    settings: ConnectorsOutreachConnectionSettings.Settings;
+    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsOutreachConnectionSettings.Connector;
+    connector?: ConnectorOutreachDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOutreachConnectionSettings {
+  export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -7321,6 +9047,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -7363,29 +9091,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsPipedriveConnectionSettings {
+  export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
 
-    settings: ConnectorsPipedriveConnectionSettings.Settings;
+    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsPipedriveConnectionSettings.Connector;
+    connector?: ConnectorPipedriveDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPipedriveConnectionSettings {
+  export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -7455,6 +9192,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -7497,29 +9236,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsPlaidConnectionSettings {
+  export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
-    settings: ConnectorsPlaidConnectionSettings.Settings;
+    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsPlaidConnectionSettings.Connector;
+    connector?: ConnectorPlaidDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPlaidConnectionSettings {
+  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -7537,6 +9285,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -7579,29 +9329,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsPostgresConnectionSettings {
+  export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
 
-    settings: ConnectorsPostgresConnectionSettings.Settings;
+    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsPostgresConnectionSettings.Connector;
+    connector?: ConnectorPostgresDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPostgresConnectionSettings {
+  export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
       databaseUrl: string;
 
@@ -7620,122 +9379,7 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsQuickbooksConnectionSettings {
-    connector_name: 'quickbooks';
-
-    settings: ConnectorsQuickbooksConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsQuickbooksConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsQuickbooksConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -7779,29 +9423,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsRampConnectionSettings {
+  export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
 
-    settings: ConnectorsRampConnectionSettings.Settings;
+    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsRampConnectionSettings.Connector;
+    connector?: ConnectorRampDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRampConnectionSettings {
+  export namespace ConnectorRampDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken?: string | null;
 
@@ -7811,6 +9464,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -7853,29 +9508,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsRedditConnectionSettings {
+  export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
 
-    settings: ConnectorsRedditConnectionSettings.Settings;
+    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsRedditConnectionSettings.Connector;
+    connector?: ConnectorRedditDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRedditConnectionSettings {
+  export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -7945,122 +9609,7 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsSalesforceConnectionSettings {
-    connector_name: 'salesforce';
-
-    settings: ConnectorsSalesforceConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsSalesforceConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSalesforceConnectionSettings {
-    export interface Settings {
-      /**
-       * The instance URL of your Salesforce account (e.g., example)
-       */
-      instance_url: string;
-
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -8104,29 +9653,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsSalesloftConnectionSettings {
+  export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
 
-    settings: ConnectorsSalesloftConnectionSettings.Settings;
+    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsSalesloftConnectionSettings.Connector;
+    connector?: ConnectorSalesloftDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesloftConnectionSettings {
+  export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -8196,6 +9754,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -8238,21 +9798,30 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsSaltedgeConnectionSettings {
+  export interface ConnectorSaltedgeDiscriminatedConnectionSettings {
     connector_name: 'saltedge';
 
     id?: string;
 
-    connector?: ConnectorsSaltedgeConnectionSettings.Connector;
+    connector?: ConnectorSaltedgeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     settings?: unknown;
@@ -8260,9 +9829,11 @@ export namespace GetConnectionResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorsSaltedgeConnectionSettings {
+  export namespace ConnectorSaltedgeDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -8306,253 +9877,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsSharepointonlineConnectionSettings {
-    connector_name: 'sharepointonline';
-
-    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsSharepointonlineConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSharepointonlineConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsSlackConnectionSettings {
-    connector_name: 'slack';
-
-    settings: ConnectorsSlackConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsSlackConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSlackConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsSplitwiseConnectionSettings {
+  export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorsSplitwiseConnectionSettings.Settings;
+    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsSplitwiseConnectionSettings.Connector;
+    connector?: ConnectorSplitwiseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSplitwiseConnectionSettings {
+  export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -8632,6 +9988,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -8674,29 +10032,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsStripeConnectionSettings {
+  export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
 
-    settings: ConnectorsStripeConnectionSettings.Settings;
+    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsStripeConnectionSettings.Connector;
+    connector?: ConnectorStripeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsStripeConnectionSettings {
+  export namespace ConnectorStripeDiscriminatedConnectionSettings {
     export interface Settings {
       secretKey: string;
     }
@@ -8704,6 +10071,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -8746,29 +10115,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsTellerConnectionSettings {
+  export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
 
-    settings: ConnectorsTellerConnectionSettings.Settings;
+    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTellerConnectionSettings.Connector;
+    connector?: ConnectorTellerDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTellerConnectionSettings {
+  export namespace ConnectorTellerDiscriminatedConnectionSettings {
     export interface Settings {
       token: string;
     }
@@ -8776,6 +10154,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -8818,29 +10198,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsTogglConnectionSettings {
+  export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
 
-    settings: ConnectorsTogglConnectionSettings.Settings;
+    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTogglConnectionSettings.Connector;
+    connector?: ConnectorTogglDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTogglConnectionSettings {
+  export namespace ConnectorTogglDiscriminatedConnectionSettings {
     export interface Settings {
       apiToken: string;
 
@@ -8852,6 +10241,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -8894,29 +10285,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsTwentyConnectionSettings {
+  export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
 
-    settings: ConnectorsTwentyConnectionSettings.Settings;
+    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTwentyConnectionSettings.Connector;
+    connector?: ConnectorTwentyDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwentyConnectionSettings {
+  export namespace ConnectorTwentyDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
@@ -8924,6 +10324,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -8966,29 +10368,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsTwitterConnectionSettings {
+  export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
 
-    settings: ConnectorsTwitterConnectionSettings.Settings;
+    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTwitterConnectionSettings.Connector;
+    connector?: ConnectorTwitterDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwitterConnectionSettings {
+  export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -9058,6 +10469,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9100,29 +10513,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsVenmoConnectionSettings {
+  export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
 
-    settings: ConnectorsVenmoConnectionSettings.Settings;
+    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsVenmoConnectionSettings.Connector;
+    connector?: ConnectorVenmoDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsVenmoConnectionSettings {
+  export namespace ConnectorVenmoDiscriminatedConnectionSettings {
     export interface Settings {
       credentials?: unknown;
 
@@ -9132,6 +10554,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9174,29 +10598,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsWiseConnectionSettings {
+  export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
 
-    settings: ConnectorsWiseConnectionSettings.Settings;
+    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsWiseConnectionSettings.Connector;
+    connector?: ConnectorWiseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsWiseConnectionSettings {
+  export namespace ConnectorWiseDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'sandbox' | 'live';
 
@@ -9206,6 +10639,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9248,29 +10683,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsXeroConnectionSettings {
+  export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
 
-    settings: ConnectorsXeroConnectionSettings.Settings;
+    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsXeroConnectionSettings.Connector;
+    connector?: ConnectorXeroDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsXeroConnectionSettings {
+  export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -9340,6 +10784,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9382,29 +10828,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsYodleeConnectionSettings {
+  export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
 
-    settings: ConnectorsYodleeConnectionSettings.Settings;
+    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsYodleeConnectionSettings.Connector;
+    connector?: ConnectorYodleeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsYodleeConnectionSettings {
+  export namespace ConnectorYodleeDiscriminatedConnectionSettings {
     export interface Settings {
       loginName: string;
 
@@ -9456,6 +10911,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9498,29 +10955,38 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorsZohodeskConnectionSettings {
+  export interface ConnectorZohodeskDiscriminatedConnectionSettings {
     connector_name: 'zohodesk';
 
-    settings: ConnectorsZohodeskConnectionSettings.Settings;
+    settings: ConnectorZohodeskDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsZohodeskConnectionSettings.Connector;
+    connector?: ConnectorZohodeskDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsZohodeskConnectionSettings {
+  export namespace ConnectorZohodeskDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -9590,6 +11056,8 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9634,80 +11102,83 @@ export namespace GetConnectionResponse {
 }
 
 export interface GetCurrentUserResponse {
-  role: 'customer' | 'org' | 'anon' | 'user';
+  role: 'anon' | 'customer' | 'user' | 'org' | 'system';
+
+  [k: string]: unknown;
 }
 
 export type ListConnectionConfigsResponse =
-  | ListConnectionConfigsResponse.ConnectorsAircallConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsAirtableConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsApolloConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsBrexConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsCodaConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsConfluenceConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsDiscordConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsFacebookConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsFinchConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsFirebaseConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsForeceiptConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGitHubConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGongConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGooglecalendarConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGoogledocsConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGoogledriveConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGooglemailConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGooglesheetConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsGreenhouseConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsHeronConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsHubspotConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsInstagramConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsIntercomConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsJiraConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsKustomerConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsLeverConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsLinearConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsLinkedinConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsLunchmoneyConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsMercuryConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsMergeConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsMicrosoftConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsMootaConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsNotionConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsOnebrickConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsOutreachConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsPipedriveConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsPlaidConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsPostgresConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsQuickbooksConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsRampConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsRedditConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSalesforceConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSalesloftConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSaltedgeConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSharepointonlineConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSlackConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsSplitwiseConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsStripeConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsTellerConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsTogglConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsTwentyConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsTwitterConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsVenmoConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsWiseConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsXeroConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsYodleeConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorsZohodeskConnectorConfig;
+  | ListConnectionConfigsResponse.ConnectorDummyOauth2DiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSharepointonlineDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSlackDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGitHubDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorQuickbooksDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGooglemailDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorNotionDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorLinkedinDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGoogledocsDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorAircallDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGooglecalendarDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGooglesheetDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorDiscordDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorHubspotDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSalesforceDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorLinearDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorConfluenceDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGoogledriveDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorAirtableDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorApolloDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorBrexDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorCodaDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorFacebookDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorFinchDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorFirebaseDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorForeceiptDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGongDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorGreenhouseDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorHeronDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorInstagramDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorIntercomDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorJiraDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorKustomerDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorLeverDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorLunchmoneyDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorMercuryDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorMergeDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorMicrosoftDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorMootaDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorOnebrickDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorOutreachDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorPipedriveDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorPlaidDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorPostgresDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorRampDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorRedditDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSalesloftDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorStripeDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorTellerDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorTogglDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorTwentyDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorTwitterDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorVenmoDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorWiseDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorXeroDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorYodleeDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorZohodeskDiscriminatedConnectorConfig;
 
 export namespace ListConnectionConfigsResponse {
-  export interface ConnectorsAircallConnectorConfig {
-    config: ConnectorsAircallConnectorConfig.Config;
+  export interface ConnectorDummyOauth2DiscriminatedConnectorConfig {
+    config: ConnectorDummyOauth2DiscriminatedConnectorConfig.Config;
 
-    connector_name: 'aircall';
+    connector_name: 'dummy-oauth2';
 
     id?: string;
 
     connection_count?: number;
 
-    connector?: ConnectorsAircallConnectorConfig.Connector;
+    connector?: ConnectorDummyOauth2DiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -9715,14 +11186,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsAircallConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorDummyOauth2DiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAircallConnectorConfig {
+  export namespace ConnectorDummyOauth2DiscriminatedConnectorConfig {
     export interface Config {
       /**
        * Base oauth configuration for the connector
@@ -9739,6 +11217,8 @@ export namespace ListConnectionConfigsResponse {
 
         client_secret?: string | null;
 
+        redirect_uri?: string | null;
+
         scopes?: Array<string> | null;
       }
     }
@@ -9746,6 +11226,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -9788,9 +11270,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -9803,13 +11354,3209 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsAirtableConnectorConfig {
-    config: null;
+  export interface ConnectorSharepointonlineDiscriminatedConnectorConfig {
+    config: ConnectorSharepointonlineDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'sharepointonline';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorSharepointonlineDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorSharepointonlineDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSharepointonlineDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectorConfig {
+    config: ConnectorSlackDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorSlackDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorSlackDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectorConfig {
+    config: ConnectorGitHubDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'github';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorGitHubDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorGitHubDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectorConfig {
+    config: ConnectorQuickbooksDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'quickbooks';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorQuickbooksDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorQuickbooksDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectorConfig {
+    export interface Config {
+      envName: 'sandbox' | 'production';
+
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorGooglemailDiscriminatedConnectorConfig {
+    config: ConnectorGooglemailDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'googlemail';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorGooglemailDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorGooglemailDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglemailDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectorConfig {
+    config: ConnectorNotionDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'notion';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorNotionDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorNotionDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectorConfig {
+    config: ConnectorLinkedinDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'linkedin';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorLinkedinDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorLinkedinDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorGoogledocsDiscriminatedConnectorConfig {
+    config: ConnectorGoogledocsDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'googledocs';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorGoogledocsDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorGoogledocsDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledocsDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectorConfig {
+    config: ConnectorAircallDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'aircall';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorAircallDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorAircallDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorGooglecalendarDiscriminatedConnectorConfig {
+    config: ConnectorGooglecalendarDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'googlecalendar';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorGooglecalendarDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorGooglecalendarDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglecalendarDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorGooglesheetDiscriminatedConnectorConfig {
+    config: ConnectorGooglesheetDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'googlesheet';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorGooglesheetDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorGooglesheetDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglesheetDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectorConfig {
+    config: ConnectorDiscordDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'discord';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorDiscordDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorDiscordDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectorConfig {
+    config: ConnectorHubspotDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'hubspot';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorHubspotDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorHubspotDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectorConfig {
+    config: ConnectorSalesforceDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'salesforce';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorSalesforceDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorSalesforceDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectorConfig {
+    config: ConnectorLinearDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'linear';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorLinearDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorLinearDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectorConfig {
+    config: ConnectorConfluenceDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'confluence';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorConfluenceDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorConfluenceDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorGoogledriveDiscriminatedConnectorConfig {
+    config: ConnectorGoogledriveDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'googledrive';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorGoogledriveDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorGoogledriveDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledriveDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'airtable';
 
@@ -9817,7 +14564,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsAirtableConnectorConfig.Connector;
+    connector?: ConnectorAirtableDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -9825,16 +14572,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsAirtableConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorAirtableDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAirtableConnectorConfig {
+  export namespace ConnectorAirtableDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -9878,9 +14634,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -9893,13 +14718,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsApolloConnectorConfig {
-    config: null;
+  export interface ConnectorApolloDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'apollo';
 
@@ -9907,7 +14730,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsApolloConnectorConfig.Connector;
+    connector?: ConnectorApolloDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -9915,16 +14738,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsApolloConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorApolloDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsApolloConnectorConfig {
+  export namespace ConnectorApolloDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -9968,9 +14800,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -9983,13 +14884,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsBrexConnectorConfig {
-    config: ConnectorsBrexConnectorConfig.Config;
+  export interface ConnectorBrexDiscriminatedConnectorConfig {
+    config: ConnectorBrexDiscriminatedConnectorConfig.Config;
 
     connector_name: 'brex';
 
@@ -9997,7 +14896,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsBrexConnectorConfig.Connector;
+    connector?: ConnectorBrexDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10005,14 +14904,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsBrexConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorBrexDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsBrexConnectorConfig {
+  export namespace ConnectorBrexDiscriminatedConnectorConfig {
     export interface Config {
       /**
        * API key auth support
@@ -10039,6 +14945,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -10081,9 +14989,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -10096,13 +15073,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsCodaConnectorConfig {
-    config: null;
+  export interface ConnectorCodaDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'coda';
 
@@ -10110,7 +15085,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsCodaConnectorConfig.Connector;
+    connector?: ConnectorCodaDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10118,16 +15093,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsCodaConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorCodaDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsCodaConnectorConfig {
+  export namespace ConnectorCodaDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -10171,9 +15155,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -10186,233 +15239,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsConfluenceConnectorConfig {
-    config: ConnectorsConfluenceConnectorConfig.Config;
-
-    connector_name: 'confluence';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsConfluenceConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsConfluenceConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsConfluenceConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsDiscordConnectorConfig {
-    config: ConnectorsDiscordConnectorConfig.Config;
-
-    connector_name: 'discord';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsDiscordConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsDiscordConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsDiscordConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsFacebookConnectorConfig {
-    config: ConnectorsFacebookConnectorConfig.Config;
+  export interface ConnectorFacebookDiscriminatedConnectorConfig {
+    config: ConnectorFacebookDiscriminatedConnectorConfig.Config;
 
     connector_name: 'facebook';
 
@@ -10420,7 +15251,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsFacebookConnectorConfig.Connector;
+    connector?: ConnectorFacebookDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10428,14 +15259,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsFacebookConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorFacebookDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFacebookConnectorConfig {
+  export namespace ConnectorFacebookDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -10453,6 +15291,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -10495,9 +15335,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -10510,13 +15419,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsFinchConnectorConfig {
-    config: ConnectorsFinchConnectorConfig.Config;
+  export interface ConnectorFinchDiscriminatedConnectorConfig {
+    config: ConnectorFinchDiscriminatedConnectorConfig.Config;
 
     connector_name: 'finch';
 
@@ -10524,7 +15431,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsFinchConnectorConfig.Connector;
+    connector?: ConnectorFinchDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10532,14 +15439,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsFinchConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorFinchDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFinchConnectorConfig {
+  export namespace ConnectorFinchDiscriminatedConnectorConfig {
     export interface Config {
       client_id: string;
 
@@ -10569,6 +15483,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -10611,9 +15527,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -10626,13 +15611,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsFirebaseConnectorConfig {
-    config: null;
+  export interface ConnectorFirebaseDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'firebase';
 
@@ -10640,7 +15623,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsFirebaseConnectorConfig.Connector;
+    connector?: ConnectorFirebaseDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10648,16 +15631,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsFirebaseConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorFirebaseDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFirebaseConnectorConfig {
+  export namespace ConnectorFirebaseDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -10701,9 +15693,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -10716,13 +15777,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsForeceiptConnectorConfig {
-    config: null;
+  export interface ConnectorForeceiptDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'foreceipt';
 
@@ -10730,7 +15789,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsForeceiptConnectorConfig.Connector;
+    connector?: ConnectorForeceiptDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10738,16 +15797,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsForeceiptConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorForeceiptDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsForeceiptConnectorConfig {
+  export namespace ConnectorForeceiptDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -10791,9 +15859,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -10806,123 +15943,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsGitHubConnectorConfig {
-    config: ConnectorsGitHubConnectorConfig.Config;
-
-    connector_name: 'github';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsGitHubConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsGitHubConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGitHubConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsGongConnectorConfig {
-    config: ConnectorsGongConnectorConfig.Config;
+  export interface ConnectorGongDiscriminatedConnectorConfig {
+    config: ConnectorGongDiscriminatedConnectorConfig.Config;
 
     connector_name: 'gong';
 
@@ -10930,7 +15955,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsGongConnectorConfig.Connector;
+    connector?: ConnectorGongDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -10938,14 +15963,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsGongConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorGongDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGongConnectorConfig {
+  export namespace ConnectorGongDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -10963,115 +15995,7 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsGooglecalendarConnectorConfig {
-    config: ConnectorsGooglecalendarConnectorConfig.Config;
-
-    connector_name: 'googlecalendar';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsGooglecalendarConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsGooglecalendarConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglecalendarConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -11115,9 +16039,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -11130,453 +16123,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsGoogledocsConnectorConfig {
-    config: ConnectorsGoogledocsConnectorConfig.Config;
-
-    connector_name: 'googledocs';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsGoogledocsConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsGoogledocsConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledocsConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsGoogledriveConnectorConfig {
-    config: ConnectorsGoogledriveConnectorConfig.Config;
-
-    connector_name: 'googledrive';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsGoogledriveConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsGoogledriveConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsGooglemailConnectorConfig {
-    config: ConnectorsGooglemailConnectorConfig.Config;
-
-    connector_name: 'googlemail';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsGooglemailConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsGooglemailConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglemailConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsGooglesheetConnectorConfig {
-    config: ConnectorsGooglesheetConnectorConfig.Config;
-
-    connector_name: 'googlesheet';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsGooglesheetConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsGooglesheetConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglesheetConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsGreenhouseConnectorConfig {
-    config: null;
+  export interface ConnectorGreenhouseDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'greenhouse';
 
@@ -11584,7 +16135,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsGreenhouseConnectorConfig.Connector;
+    connector?: ConnectorGreenhouseDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -11592,16 +16143,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsGreenhouseConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorGreenhouseDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGreenhouseConnectorConfig {
+  export namespace ConnectorGreenhouseDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -11645,9 +16205,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -11660,13 +16289,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsHeronConnectorConfig {
-    config: ConnectorsHeronConnectorConfig.Config;
+  export interface ConnectorHeronDiscriminatedConnectorConfig {
+    config: ConnectorHeronDiscriminatedConnectorConfig.Config;
 
     connector_name: 'heron';
 
@@ -11674,7 +16301,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsHeronConnectorConfig.Connector;
+    connector?: ConnectorHeronDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -11682,14 +16309,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsHeronConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorHeronDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsHeronConnectorConfig {
+  export namespace ConnectorHeronDiscriminatedConnectorConfig {
     export interface Config {
       apiKey: string;
     }
@@ -11697,115 +16331,7 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsHubspotConnectorConfig {
-    config: ConnectorsHubspotConnectorConfig.Config;
-
-    connector_name: 'hubspot';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsHubspotConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsHubspotConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsHubspotConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -11849,9 +16375,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -11864,13 +16459,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsInstagramConnectorConfig {
-    config: ConnectorsInstagramConnectorConfig.Config;
+  export interface ConnectorInstagramDiscriminatedConnectorConfig {
+    config: ConnectorInstagramDiscriminatedConnectorConfig.Config;
 
     connector_name: 'instagram';
 
@@ -11878,7 +16471,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsInstagramConnectorConfig.Connector;
+    connector?: ConnectorInstagramDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -11886,14 +16479,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsInstagramConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorInstagramDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsInstagramConnectorConfig {
+  export namespace ConnectorInstagramDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -11910,6 +16510,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -11953,9 +16555,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -11968,13 +16639,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsIntercomConnectorConfig {
-    config: ConnectorsIntercomConnectorConfig.Config;
+  export interface ConnectorIntercomDiscriminatedConnectorConfig {
+    config: ConnectorIntercomDiscriminatedConnectorConfig.Config;
 
     connector_name: 'intercom';
 
@@ -11982,7 +16651,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsIntercomConnectorConfig.Connector;
+    connector?: ConnectorIntercomDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -11990,14 +16659,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsIntercomConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorIntercomDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsIntercomConnectorConfig {
+  export namespace ConnectorIntercomDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -12014,6 +16690,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -12057,9 +16735,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12072,13 +16819,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsJiraConnectorConfig {
-    config: ConnectorsJiraConnectorConfig.Config;
+  export interface ConnectorJiraDiscriminatedConnectorConfig {
+    config: ConnectorJiraDiscriminatedConnectorConfig.Config;
 
     connector_name: 'jira';
 
@@ -12086,7 +16831,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsJiraConnectorConfig.Connector;
+    connector?: ConnectorJiraDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12094,14 +16839,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsJiraConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorJiraDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsJiraConnectorConfig {
+  export namespace ConnectorJiraDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -12118,6 +16870,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -12161,9 +16915,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12176,13 +16999,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsKustomerConnectorConfig {
-    config: ConnectorsKustomerConnectorConfig.Config;
+  export interface ConnectorKustomerDiscriminatedConnectorConfig {
+    config: ConnectorKustomerDiscriminatedConnectorConfig.Config;
 
     connector_name: 'kustomer';
 
@@ -12190,7 +17011,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsKustomerConnectorConfig.Connector;
+    connector?: ConnectorKustomerDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12198,14 +17019,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsKustomerConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorKustomerDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsKustomerConnectorConfig {
+  export namespace ConnectorKustomerDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -12222,6 +17050,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -12265,9 +17095,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12280,13 +17179,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsLeverConnectorConfig {
-    config: ConnectorsLeverConnectorConfig.Config;
+  export interface ConnectorLeverDiscriminatedConnectorConfig {
+    config: ConnectorLeverDiscriminatedConnectorConfig.Config;
 
     connector_name: 'lever';
 
@@ -12294,7 +17191,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsLeverConnectorConfig.Connector;
+    connector?: ConnectorLeverDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12302,14 +17199,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsLeverConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorLeverDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLeverConnectorConfig {
+  export namespace ConnectorLeverDiscriminatedConnectorConfig {
     export interface Config {
       envName: 'sandbox' | 'production';
 
@@ -12329,115 +17233,7 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsLinearConnectorConfig {
-    config: ConnectorsLinearConnectorConfig.Config;
-
-    connector_name: 'linear';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsLinearConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsLinearConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinearConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -12481,9 +17277,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12496,123 +17361,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsLinkedinConnectorConfig {
-    config: ConnectorsLinkedinConnectorConfig.Config;
-
-    connector_name: 'linkedin';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsLinkedinConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsLinkedinConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinkedinConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsLunchmoneyConnectorConfig {
-    config: ConnectorsLunchmoneyConnectorConfig.Config;
+  export interface ConnectorLunchmoneyDiscriminatedConnectorConfig {
+    config: ConnectorLunchmoneyDiscriminatedConnectorConfig.Config;
 
     connector_name: 'lunchmoney';
 
@@ -12620,7 +17373,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsLunchmoneyConnectorConfig.Connector;
+    connector?: ConnectorLunchmoneyDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12628,20 +17381,29 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsLunchmoneyConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorLunchmoneyDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLunchmoneyConnectorConfig {
+  export namespace ConnectorLunchmoneyDiscriminatedConnectorConfig {
     export interface Config {
       accessToken: string;
     }
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -12685,9 +17447,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12700,13 +17531,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsMercuryConnectorConfig {
-    config: ConnectorsMercuryConnectorConfig.Config;
+  export interface ConnectorMercuryDiscriminatedConnectorConfig {
+    config: ConnectorMercuryDiscriminatedConnectorConfig.Config;
 
     connector_name: 'mercury';
 
@@ -12714,7 +17543,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsMercuryConnectorConfig.Connector;
+    connector?: ConnectorMercuryDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12722,14 +17551,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsMercuryConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorMercuryDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMercuryConnectorConfig {
+  export namespace ConnectorMercuryDiscriminatedConnectorConfig {
     export interface Config {
       /**
        * API key auth support
@@ -12756,6 +17592,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -12798,9 +17636,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12813,13 +17720,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsMergeConnectorConfig {
-    config: ConnectorsMergeConnectorConfig.Config;
+  export interface ConnectorMergeDiscriminatedConnectorConfig {
+    config: ConnectorMergeDiscriminatedConnectorConfig.Config;
 
     connector_name: 'merge';
 
@@ -12827,7 +17732,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsMergeConnectorConfig.Connector;
+    connector?: ConnectorMergeDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12835,20 +17740,29 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsMergeConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorMergeDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMergeConnectorConfig {
+  export namespace ConnectorMergeDiscriminatedConnectorConfig {
     export interface Config {
       apiKey: string;
     }
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -12892,9 +17806,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -12907,13 +17890,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsMicrosoftConnectorConfig {
-    config: ConnectorsMicrosoftConnectorConfig.Config;
+  export interface ConnectorMicrosoftDiscriminatedConnectorConfig {
+    config: ConnectorMicrosoftDiscriminatedConnectorConfig.Config;
 
     connector_name: 'microsoft';
 
@@ -12921,7 +17902,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsMicrosoftConnectorConfig.Connector;
+    connector?: ConnectorMicrosoftDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -12929,14 +17910,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsMicrosoftConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorMicrosoftDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMicrosoftConnectorConfig {
+  export namespace ConnectorMicrosoftDiscriminatedConnectorConfig {
     export interface Config {
       integrations: Config.Integrations;
 
@@ -12996,6 +17984,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -13038,9 +18028,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13053,13 +18112,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsMootaConnectorConfig {
-    config: ConnectorsMootaConnectorConfig.Config;
+  export interface ConnectorMootaDiscriminatedConnectorConfig {
+    config: ConnectorMootaDiscriminatedConnectorConfig.Config;
 
     connector_name: 'moota';
 
@@ -13067,7 +18124,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsMootaConnectorConfig.Connector;
+    connector?: ConnectorMootaDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13075,14 +18132,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsMootaConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorMootaDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMootaConnectorConfig {
+  export namespace ConnectorMootaDiscriminatedConnectorConfig {
     export interface Config {
       token: string;
     }
@@ -13090,115 +18154,7 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsNotionConnectorConfig {
-    config: ConnectorsNotionConnectorConfig.Config;
-
-    connector_name: 'notion';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsNotionConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsNotionConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsNotionConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -13242,9 +18198,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13257,13 +18282,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsOnebrickConnectorConfig {
-    config: ConnectorsOnebrickConnectorConfig.Config;
+  export interface ConnectorOnebrickDiscriminatedConnectorConfig {
+    config: ConnectorOnebrickDiscriminatedConnectorConfig.Config;
 
     connector_name: 'onebrick';
 
@@ -13271,7 +18294,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsOnebrickConnectorConfig.Connector;
+    connector?: ConnectorOnebrickDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13279,14 +18302,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsOnebrickConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorOnebrickDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOnebrickConnectorConfig {
+  export namespace ConnectorOnebrickDiscriminatedConnectorConfig {
     export interface Config {
       clientId: string;
 
@@ -13304,6 +18334,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -13346,9 +18378,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13361,13 +18462,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsOutreachConnectorConfig {
-    config: ConnectorsOutreachConnectorConfig.Config;
+  export interface ConnectorOutreachDiscriminatedConnectorConfig {
+    config: ConnectorOutreachDiscriminatedConnectorConfig.Config;
 
     connector_name: 'outreach';
 
@@ -13375,7 +18474,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsOutreachConnectorConfig.Connector;
+    connector?: ConnectorOutreachDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13383,14 +18482,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsOutreachConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorOutreachDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOutreachConnectorConfig {
+  export namespace ConnectorOutreachDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -13407,6 +18513,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -13450,9 +18558,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13465,13 +18642,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsPipedriveConnectorConfig {
-    config: ConnectorsPipedriveConnectorConfig.Config;
+  export interface ConnectorPipedriveDiscriminatedConnectorConfig {
+    config: ConnectorPipedriveDiscriminatedConnectorConfig.Config;
 
     connector_name: 'pipedrive';
 
@@ -13479,7 +18654,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsPipedriveConnectorConfig.Connector;
+    connector?: ConnectorPipedriveDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13487,14 +18662,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsPipedriveConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorPipedriveDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPipedriveConnectorConfig {
+  export namespace ConnectorPipedriveDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -13511,6 +18693,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -13554,9 +18738,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13569,13 +18822,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsPlaidConnectorConfig {
-    config: ConnectorsPlaidConnectorConfig.Config;
+  export interface ConnectorPlaidDiscriminatedConnectorConfig {
+    config: ConnectorPlaidDiscriminatedConnectorConfig.Config;
 
     connector_name: 'plaid';
 
@@ -13583,7 +18834,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsPlaidConnectorConfig.Connector;
+    connector?: ConnectorPlaidDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13591,14 +18842,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsPlaidConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorPlaidDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPlaidConnectorConfig {
+  export namespace ConnectorPlaidDiscriminatedConnectorConfig {
     export interface Config {
       /**
        * The name of your application, as it should be displayed in Link. Maximum length
@@ -13664,6 +18922,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -13706,9 +18966,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13721,13 +19050,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsPostgresConnectorConfig {
-    config: null;
+  export interface ConnectorPostgresDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'postgres';
 
@@ -13735,7 +19062,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsPostgresConnectorConfig.Connector;
+    connector?: ConnectorPostgresDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13743,16 +19070,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsPostgresConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorPostgresDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPostgresConnectorConfig {
+  export namespace ConnectorPostgresDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -13796,9 +19132,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -13811,123 +19216,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsQuickbooksConnectorConfig {
-    config: ConnectorsQuickbooksConnectorConfig.Config;
-
-    connector_name: 'quickbooks';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsQuickbooksConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsQuickbooksConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsQuickbooksConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsRampConnectorConfig {
-    config: ConnectorsRampConnectorConfig.Config;
+  export interface ConnectorRampDiscriminatedConnectorConfig {
+    config: ConnectorRampDiscriminatedConnectorConfig.Config;
 
     connector_name: 'ramp';
 
@@ -13935,7 +19228,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsRampConnectorConfig.Connector;
+    connector?: ConnectorRampDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -13943,14 +19236,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsRampConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorRampDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRampConnectorConfig {
+  export namespace ConnectorRampDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -13966,6 +19266,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -14008,9 +19310,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14023,13 +19394,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsRedditConnectorConfig {
-    config: ConnectorsRedditConnectorConfig.Config;
+  export interface ConnectorRedditDiscriminatedConnectorConfig {
+    config: ConnectorRedditDiscriminatedConnectorConfig.Config;
 
     connector_name: 'reddit';
 
@@ -14037,7 +19406,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsRedditConnectorConfig.Connector;
+    connector?: ConnectorRedditDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14045,14 +19414,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsRedditConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorRedditDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRedditConnectorConfig {
+  export namespace ConnectorRedditDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -14070,115 +19446,7 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsSalesforceConnectorConfig {
-    config: ConnectorsSalesforceConnectorConfig.Config;
-
-    connector_name: 'salesforce';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsSalesforceConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsSalesforceConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSalesforceConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -14222,9 +19490,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14237,13 +19574,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsSalesloftConnectorConfig {
-    config: ConnectorsSalesloftConnectorConfig.Config;
+  export interface ConnectorSalesloftDiscriminatedConnectorConfig {
+    config: ConnectorSalesloftDiscriminatedConnectorConfig.Config;
 
     connector_name: 'salesloft';
 
@@ -14251,7 +19586,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsSalesloftConnectorConfig.Connector;
+    connector?: ConnectorSalesloftDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14259,14 +19594,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsSalesloftConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorSalesloftDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesloftConnectorConfig {
+  export namespace ConnectorSalesloftDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -14283,6 +19625,8 @@ export namespace ListConnectionConfigsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -14326,9 +19670,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14341,13 +19754,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsSaltedgeConnectorConfig {
-    config: ConnectorsSaltedgeConnectorConfig.Config;
+  export interface ConnectorSaltedgeDiscriminatedConnectorConfig {
+    config: ConnectorSaltedgeDiscriminatedConnectorConfig.Config;
 
     connector_name: 'saltedge';
 
@@ -14355,7 +19766,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsSaltedgeConnectorConfig.Connector;
+    connector?: ConnectorSaltedgeDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14363,14 +19774,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsSaltedgeConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorSaltedgeDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSaltedgeConnectorConfig {
+  export namespace ConnectorSaltedgeDiscriminatedConnectorConfig {
     export interface Config {
       appId: string;
 
@@ -14382,115 +19800,7 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsSharepointonlineConnectorConfig {
-    config: ConnectorsSharepointonlineConnectorConfig.Config;
-
-    connector_name: 'sharepointonline';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsSharepointonlineConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsSharepointonlineConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSharepointonlineConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -14534,9 +19844,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14549,123 +19928,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsSlackConnectorConfig {
-    config: ConnectorsSlackConnectorConfig.Config;
-
-    connector_name: 'slack';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: ConnectorsSlackConnectorConfig.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: Record<string, ConnectorsSlackConnectorConfig.Integrations>;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSlackConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integrations {
-      connector_name: string;
-
-      name: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-
-      [k: string]: unknown;
-    }
-  }
-
-  export interface ConnectorsSplitwiseConnectorConfig {
-    config: null;
+  export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'splitwise';
 
@@ -14673,7 +19940,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsSplitwiseConnectorConfig.Connector;
+    connector?: ConnectorSplitwiseDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14681,16 +19948,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsSplitwiseConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorSplitwiseDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSplitwiseConnectorConfig {
+  export namespace ConnectorSplitwiseDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -14734,9 +20010,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14749,13 +20094,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsStripeConnectorConfig {
-    config: ConnectorsStripeConnectorConfig.Config;
+  export interface ConnectorStripeDiscriminatedConnectorConfig {
+    config: ConnectorStripeDiscriminatedConnectorConfig.Config;
 
     connector_name: 'stripe';
 
@@ -14763,7 +20106,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsStripeConnectorConfig.Connector;
+    connector?: ConnectorStripeDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14771,14 +20114,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsStripeConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorStripeDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsStripeConnectorConfig {
+  export namespace ConnectorStripeDiscriminatedConnectorConfig {
     export interface Config {
       /**
        * API key auth support
@@ -14805,6 +20155,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -14847,9 +20199,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14862,13 +20283,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsTellerConnectorConfig {
-    config: ConnectorsTellerConnectorConfig.Config;
+  export interface ConnectorTellerDiscriminatedConnectorConfig {
+    config: ConnectorTellerDiscriminatedConnectorConfig.Config;
 
     connector_name: 'teller';
 
@@ -14876,7 +20295,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsTellerConnectorConfig.Connector;
+    connector?: ConnectorTellerDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14884,14 +20303,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsTellerConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorTellerDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTellerConnectorConfig {
+  export namespace ConnectorTellerDiscriminatedConnectorConfig {
     export interface Config {
       applicationId: string;
 
@@ -14901,6 +20327,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -14943,9 +20371,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -14958,13 +20455,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsTogglConnectorConfig {
-    config: null;
+  export interface ConnectorTogglDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'toggl';
 
@@ -14972,7 +20467,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsTogglConnectorConfig.Connector;
+    connector?: ConnectorTogglDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -14980,16 +20475,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsTogglConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorTogglDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTogglConnectorConfig {
+  export namespace ConnectorTogglDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -15033,9 +20537,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15048,13 +20621,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsTwentyConnectorConfig {
-    config: null;
+  export interface ConnectorTwentyDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'twenty';
 
@@ -15062,7 +20633,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsTwentyConnectorConfig.Connector;
+    connector?: ConnectorTwentyDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15070,16 +20641,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsTwentyConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorTwentyDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwentyConnectorConfig {
+  export namespace ConnectorTwentyDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -15123,9 +20703,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15138,13 +20787,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsTwitterConnectorConfig {
-    config: ConnectorsTwitterConnectorConfig.Config;
+  export interface ConnectorTwitterDiscriminatedConnectorConfig {
+    config: ConnectorTwitterDiscriminatedConnectorConfig.Config;
 
     connector_name: 'twitter';
 
@@ -15152,7 +20799,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsTwitterConnectorConfig.Connector;
+    connector?: ConnectorTwitterDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15160,14 +20807,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsTwitterConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorTwitterDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwitterConnectorConfig {
+  export namespace ConnectorTwitterDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -15185,6 +20839,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -15227,9 +20883,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15242,13 +20967,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsVenmoConnectorConfig {
-    config: ConnectorsVenmoConnectorConfig.Config;
+  export interface ConnectorVenmoDiscriminatedConnectorConfig {
+    config: ConnectorVenmoDiscriminatedConnectorConfig.Config;
 
     connector_name: 'venmo';
 
@@ -15256,7 +20979,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsVenmoConnectorConfig.Connector;
+    connector?: ConnectorVenmoDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15264,14 +20987,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsVenmoConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorVenmoDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsVenmoConnectorConfig {
+  export namespace ConnectorVenmoDiscriminatedConnectorConfig {
     export interface Config {
       proxy?: Config.Proxy | null;
 
@@ -15291,6 +21021,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -15333,9 +21065,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15348,13 +21149,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsWiseConnectorConfig {
-    config: null;
+  export interface ConnectorWiseDiscriminatedConnectorConfig {
+    config: unknown;
 
     connector_name: 'wise';
 
@@ -15362,7 +21161,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsWiseConnectorConfig.Connector;
+    connector?: ConnectorWiseDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15370,16 +21169,25 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsWiseConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorWiseDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsWiseConnectorConfig {
+  export namespace ConnectorWiseDiscriminatedConnectorConfig {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -15423,9 +21231,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15438,13 +21315,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsXeroConnectorConfig {
-    config: ConnectorsXeroConnectorConfig.Config;
+  export interface ConnectorXeroDiscriminatedConnectorConfig {
+    config: ConnectorXeroDiscriminatedConnectorConfig.Config;
 
     connector_name: 'xero';
 
@@ -15452,7 +21327,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsXeroConnectorConfig.Connector;
+    connector?: ConnectorXeroDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15460,14 +21335,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsXeroConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorXeroDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsXeroConnectorConfig {
+  export namespace ConnectorXeroDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -15485,6 +21367,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -15527,9 +21411,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15542,13 +21495,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsYodleeConnectorConfig {
-    config: ConnectorsYodleeConnectorConfig.Config;
+  export interface ConnectorYodleeDiscriminatedConnectorConfig {
+    config: ConnectorYodleeDiscriminatedConnectorConfig.Config;
 
     connector_name: 'yodlee';
 
@@ -15556,7 +21507,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsYodleeConnectorConfig.Connector;
+    connector?: ConnectorYodleeDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15564,14 +21515,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsYodleeConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorYodleeDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsYodleeConnectorConfig {
+  export namespace ConnectorYodleeDiscriminatedConnectorConfig {
     export interface Config {
       adminLoginName: string;
 
@@ -15597,6 +21555,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -15639,9 +21599,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15654,13 +21683,11 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 
-  export interface ConnectorsZohodeskConnectorConfig {
-    config: ConnectorsZohodeskConnectorConfig.Config;
+  export interface ConnectorZohodeskDiscriminatedConnectorConfig {
+    config: ConnectorZohodeskDiscriminatedConnectorConfig.Config;
 
     connector_name: 'zohodesk';
 
@@ -15668,7 +21695,7 @@ export namespace ListConnectionConfigsResponse {
 
     connection_count?: number;
 
-    connector?: ConnectorsZohodeskConnectorConfig.Connector;
+    connector?: ConnectorZohodeskDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -15676,14 +21703,21 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorsZohodeskConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorZohodeskDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
 
     org_id?: string;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsZohodeskConnectorConfig {
+  export namespace ConnectorZohodeskDiscriminatedConnectorConfig {
     export interface Config {
       oauth: Config.OAuth;
     }
@@ -15701,6 +21735,8 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -15743,9 +21779,78 @@ export namespace ListConnectionConfigsResponse {
     }
 
     export interface Integrations {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -15758,8 +21863,6 @@ export namespace ListConnectionConfigsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
   }
 }
@@ -15768,107 +21871,117 @@ export namespace ListConnectionConfigsResponse {
  * The connection details
  */
 export type ListConnectionsResponse =
-  | ListConnectionsResponse.ConnectorsAircallConnectionSettings
-  | ListConnectionsResponse.ConnectorsAirtableConnectionSettings
-  | ListConnectionsResponse.ConnectorsApolloConnectionSettings
-  | ListConnectionsResponse.ConnectorsBrexConnectionSettings
-  | ListConnectionsResponse.ConnectorsCodaConnectionSettings
-  | ListConnectionsResponse.ConnectorsConfluenceConnectionSettings
-  | ListConnectionsResponse.ConnectorsDiscordConnectionSettings
-  | ListConnectionsResponse.ConnectorsFacebookConnectionSettings
-  | ListConnectionsResponse.ConnectorsFinchConnectionSettings
-  | ListConnectionsResponse.ConnectorsFirebaseConnectionSettings
-  | ListConnectionsResponse.ConnectorsForeceiptConnectionSettings
-  | ListConnectionsResponse.ConnectorsGitHubConnectionSettings
-  | ListConnectionsResponse.ConnectorsGongConnectionSettings
-  | ListConnectionsResponse.ConnectorsGooglecalendarConnectionSettings
-  | ListConnectionsResponse.ConnectorsGoogledocsConnectionSettings
-  | ListConnectionsResponse.ConnectorsGoogledriveConnectionSettings
-  | ListConnectionsResponse.ConnectorsGooglemailConnectionSettings
-  | ListConnectionsResponse.ConnectorsGooglesheetConnectionSettings
-  | ListConnectionsResponse.ConnectorsGreenhouseConnectionSettings
-  | ListConnectionsResponse.ConnectorsHeronConnectionSettings
-  | ListConnectionsResponse.ConnectorsHubspotConnectionSettings
-  | ListConnectionsResponse.ConnectorsInstagramConnectionSettings
-  | ListConnectionsResponse.ConnectorsIntercomConnectionSettings
-  | ListConnectionsResponse.ConnectorsJiraConnectionSettings
-  | ListConnectionsResponse.ConnectorsKustomerConnectionSettings
-  | ListConnectionsResponse.ConnectorsLeverConnectionSettings
-  | ListConnectionsResponse.ConnectorsLinearConnectionSettings
-  | ListConnectionsResponse.ConnectorsLinkedinConnectionSettings
-  | ListConnectionsResponse.ConnectorsLunchmoneyConnectionSettings
-  | ListConnectionsResponse.ConnectorsMercuryConnectionSettings
-  | ListConnectionsResponse.ConnectorsMergeConnectionSettings
-  | ListConnectionsResponse.ConnectorsMicrosoftConnectionSettings
-  | ListConnectionsResponse.ConnectorsMootaConnectionSettings
-  | ListConnectionsResponse.ConnectorsNotionConnectionSettings
-  | ListConnectionsResponse.ConnectorsOnebrickConnectionSettings
-  | ListConnectionsResponse.ConnectorsOutreachConnectionSettings
-  | ListConnectionsResponse.ConnectorsPipedriveConnectionSettings
-  | ListConnectionsResponse.ConnectorsPlaidConnectionSettings
-  | ListConnectionsResponse.ConnectorsPostgresConnectionSettings
-  | ListConnectionsResponse.ConnectorsQuickbooksConnectionSettings
-  | ListConnectionsResponse.ConnectorsRampConnectionSettings
-  | ListConnectionsResponse.ConnectorsRedditConnectionSettings
-  | ListConnectionsResponse.ConnectorsSalesforceConnectionSettings
-  | ListConnectionsResponse.ConnectorsSalesloftConnectionSettings
-  | ListConnectionsResponse.ConnectorsSaltedgeConnectionSettings
-  | ListConnectionsResponse.ConnectorsSharepointonlineConnectionSettings
-  | ListConnectionsResponse.ConnectorsSlackConnectionSettings
-  | ListConnectionsResponse.ConnectorsSplitwiseConnectionSettings
-  | ListConnectionsResponse.ConnectorsStripeConnectionSettings
-  | ListConnectionsResponse.ConnectorsTellerConnectionSettings
-  | ListConnectionsResponse.ConnectorsTogglConnectionSettings
-  | ListConnectionsResponse.ConnectorsTwentyConnectionSettings
-  | ListConnectionsResponse.ConnectorsTwitterConnectionSettings
-  | ListConnectionsResponse.ConnectorsVenmoConnectionSettings
-  | ListConnectionsResponse.ConnectorsWiseConnectionSettings
-  | ListConnectionsResponse.ConnectorsXeroConnectionSettings
-  | ListConnectionsResponse.ConnectorsYodleeConnectionSettings
-  | ListConnectionsResponse.ConnectorsZohodeskConnectionSettings;
+  | ListConnectionsResponse.ConnectorDummyOauth2DiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSharepointonlineDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSlackDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGitHubDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorQuickbooksDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGooglemailDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorNotionDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorLinkedinDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGoogledocsDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorAircallDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGooglecalendarDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGooglesheetDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorDiscordDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorHubspotDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSalesforceDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorLinearDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorConfluenceDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGoogledriveDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorAirtableDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorApolloDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorBrexDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorCodaDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorFacebookDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorFinchDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorFirebaseDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorForeceiptDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGongDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorGreenhouseDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorHeronDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorInstagramDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorIntercomDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorJiraDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorKustomerDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorLeverDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorLunchmoneyDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorMercuryDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorMergeDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorMicrosoftDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorMootaDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorOnebrickDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorOutreachDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorPipedriveDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorPlaidDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorPostgresDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorRampDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorRedditDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSalesloftDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSaltedgeDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSplitwiseDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorStripeDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorTellerDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorTogglDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorTwentyDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorTwitterDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorVenmoDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorWiseDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorXeroDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorYodleeDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorZohodeskDiscriminatedConnectionSettings;
 
 export namespace ListConnectionsResponse {
-  export interface ConnectorsAircallConnectionSettings {
-    connector_name: 'aircall';
+  export interface ConnectorDummyOauth2DiscriminatedConnectionSettings {
+    connector_name: 'dummy-oauth2';
 
-    settings: ConnectorsAircallConnectionSettings.Settings;
+    settings: ConnectorDummyOauth2DiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsAircallConnectionSettings.Connector;
+    connector?: ConnectorDummyOauth2DiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAircallConnectionSettings {
+  export namespace ConnectorDummyOauth2DiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
 
     export namespace Settings {
       export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
+        created_at?: string;
 
         /**
          * Output of the postConnect hook for oauth2 connectors
          */
         credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
       }
 
       export namespace OAuth {
@@ -15878,6 +21991,9 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
+          /**
+           * Client ID used for the connection
+           */
           client_id: string;
 
           raw: Record<string, unknown>;
@@ -15897,6 +22013,8 @@ export namespace ListConnectionsResponse {
 
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -15940,29 +22058,2190 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsAirtableConnectionSettings {
-    connector_name: 'airtable';
+  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    connector_name: 'sharepointonline';
 
-    settings: ConnectorsAirtableConnectionSettings.Settings;
+    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsAirtableConnectionSettings.Connector;
+    connector?: ConnectorSharepointonlineDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsAirtableConnectionSettings {
+  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectionSettings {
+    connector_name: 'slack';
+
+    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorSlackDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectionSettings {
+    connector_name: 'github';
+
+    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGitHubDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
+    connector_name: 'quickbooks';
+
+    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorQuickbooksDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGooglemailDiscriminatedConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorGooglemailDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGooglemailDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglemailDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorNotionDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorLinkedinDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGoogledocsDiscriminatedConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorGoogledocsDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGoogledocsDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledocsDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectionSettings {
+    connector_name: 'aircall';
+
+    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorAircallDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    connector_name: 'googlecalendar';
+
+    settings: ConnectorGooglecalendarDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGooglecalendarDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGooglesheetDiscriminatedConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorGooglesheetDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGooglesheetDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGooglesheetDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectionSettings {
+    connector_name: 'discord';
+
+    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorDiscordDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectionSettings {
+    connector_name: 'hubspot';
+
+    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorHubspotDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorSalesforceDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectionSettings {
+    connector_name: 'linear';
+
+    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorLinearDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectionSettings {
+    connector_name: 'confluence';
+
+    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorConfluenceDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorGoogledriveDiscriminatedConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorGoogledriveDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorGoogledriveDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogledriveDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectionSettings {
+    connector_name: 'airtable';
+
+    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+
+    id?: string;
+
+    connector?: ConnectorAirtableDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAirtableDiscriminatedConnectionSettings {
     export interface Settings {
       airtableBase: string;
 
@@ -15972,6 +24251,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -16014,29 +24295,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsApolloConnectionSettings {
+  export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
 
-    settings: ConnectorsApolloConnectionSettings.Settings;
+    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsApolloConnectionSettings.Connector;
+    connector?: ConnectorApolloDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsApolloConnectionSettings {
+  export namespace ConnectorApolloDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -16106,6 +24396,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -16148,29 +24440,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsBrexConnectionSettings {
+  export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
 
-    settings: ConnectorsBrexConnectionSettings.Settings;
+    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsBrexConnectionSettings.Connector;
+    connector?: ConnectorBrexDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsBrexConnectionSettings {
+  export namespace ConnectorBrexDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
@@ -16178,6 +24479,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -16220,29 +24523,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsCodaConnectionSettings {
+  export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
 
-    settings: ConnectorsCodaConnectionSettings.Settings;
+    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsCodaConnectionSettings.Connector;
+    connector?: ConnectorCodaDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsCodaConnectionSettings {
+  export namespace ConnectorCodaDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
@@ -16250,117 +24562,7 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsConfluenceConnectionSettings {
-    connector_name: 'confluence';
-
-    settings: ConnectorsConfluenceConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsConfluenceConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsConfluenceConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -16404,141 +24606,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsDiscordConnectionSettings {
-    connector_name: 'discord';
-
-    settings: ConnectorsDiscordConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsDiscordConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsDiscordConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsFacebookConnectionSettings {
+  export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
 
-    settings: ConnectorsFacebookConnectionSettings.Settings;
+    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsFacebookConnectionSettings.Connector;
+    connector?: ConnectorFacebookDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFacebookConnectionSettings {
+  export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -16608,6 +24707,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -16650,29 +24751,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsFinchConnectionSettings {
+  export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
 
-    settings: ConnectorsFinchConnectionSettings.Settings;
+    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsFinchConnectionSettings.Connector;
+    connector?: ConnectorFinchDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFinchConnectionSettings {
+  export namespace ConnectorFinchDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
@@ -16680,6 +24790,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -16722,31 +24834,40 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsFirebaseConnectionSettings {
+  export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
 
     settings:
-      | ConnectorsFirebaseConnectionSettings.UnionMember0
-      | ConnectorsFirebaseConnectionSettings.UnionMember1;
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
 
     id?: string;
 
-    connector?: ConnectorsFirebaseConnectionSettings.Connector;
+    connector?: ConnectorFirebaseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsFirebaseConnectionSettings {
+  export namespace ConnectorFirebaseDiscriminatedConnectionSettings {
     export interface UnionMember0 {
       role: 'admin';
 
@@ -16824,6 +24945,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -16866,29 +24989,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsForeceiptConnectionSettings {
+  export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
 
-    settings: ConnectorsForeceiptConnectionSettings.Settings;
+    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsForeceiptConnectionSettings.Connector;
+    connector?: ConnectorForeceiptDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsForeceiptConnectionSettings {
+  export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'staging' | 'production';
 
@@ -16900,117 +25032,7 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGitHubConnectionSettings {
-    connector_name: 'github';
-
-    settings: ConnectorsGitHubConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGitHubConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGitHubConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -17054,29 +25076,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsGongConnectionSettings {
+  export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
 
-    settings: ConnectorsGongConnectionSettings.Settings;
+    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsGongConnectionSettings.Connector;
+    connector?: ConnectorGongDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGongConnectionSettings {
+  export namespace ConnectorGongDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -17146,117 +25177,7 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGooglecalendarConnectionSettings {
-    connector_name: 'googlecalendar';
-
-    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGooglecalendarConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglecalendarConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -17300,477 +25221,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsGoogledocsConnectionSettings {
-    connector_name: 'googledocs';
-
-    settings: ConnectorsGoogledocsConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGoogledocsConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledocsConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGoogledriveConnectionSettings {
-    connector_name: 'googledrive';
-
-    settings: ConnectorsGoogledriveConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGoogledriveConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGoogledriveConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGooglemailConnectionSettings {
-    connector_name: 'googlemail';
-
-    settings: ConnectorsGooglemailConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGooglemailConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglemailConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGooglesheetConnectionSettings {
-    connector_name: 'googlesheet';
-
-    settings: ConnectorsGooglesheetConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsGooglesheetConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsGooglesheetConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsGreenhouseConnectionSettings {
+  export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
 
-    settings: ConnectorsGreenhouseConnectionSettings.Settings;
+    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsGreenhouseConnectionSettings.Connector;
+    connector?: ConnectorGreenhouseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsGreenhouseConnectionSettings {
+  export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
@@ -17778,6 +25260,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -17820,31 +25304,42 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsHeronConnectionSettings {
+  export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsHeronConnectionSettings.Connector;
+    connector?: ConnectorHeronDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsHeronConnectionSettings {
+  export namespace ConnectorHeronDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -17888,141 +25383,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsHubspotConnectionSettings {
-    connector_name: 'hubspot';
-
-    settings: ConnectorsHubspotConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsHubspotConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsHubspotConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsInstagramConnectionSettings {
+  export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
 
-    settings: ConnectorsInstagramConnectionSettings.Settings;
+    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsInstagramConnectionSettings.Connector;
+    connector?: ConnectorInstagramDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsInstagramConnectionSettings {
+  export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -18092,6 +25484,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -18134,29 +25528,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsIntercomConnectionSettings {
+  export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
 
-    settings: ConnectorsIntercomConnectionSettings.Settings;
+    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsIntercomConnectionSettings.Connector;
+    connector?: ConnectorIntercomDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsIntercomConnectionSettings {
+  export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -18226,6 +25629,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -18268,29 +25673,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsJiraConnectionSettings {
+  export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
 
-    settings: ConnectorsJiraConnectionSettings.Settings;
+    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsJiraConnectionSettings.Connector;
+    connector?: ConnectorJiraDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsJiraConnectionSettings {
+  export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -18360,6 +25774,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -18402,29 +25818,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsKustomerConnectionSettings {
+  export interface ConnectorKustomerDiscriminatedConnectionSettings {
     connector_name: 'kustomer';
 
-    settings: ConnectorsKustomerConnectionSettings.Settings;
+    settings: ConnectorKustomerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsKustomerConnectionSettings.Connector;
+    connector?: ConnectorKustomerDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsKustomerConnectionSettings {
+  export namespace ConnectorKustomerDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -18494,6 +25919,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -18536,29 +25963,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsLeverConnectionSettings {
+  export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
 
-    settings: ConnectorsLeverConnectionSettings.Settings;
+    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsLeverConnectionSettings.Connector;
+    connector?: ConnectorLeverDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLeverConnectionSettings {
+  export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -18628,117 +26064,7 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsLinearConnectionSettings {
-    connector_name: 'linear';
-
-    settings: ConnectorsLinearConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsLinearConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinearConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -18782,143 +26108,42 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsLinkedinConnectionSettings {
-    connector_name: 'linkedin';
-
-    settings: ConnectorsLinkedinConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsLinkedinConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsLinkedinConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsLunchmoneyConnectionSettings {
+  export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsLunchmoneyConnectionSettings.Connector;
+    connector?: ConnectorLunchmoneyDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsLunchmoneyConnectionSettings {
+  export namespace ConnectorLunchmoneyDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -18962,31 +26187,42 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsMercuryConnectionSettings {
+  export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsMercuryConnectionSettings.Connector;
+    connector?: ConnectorMercuryDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMercuryConnectionSettings {
+  export namespace ConnectorMercuryDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -19030,29 +26266,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsMergeConnectionSettings {
+  export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorsMergeConnectionSettings.Settings;
+    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsMergeConnectionSettings.Connector;
+    connector?: ConnectorMergeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMergeConnectionSettings {
+  export namespace ConnectorMergeDiscriminatedConnectionSettings {
     export interface Settings {
       accountToken: string;
 
@@ -19062,6 +26307,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -19104,29 +26351,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsMicrosoftConnectionSettings {
+  export interface ConnectorMicrosoftDiscriminatedConnectionSettings {
     connector_name: 'microsoft';
 
-    settings: ConnectorsMicrosoftConnectionSettings.Settings;
+    settings: ConnectorMicrosoftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsMicrosoftConnectionSettings.Connector;
+    connector?: ConnectorMicrosoftDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMicrosoftConnectionSettings {
+  export namespace ConnectorMicrosoftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -19198,6 +26454,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -19240,31 +26498,42 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsMootaConnectionSettings {
+  export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
 
-    settings: null;
+    settings: unknown;
 
     id?: string;
 
-    connector?: ConnectorsMootaConnectionSettings.Connector;
+    connector?: ConnectorMootaDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsMootaConnectionSettings {
+  export namespace ConnectorMootaDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -19308,141 +26577,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsNotionConnectionSettings {
-    connector_name: 'notion';
-
-    settings: ConnectorsNotionConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsNotionConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsNotionConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsOnebrickConnectionSettings {
+  export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorsOnebrickConnectionSettings.Settings;
+    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsOnebrickConnectionSettings.Connector;
+    connector?: ConnectorOnebrickDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOnebrickConnectionSettings {
+  export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
@@ -19450,6 +26616,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -19492,29 +26660,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsOutreachConnectionSettings {
+  export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
 
-    settings: ConnectorsOutreachConnectionSettings.Settings;
+    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsOutreachConnectionSettings.Connector;
+    connector?: ConnectorOutreachDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsOutreachConnectionSettings {
+  export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -19584,6 +26761,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -19626,29 +26805,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsPipedriveConnectionSettings {
+  export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
 
-    settings: ConnectorsPipedriveConnectionSettings.Settings;
+    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsPipedriveConnectionSettings.Connector;
+    connector?: ConnectorPipedriveDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPipedriveConnectionSettings {
+  export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -19718,6 +26906,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -19760,29 +26950,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsPlaidConnectionSettings {
+  export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
-    settings: ConnectorsPlaidConnectionSettings.Settings;
+    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsPlaidConnectionSettings.Connector;
+    connector?: ConnectorPlaidDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPlaidConnectionSettings {
+  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -19800,6 +26999,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -19842,29 +27043,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsPostgresConnectionSettings {
+  export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
 
-    settings: ConnectorsPostgresConnectionSettings.Settings;
+    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsPostgresConnectionSettings.Connector;
+    connector?: ConnectorPostgresDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsPostgresConnectionSettings {
+  export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
       databaseUrl: string;
 
@@ -19883,122 +27093,7 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsQuickbooksConnectionSettings {
-    connector_name: 'quickbooks';
-
-    settings: ConnectorsQuickbooksConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsQuickbooksConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsQuickbooksConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -20042,29 +27137,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsRampConnectionSettings {
+  export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
 
-    settings: ConnectorsRampConnectionSettings.Settings;
+    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsRampConnectionSettings.Connector;
+    connector?: ConnectorRampDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRampConnectionSettings {
+  export namespace ConnectorRampDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken?: string | null;
 
@@ -20074,6 +27178,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -20116,29 +27222,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsRedditConnectionSettings {
+  export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
 
-    settings: ConnectorsRedditConnectionSettings.Settings;
+    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsRedditConnectionSettings.Connector;
+    connector?: ConnectorRedditDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsRedditConnectionSettings {
+  export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -20208,122 +27323,7 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsSalesforceConnectionSettings {
-    connector_name: 'salesforce';
-
-    settings: ConnectorsSalesforceConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsSalesforceConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSalesforceConnectionSettings {
-    export interface Settings {
-      /**
-       * The instance URL of your Salesforce account (e.g., example)
-       */
-      instance_url: string;
-
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -20367,29 +27367,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsSalesloftConnectionSettings {
+  export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
 
-    settings: ConnectorsSalesloftConnectionSettings.Settings;
+    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsSalesloftConnectionSettings.Connector;
+    connector?: ConnectorSalesloftDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSalesloftConnectionSettings {
+  export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -20459,6 +27468,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -20501,21 +27512,30 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsSaltedgeConnectionSettings {
+  export interface ConnectorSaltedgeDiscriminatedConnectionSettings {
     connector_name: 'saltedge';
 
     id?: string;
 
-    connector?: ConnectorsSaltedgeConnectionSettings.Connector;
+    connector?: ConnectorSaltedgeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     settings?: unknown;
@@ -20523,9 +27543,11 @@ export namespace ListConnectionsResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorsSaltedgeConnectionSettings {
+  export namespace ConnectorSaltedgeDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
 
@@ -20569,253 +27591,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsSharepointonlineConnectionSettings {
-    connector_name: 'sharepointonline';
-
-    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsSharepointonlineConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSharepointonlineConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsSlackConnectionSettings {
-    connector_name: 'slack';
-
-    settings: ConnectorsSlackConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorsSlackConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string;
-
-    integration_id?: string | null;
-
-    metadata?: Record<string, unknown> | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorsSlackConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
-    export interface Connector {
-      name: string;
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-  }
-
-  export interface ConnectorsSplitwiseConnectionSettings {
+  export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorsSplitwiseConnectionSettings.Settings;
+    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsSplitwiseConnectionSettings.Connector;
+    connector?: ConnectorSplitwiseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsSplitwiseConnectionSettings {
+  export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -20895,6 +27702,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -20937,29 +27746,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsStripeConnectionSettings {
+  export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
 
-    settings: ConnectorsStripeConnectionSettings.Settings;
+    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsStripeConnectionSettings.Connector;
+    connector?: ConnectorStripeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsStripeConnectionSettings {
+  export namespace ConnectorStripeDiscriminatedConnectionSettings {
     export interface Settings {
       secretKey: string;
     }
@@ -20967,6 +27785,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21009,29 +27829,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsTellerConnectionSettings {
+  export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
 
-    settings: ConnectorsTellerConnectionSettings.Settings;
+    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTellerConnectionSettings.Connector;
+    connector?: ConnectorTellerDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTellerConnectionSettings {
+  export namespace ConnectorTellerDiscriminatedConnectionSettings {
     export interface Settings {
       token: string;
     }
@@ -21039,6 +27868,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21081,29 +27912,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsTogglConnectionSettings {
+  export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
 
-    settings: ConnectorsTogglConnectionSettings.Settings;
+    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTogglConnectionSettings.Connector;
+    connector?: ConnectorTogglDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTogglConnectionSettings {
+  export namespace ConnectorTogglDiscriminatedConnectionSettings {
     export interface Settings {
       apiToken: string;
 
@@ -21115,6 +27955,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21157,29 +27999,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsTwentyConnectionSettings {
+  export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
 
-    settings: ConnectorsTwentyConnectionSettings.Settings;
+    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTwentyConnectionSettings.Connector;
+    connector?: ConnectorTwentyDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwentyConnectionSettings {
+  export namespace ConnectorTwentyDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
@@ -21187,6 +28038,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21229,29 +28082,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsTwitterConnectionSettings {
+  export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
 
-    settings: ConnectorsTwitterConnectionSettings.Settings;
+    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsTwitterConnectionSettings.Connector;
+    connector?: ConnectorTwitterDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsTwitterConnectionSettings {
+  export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -21321,6 +28183,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21363,29 +28227,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsVenmoConnectionSettings {
+  export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
 
-    settings: ConnectorsVenmoConnectionSettings.Settings;
+    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsVenmoConnectionSettings.Connector;
+    connector?: ConnectorVenmoDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsVenmoConnectionSettings {
+  export namespace ConnectorVenmoDiscriminatedConnectionSettings {
     export interface Settings {
       credentials?: unknown;
 
@@ -21395,6 +28268,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21437,29 +28312,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsWiseConnectionSettings {
+  export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
 
-    settings: ConnectorsWiseConnectionSettings.Settings;
+    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsWiseConnectionSettings.Connector;
+    connector?: ConnectorWiseDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsWiseConnectionSettings {
+  export namespace ConnectorWiseDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'sandbox' | 'live';
 
@@ -21469,6 +28353,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21511,29 +28397,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsXeroConnectionSettings {
+  export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
 
-    settings: ConnectorsXeroConnectionSettings.Settings;
+    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsXeroConnectionSettings.Connector;
+    connector?: ConnectorXeroDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsXeroConnectionSettings {
+  export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -21603,6 +28498,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21645,29 +28542,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsYodleeConnectionSettings {
+  export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
 
-    settings: ConnectorsYodleeConnectionSettings.Settings;
+    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsYodleeConnectionSettings.Connector;
+    connector?: ConnectorYodleeDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsYodleeConnectionSettings {
+  export namespace ConnectorYodleeDiscriminatedConnectionSettings {
     export interface Settings {
       loginName: string;
 
@@ -21719,6 +28625,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21761,29 +28669,38 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorsZohodeskConnectionSettings {
+  export interface ConnectorZohodeskDiscriminatedConnectionSettings {
     connector_name: 'zohodesk';
 
-    settings: ConnectorsZohodeskConnectionSettings.Settings;
+    settings: ConnectorZohodeskDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorsZohodeskConnectionSettings.Connector;
+    connector?: ConnectorZohodeskDiscriminatedConnectionSettings.Connector;
 
-    connector_config_id?: string | null;
+    connector_config_id?: string;
 
     created_at?: string;
 
-    customer_id?: string;
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
 
     integration_id?: string | null;
 
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
     metadata?: Record<string, unknown> | null;
 
     updated_at?: string;
   }
 
-  export namespace ConnectorsZohodeskConnectionSettings {
+  export namespace ConnectorZohodeskDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -21853,6 +28770,8 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
       display_name?: string;
 
       logo_url?: string;
@@ -21897,17 +28816,36 @@ export namespace ListConnectionsResponse {
 }
 
 /**
- * List of connectors with selected fields
+ * List of connectors
  */
-export type ListConnectorsResponse = Array<ListConnectorsResponse.ListConnectorsResponseItem>;
+export interface ListConnectorsResponse {
+  items: Array<ListConnectorsResponse.Item>;
+
+  /**
+   * Limit the number of items returned
+   */
+  limit: number;
+
+  /**
+   * Offset the items returned
+   */
+  offset: number;
+
+  /**
+   * Total number of items in the database for the organization
+   */
+  total: number;
+}
 
 export namespace ListConnectorsResponse {
-  export interface ListConnectorsResponseItem {
+  export interface Item {
     name: string;
+
+    authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
     display_name?: string;
 
-    integrations?: Array<ListConnectorsResponseItem.Integration>;
+    integrations?: Array<Item.Integration>;
 
     logo_url?: string;
 
@@ -21915,18 +28853,87 @@ export namespace ListConnectorsResponse {
 
     platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
-    schemas?: ListConnectorsResponseItem.Schemas;
+    schemas?: Item.Schemas;
 
-    scopes?: Array<ListConnectorsResponseItem.Scope>;
+    scopes?: Array<Item.Scope>;
 
     stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
   }
 
-  export namespace ListConnectorsResponseItem {
+  export namespace Item {
     export interface Integration {
-      connector_name: string;
+      id: string;
+
+      connector_name:
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'dummy-oauth2'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'googlecalendar'
+        | 'googledocs'
+        | 'googledrive'
+        | 'googlemail'
+        | 'googlesheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'kustomer'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'microsoft'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesforce'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepointonline'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zohodesk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
       name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
 
       auth_type?: string | null;
 
@@ -21939,8 +28946,6 @@ export namespace ListConnectorsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
-
-      [k: string]: unknown;
     }
 
     export interface Schemas {
@@ -21985,94 +28990,95 @@ export interface CreateConnectionParams {
    * Connector specific data
    */
   data:
-    | CreateConnectionParams.ConnectorsAircallConnectionSettings
-    | CreateConnectionParams.ConnectorsAirtableConnectionSettings
-    | CreateConnectionParams.ConnectorsApolloConnectionSettings
-    | CreateConnectionParams.ConnectorsBrexConnectionSettings
-    | CreateConnectionParams.ConnectorsCodaConnectionSettings
-    | CreateConnectionParams.ConnectorsConfluenceConnectionSettings
-    | CreateConnectionParams.ConnectorsDiscordConnectionSettings
-    | CreateConnectionParams.ConnectorsFacebookConnectionSettings
-    | CreateConnectionParams.ConnectorsFinchConnectionSettings
-    | CreateConnectionParams.ConnectorsFirebaseConnectionSettings
-    | CreateConnectionParams.ConnectorsForeceiptConnectionSettings
-    | CreateConnectionParams.ConnectorsGitHubConnectionSettings
-    | CreateConnectionParams.ConnectorsGongConnectionSettings
-    | CreateConnectionParams.ConnectorsGooglecalendarConnectionSettings
-    | CreateConnectionParams.ConnectorsGoogledocsConnectionSettings
-    | CreateConnectionParams.ConnectorsGoogledriveConnectionSettings
-    | CreateConnectionParams.ConnectorsGooglemailConnectionSettings
-    | CreateConnectionParams.ConnectorsGooglesheetConnectionSettings
-    | CreateConnectionParams.ConnectorsGreenhouseConnectionSettings
-    | CreateConnectionParams.ConnectorsHeronConnectionSettings
-    | CreateConnectionParams.ConnectorsHubspotConnectionSettings
-    | CreateConnectionParams.ConnectorsInstagramConnectionSettings
-    | CreateConnectionParams.ConnectorsIntercomConnectionSettings
-    | CreateConnectionParams.ConnectorsJiraConnectionSettings
-    | CreateConnectionParams.ConnectorsKustomerConnectionSettings
-    | CreateConnectionParams.ConnectorsLeverConnectionSettings
-    | CreateConnectionParams.ConnectorsLinearConnectionSettings
-    | CreateConnectionParams.ConnectorsLinkedinConnectionSettings
-    | CreateConnectionParams.ConnectorsLunchmoneyConnectionSettings
-    | CreateConnectionParams.ConnectorsMercuryConnectionSettings
-    | CreateConnectionParams.ConnectorsMergeConnectionSettings
-    | CreateConnectionParams.ConnectorsMicrosoftConnectionSettings
-    | CreateConnectionParams.ConnectorsMootaConnectionSettings
-    | CreateConnectionParams.ConnectorsNotionConnectionSettings
-    | CreateConnectionParams.ConnectorsOnebrickConnectionSettings
-    | CreateConnectionParams.ConnectorsOutreachConnectionSettings
-    | CreateConnectionParams.ConnectorsPipedriveConnectionSettings
-    | CreateConnectionParams.ConnectorsPlaidConnectionSettings
-    | CreateConnectionParams.ConnectorsPostgresConnectionSettings
-    | CreateConnectionParams.ConnectorsQuickbooksConnectionSettings
-    | CreateConnectionParams.ConnectorsRampConnectionSettings
-    | CreateConnectionParams.ConnectorsRedditConnectionSettings
-    | CreateConnectionParams.ConnectorsSalesforceConnectionSettings
-    | CreateConnectionParams.ConnectorsSalesloftConnectionSettings
-    | CreateConnectionParams.ConnectorsSaltedgeConnectionSettings
-    | CreateConnectionParams.ConnectorsSharepointonlineConnectionSettings
-    | CreateConnectionParams.ConnectorsSlackConnectionSettings
-    | CreateConnectionParams.ConnectorsSplitwiseConnectionSettings
-    | CreateConnectionParams.ConnectorsStripeConnectionSettings
-    | CreateConnectionParams.ConnectorsTellerConnectionSettings
-    | CreateConnectionParams.ConnectorsTogglConnectionSettings
-    | CreateConnectionParams.ConnectorsTwentyConnectionSettings
-    | CreateConnectionParams.ConnectorsTwitterConnectionSettings
-    | CreateConnectionParams.ConnectorsVenmoConnectionSettings
-    | CreateConnectionParams.ConnectorsWiseConnectionSettings
-    | CreateConnectionParams.ConnectorsXeroConnectionSettings
-    | CreateConnectionParams.ConnectorsYodleeConnectionSettings
-    | CreateConnectionParams.ConnectorsZohodeskConnectionSettings;
+    | CreateConnectionParams.ConnectorDummyOauth2DiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSharepointonlineDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSlackDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGitHubDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorQuickbooksDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGooglemailDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorNotionDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorLinkedinDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGoogledocsDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorAircallDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGooglecalendarDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGooglesheetDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorDiscordDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorHubspotDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSalesforceDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorLinearDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorConfluenceDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGoogledriveDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorAirtableDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorApolloDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorBrexDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorCodaDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorFacebookDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorFinchDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorFirebaseDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorForeceiptDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGongDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorGreenhouseDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorHeronDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorInstagramDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorIntercomDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorJiraDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorKustomerDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorLeverDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorLunchmoneyDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorMercuryDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorMergeDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorMicrosoftDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorMootaDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorOnebrickDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorOutreachDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorPipedriveDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorPlaidDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorPostgresDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorRampDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorRedditDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSalesloftDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSaltedgeDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSplitwiseDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorStripeDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorTellerDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorTogglDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorTwentyDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorTwitterDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorVenmoDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorWiseDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorXeroDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorYodleeDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorZohodeskDiscriminatedConnectionSettings;
 
   metadata?: Record<string, unknown>;
 }
 
 export namespace CreateConnectionParams {
-  export interface ConnectorsAircallConnectionSettings {
-    connector_name: 'aircall';
+  export interface ConnectorDummyOauth2DiscriminatedConnectionSettings {
+    connector_name: 'dummy-oauth2';
 
-    settings: ConnectorsAircallConnectionSettings.Settings;
+    settings: ConnectorDummyOauth2DiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsAircallConnectionSettings {
+  export namespace ConnectorDummyOauth2DiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
 
     export namespace Settings {
       export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
+        created_at?: string;
 
         /**
          * Output of the postConnect hook for oauth2 connectors
          */
         credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
       }
 
       export namespace OAuth {
@@ -22082,6 +29088,9 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
+          /**
+           * Client ID used for the connection
+           */
           client_id: string;
 
           raw: Record<string, unknown>;
@@ -22100,13 +29109,958 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsAirtableConnectionSettings {
-    connector_name: 'airtable';
+  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    connector_name: 'sharepointonline';
 
-    settings: ConnectorsAirtableConnectionSettings.Settings;
+    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsAirtableConnectionSettings {
+  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectionSettings {
+    connector_name: 'slack';
+
+    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectionSettings {
+    connector_name: 'github';
+
+    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
+    connector_name: 'quickbooks';
+
+    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * The realmId of your quickbooks company (e.g., 9341453474484455)
+       */
+      realmId: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGooglemailDiscriminatedConnectionSettings {
+    connector_name: 'googlemail';
+
+    settings: ConnectorGooglemailDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorGooglemailDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectionSettings {
+    connector_name: 'notion';
+
+    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectionSettings {
+    connector_name: 'linkedin';
+
+    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGoogledocsDiscriminatedConnectionSettings {
+    connector_name: 'googledocs';
+
+    settings: ConnectorGoogledocsDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorGoogledocsDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectionSettings {
+    connector_name: 'aircall';
+
+    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    connector_name: 'googlecalendar';
+
+    settings: ConnectorGooglecalendarDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorGooglecalendarDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGooglesheetDiscriminatedConnectionSettings {
+    connector_name: 'googlesheet';
+
+    settings: ConnectorGooglesheetDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorGooglesheetDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectionSettings {
+    connector_name: 'discord';
+
+    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectionSettings {
+    connector_name: 'hubspot';
+
+    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectionSettings {
+    connector_name: 'salesforce';
+
+    settings: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * The instance URL of your Salesforce account (e.g., example)
+       */
+      instance_url: string;
+
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectionSettings {
+    connector_name: 'linear';
+
+    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectionSettings {
+    connector_name: 'confluence';
+
+    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorGoogledriveDiscriminatedConnectionSettings {
+    connector_name: 'googledrive';
+
+    settings: ConnectorGoogledriveDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorGoogledriveDiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id: string;
+
+          raw: Record<string, unknown>;
+
+          scope: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          refresh_token?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectionSettings {
+    connector_name: 'airtable';
+
+    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorAirtableDiscriminatedConnectionSettings {
     export interface Settings {
       airtableBase: string;
 
@@ -22114,13 +30068,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsApolloConnectionSettings {
+  export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
 
-    settings: ConnectorsApolloConnectionSettings.Settings;
+    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsApolloConnectionSettings {
+  export namespace ConnectorApolloDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -22188,141 +30142,37 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsBrexConnectionSettings {
+  export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
 
-    settings: ConnectorsBrexConnectionSettings.Settings;
+    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsBrexConnectionSettings {
+  export namespace ConnectorBrexDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
   }
 
-  export interface ConnectorsCodaConnectionSettings {
+  export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
 
-    settings: ConnectorsCodaConnectionSettings.Settings;
+    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsCodaConnectionSettings {
+  export namespace ConnectorCodaDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
   }
 
-  export interface ConnectorsConfluenceConnectionSettings {
-    connector_name: 'confluence';
-
-    settings: ConnectorsConfluenceConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsConfluenceConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsDiscordConnectionSettings {
-    connector_name: 'discord';
-
-    settings: ConnectorsDiscordConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsDiscordConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsFacebookConnectionSettings {
+  export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
 
-    settings: ConnectorsFacebookConnectionSettings.Settings;
+    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsFacebookConnectionSettings {
+  export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -22390,27 +30240,27 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsFinchConnectionSettings {
+  export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
 
-    settings: ConnectorsFinchConnectionSettings.Settings;
+    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsFinchConnectionSettings {
+  export namespace ConnectorFinchDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
   }
 
-  export interface ConnectorsFirebaseConnectionSettings {
+  export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
 
     settings:
-      | ConnectorsFirebaseConnectionSettings.UnionMember0
-      | ConnectorsFirebaseConnectionSettings.UnionMember1;
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
   }
 
-  export namespace ConnectorsFirebaseConnectionSettings {
+  export namespace ConnectorFirebaseDiscriminatedConnectionSettings {
     export interface UnionMember0 {
       role: 'admin';
 
@@ -22486,13 +30336,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsForeceiptConnectionSettings {
+  export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
 
-    settings: ConnectorsForeceiptConnectionSettings.Settings;
+    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsForeceiptConnectionSettings {
+  export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'staging' | 'production';
 
@@ -22502,65 +30352,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsGitHubConnectionSettings {
-    connector_name: 'github';
-
-    settings: ConnectorsGitHubConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsGitHubConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGongConnectionSettings {
+  export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
 
-    settings: ConnectorsGongConnectionSettings.Settings;
+    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsGongConnectionSettings {
+  export namespace ConnectorGongDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -22628,343 +30426,31 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsGooglecalendarConnectionSettings {
-    connector_name: 'googlecalendar';
-
-    settings: ConnectorsGooglecalendarConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsGooglecalendarConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGoogledocsConnectionSettings {
-    connector_name: 'googledocs';
-
-    settings: ConnectorsGoogledocsConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsGoogledocsConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGoogledriveConnectionSettings {
-    connector_name: 'googledrive';
-
-    settings: ConnectorsGoogledriveConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsGoogledriveConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGooglemailConnectionSettings {
-    connector_name: 'googlemail';
-
-    settings: ConnectorsGooglemailConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsGooglemailConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGooglesheetConnectionSettings {
-    connector_name: 'googlesheet';
-
-    settings: ConnectorsGooglesheetConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsGooglesheetConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsGreenhouseConnectionSettings {
+  export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
 
-    settings: ConnectorsGreenhouseConnectionSettings.Settings;
+    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsGreenhouseConnectionSettings {
+  export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
     export interface Settings {
       apiKey: string;
     }
   }
 
-  export interface ConnectorsHeronConnectionSettings {
+  export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
 
-    settings: null;
+    settings: unknown;
   }
 
-  export interface ConnectorsHubspotConnectionSettings {
-    connector_name: 'hubspot';
-
-    settings: ConnectorsHubspotConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsHubspotConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsInstagramConnectionSettings {
+  export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
 
-    settings: ConnectorsInstagramConnectionSettings.Settings;
+    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsInstagramConnectionSettings {
+  export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23032,13 +30518,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsIntercomConnectionSettings {
+  export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
 
-    settings: ConnectorsIntercomConnectionSettings.Settings;
+    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsIntercomConnectionSettings {
+  export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23106,13 +30592,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsJiraConnectionSettings {
+  export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
 
-    settings: ConnectorsJiraConnectionSettings.Settings;
+    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsJiraConnectionSettings {
+  export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23180,13 +30666,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsKustomerConnectionSettings {
+  export interface ConnectorKustomerDiscriminatedConnectionSettings {
     connector_name: 'kustomer';
 
-    settings: ConnectorsKustomerConnectionSettings.Settings;
+    settings: ConnectorKustomerDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsKustomerConnectionSettings {
+  export namespace ConnectorKustomerDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23254,13 +30740,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsLeverConnectionSettings {
+  export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
 
-    settings: ConnectorsLeverConnectionSettings.Settings;
+    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsLeverConnectionSettings {
+  export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23328,129 +30814,25 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsLinearConnectionSettings {
-    connector_name: 'linear';
-
-    settings: ConnectorsLinearConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsLinearConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsLinkedinConnectionSettings {
-    connector_name: 'linkedin';
-
-    settings: ConnectorsLinkedinConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsLinkedinConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsLunchmoneyConnectionSettings {
+  export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: null;
+    settings: unknown;
   }
 
-  export interface ConnectorsMercuryConnectionSettings {
+  export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: null;
+    settings: unknown;
   }
 
-  export interface ConnectorsMergeConnectionSettings {
+  export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorsMergeConnectionSettings.Settings;
+    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsMergeConnectionSettings {
+  export namespace ConnectorMergeDiscriminatedConnectionSettings {
     export interface Settings {
       accountToken: string;
 
@@ -23458,13 +30840,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsMicrosoftConnectionSettings {
+  export interface ConnectorMicrosoftDiscriminatedConnectionSettings {
     connector_name: 'microsoft';
 
-    settings: ConnectorsMicrosoftConnectionSettings.Settings;
+    settings: ConnectorMicrosoftDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsMicrosoftConnectionSettings {
+  export namespace ConnectorMicrosoftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23534,83 +30916,31 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsMootaConnectionSettings {
+  export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
 
-    settings: null;
+    settings: unknown;
   }
 
-  export interface ConnectorsNotionConnectionSettings {
-    connector_name: 'notion';
-
-    settings: ConnectorsNotionConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsNotionConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsOnebrickConnectionSettings {
+  export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorsOnebrickConnectionSettings.Settings;
+    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsOnebrickConnectionSettings {
+  export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
     }
   }
 
-  export interface ConnectorsOutreachConnectionSettings {
+  export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
 
-    settings: ConnectorsOutreachConnectionSettings.Settings;
+    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsOutreachConnectionSettings {
+  export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23678,13 +31008,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsPipedriveConnectionSettings {
+  export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
 
-    settings: ConnectorsPipedriveConnectionSettings.Settings;
+    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsPipedriveConnectionSettings {
+  export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23752,13 +31082,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsPlaidConnectionSettings {
+  export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
-    settings: ConnectorsPlaidConnectionSettings.Settings;
+    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsPlaidConnectionSettings {
+  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -23774,13 +31104,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsPostgresConnectionSettings {
+  export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
 
-    settings: ConnectorsPostgresConnectionSettings.Settings;
+    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsPostgresConnectionSettings {
+  export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
       databaseUrl: string;
 
@@ -23797,70 +31127,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsQuickbooksConnectionSettings {
-    connector_name: 'quickbooks';
-
-    settings: ConnectorsQuickbooksConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsQuickbooksConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsRampConnectionSettings {
+  export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
 
-    settings: ConnectorsRampConnectionSettings.Settings;
+    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsRampConnectionSettings {
+  export namespace ConnectorRampDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken?: string | null;
 
@@ -23868,13 +31141,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsRedditConnectionSettings {
+  export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
 
-    settings: ConnectorsRedditConnectionSettings.Settings;
+    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsRedditConnectionSettings {
+  export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -23942,70 +31215,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsSalesforceConnectionSettings {
-    connector_name: 'salesforce';
-
-    settings: ConnectorsSalesforceConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsSalesforceConnectionSettings {
-    export interface Settings {
-      /**
-       * The instance URL of your Salesforce account (e.g., example)
-       */
-      instance_url: string;
-
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsSalesloftConnectionSettings {
+  export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
 
-    settings: ConnectorsSalesloftConnectionSettings.Settings;
+    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsSalesloftConnectionSettings {
+  export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -24073,123 +31289,19 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsSaltedgeConnectionSettings {
+  export interface ConnectorSaltedgeDiscriminatedConnectionSettings {
     connector_name: 'saltedge';
 
     settings?: unknown;
   }
 
-  export interface ConnectorsSharepointonlineConnectionSettings {
-    connector_name: 'sharepointonline';
-
-    settings: ConnectorsSharepointonlineConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsSharepointonlineConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsSlackConnectionSettings {
-    connector_name: 'slack';
-
-    settings: ConnectorsSlackConnectionSettings.Settings;
-  }
-
-  export namespace ConnectorsSlackConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at: string;
-
-        last_fetched_at: string;
-
-        metadata: Record<string, unknown> | null;
-
-        updated_at: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          client_id: string;
-
-          raw: Record<string, unknown>;
-
-          scope: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          refresh_token?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-  }
-
-  export interface ConnectorsSplitwiseConnectionSettings {
+  export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorsSplitwiseConnectionSettings.Settings;
+    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsSplitwiseConnectionSettings {
+  export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
     export interface Settings {
       accessToken: string;
 
@@ -24267,37 +31379,37 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsStripeConnectionSettings {
+  export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
 
-    settings: ConnectorsStripeConnectionSettings.Settings;
+    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsStripeConnectionSettings {
+  export namespace ConnectorStripeDiscriminatedConnectionSettings {
     export interface Settings {
       secretKey: string;
     }
   }
 
-  export interface ConnectorsTellerConnectionSettings {
+  export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
 
-    settings: ConnectorsTellerConnectionSettings.Settings;
+    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsTellerConnectionSettings {
+  export namespace ConnectorTellerDiscriminatedConnectionSettings {
     export interface Settings {
       token: string;
     }
   }
 
-  export interface ConnectorsTogglConnectionSettings {
+  export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
 
-    settings: ConnectorsTogglConnectionSettings.Settings;
+    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsTogglConnectionSettings {
+  export namespace ConnectorTogglDiscriminatedConnectionSettings {
     export interface Settings {
       apiToken: string;
 
@@ -24307,25 +31419,25 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsTwentyConnectionSettings {
+  export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
 
-    settings: ConnectorsTwentyConnectionSettings.Settings;
+    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsTwentyConnectionSettings {
+  export namespace ConnectorTwentyDiscriminatedConnectionSettings {
     export interface Settings {
       access_token: string;
     }
   }
 
-  export interface ConnectorsTwitterConnectionSettings {
+  export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
 
-    settings: ConnectorsTwitterConnectionSettings.Settings;
+    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsTwitterConnectionSettings {
+  export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -24393,13 +31505,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsVenmoConnectionSettings {
+  export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
 
-    settings: ConnectorsVenmoConnectionSettings.Settings;
+    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsVenmoConnectionSettings {
+  export namespace ConnectorVenmoDiscriminatedConnectionSettings {
     export interface Settings {
       credentials?: unknown;
 
@@ -24407,13 +31519,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsWiseConnectionSettings {
+  export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
 
-    settings: ConnectorsWiseConnectionSettings.Settings;
+    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsWiseConnectionSettings {
+  export namespace ConnectorWiseDiscriminatedConnectionSettings {
     export interface Settings {
       envName: 'sandbox' | 'live';
 
@@ -24421,13 +31533,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsXeroConnectionSettings {
+  export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
 
-    settings: ConnectorsXeroConnectionSettings.Settings;
+    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsXeroConnectionSettings {
+  export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -24495,13 +31607,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsYodleeConnectionSettings {
+  export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
 
-    settings: ConnectorsYodleeConnectionSettings.Settings;
+    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsYodleeConnectionSettings {
+  export namespace ConnectorYodleeDiscriminatedConnectionSettings {
     export interface Settings {
       loginName: string;
 
@@ -24551,13 +31663,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorsZohodeskConnectionSettings {
+  export interface ConnectorZohodeskDiscriminatedConnectionSettings {
     connector_name: 'zohodesk';
 
-    settings: ConnectorsZohodeskConnectionSettings.Settings;
+    settings: ConnectorZohodeskDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorsZohodeskConnectionSettings {
+  export namespace ConnectorZohodeskDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -24666,6 +31778,7 @@ export namespace CreateMagicLinkParams {
       | 'coda'
       | 'confluence'
       | 'discord'
+      | 'dummy-oauth2'
       | 'facebook'
       | 'finch'
       | 'firebase'
@@ -24753,9 +31866,6 @@ export interface GetConnectionParams {
 }
 
 export interface ListConnectionConfigsParams extends OffsetPaginationParams {
-  /**
-   * The name of the connector
-   */
   connector_name?:
     | 'aircall'
     | 'airtable'
@@ -24764,6 +31874,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'coda'
     | 'confluence'
     | 'discord'
+    | 'dummy-oauth2'
     | 'facebook'
     | 'finch'
     | 'firebase'
@@ -24816,16 +31927,8 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'yodlee'
     | 'zohodesk';
 
-  /**
-   * Comma separated list of fields to optionally expand.
-   *
-   * Available Options: `connector`, `enabled_integrations`
-   */
-  expand?: string;
+  expand?: Array<'connector' | 'connector.schemas' | 'connection_count'>;
 
-  /**
-   * Limit the number of items returned
-   */
   limit?: number;
 }
 
@@ -24835,9 +31938,6 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   connector_config_id?: string;
 
-  /**
-   * The name of the connector
-   */
   connector_name?:
     | 'aircall'
     | 'airtable'
@@ -24846,6 +31946,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'coda'
     | 'confluence'
     | 'discord'
+    | 'dummy-oauth2'
     | 'facebook'
     | 'finch'
     | 'firebase'
@@ -24911,19 +32012,11 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   include_secrets?: 'none' | 'basic' | 'all';
 
-  /**
-   * Limit the number of items returned
-   */
   limit?: number;
 }
 
 export interface ListConnectorsParams {
-  /**
-   * Comma separated list of fields to optionally expand.
-   *
-   * Available Options: `integrations`
-   */
-  expand?: string;
+  expand?: Array<'schemas'>;
 }
 
 export declare namespace TopLevel {
