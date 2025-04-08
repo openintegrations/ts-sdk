@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.1 (2025-04-08)
+
+Full Changelog: [v1.4.0...v1.4.1](https://github.com/openintegrations/ts-sdk/compare/v1.4.0...v1.4.1)
+
+### Bug Fixes
+
+* **client:** send all configured auth headers ([#149](https://github.com/openintegrations/ts-sdk/issues/149)) ([781d99f](https://github.com/openintegrations/ts-sdk/commit/781d99f07094522b19da116b88f486d58928c242))
+
 ## 1.4.0 (2025-04-06)
 
 Full Changelog: [v1.3.0...v1.4.0](https://github.com/openintegrations/ts-sdk/compare/v1.3.0...v1.4.0)
