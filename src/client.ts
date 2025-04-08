@@ -42,7 +42,7 @@ import {
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
-import { HeadersLike, NullableHeaders, buildHeaders, isEmptyHeaders } from './internal/headers';
+import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
@@ -323,32 +323,22 @@ export class Openint {
     );
   }
 
-  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
-    const apiKeyAuth = this.apiKeyAuth(opts);
-    const customerTokenAuth = this.customerTokenAuth(opts);
-
-    if (apiKeyAuth != null && !isEmptyHeaders(apiKeyAuth)) {
-      return apiKeyAuth;
-    }
-
-    if (customerTokenAuth != null && !isEmptyHeaders(customerTokenAuth)) {
-      return customerTokenAuth;
-    }
-    return undefined;
+  protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
+    return buildHeaders([this.apiKeyAuth(opts), this.customerTokenAuth(opts)]);
   }
 
-  protected apiKeyAuth(opts: FinalRequestOptions): Headers | undefined {
+  protected apiKeyAuth(opts: FinalRequestOptions): NullableHeaders | undefined {
     if (this.apiKey == null) {
       return undefined;
     }
-    return new Headers({ Authorization: `Bearer ${this.apiKey}` });
+    return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
   }
 
-  protected customerTokenAuth(opts: FinalRequestOptions): Headers | undefined {
+  protected customerTokenAuth(opts: FinalRequestOptions): NullableHeaders | undefined {
     if (this.customerToken == null) {
       return undefined;
     }
-    return new Headers({ Authorization: `Bearer ${this.customerToken}` });
+    return buildHeaders([{ Authorization: `Bearer ${this.customerToken}` }]);
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {
