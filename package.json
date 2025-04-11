@@ -1,6 +1,6 @@
 {
   "name": "@openint/sdk",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "The official TypeScript library for the Openint API",
   "author": "Openint <support@openint.dev>",
   "types": "dist/index.d.ts",
@@ -48,6 +48,10 @@
   },
   "resolutions": {
     "synckit": "0.8.8"
+  },
+  "browser": {
+    "./internal/shims/getBuiltinModule.mjs": "./internal/shims/nullGetBuiltinModule.mjs",
+    "./internal/shims/getBuiltinModule.js": "./internal/shims/nullGetBuiltinModule.js"
   },
   "imports": {
     "@openint/sdk": ".",

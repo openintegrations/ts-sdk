@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.4.2 (2025-04-11)
+
+Full Changelog: [v1.4.1...v1.4.2](https://github.com/openintegrations/ts-sdk/compare/v1.4.1...v1.4.2)
+
+### Bug Fixes
+
+* **internal:** fix file uploads in node 18 jest ([8aef37b](https://github.com/openintegrations/ts-sdk/commit/8aef37beecfd2a8e0bd128dd26bfe97dda88070d))
+
+
+### Chores
+
+* **internal:** improve node 18 shims ([9ca768f](https://github.com/openintegrations/ts-sdk/commit/9ca768f97f4146ae34c85a29e67b53a1cf81eb78))
+* **internal:** reduce CI branch coverage ([6b32dfd](https://github.com/openintegrations/ts-sdk/commit/6b32dfdeea5ae1e28fd58e886a2f5072bd8412bd))
+* **internal:** upload builds and expand CI branch coverage ([b7e8d6b](https://github.com/openintegrations/ts-sdk/commit/b7e8d6b6e64155ccd2c55f4e30bccb8da6c1db1a))
+
 ## 1.4.1 (2025-04-08)
 
 Full Changelog: [v1.4.0...v1.4.1](https://github.com/openintegrations/ts-sdk/compare/v1.4.0...v1.4.1)
