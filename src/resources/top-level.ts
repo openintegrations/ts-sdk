@@ -40,7 +40,7 @@ export type CreateConnectionResponse =
   | CreateConnectionResponse.ConnectorQuickbooksDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorRedditDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorSalesloftDiscriminatedConnectionSettings
-  | CreateConnectionResponse.ConnectorSharepointonlineDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSharepointDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorSlackDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorTwitterDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorXeroDiscriminatedConnectionSettings
@@ -2138,10 +2138,10 @@ export namespace CreateConnectionResponse {
     }
   }
 
-  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
-    connector_name: 'sharepointonline';
+  export interface ConnectorSharepointDiscriminatedConnectionSettings {
+    connector_name: 'sharepoint';
 
-    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
+    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -2171,7 +2171,7 @@ export namespace CreateConnectionResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+  export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
@@ -3815,7 +3815,7 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorQuickbooksDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorRedditDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorSalesloftDiscriminatedConnectionSettings
-  | GetConnectionResponse.ConnectorSharepointonlineDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSharepointDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorSlackDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorTwitterDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorXeroDiscriminatedConnectionSettings
@@ -4026,7 +4026,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -4242,7 +4242,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -4458,7 +4458,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -4674,7 +4674,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -4890,7 +4890,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -5106,7 +5106,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -5327,7 +5327,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -5543,7 +5543,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -5759,7 +5759,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -5975,7 +5975,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -6191,7 +6191,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -6407,7 +6407,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -6623,7 +6623,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -6839,7 +6839,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -7055,7 +7055,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -7271,7 +7271,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -7487,7 +7487,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -7703,7 +7703,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -7919,7 +7919,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -8135,7 +8135,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -8351,7 +8351,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -8572,7 +8572,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -8793,7 +8793,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -9009,7 +9009,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -9225,7 +9225,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -9263,14 +9263,14 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
-    connector_name: 'sharepointonline';
+  export interface ConnectorSharepointDiscriminatedConnectionSettings {
+    connector_name: 'sharepoint';
 
-    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
+    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorSharepointonlineDiscriminatedConnectionSettings.Connector;
+    connector?: ConnectorSharepointDiscriminatedConnectionSettings.Connector;
 
     connector_config_id?: string | null;
 
@@ -9282,7 +9282,7 @@ export namespace GetConnectionResponse {
 
     display_name?: string | null;
 
-    integration?: ConnectorSharepointonlineDiscriminatedConnectionSettings.Integration;
+    integration?: ConnectorSharepointDiscriminatedConnectionSettings.Integration;
 
     integration_id?: string | null;
 
@@ -9300,7 +9300,7 @@ export namespace GetConnectionResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+  export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
@@ -9441,7 +9441,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -9657,7 +9657,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -9873,7 +9873,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -10089,7 +10089,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -10310,7 +10310,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -10485,7 +10485,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -10658,7 +10658,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -10831,7 +10831,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -11004,7 +11004,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -11177,7 +11177,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -11422,7 +11422,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -11599,7 +11599,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -11772,7 +11772,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -11941,7 +11941,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -12110,7 +12110,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -12279,7 +12279,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -12454,7 +12454,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -12623,7 +12623,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -12796,7 +12796,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -12979,7 +12979,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -13163,7 +13163,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -13338,7 +13338,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -13507,7 +13507,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -13752,7 +13752,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -13925,7 +13925,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -14098,7 +14098,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -14275,7 +14275,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -14448,7 +14448,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -14623,7 +14623,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -14798,7 +14798,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -15015,7 +15015,7 @@ export namespace GetConnectionResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -15086,7 +15086,7 @@ export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorQuickbooksDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorRedditDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorSalesloftDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSharepointonlineDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorSharepointDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorSlackDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorTwitterDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorXeroDiscriminatedConnectorConfig
@@ -15269,7 +15269,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -15457,7 +15457,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -15645,7 +15645,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -15833,7 +15833,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -16021,7 +16021,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -16209,7 +16209,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -16397,7 +16397,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -16585,7 +16585,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -16773,7 +16773,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -16961,7 +16961,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -17149,7 +17149,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -17337,7 +17337,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -17525,7 +17525,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -17713,7 +17713,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -17901,7 +17901,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -18089,7 +18089,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -18277,7 +18277,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -18465,7 +18465,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -18653,7 +18653,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -18841,7 +18841,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -19029,7 +19029,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -19217,7 +19217,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -19407,7 +19407,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -19595,7 +19595,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -19783,7 +19783,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -19821,16 +19821,16 @@ export namespace ListConnectionConfigsResponse {
     }
   }
 
-  export interface ConnectorSharepointonlineDiscriminatedConnectorConfig {
-    config: ConnectorSharepointonlineDiscriminatedConnectorConfig.Config;
+  export interface ConnectorSharepointDiscriminatedConnectorConfig {
+    config: ConnectorSharepointDiscriminatedConnectorConfig.Config;
 
-    connector_name: 'sharepointonline';
+    connector_name: 'sharepoint';
 
     id?: string;
 
     connection_count?: number;
 
-    connector?: ConnectorSharepointonlineDiscriminatedConnectorConfig.Connector;
+    connector?: ConnectorSharepointDiscriminatedConnectorConfig.Connector;
 
     created_at?: string;
 
@@ -19838,7 +19838,7 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, ConnectorSharepointonlineDiscriminatedConnectorConfig.Integrations>;
+    integrations?: Record<string, ConnectorSharepointDiscriminatedConnectorConfig.Integrations>;
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
@@ -19852,7 +19852,7 @@ export namespace ListConnectionConfigsResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorSharepointonlineDiscriminatedConnectorConfig {
+  export namespace ConnectorSharepointDiscriminatedConnectorConfig {
     export interface Config {
       /**
        * Base oauth configuration for the connector
@@ -19971,7 +19971,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -20159,7 +20159,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -20347,7 +20347,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -20535,7 +20535,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -20723,7 +20723,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -20886,7 +20886,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -21049,7 +21049,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -21235,7 +21235,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -21398,7 +21398,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -21587,7 +21587,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -21750,7 +21750,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -21913,7 +21913,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -22076,7 +22076,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -22243,7 +22243,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -22410,7 +22410,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -22596,7 +22596,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -22763,7 +22763,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -22930,7 +22930,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -23107,7 +23107,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -23332,7 +23332,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -23495,7 +23495,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -23670,7 +23670,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -23841,7 +23841,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -24004,7 +24004,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -24190,7 +24190,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -24359,7 +24359,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -24522,7 +24522,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -24685,7 +24685,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -24864,7 +24864,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -25027,7 +25027,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -25212,7 +25212,7 @@ export namespace ListConnectionConfigsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -25280,7 +25280,7 @@ export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorQuickbooksDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorRedditDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorSalesloftDiscriminatedConnectionSettings
-  | ListConnectionsResponse.ConnectorSharepointonlineDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSharepointDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorSlackDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorTwitterDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorXeroDiscriminatedConnectionSettings
@@ -25491,7 +25491,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -25707,7 +25707,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -25923,7 +25923,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -26139,7 +26139,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -26355,7 +26355,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -26571,7 +26571,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -26792,7 +26792,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -27008,7 +27008,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -27224,7 +27224,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -27440,7 +27440,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -27656,7 +27656,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -27872,7 +27872,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -28088,7 +28088,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -28304,7 +28304,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -28520,7 +28520,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -28736,7 +28736,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -28952,7 +28952,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -29168,7 +29168,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -29384,7 +29384,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -29600,7 +29600,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -29816,7 +29816,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -30037,7 +30037,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -30258,7 +30258,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -30474,7 +30474,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -30690,7 +30690,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -30728,14 +30728,14 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
-    connector_name: 'sharepointonline';
+  export interface ConnectorSharepointDiscriminatedConnectionSettings {
+    connector_name: 'sharepoint';
 
-    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
+    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
-    connector?: ConnectorSharepointonlineDiscriminatedConnectionSettings.Connector;
+    connector?: ConnectorSharepointDiscriminatedConnectionSettings.Connector;
 
     connector_config_id?: string | null;
 
@@ -30747,7 +30747,7 @@ export namespace ListConnectionsResponse {
 
     display_name?: string | null;
 
-    integration?: ConnectorSharepointonlineDiscriminatedConnectionSettings.Integration;
+    integration?: ConnectorSharepointDiscriminatedConnectionSettings.Integration;
 
     integration_id?: string | null;
 
@@ -30765,7 +30765,7 @@ export namespace ListConnectionsResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+  export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
@@ -30906,7 +30906,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -31122,7 +31122,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -31338,7 +31338,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -31554,7 +31554,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -31775,7 +31775,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -31950,7 +31950,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -32123,7 +32123,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -32296,7 +32296,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -32469,7 +32469,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -32642,7 +32642,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -32887,7 +32887,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -33064,7 +33064,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -33237,7 +33237,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -33406,7 +33406,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -33575,7 +33575,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -33744,7 +33744,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -33919,7 +33919,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -34088,7 +34088,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -34261,7 +34261,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -34444,7 +34444,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -34628,7 +34628,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -34803,7 +34803,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -34972,7 +34972,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -35217,7 +35217,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -35390,7 +35390,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -35563,7 +35563,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -35740,7 +35740,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -35913,7 +35913,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -36088,7 +36088,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -36263,7 +36263,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -36480,7 +36480,7 @@ export namespace ListConnectionsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -36612,7 +36612,7 @@ export namespace ListConnectorsResponse {
         | 'reddit'
         | 'salesloft'
         | 'saltedge'
-        | 'sharepointonline'
+        | 'sharepoint'
         | 'slack'
         | 'splitwise'
         | 'stripe'
@@ -36716,7 +36716,7 @@ export interface CreateConnectionParams {
     | CreateConnectionParams.ConnectorQuickbooksDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorRedditDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorSalesloftDiscriminatedConnectionSettings
-    | CreateConnectionParams.ConnectorSharepointonlineDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSharepointDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorSlackDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorTwitterDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorXeroDiscriminatedConnectionSettings
@@ -38142,13 +38142,13 @@ export namespace CreateConnectionParams {
     }
   }
 
-  export interface ConnectorSharepointonlineDiscriminatedConnectionSettings {
-    connector_name: 'sharepointonline';
+  export interface ConnectorSharepointDiscriminatedConnectionSettings {
+    connector_name: 'sharepoint';
 
-    settings: ConnectorSharepointonlineDiscriminatedConnectionSettings.Settings;
+    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
   }
 
-  export namespace ConnectorSharepointonlineDiscriminatedConnectionSettings {
+  export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
     }
@@ -38991,7 +38991,7 @@ export namespace CreateMagicLinkParams {
       | 'reddit'
       | 'salesloft'
       | 'saltedge'
-      | 'sharepointonline'
+      | 'sharepoint'
       | 'slack'
       | 'splitwise'
       | 'stripe'
@@ -39082,7 +39082,7 @@ export namespace CreateTokenParams {
       | 'reddit'
       | 'salesloft'
       | 'saltedge'
-      | 'sharepointonline'
+      | 'sharepoint'
       | 'slack'
       | 'splitwise'
       | 'stripe'
@@ -39177,7 +39177,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'reddit'
     | 'salesloft'
     | 'saltedge'
-    | 'sharepointonline'
+    | 'sharepoint'
     | 'slack'
     | 'splitwise'
     | 'stripe'
@@ -39247,7 +39247,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'reddit'
     | 'salesloft'
     | 'saltedge'
-    | 'sharepointonline'
+    | 'sharepoint'
     | 'slack'
     | 'splitwise'
     | 'stripe'
