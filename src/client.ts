@@ -208,8 +208,8 @@ export class Openint {
   }
 
   /**
-   * Create a magic link that is ready to be shared with customers who want to use
-   * Connect
+   * Create a @Connect magic link that is ready to be shared with customers who want
+   * to use @Connect
    */
   createMagicLink(
     customerID: string,
@@ -225,7 +225,7 @@ export class Openint {
    */
   createToken(
     customerID: string,
-    body: TopLevelAPI.CreateTokenParams | null | undefined = {},
+    body: TopLevelAPI.CreateTokenParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateTokenResponse> {
     return this.post(path`/customer/${customerID}/token`, { body, ...options });
