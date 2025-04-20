@@ -9,7 +9,7 @@ export type ListConnectionsResponsesOffsetPagination = OffsetPagination<ListConn
 export interface CheckConnectionResponse {
   id: string;
 
-  status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+  status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
   status_message?: string | null;
 }
@@ -99,7 +99,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -136,8 +136,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -148,6 +146,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -181,7 +181,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -218,8 +218,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -230,6 +228,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -263,7 +263,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -300,8 +300,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -312,6 +310,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -345,7 +345,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -382,8 +382,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -394,6 +392,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -427,7 +427,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -464,8 +464,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -476,6 +474,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -509,7 +509,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -546,8 +546,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -558,6 +556,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -591,7 +591,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -633,8 +633,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -645,6 +643,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -678,7 +678,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -715,8 +715,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -727,6 +725,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -760,7 +760,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -797,8 +797,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -809,6 +807,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -842,7 +842,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -879,8 +879,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -891,6 +889,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -924,7 +924,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -961,8 +961,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -973,6 +971,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1006,7 +1006,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1043,8 +1043,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1055,6 +1053,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1088,7 +1088,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1125,8 +1125,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1137,6 +1135,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1170,7 +1170,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1207,8 +1207,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1219,6 +1217,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1252,7 +1252,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1289,8 +1289,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1301,6 +1299,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1334,7 +1334,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1371,8 +1371,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1383,6 +1381,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1416,7 +1416,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1453,8 +1453,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1465,6 +1463,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1498,7 +1498,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1535,8 +1535,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1547,6 +1545,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1580,7 +1580,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1617,8 +1617,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1629,6 +1627,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1662,7 +1662,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1699,8 +1699,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1711,6 +1709,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1744,7 +1744,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1781,8 +1781,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1793,6 +1791,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1826,7 +1826,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1868,8 +1868,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1880,6 +1878,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -1913,7 +1913,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -1955,8 +1955,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -1967,6 +1965,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2000,7 +2000,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2037,8 +2037,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2049,6 +2047,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2082,7 +2082,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2119,8 +2119,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2131,6 +2129,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2164,7 +2164,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2201,8 +2201,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2213,6 +2211,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2246,7 +2246,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2283,8 +2283,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2295,6 +2293,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2328,7 +2328,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2365,8 +2365,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2377,6 +2375,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2410,7 +2410,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2447,8 +2447,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2459,6 +2457,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2492,7 +2492,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2534,8 +2534,6 @@ export namespace CreateConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -2546,6 +2544,8 @@ export namespace CreateConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -2579,7 +2579,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2620,7 +2620,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2659,7 +2659,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2698,7 +2698,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2737,7 +2737,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2778,7 +2778,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2887,7 +2887,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2930,7 +2930,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -2969,7 +2969,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3002,7 +3002,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3035,7 +3035,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3068,7 +3068,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3109,7 +3109,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3142,7 +3142,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3181,7 +3181,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3230,7 +3230,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3239,18 +3239,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL: string;
-
-      sourceQueries?: Settings.SourceQueries;
-    }
-
-    export namespace Settings {
-      export interface SourceQueries {
-        /**
-         * Should order by lastModifiedAt and id descending
-         */
-        invoice?: string | null;
-      }
+      databaseURL?: string;
     }
   }
 
@@ -3280,7 +3269,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3321,7 +3310,7 @@ export namespace CreateConnectionResponse {
 
     settings?: unknown;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3354,7 +3343,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3465,7 +3454,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3504,7 +3493,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3543,7 +3532,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3586,7 +3575,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3625,7 +3614,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3666,7 +3655,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3707,7 +3696,7 @@ export namespace CreateConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3878,7 +3867,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -3915,8 +3904,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -3927,6 +3914,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -4094,7 +4083,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -4131,8 +4120,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -4143,6 +4130,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -4310,7 +4299,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -4347,8 +4336,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -4359,6 +4346,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -4526,7 +4515,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -4563,8 +4552,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -4575,6 +4562,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -4742,7 +4731,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -4779,8 +4768,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -4791,6 +4778,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -4958,7 +4947,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -4995,8 +4984,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -5007,6 +4994,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -5174,7 +5163,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -5216,8 +5205,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -5228,6 +5215,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -5395,7 +5384,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -5432,8 +5421,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -5444,6 +5431,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -5611,7 +5600,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -5648,8 +5637,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -5660,6 +5647,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -5827,7 +5816,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -5864,8 +5853,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -5876,6 +5863,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -6043,7 +6032,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -6080,8 +6069,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -6092,6 +6079,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -6259,7 +6248,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -6296,8 +6285,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -6308,6 +6295,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -6475,7 +6464,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -6512,8 +6501,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -6524,6 +6511,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -6691,7 +6680,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -6728,8 +6717,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -6740,6 +6727,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -6907,7 +6896,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -6944,8 +6933,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -6956,6 +6943,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -7123,7 +7112,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -7160,8 +7149,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -7172,6 +7159,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -7339,7 +7328,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -7376,8 +7365,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -7388,6 +7375,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -7555,7 +7544,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -7592,8 +7581,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -7604,6 +7591,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -7771,7 +7760,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -7808,8 +7797,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -7820,6 +7807,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -7987,7 +7976,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -8024,8 +8013,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -8036,6 +8023,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -8203,7 +8192,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -8240,8 +8229,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -8252,6 +8239,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -8419,7 +8408,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -8461,8 +8450,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -8473,6 +8460,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -8640,7 +8629,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -8682,8 +8671,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -8694,6 +8681,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -8861,7 +8850,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -8898,8 +8887,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -8910,6 +8897,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -9077,7 +9066,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -9114,8 +9103,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -9126,6 +9113,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -9293,7 +9282,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -9330,8 +9319,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -9342,6 +9329,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -9509,7 +9498,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -9546,8 +9535,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -9558,6 +9545,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -9725,7 +9714,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -9762,8 +9751,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -9774,6 +9761,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -9941,7 +9930,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -9978,8 +9967,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -9990,6 +9977,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -10157,7 +10146,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -10199,8 +10188,6 @@ export namespace GetConnectionResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -10211,6 +10198,8 @@ export namespace GetConnectionResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -10378,7 +10367,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -10553,7 +10542,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -10726,7 +10715,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -10899,7 +10888,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -11072,7 +11061,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -11247,7 +11236,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -11490,7 +11479,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -11667,7 +11656,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -11840,7 +11829,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -12009,7 +11998,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -12178,7 +12167,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -12347,7 +12336,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -12522,7 +12511,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -12691,7 +12680,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -12864,7 +12853,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -13047,7 +13036,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -13056,18 +13045,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL: string;
-
-      sourceQueries?: Settings.SourceQueries;
-    }
-
-    export namespace Settings {
-      export interface SourceQueries {
-        /**
-         * Should order by lastModifiedAt and id descending
-         */
-        invoice?: string | null;
-      }
+      databaseURL?: string;
     }
 
     export interface Connector {
@@ -13231,7 +13209,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -13406,7 +13384,7 @@ export namespace GetConnectionResponse {
 
     settings?: unknown;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -13575,7 +13553,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -13820,7 +13798,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -13993,7 +13971,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -14166,7 +14144,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -14343,7 +14321,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -14516,7 +14494,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -14691,7 +14669,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -14866,7 +14844,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -25343,7 +25321,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -25380,8 +25358,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -25392,6 +25368,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -25559,7 +25537,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -25596,8 +25574,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -25608,6 +25584,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -25775,7 +25753,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -25812,8 +25790,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -25824,6 +25800,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -25991,7 +25969,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -26028,8 +26006,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -26040,6 +26016,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -26207,7 +26185,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -26244,8 +26222,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -26256,6 +26232,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -26423,7 +26401,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -26460,8 +26438,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -26472,6 +26448,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -26639,7 +26617,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -26681,8 +26659,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -26693,6 +26669,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -26860,7 +26838,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -26897,8 +26875,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -26909,6 +26885,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -27076,7 +27054,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -27113,8 +27091,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -27125,6 +27101,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -27292,7 +27270,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -27329,8 +27307,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -27341,6 +27317,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -27508,7 +27486,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -27545,8 +27523,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -27557,6 +27533,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -27724,7 +27702,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -27761,8 +27739,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -27773,6 +27749,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -27940,7 +27918,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -27977,8 +27955,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -27989,6 +27965,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -28156,7 +28134,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -28193,8 +28171,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -28205,6 +28181,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -28372,7 +28350,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -28409,8 +28387,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -28421,6 +28397,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -28588,7 +28566,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -28625,8 +28603,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -28637,6 +28613,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -28804,7 +28782,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -28841,8 +28819,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -28853,6 +28829,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -29020,7 +28998,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -29057,8 +29035,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -29069,6 +29045,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -29236,7 +29214,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -29273,8 +29251,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -29285,6 +29261,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -29452,7 +29430,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -29489,8 +29467,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -29501,6 +29477,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -29668,7 +29646,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -29705,8 +29683,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -29717,6 +29693,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -29884,7 +29862,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -29926,8 +29904,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -29938,6 +29914,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -30105,7 +30083,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -30147,8 +30125,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -30159,6 +30135,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -30326,7 +30304,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -30363,8 +30341,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -30375,6 +30351,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -30542,7 +30520,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -30579,8 +30557,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -30591,6 +30567,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -30758,7 +30736,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -30795,8 +30773,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -30807,6 +30783,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -30974,7 +30952,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -31011,8 +30989,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -31023,6 +30999,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -31190,7 +31168,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -31227,8 +31205,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -31239,6 +31215,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -31406,7 +31384,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -31443,8 +31421,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -31455,6 +31431,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -31622,7 +31600,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -31664,8 +31642,6 @@ export namespace ListConnectionsResponse {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -31676,6 +31652,8 @@ export namespace ListConnectionsResponse {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -31843,7 +31821,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -32018,7 +31996,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -32191,7 +32169,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -32364,7 +32342,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -32537,7 +32515,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -32712,7 +32690,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -32955,7 +32933,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -33132,7 +33110,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -33305,7 +33283,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -33474,7 +33452,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -33643,7 +33621,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -33812,7 +33790,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -33987,7 +33965,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -34156,7 +34134,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -34329,7 +34307,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -34512,7 +34490,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -34521,18 +34499,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL: string;
-
-      sourceQueries?: Settings.SourceQueries;
-    }
-
-    export namespace Settings {
-      export interface SourceQueries {
-        /**
-         * Should order by lastModifiedAt and id descending
-         */
-        invoice?: string | null;
-      }
+      databaseURL?: string;
     }
 
     export interface Connector {
@@ -34696,7 +34663,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -34871,7 +34838,7 @@ export namespace ListConnectionsResponse {
 
     settings?: unknown;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -35040,7 +35007,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -35285,7 +35252,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -35458,7 +35425,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -35631,7 +35598,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -35808,7 +35775,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -35981,7 +35948,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -36156,7 +36123,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -36331,7 +36298,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | null;
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
 
@@ -36748,6 +36715,11 @@ export interface CreateConnectionParams {
     | CreateConnectionParams.ConnectorWiseDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorYodleeDiscriminatedConnectionSettings;
 
+  /**
+   * Perform a synchronous connection check before creating it.
+   */
+  check_connection?: boolean;
+
   metadata?: Record<string, unknown>;
 }
 
@@ -36788,8 +36760,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -36800,6 +36770,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -36843,8 +36815,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -36855,6 +36825,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -36898,8 +36870,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -36910,6 +36880,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -36953,8 +36925,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -36965,6 +36935,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37008,8 +36980,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37020,6 +36990,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37063,8 +37035,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37075,6 +37045,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37123,8 +37095,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37135,6 +37105,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37178,8 +37150,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37190,6 +37160,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37233,8 +37205,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37245,6 +37215,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37288,8 +37260,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37300,6 +37270,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37343,8 +37315,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37355,6 +37325,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37398,8 +37370,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37410,6 +37380,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37453,8 +37425,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37465,6 +37435,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37508,8 +37480,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37520,6 +37490,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37563,8 +37535,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37575,6 +37545,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37618,8 +37590,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37630,6 +37600,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37673,8 +37645,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37685,6 +37655,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37728,8 +37700,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37740,6 +37710,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37783,8 +37755,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37795,6 +37765,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37838,8 +37810,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37850,6 +37820,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37893,8 +37865,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37905,6 +37875,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -37953,8 +37925,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -37965,6 +37935,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38013,8 +37985,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38025,6 +37995,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38068,8 +38040,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38080,6 +38050,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38123,8 +38095,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38135,6 +38105,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38178,8 +38150,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38190,6 +38160,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38233,8 +38205,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38245,6 +38215,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38288,8 +38260,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38300,6 +38270,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38343,8 +38315,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38355,6 +38325,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38403,8 +38375,6 @@ export namespace CreateConnectionParams {
 
           raw: Record<string, unknown>;
 
-          scope: string;
-
           /**
            * Client ID used for the connection
            */
@@ -38415,6 +38385,8 @@ export namespace CreateConnectionParams {
           expires_in?: number;
 
           refresh_token?: string;
+
+          scope?: string;
 
           token_type?: string;
         }
@@ -38676,18 +38648,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL: string;
-
-      sourceQueries?: Settings.SourceQueries;
-    }
-
-    export namespace Settings {
-      export interface SourceQueries {
-        /**
-         * Should order by lastModifiedAt and id descending
-         */
-        invoice?: string | null;
-      }
+      databaseURL?: string;
     }
   }
 

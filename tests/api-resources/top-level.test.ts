@@ -49,11 +49,11 @@ describe('top level methods', () => {
             credentials: {
               access_token: 'access_token',
               raw: { foo: 'bar' },
-              scope: 'scope',
               client_id: 'client_id',
               expires_at: 'expires_at',
               expires_in: 0,
               refresh_token: 'refresh_token',
+              scope: 'scope',
               token_type: 'token_type',
             },
             last_fetched_at: 'last_fetched_at',
@@ -62,6 +62,7 @@ describe('top level methods', () => {
           },
         },
       },
+      check_connection: true,
       metadata: { foo: 'bar' },
     });
   });
