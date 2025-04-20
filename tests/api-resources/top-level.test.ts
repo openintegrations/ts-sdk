@@ -48,10 +48,10 @@ describe('top level methods', () => {
             created_at: 'created_at',
             credentials: {
               access_token: 'access_token',
-              raw: { foo: 'bar' },
               client_id: 'client_id',
               expires_at: 'expires_at',
               expires_in: 0,
+              raw: { foo: 'bar' },
               refresh_token: 'refresh_token',
               scope: 'scope',
               token_type: 'token_type',
