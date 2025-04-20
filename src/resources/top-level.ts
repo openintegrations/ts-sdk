@@ -134,8 +134,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -144,6 +142,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -216,8 +216,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -226,6 +224,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -298,8 +298,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -308,6 +306,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -380,8 +380,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -390,6 +388,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -462,8 +462,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -472,6 +470,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -544,8 +544,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -554,6 +552,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -631,8 +631,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -641,6 +639,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -713,8 +713,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -723,6 +721,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -795,8 +795,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -805,6 +803,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -877,8 +877,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -887,6 +885,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -959,8 +959,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -969,6 +967,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1041,8 +1041,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1051,6 +1049,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1123,8 +1123,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1133,6 +1131,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1205,8 +1205,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1215,6 +1213,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1287,8 +1287,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1297,6 +1295,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1369,8 +1369,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1379,6 +1377,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1451,8 +1451,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1461,6 +1459,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1533,8 +1533,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1543,6 +1541,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1615,8 +1615,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1625,6 +1623,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1697,8 +1697,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1707,6 +1705,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1779,8 +1779,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1789,6 +1787,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1866,8 +1866,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1876,6 +1874,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -1953,8 +1953,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -1963,6 +1961,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2035,8 +2035,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2045,6 +2043,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2117,8 +2117,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2127,6 +2125,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2199,8 +2199,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2209,6 +2207,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2281,8 +2281,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2291,6 +2289,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2363,8 +2363,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2373,6 +2371,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2445,8 +2445,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2455,6 +2453,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -2532,8 +2532,6 @@ export namespace CreateConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -2542,6 +2540,8 @@ export namespace CreateConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -3902,8 +3902,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -3912,6 +3910,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -4118,8 +4118,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -4128,6 +4126,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -4334,8 +4334,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -4344,6 +4342,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -4550,8 +4550,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -4560,6 +4558,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -4766,8 +4766,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -4776,6 +4774,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -4982,8 +4982,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -4992,6 +4990,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -5203,8 +5203,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -5213,6 +5211,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -5419,8 +5419,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -5429,6 +5427,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -5635,8 +5635,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -5645,6 +5643,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -5851,8 +5851,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -5861,6 +5859,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -6067,8 +6067,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -6077,6 +6075,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -6283,8 +6283,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -6293,6 +6291,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -6499,8 +6499,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -6509,6 +6507,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -6715,8 +6715,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -6725,6 +6723,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -6931,8 +6931,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -6941,6 +6939,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -7147,8 +7147,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -7157,6 +7155,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -7363,8 +7363,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -7373,6 +7371,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -7579,8 +7579,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -7589,6 +7587,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -7795,8 +7795,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -7805,6 +7803,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -8011,8 +8011,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -8021,6 +8019,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -8227,8 +8227,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -8237,6 +8235,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -8448,8 +8448,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -8458,6 +8456,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -8669,8 +8669,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -8679,6 +8677,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -8885,8 +8885,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -8895,6 +8893,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -9101,8 +9101,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -9111,6 +9109,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -9317,8 +9317,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -9327,6 +9325,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -9533,8 +9533,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -9543,6 +9541,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -9749,8 +9749,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -9759,6 +9757,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -9965,8 +9965,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -9975,6 +9973,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -10186,8 +10186,6 @@ export namespace GetConnectionResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -10196,6 +10194,8 @@ export namespace GetConnectionResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -25356,8 +25356,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -25366,6 +25364,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -25572,8 +25572,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -25582,6 +25580,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -25788,8 +25788,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -25798,6 +25796,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -26004,8 +26004,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -26014,6 +26012,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -26220,8 +26220,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -26230,6 +26228,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -26436,8 +26436,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -26446,6 +26444,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -26657,8 +26657,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -26667,6 +26665,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -26873,8 +26873,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -26883,6 +26881,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -27089,8 +27089,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -27099,6 +27097,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -27305,8 +27305,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -27315,6 +27313,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -27521,8 +27521,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -27531,6 +27529,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -27737,8 +27737,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -27747,6 +27745,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -27953,8 +27953,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -27963,6 +27961,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -28169,8 +28169,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -28179,6 +28177,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -28385,8 +28385,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -28395,6 +28393,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -28601,8 +28601,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -28611,6 +28609,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -28817,8 +28817,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -28827,6 +28825,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -29033,8 +29033,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -29043,6 +29041,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -29249,8 +29249,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -29259,6 +29257,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -29465,8 +29465,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -29475,6 +29473,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -29681,8 +29681,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -29691,6 +29689,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -29902,8 +29902,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -29912,6 +29910,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -30123,8 +30123,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -30133,6 +30131,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -30339,8 +30339,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -30349,6 +30347,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -30555,8 +30555,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -30565,6 +30563,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -30771,8 +30771,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -30781,6 +30779,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -30987,8 +30987,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -30997,6 +30995,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -31203,8 +31203,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -31213,6 +31211,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -31419,8 +31419,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -31429,6 +31427,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -31640,8 +31640,6 @@ export namespace ListConnectionsResponse {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -31650,6 +31648,8 @@ export namespace ListConnectionsResponse {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -36758,8 +36758,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -36768,6 +36766,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -36813,8 +36813,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -36823,6 +36821,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -36868,8 +36868,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -36878,6 +36876,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -36923,8 +36923,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -36933,6 +36931,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -36978,8 +36978,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -36988,6 +36986,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37033,8 +37033,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37043,6 +37041,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37093,8 +37093,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37103,6 +37101,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37148,8 +37148,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37158,6 +37156,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37203,8 +37203,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37213,6 +37211,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37258,8 +37258,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37268,6 +37266,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37313,8 +37313,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37323,6 +37321,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37368,8 +37368,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37378,6 +37376,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37423,8 +37423,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37433,6 +37431,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37478,8 +37478,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37488,6 +37486,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37533,8 +37533,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37543,6 +37541,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37588,8 +37588,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37598,6 +37596,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37643,8 +37643,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37653,6 +37651,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37698,8 +37698,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37708,6 +37706,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37753,8 +37753,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37763,6 +37761,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37808,8 +37808,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37818,6 +37816,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37863,8 +37863,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37873,6 +37871,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37923,8 +37923,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37933,6 +37931,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -37983,8 +37983,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -37993,6 +37991,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38038,8 +38038,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38048,6 +38046,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38093,8 +38093,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38103,6 +38101,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38148,8 +38148,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38158,6 +38156,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38203,8 +38203,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38213,6 +38211,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38258,8 +38258,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38268,6 +38266,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38313,8 +38313,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38323,6 +38321,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
@@ -38373,8 +38373,6 @@ export namespace CreateConnectionParams {
         export interface Credentials {
           access_token: string;
 
-          raw: Record<string, unknown>;
-
           /**
            * Client ID used for the connection
            */
@@ -38383,6 +38381,8 @@ export namespace CreateConnectionParams {
           expires_at?: string;
 
           expires_in?: number;
+
+          raw?: Record<string, unknown>;
 
           refresh_token?: string;
 
