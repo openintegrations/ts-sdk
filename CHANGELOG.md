@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.5.0 (2025-04-23)
+
+Full Changelog: [v1.4.2...v1.5.0](https://github.com/openintegrations/ts-sdk/compare/v1.4.2...v1.5.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([c5b3001](https://github.com/openintegrations/ts-sdk/commit/c5b3001bf8c8b75294b09044346c81a8eab074dc))
+* **docs:** updating documented docs for stainless ([ddb7a3a](https://github.com/openintegrations/ts-sdk/commit/ddb7a3ad3cd6dc00c7ceb5c4f90f8d087916c0b4))
+* **docs:** updating documented docs for stainless ([568278d](https://github.com/openintegrations/ts-sdk/commit/568278dc14c207a8d351dd2fd89ad786f7562bea))
+* **docs:** updating documented docs for stainless ([8b37fb1](https://github.com/openintegrations/ts-sdk/commit/8b37fb1f4482ccea426057b78f756653462e7e07))
+* **docs:** updating documented docs for stainless ([049e277](https://github.com/openintegrations/ts-sdk/commit/049e277fcc593c89c67ab4945a4ddc9d2128f4ed))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([2908b1b](https://github.com/openintegrations/ts-sdk/commit/2908b1bc644a2016c30cdf69797a600d0646094b))
+* **perf:** faster base64 decoding ([0d17033](https://github.com/openintegrations/ts-sdk/commit/0d1703330336b170d49ce94d0499c0d0461d85ca))
+
 ## 1.4.2 (2025-04-15)
 
 Full Changelog: [v1.4.1...v1.4.2](https://github.com/openintegrations/ts-sdk/compare/v1.4.1...v1.4.2)

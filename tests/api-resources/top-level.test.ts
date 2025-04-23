@@ -25,7 +25,7 @@ describe('top level methods', () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
-      data: { connector_name: 'dummy-oauth2', settings: { oauth: {} } },
+      data: { connector_name: 'acme-oauth2', settings: { oauth: {} } },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -42,18 +42,18 @@ describe('top level methods', () => {
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
       data: {
-        connector_name: 'dummy-oauth2',
+        connector_name: 'acme-oauth2',
         settings: {
           oauth: {
             created_at: 'created_at',
             credentials: {
               access_token: 'access_token',
               client_id: 'client_id',
-              raw: { foo: 'bar' },
-              scope: 'scope',
               expires_at: 'expires_at',
               expires_in: 0,
+              raw: { foo: 'bar' },
               refresh_token: 'refresh_token',
+              scope: 'scope',
               token_type: 'token_type',
             },
             last_fetched_at: 'last_fetched_at',
@@ -62,6 +62,7 @@ describe('top level methods', () => {
           },
         },
       },
+      check_connection: true,
       metadata: { foo: 'bar' },
     });
   });
@@ -85,14 +86,10 @@ describe('top level methods', () => {
       client.createMagicLink(
         'x',
         {
-          client_options: {
-            '--background': '--background',
-            '--card': '--card',
-            '--card-foreground': '--card-foreground',
-            '--foreground': '--foreground',
-            '--primary': '--primary',
-            connector_name: 'aircall',
+          connect_options: {
+            connector_names: ['acme-oauth2'],
             debug: true,
+            return_url: 'return_url',
             view: 'add',
           },
           validity_in_seconds: 0,
@@ -104,7 +101,7 @@ describe('top level methods', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('createToken', async () => {
-    const responsePromise = client.createToken('customer_id');
+    const responsePromise = client.createToken('x', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -112,14 +109,6 @@ describe('top level methods', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('createToken: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.createToken('customer_id', { validity_in_seconds: 1 }, { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Openint.NotFoundError);
   });
 
   // skipped: tests are disabled for the time being
@@ -187,7 +176,7 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectionConfigs(
-        { connector_name: 'aircall', expand: ['connector'], limit: 0, offset: 0 },
+        { connector_names: ['acme-oauth2'], expand: ['connector'], limit: 0, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -212,7 +201,7 @@ describe('top level methods', () => {
       client.listConnections(
         {
           connector_config_id: 'ccfg_',
-          connector_name: 'aircall',
+          connector_names: ['acme-oauth2'],
           customer_id: 'customer_id',
           expand: ['connector'],
           include_secrets: 'none',
