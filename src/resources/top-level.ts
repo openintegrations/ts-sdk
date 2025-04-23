@@ -15133,7 +15133,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -15321,7 +15321,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -15509,7 +15509,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -15697,7 +15697,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -15885,7 +15885,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -16073,7 +16073,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -16261,7 +16261,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -16449,7 +16449,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -16637,7 +16637,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -16825,7 +16825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -17013,7 +17013,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -17201,7 +17201,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -17389,7 +17389,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -17577,7 +17577,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -17765,7 +17765,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -17953,7 +17953,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -18141,7 +18141,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -18329,7 +18329,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -18517,7 +18517,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -18705,7 +18705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -18893,7 +18893,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -19081,7 +19081,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -19271,7 +19271,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -19459,7 +19459,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -19647,7 +19647,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -19835,7 +19835,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -20023,7 +20023,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -20211,7 +20211,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -20399,7 +20399,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {
@@ -20587,7 +20587,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth: Config.OAuth | null;
+      oauth?: Config.OAuth | null;
     }
 
     export namespace Config {

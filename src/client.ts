@@ -257,8 +257,7 @@ export class Openint {
   }
 
   /**
-   * List the connectors that are configured in your account and available for your
-   * customers
+   * List Configured Connectors
    */
   listConnectionConfigs(
     query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
