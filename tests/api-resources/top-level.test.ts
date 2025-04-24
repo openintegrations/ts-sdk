@@ -25,7 +25,7 @@ describe('top level methods', () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
-      data: { connector_name: 'acme-oauth2', settings: { oauth: {} } },
+      data: { connector_name: 'acme-oauth2' },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -141,7 +141,7 @@ describe('top level methods', () => {
     await expect(
       client.getConnection(
         'conn_',
-        { expand: ['connector'], include_secrets: 'none', refresh_policy: 'none' },
+        { expand: ['connector'], include_secrets: true, refresh_policy: 'none' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -204,7 +204,7 @@ describe('top level methods', () => {
           connector_names: ['acme-oauth2'],
           customer_id: 'customer_id',
           expand: ['connector'],
-          include_secrets: 'none',
+          include_secrets: true,
           limit: 0,
           offset: 0,
         },

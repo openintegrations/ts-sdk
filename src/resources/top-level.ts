@@ -76,8 +76,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     connector_name: 'acme-oauth2';
 
-    settings: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -98,6 +96,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -158,8 +158,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorAircallDiscriminatedConnectionSettings {
     connector_name: 'aircall';
 
-    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -180,6 +178,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -240,8 +240,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorConfluenceDiscriminatedConnectionSettings {
     connector_name: 'confluence';
 
-    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -262,6 +260,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -322,8 +322,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorDiscordDiscriminatedConnectionSettings {
     connector_name: 'discord';
 
-    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -344,6 +342,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -404,8 +404,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
 
-    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -426,6 +424,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -486,8 +486,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGitHubDiscriminatedConnectionSettings {
     connector_name: 'github';
 
-    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -508,6 +506,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -568,8 +568,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
 
-    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -590,6 +588,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -655,8 +655,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     connector_name: 'google-calendar';
 
-    settings: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -677,6 +675,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -737,8 +737,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGoogleDocsDiscriminatedConnectionSettings {
     connector_name: 'google-docs';
 
-    settings: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -759,6 +757,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -819,8 +819,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGoogleDriveDiscriminatedConnectionSettings {
     connector_name: 'google-drive';
 
-    settings: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -841,6 +839,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -901,8 +901,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGoogleMailDiscriminatedConnectionSettings {
     connector_name: 'google-mail';
 
-    settings: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -923,6 +921,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -983,8 +983,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGoogleSheetDiscriminatedConnectionSettings {
     connector_name: 'google-sheet';
 
-    settings: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1005,6 +1003,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1065,8 +1065,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorHubspotDiscriminatedConnectionSettings {
     connector_name: 'hubspot';
 
-    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1087,6 +1085,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1147,8 +1147,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
 
-    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1169,6 +1167,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1229,8 +1229,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
 
-    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1251,6 +1249,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1311,8 +1311,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
 
-    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1333,6 +1331,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1393,8 +1393,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
 
-    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1415,6 +1413,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1475,8 +1475,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorLinearDiscriminatedConnectionSettings {
     connector_name: 'linear';
 
-    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1497,6 +1495,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1557,8 +1557,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorLinkedinDiscriminatedConnectionSettings {
     connector_name: 'linkedin';
 
-    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1579,6 +1577,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1639,8 +1639,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorNotionDiscriminatedConnectionSettings {
     connector_name: 'notion';
 
-    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1661,6 +1659,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1721,8 +1721,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
 
-    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1743,6 +1741,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1803,8 +1803,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
 
-    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1825,6 +1823,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1890,8 +1890,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
     connector_name: 'quickbooks';
 
-    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1912,6 +1910,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -1977,8 +1977,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
 
-    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -1999,6 +1997,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2059,8 +2059,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
 
-    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2081,6 +2079,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2141,8 +2141,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorSharepointDiscriminatedConnectionSettings {
     connector_name: 'sharepoint';
 
-    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2163,6 +2161,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2223,8 +2223,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorSlackDiscriminatedConnectionSettings {
     connector_name: 'slack';
 
-    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2245,6 +2243,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2305,8 +2305,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
 
-    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2327,6 +2325,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2387,8 +2387,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
 
-    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2409,6 +2407,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2469,8 +2469,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorZohoDeskDiscriminatedConnectionSettings {
     connector_name: 'zoho-desk';
 
-    settings: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2491,6 +2489,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2556,8 +2556,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorAirtableDiscriminatedConnectionSettings {
     connector_name: 'airtable';
 
-    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2578,6 +2576,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2597,8 +2597,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
 
-    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2619,6 +2617,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2636,8 +2636,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
 
-    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2658,6 +2656,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2675,8 +2675,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
 
-    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2697,6 +2695,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2714,8 +2714,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
 
-    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2736,6 +2734,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2753,10 +2753,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
 
-    settings:
-      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
-      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2777,6 +2773,10 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?:
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2864,8 +2864,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
 
-    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2886,6 +2884,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2907,8 +2907,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
 
-    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2929,6 +2927,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2946,8 +2946,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
 
-    settings: unknown;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -2968,6 +2966,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -2979,8 +2979,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: unknown;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3001,6 +2999,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3012,8 +3012,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: unknown;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3034,6 +3032,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3045,8 +3045,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3067,6 +3065,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3086,8 +3086,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
 
-    settings: unknown;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3108,6 +3106,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3119,8 +3119,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3141,6 +3139,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3158,8 +3158,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
-    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3180,6 +3178,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3207,8 +3207,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
 
-    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3229,6 +3227,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3246,8 +3246,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
 
-    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3268,6 +3266,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3320,8 +3320,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3342,6 +3340,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3431,8 +3431,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
 
-    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3453,6 +3451,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3470,8 +3470,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
 
-    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3492,6 +3490,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3509,8 +3509,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
 
-    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3531,6 +3529,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3552,8 +3552,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
 
-    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3574,6 +3572,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3591,8 +3591,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
 
-    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3613,6 +3611,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3632,8 +3632,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
 
-    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3654,6 +3652,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3673,8 +3673,6 @@ export namespace CreateConnectionResponse {
   export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
 
-    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector_config_id?: string | null;
@@ -3695,6 +3693,8 @@ export namespace CreateConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -3840,8 +3840,6 @@ export namespace GetConnectionResponse {
   export interface ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     connector_name: 'acme-oauth2';
 
-    settings: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Connector;
@@ -3867,6 +3865,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -3875,53 +3875,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -4051,12 +4004,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorAircallDiscriminatedConnectionSettings {
     connector_name: 'aircall';
-
-    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -4083,6 +4081,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -4091,53 +4091,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -4267,12 +4220,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorConfluenceDiscriminatedConnectionSettings {
     connector_name: 'confluence';
-
-    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -4299,6 +4297,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -4307,53 +4307,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -4483,12 +4436,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorDiscordDiscriminatedConnectionSettings {
     connector_name: 'discord';
-
-    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -4515,6 +4513,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -4523,53 +4523,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -4699,12 +4652,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
-
-    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -4731,6 +4729,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -4739,53 +4739,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -4915,12 +4868,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGitHubDiscriminatedConnectionSettings {
     connector_name: 'github';
-
-    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -4947,6 +4945,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -4955,53 +4955,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -5131,12 +5084,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
-
-    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -5163,6 +5161,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -5171,6 +5171,136 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGongDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       /**
        * The base URL of your Gong account (e.g., example)
@@ -5222,142 +5352,10 @@ export namespace GetConnectionResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     connector_name: 'google-calendar';
-
-    settings: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -5384,6 +5382,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -5392,53 +5392,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -5568,12 +5521,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleDocsDiscriminatedConnectionSettings {
     connector_name: 'google-docs';
-
-    settings: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -5600,6 +5598,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -5608,53 +5608,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -5784,12 +5737,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleDriveDiscriminatedConnectionSettings {
     connector_name: 'google-drive';
-
-    settings: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -5816,6 +5814,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -5824,53 +5824,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -6000,12 +5953,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleMailDiscriminatedConnectionSettings {
     connector_name: 'google-mail';
-
-    settings: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -6032,6 +6030,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -6040,53 +6040,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -6216,12 +6169,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleSheetDiscriminatedConnectionSettings {
     connector_name: 'google-sheet';
-
-    settings: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -6248,6 +6246,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -6256,53 +6256,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -6432,12 +6385,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorHubspotDiscriminatedConnectionSettings {
     connector_name: 'hubspot';
-
-    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -6464,6 +6462,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -6472,53 +6472,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -6648,12 +6601,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
-
-    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -6680,6 +6678,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -6688,53 +6688,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -6864,12 +6817,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
-
-    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -6896,6 +6894,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -6904,53 +6904,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -7080,12 +7033,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
-
-    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -7112,6 +7110,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -7120,53 +7120,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -7296,12 +7249,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
-
-    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -7328,6 +7326,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -7336,53 +7336,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -7512,12 +7465,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorLinearDiscriminatedConnectionSettings {
     connector_name: 'linear';
-
-    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -7544,6 +7542,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -7552,53 +7552,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -7728,12 +7681,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorLinkedinDiscriminatedConnectionSettings {
     connector_name: 'linkedin';
-
-    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -7760,6 +7758,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -7768,53 +7768,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -7944,12 +7897,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorNotionDiscriminatedConnectionSettings {
     connector_name: 'notion';
-
-    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -7976,6 +7974,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -7984,53 +7984,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -8160,12 +8113,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
-
-    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -8192,6 +8190,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -8200,53 +8200,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -8376,12 +8329,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
-
-    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -8408,6 +8406,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -8416,6 +8416,136 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       /**
        * The API URL of your Pipedrive account (e.g., example)
@@ -8467,7 +8597,46 @@ export namespace GetConnectionResponse {
         }
       }
     }
+  }
 
+  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
+    connector_name: 'quickbooks';
+
+    id?: string;
+
+    connector?: ConnectorQuickbooksDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: ConnectorQuickbooksDiscriminatedConnectionSettings.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
 
@@ -8597,46 +8766,7 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
-  }
 
-  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
-    connector_name: 'quickbooks';
-
-    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorQuickbooksDiscriminatedConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string | null;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integration?: ConnectorQuickbooksDiscriminatedConnectionSettings.Integration;
-
-    integration_id?: string | null;
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: Record<string, unknown> | null;
-
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
-
-    status_message?: string | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -8688,142 +8818,10 @@ export namespace GetConnectionResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
-
-    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -8850,6 +8848,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -8858,53 +8858,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -9034,12 +8987,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
-
-    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -9066,6 +9064,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -9074,53 +9074,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -9250,12 +9203,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorSharepointDiscriminatedConnectionSettings {
     connector_name: 'sharepoint';
-
-    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -9282,6 +9280,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -9290,53 +9290,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -9466,12 +9419,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorSlackDiscriminatedConnectionSettings {
     connector_name: 'slack';
-
-    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -9498,6 +9496,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -9506,53 +9506,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -9682,12 +9635,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
-
-    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -9714,6 +9712,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -9722,53 +9722,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -9898,12 +9851,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
-
-    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -9930,6 +9928,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -9938,53 +9938,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -10114,12 +10067,57 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorZohoDeskDiscriminatedConnectionSettings {
     connector_name: 'zoho-desk';
-
-    settings: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -10146,6 +10144,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -10154,6 +10154,136 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorZohoDeskDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       /**
        * The domain extension of your Zoho account (e.g., https://accounts.zoho.com/)
@@ -10205,142 +10335,10 @@ export namespace GetConnectionResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorAirtableDiscriminatedConnectionSettings {
     connector_name: 'airtable';
-
-    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -10367,6 +10365,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -10375,12 +10375,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorAirtableDiscriminatedConnectionSettings {
-    export interface Settings {
-      airtableBase: string;
-
-      apiKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -10510,12 +10504,16 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      airtableBase: string;
+
+      apiKey: string;
+    }
   }
 
   export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
-
-    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -10542,6 +10540,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -10550,10 +10550,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorApolloDiscriminatedConnectionSettings {
-    export interface Settings {
-      api_key: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -10683,12 +10679,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      api_key: string;
+    }
   }
 
   export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
-
-    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -10715,6 +10713,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -10723,10 +10723,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorBrexDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -10856,12 +10852,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accessToken: string;
+    }
   }
 
   export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
-
-    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -10888,6 +10886,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -10896,10 +10896,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorCodaDiscriminatedConnectionSettings {
-    export interface Settings {
-      apiKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -11029,12 +11025,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      apiKey: string;
+    }
   }
 
   export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
-
-    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -11061,6 +11059,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -11069,10 +11069,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorFinchDiscriminatedConnectionSettings {
-    export interface Settings {
-      access_token: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -11202,14 +11198,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      access_token: string;
+    }
   }
 
   export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
-
-    settings:
-      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
-      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
 
     id?: string;
 
@@ -11236,6 +11232,10 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?:
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -11244,6 +11244,136 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorFirebaseDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface UnionMember0 {
       role: 'admin';
 
@@ -11317,142 +11447,10 @@ export namespace GetConnectionResponse {
         storageBucket?: string;
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
-
-    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -11479,6 +11477,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -11487,14 +11487,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
-    export interface Settings {
-      envName: 'staging' | 'production';
-
-      _id?: unknown;
-
-      credentials?: unknown;
-    }
-
     export interface Connector {
       name: string;
 
@@ -11624,12 +11616,18 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      envName: 'staging' | 'production';
+
+      _id?: unknown;
+
+      credentials?: unknown;
+    }
   }
 
   export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
-
-    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -11656,6 +11654,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -11664,10 +11664,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
-    export interface Settings {
-      apiKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -11797,12 +11793,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      apiKey: string;
+    }
   }
 
   export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
-
-    settings: unknown;
 
     id?: string;
 
@@ -11828,6 +11826,8 @@ export namespace GetConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -11971,8 +11971,6 @@ export namespace GetConnectionResponse {
   export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: unknown;
-
     id?: string;
 
     connector?: ConnectorLunchmoneyDiscriminatedConnectionSettings.Connector;
@@ -11997,6 +11995,8 @@ export namespace GetConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -12140,8 +12140,6 @@ export namespace GetConnectionResponse {
   export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: unknown;
-
     id?: string;
 
     connector?: ConnectorMercuryDiscriminatedConnectionSettings.Connector;
@@ -12166,6 +12164,8 @@ export namespace GetConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -12309,8 +12309,6 @@ export namespace GetConnectionResponse {
   export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorMergeDiscriminatedConnectionSettings.Connector;
@@ -12336,6 +12334,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -12344,12 +12344,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorMergeDiscriminatedConnectionSettings {
-    export interface Settings {
-      accountToken: string;
-
-      accountDetails?: unknown;
-    }
-
     export interface Connector {
       name: string;
 
@@ -12479,12 +12473,16 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accountToken: string;
+
+      accountDetails?: unknown;
+    }
   }
 
   export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
-
-    settings: unknown;
 
     id?: string;
 
@@ -12510,6 +12508,8 @@ export namespace GetConnectionResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -12653,8 +12653,6 @@ export namespace GetConnectionResponse {
   export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorOnebrickDiscriminatedConnectionSettings.Connector;
@@ -12680,6 +12678,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -12688,10 +12688,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -12821,12 +12817,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accessToken: string;
+    }
   }
 
   export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
-
-    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -12853,6 +12851,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -12861,20 +12861,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorPlaidDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken: string;
-
-      institution?: unknown;
-
-      item?: unknown;
-
-      itemId?: string | null;
-
-      status?: unknown;
-
-      webhookItemError?: null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -13004,12 +12990,24 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accessToken: string;
+
+      institution?: unknown;
+
+      item?: unknown;
+
+      itemId?: string | null;
+
+      status?: unknown;
+
+      webhookItemError?: null;
+    }
   }
 
   export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
-
-    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -13036,6 +13034,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -13044,10 +13044,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
-    export interface Settings {
-      databaseURL?: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -13177,12 +13173,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      databaseURL?: string;
+    }
   }
 
   export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
-
-    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -13209,6 +13207,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -13217,12 +13217,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorRampDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken?: string | null;
-
-      startAfterTransactionId?: string | null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -13351,6 +13345,12 @@ export namespace GetConnectionResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+    }
+
+    export interface Settings {
+      accessToken?: string | null;
+
+      startAfterTransactionId?: string | null;
     }
   }
 
@@ -13526,8 +13526,6 @@ export namespace GetConnectionResponse {
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorSplitwiseDiscriminatedConnectionSettings.Connector;
@@ -13553,6 +13551,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -13561,6 +13561,136 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       accessToken: string;
 
@@ -13636,142 +13766,10 @@ export namespace GetConnectionResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
-
-    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -13798,6 +13796,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -13806,10 +13806,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorStripeDiscriminatedConnectionSettings {
-    export interface Settings {
-      secretKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -13939,12 +13935,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      secretKey: string;
+    }
   }
 
   export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
-
-    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -13971,6 +13969,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -13979,10 +13979,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorTellerDiscriminatedConnectionSettings {
-    export interface Settings {
-      token: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -14112,12 +14108,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      token: string;
+    }
   }
 
   export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
-
-    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -14144,6 +14142,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -14152,14 +14152,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorTogglDiscriminatedConnectionSettings {
-    export interface Settings {
-      apiToken: string;
-
-      email?: string | null;
-
-      password?: string | null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -14289,12 +14281,18 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      apiToken: string;
+
+      email?: string | null;
+
+      password?: string | null;
+    }
   }
 
   export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
-
-    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -14321,6 +14319,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -14329,10 +14329,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorTwentyDiscriminatedConnectionSettings {
-    export interface Settings {
-      access_token: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -14462,12 +14458,14 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      access_token: string;
+    }
   }
 
   export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
-
-    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -14494,6 +14492,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -14502,12 +14502,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorVenmoDiscriminatedConnectionSettings {
-    export interface Settings {
-      credentials?: unknown;
-
-      me?: unknown;
-    }
-
     export interface Connector {
       name: string;
 
@@ -14637,12 +14631,16 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      credentials?: unknown;
+
+      me?: unknown;
+    }
   }
 
   export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
-
-    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -14669,6 +14667,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -14677,12 +14677,6 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorWiseDiscriminatedConnectionSettings {
-    export interface Settings {
-      envName: 'sandbox' | 'live';
-
-      apiToken?: string | null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -14812,12 +14806,16 @@ export namespace GetConnectionResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      envName: 'sandbox' | 'live';
+
+      apiToken?: string | null;
+    }
   }
 
   export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
-
-    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -14844,6 +14842,8 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -14852,6 +14852,136 @@ export namespace GetConnectionResponse {
   }
 
   export namespace ConnectorYodleeDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       loginName: string;
 
@@ -14898,136 +15028,6 @@ export namespace GetConnectionResponse {
 
         isDeleted?: boolean | null;
       }
-    }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
     }
   }
 }
@@ -25294,8 +25294,6 @@ export namespace ListConnectionsResponse {
   export interface ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     connector_name: 'acme-oauth2';
 
-    settings: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Connector;
@@ -25321,6 +25319,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -25329,53 +25329,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -25505,12 +25458,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorAircallDiscriminatedConnectionSettings {
     connector_name: 'aircall';
-
-    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -25537,6 +25535,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -25545,53 +25545,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -25721,12 +25674,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorConfluenceDiscriminatedConnectionSettings {
     connector_name: 'confluence';
-
-    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -25753,6 +25751,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -25761,53 +25761,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -25937,12 +25890,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorDiscordDiscriminatedConnectionSettings {
     connector_name: 'discord';
-
-    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -25969,6 +25967,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -25977,53 +25977,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -26153,12 +26106,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
-
-    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -26185,6 +26183,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -26193,53 +26193,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -26369,12 +26322,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGitHubDiscriminatedConnectionSettings {
     connector_name: 'github';
-
-    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -26401,6 +26399,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -26409,53 +26409,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -26585,12 +26538,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
-
-    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -26617,6 +26615,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -26625,6 +26625,136 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGongDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       /**
        * The base URL of your Gong account (e.g., example)
@@ -26676,142 +26806,10 @@ export namespace ListConnectionsResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     connector_name: 'google-calendar';
-
-    settings: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -26838,6 +26836,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -26846,53 +26846,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -27022,12 +26975,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleDocsDiscriminatedConnectionSettings {
     connector_name: 'google-docs';
-
-    settings: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -27054,6 +27052,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -27062,53 +27062,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -27238,12 +27191,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleDriveDiscriminatedConnectionSettings {
     connector_name: 'google-drive';
-
-    settings: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -27270,6 +27268,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -27278,53 +27278,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -27454,12 +27407,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleMailDiscriminatedConnectionSettings {
     connector_name: 'google-mail';
-
-    settings: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -27486,6 +27484,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -27494,53 +27494,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -27670,12 +27623,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorGoogleSheetDiscriminatedConnectionSettings {
     connector_name: 'google-sheet';
-
-    settings: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -27702,6 +27700,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -27710,53 +27710,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -27886,12 +27839,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorHubspotDiscriminatedConnectionSettings {
     connector_name: 'hubspot';
-
-    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -27918,6 +27916,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -27926,53 +27926,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -28102,12 +28055,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
-
-    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -28134,6 +28132,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -28142,53 +28142,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -28318,12 +28271,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
-
-    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -28350,6 +28348,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -28358,53 +28358,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -28534,12 +28487,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
-
-    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -28566,6 +28564,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -28574,53 +28574,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -28750,12 +28703,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
-
-    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -28782,6 +28780,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -28790,53 +28790,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -28966,12 +28919,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorLinearDiscriminatedConnectionSettings {
     connector_name: 'linear';
-
-    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -28998,6 +28996,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -29006,53 +29006,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -29182,12 +29135,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorLinkedinDiscriminatedConnectionSettings {
     connector_name: 'linkedin';
-
-    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -29214,6 +29212,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -29222,53 +29222,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -29398,12 +29351,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorNotionDiscriminatedConnectionSettings {
     connector_name: 'notion';
-
-    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -29430,6 +29428,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -29438,53 +29438,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -29614,12 +29567,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
-
-    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -29646,6 +29644,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -29654,53 +29654,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -29830,12 +29783,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
-
-    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -29862,6 +29860,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -29870,6 +29870,136 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       /**
        * The API URL of your Pipedrive account (e.g., example)
@@ -29921,7 +30051,46 @@ export namespace ListConnectionsResponse {
         }
       }
     }
+  }
 
+  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
+    connector_name: 'quickbooks';
+
+    id?: string;
+
+    connector?: ConnectorQuickbooksDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: ConnectorQuickbooksDiscriminatedConnectionSettings.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
 
@@ -30051,46 +30220,7 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
-  }
 
-  export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
-    connector_name: 'quickbooks';
-
-    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
-
-    id?: string;
-
-    connector?: ConnectorQuickbooksDiscriminatedConnectionSettings.Connector;
-
-    connector_config_id?: string | null;
-
-    created_at?: string;
-
-    customer_id?: string | null;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integration?: ConnectorQuickbooksDiscriminatedConnectionSettings.Integration;
-
-    integration_id?: string | null;
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: Record<string, unknown> | null;
-
-    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
-
-    status_message?: string | null;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -30142,142 +30272,10 @@ export namespace ListConnectionsResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
-
-    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -30304,6 +30302,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -30312,53 +30312,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -30488,12 +30441,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
-
-    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -30520,6 +30518,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -30528,53 +30528,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -30704,12 +30657,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorSharepointDiscriminatedConnectionSettings {
     connector_name: 'sharepoint';
-
-    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -30736,6 +30734,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -30744,53 +30744,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -30920,12 +30873,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorSlackDiscriminatedConnectionSettings {
     connector_name: 'slack';
-
-    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -30952,6 +30950,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -30960,53 +30960,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -31136,12 +31089,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
-
-    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -31168,6 +31166,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -31176,53 +31176,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -31352,12 +31305,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
-
-    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -31384,6 +31382,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -31392,53 +31392,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
-    export interface Settings {
-      oauth: Settings.OAuth;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
-
     export interface Connector {
       name: string;
 
@@ -31568,12 +31521,57 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
   }
 
   export interface ConnectorZohoDeskDiscriminatedConnectionSettings {
     connector_name: 'zoho-desk';
-
-    settings: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -31600,6 +31598,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -31608,6 +31608,136 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorZohoDeskDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       /**
        * The domain extension of your Zoho account (e.g., https://accounts.zoho.com/)
@@ -31659,142 +31789,10 @@ export namespace ListConnectionsResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorAirtableDiscriminatedConnectionSettings {
     connector_name: 'airtable';
-
-    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -31821,6 +31819,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -31829,12 +31829,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorAirtableDiscriminatedConnectionSettings {
-    export interface Settings {
-      airtableBase: string;
-
-      apiKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -31964,12 +31958,16 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      airtableBase: string;
+
+      apiKey: string;
+    }
   }
 
   export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
-
-    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -31996,6 +31994,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -32004,10 +32004,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorApolloDiscriminatedConnectionSettings {
-    export interface Settings {
-      api_key: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -32137,12 +32133,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      api_key: string;
+    }
   }
 
   export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
-
-    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -32169,6 +32167,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -32177,10 +32177,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorBrexDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -32310,12 +32306,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accessToken: string;
+    }
   }
 
   export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
-
-    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -32342,6 +32340,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -32350,10 +32350,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorCodaDiscriminatedConnectionSettings {
-    export interface Settings {
-      apiKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -32483,12 +32479,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      apiKey: string;
+    }
   }
 
   export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
-
-    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -32515,6 +32513,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -32523,10 +32523,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorFinchDiscriminatedConnectionSettings {
-    export interface Settings {
-      access_token: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -32656,14 +32652,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      access_token: string;
+    }
   }
 
   export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
-
-    settings:
-      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
-      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
 
     id?: string;
 
@@ -32690,6 +32686,10 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?:
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
+      | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -32698,6 +32698,136 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorFirebaseDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface UnionMember0 {
       role: 'admin';
 
@@ -32771,142 +32901,10 @@ export namespace ListConnectionsResponse {
         storageBucket?: string;
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
-
-    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -32933,6 +32931,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -32941,14 +32941,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
-    export interface Settings {
-      envName: 'staging' | 'production';
-
-      _id?: unknown;
-
-      credentials?: unknown;
-    }
-
     export interface Connector {
       name: string;
 
@@ -33078,12 +33070,18 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      envName: 'staging' | 'production';
+
+      _id?: unknown;
+
+      credentials?: unknown;
+    }
   }
 
   export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
-
-    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -33110,6 +33108,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -33118,10 +33118,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
-    export interface Settings {
-      apiKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -33251,12 +33247,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      apiKey: string;
+    }
   }
 
   export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
-
-    settings: unknown;
 
     id?: string;
 
@@ -33282,6 +33280,8 @@ export namespace ListConnectionsResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -33425,8 +33425,6 @@ export namespace ListConnectionsResponse {
   export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: unknown;
-
     id?: string;
 
     connector?: ConnectorLunchmoneyDiscriminatedConnectionSettings.Connector;
@@ -33451,6 +33449,8 @@ export namespace ListConnectionsResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -33594,8 +33594,6 @@ export namespace ListConnectionsResponse {
   export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: unknown;
-
     id?: string;
 
     connector?: ConnectorMercuryDiscriminatedConnectionSettings.Connector;
@@ -33620,6 +33618,8 @@ export namespace ListConnectionsResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -33763,8 +33763,6 @@ export namespace ListConnectionsResponse {
   export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorMergeDiscriminatedConnectionSettings.Connector;
@@ -33790,6 +33788,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -33798,12 +33798,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorMergeDiscriminatedConnectionSettings {
-    export interface Settings {
-      accountToken: string;
-
-      accountDetails?: unknown;
-    }
-
     export interface Connector {
       name: string;
 
@@ -33933,12 +33927,16 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accountToken: string;
+
+      accountDetails?: unknown;
+    }
   }
 
   export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
-
-    settings: unknown;
 
     id?: string;
 
@@ -33964,6 +33962,8 @@ export namespace ListConnectionsResponse {
      * updates this object will be shallowly merged
      */
     metadata?: Record<string, unknown> | null;
+
+    settings?: unknown;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -34107,8 +34107,6 @@ export namespace ListConnectionsResponse {
   export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorOnebrickDiscriminatedConnectionSettings.Connector;
@@ -34134,6 +34132,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -34142,10 +34142,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -34275,12 +34271,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accessToken: string;
+    }
   }
 
   export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
-
-    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -34307,6 +34305,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -34315,20 +34315,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorPlaidDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken: string;
-
-      institution?: unknown;
-
-      item?: unknown;
-
-      itemId?: string | null;
-
-      status?: unknown;
-
-      webhookItemError?: null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -34458,12 +34444,24 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      accessToken: string;
+
+      institution?: unknown;
+
+      item?: unknown;
+
+      itemId?: string | null;
+
+      status?: unknown;
+
+      webhookItemError?: null;
+    }
   }
 
   export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
-
-    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -34490,6 +34488,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -34498,10 +34498,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
-    export interface Settings {
-      databaseURL?: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -34631,12 +34627,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      databaseURL?: string;
+    }
   }
 
   export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
-
-    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -34663,6 +34661,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -34671,12 +34671,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorRampDiscriminatedConnectionSettings {
-    export interface Settings {
-      accessToken?: string | null;
-
-      startAfterTransactionId?: string | null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -34805,6 +34799,12 @@ export namespace ListConnectionsResponse {
       stage?: 'alpha' | 'beta' | 'ga' | null;
 
       version?: string | null;
+    }
+
+    export interface Settings {
+      accessToken?: string | null;
+
+      startAfterTransactionId?: string | null;
     }
   }
 
@@ -34980,8 +34980,6 @@ export namespace ListConnectionsResponse {
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
-
     id?: string;
 
     connector?: ConnectorSplitwiseDiscriminatedConnectionSettings.Connector;
@@ -35007,6 +35005,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -35015,6 +35015,136 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       accessToken: string;
 
@@ -35090,142 +35220,10 @@ export namespace ListConnectionsResponse {
         }
       }
     }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
   }
 
   export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
-
-    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -35252,6 +35250,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -35260,10 +35260,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorStripeDiscriminatedConnectionSettings {
-    export interface Settings {
-      secretKey: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -35393,12 +35389,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      secretKey: string;
+    }
   }
 
   export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
-
-    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -35425,6 +35423,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -35433,10 +35433,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorTellerDiscriminatedConnectionSettings {
-    export interface Settings {
-      token: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -35566,12 +35562,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      token: string;
+    }
   }
 
   export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
-
-    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -35598,6 +35596,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -35606,14 +35606,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorTogglDiscriminatedConnectionSettings {
-    export interface Settings {
-      apiToken: string;
-
-      email?: string | null;
-
-      password?: string | null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -35743,12 +35735,18 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      apiToken: string;
+
+      email?: string | null;
+
+      password?: string | null;
+    }
   }
 
   export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
-
-    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -35775,6 +35773,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -35783,10 +35783,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorTwentyDiscriminatedConnectionSettings {
-    export interface Settings {
-      access_token: string;
-    }
-
     export interface Connector {
       name: string;
 
@@ -35916,12 +35912,14 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      access_token: string;
+    }
   }
 
   export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
-
-    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -35948,6 +35946,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -35956,12 +35956,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorVenmoDiscriminatedConnectionSettings {
-    export interface Settings {
-      credentials?: unknown;
-
-      me?: unknown;
-    }
-
     export interface Connector {
       name: string;
 
@@ -36091,12 +36085,16 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      credentials?: unknown;
+
+      me?: unknown;
+    }
   }
 
   export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
-
-    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -36123,6 +36121,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -36131,12 +36131,6 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorWiseDiscriminatedConnectionSettings {
-    export interface Settings {
-      envName: 'sandbox' | 'live';
-
-      apiToken?: string | null;
-    }
-
     export interface Connector {
       name: string;
 
@@ -36266,12 +36260,16 @@ export namespace ListConnectionsResponse {
 
       version?: string | null;
     }
+
+    export interface Settings {
+      envName: 'sandbox' | 'live';
+
+      apiToken?: string | null;
+    }
   }
 
   export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
-
-    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
     id?: string;
 
@@ -36298,6 +36296,8 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
+    settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
+
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
     status_message?: string | null;
@@ -36306,6 +36306,136 @@ export namespace ListConnectionsResponse {
   }
 
   export namespace ConnectorYodleeDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
     export interface Settings {
       loginName: string;
 
@@ -36352,136 +36482,6 @@ export namespace ListConnectionsResponse {
 
         isDeleted?: boolean | null;
       }
-    }
-
-    export interface Connector {
-      name: string;
-
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
-
-      display_name?: string;
-
-      logo_url?: string;
-
-      openint_scopes?: Array<string>;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
-
-      schemas?: Connector.Schemas;
-
-      scopes?: Array<Connector.Scope>;
-
-      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
-    }
-
-    export namespace Connector {
-      export interface Schemas {
-        connect_input?: unknown;
-
-        connect_output?: unknown;
-
-        connection_settings?: unknown;
-
-        connector_config?: unknown;
-
-        integration_data?: unknown;
-
-        pre_connect_input?: unknown;
-
-        webhook_input?: unknown;
-      }
-
-      export interface Scope {
-        scope: string;
-
-        description?: string;
-
-        display_name?: string;
-      }
-    }
-
-    export interface Integration {
-      id: string;
-
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
-
-      created_at: string;
-
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      name: string;
-
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
-
-      updated_at: string;
-
-      auth_type?: string | null;
-
-      category?: string | null;
-
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
     }
   }
 }
@@ -36727,7 +36727,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     connector_name: 'acme-oauth2';
 
-    settings: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
@@ -36782,7 +36782,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorAircallDiscriminatedConnectionSettings {
     connector_name: 'aircall';
 
-    settings: ConnectorAircallDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
@@ -36837,7 +36837,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorConfluenceDiscriminatedConnectionSettings {
     connector_name: 'confluence';
 
-    settings: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
@@ -36892,7 +36892,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorDiscordDiscriminatedConnectionSettings {
     connector_name: 'discord';
 
-    settings: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
@@ -36947,7 +36947,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorFacebookDiscriminatedConnectionSettings {
     connector_name: 'facebook';
 
-    settings: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
@@ -37002,7 +37002,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGitHubDiscriminatedConnectionSettings {
     connector_name: 'github';
 
-    settings: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
@@ -37057,7 +37057,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGongDiscriminatedConnectionSettings {
     connector_name: 'gong';
 
-    settings: ConnectorGongDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGongDiscriminatedConnectionSettings {
@@ -37117,7 +37117,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     connector_name: 'google-calendar';
 
-    settings: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
@@ -37172,7 +37172,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGoogleDocsDiscriminatedConnectionSettings {
     connector_name: 'google-docs';
 
-    settings: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
@@ -37227,7 +37227,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGoogleDriveDiscriminatedConnectionSettings {
     connector_name: 'google-drive';
 
-    settings: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
@@ -37282,7 +37282,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGoogleMailDiscriminatedConnectionSettings {
     connector_name: 'google-mail';
 
-    settings: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
@@ -37337,7 +37337,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGoogleSheetDiscriminatedConnectionSettings {
     connector_name: 'google-sheet';
 
-    settings: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
@@ -37392,7 +37392,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorHubspotDiscriminatedConnectionSettings {
     connector_name: 'hubspot';
 
-    settings: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
@@ -37447,7 +37447,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorInstagramDiscriminatedConnectionSettings {
     connector_name: 'instagram';
 
-    settings: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
@@ -37502,7 +37502,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorIntercomDiscriminatedConnectionSettings {
     connector_name: 'intercom';
 
-    settings: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
@@ -37557,7 +37557,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorJiraDiscriminatedConnectionSettings {
     connector_name: 'jira';
 
-    settings: ConnectorJiraDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
@@ -37612,7 +37612,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorLeverDiscriminatedConnectionSettings {
     connector_name: 'lever';
 
-    settings: ConnectorLeverDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
@@ -37667,7 +37667,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorLinearDiscriminatedConnectionSettings {
     connector_name: 'linear';
 
-    settings: ConnectorLinearDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
@@ -37722,7 +37722,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorLinkedinDiscriminatedConnectionSettings {
     connector_name: 'linkedin';
 
-    settings: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
@@ -37777,7 +37777,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorNotionDiscriminatedConnectionSettings {
     connector_name: 'notion';
 
-    settings: ConnectorNotionDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
@@ -37832,7 +37832,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorOutreachDiscriminatedConnectionSettings {
     connector_name: 'outreach';
 
-    settings: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
@@ -37887,7 +37887,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorPipedriveDiscriminatedConnectionSettings {
     connector_name: 'pipedrive';
 
-    settings: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorPipedriveDiscriminatedConnectionSettings {
@@ -37947,7 +37947,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
     connector_name: 'quickbooks';
 
-    settings: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
@@ -38007,7 +38007,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorRedditDiscriminatedConnectionSettings {
     connector_name: 'reddit';
 
-    settings: ConnectorRedditDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
@@ -38062,7 +38062,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorSalesloftDiscriminatedConnectionSettings {
     connector_name: 'salesloft';
 
-    settings: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
@@ -38117,7 +38117,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorSharepointDiscriminatedConnectionSettings {
     connector_name: 'sharepoint';
 
-    settings: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
@@ -38172,7 +38172,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorSlackDiscriminatedConnectionSettings {
     connector_name: 'slack';
 
-    settings: ConnectorSlackDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
@@ -38227,7 +38227,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorTwitterDiscriminatedConnectionSettings {
     connector_name: 'twitter';
 
-    settings: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
@@ -38282,7 +38282,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorXeroDiscriminatedConnectionSettings {
     connector_name: 'xero';
 
-    settings: ConnectorXeroDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
@@ -38337,7 +38337,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorZohoDeskDiscriminatedConnectionSettings {
     connector_name: 'zoho-desk';
 
-    settings: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorZohoDeskDiscriminatedConnectionSettings {
@@ -38397,7 +38397,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorAirtableDiscriminatedConnectionSettings {
     connector_name: 'airtable';
 
-    settings: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorAirtableDiscriminatedConnectionSettings {
@@ -38411,7 +38411,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorApolloDiscriminatedConnectionSettings {
     connector_name: 'apollo';
 
-    settings: ConnectorApolloDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorApolloDiscriminatedConnectionSettings {
@@ -38423,7 +38423,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorBrexDiscriminatedConnectionSettings {
     connector_name: 'brex';
 
-    settings: ConnectorBrexDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorBrexDiscriminatedConnectionSettings {
@@ -38435,7 +38435,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorCodaDiscriminatedConnectionSettings {
     connector_name: 'coda';
 
-    settings: ConnectorCodaDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorCodaDiscriminatedConnectionSettings {
@@ -38447,7 +38447,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorFinchDiscriminatedConnectionSettings {
     connector_name: 'finch';
 
-    settings: ConnectorFinchDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorFinchDiscriminatedConnectionSettings {
@@ -38459,7 +38459,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorFirebaseDiscriminatedConnectionSettings {
     connector_name: 'firebase';
 
-    settings:
+    settings?:
       | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
       | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember1;
   }
@@ -38543,7 +38543,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorForeceiptDiscriminatedConnectionSettings {
     connector_name: 'foreceipt';
 
-    settings: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorForeceiptDiscriminatedConnectionSettings {
@@ -38559,7 +38559,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorGreenhouseDiscriminatedConnectionSettings {
     connector_name: 'greenhouse';
 
-    settings: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorGreenhouseDiscriminatedConnectionSettings {
@@ -38571,25 +38571,25 @@ export namespace CreateConnectionParams {
   export interface ConnectorHeronDiscriminatedConnectionSettings {
     connector_name: 'heron';
 
-    settings: unknown;
+    settings?: unknown;
   }
 
   export interface ConnectorLunchmoneyDiscriminatedConnectionSettings {
     connector_name: 'lunchmoney';
 
-    settings: unknown;
+    settings?: unknown;
   }
 
   export interface ConnectorMercuryDiscriminatedConnectionSettings {
     connector_name: 'mercury';
 
-    settings: unknown;
+    settings?: unknown;
   }
 
   export interface ConnectorMergeDiscriminatedConnectionSettings {
     connector_name: 'merge';
 
-    settings: ConnectorMergeDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorMergeDiscriminatedConnectionSettings {
@@ -38603,13 +38603,13 @@ export namespace CreateConnectionParams {
   export interface ConnectorMootaDiscriminatedConnectionSettings {
     connector_name: 'moota';
 
-    settings: unknown;
+    settings?: unknown;
   }
 
   export interface ConnectorOnebrickDiscriminatedConnectionSettings {
     connector_name: 'onebrick';
 
-    settings: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorOnebrickDiscriminatedConnectionSettings {
@@ -38621,7 +38621,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
-    settings: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorPlaidDiscriminatedConnectionSettings {
@@ -38643,7 +38643,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorPostgresDiscriminatedConnectionSettings {
     connector_name: 'postgres';
 
-    settings: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
@@ -38655,7 +38655,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorRampDiscriminatedConnectionSettings {
     connector_name: 'ramp';
 
-    settings: ConnectorRampDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorRampDiscriminatedConnectionSettings {
@@ -38675,7 +38675,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
-    settings: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorSplitwiseDiscriminatedConnectionSettings {
@@ -38759,7 +38759,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorStripeDiscriminatedConnectionSettings {
     connector_name: 'stripe';
 
-    settings: ConnectorStripeDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorStripeDiscriminatedConnectionSettings {
@@ -38771,7 +38771,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorTellerDiscriminatedConnectionSettings {
     connector_name: 'teller';
 
-    settings: ConnectorTellerDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorTellerDiscriminatedConnectionSettings {
@@ -38783,7 +38783,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorTogglDiscriminatedConnectionSettings {
     connector_name: 'toggl';
 
-    settings: ConnectorTogglDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorTogglDiscriminatedConnectionSettings {
@@ -38799,7 +38799,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorTwentyDiscriminatedConnectionSettings {
     connector_name: 'twenty';
 
-    settings: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorTwentyDiscriminatedConnectionSettings {
@@ -38811,7 +38811,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorVenmoDiscriminatedConnectionSettings {
     connector_name: 'venmo';
 
-    settings: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorVenmoDiscriminatedConnectionSettings {
@@ -38825,7 +38825,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorWiseDiscriminatedConnectionSettings {
     connector_name: 'wise';
 
-    settings: ConnectorWiseDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorWiseDiscriminatedConnectionSettings {
@@ -38839,7 +38839,7 @@ export namespace CreateConnectionParams {
   export interface ConnectorYodleeDiscriminatedConnectionSettings {
     connector_name: 'yodlee';
 
-    settings: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
   }
 
   export namespace ConnectorYodleeDiscriminatedConnectionSettings {
@@ -39081,10 +39081,7 @@ export namespace CreateTokenParams {
 export interface GetConnectionParams {
   expand?: Array<'connector'>;
 
-  /**
-   * Controls secret inclusion: none (default), basic (auth only), or all secrets
-   */
-  include_secrets?: 'none' | 'basic' | 'all';
+  include_secrets?: boolean;
 
   /**
    * Controls credential refresh: none (never), force (always), or auto (when
@@ -39234,10 +39231,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   expand?: Array<'connector'>;
 
-  /**
-   * Controls secret inclusion: none (default), basic (auth only), or all secrets
-   */
-  include_secrets?: 'none' | 'basic' | 'all';
+  include_secrets?: boolean;
 
   limit?: number;
 }
