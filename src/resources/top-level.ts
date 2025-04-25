@@ -38973,6 +38973,12 @@ export namespace CreateMagicLinkParams {
     debug?: boolean;
 
     /**
+     * Whether to enable embedded mode. Embedded mode hides the side bar with extra
+     * context for the end user (customer) on the organization
+     */
+    is_embedded?: boolean;
+
+    /**
      * Optional URL to return customers after adding a connection or if they press the
      * Return To Organization button
      */
@@ -39062,6 +39068,12 @@ export namespace CreateTokenParams {
      * Whether to enable debug mode
      */
     debug?: boolean;
+
+    /**
+     * Whether to enable embedded mode. Embedded mode hides the side bar with extra
+     * context for the end user (customer) on the organization
+     */
+    is_embedded?: boolean;
 
     /**
      * Optional URL to return customers after adding a connection or if they press the
