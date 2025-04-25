@@ -89,6 +89,7 @@ describe('top level methods', () => {
           connect_options: {
             connector_names: ['acme-oauth2'],
             debug: true,
+            is_embedded: true,
             return_url: 'return_url',
             view: 'add',
           },
