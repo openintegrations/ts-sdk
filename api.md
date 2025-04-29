@@ -24,4 +24,4 @@ Methods:
 - <code title="get /viewer">client.<a href="./src/index.ts">getCurrentUser</a>() -> GetCurrentUserResponse</code>
 - <code title="get /connector-config">client.<a href="./src/index.ts">listConnectionConfigs</a>({ ...params }) -> ListConnectionConfigsResponsesOffsetPagination</code>
 - <code title="get /connection">client.<a href="./src/index.ts">listConnections</a>({ ...params }) -> ListConnectionsResponsesOffsetPagination</code>
-- <code title="get /connector">client.<a href="./src/index.ts">listConnectors</a>({ ...params }) -> ListConnectorsResponse</code>
+- <code title="get /connector">client.<a href="./src/index.ts">listConnectors</a>({ ...params }) -> ListConnectorsResponsesOffsetPagination</code>

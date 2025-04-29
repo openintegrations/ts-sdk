@@ -6,6 +6,8 @@ export type ListConnectionConfigsResponsesOffsetPagination = OffsetPagination<Li
 
 export type ListConnectionsResponsesOffsetPagination = OffsetPagination<ListConnectionsResponse>;
 
+export type ListConnectorsResponsesOffsetPagination = OffsetPagination<ListConnectorsResponse>;
+
 export interface CheckConnectionResponse {
   id: string;
 
@@ -36486,159 +36488,135 @@ export namespace ListConnectionsResponse {
   }
 }
 
-/**
- * List of connectors
- */
 export interface ListConnectorsResponse {
-  items: Array<ListConnectorsResponse.Item>;
+  name: string;
 
-  /**
-   * Limit the number of items returned
-   */
-  limit: number;
+  authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
-  /**
-   * Offset the items returned
-   */
-  offset: number;
+  display_name?: string;
 
-  /**
-   * Total number of items in the database for the organization
-   */
-  total: number;
+  integrations?: Array<ListConnectorsResponse.Integration>;
+
+  logo_url?: string;
+
+  openint_scopes?: Array<string>;
+
+  platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+  schemas?: ListConnectorsResponse.Schemas;
+
+  scopes?: Array<ListConnectorsResponse.Scope>;
+
+  stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
 }
 
 export namespace ListConnectorsResponse {
-  export interface Item {
+  export interface Integration {
+    id: string;
+
+    connector_name:
+      | 'acme-oauth2'
+      | 'aircall'
+      | 'airtable'
+      | 'apollo'
+      | 'brex'
+      | 'coda'
+      | 'confluence'
+      | 'discord'
+      | 'facebook'
+      | 'finch'
+      | 'firebase'
+      | 'foreceipt'
+      | 'github'
+      | 'gong'
+      | 'google-calendar'
+      | 'google-docs'
+      | 'google-drive'
+      | 'google-mail'
+      | 'google-sheet'
+      | 'greenhouse'
+      | 'heron'
+      | 'hubspot'
+      | 'instagram'
+      | 'intercom'
+      | 'jira'
+      | 'lever'
+      | 'linear'
+      | 'linkedin'
+      | 'lunchmoney'
+      | 'mercury'
+      | 'merge'
+      | 'moota'
+      | 'notion'
+      | 'onebrick'
+      | 'outreach'
+      | 'pipedrive'
+      | 'plaid'
+      | 'postgres'
+      | 'quickbooks'
+      | 'ramp'
+      | 'reddit'
+      | 'salesloft'
+      | 'saltedge'
+      | 'sharepoint'
+      | 'slack'
+      | 'splitwise'
+      | 'stripe'
+      | 'teller'
+      | 'toggl'
+      | 'twenty'
+      | 'twitter'
+      | 'venmo'
+      | 'wise'
+      | 'xero'
+      | 'yodlee'
+      | 'zoho-desk';
+
+    created_at: string;
+
+    external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
     name: string;
 
-    authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+    standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
 
-    display_name?: string;
+    updated_at: string;
 
-    integrations?: Array<Item.Integration>;
+    auth_type?: string | null;
 
-    logo_url?: string;
+    category?: string | null;
 
-    openint_scopes?: Array<string>;
+    logo_url?: string | null;
 
-    platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+    platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
 
-    schemas?: Item.Schemas;
+    stage?: 'alpha' | 'beta' | 'ga' | null;
 
-    scopes?: Array<Item.Scope>;
-
-    stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    version?: string | null;
   }
 
-  export namespace Item {
-    export interface Integration {
-      id: string;
+  export interface Schemas {
+    connect_input?: unknown;
 
-      connector_name:
-        | 'acme-oauth2'
-        | 'aircall'
-        | 'airtable'
-        | 'apollo'
-        | 'brex'
-        | 'coda'
-        | 'confluence'
-        | 'discord'
-        | 'facebook'
-        | 'finch'
-        | 'firebase'
-        | 'foreceipt'
-        | 'github'
-        | 'gong'
-        | 'google-calendar'
-        | 'google-docs'
-        | 'google-drive'
-        | 'google-mail'
-        | 'google-sheet'
-        | 'greenhouse'
-        | 'heron'
-        | 'hubspot'
-        | 'instagram'
-        | 'intercom'
-        | 'jira'
-        | 'lever'
-        | 'linear'
-        | 'linkedin'
-        | 'lunchmoney'
-        | 'mercury'
-        | 'merge'
-        | 'moota'
-        | 'notion'
-        | 'onebrick'
-        | 'outreach'
-        | 'pipedrive'
-        | 'plaid'
-        | 'postgres'
-        | 'quickbooks'
-        | 'ramp'
-        | 'reddit'
-        | 'salesloft'
-        | 'saltedge'
-        | 'sharepoint'
-        | 'slack'
-        | 'splitwise'
-        | 'stripe'
-        | 'teller'
-        | 'toggl'
-        | 'twenty'
-        | 'twitter'
-        | 'venmo'
-        | 'wise'
-        | 'xero'
-        | 'yodlee'
-        | 'zoho-desk';
+    connect_output?: unknown;
 
-      created_at: string;
+    connection_settings?: unknown;
 
-      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    connector_config?: unknown;
 
-      name: string;
+    integration_data?: unknown;
 
-      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    pre_connect_input?: unknown;
 
-      updated_at: string;
+    webhook_input?: unknown;
+  }
 
-      auth_type?: string | null;
+  export interface Scope {
+    scope: string;
 
-      category?: string | null;
+    description?: string;
 
-      logo_url?: string | null;
-
-      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
-
-      stage?: 'alpha' | 'beta' | 'ga' | null;
-
-      version?: string | null;
-    }
-
-    export interface Schemas {
-      connect_input?: unknown;
-
-      connect_output?: unknown;
-
-      connection_settings?: unknown;
-
-      connector_config?: unknown;
-
-      integration_data?: unknown;
-
-      pre_connect_input?: unknown;
-
-      webhook_input?: unknown;
-    }
-
-    export interface Scope {
-      scope: string;
-
-      description?: string;
-
-      display_name?: string;
-    }
+    display_name?: string;
   }
 }
 
@@ -39164,6 +39142,9 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
 
   expand?: Array<'connector' | 'connector.schemas' | 'connection_count'>;
 
+  /**
+   * Limit the number of items returned
+   */
   limit?: number;
 }
 
@@ -39245,11 +39226,19 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
 
   include_secrets?: boolean;
 
+  /**
+   * Limit the number of items returned
+   */
   limit?: number;
 }
 
-export interface ListConnectorsParams {
+export interface ListConnectorsParams extends OffsetPaginationParams {
   expand?: Array<'schemas'>;
+
+  /**
+   * Limit the number of items returned
+   */
+  limit?: number;
 }
 
 export declare namespace TopLevel {
@@ -39266,6 +39255,7 @@ export declare namespace TopLevel {
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
