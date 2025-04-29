@@ -39,6 +39,7 @@ import {
   ListConnectionsResponsesOffsetPagination,
   ListConnectorsParams,
   ListConnectorsResponse,
+  ListConnectorsResponsesOffsetPagination,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -294,8 +295,11 @@ export class Openint {
   listConnectors(
     query: TopLevelAPI.ListConnectorsParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.ListConnectorsResponse> {
-    return this.get('/connector', { query, ...options });
+  ): Pagination.PagePromise<ListConnectorsResponsesOffsetPagination, TopLevelAPI.ListConnectorsResponse> {
+    return this.getAPIList('/connector', Pagination.OffsetPagination<TopLevelAPI.ListConnectorsResponse>, {
+      query,
+      ...options,
+    });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -862,6 +866,7 @@ export declare namespace Openint {
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
