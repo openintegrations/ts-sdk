@@ -6,7 +6,7 @@
     "rootDir": "./dist/src",
     "paths": {
       "@openint/sdk/*": ["dist/src/*"],
-      "@openint/sdk": ["dist/src/index.ts"],
+      "@openint/sdk": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
