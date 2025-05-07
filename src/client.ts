@@ -192,6 +192,24 @@ export class Openint {
   }
 
   /**
+   * Create a new client instance re-using the same options given to the current client with optional overriding.
+   */
+  withOptions(options: Partial<ClientOptions>): this {
+    return new (this.constructor as any as new (props: ClientOptions) => typeof this)({
+      ...this._options,
+      baseURL: this.baseURL,
+      maxRetries: this.maxRetries,
+      timeout: this.timeout,
+      logger: this.logger,
+      logLevel: this.logLevel,
+      fetchOptions: this.fetchOptions,
+      apiKey: this.apiKey,
+      customerToken: this.customerToken,
+      ...options,
+    });
+  }
+
+  /**
    * Verify that a connection is healthy
    */
   checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
