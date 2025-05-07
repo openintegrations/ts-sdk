@@ -52,11 +52,9 @@ import { isEmptyObj } from './internal/utils/values';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['OPENINT_API_KEY'].
+   * Defaults to process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN'].
    */
-  apiKey?: string | null | undefined;
-
-  customerToken?: string | null | undefined;
+  token?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -129,8 +127,7 @@ export interface ClientOptions {
  * API Client for interfacing with the Openint API.
  */
 export class Openint {
-  apiKey: string | null;
-  customerToken: string | null;
+  token: string | null;
 
   baseURL: string;
   maxRetries: number;
@@ -147,8 +144,7 @@ export class Openint {
   /**
    * API Client for interfacing with the Openint API.
    *
-   * @param {string | null | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? null]
-   * @param {string | null | undefined} [opts.customerToken]
+   * @param {string | null | undefined} [opts.token=process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN'] ?? null]
    * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://api.openint.dev/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
@@ -159,13 +155,11 @@ export class Openint {
    */
   constructor({
     baseURL = readEnv('OPENINT_BASE_URL'),
-    apiKey = readEnv('OPENINT_API_KEY') ?? null,
-    customerToken = null,
+    token = readEnv('OPENINT_API_KEY_OR_CUSTOMER_TOKEN') ?? null,
     ...opts
   }: ClientOptions = {}) {
     const options: ClientOptions = {
-      apiKey,
-      customerToken,
+      token,
       ...opts,
       baseURL: baseURL || `https://api.openint.dev/v1`,
     };
@@ -187,8 +181,7 @@ export class Openint {
 
     this._options = options;
 
-    this.apiKey = apiKey;
-    this.customerToken = customerToken;
+    this.token = token;
   }
 
   /**
@@ -203,8 +196,7 @@ export class Openint {
       logger: this.logger,
       logLevel: this.logLevel,
       fetchOptions: this.fetchOptions,
-      apiKey: this.apiKey,
-      customerToken: this.customerToken,
+      token: this.token,
       ...options,
     });
   }
@@ -325,14 +317,7 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    if (this.apiKey && values.get('authorization')) {
-      return;
-    }
-    if (nulls.has('authorization')) {
-      return;
-    }
-
-    if (this.customerToken && values.get('authorization')) {
+    if (this.token && values.get('authorization')) {
       return;
     }
     if (nulls.has('authorization')) {
@@ -340,26 +325,15 @@ export class Openint {
     }
 
     throw new Error(
-      'Could not resolve authentication method. Expected either apiKey or customerToken to be set. Or for one of the "Authorization" or "Authorization" headers to be explicitly omitted',
+      'Could not resolve authentication method. Expected the token to be set. Or for the "Authorization" headers to be explicitly omitted',
     );
   }
 
   protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
-    return buildHeaders([this.apiKeyAuth(opts), this.customerTokenAuth(opts)]);
-  }
-
-  protected apiKeyAuth(opts: FinalRequestOptions): NullableHeaders | undefined {
-    if (this.apiKey == null) {
+    if (this.token == null) {
       return undefined;
     }
-    return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
-  }
-
-  protected customerTokenAuth(opts: FinalRequestOptions): NullableHeaders | undefined {
-    if (this.customerToken == null) {
-      return undefined;
-    }
-    return buildHeaders([{ Authorization: `Bearer ${this.customerToken}` }]);
+    return buildHeaders([{ Authorization: `Bearer ${this.token}` }]);
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {
