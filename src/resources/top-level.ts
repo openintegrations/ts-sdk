@@ -61,6 +61,7 @@ export type CreateConnectionResponse =
   | CreateConnectionResponse.ConnectorMergeDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorMootaDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorOnebrickDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorOpenledgerDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorPlaidDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorPostgresDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorRampDiscriminatedConnectionSettings
@@ -3157,6 +3158,48 @@ export namespace CreateConnectionResponse {
     }
   }
 
+  export interface ConnectorOpenledgerDiscriminatedConnectionSettings {
+    connector_name: 'openledger';
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOpenledgerDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * Your entity's identifier, aka customer ID
+       */
+      entity_id: string;
+    }
+  }
+
   export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
@@ -3825,6 +3868,7 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorMergeDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorMootaDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorOnebrickDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorOpenledgerDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorPlaidDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorPostgresDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorRampDiscriminatedConnectionSettings
@@ -3880,9 +3924,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -3961,6 +4007,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -4096,9 +4143,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -4177,6 +4226,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -4312,9 +4362,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -4393,6 +4445,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -4528,9 +4581,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -4609,6 +4664,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -4744,9 +4800,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -4825,6 +4883,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -4960,9 +5019,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -5041,6 +5102,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -5176,9 +5238,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -5257,6 +5321,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -5397,9 +5462,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -5478,6 +5545,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -5613,9 +5681,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -5694,6 +5764,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -5829,9 +5900,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -5910,6 +5983,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -6045,9 +6119,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -6126,6 +6202,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -6261,9 +6338,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -6342,6 +6421,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -6477,9 +6557,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -6558,6 +6640,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -6693,9 +6776,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -6774,6 +6859,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -6909,9 +6995,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -6990,6 +7078,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -7125,9 +7214,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -7206,6 +7297,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -7341,9 +7433,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -7422,6 +7516,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -7557,9 +7652,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -7638,6 +7735,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -7773,9 +7871,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -7854,6 +7954,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -7989,9 +8090,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -8070,6 +8173,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -8205,9 +8309,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -8286,6 +8392,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -8421,9 +8528,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -8502,6 +8611,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -8642,9 +8752,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -8723,6 +8835,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -8863,9 +8976,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -8944,6 +9059,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -9079,9 +9195,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -9160,6 +9278,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -9295,9 +9414,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -9376,6 +9497,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -9511,9 +9633,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -9592,6 +9716,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -9727,9 +9852,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -9808,6 +9935,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -9943,9 +10071,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -10024,6 +10154,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -10159,9 +10290,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -10240,6 +10373,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -10380,9 +10514,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -10461,6 +10597,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -10555,9 +10692,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -10636,6 +10775,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -10728,9 +10868,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -10809,6 +10951,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -10901,9 +11044,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -10982,6 +11127,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -11074,9 +11220,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -11155,6 +11303,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -11249,9 +11398,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -11330,6 +11481,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -11492,9 +11644,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -11573,6 +11727,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -11669,9 +11824,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -11750,6 +11907,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -11842,9 +12000,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -11923,6 +12083,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -12011,9 +12172,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -12092,6 +12255,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -12180,9 +12344,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -12261,6 +12427,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -12349,9 +12516,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -12430,6 +12599,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -12524,9 +12694,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -12605,6 +12777,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -12693,9 +12866,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -12774,6 +12949,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -12825,12 +13001,12 @@ export namespace GetConnectionResponse {
     }
   }
 
-  export interface ConnectorPlaidDiscriminatedConnectionSettings {
-    connector_name: 'plaid';
+  export interface ConnectorOpenledgerDiscriminatedConnectionSettings {
+    connector_name: 'openledger';
 
     id?: string;
 
-    connector?: ConnectorPlaidDiscriminatedConnectionSettings.Connector;
+    connector?: ConnectorOpenledgerDiscriminatedConnectionSettings.Connector;
 
     connector_config_id?: string | null;
 
@@ -12842,7 +13018,7 @@ export namespace GetConnectionResponse {
 
     display_name?: string | null;
 
-    integration?: ConnectorPlaidDiscriminatedConnectionSettings.Integration;
+    integration?: ConnectorOpenledgerDiscriminatedConnectionSettings.Integration;
 
     integration_id?: string | null;
 
@@ -12853,7 +13029,7 @@ export namespace GetConnectionResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -12862,13 +13038,15 @@ export namespace GetConnectionResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
+  export namespace ConnectorOpenledgerDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -12947,6 +13125,186 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
+    export interface Settings {
+      /**
+       * Your entity's identifier, aka customer ID
+       */
+      entity_id: string;
+    }
+  }
+
+  export interface ConnectorPlaidDiscriminatedConnectionSettings {
+    connector_name: 'plaid';
+
+    id?: string;
+
+    connector?: ConnectorPlaidDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: ConnectorPlaidDiscriminatedConnectionSettings.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      has_openint_credentials?: boolean;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -13049,9 +13407,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -13130,6 +13490,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -13222,9 +13583,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -13303,6 +13666,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -13397,9 +13761,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -13478,6 +13844,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -13566,9 +13933,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -13647,6 +14016,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -13811,9 +14181,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -13892,6 +14264,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -13984,9 +14357,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -14065,6 +14440,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -14157,9 +14533,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -14238,6 +14616,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -14334,9 +14713,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -14415,6 +14796,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -14507,9 +14889,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -14588,6 +14972,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -14682,9 +15067,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -14763,6 +15150,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -14857,9 +15245,11 @@ export namespace GetConnectionResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -14938,6 +15328,7 @@ export namespace GetConnectionResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -15085,6 +15476,7 @@ export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorMergeDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorMootaDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorOnebrickDiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorOpenledgerDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorPlaidDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorPostgresDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorRampDiscriminatedConnectorConfig
@@ -15159,9 +15551,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -15240,6 +15634,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -15347,9 +15742,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -15428,6 +15825,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -15535,9 +15933,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -15616,6 +16016,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -15723,9 +16124,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -15804,6 +16207,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -15911,9 +16315,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -15992,6 +16398,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -16099,9 +16506,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -16180,6 +16589,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -16287,9 +16697,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -16368,6 +16780,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -16475,9 +16888,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -16556,6 +16971,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -16663,9 +17079,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -16744,6 +17162,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -16851,9 +17270,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -16932,6 +17353,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -17039,9 +17461,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -17120,6 +17544,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -17227,9 +17652,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -17308,6 +17735,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -17415,9 +17843,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -17496,6 +17926,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -17603,9 +18034,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -17684,6 +18117,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -17791,9 +18225,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -17872,6 +18308,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -17979,9 +18416,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -18060,6 +18499,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -18167,9 +18607,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -18248,6 +18690,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -18355,9 +18798,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -18436,6 +18881,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -18543,9 +18989,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -18624,6 +19072,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -18731,9 +19180,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -18812,6 +19263,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -18919,9 +19371,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -19000,6 +19454,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -19107,9 +19562,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -19188,6 +19645,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -19297,9 +19755,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -19378,6 +19838,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -19485,9 +19946,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -19566,6 +20029,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -19673,9 +20137,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -19754,6 +20220,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -19861,9 +20328,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -19942,6 +20411,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -20049,9 +20519,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -20130,6 +20602,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -20237,9 +20710,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -20318,6 +20793,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -20425,9 +20901,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -20506,6 +20984,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -20613,9 +21092,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -20694,6 +21175,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -20776,9 +21258,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -20857,6 +21341,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -20939,9 +21424,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -21020,6 +21507,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -21125,9 +21613,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -21206,6 +21696,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -21288,9 +21779,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -21369,6 +21862,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -21477,9 +21971,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -21558,6 +22054,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -21640,9 +22137,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -21721,6 +22220,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -21803,9 +22303,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -21884,6 +22386,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -21966,9 +22469,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -22047,6 +22552,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -22133,9 +22639,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -22214,6 +22722,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -22300,9 +22809,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -22381,6 +22892,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -22486,9 +22998,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -22567,6 +23081,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -22653,9 +23168,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -22734,6 +23251,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -22820,9 +23338,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -22901,6 +23421,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -22997,9 +23518,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -23078,6 +23601,195 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorOpenledgerDiscriminatedConnectorConfig {
+    config: ConnectorOpenledgerDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'openledger';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorOpenledgerDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorOpenledgerDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOpenledgerDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * API endpoint
+       */
+      api_url: string;
+
+      /**
+       * Your developer ID for authentication
+       */
+      developer_id: string;
+
+      /**
+       * Your developer secret
+       */
+      developer_secret: string;
+
+      /**
+       * Switch to "production" for live data
+       */
+      environment: 'development' | 'production';
+    }
+
+    export interface Connector {
+      name: string;
+
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      has_openint_credentials?: boolean;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -23222,9 +23934,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -23303,6 +24017,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -23385,9 +24100,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -23466,6 +24183,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -23560,9 +24278,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -23641,6 +24361,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -23731,9 +24452,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -23812,6 +24535,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -23894,9 +24618,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -23975,6 +24701,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -24080,9 +24807,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -24161,6 +24890,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -24249,9 +24979,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -24330,6 +25062,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -24412,9 +25145,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -24493,6 +25228,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -24575,9 +25311,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -24656,6 +25394,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -24754,9 +25493,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -24835,6 +25576,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -24917,9 +25659,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -24998,6 +25742,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -25102,9 +25847,11 @@ export namespace ListConnectionConfigsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -25183,6 +25930,7 @@ export namespace ListConnectionConfigsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -25279,6 +26027,7 @@ export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorMergeDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorMootaDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorOnebrickDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorOpenledgerDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorPlaidDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorPostgresDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorRampDiscriminatedConnectionSettings
@@ -25334,9 +26083,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -25415,6 +26166,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -25550,9 +26302,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -25631,6 +26385,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -25766,9 +26521,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -25847,6 +26604,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -25982,9 +26740,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -26063,6 +26823,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -26198,9 +26959,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -26279,6 +27042,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -26414,9 +27178,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -26495,6 +27261,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -26630,9 +27397,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -26711,6 +27480,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -26851,9 +27621,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -26932,6 +27704,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -27067,9 +27840,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -27148,6 +27923,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -27283,9 +28059,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -27364,6 +28142,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -27499,9 +28278,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -27580,6 +28361,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -27715,9 +28497,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -27796,6 +28580,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -27931,9 +28716,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -28012,6 +28799,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -28147,9 +28935,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -28228,6 +29018,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -28363,9 +29154,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -28444,6 +29237,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -28579,9 +29373,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -28660,6 +29456,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -28795,9 +29592,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -28876,6 +29675,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -29011,9 +29811,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -29092,6 +29894,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -29227,9 +30030,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -29308,6 +30113,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -29443,9 +30249,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -29524,6 +30332,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -29659,9 +30468,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -29740,6 +30551,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -29875,9 +30687,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -29956,6 +30770,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -30096,9 +30911,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -30177,6 +30994,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -30317,9 +31135,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -30398,6 +31218,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -30533,9 +31354,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -30614,6 +31437,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -30749,9 +31573,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -30830,6 +31656,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -30965,9 +31792,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -31046,6 +31875,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -31181,9 +32011,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -31262,6 +32094,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -31397,9 +32230,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -31478,6 +32313,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -31613,9 +32449,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -31694,6 +32532,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -31834,9 +32673,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -31915,6 +32756,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -32009,9 +32851,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -32090,6 +32934,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -32182,9 +33027,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -32263,6 +33110,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -32355,9 +33203,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -32436,6 +33286,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -32528,9 +33379,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -32609,6 +33462,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -32703,9 +33557,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -32784,6 +33640,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -32946,9 +33803,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -33027,6 +33886,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -33123,9 +33983,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -33204,6 +34066,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -33296,9 +34159,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -33377,6 +34242,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -33465,9 +34331,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -33546,6 +34414,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -33634,9 +34503,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -33715,6 +34586,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -33803,9 +34675,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -33884,6 +34758,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -33978,9 +34853,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -34059,6 +34936,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -34147,9 +35025,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -34228,6 +35108,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -34279,12 +35160,12 @@ export namespace ListConnectionsResponse {
     }
   }
 
-  export interface ConnectorPlaidDiscriminatedConnectionSettings {
-    connector_name: 'plaid';
+  export interface ConnectorOpenledgerDiscriminatedConnectionSettings {
+    connector_name: 'openledger';
 
     id?: string;
 
-    connector?: ConnectorPlaidDiscriminatedConnectionSettings.Connector;
+    connector?: ConnectorOpenledgerDiscriminatedConnectionSettings.Connector;
 
     connector_config_id?: string | null;
 
@@ -34296,7 +35177,7 @@ export namespace ListConnectionsResponse {
 
     display_name?: string | null;
 
-    integration?: ConnectorPlaidDiscriminatedConnectionSettings.Integration;
+    integration?: ConnectorOpenledgerDiscriminatedConnectionSettings.Integration;
 
     integration_id?: string | null;
 
@@ -34307,7 +35188,7 @@ export namespace ListConnectionsResponse {
      */
     metadata?: Record<string, unknown> | null;
 
-    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+    settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
 
     status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
 
@@ -34316,13 +35197,15 @@ export namespace ListConnectionsResponse {
     updated_at?: string;
   }
 
-  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
+  export namespace ConnectorOpenledgerDiscriminatedConnectionSettings {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -34401,6 +35284,186 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
+    export interface Settings {
+      /**
+       * Your entity's identifier, aka customer ID
+       */
+      entity_id: string;
+    }
+  }
+
+  export interface ConnectorPlaidDiscriminatedConnectionSettings {
+    connector_name: 'plaid';
+
+    id?: string;
+
+    connector?: ConnectorPlaidDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: ConnectorPlaidDiscriminatedConnectionSettings.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPlaidDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      has_openint_credentials?: boolean;
+
+      logo_url?: string;
+
+      openint_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -34503,9 +35566,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -34584,6 +35649,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -34676,9 +35742,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -34757,6 +35825,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -34851,9 +35920,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -34932,6 +36003,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -35020,9 +36092,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -35101,6 +36175,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -35265,9 +36340,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -35346,6 +36423,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -35438,9 +36516,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -35519,6 +36599,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -35611,9 +36692,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -35692,6 +36775,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -35788,9 +36872,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -35869,6 +36955,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -35961,9 +37048,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -36042,6 +37131,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -36136,9 +37226,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -36217,6 +37309,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -36311,9 +37404,11 @@ export namespace ListConnectionsResponse {
     export interface Connector {
       name: string;
 
-      authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
       display_name?: string;
+
+      has_openint_credentials?: boolean;
 
       logo_url?: string;
 
@@ -36392,6 +37487,7 @@ export namespace ListConnectionsResponse {
         | 'moota'
         | 'notion'
         | 'onebrick'
+        | 'openledger'
         | 'outreach'
         | 'pipedrive'
         | 'plaid'
@@ -36491,9 +37587,11 @@ export namespace ListConnectionsResponse {
 export interface ListConnectorsResponse {
   name: string;
 
-  authType?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+  auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
 
   display_name?: string;
+
+  has_openint_credentials?: boolean;
 
   integrations?: Array<ListConnectorsResponse.Integration>;
 
@@ -36549,6 +37647,7 @@ export namespace ListConnectorsResponse {
       | 'moota'
       | 'notion'
       | 'onebrick'
+      | 'openledger'
       | 'outreach'
       | 'pipedrive'
       | 'plaid'
@@ -36680,6 +37779,7 @@ export interface CreateConnectionParams {
     | CreateConnectionParams.ConnectorMergeDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorMootaDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorOnebrickDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorOpenledgerDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorPlaidDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorPostgresDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorRampDiscriminatedConnectionSettings
@@ -38596,6 +39696,21 @@ export namespace CreateConnectionParams {
     }
   }
 
+  export interface ConnectorOpenledgerDiscriminatedConnectionSettings {
+    connector_name: 'openledger';
+
+    settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorOpenledgerDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * Your entity's identifier, aka customer ID
+       */
+      entity_id: string;
+    }
+  }
+
   export interface ConnectorPlaidDiscriminatedConnectionSettings {
     connector_name: 'plaid';
 
@@ -38921,6 +40036,7 @@ export namespace CreateMagicLinkParams {
       | 'moota'
       | 'notion'
       | 'onebrick'
+      | 'openledger'
       | 'outreach'
       | 'pipedrive'
       | 'plaid'
@@ -39018,6 +40134,7 @@ export namespace CreateTokenParams {
       | 'moota'
       | 'notion'
       | 'onebrick'
+      | 'openledger'
       | 'outreach'
       | 'pipedrive'
       | 'plaid'
@@ -39116,6 +40233,7 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
     | 'moota'
     | 'notion'
     | 'onebrick'
+    | 'openledger'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
@@ -39146,6 +40264,8 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
    * Limit the number of items returned
    */
   limit?: number;
+
+  search_query?: string | null;
 }
 
 export interface ListConnectionsParams extends OffsetPaginationParams {
@@ -39189,6 +40309,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'moota'
     | 'notion'
     | 'onebrick'
+    | 'openledger'
     | 'outreach'
     | 'pipedrive'
     | 'plaid'
@@ -39230,6 +40351,8 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    * Limit the number of items returned
    */
   limit?: number;
+
+  search_query?: string;
 }
 
 export interface ListConnectorsParams extends OffsetPaginationParams {
