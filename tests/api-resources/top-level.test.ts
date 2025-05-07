@@ -3,7 +3,7 @@
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  apiKey: 'My API Key',
+  token: 'My Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
@@ -25,7 +25,7 @@ describe('top level methods', () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
-      data: { connector_name: 'acme-oauth2', settings: { oauth: {} } },
+      data: { connector_name: 'acme-oauth2' },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -89,6 +89,7 @@ describe('top level methods', () => {
           connect_options: {
             connector_names: ['acme-oauth2'],
             debug: true,
+            is_embedded: true,
             return_url: 'return_url',
             view: 'add',
           },
@@ -141,7 +142,7 @@ describe('top level methods', () => {
     await expect(
       client.getConnection(
         'conn_',
-        { expand: ['connector'], include_secrets: 'none', refresh_policy: 'none' },
+        { expand: ['connector'], include_secrets: true, refresh_policy: 'none' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -176,7 +177,13 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectionConfigs(
-        { connector_names: ['acme-oauth2'], expand: ['connector'], limit: 0, offset: 0 },
+        {
+          connector_names: ['acme-oauth2'],
+          expand: ['connector'],
+          limit: 0,
+          offset: 0,
+          search_query: 'search_query',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -204,9 +211,10 @@ describe('top level methods', () => {
           connector_names: ['acme-oauth2'],
           customer_id: 'customer_id',
           expand: ['connector'],
-          include_secrets: 'none',
+          include_secrets: true,
           limit: 0,
           offset: 0,
+          search_query: 'search_query',
         },
         { path: '/_stainless_unknown_path' },
       ),
@@ -229,7 +237,10 @@ describe('top level methods', () => {
   test.skip('listConnectors: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.listConnectors({ expand: ['schemas'] }, { path: '/_stainless_unknown_path' }),
+      client.listConnectors(
+        { expand: ['schemas'], limit: 0, offset: 0 },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Openint.NotFoundError);
   });
 });

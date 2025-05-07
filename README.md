@@ -23,7 +23,7 @@ The full API of this library can be found in [api.md](api.md).
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
+  token: process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN'], // This is the default and can be omitted
 });
 
 async function main() {
@@ -43,7 +43,7 @@ This library includes TypeScript definitions for all request params and response
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  apiKey: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
+  token: process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN'], // This is the default and can be omitted
 });
 
 async function main() {
@@ -78,7 +78,7 @@ async function main() {
 main();
 ```
 
-Error codes are as followed:
+Error codes are as follows:
 
 | Status Code | Error Type                 |
 | ----------- | -------------------------- |
@@ -355,7 +355,7 @@ TypeScript >= 4.9 is supported.
 The following runtimes are supported:
 
 - Web browsers (Up-to-date Chrome, Firefox, Safari, Edge, and more)
-- Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
+- Node.js 20 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
 - Deno v1.28.0 or higher.
 - Bun 1.0 or later.
 - Cloudflare Workers.

@@ -20,4 +20,5 @@ export {
   type ListConnectorsParams,
   type ListConnectionConfigsResponsesOffsetPagination,
   type ListConnectionsResponsesOffsetPagination,
+  type ListConnectorsResponsesOffsetPagination,
 } from './top-level';

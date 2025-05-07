@@ -39,6 +39,7 @@ import {
   ListConnectionsResponsesOffsetPagination,
   ListConnectorsParams,
   ListConnectorsResponse,
+  ListConnectorsResponsesOffsetPagination,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -51,11 +52,9 @@ import { isEmptyObj } from './internal/utils/values';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['OPENINT_API_KEY'].
+   * Defaults to process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN'].
    */
-  apiKey?: string | null | undefined;
-
-  customerToken?: string | null | undefined;
+  token?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -128,8 +127,7 @@ export interface ClientOptions {
  * API Client for interfacing with the Openint API.
  */
 export class Openint {
-  apiKey: string | null;
-  customerToken: string | null;
+  token: string | null;
 
   baseURL: string;
   maxRetries: number;
@@ -146,8 +144,7 @@ export class Openint {
   /**
    * API Client for interfacing with the Openint API.
    *
-   * @param {string | null | undefined} [opts.apiKey=process.env['OPENINT_API_KEY'] ?? null]
-   * @param {string | null | undefined} [opts.customerToken]
+   * @param {string | null | undefined} [opts.token=process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN'] ?? null]
    * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://api.openint.dev/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
@@ -158,13 +155,11 @@ export class Openint {
    */
   constructor({
     baseURL = readEnv('OPENINT_BASE_URL'),
-    apiKey = readEnv('OPENINT_API_KEY') ?? null,
-    customerToken = null,
+    token = readEnv('OPENINT_API_KEY_OR_CUSTOMER_TOKEN') ?? null,
     ...opts
   }: ClientOptions = {}) {
     const options: ClientOptions = {
-      apiKey,
-      customerToken,
+      token,
       ...opts,
       baseURL: baseURL || `https://api.openint.dev/v1`,
     };
@@ -186,8 +181,24 @@ export class Openint {
 
     this._options = options;
 
-    this.apiKey = apiKey;
-    this.customerToken = customerToken;
+    this.token = token;
+  }
+
+  /**
+   * Create a new client instance re-using the same options given to the current client with optional overriding.
+   */
+  withOptions(options: Partial<ClientOptions>): this {
+    return new (this.constructor as any as new (props: ClientOptions) => typeof this)({
+      ...this._options,
+      baseURL: this.baseURL,
+      maxRetries: this.maxRetries,
+      timeout: this.timeout,
+      logger: this.logger,
+      logLevel: this.logLevel,
+      fetchOptions: this.fetchOptions,
+      token: this.token,
+      ...options,
+    });
   }
 
   /**
@@ -294,8 +305,11 @@ export class Openint {
   listConnectors(
     query: TopLevelAPI.ListConnectorsParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.ListConnectorsResponse> {
-    return this.get('/connector', { query, ...options });
+  ): Pagination.PagePromise<ListConnectorsResponsesOffsetPagination, TopLevelAPI.ListConnectorsResponse> {
+    return this.getAPIList('/connector', Pagination.OffsetPagination<TopLevelAPI.ListConnectorsResponse>, {
+      query,
+      ...options,
+    });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -303,14 +317,7 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    if (this.apiKey && values.get('authorization')) {
-      return;
-    }
-    if (nulls.has('authorization')) {
-      return;
-    }
-
-    if (this.customerToken && values.get('authorization')) {
+    if (this.token && values.get('authorization')) {
       return;
     }
     if (nulls.has('authorization')) {
@@ -318,26 +325,15 @@ export class Openint {
     }
 
     throw new Error(
-      'Could not resolve authentication method. Expected either apiKey or customerToken to be set. Or for one of the "Authorization" or "Authorization" headers to be explicitly omitted',
+      'Could not resolve authentication method. Expected the token to be set. Or for the "Authorization" headers to be explicitly omitted',
     );
   }
 
   protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
-    return buildHeaders([this.apiKeyAuth(opts), this.customerTokenAuth(opts)]);
-  }
-
-  protected apiKeyAuth(opts: FinalRequestOptions): NullableHeaders | undefined {
-    if (this.apiKey == null) {
+    if (this.token == null) {
       return undefined;
     }
-    return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
-  }
-
-  protected customerTokenAuth(opts: FinalRequestOptions): NullableHeaders | undefined {
-    if (this.customerToken == null) {
-      return undefined;
-    }
-    return buildHeaders([{ Authorization: `Bearer ${this.customerToken}` }]);
+    return buildHeaders([{ Authorization: `Bearer ${this.token}` }]);
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {
@@ -635,12 +631,12 @@ export class Openint {
       fetchOptions.method = method.toUpperCase();
     }
 
-    return (
+    try {
       // use undefined this binding; fetch errors if bound to something else in browser/cloudflare
-      this.fetch.call(undefined, url, fetchOptions).finally(() => {
-        clearTimeout(timeout);
-      })
-    );
+      return await this.fetch.call(undefined, url, fetchOptions);
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
   private shouldRetry(response: Response): boolean {
@@ -862,6 +858,7 @@ export declare namespace Openint {
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,

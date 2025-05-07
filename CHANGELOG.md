@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.6.0 (2025-05-07)
+
+Full Changelog: [v1.5.0...v1.6.0](https://github.com/openintegrations/ts-sdk/compare/v1.5.0...v1.6.0)
+
+### Features
+
+* **api:** merging api key and customer token into single variable ([961d23a](https://github.com/openintegrations/ts-sdk/commit/961d23adfed71322eba3993fc1651e4343957361))
+* **client:** add withOptions helper ([b5f3ba5](https://github.com/openintegrations/ts-sdk/commit/b5f3ba5384fcc7a333a5caca00cda86eb7cde94c))
+* **docs:** updating documented docs for stainless ([d90bc7b](https://github.com/openintegrations/ts-sdk/commit/d90bc7bd24ea61a998d3079c3f84cb2ea33c274d))
+* **docs:** updating documented docs for stainless ([faa83db](https://github.com/openintegrations/ts-sdk/commit/faa83db141006a9f7337ac75652ecc0a1c2f4cad))
+* **docs:** updating documented docs for stainless ([8c53526](https://github.com/openintegrations/ts-sdk/commit/8c535260ccd141a967be63f6a9a5ebd02971e3f6))
+* **docs:** updating documented docs for stainless ([43667b3](https://github.com/openintegrations/ts-sdk/commit/43667b3dca008a8e36c71765799bda7cf0d38b30))
+
+
+### Chores
+
+* **ci:** only use depot for staging repos ([f618f64](https://github.com/openintegrations/ts-sdk/commit/f618f64f705b8ac31a2b4289b31bc50f9bdba949))
+* **client:** drop support for EOL node versions ([85101e4](https://github.com/openintegrations/ts-sdk/commit/85101e49e9fd3d4040735f75111f45fe7a79c6db))
+* **internal:** codegen related update ([b25bfa6](https://github.com/openintegrations/ts-sdk/commit/b25bfa6e05ad445d5a001f48593b2be8a5285d2f))
+* **internal:** codegen related update ([ef19aea](https://github.com/openintegrations/ts-sdk/commit/ef19aea8d5a1c09131c73d397dee93906f4caaac))
+* **internal:** refactor utils ([bccab80](https://github.com/openintegrations/ts-sdk/commit/bccab80cfcdc997e88860dd2330f7dbd378f97e9))
+* **internal:** share typescript helpers ([62a47ce](https://github.com/openintegrations/ts-sdk/commit/62a47ce64118bc8f57e767102c55be72ab57c9e6))
+
+
+### Documentation
+
+* **readme:** fix typo ([8a57cc3](https://github.com/openintegrations/ts-sdk/commit/8a57cc30d4a9012ce05d0dfaf8a7f6bb86e92749))
+
 ## 1.5.0 (2025-04-23)
 
 Full Changelog: [v1.4.2...v1.5.0](https://github.com/openintegrations/ts-sdk/compare/v1.4.2...v1.5.0)
