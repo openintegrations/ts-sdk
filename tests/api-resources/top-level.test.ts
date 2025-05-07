@@ -177,7 +177,13 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectionConfigs(
-        { connector_names: ['acme-oauth2'], expand: ['connector'], limit: 0, offset: 0 },
+        {
+          connector_names: ['acme-oauth2'],
+          expand: ['connector'],
+          limit: 0,
+          offset: 0,
+          search_query: 'search_query',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -208,6 +214,7 @@ describe('top level methods', () => {
           include_secrets: true,
           limit: 0,
           offset: 0,
+          search_query: 'search_query',
         },
         { path: '/_stainless_unknown_path' },
       ),
