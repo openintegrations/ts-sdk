@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.1 (2025-05-10)
+
+Full Changelog: [v1.6.0...v1.6.1](https://github.com/openintegrations/ts-sdk/compare/v1.6.0...v1.6.1)
+
+### Bug Fixes
+
+* **client:** always overwrite when merging headers ([3f2f610](https://github.com/openintegrations/ts-sdk/commit/3f2f610dd41a991b21508c3abfa76c8ce07fed6c))
+
 ## 1.6.0 (2025-05-07)
 
 Full Changelog: [v1.5.0...v1.6.0](https://github.com/openintegrations/ts-sdk/compare/v1.5.0...v1.6.0)
