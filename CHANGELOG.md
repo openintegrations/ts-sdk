@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.2 (2025-05-13)
+
+Full Changelog: [v1.6.1...v1.6.2](https://github.com/openintegrations/ts-sdk/compare/v1.6.1...v1.6.2)
+
+### Chores
+
+* **package:** remove engines ([9aa6e0b](https://github.com/openintegrations/ts-sdk/commit/9aa6e0b0ac361a7357e5216cd6c10f46587b7cbd))
+
 ## 1.6.1 (2025-05-10)
 
 Full Changelog: [v1.6.0...v1.6.1](https://github.com/openintegrations/ts-sdk/compare/v1.6.0...v1.6.1)
