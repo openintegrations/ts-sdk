@@ -29,6 +29,8 @@ import {
   GetConnectionParams,
   GetConnectionResponse,
   GetCurrentUserResponse,
+  GetMessageTemplateParams,
+  GetMessageTemplateResponse,
   ListConnectionConfigsParams,
   ListConnectionConfigsResponse,
   ListConnectionConfigsResponsesOffsetPagination,
@@ -251,6 +253,16 @@ export class Openint {
    */
   getCurrentUser(options?: RequestOptions): APIPromise<TopLevelAPI.GetCurrentUserResponse> {
     return this.get('/viewer', options);
+  }
+
+  /**
+   * Get a message template for an AI agent
+   */
+  getMessageTemplate(
+    query: TopLevelAPI.GetMessageTemplateParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetMessageTemplateResponse> {
+    return this.get('/ai/message_template', { query, ...options });
   }
 
   /**
@@ -838,6 +850,7 @@ export declare namespace Openint {
     type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
+    type GetMessageTemplateResponse as GetMessageTemplateResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
@@ -847,6 +860,7 @@ export declare namespace Openint {
     type CreateConnectionParams as CreateConnectionParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
+    type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,

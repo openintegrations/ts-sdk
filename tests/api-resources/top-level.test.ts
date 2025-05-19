@@ -129,6 +129,27 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('getMessageTemplate: only required params', async () => {
+    const responsePromise = client.getMessageTemplate({ customerId: 'customerId' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('getMessageTemplate: required and optional params', async () => {
+    const response = await client.getMessageTemplate({
+      customerId: 'customerId',
+      language: 'javascript',
+      useEnvironmentVariables: true,
+    });
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('listConnectionConfigs', async () => {
     const responsePromise = client.listConnectionConfigs();
     const rawResponse = await responsePromise.asResponse();

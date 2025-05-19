@@ -15789,6 +15789,12 @@ export interface GetCurrentUserResponse {
   [k: string]: unknown;
 }
 
+export interface GetMessageTemplateResponse {
+  language: string;
+
+  template: string;
+}
+
 export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorAcmeOauth2DiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorAircallDiscriminatedConnectorConfig
@@ -40807,6 +40813,14 @@ export interface GetConnectionParams {
   refresh_policy?: 'none' | 'force' | 'auto';
 }
 
+export interface GetMessageTemplateParams {
+  customerId: string;
+
+  language?: 'javascript';
+
+  useEnvironmentVariables?: boolean;
+}
+
 export interface ListConnectionConfigsParams extends OffsetPaginationParams {
   connector_names?: Array<
     | 'acme-oauth2'
@@ -40988,6 +41002,7 @@ export declare namespace TopLevel {
     type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
+    type GetMessageTemplateResponse as GetMessageTemplateResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
@@ -40997,6 +41012,7 @@ export declare namespace TopLevel {
     type CreateConnectionParams as CreateConnectionParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
+    type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
