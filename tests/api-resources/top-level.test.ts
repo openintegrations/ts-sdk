@@ -130,7 +130,7 @@ describe('top level methods', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('getMessageTemplate: only required params', async () => {
-    const responsePromise = client.getMessageTemplate({ customerId: 'customerId' });
+    const responsePromise = client.getMessageTemplate({ customer_id: 'customer_id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -143,9 +143,9 @@ describe('top level methods', () => {
   // skipped: tests are disabled for the time being
   test.skip('getMessageTemplate: required and optional params', async () => {
     const response = await client.getMessageTemplate({
-      customerId: 'customerId',
+      customer_id: 'customer_id',
       language: 'javascript',
-      useEnvironmentVariables: true,
+      use_environment_variables: true,
     });
   });
 
