@@ -40814,11 +40814,11 @@ export interface GetConnectionParams {
 }
 
 export interface GetMessageTemplateParams {
-  customerId: string;
+  customer_id: string;
 
   language?: 'javascript';
 
-  useEnvironmentVariables?: boolean;
+  use_environment_variables?: boolean;
 }
 
 export interface ListConnectionConfigsParams extends OffsetPaginationParams {
