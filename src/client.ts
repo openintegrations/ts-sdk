@@ -23,8 +23,6 @@ import {
   CheckConnectionResponse,
   CreateConnectionParams,
   CreateConnectionResponse,
-  CreateMagicLinkParams,
-  CreateMagicLinkResponse,
   CreateTokenParams,
   CreateTokenResponse,
   DeleteConnectionResponse,
@@ -216,18 +214,6 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateConnectionResponse> {
     return this.post('/connection', { body, ...options });
-  }
-
-  /**
-   * Create a @Connect magic link that is ready to be shared with customers who want
-   * to use @Connect
-   */
-  createMagicLink(
-    customerID: string,
-    body: TopLevelAPI.CreateMagicLinkParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.CreateMagicLinkResponse> {
-    return this.post(path`/customer/${customerID}/magic-link`, { body, ...options });
   }
 
   /**
@@ -848,7 +834,6 @@ export declare namespace Openint {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
-    type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
@@ -860,7 +845,6 @@ export declare namespace Openint {
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
-    type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
