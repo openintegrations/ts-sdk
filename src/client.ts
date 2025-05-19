@@ -317,23 +317,7 @@ export class Openint {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    if (this.token && values.get('authorization')) {
-      return;
-    }
-    if (nulls.has('authorization')) {
-      return;
-    }
-
-    throw new Error(
-      'Could not resolve authentication method. Expected the token to be set. Or for the "Authorization" headers to be explicitly omitted',
-    );
-  }
-
-  protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
-    if (this.token == null) {
-      return undefined;
-    }
-    return buildHeaders([{ Authorization: `Bearer ${this.token}` }]);
+    return;
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {
@@ -769,7 +753,6 @@ export class Openint {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(Math.trunc(options.timeout / 1000)) } : {}),
         ...getPlatformHeaders(),
       },
-      this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
