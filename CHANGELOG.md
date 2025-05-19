@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.0 (2025-05-19)
+
+Full Changelog: [v2.0.0...v2.1.0](https://github.com/openintegrations/ts-sdk/compare/v2.0.0...v2.1.0)
+
+### Features
+
+* **api:** adding message template ([202587d](https://github.com/openintegrations/ts-sdk/commit/202587d317cf0cc1da763824eada2348546692b0))
+* **api:** scheme sync ([65f70cb](https://github.com/openintegrations/ts-sdk/commit/65f70cb51b4873151e6768785a087e292c893028))
+* **docs:** updating documented docs for stainless ([b380ce4](https://github.com/openintegrations/ts-sdk/commit/b380ce469c4faf45c386d6796039f883c2dedde5))
+
 ## 2.0.0 (2025-05-19)
 
 Full Changelog: [v1.6.2...v2.0.0](https://github.com/openintegrations/ts-sdk/compare/v1.6.2...v2.0.0)
