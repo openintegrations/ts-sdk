@@ -1926,11 +1926,6 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
     }
 
     export namespace Settings {
@@ -8884,11 +8879,6 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
     }
 
     export namespace Settings {
@@ -19726,8 +19716,6 @@ export namespace ListConnectionConfigsResponse {
 
   export namespace ConnectorQuickbooksDiscriminatedConnectorConfig {
     export interface Config {
-      envName: 'sandbox' | 'production';
-
       /**
        * Base oauth configuration for the connector
        */
@@ -31043,11 +31031,6 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
     }
 
     export namespace Settings {
@@ -39031,11 +39014,6 @@ export namespace CreateConnectionParams {
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
-
-      /**
-       * The realmId of your quickbooks company (e.g., 9341453474484455)
-       */
-      realmId: string;
     }
 
     export namespace Settings {
