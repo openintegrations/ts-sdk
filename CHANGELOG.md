@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0 (2025-05-19)
+
+Full Changelog: [v1.6.2...v2.0.0](https://github.com/openintegrations/ts-sdk/compare/v1.6.2...v2.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* **api:** Updating sdk auth schem
+
+### Features
+
+* **api:** Updating sdk auth schem ([3ee9556](https://github.com/openintegrations/ts-sdk/commit/3ee9556728c1dd2c37075b76dc3ead9b96930d5b))
+
 ## 1.6.2 (2025-05-13)
 
 Full Changelog: [v1.6.1...v1.6.2](https://github.com/openintegrations/ts-sdk/compare/v1.6.1...v1.6.2)
