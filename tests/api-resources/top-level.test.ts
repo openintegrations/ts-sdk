@@ -2,7 +2,10 @@
 
 import Openint from '@openint/sdk';
 
-const client = new Openint({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new Openint({
+  token: 'My Token',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('top level methods', () => {
   // skipped: tests are disabled for the time being
@@ -57,44 +60,12 @@ describe('top level methods', () => {
             metadata: { foo: 'bar' },
             updated_at: 'updated_at',
           },
+          access_token: 'access_token',
         },
       },
       check_connection: true,
       metadata: { foo: 'bar' },
     });
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('createMagicLink', async () => {
-    const responsePromise = client.createMagicLink('x');
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('createMagicLink: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.createMagicLink(
-        'x',
-        {
-          connect_options: {
-            connector_names: ['acme-oauth2'],
-            debug: true,
-            is_embedded: true,
-            return_url: 'return_url',
-            view: 'add',
-          },
-          validity_in_seconds: 0,
-        },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(Openint.NotFoundError);
   });
 
   // skipped: tests are disabled for the time being
@@ -158,6 +129,27 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('getMessageTemplate: only required params', async () => {
+    const responsePromise = client.getMessageTemplate({ customerId: 'customerId' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('getMessageTemplate: required and optional params', async () => {
+    const response = await client.getMessageTemplate({
+      customerId: 'customerId',
+      language: 'javascript',
+      useEnvironmentVariables: true,
+    });
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('listConnectionConfigs', async () => {
     const responsePromise = client.listConnectionConfigs();
     const rawResponse = await responsePromise.asResponse();
@@ -211,6 +203,7 @@ describe('top level methods', () => {
           include_secrets: true,
           limit: 0,
           offset: 0,
+          refresh_policy: 'none',
           search_query: 'search_query',
         },
         { path: '/_stainless_unknown_path' },

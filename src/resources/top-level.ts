@@ -112,6 +112,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -194,6 +200,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -276,6 +288,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -358,6 +376,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -440,6 +464,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -522,6 +552,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -609,6 +645,12 @@ export namespace CreateConnectionResponse {
       api_base_url_for_customer: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -691,6 +733,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -773,6 +821,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -855,6 +909,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -937,6 +997,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1019,6 +1085,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1101,6 +1173,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1183,6 +1261,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1265,6 +1349,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1347,6 +1437,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1429,6 +1525,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1511,6 +1613,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1593,6 +1701,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1675,6 +1789,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1757,6 +1877,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1844,6 +1970,12 @@ export namespace CreateConnectionResponse {
       api_domain: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -1926,6 +2058,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2008,6 +2146,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2090,6 +2234,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2172,6 +2322,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2254,6 +2410,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2336,6 +2498,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2418,6 +2586,12 @@ export namespace CreateConnectionResponse {
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -2505,6 +2679,12 @@ export namespace CreateConnectionResponse {
       extension: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -3794,18 +3974,26 @@ export namespace CreateConnectionResponse {
   }
 }
 
-export interface CreateMagicLinkResponse {
-  /**
-   * The Connect magic link url to share with the user.
-   */
-  magic_link_url: string;
-}
-
 export interface CreateTokenResponse {
   /**
-   * The authentication token to use for API requests
+   * A short-lived publishable authentication token to use for customer api requests
+   * from the frontend. This token by default expires in 30 days unless otherwise
+   * specified via the validity_in_seconds parameter.
    */
   token: string;
+
+  /**
+   * A long-lived customer API key to use for API requests. Not meant to be published
+   * to the frontend.
+   */
+  api_key: string | null;
+
+  /**
+   * A link that can be shared with customers to use @Connect in any browser. This
+   * link will expire in 30 days by default unless otherwise specified via the
+   * validity_in_seconds parameter.
+   */
+  magic_link_url: string;
 }
 
 export interface DeleteConnectionResponse {
@@ -4051,6 +4239,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -4270,6 +4464,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -4489,6 +4689,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -4708,6 +4914,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -4927,6 +5139,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -5146,6 +5364,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -5370,6 +5594,12 @@ export namespace GetConnectionResponse {
       api_base_url_for_customer: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -5589,6 +5819,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -5808,6 +6044,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -6027,6 +6269,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -6246,6 +6494,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -6465,6 +6719,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -6684,6 +6944,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -6903,6 +7169,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -7122,6 +7394,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -7341,6 +7619,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -7560,6 +7844,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -7779,6 +8069,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -7998,6 +8294,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -8217,6 +8519,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -8436,6 +8744,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -8660,6 +8974,12 @@ export namespace GetConnectionResponse {
       api_domain: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -8879,6 +9199,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -9098,6 +9424,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -9317,6 +9649,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -9536,6 +9874,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -9755,6 +10099,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -9974,6 +10324,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -10193,6 +10549,12 @@ export namespace GetConnectionResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -10417,6 +10779,12 @@ export namespace GetConnectionResponse {
       extension: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -15419,6 +15787,12 @@ export interface GetCurrentUserResponse {
   role: 'anon' | 'customer' | 'user' | 'org' | 'system';
 
   [k: string]: unknown;
+}
+
+export interface GetMessageTemplateResponse {
+  language: string;
+
+  template: string;
 }
 
 export type ListConnectionConfigsResponse =
@@ -26203,6 +26577,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -26422,6 +26802,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -26641,6 +27027,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -26860,6 +27252,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -27079,6 +27477,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -27298,6 +27702,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -27522,6 +27932,12 @@ export namespace ListConnectionsResponse {
       api_base_url_for_customer: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -27741,6 +28157,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -27960,6 +28382,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -28179,6 +28607,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -28398,6 +28832,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -28617,6 +29057,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -28836,6 +29282,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -29055,6 +29507,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -29274,6 +29732,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -29493,6 +29957,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -29712,6 +30182,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -29931,6 +30407,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -30150,6 +30632,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -30369,6 +30857,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -30588,6 +31082,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -30812,6 +31312,12 @@ export namespace ListConnectionsResponse {
       api_domain: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -31031,6 +31537,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -31250,6 +31762,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -31469,6 +31987,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -31688,6 +32212,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -31907,6 +32437,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -32126,6 +32662,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -32345,6 +32887,12 @@ export namespace ListConnectionsResponse {
 
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -32569,6 +33117,12 @@ export namespace ListConnectionsResponse {
       extension: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -37794,6 +38348,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -37849,6 +38409,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -37904,6 +38470,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -37959,6 +38531,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38014,6 +38592,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38069,6 +38653,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38129,6 +38719,12 @@ export namespace CreateConnectionParams {
       api_base_url_for_customer: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38184,6 +38780,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38239,6 +38841,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38294,6 +38902,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38349,6 +38963,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38404,6 +39024,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38459,6 +39085,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38514,6 +39146,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38569,6 +39207,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38624,6 +39268,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38679,6 +39329,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38734,6 +39390,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38789,6 +39451,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38844,6 +39512,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38899,6 +39573,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -38959,6 +39639,12 @@ export namespace CreateConnectionParams {
       api_domain: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39014,6 +39700,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39069,6 +39761,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39124,6 +39822,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39179,6 +39883,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39234,6 +39944,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39289,6 +40005,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39344,6 +40066,12 @@ export namespace CreateConnectionParams {
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39404,6 +40132,12 @@ export namespace CreateConnectionParams {
       extension: string;
 
       oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
     }
 
     export namespace Settings {
@@ -39964,110 +40698,14 @@ export namespace CreateConnectionParams {
   }
 }
 
-export interface CreateMagicLinkParams {
-  connect_options?: CreateMagicLinkParams.ConnectOptions;
-
-  /**
-   * How long the magic link will be valid for (in seconds) before it expires
-   */
-  validity_in_seconds?: number;
-}
-
-export namespace CreateMagicLinkParams {
-  export interface ConnectOptions {
-    /**
-     * The names of the connectors to show in the connect page. If not provided, all
-     * connectors will be shown
-     */
-    connector_names?: Array<
-      | 'acme-oauth2'
-      | 'aircall'
-      | 'airtable'
-      | 'apollo'
-      | 'brex'
-      | 'coda'
-      | 'confluence'
-      | 'discord'
-      | 'facebook'
-      | 'finch'
-      | 'firebase'
-      | 'foreceipt'
-      | 'github'
-      | 'gong'
-      | 'google-calendar'
-      | 'google-docs'
-      | 'google-drive'
-      | 'google-mail'
-      | 'google-sheet'
-      | 'greenhouse'
-      | 'heron'
-      | 'hubspot'
-      | 'instagram'
-      | 'intercom'
-      | 'jira'
-      | 'lever'
-      | 'linear'
-      | 'linkedin'
-      | 'lunchmoney'
-      | 'mercury'
-      | 'merge'
-      | 'moota'
-      | 'notion'
-      | 'onebrick'
-      | 'openledger'
-      | 'outreach'
-      | 'pipedrive'
-      | 'plaid'
-      | 'postgres'
-      | 'quickbooks'
-      | 'ramp'
-      | 'reddit'
-      | 'salesloft'
-      | 'saltedge'
-      | 'sharepoint'
-      | 'slack'
-      | 'splitwise'
-      | 'stripe'
-      | 'teller'
-      | 'toggl'
-      | 'twenty'
-      | 'twitter'
-      | 'venmo'
-      | 'wise'
-      | 'xero'
-      | 'yodlee'
-      | 'zoho-desk'
-    >;
-
-    /**
-     * Whether to enable debug mode
-     */
-    debug?: boolean;
-
-    /**
-     * Whether to enable embedded mode. Embedded mode hides the side bar with extra
-     * context for the end user (customer) on the organization
-     */
-    is_embedded?: boolean;
-
-    /**
-     * Optional URL to return customers after adding a connection or if they press the
-     * Return To Organization button
-     */
-    return_url?: string;
-
-    /**
-     * The default view to show when the magic link is opened. If omitted, by default
-     * it will smartly load the right view based on whether the user has connections or
-     * not
-     */
-    view?: 'add' | 'manage';
-  }
-}
-
 export interface CreateTokenParams {
   connect_options?: CreateTokenParams.ConnectOptions;
 
+  /**
+   * How long the publishable token and magic link url will be valid for (in seconds)
+   * before it expires. By default it will be valid for 30 days unless otherwise
+   * specified.
+   */
   validity_in_seconds?: number;
 }
 
@@ -40173,6 +40811,14 @@ export interface GetConnectionParams {
    * expired, default)
    */
   refresh_policy?: 'none' | 'force' | 'auto';
+}
+
+export interface GetMessageTemplateParams {
+  customerId: string;
+
+  language?: 'javascript';
+
+  useEnvironmentVariables?: boolean;
 }
 
 export interface ListConnectionConfigsParams extends OffsetPaginationParams {
@@ -40330,6 +40976,12 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   limit?: number;
 
+  /**
+   * Controls credential refresh: none (never), force (always), or auto (when
+   * expired, default)
+   */
+  refresh_policy?: 'none' | 'force' | 'auto';
+
   search_query?: string;
 }
 
@@ -40346,11 +40998,11 @@ export declare namespace TopLevel {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
-    type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
+    type GetMessageTemplateResponse as GetMessageTemplateResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
@@ -40358,9 +41010,9 @@ export declare namespace TopLevel {
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
-    type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
+    type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,

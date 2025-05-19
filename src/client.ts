@@ -23,14 +23,14 @@ import {
   CheckConnectionResponse,
   CreateConnectionParams,
   CreateConnectionResponse,
-  CreateMagicLinkParams,
-  CreateMagicLinkResponse,
   CreateTokenParams,
   CreateTokenResponse,
   DeleteConnectionResponse,
   GetConnectionParams,
   GetConnectionResponse,
   GetCurrentUserResponse,
+  GetMessageTemplateParams,
+  GetMessageTemplateResponse,
   ListConnectionConfigsParams,
   ListConnectionConfigsResponse,
   ListConnectionConfigsResponsesOffsetPagination,
@@ -219,18 +219,6 @@ export class Openint {
   }
 
   /**
-   * Create a @Connect magic link that is ready to be shared with customers who want
-   * to use @Connect
-   */
-  createMagicLink(
-    customerID: string,
-    body: TopLevelAPI.CreateMagicLinkParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.CreateMagicLinkResponse> {
-    return this.post(path`/customer/${customerID}/magic-link`, { body, ...options });
-  }
-
-  /**
    * Create a @Connect authentication token for a customer. This token can be used to
    * embed @Connect in your application via the `@openint/connect` npm package.
    */
@@ -265,6 +253,16 @@ export class Openint {
    */
   getCurrentUser(options?: RequestOptions): APIPromise<TopLevelAPI.GetCurrentUserResponse> {
     return this.get('/viewer', options);
+  }
+
+  /**
+   * Get a message template for an AI agent
+   */
+  getMessageTemplate(
+    query: TopLevelAPI.GetMessageTemplateParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetMessageTemplateResponse> {
+    return this.get('/ai/message_template', { query, ...options });
   }
 
   /**
@@ -848,11 +846,11 @@ export declare namespace Openint {
   export {
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
-    type CreateMagicLinkResponse as CreateMagicLinkResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
+    type GetMessageTemplateResponse as GetMessageTemplateResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
@@ -860,9 +858,9 @@ export declare namespace Openint {
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
-    type CreateMagicLinkParams as CreateMagicLinkParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
+    type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
