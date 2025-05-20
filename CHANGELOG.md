@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.0 (2025-05-19)
+
+Full Changelog: [v2.1.0...v2.2.0](https://github.com/openintegrations/ts-sdk/compare/v2.1.0...v2.2.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([0b357b4](https://github.com/openintegrations/ts-sdk/commit/0b357b4dc98355b01534f3b045e9ad5c92008b72))
+
 ## 2.1.0 (2025-05-19)
 
 Full Changelog: [v2.0.0...v2.1.0](https://github.com/openintegrations/ts-sdk/compare/v2.0.0...v2.1.0)
