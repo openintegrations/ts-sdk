@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.1 (2025-05-22)
+
+Full Changelog: [v2.2.0...v2.2.1](https://github.com/openintegrations/ts-sdk/compare/v2.2.0...v2.2.1)
+
+### Chores
+
+* **docs:** grammar improvements ([77bf8c8](https://github.com/openintegrations/ts-sdk/commit/77bf8c8b240400818bf6c72fe1b3f2adc4be8eec))
+
 ## 2.2.0 (2025-05-19)
 
 Full Changelog: [v2.1.0...v2.2.0](https://github.com/openintegrations/ts-sdk/compare/v2.1.0...v2.2.0)
