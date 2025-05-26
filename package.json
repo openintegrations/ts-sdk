@@ -1,6 +1,6 @@
 {
   "name": "@openint/backend-sdk",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "The official TypeScript library for the Openint API",
   "author": "Openint <support@openint.dev>",
   "types": "dist/index.d.ts",
