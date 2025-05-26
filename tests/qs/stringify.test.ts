@@ -1,7 +1,7 @@
 import iconv from 'iconv-lite';
-import { stringify } from '@openint/sdk/internal/qs';
-import { encode } from '@openint/sdk/internal/qs/utils';
-import { StringifyOptions } from '@openint/sdk/internal/qs/types';
+import { stringify } from '@openint/backend-sdk/internal/qs';
+import { encode } from '@openint/backend-sdk/internal/qs/utils';
+import { StringifyOptions } from '@openint/backend-sdk/internal/qs/types';
 import { empty_test_cases } from './empty-keys-cases';
 import assert from 'assert';
 
