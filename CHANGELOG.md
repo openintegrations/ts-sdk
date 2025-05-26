@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.3.0 (2025-05-26)
+
+Full Changelog: [v2.2.0...v2.3.0](https://github.com/openintegrations/ts-sdk/compare/v2.2.0...v2.3.0)
+
+### Features
+
+* **api:** rename sdk name ([788b639](https://github.com/openintegrations/ts-sdk/commit/788b639821a14f3c2f0124d3c1854bc7447b7e7e))
+* **docs:** updating documented docs for stainless ([8afb5c1](https://github.com/openintegrations/ts-sdk/commit/8afb5c110c7a6b1317cca7e8031f815f7b809578))
+
+
+### Chores
+
+* **docs:** grammar improvements ([77bf8c8](https://github.com/openintegrations/ts-sdk/commit/77bf8c8b240400818bf6c72fe1b3f2adc4be8eec))
+
 ## 2.2.0 (2025-05-19)
 
 Full Changelog: [v2.1.0...v2.2.0](https://github.com/openintegrations/ts-sdk/compare/v2.1.0...v2.2.0)
