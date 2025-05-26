@@ -18,6 +18,7 @@ export interface CheckConnectionResponse {
 
 export type CreateConnectionResponse =
   | CreateConnectionResponse.ConnectorAcmeOauth2DiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorAdobeDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorAircallDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorConfluenceDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorDiscordDiscriminatedConnectionSettings
@@ -110,6 +111,94 @@ export namespace CreateConnectionResponse {
   }
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectionSettings {
+    connector_name: 'adobe';
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -4008,6 +4097,7 @@ export interface DeleteConnectionResponse {
  */
 export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorAcmeOauth2DiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorAdobeDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorAircallDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorConfluenceDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorDiscordDiscriminatedConnectionSettings
@@ -4115,7 +4205,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -4157,6 +4249,235 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'openledger'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectionSettings {
+    connector_name: 'adobe';
+
+    id?: string;
+
+    connector?: ConnectorAdobeDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: ConnectorAdobeDiscriminatedConnectionSettings.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      has_openint_credentials?: boolean;
+
+      logo_url?: string;
+
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -4340,7 +4661,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -4382,6 +4705,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -4565,7 +4889,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -4607,6 +4933,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -4790,7 +5117,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -4832,6 +5161,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -5015,7 +5345,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -5057,6 +5389,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -5240,7 +5573,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -5282,6 +5617,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -5465,7 +5801,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -5507,6 +5845,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -5695,7 +6034,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -5737,6 +6078,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -5920,7 +6262,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -5962,6 +6306,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -6145,7 +6490,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -6187,6 +6534,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -6370,7 +6718,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -6412,6 +6762,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -6595,7 +6946,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -6637,6 +6990,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -6820,7 +7174,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -6862,6 +7218,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -7045,7 +7402,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -7087,6 +7446,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -7270,7 +7630,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -7312,6 +7674,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -7495,7 +7858,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -7537,6 +7902,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -7720,7 +8086,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -7762,6 +8130,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -7945,7 +8314,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -7987,6 +8358,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -8170,7 +8542,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -8212,6 +8586,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -8395,7 +8770,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -8437,6 +8814,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -8620,7 +8998,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -8662,6 +9042,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -8845,7 +9226,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -8887,6 +9270,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -9075,7 +9459,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -9117,6 +9503,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -9300,7 +9687,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -9342,6 +9731,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -9525,7 +9915,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -9567,6 +9959,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -9750,7 +10143,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -9792,6 +10187,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -9975,7 +10371,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -10017,6 +10415,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -10200,7 +10599,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -10242,6 +10643,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -10425,7 +10827,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -10467,6 +10871,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -10650,7 +11055,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -10692,6 +11099,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -10880,7 +11288,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -10922,6 +11332,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -11058,7 +11469,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -11100,6 +11513,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -11234,7 +11648,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -11276,6 +11692,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -11410,7 +11827,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -11452,6 +11871,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -11586,7 +12006,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -11628,6 +12050,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -11764,7 +12187,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -11806,6 +12231,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -12010,7 +12436,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -12052,6 +12480,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -12190,7 +12619,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -12232,6 +12663,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -12366,7 +12798,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -12408,6 +12842,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -12538,7 +12973,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -12580,6 +13017,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -12710,7 +13148,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -12752,6 +13192,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -12882,7 +13323,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -12924,6 +13367,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -13060,7 +13504,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -13102,6 +13548,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -13232,7 +13679,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -13274,6 +13723,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -13408,7 +13858,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -13450,6 +13902,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -13587,7 +14040,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -13629,6 +14084,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -13773,7 +14229,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -13815,6 +14273,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -13949,7 +14408,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -13991,6 +14452,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -14127,7 +14589,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -14169,6 +14633,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -14299,7 +14764,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -14341,6 +14808,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -14547,7 +15015,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -14589,6 +15059,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -14723,7 +15194,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -14765,6 +15238,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -14899,7 +15373,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -14941,6 +15417,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -15079,7 +15556,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -15121,6 +15600,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -15255,7 +15735,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -15297,6 +15779,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -15433,7 +15916,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -15475,6 +15960,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -15611,7 +16097,9 @@ export namespace GetConnectionResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -15653,6 +16141,7 @@ export namespace GetConnectionResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -15797,6 +16286,7 @@ export interface GetMessageTemplateResponse {
 
 export type ListConnectionConfigsResponse =
   | ListConnectionConfigsResponse.ConnectorAcmeOauth2DiscriminatedConnectorConfig
+  | ListConnectionConfigsResponse.ConnectorAdobeDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorAircallDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorConfluenceDiscriminatedConnectorConfig
   | ListConnectionConfigsResponse.ConnectorDiscordDiscriminatedConnectorConfig
@@ -15923,7 +16413,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -15965,6 +16457,201 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'openledger'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectorConfig {
+    config: ConnectorAdobeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'adobe';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: ConnectorAdobeDiscriminatedConnectorConfig.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: Record<string, ConnectorAdobeDiscriminatedConnectorConfig.Integrations>;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+
+    export interface Connector {
+      name: string;
+
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      has_openint_credentials?: boolean;
+
+      logo_url?: string;
+
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integrations {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -16114,7 +16801,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -16156,6 +16845,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -16305,7 +16995,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -16347,6 +17039,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -16496,7 +17189,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -16538,6 +17233,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -16687,7 +17383,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -16729,6 +17427,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -16878,7 +17577,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -16920,6 +17621,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -17069,7 +17771,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -17111,6 +17815,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -17260,7 +17965,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -17302,6 +18009,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -17451,7 +18159,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -17493,6 +18203,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -17642,7 +18353,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -17684,6 +18397,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -17833,7 +18547,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -17875,6 +18591,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -18024,7 +18741,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -18066,6 +18785,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -18215,7 +18935,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -18257,6 +18979,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -18406,7 +19129,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -18448,6 +19173,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -18597,7 +19323,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -18639,6 +19367,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -18788,7 +19517,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -18830,6 +19561,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -18979,7 +19711,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -19021,6 +19755,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -19170,7 +19905,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -19212,6 +19949,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -19361,7 +20099,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -19403,6 +20143,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -19552,7 +20293,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -19594,6 +20337,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -19743,7 +20487,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -19785,6 +20531,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -19934,7 +20681,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -19976,6 +20725,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -20125,7 +20875,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -20167,6 +20919,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -20316,7 +21069,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -20358,6 +21113,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -20507,7 +21263,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -20549,6 +21307,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -20698,7 +21457,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -20740,6 +21501,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -20889,7 +21651,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -20931,6 +21695,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -21080,7 +21845,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -21122,6 +21889,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -21271,7 +22039,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -21313,6 +22083,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -21462,7 +22233,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -21504,6 +22277,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -21628,7 +22402,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -21670,6 +22446,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -21794,7 +22571,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -21836,6 +22615,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -21983,7 +22763,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -22025,6 +22807,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -22149,7 +22932,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -22191,6 +22976,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -22341,7 +23127,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -22383,6 +23171,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -22507,7 +23296,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -22549,6 +23340,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -22673,7 +23465,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -22715,6 +23509,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -22839,7 +23634,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -22881,6 +23678,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -23009,7 +23807,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -23051,6 +23851,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -23179,7 +23980,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -23221,6 +24024,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -23368,7 +24172,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -23410,6 +24216,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -23538,7 +24345,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -23580,6 +24389,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -23708,7 +24518,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -23750,6 +24562,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -23888,7 +24701,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -23930,6 +24745,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -24076,7 +24892,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -24118,6 +24936,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -24304,7 +25123,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -24346,6 +25167,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -24470,7 +25292,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -24512,6 +25336,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -24648,7 +25473,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -24690,6 +25517,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -24822,7 +25650,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -24864,6 +25694,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -24988,7 +25819,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -25030,6 +25863,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -25177,7 +26011,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -25219,6 +26055,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -25349,7 +26186,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -25391,6 +26230,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -25515,7 +26355,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -25557,6 +26399,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -25681,7 +26524,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -25723,6 +26568,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -25863,7 +26709,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -25905,6 +26753,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -26029,7 +26878,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -26071,6 +26922,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -26217,7 +27069,9 @@ export namespace ListConnectionConfigsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -26259,6 +27113,7 @@ export namespace ListConnectionConfigsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -26346,6 +27201,7 @@ export namespace ListConnectionConfigsResponse {
  */
 export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorAcmeOauth2DiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorAdobeDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorAircallDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorConfluenceDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorDiscordDiscriminatedConnectionSettings
@@ -26453,7 +27309,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -26495,6 +27353,235 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
+        | 'aircall'
+        | 'airtable'
+        | 'apollo'
+        | 'brex'
+        | 'coda'
+        | 'confluence'
+        | 'discord'
+        | 'facebook'
+        | 'finch'
+        | 'firebase'
+        | 'foreceipt'
+        | 'github'
+        | 'gong'
+        | 'google-calendar'
+        | 'google-docs'
+        | 'google-drive'
+        | 'google-mail'
+        | 'google-sheet'
+        | 'greenhouse'
+        | 'heron'
+        | 'hubspot'
+        | 'instagram'
+        | 'intercom'
+        | 'jira'
+        | 'lever'
+        | 'linear'
+        | 'linkedin'
+        | 'lunchmoney'
+        | 'mercury'
+        | 'merge'
+        | 'moota'
+        | 'notion'
+        | 'onebrick'
+        | 'openledger'
+        | 'outreach'
+        | 'pipedrive'
+        | 'plaid'
+        | 'postgres'
+        | 'quickbooks'
+        | 'ramp'
+        | 'reddit'
+        | 'salesloft'
+        | 'saltedge'
+        | 'sharepoint'
+        | 'slack'
+        | 'splitwise'
+        | 'stripe'
+        | 'teller'
+        | 'toggl'
+        | 'twenty'
+        | 'twitter'
+        | 'venmo'
+        | 'wise'
+        | 'xero'
+        | 'yodlee'
+        | 'zoho-desk';
+
+      created_at: string;
+
+      external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      name: string;
+
+      standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+
+      updated_at: string;
+
+      auth_type?: string | null;
+
+      category?: string | null;
+
+      logo_url?: string | null;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop'> | null;
+
+      stage?: 'alpha' | 'beta' | 'ga' | null;
+
+      version?: string | null;
+    }
+
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectionSettings {
+    connector_name: 'adobe';
+
+    id?: string;
+
+    connector?: ConnectorAdobeDiscriminatedConnectionSettings.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: ConnectorAdobeDiscriminatedConnectionSettings.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: Record<string, unknown> | null;
+
+    settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectionSettings {
+    export interface Connector {
+      name: string;
+
+      auth_type?: 'BASIC' | 'OAUTH1' | 'OAUTH2' | 'OAUTH2CC' | 'API_KEY' | 'CUSTOM';
+
+      display_name?: string;
+
+      has_openint_credentials?: boolean;
+
+      logo_url?: string;
+
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
+
+      platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
+
+      schemas?: Connector.Schemas;
+
+      scopes?: Array<Connector.Scope>;
+
+      stage?: 'alpha' | 'beta' | 'ga' | 'hidden';
+    }
+
+    export namespace Connector {
+      export interface Schemas {
+        connect_input?: unknown;
+
+        connect_output?: unknown;
+
+        connection_settings?: unknown;
+
+        connector_config?: unknown;
+
+        integration_data?: unknown;
+
+        pre_connect_input?: unknown;
+
+        webhook_input?: unknown;
+      }
+
+      export interface Scope {
+        scope: string;
+
+        description?: string;
+
+        display_name?: string;
+      }
+    }
+
+    export interface Integration {
+      id: string;
+
+      connector_name:
+        | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -26678,7 +27765,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -26720,6 +27809,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -26903,7 +27993,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -26945,6 +28037,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -27128,7 +28221,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -27170,6 +28265,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -27353,7 +28449,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -27395,6 +28493,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -27578,7 +28677,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -27620,6 +28721,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -27803,7 +28905,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -27845,6 +28949,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -28033,7 +29138,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -28075,6 +29182,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -28258,7 +29366,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -28300,6 +29410,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -28483,7 +29594,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -28525,6 +29638,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -28708,7 +29822,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -28750,6 +29866,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -28933,7 +30050,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -28975,6 +30094,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -29158,7 +30278,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -29200,6 +30322,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -29383,7 +30506,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -29425,6 +30550,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -29608,7 +30734,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -29650,6 +30778,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -29833,7 +30962,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -29875,6 +31006,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -30058,7 +31190,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -30100,6 +31234,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -30283,7 +31418,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -30325,6 +31462,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -30508,7 +31646,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -30550,6 +31690,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -30733,7 +31874,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -30775,6 +31918,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -30958,7 +32102,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -31000,6 +32146,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -31183,7 +32330,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -31225,6 +32374,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -31413,7 +32563,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -31455,6 +32607,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -31638,7 +32791,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -31680,6 +32835,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -31863,7 +33019,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -31905,6 +33063,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -32088,7 +33247,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -32130,6 +33291,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -32313,7 +33475,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -32355,6 +33519,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -32538,7 +33703,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -32580,6 +33747,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -32763,7 +33931,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -32805,6 +33975,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -32988,7 +34159,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -33030,6 +34203,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -33218,7 +34392,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -33260,6 +34436,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -33396,7 +34573,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -33438,6 +34617,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -33572,7 +34752,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -33614,6 +34796,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -33748,7 +34931,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -33790,6 +34975,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -33924,7 +35110,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -33966,6 +35154,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -34102,7 +35291,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -34144,6 +35335,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -34348,7 +35540,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -34390,6 +35584,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -34528,7 +35723,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -34570,6 +35767,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -34704,7 +35902,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -34746,6 +35946,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -34876,7 +36077,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -34918,6 +36121,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -35048,7 +36252,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -35090,6 +36296,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -35220,7 +36427,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -35262,6 +36471,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -35398,7 +36608,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -35440,6 +36652,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -35570,7 +36783,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -35612,6 +36827,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -35746,7 +36962,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -35788,6 +37006,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -35925,7 +37144,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -35967,6 +37188,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -36111,7 +37333,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -36153,6 +37377,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -36287,7 +37512,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -36329,6 +37556,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -36465,7 +37693,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -36507,6 +37737,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -36637,7 +37868,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -36679,6 +37912,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -36885,7 +38119,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -36927,6 +38163,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -37061,7 +38298,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -37103,6 +38342,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -37237,7 +38477,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -37279,6 +38521,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -37417,7 +38660,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -37459,6 +38704,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -37593,7 +38839,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -37635,6 +38883,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -37771,7 +39020,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -37813,6 +39064,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -37949,7 +39201,9 @@ export namespace ListConnectionsResponse {
 
       logo_url?: string;
 
-      openint_scopes?: Array<string>;
+      openint_allowed_scopes?: Array<string>;
+
+      openint_default_scopes?: Array<string>;
 
       platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -37991,6 +39245,7 @@ export namespace ListConnectionsResponse {
 
       connector_name:
         | 'acme-oauth2'
+        | 'adobe'
         | 'aircall'
         | 'airtable'
         | 'apollo'
@@ -38134,7 +39389,9 @@ export interface ListConnectorsResponse {
 
   logo_url?: string;
 
-  openint_scopes?: Array<string>;
+  openint_allowed_scopes?: Array<string>;
+
+  openint_default_scopes?: Array<string>;
 
   platforms?: Array<'web' | 'mobile' | 'desktop' | 'local' | 'cloud'>;
 
@@ -38151,6 +39408,7 @@ export namespace ListConnectorsResponse {
 
     connector_name:
       | 'acme-oauth2'
+      | 'adobe'
       | 'aircall'
       | 'airtable'
       | 'apollo'
@@ -38273,6 +39531,7 @@ export interface CreateConnectionParams {
    */
   data:
     | CreateConnectionParams.ConnectorAcmeOauth2DiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorAdobeDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorAircallDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorConfluenceDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorDiscordDiscriminatedConnectionSettings
@@ -38346,6 +39605,67 @@ export namespace CreateConnectionParams {
   }
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
+    export interface Settings {
+      oauth: Settings.OAuth;
+
+      /**
+       * Same as oauth.credentials.access_token, but more convenient to access. Optional
+       * for backward compatibility until we remove the oauth field
+       */
+      access_token?: string;
+    }
+
+    export namespace Settings {
+      export interface OAuth {
+        created_at?: string;
+
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        credentials?: OAuth.Credentials;
+
+        last_fetched_at?: string;
+
+        metadata?: Record<string, unknown> | null;
+
+        updated_at?: string;
+      }
+
+      export namespace OAuth {
+        /**
+         * Output of the postConnect hook for oauth2 connectors
+         */
+        export interface Credentials {
+          access_token: string;
+
+          /**
+           * Client ID used for the connection
+           */
+          client_id?: string;
+
+          expires_at?: string;
+
+          expires_in?: number;
+
+          raw?: Record<string, unknown>;
+
+          refresh_token?: string;
+
+          scope?: string;
+
+          token_type?: string;
+        }
+      }
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectionSettings {
+    connector_name: 'adobe';
+
+    settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectionSettings {
     export interface Settings {
       oauth: Settings.OAuth;
 
@@ -40717,6 +42037,7 @@ export namespace CreateTokenParams {
      */
     connector_names?: Array<
       | 'acme-oauth2'
+      | 'adobe'
       | 'aircall'
       | 'airtable'
       | 'apollo'
@@ -40824,6 +42145,7 @@ export interface GetMessageTemplateParams {
 export interface ListConnectionConfigsParams extends OffsetPaginationParams {
   connector_names?: Array<
     | 'acme-oauth2'
+    | 'adobe'
     | 'aircall'
     | 'airtable'
     | 'apollo'
@@ -40900,6 +42222,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
 
   connector_names?: Array<
     | 'acme-oauth2'
+    | 'adobe'
     | 'aircall'
     | 'airtable'
     | 'apollo'
