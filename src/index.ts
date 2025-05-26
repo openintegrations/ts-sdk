@@ -21,3 +21,4 @@ export {
   PermissionDeniedError,
   UnprocessableEntityError,
 } from './core/error';
+export * from '@openint/connect';

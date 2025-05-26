@@ -714,6 +714,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@openint/connect@~1.0.26":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@openint/connect/-/connect-1.0.26.tgz#7aada0d51a06b951f4139e01ab3533d9123667d6"
+  integrity sha512-/nHo2bH8IRacCienyLGNiRJEyfMzninCJFn6edIQA7WjWfFlORWEUfA8sOAqQjPm1zOqYwG47PK3/6JxoRjWig==
+
 "@pkgr/core@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.1.1.tgz#1ec17e2edbec25c8306d424ecfbf13c7de1aaa31"

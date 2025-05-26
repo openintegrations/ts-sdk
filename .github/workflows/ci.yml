@@ -15,7 +15,6 @@ jobs:
     runs-on: ${{ github.repository == 'stainless-sdks/openint-typescript' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -32,11 +31,10 @@ jobs:
     name: build
     runs-on: ${{ github.repository == 'stainless-sdks/openint-typescript' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -47,6 +45,31 @@ jobs:
 
       - name: Check build
         run: ./scripts/build
+
+      - name: Commit openint/connect patch version upgrade and push yarn.lock
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          echo "Attempting to upgrade @openint/connect..."
+          yarn upgrade @openint/connect
+
+          echo "Checking for changes in yarn.lock..."
+          if git diff --quiet HEAD -- yarn.lock; then
+             echo "yarn.lock unchanged. No commit needed."
+             exit 0
+          fi
+
+          echo "yarn.lock has changed. Committing and pushing..."
+          git add yarn.lock
+          git commit -m "chore: auto-update openint/connect patch from CI" -m "Package: @openint/connect" -m "[skip ci]"
+
+          echo "Pushing changes..."
+          git push origin HEAD
+          echo "yarn.lock pushed successfully."
 
       - name: Get GitHub OIDC Token
         if: github.repository == 'stainless-sdks/openint-typescript'
@@ -68,7 +91,6 @@ jobs:
     runs-on: ${{ github.repository == 'stainless-sdks/openint-typescript' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:

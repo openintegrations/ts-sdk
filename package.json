@@ -1,6 +1,6 @@
 {
-  "name": "@openint/sdk",
-  "version": "2.2.0",
+  "name": "@openint/backend-sdk",
+  "version": "2.3.0",
   "description": "The official TypeScript library for the Openint API",
   "author": "Openint <support@openint.dev>",
   "types": "dist/index.d.ts",
@@ -23,7 +23,9 @@
     "lint": "./scripts/lint",
     "fix": "./scripts/format"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@openint/connect": "~1.0.26"
+  },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.0",
     "@swc/core": "^1.3.102",
@@ -50,8 +52,8 @@
     "synckit": "0.8.8"
   },
   "imports": {
-    "@openint/sdk": ".",
-    "@openint/sdk/*": "./src/*"
+    "@openint/backend-sdk": ".",
+    "@openint/backend-sdk/*": "./src/*"
   },
   "exports": {
     ".": {
