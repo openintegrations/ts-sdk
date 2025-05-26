@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from '@openint/sdk/core/api-promise';
+import { APIPromise } from '@openint/backend-sdk/core/api-promise';
 
 import util from 'node:util';
-import Openint from '@openint/sdk';
-import { APIUserAbortError } from '@openint/sdk';
+import Openint from '@openint/backend-sdk';
+import { APIUserAbortError } from '@openint/backend-sdk';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {
