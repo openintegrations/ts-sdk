@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.1 (2025-05-28)
+
+Full Changelog: [v2.3.0...v2.3.1](https://github.com/openintegrations/ts-sdk/compare/v2.3.0...v2.3.1)
+
+### Chores
+
+* improve publish-npm script --latest tag logic ([ada9fd8](https://github.com/openintegrations/ts-sdk/commit/ada9fd81b945efe8b72958b7b0b780fd237a09ba))
+
 ## 2.3.0 (2025-05-26)
 
 Full Changelog: [v2.2.0...v2.3.0](https://github.com/openintegrations/ts-sdk/compare/v2.2.0...v2.3.0)
