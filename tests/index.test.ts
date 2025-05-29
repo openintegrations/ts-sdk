@@ -387,14 +387,14 @@ describe('instantiate client', () => {
 
   test('with environment variable arguments', () => {
     // set options via env var
-    process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY'] = 'My Token';
+    process.env['OPENINT_API_KEY'] = 'My Token';
     const client = new Openint();
     expect(client.token).toBe('My Token');
   });
 
   test('with overridden environment variable arguments', () => {
     // set options via env var
-    process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY'] = 'another My Token';
+    process.env['OPENINT_API_KEY'] = 'another My Token';
     const client = new Openint({ token: 'My Token' });
     expect(client.token).toBe('My Token');
   });
