@@ -252,7 +252,7 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listEvents(
-        { limit: 0, offset: 0, search_query: 'search_query' },
+        { limit: 0, offset: 0, search_query: 'search_query', since: 'since' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
