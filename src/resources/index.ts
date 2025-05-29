@@ -1,6 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
+  type Connector,
+  type Integration,
+  type OAuthConnectionSettings,
+  type OAuthConnectorConfig,
   type CheckConnectionResponse,
   type CreateConnectionResponse,
   type CreateTokenResponse,
@@ -11,6 +15,7 @@ export {
   type ListConnectionConfigsResponse,
   type ListConnectionsResponse,
   type ListConnectorsResponse,
+  type ListEventsResponse,
   type CreateConnectionParams,
   type CreateTokenParams,
   type GetConnectionParams,
@@ -18,7 +23,9 @@ export {
   type ListConnectionConfigsParams,
   type ListConnectionsParams,
   type ListConnectorsParams,
+  type ListEventsParams,
   type ListConnectionConfigsResponsesOffsetPagination,
   type ListConnectionsResponsesOffsetPagination,
   type ListConnectorsResponsesOffsetPagination,
+  type ListEventsResponsesOffsetPagination,
 } from './top-level';

@@ -2,6 +2,10 @@
 
 Types:
 
+- <code><a href="./src/resources/top-level.ts">Connector</a></code>
+- <code><a href="./src/resources/top-level.ts">Integration</a></code>
+- <code><a href="./src/resources/top-level.ts">OAuthConnectionSettings</a></code>
+- <code><a href="./src/resources/top-level.ts">OAuthConnectorConfig</a></code>
 - <code><a href="./src/resources/top-level.ts">CheckConnectionResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">CreateConnectionResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">CreateTokenResponse</a></code>
@@ -12,6 +16,7 @@ Types:
 - <code><a href="./src/resources/top-level.ts">ListConnectionConfigsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectionsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectorsResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">ListEventsResponse</a></code>
 
 Methods:
 
@@ -25,3 +30,4 @@ Methods:
 - <code title="get /connector-config">client.<a href="./src/index.ts">listConnectionConfigs</a>({ ...params }) -> ListConnectionConfigsResponsesOffsetPagination</code>
 - <code title="get /connection">client.<a href="./src/index.ts">listConnections</a>({ ...params }) -> ListConnectionsResponsesOffsetPagination</code>
 - <code title="get /connector">client.<a href="./src/index.ts">listConnectors</a>({ ...params }) -> ListConnectorsResponsesOffsetPagination</code>
+- <code title="get /event">client.<a href="./src/index.ts">listEvents</a>({ ...params }) -> ListEventsResponsesOffsetPagination</code>
