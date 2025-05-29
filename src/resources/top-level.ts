@@ -37532,6 +37532,8 @@ export interface ListEventsParams extends OffsetPaginationParams {
   limit?: number;
 
   search_query?: string;
+
+  since?: string;
 }
 
 export declare namespace TopLevel {
