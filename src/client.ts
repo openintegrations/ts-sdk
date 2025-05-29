@@ -59,7 +59,7 @@ import { isEmptyObj } from './internal/utils/values';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY'].
+   * Defaults to process.env['OPENINT_API_KEY'].
    */
   token?: string | null | undefined;
 
@@ -151,7 +151,7 @@ export class Openint {
   /**
    * API Client for interfacing with the Openint API.
    *
-   * @param {string | null | undefined} [opts.token=process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY'] ?? null]
+   * @param {string | null | undefined} [opts.token=process.env['OPENINT_API_KEY'] ?? null]
    * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://api.openint.dev/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
@@ -162,7 +162,7 @@ export class Openint {
    */
   constructor({
     baseURL = readEnv('OPENINT_BASE_URL'),
-    token = readEnv('OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY') ?? null,
+    token = readEnv('OPENINT_API_KEY') ?? null,
     ...opts
   }: ClientOptions = {}) {
     const options: ClientOptions = {
