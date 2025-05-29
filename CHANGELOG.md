@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.6.0 (2025-05-29)
+
+Full Changelog: [v2.5.0...v2.6.0](https://github.com/openintegrations/ts-sdk/compare/v2.5.0...v2.6.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([946be73](https://github.com/openintegrations/ts-sdk/commit/946be7321424e982731ca4b12eb6c0cd3b664cf2))
+
+
+### Bug Fixes
+
+* **api:** adding prompt parameter ([7f54040](https://github.com/openintegrations/ts-sdk/commit/7f54040647fd4950e089cbe01cecaf3d84492c50))
+
 ## 2.5.0 (2025-05-29)
 
 Full Changelog: [v2.4.0...v2.5.0](https://github.com/openintegrations/ts-sdk/compare/v2.4.0...v2.5.0)

@@ -33201,7 +33201,7 @@ export namespace ListEventsResponse {
 
   export namespace UnionMember13 {
     export interface Data {
-      error_details?: null;
+      error_details?: string | null;
 
       error_message?: string | null;
     }
@@ -37526,6 +37526,8 @@ export interface ListConnectorsParams extends OffsetPaginationParams {
 }
 
 export interface ListEventsParams extends OffsetPaginationParams {
+  expand?: Array<'prompt'>;
+
   /**
    * Limit the number of items returned
    */
