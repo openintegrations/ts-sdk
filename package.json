@@ -1,5 +1,5 @@
 {
-  "name": "@openint/backend-sdk",
+  "name": "@openint/sdk",
   "version": "2.3.1",
   "description": "The official TypeScript library for the Openint API",
   "author": "Openint <support@openint.dev>",
