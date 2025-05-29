@@ -55,12 +55,12 @@ $ cd ts-sdk
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link @openint/backend-sdk
+$ yarn link @openint/sdk
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @openint/backend-sdk
+$ pnpm link -—global @openint/sdk
 ```
 
 ## Running tests

@@ -50,8 +50,8 @@
     "synckit": "0.8.8"
   },
   "imports": {
-    "@openint/backend-sdk": ".",
-    "@openint/backend-sdk/*": "./src/*"
+    "@openint/sdk": ".",
+    "@openint/sdk/*": "./src/*"
   },
   "exports": {
     ".": {

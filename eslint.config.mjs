@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^@openint/backend-sdk(/.*)?',
+              regex: '^@openint/sdk(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],
