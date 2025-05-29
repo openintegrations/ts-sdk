@@ -25,7 +25,7 @@ describe('top level methods', () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
-      data: { connector_name: 'acme-oauth2' },
+      data: { connector_name: 'accelo' },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -42,7 +42,7 @@ describe('top level methods', () => {
       connector_config_id: 'ccfg_',
       customer_id: 'customer_id',
       data: {
-        connector_name: 'acme-oauth2',
+        connector_name: 'accelo',
         settings: {
           oauth: {
             created_at: 'created_at',
@@ -60,6 +60,7 @@ describe('top level methods', () => {
             metadata: { foo: 'bar' },
             updated_at: 'updated_at',
           },
+          subdomain: 'https://26f1kl_-n-71.api.accelo.com',
           access_token: 'access_token',
         },
       },
@@ -167,7 +168,7 @@ describe('top level methods', () => {
     await expect(
       client.listConnectionConfigs(
         {
-          connector_names: ['acme-oauth2'],
+          connector_names: ['accelo'],
           expand: ['connector'],
           limit: 0,
           offset: 0,
@@ -197,7 +198,7 @@ describe('top level methods', () => {
       client.listConnections(
         {
           connector_config_id: 'ccfg_',
-          connector_names: ['acme-oauth2'],
+          connector_names: ['accelo'],
           customer_id: 'customer_id',
           expand: ['connector'],
           include_secrets: true,
@@ -229,6 +230,29 @@ describe('top level methods', () => {
     await expect(
       client.listConnectors(
         { expand: ['schemas'], limit: 0, offset: 0 },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listEvents', async () => {
+    const responsePromise = client.listEvents();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listEvents: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listEvents(
+        { limit: 0, offset: 0, search_query: 'search_query' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
