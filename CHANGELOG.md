@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.4.0 (2025-05-29)
+
+Full Changelog: [v2.3.1...v2.4.0](https://github.com/openintegrations/ts-sdk/compare/v2.3.1...v2.4.0)
+
+### Features
+
+* **api:** add models ([168f163](https://github.com/openintegrations/ts-sdk/commit/168f1631c7d20af4f44ba1b11f5c612aa235b8af))
+* **api:** Adding models ([1f02fec](https://github.com/openintegrations/ts-sdk/commit/1f02fece579bb98ffd22fafa762f67ef374af63a))
+
 ## 2.3.1 (2025-05-28)
 
 Full Changelog: [v2.3.0...v2.3.1](https://github.com/openintegrations/ts-sdk/compare/v2.3.0...v2.3.1)
