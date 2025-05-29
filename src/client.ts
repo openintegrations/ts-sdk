@@ -21,6 +21,7 @@ import * as Uploads from './core/uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
   CheckConnectionResponse,
+  Connector,
   CreateConnectionParams,
   CreateConnectionResponse,
   CreateTokenParams,
@@ -31,6 +32,7 @@ import {
   GetCurrentUserResponse,
   GetMessageTemplateParams,
   GetMessageTemplateResponse,
+  Integration,
   ListConnectionConfigsParams,
   ListConnectionConfigsResponse,
   ListConnectionConfigsResponsesOffsetPagination,
@@ -40,6 +42,11 @@ import {
   ListConnectorsParams,
   ListConnectorsResponse,
   ListConnectorsResponsesOffsetPagination,
+  ListEventsParams,
+  ListEventsResponse,
+  ListEventsResponsesOffsetPagination,
+  OAuthConnectionSettings,
+  OAuthConnectorConfig,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -305,6 +312,19 @@ export class Openint {
     options?: RequestOptions,
   ): Pagination.PagePromise<ListConnectorsResponsesOffsetPagination, TopLevelAPI.ListConnectorsResponse> {
     return this.getAPIList('/connector', Pagination.OffsetPagination<TopLevelAPI.ListConnectorsResponse>, {
+      query,
+      ...options,
+    });
+  }
+
+  /**
+   * List all events for an organization
+   */
+  listEvents(
+    query: TopLevelAPI.ListEventsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): Pagination.PagePromise<ListEventsResponsesOffsetPagination, TopLevelAPI.ListEventsResponse> {
+    return this.getAPIList('/event', Pagination.OffsetPagination<TopLevelAPI.ListEventsResponse>, {
       query,
       ...options,
     });
@@ -844,6 +864,10 @@ export declare namespace Openint {
   };
 
   export {
+    type Connector as Connector,
+    type Integration as Integration,
+    type OAuthConnectionSettings as OAuthConnectionSettings,
+    type OAuthConnectorConfig as OAuthConnectorConfig,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateTokenResponse as CreateTokenResponse,
@@ -854,9 +878,11 @@ export declare namespace Openint {
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
+    type ListEventsResponse as ListEventsResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
+    type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConnectionParams as GetConnectionParams,
@@ -864,5 +890,6 @@ export declare namespace Openint {
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
+    type ListEventsParams as ListEventsParams,
   };
 }
