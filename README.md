@@ -23,7 +23,7 @@ The full API of this library can be found in [api.md](api.md).
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  token: process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY'], // This is the default and can be omitted
+  token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
@@ -43,7 +43,7 @@ This library includes TypeScript definitions for all request params and response
 import Openint from '@openint/sdk';
 
 const client = new Openint({
-  token: process.env['OPENINT_API_KEY_OR_CUSTOMER_TOKEN_OR_CUSTOMER_API_KEY'], // This is the default and can be omitted
+  token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
