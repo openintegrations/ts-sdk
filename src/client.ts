@@ -45,6 +45,8 @@ import {
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
+  OAuthConnectionSettings,
+  OAuthConnectorConfig,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -864,6 +866,8 @@ export declare namespace Openint {
   export {
     type Connector as Connector,
     type Integration as Integration,
+    type OAuthConnectionSettings as OAuthConnectionSettings,
+    type OAuthConnectorConfig as OAuthConnectorConfig,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateTokenResponse as CreateTokenResponse,
