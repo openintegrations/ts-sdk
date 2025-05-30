@@ -260,6 +260,63 @@ export interface Integration {
   version?: string | null;
 }
 
+export interface OAuthConnectionSettings {
+  created_at?: string;
+
+  /**
+   * Output of the postConnect hook for oauth2 connectors
+   */
+  credentials?: OAuthConnectionSettings.Credentials;
+
+  last_fetched_at?: string;
+
+  metadata?: Record<string, unknown> | null;
+
+  updated_at?: string;
+}
+
+export namespace OAuthConnectionSettings {
+  /**
+   * Output of the postConnect hook for oauth2 connectors
+   */
+  export interface Credentials {
+    access_token: string;
+
+    /**
+     * Client ID used for the connection
+     */
+    client_id?: string;
+
+    expires_at?: string;
+
+    expires_in?: number;
+
+    raw?: Record<string, unknown>;
+
+    refresh_token?: string;
+
+    scope?: string;
+
+    token_type?: string;
+  }
+}
+
+/**
+ * Base oauth configuration for the connector
+ */
+export interface OAuthConnectorConfig {
+  client_id?: string | null;
+
+  client_secret?: string | null;
+
+  /**
+   * Custom redirect URI
+   */
+  redirect_uri?: string | null;
+
+  scopes?: Array<string> | null;
+}
+
 export interface CheckConnectionResponse {
   id: string;
 
@@ -475,7 +532,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAcceloDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Accelo account (e.g., https://domain.api.accelo.com)
@@ -487,49 +544,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -568,56 +582,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -656,56 +627,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAdobeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -749,7 +677,7 @@ export namespace CreateConnectionResponse {
        */
       environment: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The resource to use for your various requests (e.g.,
@@ -762,49 +690,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -843,56 +728,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -936,56 +778,13 @@ export namespace CreateConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1024,56 +823,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorApaleoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1112,56 +868,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAsanaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1200,56 +913,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAttioDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1288,7 +958,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAuth0DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Auth0 account (e.g., https://domain.auth0.com)
@@ -1300,49 +970,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1381,56 +1008,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorAutodeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1480,7 +1064,7 @@ export namespace CreateConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your AWS account (e.g., https://domain.amazoncognito.com)
@@ -1492,49 +1076,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1573,7 +1114,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBamboohrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your BambooHR account (e.g., https://domain.bamboohr.com)
@@ -1585,49 +1126,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1676,56 +1174,13 @@ export namespace CreateConnectionResponse {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1774,56 +1229,13 @@ export namespace CreateConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1868,7 +1280,7 @@ export namespace CreateConnectionResponse {
        */
       accountUuid: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The store hash of your BigCommerce account (e.g., Example123)
@@ -1880,49 +1292,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -1961,56 +1330,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBitbucketDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2049,56 +1375,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBitlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2137,56 +1420,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBlackbaudDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2225,56 +1465,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBoldsignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2313,56 +1510,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2401,56 +1555,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorBraintreeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2489,56 +1600,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorCalendlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2577,56 +1645,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorClickupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2665,56 +1690,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorCloseDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2753,56 +1735,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2841,7 +1780,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorContentfulDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentful account (e.g., https://domain.contentful.com)
@@ -2853,49 +1792,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -2945,7 +1841,7 @@ export namespace CreateConnectionResponse {
        */
       appId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentstack account (e.g.,
@@ -2958,49 +1854,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3039,56 +1892,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorCopperDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3127,56 +1937,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorCorosDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3215,56 +1982,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDatevDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3303,56 +2027,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDeelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3391,56 +2072,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDialpadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3479,56 +2117,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDigitaloceanDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3567,56 +2162,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3655,56 +2207,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDocusignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3743,56 +2252,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorDropboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3831,56 +2297,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorEbayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -3919,7 +2342,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorEgnyteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Egnyte account (e.g., https://domain.egnyte.com)
@@ -3931,49 +2354,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4012,56 +2392,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorEnvoyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4100,56 +2437,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorEventbriteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4188,56 +2482,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorExistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4276,56 +2527,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4364,56 +2572,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFactorialDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4452,56 +2617,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFigmaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4540,56 +2662,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFitbitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4628,56 +2707,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFortnoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4716,56 +2752,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFreshbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4804,56 +2797,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorFrontDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4892,56 +2842,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -4980,56 +2887,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGitlabDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5073,56 +2937,13 @@ export namespace CreateConnectionResponse {
        */
       api_base_url_for_customer: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5161,56 +2982,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5249,56 +3027,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5337,56 +3072,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5425,56 +3117,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5513,56 +3162,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5601,7 +3207,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGorgiasDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Gorgias account (e.g., https://domain.gorgias.com)
@@ -5613,49 +3219,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5694,56 +3257,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGrainDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5782,56 +3302,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGumroadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5870,56 +3347,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorGustoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -5963,56 +3397,13 @@ export namespace CreateConnectionResponse {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6051,56 +3442,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorHighlevelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6139,56 +3487,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6227,56 +3532,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6315,56 +3577,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6403,56 +3622,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6491,56 +3667,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorKeapDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6579,56 +3712,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6667,56 +3757,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6755,56 +3802,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6843,56 +3847,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorLinkhutDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -6936,56 +3897,13 @@ export namespace CreateConnectionResponse {
        */
       dc: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7024,56 +3942,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorMiroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7112,56 +3987,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorMondayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7200,56 +4032,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorMuralDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7293,56 +4082,13 @@ export namespace CreateConnectionResponse {
        */
       company: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7386,56 +4132,13 @@ export namespace CreateConnectionResponse {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7479,56 +4182,13 @@ export namespace CreateConnectionResponse {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7567,56 +4227,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7655,7 +4272,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorOdooDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Odoo account (e.g., https://example-subdomain)
@@ -7667,49 +4284,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7748,7 +4322,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorOktaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Okta account (e.g., https://domain.okta.com)
@@ -7760,49 +4334,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7841,56 +4372,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorOsuDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -7929,56 +4417,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorOuraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8017,56 +4462,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8105,56 +4507,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPagerdutyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8193,56 +4552,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPandadocDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8281,56 +4597,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPayfitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8369,56 +4642,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPaypalDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8457,56 +4687,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPennylaneDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8545,56 +4732,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPinterestDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8638,56 +4782,13 @@ export namespace CreateConnectionResponse {
        */
       api_domain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8731,56 +4832,13 @@ export namespace CreateConnectionResponse {
        */
       apiVersion: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8819,56 +4877,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorProductboardDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -8907,7 +4922,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorQualtricsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Qualtrics account (e.g., https://domain.qualtrics.com)
@@ -8919,49 +4934,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9000,56 +4972,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9088,56 +5017,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9176,56 +5062,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSageDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9269,56 +5112,13 @@ export namespace CreateConnectionResponse {
        */
       instance_url: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9357,56 +5157,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9445,56 +5202,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSegmentDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9533,56 +5247,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorServicem8DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9621,7 +5292,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorServicenowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your ServiceNow account (e.g., https://domain.service-now.com)
@@ -9633,49 +5304,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9714,56 +5342,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9802,7 +5387,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorShopifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Shopify account (e.g., https://domain.myshopify.com)
@@ -9814,49 +5399,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9895,56 +5437,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSignnowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -9983,56 +5482,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10071,56 +5527,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSmartsheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10159,7 +5572,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSnowflakeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Snowflake account (e.g., https://example-subdomain)
@@ -10171,49 +5584,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10252,56 +5622,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSpotifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10345,56 +5672,13 @@ export namespace CreateConnectionResponse {
        */
       customappDescription: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10433,56 +5717,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorSquareupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10521,56 +5762,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorStackexchangeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10609,56 +5807,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorStravaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10697,56 +5852,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTeamworkDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10785,56 +5897,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTicktickDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10873,56 +5942,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTimelyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -10961,56 +5987,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTodoistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11049,56 +6032,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTremendousDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11137,56 +6077,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTsheetsteamDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11225,56 +6122,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTumblrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11318,56 +6172,13 @@ export namespace CreateConnectionResponse {
        */
       cluster: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11406,56 +6217,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTwitchDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11494,56 +6262,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11582,56 +6307,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorTypeformDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11670,56 +6352,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorUberDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11758,56 +6397,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorVimeoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11846,56 +6442,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorWakatimeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -11934,56 +6487,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorWealthboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12022,56 +6532,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorWebflowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12110,56 +6577,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorWhoopDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12198,56 +6622,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorWordpressDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12291,56 +6672,13 @@ export namespace CreateConnectionResponse {
        */
       host: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12379,56 +6717,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12473,56 +6768,13 @@ export namespace CreateConnectionResponse {
        */
       apiDomain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12561,56 +6813,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorYandexDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12649,56 +6858,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorZapierDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12737,7 +6903,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorZendeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Zendesk account (e.g., https://domain.zendesk.com)
@@ -12749,49 +6915,6 @@ export namespace CreateConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12830,56 +6953,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorZenefitsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -12923,56 +7003,13 @@ export namespace CreateConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -13016,56 +7053,13 @@ export namespace CreateConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -13104,56 +7098,13 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorZoomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -14643,7 +8594,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAcceloDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Accelo account (e.g., https://domain.api.accelo.com)
@@ -14655,49 +8606,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -14740,56 +8648,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -14832,56 +8697,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAdobeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -14929,7 +8751,7 @@ export namespace GetConnectionResponse {
        */
       environment: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The resource to use for your various requests (e.g.,
@@ -14942,49 +8764,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15027,56 +8806,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15124,56 +8860,13 @@ export namespace GetConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15216,56 +8909,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorApaleoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15308,56 +8958,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAsanaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15400,56 +9007,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAttioDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15492,7 +9056,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAuth0DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Auth0 account (e.g., https://domain.auth0.com)
@@ -15504,49 +9068,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15589,56 +9110,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorAutodeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15692,7 +9170,7 @@ export namespace GetConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your AWS account (e.g., https://domain.amazoncognito.com)
@@ -15704,49 +9182,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15789,7 +9224,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBamboohrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your BambooHR account (e.g., https://domain.bamboohr.com)
@@ -15801,49 +9236,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15896,56 +9288,13 @@ export namespace GetConnectionResponse {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -15998,56 +9347,13 @@ export namespace GetConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16096,7 +9402,7 @@ export namespace GetConnectionResponse {
        */
       accountUuid: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The store hash of your BigCommerce account (e.g., Example123)
@@ -16108,49 +9414,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16193,56 +9456,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBitbucketDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16285,56 +9505,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBitlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16377,56 +9554,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBlackbaudDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16469,56 +9603,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBoldsignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16561,56 +9652,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16653,56 +9701,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorBraintreeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16745,56 +9750,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorCalendlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16837,56 +9799,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorClickupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -16929,56 +9848,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorCloseDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17021,56 +9897,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17113,7 +9946,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorContentfulDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentful account (e.g., https://domain.contentful.com)
@@ -17125,49 +9958,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17221,7 +10011,7 @@ export namespace GetConnectionResponse {
        */
       appId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentstack account (e.g.,
@@ -17234,49 +10024,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17319,56 +10066,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorCopperDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17411,56 +10115,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorCorosDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17503,56 +10164,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDatevDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17595,56 +10213,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDeelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17687,56 +10262,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDialpadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17779,56 +10311,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDigitaloceanDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17871,56 +10360,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -17963,56 +10409,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDocusignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18055,56 +10458,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorDropboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18147,56 +10507,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorEbayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18239,7 +10556,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorEgnyteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Egnyte account (e.g., https://domain.egnyte.com)
@@ -18251,49 +10568,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18336,56 +10610,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorEnvoyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18428,56 +10659,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorEventbriteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18520,56 +10708,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorExistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18612,56 +10757,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18704,56 +10806,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFactorialDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18796,56 +10855,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFigmaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18888,56 +10904,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFitbitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -18980,56 +10953,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFortnoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19072,56 +11002,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFreshbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19164,56 +11051,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorFrontDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19256,56 +11100,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19348,56 +11149,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGitlabDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19445,56 +11203,13 @@ export namespace GetConnectionResponse {
        */
       api_base_url_for_customer: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19537,56 +11252,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19629,56 +11301,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19721,56 +11350,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19813,56 +11399,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19905,56 +11448,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -19997,7 +11497,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGorgiasDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Gorgias account (e.g., https://domain.gorgias.com)
@@ -20009,49 +11509,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20094,56 +11551,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGrainDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20186,56 +11600,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGumroadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20278,56 +11649,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorGustoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20375,56 +11703,13 @@ export namespace GetConnectionResponse {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20467,56 +11752,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorHighlevelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20559,56 +11801,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20651,56 +11850,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20743,56 +11899,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20835,56 +11948,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -20927,56 +11997,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorKeapDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21019,56 +12046,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21111,56 +12095,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21203,56 +12144,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21295,56 +12193,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorLinkhutDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21392,56 +12247,13 @@ export namespace GetConnectionResponse {
        */
       dc: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21484,56 +12296,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorMiroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21576,56 +12345,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorMondayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21668,56 +12394,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorMuralDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21765,56 +12448,13 @@ export namespace GetConnectionResponse {
        */
       company: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21862,56 +12502,13 @@ export namespace GetConnectionResponse {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -21959,56 +12556,13 @@ export namespace GetConnectionResponse {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22051,56 +12605,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22143,7 +12654,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorOdooDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Odoo account (e.g., https://example-subdomain)
@@ -22155,49 +12666,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22240,7 +12708,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorOktaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Okta account (e.g., https://domain.okta.com)
@@ -22252,49 +12720,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22337,56 +12762,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorOsuDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22429,56 +12811,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorOuraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22521,56 +12860,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22613,56 +12909,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPagerdutyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22705,56 +12958,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPandadocDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22797,56 +13007,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPayfitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22889,56 +13056,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPaypalDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -22981,56 +13105,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPennylaneDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23073,56 +13154,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPinterestDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23170,56 +13208,13 @@ export namespace GetConnectionResponse {
        */
       api_domain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23267,56 +13262,13 @@ export namespace GetConnectionResponse {
        */
       apiVersion: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23359,56 +13311,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorProductboardDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23451,7 +13360,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorQualtricsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Qualtrics account (e.g., https://domain.qualtrics.com)
@@ -23463,49 +13372,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23548,56 +13414,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23640,56 +13463,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23732,56 +13512,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSageDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23829,56 +13566,13 @@ export namespace GetConnectionResponse {
        */
       instance_url: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -23921,56 +13615,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24013,56 +13664,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSegmentDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24105,56 +13713,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorServicem8DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24197,7 +13762,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorServicenowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your ServiceNow account (e.g., https://domain.service-now.com)
@@ -24209,49 +13774,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24294,56 +13816,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24386,7 +13865,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorShopifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Shopify account (e.g., https://domain.myshopify.com)
@@ -24398,49 +13877,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24483,56 +13919,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSignnowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24575,56 +13968,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24667,56 +14017,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSmartsheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24759,7 +14066,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSnowflakeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Snowflake account (e.g., https://example-subdomain)
@@ -24771,49 +14078,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24856,56 +14120,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSpotifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -24953,56 +14174,13 @@ export namespace GetConnectionResponse {
        */
       customappDescription: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25045,56 +14223,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorSquareupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25137,56 +14272,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorStackexchangeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25229,56 +14321,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorStravaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25321,56 +14370,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTeamworkDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25413,56 +14419,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTicktickDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25505,56 +14468,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTimelyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25597,56 +14517,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTodoistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25689,56 +14566,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTremendousDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25781,56 +14615,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTsheetsteamDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25873,56 +14664,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTumblrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -25970,56 +14718,13 @@ export namespace GetConnectionResponse {
        */
       cluster: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26062,56 +14767,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTwitchDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26154,56 +14816,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26246,56 +14865,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorTypeformDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26338,56 +14914,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorUberDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26430,56 +14963,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorVimeoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26522,56 +15012,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorWakatimeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26614,56 +15061,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorWealthboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26706,56 +15110,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorWebflowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26798,56 +15159,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorWhoopDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26890,56 +15208,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorWordpressDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -26987,56 +15262,13 @@ export namespace GetConnectionResponse {
        */
       host: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27079,56 +15311,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27177,56 +15366,13 @@ export namespace GetConnectionResponse {
        */
       apiDomain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27269,56 +15415,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorYandexDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27361,56 +15464,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorZapierDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27453,7 +15513,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorZendeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Zendesk account (e.g., https://domain.zendesk.com)
@@ -27465,49 +15525,6 @@ export namespace GetConnectionResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27550,56 +15567,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorZenefitsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27647,56 +15621,13 @@ export namespace GetConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27744,56 +15675,13 @@ export namespace GetConnectionResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -27836,56 +15724,13 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorZoomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -29460,25 +17305,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29518,25 +17345,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29576,25 +17385,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29634,25 +17425,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29692,25 +17465,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29750,25 +17505,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29808,25 +17545,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29866,25 +17585,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29924,25 +17625,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -29982,25 +17665,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30040,25 +17705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30098,25 +17745,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30156,25 +17785,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30214,25 +17825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30272,25 +17865,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30330,25 +17905,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30388,25 +17945,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30446,25 +17985,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30504,25 +18025,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30562,25 +18065,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30620,25 +18105,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30678,25 +18145,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30736,25 +18185,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30794,25 +18225,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30852,25 +18265,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30910,25 +18305,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -30968,25 +18345,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31026,25 +18385,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31084,25 +18425,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31142,25 +18465,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31200,25 +18505,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31258,25 +18545,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31316,25 +18585,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31374,25 +18625,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31432,25 +18665,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31490,25 +18705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31548,25 +18745,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31606,25 +18785,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31664,25 +18825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31722,25 +18865,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31780,25 +18905,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31838,25 +18945,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31896,25 +18985,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -31954,25 +19025,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32012,25 +19065,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32070,25 +19105,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32128,25 +19145,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32186,25 +19185,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32244,25 +19225,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32302,25 +19265,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32360,25 +19305,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32418,25 +19345,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32476,25 +19385,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32534,25 +19425,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32592,25 +19465,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32650,25 +19505,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32708,25 +19545,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32766,25 +19585,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32824,25 +19625,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32882,25 +19665,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32940,25 +19705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -32998,25 +19745,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33056,25 +19785,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33114,25 +19825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33172,25 +19865,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33230,25 +19905,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33288,25 +19945,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33346,25 +19985,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33404,25 +20025,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33462,25 +20065,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33520,25 +20105,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33578,25 +20145,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33636,25 +20185,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33694,25 +20225,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33752,25 +20265,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33810,25 +20305,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33868,25 +20345,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33926,25 +20385,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -33984,25 +20425,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34042,25 +20465,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34100,25 +20505,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34158,25 +20545,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34216,25 +20585,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34274,25 +20625,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34332,25 +20665,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34390,25 +20705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34448,25 +20745,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34506,25 +20785,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34564,25 +20825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34622,25 +20865,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34680,25 +20905,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34738,25 +20945,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34796,25 +20985,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34854,25 +21025,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34912,25 +21065,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -34970,25 +21105,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35028,25 +21145,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35086,25 +21185,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35144,25 +21225,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35202,25 +21265,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35260,25 +21305,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35318,25 +21345,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35376,25 +21385,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35434,25 +21425,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35492,25 +21465,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35550,25 +21505,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35608,25 +21545,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35666,25 +21585,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35724,25 +21625,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35782,25 +21665,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35840,25 +21705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35898,25 +21745,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -35956,25 +21785,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36014,25 +21825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36072,25 +21865,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36130,25 +21905,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36188,25 +21945,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36246,25 +21985,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36304,25 +22025,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36362,25 +22065,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36420,25 +22105,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36478,25 +22145,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36536,25 +22185,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36594,25 +22225,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36652,25 +22265,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36710,25 +22305,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36768,25 +22345,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36826,25 +22385,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36884,25 +22425,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -36942,25 +22465,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37000,25 +22505,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37058,25 +22545,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37116,25 +22585,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37174,25 +22625,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37232,25 +22665,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37290,25 +22705,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37348,25 +22745,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37406,25 +22785,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37464,25 +22825,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37522,25 +22865,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37580,25 +22905,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -37638,25 +22945,7 @@ export namespace ListConnectionConfigsResponse {
       /**
        * Base oauth configuration for the connector
        */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
+      oauth?: TopLevelAPI.OAuthConnectorConfig | null;
     }
   }
 
@@ -39017,7 +24306,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAcceloDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Accelo account (e.g., https://domain.api.accelo.com)
@@ -39029,49 +24318,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39114,56 +24360,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39206,56 +24409,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAdobeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39303,7 +24463,7 @@ export namespace ListConnectionsResponse {
        */
       environment: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The resource to use for your various requests (e.g.,
@@ -39316,49 +24476,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39401,56 +24518,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39498,56 +24572,13 @@ export namespace ListConnectionsResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39590,56 +24621,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorApaleoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39682,56 +24670,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAsanaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39774,56 +24719,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAttioDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39866,7 +24768,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAuth0DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Auth0 account (e.g., https://domain.auth0.com)
@@ -39878,49 +24780,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -39963,56 +24822,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorAutodeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40066,7 +24882,7 @@ export namespace ListConnectionsResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your AWS account (e.g., https://domain.amazoncognito.com)
@@ -40078,49 +24894,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40163,7 +24936,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBamboohrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your BambooHR account (e.g., https://domain.bamboohr.com)
@@ -40175,49 +24948,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40270,56 +25000,13 @@ export namespace ListConnectionsResponse {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40372,56 +25059,13 @@ export namespace ListConnectionsResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40470,7 +25114,7 @@ export namespace ListConnectionsResponse {
        */
       accountUuid: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The store hash of your BigCommerce account (e.g., Example123)
@@ -40482,49 +25126,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40567,56 +25168,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBitbucketDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40659,56 +25217,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBitlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40751,56 +25266,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBlackbaudDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40843,56 +25315,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBoldsignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -40935,56 +25364,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41027,56 +25413,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorBraintreeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41119,56 +25462,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorCalendlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41211,56 +25511,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorClickupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41303,56 +25560,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorCloseDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41395,56 +25609,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41487,7 +25658,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorContentfulDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentful account (e.g., https://domain.contentful.com)
@@ -41499,49 +25670,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41595,7 +25723,7 @@ export namespace ListConnectionsResponse {
        */
       appId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentstack account (e.g.,
@@ -41608,49 +25736,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41693,56 +25778,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorCopperDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41785,56 +25827,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorCorosDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41877,56 +25876,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDatevDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -41969,56 +25925,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDeelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42061,56 +25974,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDialpadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42153,56 +26023,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDigitaloceanDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42245,56 +26072,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42337,56 +26121,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDocusignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42429,56 +26170,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorDropboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42521,56 +26219,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorEbayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42613,7 +26268,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorEgnyteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Egnyte account (e.g., https://domain.egnyte.com)
@@ -42625,49 +26280,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42710,56 +26322,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorEnvoyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42802,56 +26371,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorEventbriteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42894,56 +26420,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorExistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -42986,56 +26469,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43078,56 +26518,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFactorialDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43170,56 +26567,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFigmaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43262,56 +26616,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFitbitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43354,56 +26665,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFortnoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43446,56 +26714,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFreshbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43538,56 +26763,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorFrontDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43630,56 +26812,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43722,56 +26861,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGitlabDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43819,56 +26915,13 @@ export namespace ListConnectionsResponse {
        */
       api_base_url_for_customer: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -43911,56 +26964,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44003,56 +27013,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44095,56 +27062,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44187,56 +27111,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44279,56 +27160,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44371,7 +27209,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGorgiasDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Gorgias account (e.g., https://domain.gorgias.com)
@@ -44383,49 +27221,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44468,56 +27263,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGrainDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44560,56 +27312,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGumroadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44652,56 +27361,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorGustoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44749,56 +27415,13 @@ export namespace ListConnectionsResponse {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44841,56 +27464,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorHighlevelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -44933,56 +27513,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45025,56 +27562,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45117,56 +27611,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45209,56 +27660,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45301,56 +27709,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorKeapDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45393,56 +27758,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45485,56 +27807,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45577,56 +27856,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45669,56 +27905,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorLinkhutDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45766,56 +27959,13 @@ export namespace ListConnectionsResponse {
        */
       dc: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45858,56 +28008,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorMiroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -45950,56 +28057,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorMondayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46042,56 +28106,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorMuralDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46139,56 +28160,13 @@ export namespace ListConnectionsResponse {
        */
       company: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46236,56 +28214,13 @@ export namespace ListConnectionsResponse {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46333,56 +28268,13 @@ export namespace ListConnectionsResponse {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46425,56 +28317,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46517,7 +28366,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorOdooDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Odoo account (e.g., https://example-subdomain)
@@ -46529,49 +28378,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46614,7 +28420,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorOktaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Okta account (e.g., https://domain.okta.com)
@@ -46626,49 +28432,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46711,56 +28474,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorOsuDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46803,56 +28523,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorOuraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46895,56 +28572,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -46987,56 +28621,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPagerdutyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47079,56 +28670,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPandadocDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47171,56 +28719,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPayfitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47263,56 +28768,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPaypalDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47355,56 +28817,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPennylaneDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47447,56 +28866,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPinterestDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47544,56 +28920,13 @@ export namespace ListConnectionsResponse {
        */
       api_domain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47641,56 +28974,13 @@ export namespace ListConnectionsResponse {
        */
       apiVersion: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47733,56 +29023,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorProductboardDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47825,7 +29072,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorQualtricsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Qualtrics account (e.g., https://domain.qualtrics.com)
@@ -47837,49 +29084,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -47922,56 +29126,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48014,56 +29175,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48106,56 +29224,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSageDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48203,56 +29278,13 @@ export namespace ListConnectionsResponse {
        */
       instance_url: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48295,56 +29327,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48387,56 +29376,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSegmentDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48479,56 +29425,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorServicem8DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48571,7 +29474,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorServicenowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your ServiceNow account (e.g., https://domain.service-now.com)
@@ -48583,49 +29486,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48668,56 +29528,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48760,7 +29577,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorShopifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Shopify account (e.g., https://domain.myshopify.com)
@@ -48772,49 +29589,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48857,56 +29631,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSignnowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -48949,56 +29680,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49041,56 +29729,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSmartsheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49133,7 +29778,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSnowflakeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Snowflake account (e.g., https://example-subdomain)
@@ -49145,49 +29790,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49230,56 +29832,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSpotifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49327,56 +29886,13 @@ export namespace ListConnectionsResponse {
        */
       customappDescription: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49419,56 +29935,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorSquareupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49511,56 +29984,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorStackexchangeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49603,56 +30033,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorStravaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49695,56 +30082,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTeamworkDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49787,56 +30131,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTicktickDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49879,56 +30180,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTimelyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -49971,56 +30229,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTodoistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50063,56 +30278,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTremendousDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50155,56 +30327,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTsheetsteamDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50247,56 +30376,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTumblrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50344,56 +30430,13 @@ export namespace ListConnectionsResponse {
        */
       cluster: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50436,56 +30479,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTwitchDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50528,56 +30528,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50620,56 +30577,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorTypeformDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50712,56 +30626,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorUberDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50804,56 +30675,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorVimeoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50896,56 +30724,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorWakatimeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -50988,56 +30773,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorWealthboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51080,56 +30822,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorWebflowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51172,56 +30871,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorWhoopDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51264,56 +30920,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorWordpressDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51361,56 +30974,13 @@ export namespace ListConnectionsResponse {
        */
       host: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51453,56 +31023,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51551,56 +31078,13 @@ export namespace ListConnectionsResponse {
        */
       apiDomain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51643,56 +31127,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorYandexDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51735,56 +31176,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorZapierDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51827,7 +31225,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorZendeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Zendesk account (e.g., https://domain.zendesk.com)
@@ -51839,49 +31237,6 @@ export namespace ListConnectionsResponse {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -51924,56 +31279,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorZenefitsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -52021,56 +31333,13 @@ export namespace ListConnectionsResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -52118,56 +31387,13 @@ export namespace ListConnectionsResponse {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -52210,56 +31436,13 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorZoomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54427,7 +33610,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAcceloDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Accelo account (e.g., https://domain.api.accelo.com)
@@ -54440,49 +33623,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorAcmeOauth2DiscriminatedConnectionSettings {
@@ -54493,56 +33633,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAcmeOauth2DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54554,56 +33651,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAdobeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54620,7 +33674,7 @@ export namespace CreateConnectionParams {
        */
       environment: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The resource to use for your various requests (e.g.,
@@ -54634,49 +33688,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorAircallDiscriminatedConnectionSettings {
@@ -54687,56 +33698,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAircallDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54753,56 +33721,13 @@ export namespace CreateConnectionParams {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54814,56 +33739,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorApaleoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54875,56 +33757,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAsanaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54936,56 +33775,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAttioDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -54997,7 +33793,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAuth0DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Auth0 account (e.g., https://domain.auth0.com)
@@ -55010,49 +33806,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorAutodeskDiscriminatedConnectionSettings {
@@ -55063,56 +33816,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorAutodeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55135,7 +33845,7 @@ export namespace CreateConnectionParams {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your AWS account (e.g., https://domain.amazoncognito.com)
@@ -55148,49 +33858,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorBamboohrDiscriminatedConnectionSettings {
@@ -55201,7 +33868,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBamboohrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your BambooHR account (e.g., https://domain.bamboohr.com)
@@ -55213,49 +33880,6 @@ export namespace CreateConnectionParams {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55277,56 +33901,13 @@ export namespace CreateConnectionParams {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55348,56 +33929,13 @@ export namespace CreateConnectionParams {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55415,7 +33953,7 @@ export namespace CreateConnectionParams {
        */
       accountUuid: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The store hash of your BigCommerce account (e.g., Example123)
@@ -55428,49 +33966,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorBitbucketDiscriminatedConnectionSettings {
@@ -55481,56 +33976,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBitbucketDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55542,56 +33994,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBitlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55603,56 +34012,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBlackbaudDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55664,56 +34030,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBoldsignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55725,56 +34048,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55786,56 +34066,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorBraintreeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55847,56 +34084,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorCalendlyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55908,56 +34102,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorClickupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -55969,56 +34120,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorCloseDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56030,56 +34138,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorConfluenceDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56091,7 +34156,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorContentfulDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentful account (e.g., https://domain.contentful.com)
@@ -56103,49 +34168,6 @@ export namespace CreateConnectionParams {
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56168,7 +34190,7 @@ export namespace CreateConnectionParams {
        */
       appId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Contentstack account (e.g.,
@@ -56182,49 +34204,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorCopperDiscriminatedConnectionSettings {
@@ -56235,56 +34214,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorCopperDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56296,56 +34232,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorCorosDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56357,56 +34250,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDatevDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56418,56 +34268,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDeelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56479,56 +34286,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDialpadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56540,56 +34304,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDigitaloceanDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56601,56 +34322,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDiscordDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56662,56 +34340,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDocusignDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56723,56 +34358,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorDropboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56784,56 +34376,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorEbayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56845,7 +34394,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorEgnyteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Egnyte account (e.g., https://domain.egnyte.com)
@@ -56858,49 +34407,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorEnvoyDiscriminatedConnectionSettings {
@@ -56911,56 +34417,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorEnvoyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -56972,56 +34435,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorEventbriteDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57033,56 +34453,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorExistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57094,56 +34471,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFacebookDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57155,56 +34489,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFactorialDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57216,56 +34507,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFigmaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57277,56 +34525,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFitbitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57338,56 +34543,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFortnoxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57399,56 +34561,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFreshbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57460,56 +34579,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorFrontDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57521,56 +34597,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGitHubDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57582,56 +34615,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGitlabDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57648,56 +34638,13 @@ export namespace CreateConnectionParams {
        */
       api_base_url_for_customer: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57709,56 +34656,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGoogleCalendarDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57770,56 +34674,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGoogleDocsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57831,56 +34692,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGoogleDriveDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57892,56 +34710,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGoogleMailDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -57953,56 +34728,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGoogleSheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58014,7 +34746,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGorgiasDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Gorgias account (e.g., https://domain.gorgias.com)
@@ -58027,49 +34759,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorGrainDiscriminatedConnectionSettings {
@@ -58080,56 +34769,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGrainDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58141,56 +34787,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGumroadDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58202,56 +34805,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorGustoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58268,56 +34828,13 @@ export namespace CreateConnectionParams {
        */
       appDetails: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58329,56 +34846,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorHighlevelDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58390,56 +34864,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorHubspotDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58451,56 +34882,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorInstagramDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58512,56 +34900,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorIntercomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58573,56 +34918,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorJiraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58634,56 +34936,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorKeapDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58695,56 +34954,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorLeverDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58756,56 +34972,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorLinearDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58817,56 +34990,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorLinkedinDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58878,56 +35008,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorLinkhutDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -58944,56 +35031,13 @@ export namespace CreateConnectionParams {
        */
       dc: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59005,56 +35049,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorMiroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59066,56 +35067,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorMondayDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59127,56 +35085,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorMuralDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59193,56 +35108,13 @@ export namespace CreateConnectionParams {
        */
       company: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59259,56 +35131,13 @@ export namespace CreateConnectionParams {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59325,56 +35154,13 @@ export namespace CreateConnectionParams {
        */
       accountId: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59386,56 +35172,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorNotionDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59447,7 +35190,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorOdooDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Odoo account (e.g., https://example-subdomain)
@@ -59460,49 +35203,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorOktaDiscriminatedConnectionSettings {
@@ -59513,7 +35213,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorOktaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Okta account (e.g., https://domain.okta.com)
@@ -59526,49 +35226,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorOsuDiscriminatedConnectionSettings {
@@ -59579,56 +35236,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorOsuDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59640,56 +35254,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorOuraDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59701,56 +35272,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorOutreachDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59762,56 +35290,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPagerdutyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59823,56 +35308,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPandadocDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59884,56 +35326,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPayfitDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -59945,56 +35344,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPaypalDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60006,56 +35362,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPennylaneDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60067,56 +35380,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPinterestDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60133,56 +35403,13 @@ export namespace CreateConnectionParams {
        */
       api_domain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60199,56 +35426,13 @@ export namespace CreateConnectionParams {
        */
       apiVersion: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60260,56 +35444,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorProductboardDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60321,7 +35462,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorQualtricsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Qualtrics account (e.g., https://domain.qualtrics.com)
@@ -60334,49 +35475,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorQuickbooksDiscriminatedConnectionSettings {
@@ -60387,56 +35485,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorQuickbooksDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60448,56 +35503,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorRedditDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60509,56 +35521,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSageDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60575,56 +35544,13 @@ export namespace CreateConnectionParams {
        */
       instance_url: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60636,56 +35562,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSalesloftDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60697,56 +35580,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSegmentDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60758,56 +35598,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorServicem8DiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60819,7 +35616,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorServicenowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your ServiceNow account (e.g., https://domain.service-now.com)
@@ -60832,49 +35629,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorSharepointDiscriminatedConnectionSettings {
@@ -60885,56 +35639,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSharepointDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -60946,7 +35657,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorShopifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Shopify account (e.g., https://domain.myshopify.com)
@@ -60959,49 +35670,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorSignnowDiscriminatedConnectionSettings {
@@ -61012,56 +35680,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSignnowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61073,56 +35698,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSlackDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61134,56 +35716,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSmartsheetDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61195,7 +35734,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSnowflakeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The domain of your Snowflake account (e.g., https://example-subdomain)
@@ -61208,49 +35747,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorSpotifyDiscriminatedConnectionSettings {
@@ -61261,56 +35757,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSpotifyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61327,56 +35780,13 @@ export namespace CreateConnectionParams {
        */
       customappDescription: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61388,56 +35798,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorSquareupDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61449,56 +35816,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorStackexchangeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61510,56 +35834,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorStravaDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61571,56 +35852,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTeamworkDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61632,56 +35870,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTicktickDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61693,56 +35888,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTimelyDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61754,56 +35906,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTodoistDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61815,56 +35924,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTremendousDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61876,56 +35942,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTsheetsteamDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -61937,56 +35960,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTumblrDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62003,56 +35983,13 @@ export namespace CreateConnectionParams {
        */
       cluster: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62064,56 +36001,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTwitchDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62125,56 +36019,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTwitterDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62186,56 +36037,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorTypeformDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62247,56 +36055,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorUberDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62308,56 +36073,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorVimeoDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62369,56 +36091,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorWakatimeDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62430,56 +36109,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorWealthboxDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62491,56 +36127,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorWebflowDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62552,56 +36145,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorWhoopDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62613,56 +36163,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorWordpressDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62679,56 +36186,13 @@ export namespace CreateConnectionParams {
        */
       host: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62740,56 +36204,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorXeroDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62807,56 +36228,13 @@ export namespace CreateConnectionParams {
        */
       apiDomain: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62868,56 +36246,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorYandexDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62929,56 +36264,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorZapierDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -62990,7 +36282,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorZendeskDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * The subdomain of your Zendesk account (e.g., https://domain.zendesk.com)
@@ -63003,49 +36295,6 @@ export namespace CreateConnectionParams {
        */
       access_token?: string;
     }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
-    }
   }
 
   export interface ConnectorZenefitsDiscriminatedConnectionSettings {
@@ -63056,56 +36305,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorZenefitsDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -63122,56 +36328,13 @@ export namespace CreateConnectionParams {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -63188,56 +36351,13 @@ export namespace CreateConnectionParams {
        */
       extension: string;
 
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -63249,56 +36369,13 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorZoomDiscriminatedConnectionSettings {
     export interface Settings {
-      oauth: Settings.OAuth;
+      oauth: TopLevelAPI.OAuthConnectionSettings;
 
       /**
        * Same as oauth.credentials.access_token, but more convenient to access. Optional
        * for backward compatibility until we remove the oauth field
        */
       access_token?: string;
-    }
-
-    export namespace Settings {
-      export interface OAuth {
-        created_at?: string;
-
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        credentials?: OAuth.Credentials;
-
-        last_fetched_at?: string;
-
-        metadata?: Record<string, unknown> | null;
-
-        updated_at?: string;
-      }
-
-      export namespace OAuth {
-        /**
-         * Output of the postConnect hook for oauth2 connectors
-         */
-        export interface Credentials {
-          access_token: string;
-
-          /**
-           * Client ID used for the connection
-           */
-          client_id?: string;
-
-          expires_at?: string;
-
-          expires_in?: number;
-
-          raw?: Record<string, unknown>;
-
-          refresh_token?: string;
-
-          scope?: string;
-
-          token_type?: string;
-        }
-      }
     }
   }
 
@@ -64465,6 +37542,8 @@ export declare namespace TopLevel {
   export {
     type Connector as Connector,
     type Integration as Integration,
+    type OAuthConnectionSettings as OAuthConnectionSettings,
+    type OAuthConnectorConfig as OAuthConnectorConfig,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateTokenResponse as CreateTokenResponse,
