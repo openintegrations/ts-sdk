@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.7.0 (2025-05-30)
+
+Full Changelog: [v2.6.0...v2.7.0](https://github.com/openintegrations/ts-sdk/compare/v2.6.0...v2.7.0)
+
+### Features
+
+* **api:** coercing expand array ([135c83c](https://github.com/openintegrations/ts-sdk/commit/135c83c4c907f69c2f360672abb4e156a5c02bc4))
+* **docs:** updating documented docs for stainless ([0c0c209](https://github.com/openintegrations/ts-sdk/commit/0c0c209d82b91311a0a78dd4166fcc3d2600fd48))
+
 ## 2.6.0 (2025-05-29)
 
 Full Changelog: [v2.5.0...v2.6.0](https://github.com/openintegrations/ts-sdk/compare/v2.5.0...v2.6.0)
