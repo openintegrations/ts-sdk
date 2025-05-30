@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.7.1 (2025-05-30)
+
+Full Changelog: [v2.7.0...v2.7.1](https://github.com/openintegrations/ts-sdk/compare/v2.7.0...v2.7.1)
+
+### Bug Fixes
+
+* compat with more runtimes ([a8c85d2](https://github.com/openintegrations/ts-sdk/commit/a8c85d2b4c735d8c007b24bab0f91801d48f8f81))
+
 ## 2.7.0 (2025-05-30)
 
 Full Changelog: [v2.6.0...v2.7.0](https://github.com/openintegrations/ts-sdk/compare/v2.6.0...v2.7.0)
