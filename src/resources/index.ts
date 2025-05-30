@@ -3,6 +3,8 @@
 export {
   type Connector,
   type Integration,
+  type OAuthConnectionSettings,
+  type OAuthConnectorConfig,
   type CheckConnectionResponse,
   type CreateConnectionResponse,
   type CreateTokenResponse,
