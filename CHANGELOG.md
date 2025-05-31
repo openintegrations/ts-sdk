@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.7.2 (2025-05-31)
+
+Full Changelog: [v2.7.1...v2.7.2](https://github.com/openintegrations/ts-sdk/compare/v2.7.1...v2.7.2)
+
+### Chores
+
+* **deps:** bump eslint-plugin-prettier ([c043508](https://github.com/openintegrations/ts-sdk/commit/c04350817c8dac2f90e1f82d4efc8fc4f5ad05d7))
+* **internal:** update jest config ([1834267](https://github.com/openintegrations/ts-sdk/commit/1834267b24fa6024f1f24cb4ce9ebfee9d1f5dac))
+
 ## 2.7.1 (2025-05-30)
 
 Full Changelog: [v2.7.0...v2.7.1](https://github.com/openintegrations/ts-sdk/compare/v2.7.0...v2.7.1)
