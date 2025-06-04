@@ -26,12 +26,8 @@ const client = new Openint({
   token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const page = await client.listConnections();
-  const listConnectionsResponse = page.items[0];
-}
-
-main();
+const page = await client.listConnections();
+const listConnectionsResponse = page.items[0];
 ```
 
 ### Request & Response types
@@ -46,11 +42,7 @@ const client = new Openint({
   token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const [listConnectionsResponse]: [Openint.ListConnectionsResponse] = await client.listConnections();
-}
-
-main();
+const [listConnectionsResponse]: [Openint.ListConnectionsResponse] = await client.listConnections();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -63,19 +55,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const page = await client.listConnections().catch(async (err) => {
-    if (err instanceof Openint.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
-}
-
-main();
+const page = await client.listConnections().catch(async (err) => {
+  if (err instanceof Openint.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
