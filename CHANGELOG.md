@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.7.2 (2025-06-14)
+
+Full Changelog: [v2.7.1...v2.7.2](https://github.com/openintegrations/ts-sdk/compare/v2.7.1...v2.7.2)
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([e834813](https://github.com/openintegrations/ts-sdk/commit/e83481370cb84e88b051f800185479d04e104f9d))
+
+
+### Chores
+
+* adjust eslint.config.mjs ignore pattern ([2ac8790](https://github.com/openintegrations/ts-sdk/commit/2ac8790c268c31cb01cde3614587005e7484b301))
+* avoid type error in certain environments ([0e418e2](https://github.com/openintegrations/ts-sdk/commit/0e418e2aeb3293192f15f790ce769a60f369539b))
+* **deps:** bump eslint-plugin-prettier ([c043508](https://github.com/openintegrations/ts-sdk/commit/c04350817c8dac2f90e1f82d4efc8fc4f5ad05d7))
+* **docs:** use top-level-await in example snippets ([9486346](https://github.com/openintegrations/ts-sdk/commit/9486346fb0e381d2337e3a54c4ac242dde40e4b6))
+* **internal:** fix readablestream types in node 20 ([0c6f518](https://github.com/openintegrations/ts-sdk/commit/0c6f518fc53dc1c97fa254a6ea0f1b03d10d4e24))
+* **internal:** update jest config ([1834267](https://github.com/openintegrations/ts-sdk/commit/1834267b24fa6024f1f24cb4ce9ebfee9d1f5dac))
+
 ## 2.7.1 (2025-05-30)
 
 Full Changelog: [v2.7.0...v2.7.1](https://github.com/openintegrations/ts-sdk/compare/v2.7.0...v2.7.1)
