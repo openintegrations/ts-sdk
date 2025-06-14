@@ -2,7 +2,7 @@
 
 import type { Openint } from '../client';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: Openint;
 
   constructor(client: Openint) {

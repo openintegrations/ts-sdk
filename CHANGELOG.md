@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.7.3 (2025-06-14)
+
+Full Changelog: [v2.7.2...v2.7.3](https://github.com/openintegrations/ts-sdk/compare/v2.7.2...v2.7.3)
+
+### Chores
+
+* **internal:** add pure annotations, make base APIResource abstract ([24b5b0d](https://github.com/openintegrations/ts-sdk/commit/24b5b0db92ba54115ba7698f66c6bf3219e70009))
+
 ## 2.7.2 (2025-06-14)
 
 Full Changelog: [v2.7.1...v2.7.2](https://github.com/openintegrations/ts-sdk/compare/v2.7.1...v2.7.2)
