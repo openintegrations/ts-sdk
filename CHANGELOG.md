@@ -1,5 +1,32 @@
 # Changelog
 
+## 2.8.0 (2025-06-24)
+
+Full Changelog: [v2.7.2...v2.8.0](https://github.com/openintegrations/ts-sdk/compare/v2.7.2...v2.8.0)
+
+### Features
+
+* **client:** add support for endpoint-specific base URLs ([4ba1f67](https://github.com/openintegrations/ts-sdk/commit/4ba1f67644dd0b1efa650618e1e4b59407188e39))
+
+
+### Bug Fixes
+
+* **client:** explicitly copy fetch in withOptions ([681d6fb](https://github.com/openintegrations/ts-sdk/commit/681d6fb14fab64745ce7631afea7aa63b2bfa05a))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([0c73217](https://github.com/openintegrations/ts-sdk/commit/0c7321766395921fb7d942a1195f88ee37a45cab))
+* **client:** refactor imports ([498906e](https://github.com/openintegrations/ts-sdk/commit/498906ea8b9249f7f90ac00dbcfb480b56e55f40))
+* **internal:** add pure annotations, make base APIResource abstract ([24b5b0d](https://github.com/openintegrations/ts-sdk/commit/24b5b0db92ba54115ba7698f66c6bf3219e70009))
+* **readme:** update badges ([58c9d41](https://github.com/openintegrations/ts-sdk/commit/58c9d41add8e7d6ee5c42a25c25d87b4b64ebbc8))
+* **readme:** use better example snippet for undocumented params ([693a0e9](https://github.com/openintegrations/ts-sdk/commit/693a0e9647aae339d5c84472f62ba0126b107338))
+
+
+### Refactors
+
+* **types:** replace Record with mapped types ([b036541](https://github.com/openintegrations/ts-sdk/commit/b0365413fbd74d191fbff7db03f0a1e0cf764c86))
+
 ## 2.7.2 (2025-06-14)
 
 Full Changelog: [v2.7.1...v2.7.2](https://github.com/openintegrations/ts-sdk/compare/v2.7.1...v2.7.2)
