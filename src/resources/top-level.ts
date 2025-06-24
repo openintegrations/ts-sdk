@@ -239,11 +239,11 @@ export interface Integration {
 
   created_at: string;
 
-  external: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+  external: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
   name: string;
 
-  standard: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+  standard: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
   updated_at: string;
 
@@ -270,7 +270,7 @@ export interface OAuthConnectionSettings {
 
   last_fetched_at?: string;
 
-  metadata?: Record<string, unknown> | null;
+  metadata?: { [key: string]: unknown } | null;
 
   updated_at?: string;
 }
@@ -291,7 +291,7 @@ export namespace OAuthConnectionSettings {
 
     expires_in?: number;
 
-    raw?: Record<string, unknown>;
+    raw?: { [key: string]: unknown };
 
     refresh_token?: string;
 
@@ -519,7 +519,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAcceloDiscriminatedConnectionSettings.Settings;
 
@@ -569,7 +569,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
 
@@ -614,7 +614,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
 
@@ -659,7 +659,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAdyenDiscriminatedConnectionSettings.Settings;
 
@@ -715,7 +715,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
 
@@ -760,7 +760,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAmazonDiscriminatedConnectionSettings.Settings;
 
@@ -810,7 +810,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorApaleoDiscriminatedConnectionSettings.Settings;
 
@@ -855,7 +855,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAsanaDiscriminatedConnectionSettings.Settings;
 
@@ -900,7 +900,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAttioDiscriminatedConnectionSettings.Settings;
 
@@ -945,7 +945,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAuth0DiscriminatedConnectionSettings.Settings;
 
@@ -995,7 +995,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAutodeskDiscriminatedConnectionSettings.Settings;
 
@@ -1040,7 +1040,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAwsDiscriminatedConnectionSettings.Settings;
 
@@ -1101,7 +1101,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBamboohrDiscriminatedConnectionSettings.Settings;
 
@@ -1151,7 +1151,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBasecampDiscriminatedConnectionSettings.Settings;
 
@@ -1206,7 +1206,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBattlenetDiscriminatedConnectionSettings.Settings;
 
@@ -1261,7 +1261,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBigcommerceDiscriminatedConnectionSettings.Settings;
 
@@ -1317,7 +1317,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBitbucketDiscriminatedConnectionSettings.Settings;
 
@@ -1362,7 +1362,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBitlyDiscriminatedConnectionSettings.Settings;
 
@@ -1407,7 +1407,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBlackbaudDiscriminatedConnectionSettings.Settings;
 
@@ -1452,7 +1452,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBoldsignDiscriminatedConnectionSettings.Settings;
 
@@ -1497,7 +1497,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBoxDiscriminatedConnectionSettings.Settings;
 
@@ -1542,7 +1542,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBraintreeDiscriminatedConnectionSettings.Settings;
 
@@ -1587,7 +1587,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCalendlyDiscriminatedConnectionSettings.Settings;
 
@@ -1632,7 +1632,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorClickupDiscriminatedConnectionSettings.Settings;
 
@@ -1677,7 +1677,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCloseDiscriminatedConnectionSettings.Settings;
 
@@ -1722,7 +1722,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
 
@@ -1767,7 +1767,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorContentfulDiscriminatedConnectionSettings.Settings;
 
@@ -1817,7 +1817,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorContentstackDiscriminatedConnectionSettings.Settings;
 
@@ -1879,7 +1879,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCopperDiscriminatedConnectionSettings.Settings;
 
@@ -1924,7 +1924,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCorosDiscriminatedConnectionSettings.Settings;
 
@@ -1969,7 +1969,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDatevDiscriminatedConnectionSettings.Settings;
 
@@ -2014,7 +2014,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDeelDiscriminatedConnectionSettings.Settings;
 
@@ -2059,7 +2059,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDialpadDiscriminatedConnectionSettings.Settings;
 
@@ -2104,7 +2104,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDigitaloceanDiscriminatedConnectionSettings.Settings;
 
@@ -2149,7 +2149,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
 
@@ -2194,7 +2194,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDocusignDiscriminatedConnectionSettings.Settings;
 
@@ -2239,7 +2239,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDropboxDiscriminatedConnectionSettings.Settings;
 
@@ -2284,7 +2284,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEbayDiscriminatedConnectionSettings.Settings;
 
@@ -2329,7 +2329,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEgnyteDiscriminatedConnectionSettings.Settings;
 
@@ -2379,7 +2379,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEnvoyDiscriminatedConnectionSettings.Settings;
 
@@ -2424,7 +2424,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEventbriteDiscriminatedConnectionSettings.Settings;
 
@@ -2469,7 +2469,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorExistDiscriminatedConnectionSettings.Settings;
 
@@ -2514,7 +2514,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
@@ -2559,7 +2559,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFactorialDiscriminatedConnectionSettings.Settings;
 
@@ -2604,7 +2604,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFigmaDiscriminatedConnectionSettings.Settings;
 
@@ -2649,7 +2649,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFitbitDiscriminatedConnectionSettings.Settings;
 
@@ -2694,7 +2694,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFortnoxDiscriminatedConnectionSettings.Settings;
 
@@ -2739,7 +2739,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFreshbooksDiscriminatedConnectionSettings.Settings;
 
@@ -2784,7 +2784,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFrontDiscriminatedConnectionSettings.Settings;
 
@@ -2829,7 +2829,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
 
@@ -2874,7 +2874,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGitlabDiscriminatedConnectionSettings.Settings;
 
@@ -2919,7 +2919,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
@@ -2969,7 +2969,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
 
@@ -3014,7 +3014,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
 
@@ -3059,7 +3059,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
 
@@ -3104,7 +3104,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
 
@@ -3149,7 +3149,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
 
@@ -3194,7 +3194,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGorgiasDiscriminatedConnectionSettings.Settings;
 
@@ -3244,7 +3244,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGrainDiscriminatedConnectionSettings.Settings;
 
@@ -3289,7 +3289,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGumroadDiscriminatedConnectionSettings.Settings;
 
@@ -3334,7 +3334,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGustoDiscriminatedConnectionSettings.Settings;
 
@@ -3379,7 +3379,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHarvestDiscriminatedConnectionSettings.Settings;
 
@@ -3429,7 +3429,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHighlevelDiscriminatedConnectionSettings.Settings;
 
@@ -3474,7 +3474,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
 
@@ -3519,7 +3519,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
@@ -3564,7 +3564,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
@@ -3609,7 +3609,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
@@ -3654,7 +3654,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorKeapDiscriminatedConnectionSettings.Settings;
 
@@ -3699,7 +3699,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
@@ -3744,7 +3744,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
 
@@ -3789,7 +3789,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
 
@@ -3834,7 +3834,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinkhutDiscriminatedConnectionSettings.Settings;
 
@@ -3879,7 +3879,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMailchimpDiscriminatedConnectionSettings.Settings;
 
@@ -3929,7 +3929,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMiroDiscriminatedConnectionSettings.Settings;
 
@@ -3974,7 +3974,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMondayDiscriminatedConnectionSettings.Settings;
 
@@ -4019,7 +4019,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMuralDiscriminatedConnectionSettings.Settings;
 
@@ -4064,7 +4064,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNamelyDiscriminatedConnectionSettings.Settings;
 
@@ -4114,7 +4114,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNationbuilderDiscriminatedConnectionSettings.Settings;
 
@@ -4164,7 +4164,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNetsuiteDiscriminatedConnectionSettings.Settings;
 
@@ -4214,7 +4214,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
 
@@ -4259,7 +4259,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOdooDiscriminatedConnectionSettings.Settings;
 
@@ -4309,7 +4309,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOktaDiscriminatedConnectionSettings.Settings;
 
@@ -4359,7 +4359,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOsuDiscriminatedConnectionSettings.Settings;
 
@@ -4404,7 +4404,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOuraDiscriminatedConnectionSettings.Settings;
 
@@ -4449,7 +4449,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
@@ -4494,7 +4494,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPagerdutyDiscriminatedConnectionSettings.Settings;
 
@@ -4539,7 +4539,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPandadocDiscriminatedConnectionSettings.Settings;
 
@@ -4584,7 +4584,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPayfitDiscriminatedConnectionSettings.Settings;
 
@@ -4629,7 +4629,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPaypalDiscriminatedConnectionSettings.Settings;
 
@@ -4674,7 +4674,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPennylaneDiscriminatedConnectionSettings.Settings;
 
@@ -4719,7 +4719,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPinterestDiscriminatedConnectionSettings.Settings;
 
@@ -4764,7 +4764,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
@@ -4814,7 +4814,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPodiumDiscriminatedConnectionSettings.Settings;
 
@@ -4864,7 +4864,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorProductboardDiscriminatedConnectionSettings.Settings;
 
@@ -4909,7 +4909,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorQualtricsDiscriminatedConnectionSettings.Settings;
 
@@ -4959,7 +4959,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
 
@@ -5004,7 +5004,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
@@ -5049,7 +5049,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSageDiscriminatedConnectionSettings.Settings;
 
@@ -5094,7 +5094,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
 
@@ -5144,7 +5144,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
@@ -5189,7 +5189,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSegmentDiscriminatedConnectionSettings.Settings;
 
@@ -5234,7 +5234,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorServicem8DiscriminatedConnectionSettings.Settings;
 
@@ -5279,7 +5279,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorServicenowDiscriminatedConnectionSettings.Settings;
 
@@ -5329,7 +5329,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
@@ -5374,7 +5374,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorShopifyDiscriminatedConnectionSettings.Settings;
 
@@ -5424,7 +5424,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSignnowDiscriminatedConnectionSettings.Settings;
 
@@ -5469,7 +5469,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
 
@@ -5514,7 +5514,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSmartsheetDiscriminatedConnectionSettings.Settings;
 
@@ -5559,7 +5559,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSnowflakeDiscriminatedConnectionSettings.Settings;
 
@@ -5609,7 +5609,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSpotifyDiscriminatedConnectionSettings.Settings;
 
@@ -5654,7 +5654,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSquarespaceDiscriminatedConnectionSettings.Settings;
 
@@ -5704,7 +5704,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSquareupDiscriminatedConnectionSettings.Settings;
 
@@ -5749,7 +5749,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStackexchangeDiscriminatedConnectionSettings.Settings;
 
@@ -5794,7 +5794,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStravaDiscriminatedConnectionSettings.Settings;
 
@@ -5839,7 +5839,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTeamworkDiscriminatedConnectionSettings.Settings;
 
@@ -5884,7 +5884,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTicktickDiscriminatedConnectionSettings.Settings;
 
@@ -5929,7 +5929,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTimelyDiscriminatedConnectionSettings.Settings;
 
@@ -5974,7 +5974,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTodoistDiscriminatedConnectionSettings.Settings;
 
@@ -6019,7 +6019,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTremendousDiscriminatedConnectionSettings.Settings;
 
@@ -6064,7 +6064,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTsheetsteamDiscriminatedConnectionSettings.Settings;
 
@@ -6109,7 +6109,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTumblrDiscriminatedConnectionSettings.Settings;
 
@@ -6154,7 +6154,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwinfieldDiscriminatedConnectionSettings.Settings;
 
@@ -6204,7 +6204,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwitchDiscriminatedConnectionSettings.Settings;
 
@@ -6249,7 +6249,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
@@ -6294,7 +6294,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTypeformDiscriminatedConnectionSettings.Settings;
 
@@ -6339,7 +6339,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorUberDiscriminatedConnectionSettings.Settings;
 
@@ -6384,7 +6384,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorVimeoDiscriminatedConnectionSettings.Settings;
 
@@ -6429,7 +6429,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWakatimeDiscriminatedConnectionSettings.Settings;
 
@@ -6474,7 +6474,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWealthboxDiscriminatedConnectionSettings.Settings;
 
@@ -6519,7 +6519,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWebflowDiscriminatedConnectionSettings.Settings;
 
@@ -6564,7 +6564,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWhoopDiscriminatedConnectionSettings.Settings;
 
@@ -6609,7 +6609,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWordpressDiscriminatedConnectionSettings.Settings;
 
@@ -6654,7 +6654,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWrikeDiscriminatedConnectionSettings.Settings;
 
@@ -6704,7 +6704,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
@@ -6749,7 +6749,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYahooDiscriminatedConnectionSettings.Settings;
 
@@ -6800,7 +6800,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYandexDiscriminatedConnectionSettings.Settings;
 
@@ -6845,7 +6845,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZapierDiscriminatedConnectionSettings.Settings;
 
@@ -6890,7 +6890,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZendeskDiscriminatedConnectionSettings.Settings;
 
@@ -6940,7 +6940,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZenefitsDiscriminatedConnectionSettings.Settings;
 
@@ -6985,7 +6985,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
 
@@ -7035,7 +7035,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZohoDiscriminatedConnectionSettings.Settings;
 
@@ -7085,7 +7085,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZoomDiscriminatedConnectionSettings.Settings;
 
@@ -7130,7 +7130,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
 
@@ -7171,7 +7171,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
@@ -7210,7 +7210,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
@@ -7249,7 +7249,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
@@ -7288,7 +7288,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
@@ -7327,7 +7327,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?:
       | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
@@ -7374,7 +7374,7 @@ export namespace CreateConnectionResponse {
         export interface UserJson {
           appName: string;
 
-          stsTokenManager: Record<string, unknown>;
+          stsTokenManager: { [key: string]: unknown };
 
           uid: string;
 
@@ -7438,7 +7438,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
@@ -7481,7 +7481,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
@@ -7520,7 +7520,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -7553,7 +7553,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -7586,7 +7586,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -7619,7 +7619,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
@@ -7660,7 +7660,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -7693,7 +7693,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
@@ -7732,7 +7732,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
 
@@ -7774,7 +7774,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
@@ -7823,7 +7823,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
@@ -7862,7 +7862,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
@@ -7903,7 +7903,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -7936,7 +7936,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
@@ -8047,7 +8047,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
@@ -8086,7 +8086,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
@@ -8125,7 +8125,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
@@ -8168,7 +8168,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
@@ -8207,7 +8207,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
@@ -8248,7 +8248,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
@@ -8289,7 +8289,7 @@ export namespace CreateConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
@@ -8581,7 +8581,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAcceloDiscriminatedConnectionSettings.Settings;
 
@@ -8635,7 +8635,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
 
@@ -8684,7 +8684,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
 
@@ -8733,7 +8733,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAdyenDiscriminatedConnectionSettings.Settings;
 
@@ -8793,7 +8793,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
 
@@ -8842,7 +8842,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAmazonDiscriminatedConnectionSettings.Settings;
 
@@ -8896,7 +8896,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorApaleoDiscriminatedConnectionSettings.Settings;
 
@@ -8945,7 +8945,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAsanaDiscriminatedConnectionSettings.Settings;
 
@@ -8994,7 +8994,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAttioDiscriminatedConnectionSettings.Settings;
 
@@ -9043,7 +9043,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAuth0DiscriminatedConnectionSettings.Settings;
 
@@ -9097,7 +9097,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAutodeskDiscriminatedConnectionSettings.Settings;
 
@@ -9146,7 +9146,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAwsDiscriminatedConnectionSettings.Settings;
 
@@ -9211,7 +9211,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBamboohrDiscriminatedConnectionSettings.Settings;
 
@@ -9265,7 +9265,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBasecampDiscriminatedConnectionSettings.Settings;
 
@@ -9324,7 +9324,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBattlenetDiscriminatedConnectionSettings.Settings;
 
@@ -9383,7 +9383,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBigcommerceDiscriminatedConnectionSettings.Settings;
 
@@ -9443,7 +9443,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBitbucketDiscriminatedConnectionSettings.Settings;
 
@@ -9492,7 +9492,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBitlyDiscriminatedConnectionSettings.Settings;
 
@@ -9541,7 +9541,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBlackbaudDiscriminatedConnectionSettings.Settings;
 
@@ -9590,7 +9590,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBoldsignDiscriminatedConnectionSettings.Settings;
 
@@ -9639,7 +9639,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBoxDiscriminatedConnectionSettings.Settings;
 
@@ -9688,7 +9688,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBraintreeDiscriminatedConnectionSettings.Settings;
 
@@ -9737,7 +9737,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCalendlyDiscriminatedConnectionSettings.Settings;
 
@@ -9786,7 +9786,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorClickupDiscriminatedConnectionSettings.Settings;
 
@@ -9835,7 +9835,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCloseDiscriminatedConnectionSettings.Settings;
 
@@ -9884,7 +9884,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
 
@@ -9933,7 +9933,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorContentfulDiscriminatedConnectionSettings.Settings;
 
@@ -9987,7 +9987,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorContentstackDiscriminatedConnectionSettings.Settings;
 
@@ -10053,7 +10053,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCopperDiscriminatedConnectionSettings.Settings;
 
@@ -10102,7 +10102,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCorosDiscriminatedConnectionSettings.Settings;
 
@@ -10151,7 +10151,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDatevDiscriminatedConnectionSettings.Settings;
 
@@ -10200,7 +10200,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDeelDiscriminatedConnectionSettings.Settings;
 
@@ -10249,7 +10249,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDialpadDiscriminatedConnectionSettings.Settings;
 
@@ -10298,7 +10298,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDigitaloceanDiscriminatedConnectionSettings.Settings;
 
@@ -10347,7 +10347,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
 
@@ -10396,7 +10396,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDocusignDiscriminatedConnectionSettings.Settings;
 
@@ -10445,7 +10445,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDropboxDiscriminatedConnectionSettings.Settings;
 
@@ -10494,7 +10494,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEbayDiscriminatedConnectionSettings.Settings;
 
@@ -10543,7 +10543,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEgnyteDiscriminatedConnectionSettings.Settings;
 
@@ -10597,7 +10597,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEnvoyDiscriminatedConnectionSettings.Settings;
 
@@ -10646,7 +10646,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEventbriteDiscriminatedConnectionSettings.Settings;
 
@@ -10695,7 +10695,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorExistDiscriminatedConnectionSettings.Settings;
 
@@ -10744,7 +10744,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
@@ -10793,7 +10793,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFactorialDiscriminatedConnectionSettings.Settings;
 
@@ -10842,7 +10842,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFigmaDiscriminatedConnectionSettings.Settings;
 
@@ -10891,7 +10891,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFitbitDiscriminatedConnectionSettings.Settings;
 
@@ -10940,7 +10940,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFortnoxDiscriminatedConnectionSettings.Settings;
 
@@ -10989,7 +10989,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFreshbooksDiscriminatedConnectionSettings.Settings;
 
@@ -11038,7 +11038,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFrontDiscriminatedConnectionSettings.Settings;
 
@@ -11087,7 +11087,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
 
@@ -11136,7 +11136,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGitlabDiscriminatedConnectionSettings.Settings;
 
@@ -11185,7 +11185,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
@@ -11239,7 +11239,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
 
@@ -11288,7 +11288,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
 
@@ -11337,7 +11337,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
 
@@ -11386,7 +11386,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
 
@@ -11435,7 +11435,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
 
@@ -11484,7 +11484,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGorgiasDiscriminatedConnectionSettings.Settings;
 
@@ -11538,7 +11538,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGrainDiscriminatedConnectionSettings.Settings;
 
@@ -11587,7 +11587,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGumroadDiscriminatedConnectionSettings.Settings;
 
@@ -11636,7 +11636,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGustoDiscriminatedConnectionSettings.Settings;
 
@@ -11685,7 +11685,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHarvestDiscriminatedConnectionSettings.Settings;
 
@@ -11739,7 +11739,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHighlevelDiscriminatedConnectionSettings.Settings;
 
@@ -11788,7 +11788,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
 
@@ -11837,7 +11837,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
@@ -11886,7 +11886,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
@@ -11935,7 +11935,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
@@ -11984,7 +11984,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorKeapDiscriminatedConnectionSettings.Settings;
 
@@ -12033,7 +12033,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
@@ -12082,7 +12082,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
 
@@ -12131,7 +12131,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
 
@@ -12180,7 +12180,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinkhutDiscriminatedConnectionSettings.Settings;
 
@@ -12229,7 +12229,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMailchimpDiscriminatedConnectionSettings.Settings;
 
@@ -12283,7 +12283,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMiroDiscriminatedConnectionSettings.Settings;
 
@@ -12332,7 +12332,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMondayDiscriminatedConnectionSettings.Settings;
 
@@ -12381,7 +12381,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMuralDiscriminatedConnectionSettings.Settings;
 
@@ -12430,7 +12430,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNamelyDiscriminatedConnectionSettings.Settings;
 
@@ -12484,7 +12484,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNationbuilderDiscriminatedConnectionSettings.Settings;
 
@@ -12538,7 +12538,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNetsuiteDiscriminatedConnectionSettings.Settings;
 
@@ -12592,7 +12592,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
 
@@ -12641,7 +12641,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOdooDiscriminatedConnectionSettings.Settings;
 
@@ -12695,7 +12695,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOktaDiscriminatedConnectionSettings.Settings;
 
@@ -12749,7 +12749,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOsuDiscriminatedConnectionSettings.Settings;
 
@@ -12798,7 +12798,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOuraDiscriminatedConnectionSettings.Settings;
 
@@ -12847,7 +12847,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
@@ -12896,7 +12896,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPagerdutyDiscriminatedConnectionSettings.Settings;
 
@@ -12945,7 +12945,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPandadocDiscriminatedConnectionSettings.Settings;
 
@@ -12994,7 +12994,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPayfitDiscriminatedConnectionSettings.Settings;
 
@@ -13043,7 +13043,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPaypalDiscriminatedConnectionSettings.Settings;
 
@@ -13092,7 +13092,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPennylaneDiscriminatedConnectionSettings.Settings;
 
@@ -13141,7 +13141,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPinterestDiscriminatedConnectionSettings.Settings;
 
@@ -13190,7 +13190,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
@@ -13244,7 +13244,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPodiumDiscriminatedConnectionSettings.Settings;
 
@@ -13298,7 +13298,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorProductboardDiscriminatedConnectionSettings.Settings;
 
@@ -13347,7 +13347,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorQualtricsDiscriminatedConnectionSettings.Settings;
 
@@ -13401,7 +13401,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
 
@@ -13450,7 +13450,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
@@ -13499,7 +13499,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSageDiscriminatedConnectionSettings.Settings;
 
@@ -13548,7 +13548,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
 
@@ -13602,7 +13602,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
@@ -13651,7 +13651,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSegmentDiscriminatedConnectionSettings.Settings;
 
@@ -13700,7 +13700,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorServicem8DiscriminatedConnectionSettings.Settings;
 
@@ -13749,7 +13749,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorServicenowDiscriminatedConnectionSettings.Settings;
 
@@ -13803,7 +13803,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
@@ -13852,7 +13852,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorShopifyDiscriminatedConnectionSettings.Settings;
 
@@ -13906,7 +13906,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSignnowDiscriminatedConnectionSettings.Settings;
 
@@ -13955,7 +13955,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
 
@@ -14004,7 +14004,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSmartsheetDiscriminatedConnectionSettings.Settings;
 
@@ -14053,7 +14053,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSnowflakeDiscriminatedConnectionSettings.Settings;
 
@@ -14107,7 +14107,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSpotifyDiscriminatedConnectionSettings.Settings;
 
@@ -14156,7 +14156,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSquarespaceDiscriminatedConnectionSettings.Settings;
 
@@ -14210,7 +14210,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSquareupDiscriminatedConnectionSettings.Settings;
 
@@ -14259,7 +14259,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStackexchangeDiscriminatedConnectionSettings.Settings;
 
@@ -14308,7 +14308,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStravaDiscriminatedConnectionSettings.Settings;
 
@@ -14357,7 +14357,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTeamworkDiscriminatedConnectionSettings.Settings;
 
@@ -14406,7 +14406,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTicktickDiscriminatedConnectionSettings.Settings;
 
@@ -14455,7 +14455,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTimelyDiscriminatedConnectionSettings.Settings;
 
@@ -14504,7 +14504,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTodoistDiscriminatedConnectionSettings.Settings;
 
@@ -14553,7 +14553,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTremendousDiscriminatedConnectionSettings.Settings;
 
@@ -14602,7 +14602,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTsheetsteamDiscriminatedConnectionSettings.Settings;
 
@@ -14651,7 +14651,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTumblrDiscriminatedConnectionSettings.Settings;
 
@@ -14700,7 +14700,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwinfieldDiscriminatedConnectionSettings.Settings;
 
@@ -14754,7 +14754,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwitchDiscriminatedConnectionSettings.Settings;
 
@@ -14803,7 +14803,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
@@ -14852,7 +14852,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTypeformDiscriminatedConnectionSettings.Settings;
 
@@ -14901,7 +14901,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorUberDiscriminatedConnectionSettings.Settings;
 
@@ -14950,7 +14950,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorVimeoDiscriminatedConnectionSettings.Settings;
 
@@ -14999,7 +14999,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWakatimeDiscriminatedConnectionSettings.Settings;
 
@@ -15048,7 +15048,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWealthboxDiscriminatedConnectionSettings.Settings;
 
@@ -15097,7 +15097,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWebflowDiscriminatedConnectionSettings.Settings;
 
@@ -15146,7 +15146,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWhoopDiscriminatedConnectionSettings.Settings;
 
@@ -15195,7 +15195,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWordpressDiscriminatedConnectionSettings.Settings;
 
@@ -15244,7 +15244,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWrikeDiscriminatedConnectionSettings.Settings;
 
@@ -15298,7 +15298,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
@@ -15347,7 +15347,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYahooDiscriminatedConnectionSettings.Settings;
 
@@ -15402,7 +15402,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYandexDiscriminatedConnectionSettings.Settings;
 
@@ -15451,7 +15451,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZapierDiscriminatedConnectionSettings.Settings;
 
@@ -15500,7 +15500,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZendeskDiscriminatedConnectionSettings.Settings;
 
@@ -15554,7 +15554,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZenefitsDiscriminatedConnectionSettings.Settings;
 
@@ -15603,7 +15603,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
 
@@ -15657,7 +15657,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZohoDiscriminatedConnectionSettings.Settings;
 
@@ -15711,7 +15711,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZoomDiscriminatedConnectionSettings.Settings;
 
@@ -15760,7 +15760,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
 
@@ -15805,7 +15805,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
@@ -15848,7 +15848,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
@@ -15891,7 +15891,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
@@ -15934,7 +15934,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
@@ -15977,7 +15977,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?:
       | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
@@ -16024,7 +16024,7 @@ export namespace GetConnectionResponse {
         export interface UserJson {
           appName: string;
 
-          stsTokenManager: Record<string, unknown>;
+          stsTokenManager: { [key: string]: unknown };
 
           uid: string;
 
@@ -16092,7 +16092,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
@@ -16139,7 +16139,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
@@ -16182,7 +16182,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -16219,7 +16219,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -16256,7 +16256,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -16293,7 +16293,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
@@ -16338,7 +16338,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -16375,7 +16375,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
@@ -16418,7 +16418,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
 
@@ -16464,7 +16464,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
@@ -16517,7 +16517,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
@@ -16560,7 +16560,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
@@ -16605,7 +16605,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -16642,7 +16642,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
@@ -16757,7 +16757,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
@@ -16800,7 +16800,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
@@ -16843,7 +16843,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
@@ -16890,7 +16890,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
@@ -16933,7 +16933,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
@@ -16978,7 +16978,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
@@ -17023,7 +17023,7 @@ export namespace GetConnectionResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
@@ -17286,14 +17286,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17326,14 +17326,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17366,14 +17366,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17406,14 +17406,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17446,14 +17446,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17486,14 +17486,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17526,14 +17526,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17566,14 +17566,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17606,14 +17606,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17646,14 +17646,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17686,14 +17686,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17726,14 +17726,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17766,14 +17766,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17806,14 +17806,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17846,14 +17846,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17886,14 +17886,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17926,14 +17926,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -17966,14 +17966,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18006,14 +18006,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18046,14 +18046,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18086,14 +18086,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18126,14 +18126,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18166,14 +18166,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18206,14 +18206,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18246,14 +18246,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18286,14 +18286,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18326,14 +18326,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18366,14 +18366,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18406,14 +18406,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18446,14 +18446,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18486,14 +18486,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18526,14 +18526,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18566,14 +18566,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18606,14 +18606,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18646,14 +18646,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18686,14 +18686,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18726,14 +18726,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18766,14 +18766,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18806,14 +18806,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18846,14 +18846,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18886,14 +18886,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18926,14 +18926,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -18966,14 +18966,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19006,14 +19006,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19046,14 +19046,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19086,14 +19086,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19126,14 +19126,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19166,14 +19166,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19206,14 +19206,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19246,14 +19246,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19286,14 +19286,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19326,14 +19326,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19366,14 +19366,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19406,14 +19406,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19446,14 +19446,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19486,14 +19486,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19526,14 +19526,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19566,14 +19566,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19606,14 +19606,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19646,14 +19646,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19686,14 +19686,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19726,14 +19726,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19766,14 +19766,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19806,14 +19806,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19846,14 +19846,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19886,14 +19886,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19926,14 +19926,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -19966,14 +19966,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20006,14 +20006,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20046,14 +20046,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20086,14 +20086,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20126,14 +20126,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20166,14 +20166,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20206,14 +20206,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20246,14 +20246,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20286,14 +20286,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20326,14 +20326,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20366,14 +20366,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20406,14 +20406,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20446,14 +20446,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20486,14 +20486,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20526,14 +20526,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20566,14 +20566,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20606,14 +20606,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20646,14 +20646,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20686,14 +20686,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20726,14 +20726,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20766,14 +20766,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20806,14 +20806,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20846,14 +20846,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20886,14 +20886,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20926,14 +20926,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -20966,14 +20966,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21006,14 +21006,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21046,14 +21046,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21086,14 +21086,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21126,14 +21126,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21166,14 +21166,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21206,14 +21206,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21246,14 +21246,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21286,14 +21286,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21326,14 +21326,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21366,14 +21366,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21406,14 +21406,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21446,14 +21446,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21486,14 +21486,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21526,14 +21526,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21566,14 +21566,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21606,14 +21606,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21646,14 +21646,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21686,14 +21686,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21726,14 +21726,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21766,14 +21766,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21806,14 +21806,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21846,14 +21846,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21886,14 +21886,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21926,14 +21926,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -21966,14 +21966,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22006,14 +22006,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22046,14 +22046,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22086,14 +22086,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22126,14 +22126,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22166,14 +22166,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22206,14 +22206,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22246,14 +22246,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22286,14 +22286,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22326,14 +22326,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22366,14 +22366,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22406,14 +22406,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22446,14 +22446,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22486,14 +22486,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22526,14 +22526,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22566,14 +22566,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22606,14 +22606,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22646,14 +22646,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22686,14 +22686,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22726,14 +22726,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22766,14 +22766,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22806,14 +22806,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22846,14 +22846,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22886,14 +22886,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22926,14 +22926,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22966,14 +22966,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -22997,14 +22997,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23028,14 +23028,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23084,14 +23084,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23115,14 +23115,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23174,14 +23174,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23205,14 +23205,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23236,14 +23236,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23267,14 +23267,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23304,14 +23304,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23341,14 +23341,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23397,14 +23397,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23434,14 +23434,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23471,14 +23471,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23518,14 +23518,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23573,14 +23573,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23668,14 +23668,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23699,14 +23699,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23744,14 +23744,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23785,14 +23785,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23816,14 +23816,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23872,14 +23872,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23911,14 +23911,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23942,14 +23942,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -23973,14 +23973,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -24022,14 +24022,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -24053,14 +24053,14 @@ export namespace ListConnectionConfigsResponse {
 
     display_name?: string | null;
 
-    integrations?: Record<string, TopLevelAPI.Integration>;
+    integrations?: { [key: string]: TopLevelAPI.Integration };
 
     /**
      * JSON object can can be used to associate arbitrary metadata to avoid needing a
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     org_id?: string;
 
@@ -24293,7 +24293,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAcceloDiscriminatedConnectionSettings.Settings;
 
@@ -24347,7 +24347,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAcmeOauth2DiscriminatedConnectionSettings.Settings;
 
@@ -24396,7 +24396,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAdobeDiscriminatedConnectionSettings.Settings;
 
@@ -24445,7 +24445,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAdyenDiscriminatedConnectionSettings.Settings;
 
@@ -24505,7 +24505,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAircallDiscriminatedConnectionSettings.Settings;
 
@@ -24554,7 +24554,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAmazonDiscriminatedConnectionSettings.Settings;
 
@@ -24608,7 +24608,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorApaleoDiscriminatedConnectionSettings.Settings;
 
@@ -24657,7 +24657,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAsanaDiscriminatedConnectionSettings.Settings;
 
@@ -24706,7 +24706,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAttioDiscriminatedConnectionSettings.Settings;
 
@@ -24755,7 +24755,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAuth0DiscriminatedConnectionSettings.Settings;
 
@@ -24809,7 +24809,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAutodeskDiscriminatedConnectionSettings.Settings;
 
@@ -24858,7 +24858,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAwsDiscriminatedConnectionSettings.Settings;
 
@@ -24923,7 +24923,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBamboohrDiscriminatedConnectionSettings.Settings;
 
@@ -24977,7 +24977,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBasecampDiscriminatedConnectionSettings.Settings;
 
@@ -25036,7 +25036,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBattlenetDiscriminatedConnectionSettings.Settings;
 
@@ -25095,7 +25095,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBigcommerceDiscriminatedConnectionSettings.Settings;
 
@@ -25155,7 +25155,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBitbucketDiscriminatedConnectionSettings.Settings;
 
@@ -25204,7 +25204,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBitlyDiscriminatedConnectionSettings.Settings;
 
@@ -25253,7 +25253,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBlackbaudDiscriminatedConnectionSettings.Settings;
 
@@ -25302,7 +25302,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBoldsignDiscriminatedConnectionSettings.Settings;
 
@@ -25351,7 +25351,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBoxDiscriminatedConnectionSettings.Settings;
 
@@ -25400,7 +25400,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBraintreeDiscriminatedConnectionSettings.Settings;
 
@@ -25449,7 +25449,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCalendlyDiscriminatedConnectionSettings.Settings;
 
@@ -25498,7 +25498,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorClickupDiscriminatedConnectionSettings.Settings;
 
@@ -25547,7 +25547,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCloseDiscriminatedConnectionSettings.Settings;
 
@@ -25596,7 +25596,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorConfluenceDiscriminatedConnectionSettings.Settings;
 
@@ -25645,7 +25645,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorContentfulDiscriminatedConnectionSettings.Settings;
 
@@ -25699,7 +25699,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorContentstackDiscriminatedConnectionSettings.Settings;
 
@@ -25765,7 +25765,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCopperDiscriminatedConnectionSettings.Settings;
 
@@ -25814,7 +25814,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCorosDiscriminatedConnectionSettings.Settings;
 
@@ -25863,7 +25863,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDatevDiscriminatedConnectionSettings.Settings;
 
@@ -25912,7 +25912,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDeelDiscriminatedConnectionSettings.Settings;
 
@@ -25961,7 +25961,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDialpadDiscriminatedConnectionSettings.Settings;
 
@@ -26010,7 +26010,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDigitaloceanDiscriminatedConnectionSettings.Settings;
 
@@ -26059,7 +26059,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDiscordDiscriminatedConnectionSettings.Settings;
 
@@ -26108,7 +26108,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDocusignDiscriminatedConnectionSettings.Settings;
 
@@ -26157,7 +26157,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorDropboxDiscriminatedConnectionSettings.Settings;
 
@@ -26206,7 +26206,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEbayDiscriminatedConnectionSettings.Settings;
 
@@ -26255,7 +26255,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEgnyteDiscriminatedConnectionSettings.Settings;
 
@@ -26309,7 +26309,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEnvoyDiscriminatedConnectionSettings.Settings;
 
@@ -26358,7 +26358,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorEventbriteDiscriminatedConnectionSettings.Settings;
 
@@ -26407,7 +26407,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorExistDiscriminatedConnectionSettings.Settings;
 
@@ -26456,7 +26456,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFacebookDiscriminatedConnectionSettings.Settings;
 
@@ -26505,7 +26505,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFactorialDiscriminatedConnectionSettings.Settings;
 
@@ -26554,7 +26554,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFigmaDiscriminatedConnectionSettings.Settings;
 
@@ -26603,7 +26603,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFitbitDiscriminatedConnectionSettings.Settings;
 
@@ -26652,7 +26652,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFortnoxDiscriminatedConnectionSettings.Settings;
 
@@ -26701,7 +26701,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFreshbooksDiscriminatedConnectionSettings.Settings;
 
@@ -26750,7 +26750,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFrontDiscriminatedConnectionSettings.Settings;
 
@@ -26799,7 +26799,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGitHubDiscriminatedConnectionSettings.Settings;
 
@@ -26848,7 +26848,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGitlabDiscriminatedConnectionSettings.Settings;
 
@@ -26897,7 +26897,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGongDiscriminatedConnectionSettings.Settings;
 
@@ -26951,7 +26951,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleCalendarDiscriminatedConnectionSettings.Settings;
 
@@ -27000,7 +27000,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleDocsDiscriminatedConnectionSettings.Settings;
 
@@ -27049,7 +27049,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleDriveDiscriminatedConnectionSettings.Settings;
 
@@ -27098,7 +27098,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleMailDiscriminatedConnectionSettings.Settings;
 
@@ -27147,7 +27147,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGoogleSheetDiscriminatedConnectionSettings.Settings;
 
@@ -27196,7 +27196,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGorgiasDiscriminatedConnectionSettings.Settings;
 
@@ -27250,7 +27250,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGrainDiscriminatedConnectionSettings.Settings;
 
@@ -27299,7 +27299,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGumroadDiscriminatedConnectionSettings.Settings;
 
@@ -27348,7 +27348,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGustoDiscriminatedConnectionSettings.Settings;
 
@@ -27397,7 +27397,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHarvestDiscriminatedConnectionSettings.Settings;
 
@@ -27451,7 +27451,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHighlevelDiscriminatedConnectionSettings.Settings;
 
@@ -27500,7 +27500,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorHubspotDiscriminatedConnectionSettings.Settings;
 
@@ -27549,7 +27549,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorInstagramDiscriminatedConnectionSettings.Settings;
 
@@ -27598,7 +27598,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorIntercomDiscriminatedConnectionSettings.Settings;
 
@@ -27647,7 +27647,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorJiraDiscriminatedConnectionSettings.Settings;
 
@@ -27696,7 +27696,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorKeapDiscriminatedConnectionSettings.Settings;
 
@@ -27745,7 +27745,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLeverDiscriminatedConnectionSettings.Settings;
 
@@ -27794,7 +27794,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinearDiscriminatedConnectionSettings.Settings;
 
@@ -27843,7 +27843,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinkedinDiscriminatedConnectionSettings.Settings;
 
@@ -27892,7 +27892,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorLinkhutDiscriminatedConnectionSettings.Settings;
 
@@ -27941,7 +27941,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMailchimpDiscriminatedConnectionSettings.Settings;
 
@@ -27995,7 +27995,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMiroDiscriminatedConnectionSettings.Settings;
 
@@ -28044,7 +28044,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMondayDiscriminatedConnectionSettings.Settings;
 
@@ -28093,7 +28093,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMuralDiscriminatedConnectionSettings.Settings;
 
@@ -28142,7 +28142,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNamelyDiscriminatedConnectionSettings.Settings;
 
@@ -28196,7 +28196,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNationbuilderDiscriminatedConnectionSettings.Settings;
 
@@ -28250,7 +28250,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNetsuiteDiscriminatedConnectionSettings.Settings;
 
@@ -28304,7 +28304,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorNotionDiscriminatedConnectionSettings.Settings;
 
@@ -28353,7 +28353,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOdooDiscriminatedConnectionSettings.Settings;
 
@@ -28407,7 +28407,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOktaDiscriminatedConnectionSettings.Settings;
 
@@ -28461,7 +28461,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOsuDiscriminatedConnectionSettings.Settings;
 
@@ -28510,7 +28510,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOuraDiscriminatedConnectionSettings.Settings;
 
@@ -28559,7 +28559,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOutreachDiscriminatedConnectionSettings.Settings;
 
@@ -28608,7 +28608,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPagerdutyDiscriminatedConnectionSettings.Settings;
 
@@ -28657,7 +28657,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPandadocDiscriminatedConnectionSettings.Settings;
 
@@ -28706,7 +28706,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPayfitDiscriminatedConnectionSettings.Settings;
 
@@ -28755,7 +28755,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPaypalDiscriminatedConnectionSettings.Settings;
 
@@ -28804,7 +28804,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPennylaneDiscriminatedConnectionSettings.Settings;
 
@@ -28853,7 +28853,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPinterestDiscriminatedConnectionSettings.Settings;
 
@@ -28902,7 +28902,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPipedriveDiscriminatedConnectionSettings.Settings;
 
@@ -28956,7 +28956,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPodiumDiscriminatedConnectionSettings.Settings;
 
@@ -29010,7 +29010,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorProductboardDiscriminatedConnectionSettings.Settings;
 
@@ -29059,7 +29059,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorQualtricsDiscriminatedConnectionSettings.Settings;
 
@@ -29113,7 +29113,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorQuickbooksDiscriminatedConnectionSettings.Settings;
 
@@ -29162,7 +29162,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorRedditDiscriminatedConnectionSettings.Settings;
 
@@ -29211,7 +29211,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSageDiscriminatedConnectionSettings.Settings;
 
@@ -29260,7 +29260,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSalesforceDiscriminatedConnectionSettings.Settings;
 
@@ -29314,7 +29314,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSalesloftDiscriminatedConnectionSettings.Settings;
 
@@ -29363,7 +29363,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSegmentDiscriminatedConnectionSettings.Settings;
 
@@ -29412,7 +29412,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorServicem8DiscriminatedConnectionSettings.Settings;
 
@@ -29461,7 +29461,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorServicenowDiscriminatedConnectionSettings.Settings;
 
@@ -29515,7 +29515,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSharepointDiscriminatedConnectionSettings.Settings;
 
@@ -29564,7 +29564,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorShopifyDiscriminatedConnectionSettings.Settings;
 
@@ -29618,7 +29618,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSignnowDiscriminatedConnectionSettings.Settings;
 
@@ -29667,7 +29667,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSlackDiscriminatedConnectionSettings.Settings;
 
@@ -29716,7 +29716,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSmartsheetDiscriminatedConnectionSettings.Settings;
 
@@ -29765,7 +29765,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSnowflakeDiscriminatedConnectionSettings.Settings;
 
@@ -29819,7 +29819,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSpotifyDiscriminatedConnectionSettings.Settings;
 
@@ -29868,7 +29868,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSquarespaceDiscriminatedConnectionSettings.Settings;
 
@@ -29922,7 +29922,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSquareupDiscriminatedConnectionSettings.Settings;
 
@@ -29971,7 +29971,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStackexchangeDiscriminatedConnectionSettings.Settings;
 
@@ -30020,7 +30020,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStravaDiscriminatedConnectionSettings.Settings;
 
@@ -30069,7 +30069,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTeamworkDiscriminatedConnectionSettings.Settings;
 
@@ -30118,7 +30118,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTicktickDiscriminatedConnectionSettings.Settings;
 
@@ -30167,7 +30167,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTimelyDiscriminatedConnectionSettings.Settings;
 
@@ -30216,7 +30216,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTodoistDiscriminatedConnectionSettings.Settings;
 
@@ -30265,7 +30265,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTremendousDiscriminatedConnectionSettings.Settings;
 
@@ -30314,7 +30314,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTsheetsteamDiscriminatedConnectionSettings.Settings;
 
@@ -30363,7 +30363,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTumblrDiscriminatedConnectionSettings.Settings;
 
@@ -30412,7 +30412,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwinfieldDiscriminatedConnectionSettings.Settings;
 
@@ -30466,7 +30466,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwitchDiscriminatedConnectionSettings.Settings;
 
@@ -30515,7 +30515,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwitterDiscriminatedConnectionSettings.Settings;
 
@@ -30564,7 +30564,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTypeformDiscriminatedConnectionSettings.Settings;
 
@@ -30613,7 +30613,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorUberDiscriminatedConnectionSettings.Settings;
 
@@ -30662,7 +30662,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorVimeoDiscriminatedConnectionSettings.Settings;
 
@@ -30711,7 +30711,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWakatimeDiscriminatedConnectionSettings.Settings;
 
@@ -30760,7 +30760,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWealthboxDiscriminatedConnectionSettings.Settings;
 
@@ -30809,7 +30809,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWebflowDiscriminatedConnectionSettings.Settings;
 
@@ -30858,7 +30858,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWhoopDiscriminatedConnectionSettings.Settings;
 
@@ -30907,7 +30907,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWordpressDiscriminatedConnectionSettings.Settings;
 
@@ -30956,7 +30956,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWrikeDiscriminatedConnectionSettings.Settings;
 
@@ -31010,7 +31010,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorXeroDiscriminatedConnectionSettings.Settings;
 
@@ -31059,7 +31059,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYahooDiscriminatedConnectionSettings.Settings;
 
@@ -31114,7 +31114,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYandexDiscriminatedConnectionSettings.Settings;
 
@@ -31163,7 +31163,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZapierDiscriminatedConnectionSettings.Settings;
 
@@ -31212,7 +31212,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZendeskDiscriminatedConnectionSettings.Settings;
 
@@ -31266,7 +31266,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZenefitsDiscriminatedConnectionSettings.Settings;
 
@@ -31315,7 +31315,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZohoDeskDiscriminatedConnectionSettings.Settings;
 
@@ -31369,7 +31369,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZohoDiscriminatedConnectionSettings.Settings;
 
@@ -31423,7 +31423,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorZoomDiscriminatedConnectionSettings.Settings;
 
@@ -31472,7 +31472,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorAirtableDiscriminatedConnectionSettings.Settings;
 
@@ -31517,7 +31517,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorApolloDiscriminatedConnectionSettings.Settings;
 
@@ -31560,7 +31560,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorBrexDiscriminatedConnectionSettings.Settings;
 
@@ -31603,7 +31603,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorCodaDiscriminatedConnectionSettings.Settings;
 
@@ -31646,7 +31646,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorFinchDiscriminatedConnectionSettings.Settings;
 
@@ -31689,7 +31689,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?:
       | ConnectorFirebaseDiscriminatedConnectionSettings.UnionMember0
@@ -31736,7 +31736,7 @@ export namespace ListConnectionsResponse {
         export interface UserJson {
           appName: string;
 
-          stsTokenManager: Record<string, unknown>;
+          stsTokenManager: { [key: string]: unknown };
 
           uid: string;
 
@@ -31804,7 +31804,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorForeceiptDiscriminatedConnectionSettings.Settings;
 
@@ -31851,7 +31851,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorGreenhouseDiscriminatedConnectionSettings.Settings;
 
@@ -31894,7 +31894,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -31931,7 +31931,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -31968,7 +31968,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -32005,7 +32005,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorMergeDiscriminatedConnectionSettings.Settings;
 
@@ -32050,7 +32050,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -32087,7 +32087,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOnebrickDiscriminatedConnectionSettings.Settings;
 
@@ -32130,7 +32130,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorOpenledgerDiscriminatedConnectionSettings.Settings;
 
@@ -32176,7 +32176,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPlaidDiscriminatedConnectionSettings.Settings;
 
@@ -32229,7 +32229,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorPostgresDiscriminatedConnectionSettings.Settings;
 
@@ -32272,7 +32272,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorRampDiscriminatedConnectionSettings.Settings;
 
@@ -32317,7 +32317,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: unknown;
 
@@ -32354,7 +32354,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorSplitwiseDiscriminatedConnectionSettings.Settings;
 
@@ -32469,7 +32469,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorStripeDiscriminatedConnectionSettings.Settings;
 
@@ -32512,7 +32512,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTellerDiscriminatedConnectionSettings.Settings;
 
@@ -32555,7 +32555,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTogglDiscriminatedConnectionSettings.Settings;
 
@@ -32602,7 +32602,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorTwentyDiscriminatedConnectionSettings.Settings;
 
@@ -32645,7 +32645,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorVenmoDiscriminatedConnectionSettings.Settings;
 
@@ -32690,7 +32690,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorWiseDiscriminatedConnectionSettings.Settings;
 
@@ -32735,7 +32735,7 @@ export namespace ListConnectionsResponse {
      * separate 1-1 table just for simple key values in your application. During
      * updates this object will be shallowly merged
      */
-    metadata?: Record<string, unknown> | null;
+    metadata?: { [key: string]: unknown } | null;
 
     settings?: ConnectorYodleeDiscriminatedConnectionSettings.Settings;
 
@@ -32840,7 +32840,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -32862,7 +32862,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -32871,13 +32871,13 @@ export namespace ListEventsResponse {
 
   export namespace UnionMember1 {
     export interface Data {
-      headers: Record<string, unknown>;
+      headers: { [key: string]: unknown };
 
       method: string;
 
       path: string;
 
-      query: Record<string, unknown>;
+      query: { [key: string]: unknown };
 
       traceId: string;
 
@@ -32900,7 +32900,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -32922,7 +32922,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -32944,7 +32944,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -32975,7 +32975,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33006,7 +33006,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33028,7 +33028,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33050,7 +33050,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33080,7 +33080,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33110,7 +33110,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33140,7 +33140,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33170,7 +33170,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33192,7 +33192,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33222,7 +33222,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33255,7 +33255,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33288,7 +33288,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33325,7 +33325,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33347,7 +33347,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33369,7 +33369,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33391,7 +33391,7 @@ export namespace ListEventsResponse {
 
     timestamp?: string;
 
-    user?: string | number | boolean | Record<string, unknown> | Array<unknown> | null;
+    user?: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
 
     user_id?: string | null;
 
@@ -33598,7 +33598,7 @@ export interface CreateConnectionParams {
    */
   check_connection?: boolean;
 
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 }
 
 export namespace CreateConnectionParams {
@@ -36483,7 +36483,7 @@ export namespace CreateConnectionParams {
         export interface UserJson {
           appName: string;
 
-          stsTokenManager: Record<string, unknown>;
+          stsTokenManager: { [key: string]: unknown };
 
           uid: string;
 
