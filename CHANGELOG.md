@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.8.1 (2025-06-27)
+
+Full Changelog: [v2.8.0...v2.8.1](https://github.com/openintegrations/ts-sdk/compare/v2.8.0...v2.8.1)
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([d59f615](https://github.com/openintegrations/ts-sdk/commit/d59f615d4f28cec503d977013bf09890123b9cc3))
+
 ## 2.8.0 (2025-06-24)
 
 Full Changelog: [v2.7.2...v2.8.0](https://github.com/openintegrations/ts-sdk/compare/v2.7.2...v2.8.0)
