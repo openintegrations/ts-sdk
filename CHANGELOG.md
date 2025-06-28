@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.9.1 (2025-06-28)
+
+Full Changelog: [v2.9.0...v2.9.1](https://github.com/openintegrations/ts-sdk/compare/v2.9.0...v2.9.1)
+
+### Bug Fixes
+
+* handle docker image not existing yet ([790901d](https://github.com/openintegrations/ts-sdk/commit/790901dffbe87d2738cd54a6dbe001b4615214f2))
+
+
+### Chores
+
+* **ci:** only run for pushes and fork pull requests ([19524d7](https://github.com/openintegrations/ts-sdk/commit/19524d7df2af280dc835df964a5fd10fe9630e4b))
+
 ## 2.9.0 (2025-06-28)
 
 Full Changelog: [v2.8.1...v2.9.0](https://github.com/openintegrations/ts-sdk/compare/v2.8.1...v2.9.0)
