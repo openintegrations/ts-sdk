@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.9.0 (2025-06-28)
+
+Full Changelog: [v2.8.1...v2.9.0](https://github.com/openintegrations/ts-sdk/compare/v2.8.1...v2.9.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([1d61ba9](https://github.com/openintegrations/ts-sdk/commit/1d61ba94a5439ca796a03b3fb077c36b19df5e11))
+
+
+### Bug Fixes
+
+* **client:** get fetchOptions type more reliably ([dea8071](https://github.com/openintegrations/ts-sdk/commit/dea807140879bf3d58faa3529cc0f605566909ce))
+
 ## 2.8.1 (2025-06-27)
 
 Full Changelog: [v2.8.0...v2.8.1](https://github.com/openintegrations/ts-sdk/compare/v2.8.0...v2.8.1)
