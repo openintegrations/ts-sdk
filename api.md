@@ -4,8 +4,6 @@ Types:
 
 - <code><a href="./src/resources/top-level.ts">Connector</a></code>
 - <code><a href="./src/resources/top-level.ts">Integration</a></code>
-- <code><a href="./src/resources/top-level.ts">OAuthConnectionSettings</a></code>
-- <code><a href="./src/resources/top-level.ts">OAuthConnectorConfig</a></code>
 - <code><a href="./src/resources/top-level.ts">CheckConnectionResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">CreateConnectionResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">CreateTokenResponse</a></code>
