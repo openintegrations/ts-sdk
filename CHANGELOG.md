@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.9.2 (2025-07-03)
+
+Full Changelog: [v2.9.1...v2.9.2](https://github.com/openintegrations/ts-sdk/compare/v2.9.1...v2.9.2)
+
+### Chores
+
+* add docs to RequestOptions type ([8804fce](https://github.com/openintegrations/ts-sdk/commit/8804fcec45c3e1905aae440b2b27757a3e17d26e))
+* **client:** improve path param validation ([9af1705](https://github.com/openintegrations/ts-sdk/commit/9af17055af46d9a4291d6d8949fa2dbbaca19a89))
+
 ## 2.9.1 (2025-06-28)
 
 Full Changelog: [v2.9.0...v2.9.1](https://github.com/openintegrations/ts-sdk/compare/v2.9.0...v2.9.1)
