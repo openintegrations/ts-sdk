@@ -94,6 +94,26 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('getConectorConfig', async () => {
+    const responsePromise = client.getConectorConfig('ccfg_');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('getConectorConfig: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.getConectorConfig('ccfg_', { expand: ['connector'] }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('getConnection', async () => {
     const responsePromise = client.getConnection('conn_');
     const rawResponse = await responsePromise.asResponse();
@@ -236,6 +256,35 @@ describe('top level methods', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('listConnnectorConfigs', async () => {
+    const responsePromise = client.listConnnectorConfigs();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('listConnnectorConfigs: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listConnnectorConfigs(
+        {
+          connector_names: ['accelo'],
+          expand: ['connector'],
+          limit: 0,
+          offset: 0,
+          search_query: 'search_query',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('listEvents', async () => {
     const responsePromise = client.listEvents();
     const rawResponse = await responsePromise.asResponse();
@@ -256,5 +305,17 @@ describe('top level methods', () => {
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('upsertCustomer', async () => {
+    const responsePromise = client.upsertCustomer({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 });

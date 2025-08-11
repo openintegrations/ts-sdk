@@ -26,6 +26,8 @@ import {
   CreateTokenParams,
   CreateTokenResponse,
   DeleteConnectionResponse,
+  GetConectorConfigParams,
+  GetConectorConfigResponse,
   GetConnectionParams,
   GetConnectionResponse,
   GetCurrentUserResponse,
@@ -41,9 +43,14 @@ import {
   ListConnectorsParams,
   ListConnectorsResponse,
   ListConnectorsResponsesOffsetPagination,
+  ListConnnectorConfigsParams,
+  ListConnnectorConfigsResponse,
+  ListConnnectorConfigsResponsesOffsetPagination,
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
+  UpsertCustomerParams,
+  UpsertCustomerResponse,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -258,6 +265,14 @@ export class Openint {
     return this.delete(path`/connection/${id}`, options);
   }
 
+  getConectorConfig(
+    id: string,
+    query: TopLevelAPI.GetConectorConfigParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetConectorConfigResponse> {
+    return this.get(path`/connector-config/${id}`, { query, ...options });
+  }
+
   /**
    * Get details of a specific connection, including credentials
    */
@@ -332,6 +347,23 @@ export class Openint {
   }
 
   /**
+   * List Configured Connectors
+   */
+  listConnnectorConfigs(
+    query: TopLevelAPI.ListConnnectorConfigsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): Pagination.PagePromise<
+    ListConnnectorConfigsResponsesOffsetPagination,
+    TopLevelAPI.ListConnnectorConfigsResponse
+  > {
+    return this.getAPIList(
+      '/connector-config',
+      Pagination.OffsetPagination<TopLevelAPI.ListConnnectorConfigsResponse>,
+      { query, ...options },
+    );
+  }
+
+  /**
    * List all events for an organization
    */
   listEvents(
@@ -342,6 +374,16 @@ export class Openint {
       query,
       ...options,
     });
+  }
+
+  /**
+   * Create or update a customer
+   */
+  upsertCustomer(
+    body: TopLevelAPI.UpsertCustomerParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.UpsertCustomerResponse> {
+    return this.put('/customers', { body, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -891,24 +933,31 @@ export declare namespace Openint {
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
+    type GetConectorConfigResponse as GetConectorConfigResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type GetMessageTemplateResponse as GetMessageTemplateResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
+    type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListEventsResponse as ListEventsResponse,
+    type UpsertCustomerResponse as UpsertCustomerResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
+    type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateTokenParams as CreateTokenParams,
+    type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
     type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
+    type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListEventsParams as ListEventsParams,
+    type UpsertCustomerParams as UpsertCustomerParams,
   };
 }
