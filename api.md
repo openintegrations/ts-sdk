@@ -17,8 +17,10 @@ Types:
 - <code><a href="./src/resources/top-level.ts">ListConnectionsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectorsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnnectorConfigsResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">ListCustomersResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListEventsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertConnnectorConfigResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">UpsertCustomerResponse</a></code>
 
 Methods:
 
@@ -35,5 +37,7 @@ Methods:
 - <code title="get /connection">client.<a href="./src/index.ts">listConnections</a>({ ...params }) -> ListConnectionsResponsesOffsetPagination</code>
 - <code title="get /connector">client.<a href="./src/index.ts">listConnectors</a>({ ...params }) -> ListConnectorsResponsesOffsetPagination</code>
 - <code title="get /connector-config">client.<a href="./src/index.ts">listConnnectorConfigs</a>({ ...params }) -> ListConnnectorConfigsResponsesOffsetPagination</code>
+- <code title="get /customer">client.<a href="./src/index.ts">listCustomers</a>({ ...params }) -> ListCustomersResponsesOffsetPagination</code>
 - <code title="get /event">client.<a href="./src/index.ts">listEvents</a>({ ...params }) -> ListEventsResponsesOffsetPagination</code>
 - <code title="put /connector-config/{id}">client.<a href="./src/index.ts">upsertConnnectorConfig</a>(id, { ...params }) -> UpsertConnnectorConfigResponse</code>
+- <code title="put /customer">client.<a href="./src/index.ts">upsertCustomer</a>({ ...params }) -> UpsertCustomerResponse</code>

@@ -308,6 +308,29 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
+  test.skip('listCustomers', async () => {
+    const responsePromise = client.listCustomers();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('listCustomers: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listCustomers(
+        { limit: 0, offset: 0, search_query: 'search_query' },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
   test.skip('listEvents', async () => {
     const responsePromise = client.listEvents();
     const rawResponse = await responsePromise.asResponse();
@@ -333,6 +356,18 @@ describe('top level methods', () => {
   // Prism tests are disabled
   test.skip('upsertConnnectorConfig', async () => {
     const responsePromise = client.upsertConnnectorConfig('ccfg_', {});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('upsertCustomer', async () => {
+    const responsePromise = client.upsertCustomer({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
