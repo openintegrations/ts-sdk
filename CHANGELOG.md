@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.10.0 (2025-08-13)
+
+Full Changelog: [v2.9.1...v2.10.0](https://github.com/openintegrations/ts-sdk/compare/v2.9.1...v2.10.0)
+
+### Features
+
+* **api:** exposing more APIs ([468286c](https://github.com/openintegrations/ts-sdk/commit/468286c7b5f1f21078d729e5fd12e09d6dd0a15b))
+* **api:** new endpoints ([45f9487](https://github.com/openintegrations/ts-sdk/commit/45f948798c02deaa65186bd36791ce2e336547e4))
+* **docs:** updating documented docs for stainless ([f967843](https://github.com/openintegrations/ts-sdk/commit/f967843db778044341870d5b7f806fdccb5ec924))
+
+
+### Chores
+
+* add docs to RequestOptions type ([8804fce](https://github.com/openintegrations/ts-sdk/commit/8804fcec45c3e1905aae440b2b27757a3e17d26e))
+* **client:** improve path param validation ([9af1705](https://github.com/openintegrations/ts-sdk/commit/9af17055af46d9a4291d6d8949fa2dbbaca19a89))
+* **internal:** codegen related update ([0318fca](https://github.com/openintegrations/ts-sdk/commit/0318fca7adbc162c11154db656bb39e6262f8e1c))
+* **internal:** move publish config ([2631cb6](https://github.com/openintegrations/ts-sdk/commit/2631cb6762618055ff36b0608a956d4a861aab51))
+* **internal:** remove redundant imports config ([1520099](https://github.com/openintegrations/ts-sdk/commit/152009914aa950fe3f84d2d35106c5d6ed6af12c))
+* **internal:** update comment in script ([fcb0dc4](https://github.com/openintegrations/ts-sdk/commit/fcb0dc4d1a5db6bb48640a2235f70942f7d7ec79))
+* make some internal functions async ([c3a8274](https://github.com/openintegrations/ts-sdk/commit/c3a8274a87233c5d5c2b058e2ead2c8d246a20e5))
+* **ts:** reorder package.json imports ([7fe2237](https://github.com/openintegrations/ts-sdk/commit/7fe223791d63ec455475e65495b4eacc24b1c6a3))
+* update @stainless-api/prism-cli to v5.15.0 ([4fe3281](https://github.com/openintegrations/ts-sdk/commit/4fe3281bdac49786c24f54f432f7cf348c459b1e))
+
 ## 2.9.1 (2025-06-28)
 
 Full Changelog: [v2.9.0...v2.9.1](https://github.com/openintegrations/ts-sdk/compare/v2.9.0...v2.9.1)

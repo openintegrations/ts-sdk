@@ -8,7 +8,7 @@ const client = new Openint({
 });
 
 describe('top level methods', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('checkConnection', async () => {
     const responsePromise = client.checkConnection('conn_');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createConnection: only required params', async () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
@@ -36,7 +36,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createConnection: required and optional params', async () => {
     const response = await client.createConnection({
       connector_config_id: 'ccfg_',
@@ -69,7 +69,30 @@ describe('top level methods', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
+  test.skip('createConnnectorConfig: only required params', async () => {
+    const responsePromise = client.createConnnectorConfig({ connector_name: 'connector_name' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('createConnnectorConfig: required and optional params', async () => {
+    const response = await client.createConnnectorConfig({
+      connector_name: 'connector_name',
+      config: { foo: 'bar' },
+      disabled: true,
+      display_name: 'display_name',
+      metadata: { foo: 'bar' },
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('createToken', async () => {
     const responsePromise = client.createToken('x', {});
     const rawResponse = await responsePromise.asResponse();
@@ -81,7 +104,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('deleteConnection', async () => {
     const responsePromise = client.deleteConnection('conn_');
     const rawResponse = await responsePromise.asResponse();
@@ -93,7 +116,27 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
+  test.skip('getConectorConfig', async () => {
+    const responsePromise = client.getConectorConfig('ccfg_');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('getConectorConfig: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.getConectorConfig('ccfg_', { expand: ['connector'] }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
   test.skip('getConnection', async () => {
     const responsePromise = client.getConnection('conn_');
     const rawResponse = await responsePromise.asResponse();
@@ -105,7 +148,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getConnection: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -117,7 +160,7 @@ describe('top level methods', () => {
     ).rejects.toThrow(Openint.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getCurrentUser', async () => {
     const responsePromise = client.getCurrentUser();
     const rawResponse = await responsePromise.asResponse();
@@ -129,7 +172,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getMessageTemplate: only required params', async () => {
     const responsePromise = client.getMessageTemplate({ customer_id: 'customer_id' });
     const rawResponse = await responsePromise.asResponse();
@@ -141,7 +184,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getMessageTemplate: required and optional params', async () => {
     const response = await client.getMessageTemplate({
       customer_id: 'customer_id',
@@ -150,7 +193,7 @@ describe('top level methods', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listConnectionConfigs', async () => {
     const responsePromise = client.listConnectionConfigs();
     const rawResponse = await responsePromise.asResponse();
@@ -162,7 +205,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listConnectionConfigs: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -179,7 +222,7 @@ describe('top level methods', () => {
     ).rejects.toThrow(Openint.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listConnections', async () => {
     const responsePromise = client.listConnections();
     const rawResponse = await responsePromise.asResponse();
@@ -191,7 +234,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listConnections: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -212,7 +255,7 @@ describe('top level methods', () => {
     ).rejects.toThrow(Openint.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listConnectors', async () => {
     const responsePromise = client.listConnectors();
     const rawResponse = await responsePromise.asResponse();
@@ -224,7 +267,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listConnectors: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -235,7 +278,59 @@ describe('top level methods', () => {
     ).rejects.toThrow(Openint.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
+  test.skip('listConnnectorConfigs', async () => {
+    const responsePromise = client.listConnnectorConfigs();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('listConnnectorConfigs: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listConnnectorConfigs(
+        {
+          connector_names: ['accelo'],
+          expand: ['connector'],
+          limit: 0,
+          offset: 0,
+          search_query: 'search_query',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
+  test.skip('listCustomers', async () => {
+    const responsePromise = client.listCustomers();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('listCustomers: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listCustomers(
+        { limit: 0, offset: 0, search_query: 'search_query' },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
   test.skip('listEvents', async () => {
     const responsePromise = client.listEvents();
     const rawResponse = await responsePromise.asResponse();
@@ -247,7 +342,7 @@ describe('top level methods', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listEvents: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -256,5 +351,29 @@ describe('top level methods', () => {
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
+  test.skip('upsertConnnectorConfig', async () => {
+    const responsePromise = client.upsertConnnectorConfig('ccfg_', {});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('upsertCustomer', async () => {
+    const responsePromise = client.upsertCustomer({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 });

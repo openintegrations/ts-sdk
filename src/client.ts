@@ -23,9 +23,13 @@ import {
   Connector,
   CreateConnectionParams,
   CreateConnectionResponse,
+  CreateConnnectorConfigParams,
+  CreateConnnectorConfigResponse,
   CreateTokenParams,
   CreateTokenResponse,
   DeleteConnectionResponse,
+  GetConectorConfigParams,
+  GetConectorConfigResponse,
   GetConnectionParams,
   GetConnectionResponse,
   GetCurrentUserResponse,
@@ -41,9 +45,19 @@ import {
   ListConnectorsParams,
   ListConnectorsResponse,
   ListConnectorsResponsesOffsetPagination,
+  ListConnnectorConfigsParams,
+  ListConnnectorConfigsResponse,
+  ListConnnectorConfigsResponsesOffsetPagination,
+  ListCustomersParams,
+  ListCustomersResponse,
+  ListCustomersResponsesOffsetPagination,
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
+  UpsertConnnectorConfigParams,
+  UpsertConnnectorConfigResponse,
+  UpsertCustomerParams,
+  UpsertCustomerResponse,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -79,6 +93,8 @@ export interface ClientOptions {
    *
    * Note that request timeouts are retried by default, so in a worst-case scenario you may wait
    * much longer than this timeout before the promise succeeds or fails.
+   *
+   * @unit milliseconds
    */
   timeout?: number | undefined;
   /**
@@ -198,7 +214,7 @@ export class Openint {
    * Create a new client instance re-using the same options given to the current client with optional overriding.
    */
   withOptions(options: Partial<ClientOptions>): this {
-    return new (this.constructor as any as new (props: ClientOptions) => typeof this)({
+    const client = new (this.constructor as any as new (props: ClientOptions) => typeof this)({
       ...this._options,
       baseURL: this.baseURL,
       maxRetries: this.maxRetries,
@@ -210,6 +226,7 @@ export class Openint {
       token: this.token,
       ...options,
     });
+    return client;
   }
 
   /**
@@ -236,6 +253,13 @@ export class Openint {
     return this.post('/connection', { body, ...options });
   }
 
+  createConnnectorConfig(
+    body: TopLevelAPI.CreateConnnectorConfigParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateConnnectorConfigResponse> {
+    return this.post('/connector-config', { body, ...options });
+  }
+
   /**
    * Create a @Connect authentication token for a customer. This token can be used to
    * embed @Connect in your application via the `@openint/connect` npm package.
@@ -253,6 +277,14 @@ export class Openint {
    */
   deleteConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.DeleteConnectionResponse> {
     return this.delete(path`/connection/${id}`, options);
+  }
+
+  getConectorConfig(
+    id: string,
+    query: TopLevelAPI.GetConectorConfigParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.GetConectorConfigResponse> {
+    return this.get(path`/connector-config/${id}`, { query, ...options });
   }
 
   /**
@@ -329,6 +361,36 @@ export class Openint {
   }
 
   /**
+   * List Configured Connectors
+   */
+  listConnnectorConfigs(
+    query: TopLevelAPI.ListConnnectorConfigsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): Pagination.PagePromise<
+    ListConnnectorConfigsResponsesOffsetPagination,
+    TopLevelAPI.ListConnnectorConfigsResponse
+  > {
+    return this.getAPIList(
+      '/connector-config',
+      Pagination.OffsetPagination<TopLevelAPI.ListConnnectorConfigsResponse>,
+      { query, ...options },
+    );
+  }
+
+  /**
+   * List all customers
+   */
+  listCustomers(
+    query: TopLevelAPI.ListCustomersParams | null | undefined = {},
+    options?: RequestOptions,
+  ): Pagination.PagePromise<ListCustomersResponsesOffsetPagination, TopLevelAPI.ListCustomersResponse> {
+    return this.getAPIList('/customer', Pagination.OffsetPagination<TopLevelAPI.ListCustomersResponse>, {
+      query,
+      ...options,
+    });
+  }
+
+  /**
    * List all events for an organization
    */
   listEvents(
@@ -339,6 +401,24 @@ export class Openint {
       query,
       ...options,
     });
+  }
+
+  upsertConnnectorConfig(
+    id: string,
+    body: TopLevelAPI.UpsertConnnectorConfigParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.UpsertConnnectorConfigResponse> {
+    return this.put(path`/connector-config/${id}`, { body, ...options });
+  }
+
+  /**
+   * Create or update a customer
+   */
+  upsertCustomer(
+    body: TopLevelAPI.UpsertCustomerParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.UpsertCustomerResponse> {
+    return this.put('/customer', { body, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -358,7 +438,7 @@ export class Openint {
     );
   }
 
-  protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
+  protected async authHeaders(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
     if (this.token == null) {
       return undefined;
     }
@@ -477,7 +557,9 @@ export class Openint {
 
     await this.prepareOptions(options);
 
-    const { req, url, timeout } = this.buildRequest(options, { retryCount: maxRetries - retriesRemaining });
+    const { req, url, timeout } = await this.buildRequest(options, {
+      retryCount: maxRetries - retriesRemaining,
+    });
 
     await this.prepareRequest(req, { url, options });
 
@@ -555,7 +637,7 @@ export class Openint {
     } with status ${response.status} in ${headersTime - startTime}ms`;
 
     if (!response.ok) {
-      const shouldRetry = this.shouldRetry(response);
+      const shouldRetry = await this.shouldRetry(response);
       if (retriesRemaining && shouldRetry) {
         const retryMessage = `retrying, ${retriesRemaining} attempts remaining`;
 
@@ -673,7 +755,7 @@ export class Openint {
     }
   }
 
-  private shouldRetry(response: Response): boolean {
+  private async shouldRetry(response: Response): Promise<boolean> {
     // Note this is not a standard header.
     const shouldRetryHeader = response.headers.get('x-should-retry');
 
@@ -750,10 +832,10 @@ export class Openint {
     return sleepSeconds * jitter * 1000;
   }
 
-  buildRequest(
+  async buildRequest(
     inputOptions: FinalRequestOptions,
     { retryCount = 0 }: { retryCount?: number } = {},
-  ): { req: FinalizedRequestInit; url: string; timeout: number } {
+  ): Promise<{ req: FinalizedRequestInit; url: string; timeout: number }> {
     const options = { ...inputOptions };
     const { method, path, query, defaultBaseURL } = options;
 
@@ -761,7 +843,7 @@ export class Openint {
     if ('timeout' in options) validatePositiveInteger('timeout', options.timeout);
     options.timeout = options.timeout ?? this.timeout;
     const { bodyHeaders, body } = this.buildBody({ options });
-    const reqHeaders = this.buildHeaders({ options: inputOptions, method, bodyHeaders, retryCount });
+    const reqHeaders = await this.buildHeaders({ options: inputOptions, method, bodyHeaders, retryCount });
 
     const req: FinalizedRequestInit = {
       method,
@@ -777,7 +859,7 @@ export class Openint {
     return { req, url, timeout: options.timeout };
   }
 
-  private buildHeaders({
+  private async buildHeaders({
     options,
     method,
     bodyHeaders,
@@ -787,7 +869,7 @@ export class Openint {
     method: HTTPMethod;
     bodyHeaders: HeadersLike;
     retryCount: number;
-  }): Headers {
+  }): Promise<Headers> {
     let idempotencyHeaders: HeadersLike = {};
     if (this.idempotencyHeader && method !== 'get') {
       if (!options.idempotencyKey) options.idempotencyKey = this.defaultIdempotencyKey();
@@ -803,7 +885,7 @@ export class Openint {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(Math.trunc(options.timeout / 1000)) } : {}),
         ...getPlatformHeaders(),
       },
-      this.authHeaders(options),
+      await this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
@@ -884,26 +966,40 @@ export declare namespace Openint {
     type Integration as Integration,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
+    type CreateConnnectorConfigResponse as CreateConnnectorConfigResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
+    type GetConectorConfigResponse as GetConectorConfigResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type GetMessageTemplateResponse as GetMessageTemplateResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
+    type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
+    type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
+    type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
+    type UpsertCustomerResponse as UpsertCustomerResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
+    type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
+    type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
+    type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
     type CreateTokenParams as CreateTokenParams,
+    type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
     type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
+    type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
+    type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
+    type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
+    type UpsertCustomerParams as UpsertCustomerParams,
   };
 }
