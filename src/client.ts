@@ -48,11 +48,16 @@ import {
   ListConnnectorConfigsParams,
   ListConnnectorConfigsResponse,
   ListConnnectorConfigsResponsesOffsetPagination,
+  ListCustomersParams,
+  ListCustomersResponse,
+  ListCustomersResponsesOffsetPagination,
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
   UpsertConnnectorConfigParams,
   UpsertConnnectorConfigResponse,
+  UpsertCustomerParams,
+  UpsertCustomerResponse,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -373,6 +378,19 @@ export class Openint {
   }
 
   /**
+   * List all customers
+   */
+  listCustomers(
+    query: TopLevelAPI.ListCustomersParams | null | undefined = {},
+    options?: RequestOptions,
+  ): Pagination.PagePromise<ListCustomersResponsesOffsetPagination, TopLevelAPI.ListCustomersResponse> {
+    return this.getAPIList('/customer', Pagination.OffsetPagination<TopLevelAPI.ListCustomersResponse>, {
+      query,
+      ...options,
+    });
+  }
+
+  /**
    * List all events for an organization
    */
   listEvents(
@@ -391,6 +409,16 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.UpsertConnnectorConfigResponse> {
     return this.put(path`/connector-config/${id}`, { body, ...options });
+  }
+
+  /**
+   * Create or update a customer
+   */
+  upsertCustomer(
+    body: TopLevelAPI.UpsertCustomerParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.UpsertCustomerResponse> {
+    return this.put('/customer', { body, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -949,12 +977,15 @@ export declare namespace Openint {
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
+    type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
+    type UpsertCustomerResponse as UpsertCustomerResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
+    type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
@@ -966,7 +997,9 @@ export declare namespace Openint {
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
+    type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
+    type UpsertCustomerParams as UpsertCustomerParams,
   };
 }

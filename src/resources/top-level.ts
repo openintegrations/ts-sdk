@@ -11,6 +11,8 @@ export type ListConnectorsResponsesOffsetPagination = OffsetPagination<ListConne
 
 export type ListConnnectorConfigsResponsesOffsetPagination = OffsetPagination<ListConnnectorConfigsResponse>;
 
+export type ListCustomersResponsesOffsetPagination = OffsetPagination<ListCustomersResponse>;
+
 export type ListEventsResponsesOffsetPagination = OffsetPagination<ListEventsResponse>;
 
 export interface Connector {
@@ -81785,6 +81787,25 @@ export namespace ListConnnectorConfigsResponse {
   }
 }
 
+export interface ListCustomersResponse {
+  /**
+   * Customer Id
+   */
+  id: string | null;
+
+  connection_count: number;
+
+  /**
+   * postgres timestamp format, not yet ISO
+   */
+  created_at: string;
+
+  /**
+   * postgres timestamp format, not yet ISO
+   */
+  updated_at: string;
+}
+
 export type ListEventsResponse =
   | ListEventsResponse.UnionMember0
   | ListEventsResponse.UnionMember1
@@ -90981,6 +91002,20 @@ export namespace UpsertConnnectorConfigResponse {
       }
     }
   }
+}
+
+export interface UpsertCustomerResponse {
+  id: string;
+
+  api_key: string | null;
+
+  created_at: string;
+
+  metadata: string | number | boolean | { [key: string]: unknown } | Array<unknown> | null;
+
+  org_id: string;
+
+  updated_at: string;
 }
 
 export interface CreateConnectionParams {
@@ -101444,6 +101479,15 @@ export interface ListConnnectorConfigsParams extends OffsetPaginationParams {
   search_query?: string | null;
 }
 
+export interface ListCustomersParams extends OffsetPaginationParams {
+  /**
+   * Limit the number of items returned
+   */
+  limit?: number;
+
+  search_query?: string | null;
+}
+
 export interface ListEventsParams extends OffsetPaginationParams {
   expand?: Array<'prompt'>;
 
@@ -101465,6 +101509,12 @@ export interface UpsertConnnectorConfigParams {
   display_name?: string;
 }
 
+export interface UpsertCustomerParams {
+  id?: string;
+
+  metadata?: { [key: string]: unknown };
+}
+
 export declare namespace TopLevel {
   export {
     type Connector as Connector,
@@ -101482,12 +101532,15 @@ export declare namespace TopLevel {
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
+    type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
+    type UpsertCustomerResponse as UpsertCustomerResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
+    type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
@@ -101499,7 +101552,9 @@ export declare namespace TopLevel {
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
+    type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
+    type UpsertCustomerParams as UpsertCustomerParams,
   };
 }
