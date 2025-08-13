@@ -70,6 +70,29 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
+  test.skip('createConnnectorConfig: only required params', async () => {
+    const responsePromise = client.createConnnectorConfig({ connector_name: 'connector_name' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('createConnnectorConfig: required and optional params', async () => {
+    const response = await client.createConnnectorConfig({
+      connector_name: 'connector_name',
+      config: { foo: 'bar' },
+      disabled: true,
+      display_name: 'display_name',
+      metadata: { foo: 'bar' },
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('createToken', async () => {
     const responsePromise = client.createToken('x', {});
     const rawResponse = await responsePromise.asResponse();
@@ -308,8 +331,8 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
-  test.skip('upsertCustomer', async () => {
-    const responsePromise = client.upsertCustomer({});
+  test.skip('upsertConnnectorConfig', async () => {
+    const responsePromise = client.upsertConnnectorConfig('ccfg_', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
