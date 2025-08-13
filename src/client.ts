@@ -23,6 +23,8 @@ import {
   Connector,
   CreateConnectionParams,
   CreateConnectionResponse,
+  CreateConnnectorConfigParams,
+  CreateConnnectorConfigResponse,
   CreateTokenParams,
   CreateTokenResponse,
   DeleteConnectionResponse,
@@ -49,8 +51,8 @@ import {
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
-  UpsertCustomerParams,
-  UpsertCustomerResponse,
+  UpsertConnnectorConfigParams,
+  UpsertConnnectorConfigResponse,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -246,6 +248,13 @@ export class Openint {
     return this.post('/connection', { body, ...options });
   }
 
+  createConnnectorConfig(
+    body: TopLevelAPI.CreateConnnectorConfigParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.CreateConnnectorConfigResponse> {
+    return this.post('/connector-config', { body, ...options });
+  }
+
   /**
    * Create a @Connect authentication token for a customer. This token can be used to
    * embed @Connect in your application via the `@openint/connect` npm package.
@@ -376,14 +385,12 @@ export class Openint {
     });
   }
 
-  /**
-   * Create or update a customer
-   */
-  upsertCustomer(
-    body: TopLevelAPI.UpsertCustomerParams,
+  upsertConnnectorConfig(
+    id: string,
+    body: TopLevelAPI.UpsertConnnectorConfigParams,
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.UpsertCustomerResponse> {
-    return this.put('/customers', { body, ...options });
+  ): APIPromise<TopLevelAPI.UpsertConnnectorConfigResponse> {
+    return this.put(path`/connector-config/${id}`, { body, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -931,6 +938,7 @@ export declare namespace Openint {
     type Integration as Integration,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
+    type CreateConnnectorConfigResponse as CreateConnnectorConfigResponse,
     type CreateTokenResponse as CreateTokenResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
     type GetConectorConfigResponse as GetConectorConfigResponse,
@@ -942,13 +950,14 @@ export declare namespace Openint {
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListEventsResponse as ListEventsResponse,
-    type UpsertCustomerResponse as UpsertCustomerResponse,
+    type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type CreateConnectionParams as CreateConnectionParams,
+    type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
     type CreateTokenParams as CreateTokenParams,
     type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
@@ -958,6 +967,6 @@ export declare namespace Openint {
     type ListConnectorsParams as ListConnectorsParams,
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListEventsParams as ListEventsParams,
-    type UpsertCustomerParams as UpsertCustomerParams,
+    type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
   };
 }
