@@ -101489,7 +101489,7 @@ export interface ListCustomersParams extends OffsetPaginationParams {
 }
 
 export interface ListEventsParams extends OffsetPaginationParams {
-  expand?: Array<'prompt'>;
+  include_prompt?: boolean;
 
   /**
    * Limit the number of items returned
