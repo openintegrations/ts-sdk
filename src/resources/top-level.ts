@@ -13932,7 +13932,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -47030,7 +47030,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -71563,7 +71563,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -100379,7 +100379,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -100847,6 +100847,12 @@ export namespace CreateTokenParams {
      * Whether to enable debug mode
      */
     debug?: boolean;
+
+    /**
+     * Whether to hide the navigation bar. This is useful for hardcoding to a
+     * particular view.
+     */
+    hide_navigation?: boolean;
 
     /**
      * Whether to enable embedded mode. Embedded mode hides the side bar with extra
