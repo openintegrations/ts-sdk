@@ -952,6 +952,7 @@ export class Openint {
 
   static toFile = Uploads.toFile;
 }
+
 export declare namespace Openint {
   export type RequestOptions = Opts.RequestOptions;
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.11.0 (2025-08-16)
+
+Full Changelog: [v2.10.0...v2.11.0](https://github.com/openintegrations/ts-sdk/compare/v2.10.0...v2.11.0)
+
+### Features
+
+* **docs:** updating documented docs for stainless ([737a569](https://github.com/openintegrations/ts-sdk/commit/737a569b4e5c339445bafaf4030e10dcabca15a2))
+* **docs:** updating documented docs for stainless ([515852f](https://github.com/openintegrations/ts-sdk/commit/515852f9501e17606eecb2ef72fa0b3e9eb02d8b))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v20.17.58 ([738bc3a](https://github.com/openintegrations/ts-sdk/commit/738bc3a8980829dd8fbda78a81c202608ae28593))
+* **internal:** formatting change ([d3650fb](https://github.com/openintegrations/ts-sdk/commit/d3650fbee387bb3df6cc8baced796409ec639b60))
+
 ## 2.10.0 (2025-08-13)
 
 Full Changelog: [v2.9.1...v2.10.0](https://github.com/openintegrations/ts-sdk/compare/v2.9.1...v2.10.0)
