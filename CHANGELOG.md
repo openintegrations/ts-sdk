@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.15.0 (2025-08-26)
+
+Full Changelog: [v2.14.0...v2.15.0](https://github.com/openintegrations/ts-sdk/compare/v2.14.0...v2.15.0)
+
+### Features
+
+* **api:** org api updates ([57dbba3](https://github.com/openintegrations/ts-sdk/commit/57dbba323838581fa982cc3ae558956f7d7fa90f))
+
 ## 2.14.0 (2025-08-26)
 
 Full Changelog: [v2.13.0...v2.14.0](https://github.com/openintegrations/ts-sdk/compare/v2.13.0...v2.14.0)
