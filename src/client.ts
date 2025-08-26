@@ -19,6 +19,8 @@ import { AbstractPage, type OffsetPaginationParams, OffsetPaginationResponse } f
 import * as Uploads from './core/uploads';
 import * as TopLevelAPI from './resources/top-level';
 import {
+  AssignConnectionParams,
+  AssignConnectionResponse,
   CheckConnectionResponse,
   Connector,
   CreateConnectionParams,
@@ -27,15 +29,17 @@ import {
   CreateConnnectorConfigResponse,
   CreateTokenParams,
   CreateTokenResponse,
+  DeleteAssignmentParams,
+  DeleteAssignmentResponse,
   DeleteConnectionResponse,
+  DeleteConnectorConfigResponse,
   GetConectorConfigParams,
   GetConectorConfigResponse,
   GetConnectionParams,
   GetConnectionResponse,
   GetCurrentUserResponse,
-  GetMessageTemplateParams,
-  GetMessageTemplateResponse,
   Integration,
+  ListAssignmentsResponse,
   ListConnectionConfigsParams,
   ListConnectionConfigsResponse,
   ListConnectionConfigsResponsesOffsetPagination,
@@ -171,7 +175,7 @@ export class Openint {
    * API Client for interfacing with the Openint API.
    *
    * @param {string | null | undefined} [opts.token=process.env['OPENINT_API_KEY'] ?? null]
-   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://api.openint.dev/v1] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['OPENINT_BASE_URL'] ?? https://api.openint.dev] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -187,7 +191,7 @@ export class Openint {
     const options: ClientOptions = {
       token,
       ...opts,
-      baseURL: baseURL || `https://api.openint.dev/v1`,
+      baseURL: baseURL || `https://api.openint.dev`,
     };
 
     this.baseURL = options.baseURL!;
@@ -233,14 +237,26 @@ export class Openint {
    * Check whether the base URL is set to its default.
    */
   #baseURLOverridden(): boolean {
-    return this.baseURL !== 'https://api.openint.dev/v1';
+    return this.baseURL !== 'https://api.openint.dev';
+  }
+
+  /**
+   * Assign a connection to a customer
+   */
+  assignConnection(
+    replID: string,
+    params: TopLevelAPI.AssignConnectionParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.AssignConnectionResponse> {
+    const { id } = params;
+    return this.put(path`/v2/connection/${id}/assignment/${replID}`, options);
   }
 
   /**
    * Verify that a connection is healthy
    */
   checkConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.CheckConnectionResponse> {
-    return this.post(path`/connection/${id}/check`, options);
+    return this.post(path`/v1/connection/${id}/check`, options);
   }
 
   /**
@@ -250,14 +266,14 @@ export class Openint {
     body: TopLevelAPI.CreateConnectionParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateConnectionResponse> {
-    return this.post('/connection', { body, ...options });
+    return this.post('/v2/connection', { body, ...options });
   }
 
   createConnnectorConfig(
     body: TopLevelAPI.CreateConnnectorConfigParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateConnnectorConfigResponse> {
-    return this.post('/connector-config', { body, ...options });
+    return this.post('/v2/connector-config', { body, ...options });
   }
 
   /**
@@ -269,14 +285,33 @@ export class Openint {
     body: TopLevelAPI.CreateTokenParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.CreateTokenResponse> {
-    return this.post(path`/customer/${customerID}/token`, { body, ...options });
+    return this.post(path`/v1/customer/${customerID}/token`, { body, ...options });
+  }
+
+  /**
+   * Remove a repl assignment from a connection
+   */
+  deleteAssignment(
+    replID: string,
+    params: TopLevelAPI.DeleteAssignmentParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.DeleteAssignmentResponse> {
+    const { id } = params;
+    return this.delete(path`/v2/connection/${id}/assignment/${replID}`, options);
   }
 
   /**
    * Delete a connection
    */
   deleteConnection(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.DeleteConnectionResponse> {
-    return this.delete(path`/connection/${id}`, options);
+    return this.delete(path`/v2/connection/${id}`, options);
+  }
+
+  deleteConnectorConfig(
+    id: string,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.DeleteConnectorConfigResponse> {
+    return this.delete(path`/v2/connector-config/${id}`, options);
   }
 
   getConectorConfig(
@@ -284,7 +319,7 @@ export class Openint {
     query: TopLevelAPI.GetConectorConfigParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.GetConectorConfigResponse> {
-    return this.get(path`/connector-config/${id}`, { query, ...options });
+    return this.get(path`/v2/connector-config/${id}`, { query, ...options });
   }
 
   /**
@@ -295,24 +330,21 @@ export class Openint {
     query: TopLevelAPI.GetConnectionParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.GetConnectionResponse> {
-    return this.get(path`/connection/${id}`, { query, ...options });
+    return this.get(path`/v2/connection/${id}`, { query, ...options });
   }
 
   /**
    * Get information about the current authenticated user
    */
   getCurrentUser(options?: RequestOptions): APIPromise<TopLevelAPI.GetCurrentUserResponse> {
-    return this.get('/viewer', options);
+    return this.get('/v1/viewer', options);
   }
 
   /**
-   * Get a message template for an AI agent
+   * Get the list of assignments for a specific connection
    */
-  getMessageTemplate(
-    query: TopLevelAPI.GetMessageTemplateParams,
-    options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.GetMessageTemplateResponse> {
-    return this.get('/ai/message_template', { query, ...options });
+  listAssignments(id: string, options?: RequestOptions): APIPromise<TopLevelAPI.ListAssignmentsResponse> {
+    return this.get(path`/v2/connection/${id}/assignment`, options);
   }
 
   /**
@@ -326,7 +358,7 @@ export class Openint {
     TopLevelAPI.ListConnectionConfigsResponse
   > {
     return this.getAPIList(
-      '/connector-config',
+      '/v2/connector-config',
       Pagination.OffsetPagination<TopLevelAPI.ListConnectionConfigsResponse>,
       { query, ...options },
     );
@@ -341,10 +373,11 @@ export class Openint {
     query: TopLevelAPI.ListConnectionsParams | null | undefined = {},
     options?: RequestOptions,
   ): Pagination.PagePromise<ListConnectionsResponsesOffsetPagination, TopLevelAPI.ListConnectionsResponse> {
-    return this.getAPIList('/connection', Pagination.OffsetPagination<TopLevelAPI.ListConnectionsResponse>, {
-      query,
-      ...options,
-    });
+    return this.getAPIList(
+      '/v2/connection',
+      Pagination.OffsetPagination<TopLevelAPI.ListConnectionsResponse>,
+      { query, ...options },
+    );
   }
 
   /**
@@ -354,7 +387,7 @@ export class Openint {
     query: TopLevelAPI.ListConnectorsParams | null | undefined = {},
     options?: RequestOptions,
   ): Pagination.PagePromise<ListConnectorsResponsesOffsetPagination, TopLevelAPI.ListConnectorsResponse> {
-    return this.getAPIList('/connector', Pagination.OffsetPagination<TopLevelAPI.ListConnectorsResponse>, {
+    return this.getAPIList('/v2/connector', Pagination.OffsetPagination<TopLevelAPI.ListConnectorsResponse>, {
       query,
       ...options,
     });
@@ -371,7 +404,7 @@ export class Openint {
     TopLevelAPI.ListConnnectorConfigsResponse
   > {
     return this.getAPIList(
-      '/connector-config',
+      '/v2/connector-config',
       Pagination.OffsetPagination<TopLevelAPI.ListConnnectorConfigsResponse>,
       { query, ...options },
     );
@@ -384,7 +417,7 @@ export class Openint {
     query: TopLevelAPI.ListCustomersParams | null | undefined = {},
     options?: RequestOptions,
   ): Pagination.PagePromise<ListCustomersResponsesOffsetPagination, TopLevelAPI.ListCustomersResponse> {
-    return this.getAPIList('/customer', Pagination.OffsetPagination<TopLevelAPI.ListCustomersResponse>, {
+    return this.getAPIList('/v1/customer', Pagination.OffsetPagination<TopLevelAPI.ListCustomersResponse>, {
       query,
       ...options,
     });
@@ -397,7 +430,7 @@ export class Openint {
     query: TopLevelAPI.ListEventsParams | null | undefined = {},
     options?: RequestOptions,
   ): Pagination.PagePromise<ListEventsResponsesOffsetPagination, TopLevelAPI.ListEventsResponse> {
-    return this.getAPIList('/event', Pagination.OffsetPagination<TopLevelAPI.ListEventsResponse>, {
+    return this.getAPIList('/v1/event', Pagination.OffsetPagination<TopLevelAPI.ListEventsResponse>, {
       query,
       ...options,
     });
@@ -408,7 +441,7 @@ export class Openint {
     body: TopLevelAPI.UpsertConnnectorConfigParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.UpsertConnnectorConfigResponse> {
-    return this.put(path`/connector-config/${id}`, { body, ...options });
+    return this.put(path`/v2/connector-config/${id}`, { body, ...options });
   }
 
   /**
@@ -418,7 +451,7 @@ export class Openint {
     body: TopLevelAPI.UpsertCustomerParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.UpsertCustomerResponse> {
-    return this.put('/customer', { body, ...options });
+    return this.put('/v1/customer', { body, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -965,15 +998,18 @@ export declare namespace Openint {
   export {
     type Connector as Connector,
     type Integration as Integration,
+    type AssignConnectionResponse as AssignConnectionResponse,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateConnnectorConfigResponse as CreateConnnectorConfigResponse,
     type CreateTokenResponse as CreateTokenResponse,
+    type DeleteAssignmentResponse as DeleteAssignmentResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
+    type DeleteConnectorConfigResponse as DeleteConnectorConfigResponse,
     type GetConectorConfigResponse as GetConectorConfigResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
-    type GetMessageTemplateResponse as GetMessageTemplateResponse,
+    type ListAssignmentsResponse as ListAssignmentsResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
@@ -988,12 +1024,13 @@ export declare namespace Openint {
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
     type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
+    type AssignConnectionParams as AssignConnectionParams,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
     type CreateTokenParams as CreateTokenParams,
+    type DeleteAssignmentParams as DeleteAssignmentParams,
     type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
-    type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,

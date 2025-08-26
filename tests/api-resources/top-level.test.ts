@@ -9,6 +9,23 @@ const client = new Openint({
 
 describe('top level methods', () => {
   // Prism tests are disabled
+  test.skip('assignConnection: only required params', async () => {
+    const responsePromise = client.assignConnection('replId', { id: 'conn_' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('assignConnection: required and optional params', async () => {
+    const response = await client.assignConnection('replId', { id: 'conn_' });
+  });
+
+  // Prism tests are disabled
   test.skip('checkConnection', async () => {
     const responsePromise = client.checkConnection('conn_');
     const rawResponse = await responsePromise.asResponse();
@@ -105,8 +122,37 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
+  test.skip('deleteAssignment: only required params', async () => {
+    const responsePromise = client.deleteAssignment('replId', { id: 'conn_' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('deleteAssignment: required and optional params', async () => {
+    const response = await client.deleteAssignment('replId', { id: 'conn_' });
+  });
+
+  // Prism tests are disabled
   test.skip('deleteConnection', async () => {
     const responsePromise = client.deleteConnection('conn_');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('deleteConnectorConfig', async () => {
+    const responsePromise = client.deleteConnectorConfig('ccfg_');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -173,8 +219,8 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getMessageTemplate: only required params', async () => {
-    const responsePromise = client.getMessageTemplate({ customer_id: 'customer_id' });
+  test.skip('listAssignments', async () => {
+    const responsePromise = client.listAssignments('conn_');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -182,15 +228,6 @@ describe('top level methods', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('getMessageTemplate: required and optional params', async () => {
-    const response = await client.getMessageTemplate({
-      customer_id: 'customer_id',
-      language: 'javascript',
-      use_environment_variables: true,
-    });
   });
 
   // Prism tests are disabled
@@ -240,6 +277,7 @@ describe('top level methods', () => {
     await expect(
       client.listConnections(
         {
+          connection_ids: ['conn_'],
           connector_config_id: 'ccfg_',
           connector_names: ['accelo'],
           customer_id: 'customer_id',
@@ -272,7 +310,7 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectors(
-        { expand: ['schemas'], limit: 0, offset: 0 },
+        { connector_name: 'connector_name', expand: ['schemas'], limit: 0, offset: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
