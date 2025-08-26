@@ -91046,12 +91046,6 @@ export interface UpsertCustomerResponse {
   updated_at: string;
 }
 
-export interface UpsertOrganizationResponse {
-  id: string;
-
-  created: boolean;
-}
-
 export interface AssignConnectionParams {
   /**
    * The id of the connection, starts with `conn_`
@@ -101591,7 +101585,6 @@ export declare namespace TopLevel {
     type ListEventsResponse as ListEventsResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
-    type UpsertOrganizationResponse as UpsertOrganizationResponse,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorConfigsResponsesOffsetPagination as ListConnectorConfigsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
