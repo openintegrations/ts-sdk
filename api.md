@@ -24,7 +24,6 @@ Types:
 - <code><a href="./src/resources/top-level.ts">ListEventsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertConnnectorConfigResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertCustomerResponse</a></code>
-- <code><a href="./src/resources/top-level.ts">UpsertOrganizationResponse</a></code>
 
 Methods:
 
@@ -48,4 +47,3 @@ Methods:
 - <code title="get /v1/event">client.<a href="./src/index.ts">listEvents</a>({ ...params }) -> ListEventsResponsesOffsetPagination</code>
 - <code title="put /v2/connector-config/{id}">client.<a href="./src/index.ts">upsertConnnectorConfig</a>(id, { ...params }) -> UpsertConnnectorConfigResponse</code>
 - <code title="put /v1/customer">client.<a href="./src/index.ts">upsertCustomer</a>({ ...params }) -> UpsertCustomerResponse</code>
-- <code title="put /v2/organization/{orgId}">client.<a href="./src/index.ts">upsertOrganization</a>(orgID) -> UpsertOrganizationResponse</code>

@@ -62,7 +62,6 @@ import {
   UpsertConnnectorConfigResponse,
   UpsertCustomerParams,
   UpsertCustomerResponse,
-  UpsertOrganizationResponse,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
@@ -453,16 +452,6 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.UpsertCustomerResponse> {
     return this.put('/v1/customer', { body, ...options });
-  }
-
-  /**
-   * Upsert an organization by ID. Creates if it does not exist.
-   */
-  upsertOrganization(
-    orgID: string,
-    options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.UpsertOrganizationResponse> {
-    return this.put(path`/v2/organization/${orgID}`, options);
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -1029,7 +1018,6 @@ export declare namespace Openint {
     type ListEventsResponse as ListEventsResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
-    type UpsertOrganizationResponse as UpsertOrganizationResponse,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
     type ListConnectorConfigsResponsesOffsetPagination as ListConnectorConfigsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
