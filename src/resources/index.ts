@@ -23,6 +23,7 @@ export {
   type ListEventsResponse,
   type UpsertConnnectorConfigResponse,
   type UpsertCustomerResponse,
+  type UpsertOrganizationResponse,
   type AssignConnectionParams,
   type CreateConnectionParams,
   type CreateConnnectorConfigParams,
