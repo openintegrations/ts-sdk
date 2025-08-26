@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.16.0 (2025-08-26)
+
+Full Changelog: [v2.15.0...v2.16.0](https://github.com/openintegrations/ts-sdk/compare/v2.15.0...v2.16.0)
+
+### Features
+
+* **api:** casing ([c2e3bdc](https://github.com/openintegrations/ts-sdk/commit/c2e3bdc780e923e96a3b37063aacda44ac12f454))
+
 ## 2.15.0 (2025-08-26)
 
 Full Changelog: [v2.14.0...v2.15.0](https://github.com/openintegrations/ts-sdk/compare/v2.14.0...v2.15.0)
