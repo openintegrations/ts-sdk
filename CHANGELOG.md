@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.11.0 (2025-08-26)
+
+Full Changelog: [v2.10.0...v2.11.0](https://github.com/openintegrations/ts-sdk/compare/v2.10.0...v2.11.0)
+
+### Features
+
+* **api-v2:** api v2 spec ([d04b8fd](https://github.com/openintegrations/ts-sdk/commit/d04b8fde6e3aef02fd934f5a4956ad5c99aa99fe))
+* **api!:** manual updates ([babafad](https://github.com/openintegrations/ts-sdk/commit/babafad0557135c81d7644c12f187fbac9f8ad94))
+* **docs:** updating documented docs for stainless ([737a569](https://github.com/openintegrations/ts-sdk/commit/737a569b4e5c339445bafaf4030e10dcabca15a2))
+* **docs:** updating documented docs for stainless ([515852f](https://github.com/openintegrations/ts-sdk/commit/515852f9501e17606eecb2ef72fa0b3e9eb02d8b))
+* **mcp:** add code execution tool ([0c4e176](https://github.com/openintegrations/ts-sdk/commit/0c4e17623447a55e31c162b3f16194a4a239813c))
+
+
+### Chores
+
+* add package to package.json ([822f9c5](https://github.com/openintegrations/ts-sdk/commit/822f9c5e165f36c85a7d289e18facf6cf34751d5))
+* **client:** qualify global Blob ([7df6e2e](https://github.com/openintegrations/ts-sdk/commit/7df6e2e3ee05fe7c400545283233901207ef8f6f))
+* **deps:** update dependency @types/node to v20.17.58 ([738bc3a](https://github.com/openintegrations/ts-sdk/commit/738bc3a8980829dd8fbda78a81c202608ae28593))
+* **internal:** formatting change ([d3650fb](https://github.com/openintegrations/ts-sdk/commit/d3650fbee387bb3df6cc8baced796409ec639b60))
+* update CI script ([10d1c06](https://github.com/openintegrations/ts-sdk/commit/10d1c0610407f3927b87aa305866027ae5ea6609))
+
 ## 2.10.0 (2025-08-13)
 
 Full Changelog: [v2.9.1...v2.10.0](https://github.com/openintegrations/ts-sdk/compare/v2.9.1...v2.10.0)
