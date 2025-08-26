@@ -26,8 +26,8 @@ const client = new Openint({
   token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
-const page = await client.listConnections();
-const listConnectionsResponse = page.items[0];
+const page = await client.listConnectors();
+const listConnectorsResponse = page.items[0];
 ```
 
 ### Request & Response types
@@ -42,7 +42,7 @@ const client = new Openint({
   token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
-const [listConnectionsResponse]: [Openint.ListConnectionsResponse] = await client.listConnections();
+const [listConnectorsResponse]: [Openint.ListConnectorsResponse] = await client.listConnectors();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -55,7 +55,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const page = await client.listConnections().catch(async (err) => {
+const page = await client.listConnectors().catch(async (err) => {
   if (err instanceof Openint.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
@@ -95,7 +95,7 @@ const client = new Openint({
 });
 
 // Or, configure per-request:
-await client.listConnections({
+await client.listConnectors({
   maxRetries: 5,
 });
 ```
@@ -112,7 +112,7 @@ const client = new Openint({
 });
 
 // Override per-request:
-await client.listConnections({
+await client.listConnectors({
   timeout: 5 * 1000,
 });
 ```
@@ -135,14 +135,14 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Openint();
 
-const response = await client.listConnections().asResponse();
+const response = await client.listConnectors().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: page, response: raw } = await client.listConnections().withResponse();
+const { data: page, response: raw } = await client.listConnectors().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-for await (const listConnectionsResponse of page) {
-  console.log(listConnectionsResponse);
+for await (const listConnectorsResponse of page) {
+  console.log(listConnectorsResponse);
 }
 ```
 
@@ -223,7 +223,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.listConnections({
+client.listConnectors({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',

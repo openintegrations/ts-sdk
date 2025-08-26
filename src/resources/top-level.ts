@@ -266,6 +266,15 @@ export interface Integration {
   version?: string | null;
 }
 
+export interface AssignConnectionResponse {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
+  id: string;
+
+  assignments?: Array<string>;
+}
+
 export interface CheckConnectionResponse {
   id: string;
 
@@ -13932,7 +13941,7 @@ export namespace CreateConnectionResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -23104,9 +23113,25 @@ export interface CreateTokenResponse {
   magic_link_url: string;
 }
 
+export interface DeleteAssignmentResponse {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
+  id: string;
+
+  assignments: Array<string>;
+}
+
 export interface DeleteConnectionResponse {
   /**
    * The id of the connection, starts with `conn_`
+   */
+  id: string;
+}
+
+export interface DeleteConnectorConfigResponse {
+  /**
+   * The id of the connector config, starts with `ccfg_`
    */
   id: string;
 }
@@ -47030,7 +47055,7 @@ export namespace GetConnectionResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -47638,10 +47663,13 @@ export interface GetCurrentUserResponse {
   [k: string]: unknown;
 }
 
-export interface GetMessageTemplateResponse {
-  language: string;
+export interface ListAssignmentsResponse {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
+  id: string;
 
-  template: string;
+  assignments: Array<string>;
 }
 
 export type ListConnectionConfigsResponse =
@@ -71563,7 +71591,7 @@ export namespace ListConnectionsResponse {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -91018,6 +91046,13 @@ export interface UpsertCustomerResponse {
   updated_at: string;
 }
 
+export interface AssignConnectionParams {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
+  id: string;
+}
+
 export interface CreateConnectionParams {
   /**
    * The id of the connector config, starts with `ccfg_`
@@ -100379,7 +100414,7 @@ export namespace CreateConnectionParams {
 
   export namespace ConnectorPostgresDiscriminatedConnectionSettings {
     export interface Settings {
-      databaseURL?: string;
+      database_url?: string;
     }
   }
 
@@ -100849,6 +100884,12 @@ export namespace CreateTokenParams {
     debug?: boolean;
 
     /**
+     * Whether to hide the navigation bar. This is useful for hardcoding to a
+     * particular view.
+     */
+    hide_navigation?: boolean;
+
+    /**
      * Whether to enable embedded mode. Embedded mode hides the side bar with extra
      * context for the end user (customer) on the organization
      */
@@ -100869,6 +100910,13 @@ export namespace CreateTokenParams {
   }
 }
 
+export interface DeleteAssignmentParams {
+  /**
+   * The id of the connection, starts with `conn_`
+   */
+  id: string;
+}
+
 export interface GetConectorConfigParams {
   expand?: Array<'connector' | 'connector.schemas' | 'connection_count'>;
 }
@@ -100883,14 +100931,6 @@ export interface GetConnectionParams {
    * expired, default)
    */
   refresh_policy?: 'none' | 'force' | 'auto';
-}
-
-export interface GetMessageTemplateParams {
-  customer_id: string;
-
-  language?: 'javascript';
-
-  use_environment_variables?: boolean;
 }
 
 export interface ListConnectionConfigsParams extends OffsetPaginationParams {
@@ -101079,6 +101119,8 @@ export interface ListConnectionConfigsParams extends OffsetPaginationParams {
 }
 
 export interface ListConnectionsParams extends OffsetPaginationParams {
+  connection_ids?: Array<string>;
+
   /**
    * The id of the connector config, starts with `ccfg_`
    */
@@ -101286,6 +101328,8 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
 }
 
 export interface ListConnectorsParams extends OffsetPaginationParams {
+  connector_name?: string;
+
   expand?: Array<'schemas'>;
 
   /**
@@ -101489,7 +101533,7 @@ export interface ListCustomersParams extends OffsetPaginationParams {
 }
 
 export interface ListEventsParams extends OffsetPaginationParams {
-  expand?: Array<'prompt'>;
+  include_prompt?: boolean;
 
   /**
    * Limit the number of items returned
@@ -101519,15 +101563,18 @@ export declare namespace TopLevel {
   export {
     type Connector as Connector,
     type Integration as Integration,
+    type AssignConnectionResponse as AssignConnectionResponse,
     type CheckConnectionResponse as CheckConnectionResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateConnnectorConfigResponse as CreateConnnectorConfigResponse,
     type CreateTokenResponse as CreateTokenResponse,
+    type DeleteAssignmentResponse as DeleteAssignmentResponse,
     type DeleteConnectionResponse as DeleteConnectionResponse,
+    type DeleteConnectorConfigResponse as DeleteConnectorConfigResponse,
     type GetConectorConfigResponse as GetConectorConfigResponse,
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
-    type GetMessageTemplateResponse as GetMessageTemplateResponse,
+    type ListAssignmentsResponse as ListAssignmentsResponse,
     type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
@@ -101542,12 +101589,13 @@ export declare namespace TopLevel {
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
     type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
+    type AssignConnectionParams as AssignConnectionParams,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
     type CreateTokenParams as CreateTokenParams,
+    type DeleteAssignmentParams as DeleteAssignmentParams,
     type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
-    type GetMessageTemplateParams as GetMessageTemplateParams,
     type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
     type ListConnectorsParams as ListConnectorsParams,
