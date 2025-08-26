@@ -298,13 +298,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['OPENINT_BASE_URL'] = ''; // empty
       const client = new Openint({ token: 'My Token' });
-      expect(client.baseURL).toEqual('https://api.openint.dev/v1');
+      expect(client.baseURL).toEqual('https://api.openint.dev');
     });
 
     test('blank env variable', () => {
       process.env['OPENINT_BASE_URL'] = '  '; // blank
       const client = new Openint({ token: 'My Token' });
-      expect(client.baseURL).toEqual('https://api.openint.dev/v1');
+      expect(client.baseURL).toEqual('https://api.openint.dev');
     });
 
     test('in request options', () => {
