@@ -101324,6 +101324,8 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
    */
   refresh_policy?: 'none' | 'force' | 'auto';
 
+  repl_id?: string;
+
   search_query?: string;
 }
 
