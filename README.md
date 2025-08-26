@@ -26,9 +26,8 @@ const client = new Openint({
   token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
-const response = await client.assignConnection('replId', { id: 'conn_' });
-
-console.log(response.id);
+const page = await client.listConnectors();
+const listConnectorsResponse = page.items[0];
 ```
 
 ### Request & Response types
@@ -43,8 +42,7 @@ const client = new Openint({
   token: process.env['OPENINT_API_KEY'], // This is the default and can be omitted
 });
 
-const params: Openint.AssignConnectionParams = { id: 'conn_' };
-const response: Openint.AssignConnectionResponse = await client.assignConnection('replId', params);
+const [listConnectorsResponse]: [Openint.ListConnectorsResponse] = await client.listConnectors();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -57,7 +55,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const response = await client.assignConnection('replId', { id: 'conn_' }).catch(async (err) => {
+const page = await client.listConnectors().catch(async (err) => {
   if (err instanceof Openint.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
@@ -97,7 +95,7 @@ const client = new Openint({
 });
 
 // Or, configure per-request:
-await client.assignConnection('replId', { id: 'conn_' }, {
+await client.listConnectors({
   maxRetries: 5,
 });
 ```
@@ -114,7 +112,7 @@ const client = new Openint({
 });
 
 // Override per-request:
-await client.assignConnection('replId', { id: 'conn_' }, {
+await client.listConnectors({
   timeout: 5 * 1000,
 });
 ```
@@ -137,15 +135,15 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Openint();
 
-const response = await client.assignConnection('replId', { id: 'conn_' }).asResponse();
+const response = await client.listConnectors().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client
-  .assignConnection('replId', { id: 'conn_' })
-  .withResponse();
+const { data: page, response: raw } = await client.listConnectors().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.id);
+for await (const listConnectorsResponse of page) {
+  console.log(listConnectorsResponse);
+}
 ```
 
 ### Logging
@@ -225,7 +223,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.assignConnection({
+client.listConnectors({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
