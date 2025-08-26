@@ -16,8 +16,8 @@ Types:
 - <code><a href="./src/resources/top-level.ts">GetConnectionResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">GetCurrentUserResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListAssignmentsResponse</a></code>
-- <code><a href="./src/resources/top-level.ts">ListConnectionConfigsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectionsResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">ListConnectorConfigsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnectorsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListConnnectorConfigsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListCustomersResponse</a></code>
@@ -40,8 +40,8 @@ Methods:
 - <code title="get /v2/connection/{id}">client.<a href="./src/index.ts">getConnection</a>(id, { ...params }) -> GetConnectionResponse</code>
 - <code title="get /v1/viewer">client.<a href="./src/index.ts">getCurrentUser</a>() -> GetCurrentUserResponse</code>
 - <code title="get /v2/connection/{id}/assignment">client.<a href="./src/index.ts">listAssignments</a>(id) -> ListAssignmentsResponse</code>
-- <code title="get /v2/connector-config">client.<a href="./src/index.ts">listConnectionConfigs</a>({ ...params }) -> ListConnectionConfigsResponsesOffsetPagination</code>
 - <code title="get /v2/connection">client.<a href="./src/index.ts">listConnections</a>({ ...params }) -> ListConnectionsResponsesOffsetPagination</code>
+- <code title="get /v2/connector-config">client.<a href="./src/index.ts">listConnectorConfigs</a>({ ...params }) -> ListConnectorConfigsResponsesOffsetPagination</code>
 - <code title="get /v2/connector">client.<a href="./src/index.ts">listConnectors</a>({ ...params }) -> ListConnectorsResponsesOffsetPagination</code>
 - <code title="get /v2/connector-config">client.<a href="./src/index.ts">listConnnectorConfigs</a>({ ...params }) -> ListConnnectorConfigsResponsesOffsetPagination</code>
 - <code title="get /v1/customer">client.<a href="./src/index.ts">listCustomers</a>({ ...params }) -> ListCustomersResponsesOffsetPagination</code>

@@ -3,9 +3,9 @@
 import * as TopLevelAPI from './top-level';
 import { OffsetPagination, type OffsetPaginationParams } from '../core/pagination';
 
-export type ListConnectionConfigsResponsesOffsetPagination = OffsetPagination<ListConnectionConfigsResponse>;
-
 export type ListConnectionsResponsesOffsetPagination = OffsetPagination<ListConnectionsResponse>;
+
+export type ListConnectorConfigsResponsesOffsetPagination = OffsetPagination<ListConnectorConfigsResponse>;
 
 export type ListConnectorsResponsesOffsetPagination = OffsetPagination<ListConnectorsResponse>;
 
@@ -47672,9624 +47672,6 @@ export interface ListAssignmentsResponse {
   assignments: Array<string>;
 }
 
-export type ListConnectionConfigsResponse =
-  | ListConnectionConfigsResponse.ConnectorAcceloDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAcmeApikeyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAcmeOauth2DiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAdobeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAdyenDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAircallDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAmazonDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorApaleoDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAsanaDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAttioDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAuth0DiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAutodeskDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAwsDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBamboohrDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBasecampDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBattlenetDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBigcommerceDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBitbucketDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBitlyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBlackbaudDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBoldsignDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBoxDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBraintreeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorCalendlyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorClickupDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorCloseDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorConfluenceDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorContentfulDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorContentstackDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorCopperDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorCorosDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDatevDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDeelDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDialpadDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDigitaloceanDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDiscordDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDocusignDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorDropboxDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorEbayDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorEgnyteDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorEnvoyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorEventbriteDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorExistDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFacebookDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFactorialDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFigmaDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFitbitDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFortnoxDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFreshbooksDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFrontDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGitHubDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGitlabDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGongDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGoogleCalendarDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGoogleDocsDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGoogleDriveDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGoogleMailDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGoogleSheetDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGorgiasDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGrainDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGumroadDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGustoDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorHarvestDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorHighlevelDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorHubspotDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorInstagramDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorIntercomDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorJiraDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorKeapDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorLeverDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorLinearDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorLinkedinDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorLinkhutDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMailchimpDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMiroDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMondayDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMuralDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorNamelyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorNationbuilderDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorNetsuiteDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorNotionDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOdooDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOktaDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOsuDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOuraDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOutreachDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPagerdutyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPandadocDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPayfitDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPaypalDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPennylaneDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPinterestDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPipedriveDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPodiumDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorProductboardDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorQualtricsDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorQuickbooksDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorRedditDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSageDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSalesforceDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSalesloftDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSegmentDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorServicem8DiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorServicenowDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSharepointDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorShopifyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSignnowDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSlackDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSmartsheetDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSnowflakeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSpotifyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSquarespaceDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSquareupDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorStackexchangeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorStravaDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTeamworkDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTicktickDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTimelyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTodoistDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTremendousDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTsheetsteamDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTumblrDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTwinfieldDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTwitchDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTwitterDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTypeformDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorUberDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorVimeoDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWakatimeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWealthboxDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWebflowDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWhoopDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWordpressDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWrikeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorXeroDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorYahooDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorYandexDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorZapierDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorZendeskDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorZenefitsDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorZohoDeskDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorZohoDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorZoomDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorAirtableDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorApolloDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorBrexDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorCodaDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFinchDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorFirebaseDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorForeceiptDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorGreenhouseDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorHeronDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorLunchmoneyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMercuryDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMergeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorMootaDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOnebrickDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorOpenledgerDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPlaidDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorPostgresDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorRampDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorStripeDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTellerDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTogglDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorTwentyDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorVenmoDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorWiseDiscriminatedConnectorConfig
-  | ListConnectionConfigsResponse.ConnectorYodleeDiscriminatedConnectorConfig;
-
-export namespace ListConnectionConfigsResponse {
-  export interface ConnectorAcceloDiscriminatedConnectorConfig {
-    config: ConnectorAcceloDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'accelo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAcceloDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAcmeApikeyDiscriminatedConnectorConfig {
-    /**
-     * Base configuration for api key connector
-     */
-    config: unknown;
-
-    connector_name: 'acme-apikey';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorAcmeOauth2DiscriminatedConnectorConfig {
-    config: ConnectorAcmeOauth2DiscriminatedConnectorConfig.Config;
-
-    connector_name: 'acme-oauth2';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAcmeOauth2DiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAdobeDiscriminatedConnectorConfig {
-    config: ConnectorAdobeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'adobe';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAdobeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAdyenDiscriminatedConnectorConfig {
-    config: ConnectorAdyenDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'adyen';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAdyenDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAircallDiscriminatedConnectorConfig {
-    config: ConnectorAircallDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'aircall';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAircallDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAmazonDiscriminatedConnectorConfig {
-    config: ConnectorAmazonDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'amazon';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAmazonDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorApaleoDiscriminatedConnectorConfig {
-    config: ConnectorApaleoDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'apaleo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorApaleoDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAsanaDiscriminatedConnectorConfig {
-    config: ConnectorAsanaDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'asana';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAsanaDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAttioDiscriminatedConnectorConfig {
-    config: ConnectorAttioDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'attio';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAttioDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAuth0DiscriminatedConnectorConfig {
-    config: ConnectorAuth0DiscriminatedConnectorConfig.Config;
-
-    connector_name: 'auth0';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAuth0DiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAutodeskDiscriminatedConnectorConfig {
-    config: ConnectorAutodeskDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'autodesk';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAutodeskDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAwsDiscriminatedConnectorConfig {
-    config: ConnectorAwsDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'aws';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorAwsDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBamboohrDiscriminatedConnectorConfig {
-    config: ConnectorBamboohrDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'bamboohr';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBamboohrDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBasecampDiscriminatedConnectorConfig {
-    config: ConnectorBasecampDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'basecamp';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBasecampDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBattlenetDiscriminatedConnectorConfig {
-    config: ConnectorBattlenetDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'battlenet';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBattlenetDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBigcommerceDiscriminatedConnectorConfig {
-    config: ConnectorBigcommerceDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'bigcommerce';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBigcommerceDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBitbucketDiscriminatedConnectorConfig {
-    config: ConnectorBitbucketDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'bitbucket';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBitbucketDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBitlyDiscriminatedConnectorConfig {
-    config: ConnectorBitlyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'bitly';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBitlyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBlackbaudDiscriminatedConnectorConfig {
-    config: ConnectorBlackbaudDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'blackbaud';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBlackbaudDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBoldsignDiscriminatedConnectorConfig {
-    config: ConnectorBoldsignDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'boldsign';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBoldsignDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBoxDiscriminatedConnectorConfig {
-    config: ConnectorBoxDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'box';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBoxDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorBraintreeDiscriminatedConnectorConfig {
-    config: ConnectorBraintreeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'braintree';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBraintreeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorCalendlyDiscriminatedConnectorConfig {
-    config: ConnectorCalendlyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'calendly';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorCalendlyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorClickupDiscriminatedConnectorConfig {
-    config: ConnectorClickupDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'clickup';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorClickupDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorCloseDiscriminatedConnectorConfig {
-    config: ConnectorCloseDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'close';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorCloseDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorConfluenceDiscriminatedConnectorConfig {
-    config: ConnectorConfluenceDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'confluence';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorConfluenceDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorContentfulDiscriminatedConnectorConfig {
-    config: ConnectorContentfulDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'contentful';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorContentfulDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorContentstackDiscriminatedConnectorConfig {
-    config: ConnectorContentstackDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'contentstack';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorContentstackDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorCopperDiscriminatedConnectorConfig {
-    config: ConnectorCopperDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'copper';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorCopperDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorCorosDiscriminatedConnectorConfig {
-    config: ConnectorCorosDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'coros';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorCorosDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDatevDiscriminatedConnectorConfig {
-    config: ConnectorDatevDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'datev';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDatevDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDeelDiscriminatedConnectorConfig {
-    config: ConnectorDeelDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'deel';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDeelDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDialpadDiscriminatedConnectorConfig {
-    config: ConnectorDialpadDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'dialpad';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDialpadDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDigitaloceanDiscriminatedConnectorConfig {
-    config: ConnectorDigitaloceanDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'digitalocean';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDigitaloceanDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDiscordDiscriminatedConnectorConfig {
-    config: ConnectorDiscordDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'discord';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDiscordDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDocusignDiscriminatedConnectorConfig {
-    config: ConnectorDocusignDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'docusign';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDocusignDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorDropboxDiscriminatedConnectorConfig {
-    config: ConnectorDropboxDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'dropbox';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorDropboxDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorEbayDiscriminatedConnectorConfig {
-    config: ConnectorEbayDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'ebay';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorEbayDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorEgnyteDiscriminatedConnectorConfig {
-    config: ConnectorEgnyteDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'egnyte';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorEgnyteDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorEnvoyDiscriminatedConnectorConfig {
-    config: ConnectorEnvoyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'envoy';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorEnvoyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorEventbriteDiscriminatedConnectorConfig {
-    config: ConnectorEventbriteDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'eventbrite';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorEventbriteDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorExistDiscriminatedConnectorConfig {
-    config: ConnectorExistDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'exist';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorExistDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFacebookDiscriminatedConnectorConfig {
-    config: ConnectorFacebookDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'facebook';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFacebookDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFactorialDiscriminatedConnectorConfig {
-    config: ConnectorFactorialDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'factorial';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFactorialDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFigmaDiscriminatedConnectorConfig {
-    config: ConnectorFigmaDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'figma';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFigmaDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFitbitDiscriminatedConnectorConfig {
-    config: ConnectorFitbitDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'fitbit';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFitbitDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFortnoxDiscriminatedConnectorConfig {
-    config: ConnectorFortnoxDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'fortnox';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFortnoxDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFreshbooksDiscriminatedConnectorConfig {
-    config: ConnectorFreshbooksDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'freshbooks';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFreshbooksDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorFrontDiscriminatedConnectorConfig {
-    config: ConnectorFrontDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'front';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFrontDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGitHubDiscriminatedConnectorConfig {
-    config: ConnectorGitHubDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'github';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGitHubDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGitlabDiscriminatedConnectorConfig {
-    config: ConnectorGitlabDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'gitlab';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGitlabDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGongDiscriminatedConnectorConfig {
-    config: ConnectorGongDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'gong';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGongDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGoogleCalendarDiscriminatedConnectorConfig {
-    config: ConnectorGoogleCalendarDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'google-calendar';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGoogleCalendarDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGoogleDocsDiscriminatedConnectorConfig {
-    config: ConnectorGoogleDocsDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'google-docs';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGoogleDocsDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGoogleDriveDiscriminatedConnectorConfig {
-    config: ConnectorGoogleDriveDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'google-drive';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGoogleDriveDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGoogleMailDiscriminatedConnectorConfig {
-    config: ConnectorGoogleMailDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'google-mail';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGoogleMailDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGoogleSheetDiscriminatedConnectorConfig {
-    config: ConnectorGoogleSheetDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'google-sheet';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGoogleSheetDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGorgiasDiscriminatedConnectorConfig {
-    config: ConnectorGorgiasDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'gorgias';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGorgiasDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGrainDiscriminatedConnectorConfig {
-    config: ConnectorGrainDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'grain';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGrainDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGumroadDiscriminatedConnectorConfig {
-    config: ConnectorGumroadDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'gumroad';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGumroadDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorGustoDiscriminatedConnectorConfig {
-    config: ConnectorGustoDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'gusto';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorGustoDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorHarvestDiscriminatedConnectorConfig {
-    config: ConnectorHarvestDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'harvest';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorHarvestDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorHighlevelDiscriminatedConnectorConfig {
-    config: ConnectorHighlevelDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'highlevel';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorHighlevelDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorHubspotDiscriminatedConnectorConfig {
-    config: ConnectorHubspotDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'hubspot';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorHubspotDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorInstagramDiscriminatedConnectorConfig {
-    config: ConnectorInstagramDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'instagram';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorInstagramDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorIntercomDiscriminatedConnectorConfig {
-    config: ConnectorIntercomDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'intercom';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorIntercomDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorJiraDiscriminatedConnectorConfig {
-    config: ConnectorJiraDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'jira';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorJiraDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorKeapDiscriminatedConnectorConfig {
-    config: ConnectorKeapDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'keap';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorKeapDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorLeverDiscriminatedConnectorConfig {
-    config: ConnectorLeverDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'lever';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorLeverDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorLinearDiscriminatedConnectorConfig {
-    config: ConnectorLinearDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'linear';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorLinearDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorLinkedinDiscriminatedConnectorConfig {
-    config: ConnectorLinkedinDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'linkedin';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorLinkedinDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorLinkhutDiscriminatedConnectorConfig {
-    config: ConnectorLinkhutDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'linkhut';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorLinkhutDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorMailchimpDiscriminatedConnectorConfig {
-    config: ConnectorMailchimpDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'mailchimp';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMailchimpDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorMiroDiscriminatedConnectorConfig {
-    config: ConnectorMiroDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'miro';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMiroDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorMondayDiscriminatedConnectorConfig {
-    config: ConnectorMondayDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'monday';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMondayDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorMuralDiscriminatedConnectorConfig {
-    config: ConnectorMuralDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'mural';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMuralDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorNamelyDiscriminatedConnectorConfig {
-    config: ConnectorNamelyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'namely';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorNamelyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorNationbuilderDiscriminatedConnectorConfig {
-    config: ConnectorNationbuilderDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'nationbuilder';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorNationbuilderDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorNetsuiteDiscriminatedConnectorConfig {
-    config: ConnectorNetsuiteDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'netsuite';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorNetsuiteDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorNotionDiscriminatedConnectorConfig {
-    config: ConnectorNotionDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'notion';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorNotionDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorOdooDiscriminatedConnectorConfig {
-    config: ConnectorOdooDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'odoo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOdooDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorOktaDiscriminatedConnectorConfig {
-    config: ConnectorOktaDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'okta';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOktaDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorOsuDiscriminatedConnectorConfig {
-    config: ConnectorOsuDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'osu';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOsuDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorOuraDiscriminatedConnectorConfig {
-    config: ConnectorOuraDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'oura';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOuraDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorOutreachDiscriminatedConnectorConfig {
-    config: ConnectorOutreachDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'outreach';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOutreachDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPagerdutyDiscriminatedConnectorConfig {
-    config: ConnectorPagerdutyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'pagerduty';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPagerdutyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPandadocDiscriminatedConnectorConfig {
-    config: ConnectorPandadocDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'pandadoc';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPandadocDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPayfitDiscriminatedConnectorConfig {
-    config: ConnectorPayfitDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'payfit';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPayfitDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPaypalDiscriminatedConnectorConfig {
-    config: ConnectorPaypalDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'paypal';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPaypalDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPennylaneDiscriminatedConnectorConfig {
-    config: ConnectorPennylaneDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'pennylane';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPennylaneDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPinterestDiscriminatedConnectorConfig {
-    config: ConnectorPinterestDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'pinterest';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPinterestDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPipedriveDiscriminatedConnectorConfig {
-    config: ConnectorPipedriveDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'pipedrive';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPipedriveDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorPodiumDiscriminatedConnectorConfig {
-    config: ConnectorPodiumDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'podium';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPodiumDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorProductboardDiscriminatedConnectorConfig {
-    config: ConnectorProductboardDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'productboard';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorProductboardDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorQualtricsDiscriminatedConnectorConfig {
-    config: ConnectorQualtricsDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'qualtrics';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorQualtricsDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorQuickbooksDiscriminatedConnectorConfig {
-    config: ConnectorQuickbooksDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'quickbooks';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorQuickbooksDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorRedditDiscriminatedConnectorConfig {
-    config: ConnectorRedditDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'reddit';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorRedditDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSageDiscriminatedConnectorConfig {
-    config: ConnectorSageDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'sage';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSageDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSalesforceDiscriminatedConnectorConfig {
-    config: ConnectorSalesforceDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'salesforce';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSalesforceDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSalesloftDiscriminatedConnectorConfig {
-    config: ConnectorSalesloftDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'salesloft';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSalesloftDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSegmentDiscriminatedConnectorConfig {
-    config: ConnectorSegmentDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'segment';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSegmentDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorServicem8DiscriminatedConnectorConfig {
-    config: ConnectorServicem8DiscriminatedConnectorConfig.Config;
-
-    connector_name: 'servicem8';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorServicem8DiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorServicenowDiscriminatedConnectorConfig {
-    config: ConnectorServicenowDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'servicenow';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorServicenowDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSharepointDiscriminatedConnectorConfig {
-    config: ConnectorSharepointDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'sharepoint';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSharepointDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorShopifyDiscriminatedConnectorConfig {
-    config: ConnectorShopifyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'shopify';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorShopifyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSignnowDiscriminatedConnectorConfig {
-    config: ConnectorSignnowDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'signnow';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSignnowDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSlackDiscriminatedConnectorConfig {
-    config: ConnectorSlackDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'slack';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSlackDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSmartsheetDiscriminatedConnectorConfig {
-    config: ConnectorSmartsheetDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'smartsheet';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSmartsheetDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSnowflakeDiscriminatedConnectorConfig {
-    config: ConnectorSnowflakeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'snowflake';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSnowflakeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSpotifyDiscriminatedConnectorConfig {
-    config: ConnectorSpotifyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'spotify';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSpotifyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSquarespaceDiscriminatedConnectorConfig {
-    config: ConnectorSquarespaceDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'squarespace';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSquarespaceDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorSquareupDiscriminatedConnectorConfig {
-    config: ConnectorSquareupDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'squareup';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSquareupDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorStackexchangeDiscriminatedConnectorConfig {
-    config: ConnectorStackexchangeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'stackexchange';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorStackexchangeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorStravaDiscriminatedConnectorConfig {
-    config: ConnectorStravaDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'strava';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorStravaDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTeamworkDiscriminatedConnectorConfig {
-    config: ConnectorTeamworkDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'teamwork';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTeamworkDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTicktickDiscriminatedConnectorConfig {
-    config: ConnectorTicktickDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'ticktick';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTicktickDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTimelyDiscriminatedConnectorConfig {
-    config: ConnectorTimelyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'timely';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTimelyDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTodoistDiscriminatedConnectorConfig {
-    config: ConnectorTodoistDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'todoist';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTodoistDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTremendousDiscriminatedConnectorConfig {
-    config: ConnectorTremendousDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'tremendous';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTremendousDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTsheetsteamDiscriminatedConnectorConfig {
-    config: ConnectorTsheetsteamDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'tsheetsteam';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTsheetsteamDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTumblrDiscriminatedConnectorConfig {
-    config: ConnectorTumblrDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'tumblr';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTumblrDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTwinfieldDiscriminatedConnectorConfig {
-    config: ConnectorTwinfieldDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'twinfield';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTwinfieldDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTwitchDiscriminatedConnectorConfig {
-    config: ConnectorTwitchDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'twitch';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTwitchDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTwitterDiscriminatedConnectorConfig {
-    config: ConnectorTwitterDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'twitter';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTwitterDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorTypeformDiscriminatedConnectorConfig {
-    config: ConnectorTypeformDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'typeform';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTypeformDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorUberDiscriminatedConnectorConfig {
-    config: ConnectorUberDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'uber';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorUberDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorVimeoDiscriminatedConnectorConfig {
-    config: ConnectorVimeoDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'vimeo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorVimeoDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorWakatimeDiscriminatedConnectorConfig {
-    config: ConnectorWakatimeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'wakatime';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorWakatimeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorWealthboxDiscriminatedConnectorConfig {
-    config: ConnectorWealthboxDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'wealthbox';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorWealthboxDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorWebflowDiscriminatedConnectorConfig {
-    config: ConnectorWebflowDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'webflow';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorWebflowDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorWhoopDiscriminatedConnectorConfig {
-    config: ConnectorWhoopDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'whoop';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorWhoopDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorWordpressDiscriminatedConnectorConfig {
-    config: ConnectorWordpressDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'wordpress';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorWordpressDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorWrikeDiscriminatedConnectorConfig {
-    config: ConnectorWrikeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'wrike';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorWrikeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorXeroDiscriminatedConnectorConfig {
-    config: ConnectorXeroDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'xero';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorXeroDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorYahooDiscriminatedConnectorConfig {
-    config: ConnectorYahooDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'yahoo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorYahooDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorYandexDiscriminatedConnectorConfig {
-    config: ConnectorYandexDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'yandex';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorYandexDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorZapierDiscriminatedConnectorConfig {
-    config: ConnectorZapierDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'zapier';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorZapierDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorZendeskDiscriminatedConnectorConfig {
-    config: ConnectorZendeskDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'zendesk';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorZendeskDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorZenefitsDiscriminatedConnectorConfig {
-    config: ConnectorZenefitsDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'zenefits';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorZenefitsDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorZohoDeskDiscriminatedConnectorConfig {
-    config: ConnectorZohoDeskDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'zoho-desk';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorZohoDeskDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorZohoDiscriminatedConnectorConfig {
-    config: ConnectorZohoDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'zoho';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorZohoDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorZoomDiscriminatedConnectorConfig {
-    config: ConnectorZoomDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'zoom';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorZoomDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Base oauth configuration for the connector
-       */
-      export interface OAuth {
-        client_id?: string | null;
-
-        client_secret?: string | null;
-
-        /**
-         * Custom redirect URI
-         */
-        redirect_uri?: string | null;
-
-        scopes?: Array<string> | null;
-      }
-    }
-  }
-
-  export interface ConnectorAirtableDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'airtable';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorApolloDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'apollo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorBrexDiscriminatedConnectorConfig {
-    config: ConnectorBrexDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'brex';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorBrexDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * API key auth support
-       */
-      apikeyAuth?: boolean;
-
-      /**
-       * Configure oauth
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Configure oauth
-       */
-      export interface OAuth {
-        clientId: string;
-
-        clientSecret: string;
-      }
-    }
-  }
-
-  export interface ConnectorCodaDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'coda';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorFinchDiscriminatedConnectorConfig {
-    config: ConnectorFinchDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'finch';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorFinchDiscriminatedConnectorConfig {
-    export interface Config {
-      client_id: string;
-
-      client_secret: string;
-
-      /**
-       * Finch products to access, @see
-       * https://developer.tryfinch.com/api-reference/development-guides/Permissions
-       */
-      products: Array<
-        | 'company'
-        | 'directory'
-        | 'individual'
-        | 'ssn'
-        | 'employment'
-        | 'payment'
-        | 'pay_statement'
-        | 'benefits'
-      >;
-
-      /**
-       * Finch API version
-       */
-      api_version?: string;
-    }
-  }
-
-  export interface ConnectorFirebaseDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'firebase';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorForeceiptDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'foreceipt';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorGreenhouseDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'greenhouse';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorHeronDiscriminatedConnectorConfig {
-    config: ConnectorHeronDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'heron';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorHeronDiscriminatedConnectorConfig {
-    export interface Config {
-      apiKey: string;
-    }
-  }
-
-  export interface ConnectorLunchmoneyDiscriminatedConnectorConfig {
-    config: ConnectorLunchmoneyDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'lunchmoney';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorLunchmoneyDiscriminatedConnectorConfig {
-    export interface Config {
-      accessToken: string;
-    }
-  }
-
-  export interface ConnectorMercuryDiscriminatedConnectorConfig {
-    config: ConnectorMercuryDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'mercury';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMercuryDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * API key auth support
-       */
-      apikeyAuth?: boolean;
-
-      /**
-       * Configure oauth
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Configure oauth
-       */
-      export interface OAuth {
-        clientId: string;
-
-        clientSecret: string;
-      }
-    }
-  }
-
-  export interface ConnectorMergeDiscriminatedConnectorConfig {
-    config: ConnectorMergeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'merge';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMergeDiscriminatedConnectorConfig {
-    export interface Config {
-      apiKey: string;
-    }
-  }
-
-  export interface ConnectorMootaDiscriminatedConnectorConfig {
-    config: ConnectorMootaDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'moota';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorMootaDiscriminatedConnectorConfig {
-    export interface Config {
-      token: string;
-    }
-  }
-
-  export interface ConnectorOnebrickDiscriminatedConnectorConfig {
-    config: ConnectorOnebrickDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'onebrick';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOnebrickDiscriminatedConnectorConfig {
-    export interface Config {
-      clientId: string;
-
-      clientSecret: string;
-
-      envName: 'sandbox' | 'production';
-
-      publicToken: string;
-
-      accessToken?: string | null;
-
-      redirectUrl?: string | null;
-    }
-  }
-
-  export interface ConnectorOpenledgerDiscriminatedConnectorConfig {
-    config: ConnectorOpenledgerDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'openledger';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorOpenledgerDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * API endpoint
-       */
-      api_url: string;
-
-      /**
-       * Your developer ID for authentication
-       */
-      developer_id: string;
-
-      /**
-       * Your developer secret
-       */
-      developer_secret: string;
-
-      /**
-       * Switch to "production" for live data
-       */
-      environment: 'development' | 'production';
-    }
-  }
-
-  export interface ConnectorPlaidDiscriminatedConnectorConfig {
-    config: ConnectorPlaidDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'plaid';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorPlaidDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * The name of your application, as it should be displayed in Link. Maximum length
-       * of 30 characters. If a value longer than 30 characters is provided, Link will
-       * display "This Application" instead.
-       */
-      clientName: string;
-
-      countryCodes: Array<
-        | 'US'
-        | 'GB'
-        | 'ES'
-        | 'NL'
-        | 'FR'
-        | 'IE'
-        | 'CA'
-        | 'DE'
-        | 'IT'
-        | 'PL'
-        | 'DK'
-        | 'NO'
-        | 'SE'
-        | 'EE'
-        | 'LT'
-        | 'LV'
-      >;
-
-      envName: 'sandbox' | 'development' | 'production';
-
-      language: 'en' | 'fr' | 'es' | 'nl' | 'de';
-
-      products: Array<
-        | 'assets'
-        | 'auth'
-        | 'balance'
-        | 'identity'
-        | 'investments'
-        | 'liabilities'
-        | 'payment_initiation'
-        | 'identity_verification'
-        | 'transactions'
-        | 'credit_details'
-        | 'income'
-        | 'income_verification'
-        | 'deposit_switch'
-        | 'standing_orders'
-        | 'transfer'
-        | 'employment'
-        | 'recurring_transactions'
-      >;
-
-      credentials?: Config.Credentials | null;
-    }
-
-    export namespace Config {
-      export interface Credentials {
-        clientId: string;
-
-        clientSecret: string;
-      }
-    }
-  }
-
-  export interface ConnectorPostgresDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'postgres';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorRampDiscriminatedConnectorConfig {
-    config: ConnectorRampDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'ramp';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorRampDiscriminatedConnectorConfig {
-    export interface Config {
-      oauth: Config.OAuth;
-    }
-
-    export namespace Config {
-      export interface OAuth {
-        clientId: string;
-
-        clientSecret: string;
-      }
-    }
-  }
-
-  export interface ConnectorSaltedgeDiscriminatedConnectorConfig {
-    config: ConnectorSaltedgeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'saltedge';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorSaltedgeDiscriminatedConnectorConfig {
-    export interface Config {
-      appId: string;
-
-      secret: string;
-
-      url?: string | null;
-    }
-  }
-
-  export interface ConnectorSharepointOnpremDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'sharepoint-onprem';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'splitwise';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorStripeDiscriminatedConnectorConfig {
-    config: ConnectorStripeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'stripe';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorStripeDiscriminatedConnectorConfig {
-    export interface Config {
-      /**
-       * API key auth support
-       */
-      apikeyAuth?: boolean;
-
-      /**
-       * Configure oauth
-       */
-      oauth?: Config.OAuth | null;
-    }
-
-    export namespace Config {
-      /**
-       * Configure oauth
-       */
-      export interface OAuth {
-        clientId: string;
-
-        clientSecret: string;
-      }
-    }
-  }
-
-  export interface ConnectorTellerDiscriminatedConnectorConfig {
-    config: ConnectorTellerDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'teller';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorTellerDiscriminatedConnectorConfig {
-    export interface Config {
-      applicationId: string;
-
-      token?: string | null;
-    }
-  }
-
-  export interface ConnectorTogglDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'toggl';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorTwentyDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'twenty';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorVenmoDiscriminatedConnectorConfig {
-    config: ConnectorVenmoDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'venmo';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorVenmoDiscriminatedConnectorConfig {
-    export interface Config {
-      proxy?: Config.Proxy | null;
-
-      v1BaseURL?: string | null;
-
-      v5BaseURL?: string | null;
-    }
-
-    export namespace Config {
-      export interface Proxy {
-        cert: string;
-
-        url: string;
-      }
-    }
-  }
-
-  export interface ConnectorWiseDiscriminatedConnectorConfig {
-    config: unknown;
-
-    connector_name: 'wise';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export interface ConnectorYodleeDiscriminatedConnectorConfig {
-    config: ConnectorYodleeDiscriminatedConnectorConfig.Config;
-
-    connector_name: 'yodlee';
-
-    id?: string;
-
-    connection_count?: number;
-
-    connector?: TopLevelAPI.Connector;
-
-    created_at?: string;
-
-    disabled?: boolean | null;
-
-    display_name?: string | null;
-
-    integrations?: { [key: string]: TopLevelAPI.Integration };
-
-    /**
-     * JSON object can can be used to associate arbitrary metadata to avoid needing a
-     * separate 1-1 table just for simple key values in your application. During
-     * updates this object will be shallowly merged
-     */
-    metadata?: { [key: string]: unknown } | null;
-
-    org_id?: string;
-
-    updated_at?: string;
-  }
-
-  export namespace ConnectorYodleeDiscriminatedConnectorConfig {
-    export interface Config {
-      adminLoginName: string;
-
-      clientId: string;
-
-      clientSecret: string;
-
-      envName: 'sandbox' | 'development' | 'production';
-
-      proxy?: Config.Proxy | null;
-
-      sandboxLoginName?: string | null;
-    }
-
-    export namespace Config {
-      export interface Proxy {
-        cert: string;
-
-        url: string;
-      }
-    }
-  }
-}
-
 /**
  * The connection details
  */
@@ -72188,6 +62570,9624 @@ export namespace ListConnectionsResponse {
           | 'FAILED';
 
         isDeleted?: boolean | null;
+      }
+    }
+  }
+}
+
+export type ListConnectorConfigsResponse =
+  | ListConnectorConfigsResponse.ConnectorAcceloDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAcmeApikeyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAcmeOauth2DiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAdobeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAdyenDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAircallDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAmazonDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorApaleoDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAsanaDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAttioDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAuth0DiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAutodeskDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAwsDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBamboohrDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBasecampDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBattlenetDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBigcommerceDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBitbucketDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBitlyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBlackbaudDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBoldsignDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBoxDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBraintreeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorCalendlyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorClickupDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorCloseDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorConfluenceDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorContentfulDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorContentstackDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorCopperDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorCorosDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDatevDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDeelDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDialpadDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDigitaloceanDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDiscordDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDocusignDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorDropboxDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorEbayDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorEgnyteDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorEnvoyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorEventbriteDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorExistDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFacebookDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFactorialDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFigmaDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFitbitDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFortnoxDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFreshbooksDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFrontDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGitHubDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGitlabDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGongDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGoogleCalendarDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGoogleDocsDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGoogleDriveDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGoogleMailDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGoogleSheetDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGorgiasDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGrainDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGumroadDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGustoDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorHarvestDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorHighlevelDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorHubspotDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorInstagramDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorIntercomDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorJiraDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorKeapDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorLeverDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorLinearDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorLinkedinDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorLinkhutDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMailchimpDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMiroDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMondayDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMuralDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorNamelyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorNationbuilderDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorNetsuiteDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorNotionDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOdooDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOktaDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOsuDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOuraDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOutreachDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPagerdutyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPandadocDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPayfitDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPaypalDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPennylaneDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPinterestDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPipedriveDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPodiumDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorProductboardDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorQualtricsDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorQuickbooksDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorRedditDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSageDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSalesforceDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSalesloftDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSegmentDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorServicem8DiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorServicenowDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSharepointDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorShopifyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSignnowDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSlackDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSmartsheetDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSnowflakeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSpotifyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSquarespaceDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSquareupDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorStackexchangeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorStravaDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTeamworkDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTicktickDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTimelyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTodoistDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTremendousDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTsheetsteamDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTumblrDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTwinfieldDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTwitchDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTwitterDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTypeformDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorUberDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorVimeoDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWakatimeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWealthboxDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWebflowDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWhoopDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWordpressDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWrikeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorXeroDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorYahooDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorYandexDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorZapierDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorZendeskDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorZenefitsDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorZohoDeskDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorZohoDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorZoomDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorAirtableDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorApolloDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorBrexDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorCodaDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFinchDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorFirebaseDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorForeceiptDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorGreenhouseDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorHeronDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorLunchmoneyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMercuryDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMergeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorMootaDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOnebrickDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorOpenledgerDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPlaidDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorPostgresDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorRampDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorStripeDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTellerDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTogglDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorTwentyDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorVenmoDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorWiseDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorYodleeDiscriminatedConnectorConfig;
+
+export namespace ListConnectorConfigsResponse {
+  export interface ConnectorAcceloDiscriminatedConnectorConfig {
+    config: ConnectorAcceloDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'accelo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAcceloDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAcmeApikeyDiscriminatedConnectorConfig {
+    /**
+     * Base configuration for api key connector
+     */
+    config: unknown;
+
+    connector_name: 'acme-apikey';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorAcmeOauth2DiscriminatedConnectorConfig {
+    config: ConnectorAcmeOauth2DiscriminatedConnectorConfig.Config;
+
+    connector_name: 'acme-oauth2';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAcmeOauth2DiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectorConfig {
+    config: ConnectorAdobeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'adobe';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAdyenDiscriminatedConnectorConfig {
+    config: ConnectorAdyenDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'adyen';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAdyenDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectorConfig {
+    config: ConnectorAircallDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'aircall';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAmazonDiscriminatedConnectorConfig {
+    config: ConnectorAmazonDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'amazon';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAmazonDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorApaleoDiscriminatedConnectorConfig {
+    config: ConnectorApaleoDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'apaleo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorApaleoDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAsanaDiscriminatedConnectorConfig {
+    config: ConnectorAsanaDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'asana';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAsanaDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAttioDiscriminatedConnectorConfig {
+    config: ConnectorAttioDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'attio';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAttioDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAuth0DiscriminatedConnectorConfig {
+    config: ConnectorAuth0DiscriminatedConnectorConfig.Config;
+
+    connector_name: 'auth0';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAuth0DiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAutodeskDiscriminatedConnectorConfig {
+    config: ConnectorAutodeskDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'autodesk';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAutodeskDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAwsDiscriminatedConnectorConfig {
+    config: ConnectorAwsDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'aws';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorAwsDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBamboohrDiscriminatedConnectorConfig {
+    config: ConnectorBamboohrDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'bamboohr';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBamboohrDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBasecampDiscriminatedConnectorConfig {
+    config: ConnectorBasecampDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'basecamp';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBasecampDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBattlenetDiscriminatedConnectorConfig {
+    config: ConnectorBattlenetDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'battlenet';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBattlenetDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBigcommerceDiscriminatedConnectorConfig {
+    config: ConnectorBigcommerceDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'bigcommerce';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBigcommerceDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBitbucketDiscriminatedConnectorConfig {
+    config: ConnectorBitbucketDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'bitbucket';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBitbucketDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBitlyDiscriminatedConnectorConfig {
+    config: ConnectorBitlyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'bitly';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBitlyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBlackbaudDiscriminatedConnectorConfig {
+    config: ConnectorBlackbaudDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'blackbaud';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBlackbaudDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBoldsignDiscriminatedConnectorConfig {
+    config: ConnectorBoldsignDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'boldsign';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBoldsignDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBoxDiscriminatedConnectorConfig {
+    config: ConnectorBoxDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'box';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBoxDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorBraintreeDiscriminatedConnectorConfig {
+    config: ConnectorBraintreeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'braintree';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBraintreeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorCalendlyDiscriminatedConnectorConfig {
+    config: ConnectorCalendlyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'calendly';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorCalendlyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorClickupDiscriminatedConnectorConfig {
+    config: ConnectorClickupDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'clickup';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorClickupDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorCloseDiscriminatedConnectorConfig {
+    config: ConnectorCloseDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'close';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorCloseDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectorConfig {
+    config: ConnectorConfluenceDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'confluence';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorContentfulDiscriminatedConnectorConfig {
+    config: ConnectorContentfulDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'contentful';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorContentfulDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorContentstackDiscriminatedConnectorConfig {
+    config: ConnectorContentstackDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'contentstack';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorContentstackDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorCopperDiscriminatedConnectorConfig {
+    config: ConnectorCopperDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'copper';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorCopperDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorCorosDiscriminatedConnectorConfig {
+    config: ConnectorCorosDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'coros';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorCorosDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDatevDiscriminatedConnectorConfig {
+    config: ConnectorDatevDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'datev';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDatevDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDeelDiscriminatedConnectorConfig {
+    config: ConnectorDeelDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'deel';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDeelDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDialpadDiscriminatedConnectorConfig {
+    config: ConnectorDialpadDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'dialpad';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDialpadDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDigitaloceanDiscriminatedConnectorConfig {
+    config: ConnectorDigitaloceanDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'digitalocean';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDigitaloceanDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectorConfig {
+    config: ConnectorDiscordDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'discord';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDocusignDiscriminatedConnectorConfig {
+    config: ConnectorDocusignDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'docusign';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDocusignDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorDropboxDiscriminatedConnectorConfig {
+    config: ConnectorDropboxDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'dropbox';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorDropboxDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorEbayDiscriminatedConnectorConfig {
+    config: ConnectorEbayDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'ebay';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorEbayDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorEgnyteDiscriminatedConnectorConfig {
+    config: ConnectorEgnyteDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'egnyte';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorEgnyteDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorEnvoyDiscriminatedConnectorConfig {
+    config: ConnectorEnvoyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'envoy';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorEnvoyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorEventbriteDiscriminatedConnectorConfig {
+    config: ConnectorEventbriteDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'eventbrite';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorEventbriteDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorExistDiscriminatedConnectorConfig {
+    config: ConnectorExistDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'exist';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorExistDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFacebookDiscriminatedConnectorConfig {
+    config: ConnectorFacebookDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'facebook';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFacebookDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFactorialDiscriminatedConnectorConfig {
+    config: ConnectorFactorialDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'factorial';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFactorialDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFigmaDiscriminatedConnectorConfig {
+    config: ConnectorFigmaDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'figma';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFigmaDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFitbitDiscriminatedConnectorConfig {
+    config: ConnectorFitbitDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'fitbit';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFitbitDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFortnoxDiscriminatedConnectorConfig {
+    config: ConnectorFortnoxDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'fortnox';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFortnoxDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFreshbooksDiscriminatedConnectorConfig {
+    config: ConnectorFreshbooksDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'freshbooks';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFreshbooksDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorFrontDiscriminatedConnectorConfig {
+    config: ConnectorFrontDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'front';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFrontDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectorConfig {
+    config: ConnectorGitHubDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'github';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGitlabDiscriminatedConnectorConfig {
+    config: ConnectorGitlabDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'gitlab';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGitlabDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGongDiscriminatedConnectorConfig {
+    config: ConnectorGongDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'gong';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGongDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGoogleCalendarDiscriminatedConnectorConfig {
+    config: ConnectorGoogleCalendarDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'google-calendar';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogleCalendarDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGoogleDocsDiscriminatedConnectorConfig {
+    config: ConnectorGoogleDocsDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'google-docs';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogleDocsDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGoogleDriveDiscriminatedConnectorConfig {
+    config: ConnectorGoogleDriveDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'google-drive';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogleDriveDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGoogleMailDiscriminatedConnectorConfig {
+    config: ConnectorGoogleMailDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'google-mail';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogleMailDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGoogleSheetDiscriminatedConnectorConfig {
+    config: ConnectorGoogleSheetDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'google-sheet';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGoogleSheetDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGorgiasDiscriminatedConnectorConfig {
+    config: ConnectorGorgiasDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'gorgias';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGorgiasDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGrainDiscriminatedConnectorConfig {
+    config: ConnectorGrainDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'grain';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGrainDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGumroadDiscriminatedConnectorConfig {
+    config: ConnectorGumroadDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'gumroad';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGumroadDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorGustoDiscriminatedConnectorConfig {
+    config: ConnectorGustoDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'gusto';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorGustoDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorHarvestDiscriminatedConnectorConfig {
+    config: ConnectorHarvestDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'harvest';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHarvestDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorHighlevelDiscriminatedConnectorConfig {
+    config: ConnectorHighlevelDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'highlevel';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHighlevelDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectorConfig {
+    config: ConnectorHubspotDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'hubspot';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorInstagramDiscriminatedConnectorConfig {
+    config: ConnectorInstagramDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'instagram';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorInstagramDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorIntercomDiscriminatedConnectorConfig {
+    config: ConnectorIntercomDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'intercom';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorIntercomDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorJiraDiscriminatedConnectorConfig {
+    config: ConnectorJiraDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'jira';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorJiraDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorKeapDiscriminatedConnectorConfig {
+    config: ConnectorKeapDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'keap';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorKeapDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorLeverDiscriminatedConnectorConfig {
+    config: ConnectorLeverDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'lever';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLeverDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectorConfig {
+    config: ConnectorLinearDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'linear';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectorConfig {
+    config: ConnectorLinkedinDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'linkedin';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorLinkhutDiscriminatedConnectorConfig {
+    config: ConnectorLinkhutDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'linkhut';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLinkhutDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorMailchimpDiscriminatedConnectorConfig {
+    config: ConnectorMailchimpDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'mailchimp';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMailchimpDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorMiroDiscriminatedConnectorConfig {
+    config: ConnectorMiroDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'miro';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMiroDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorMondayDiscriminatedConnectorConfig {
+    config: ConnectorMondayDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'monday';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMondayDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorMuralDiscriminatedConnectorConfig {
+    config: ConnectorMuralDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'mural';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMuralDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorNamelyDiscriminatedConnectorConfig {
+    config: ConnectorNamelyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'namely';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNamelyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorNationbuilderDiscriminatedConnectorConfig {
+    config: ConnectorNationbuilderDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'nationbuilder';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNationbuilderDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorNetsuiteDiscriminatedConnectorConfig {
+    config: ConnectorNetsuiteDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'netsuite';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNetsuiteDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectorConfig {
+    config: ConnectorNotionDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'notion';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorOdooDiscriminatedConnectorConfig {
+    config: ConnectorOdooDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'odoo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOdooDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorOktaDiscriminatedConnectorConfig {
+    config: ConnectorOktaDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'okta';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOktaDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorOsuDiscriminatedConnectorConfig {
+    config: ConnectorOsuDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'osu';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOsuDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorOuraDiscriminatedConnectorConfig {
+    config: ConnectorOuraDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'oura';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOuraDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorOutreachDiscriminatedConnectorConfig {
+    config: ConnectorOutreachDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'outreach';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOutreachDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPagerdutyDiscriminatedConnectorConfig {
+    config: ConnectorPagerdutyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'pagerduty';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPagerdutyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPandadocDiscriminatedConnectorConfig {
+    config: ConnectorPandadocDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'pandadoc';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPandadocDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPayfitDiscriminatedConnectorConfig {
+    config: ConnectorPayfitDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'payfit';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPayfitDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPaypalDiscriminatedConnectorConfig {
+    config: ConnectorPaypalDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'paypal';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPaypalDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPennylaneDiscriminatedConnectorConfig {
+    config: ConnectorPennylaneDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'pennylane';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPennylaneDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPinterestDiscriminatedConnectorConfig {
+    config: ConnectorPinterestDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'pinterest';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPinterestDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPipedriveDiscriminatedConnectorConfig {
+    config: ConnectorPipedriveDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'pipedrive';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPipedriveDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorPodiumDiscriminatedConnectorConfig {
+    config: ConnectorPodiumDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'podium';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPodiumDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorProductboardDiscriminatedConnectorConfig {
+    config: ConnectorProductboardDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'productboard';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorProductboardDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorQualtricsDiscriminatedConnectorConfig {
+    config: ConnectorQualtricsDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'qualtrics';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQualtricsDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectorConfig {
+    config: ConnectorQuickbooksDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'quickbooks';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorRedditDiscriminatedConnectorConfig {
+    config: ConnectorRedditDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'reddit';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorRedditDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSageDiscriminatedConnectorConfig {
+    config: ConnectorSageDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'sage';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSageDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectorConfig {
+    config: ConnectorSalesforceDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'salesforce';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSalesloftDiscriminatedConnectorConfig {
+    config: ConnectorSalesloftDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'salesloft';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSalesloftDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSegmentDiscriminatedConnectorConfig {
+    config: ConnectorSegmentDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'segment';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSegmentDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorServicem8DiscriminatedConnectorConfig {
+    config: ConnectorServicem8DiscriminatedConnectorConfig.Config;
+
+    connector_name: 'servicem8';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorServicem8DiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorServicenowDiscriminatedConnectorConfig {
+    config: ConnectorServicenowDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'servicenow';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorServicenowDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSharepointDiscriminatedConnectorConfig {
+    config: ConnectorSharepointDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'sharepoint';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSharepointDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorShopifyDiscriminatedConnectorConfig {
+    config: ConnectorShopifyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'shopify';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorShopifyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSignnowDiscriminatedConnectorConfig {
+    config: ConnectorSignnowDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'signnow';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSignnowDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectorConfig {
+    config: ConnectorSlackDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSmartsheetDiscriminatedConnectorConfig {
+    config: ConnectorSmartsheetDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'smartsheet';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSmartsheetDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSnowflakeDiscriminatedConnectorConfig {
+    config: ConnectorSnowflakeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'snowflake';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSnowflakeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSpotifyDiscriminatedConnectorConfig {
+    config: ConnectorSpotifyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'spotify';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSpotifyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSquarespaceDiscriminatedConnectorConfig {
+    config: ConnectorSquarespaceDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'squarespace';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSquarespaceDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorSquareupDiscriminatedConnectorConfig {
+    config: ConnectorSquareupDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'squareup';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSquareupDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorStackexchangeDiscriminatedConnectorConfig {
+    config: ConnectorStackexchangeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'stackexchange';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorStackexchangeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorStravaDiscriminatedConnectorConfig {
+    config: ConnectorStravaDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'strava';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorStravaDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTeamworkDiscriminatedConnectorConfig {
+    config: ConnectorTeamworkDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'teamwork';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTeamworkDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTicktickDiscriminatedConnectorConfig {
+    config: ConnectorTicktickDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'ticktick';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTicktickDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTimelyDiscriminatedConnectorConfig {
+    config: ConnectorTimelyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'timely';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTimelyDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTodoistDiscriminatedConnectorConfig {
+    config: ConnectorTodoistDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'todoist';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTodoistDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTremendousDiscriminatedConnectorConfig {
+    config: ConnectorTremendousDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'tremendous';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTremendousDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTsheetsteamDiscriminatedConnectorConfig {
+    config: ConnectorTsheetsteamDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'tsheetsteam';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTsheetsteamDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTumblrDiscriminatedConnectorConfig {
+    config: ConnectorTumblrDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'tumblr';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTumblrDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTwinfieldDiscriminatedConnectorConfig {
+    config: ConnectorTwinfieldDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'twinfield';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTwinfieldDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTwitchDiscriminatedConnectorConfig {
+    config: ConnectorTwitchDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'twitch';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTwitchDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTwitterDiscriminatedConnectorConfig {
+    config: ConnectorTwitterDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'twitter';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTwitterDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorTypeformDiscriminatedConnectorConfig {
+    config: ConnectorTypeformDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'typeform';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTypeformDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorUberDiscriminatedConnectorConfig {
+    config: ConnectorUberDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'uber';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorUberDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorVimeoDiscriminatedConnectorConfig {
+    config: ConnectorVimeoDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'vimeo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorVimeoDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorWakatimeDiscriminatedConnectorConfig {
+    config: ConnectorWakatimeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'wakatime';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorWakatimeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorWealthboxDiscriminatedConnectorConfig {
+    config: ConnectorWealthboxDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'wealthbox';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorWealthboxDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorWebflowDiscriminatedConnectorConfig {
+    config: ConnectorWebflowDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'webflow';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorWebflowDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorWhoopDiscriminatedConnectorConfig {
+    config: ConnectorWhoopDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'whoop';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorWhoopDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorWordpressDiscriminatedConnectorConfig {
+    config: ConnectorWordpressDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'wordpress';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorWordpressDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorWrikeDiscriminatedConnectorConfig {
+    config: ConnectorWrikeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'wrike';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorWrikeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorXeroDiscriminatedConnectorConfig {
+    config: ConnectorXeroDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'xero';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorXeroDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorYahooDiscriminatedConnectorConfig {
+    config: ConnectorYahooDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'yahoo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorYahooDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorYandexDiscriminatedConnectorConfig {
+    config: ConnectorYandexDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'yandex';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorYandexDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorZapierDiscriminatedConnectorConfig {
+    config: ConnectorZapierDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'zapier';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorZapierDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorZendeskDiscriminatedConnectorConfig {
+    config: ConnectorZendeskDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'zendesk';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorZendeskDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorZenefitsDiscriminatedConnectorConfig {
+    config: ConnectorZenefitsDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'zenefits';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorZenefitsDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorZohoDeskDiscriminatedConnectorConfig {
+    config: ConnectorZohoDeskDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'zoho-desk';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorZohoDeskDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorZohoDiscriminatedConnectorConfig {
+    config: ConnectorZohoDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'zoho';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorZohoDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorZoomDiscriminatedConnectorConfig {
+    config: ConnectorZoomDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'zoom';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorZoomDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Base oauth configuration for the connector
+       */
+      export interface OAuth {
+        client_id?: string | null;
+
+        client_secret?: string | null;
+
+        /**
+         * Custom redirect URI
+         */
+        redirect_uri?: string | null;
+
+        scopes?: Array<string> | null;
+      }
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'airtable';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorApolloDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'apollo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorBrexDiscriminatedConnectorConfig {
+    config: ConnectorBrexDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'brex';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorBrexDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * API key auth support
+       */
+      apikeyAuth?: boolean;
+
+      /**
+       * Configure oauth
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Configure oauth
+       */
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+  }
+
+  export interface ConnectorCodaDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'coda';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorFinchDiscriminatedConnectorConfig {
+    config: ConnectorFinchDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'finch';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorFinchDiscriminatedConnectorConfig {
+    export interface Config {
+      client_id: string;
+
+      client_secret: string;
+
+      /**
+       * Finch products to access, @see
+       * https://developer.tryfinch.com/api-reference/development-guides/Permissions
+       */
+      products: Array<
+        | 'company'
+        | 'directory'
+        | 'individual'
+        | 'ssn'
+        | 'employment'
+        | 'payment'
+        | 'pay_statement'
+        | 'benefits'
+      >;
+
+      /**
+       * Finch API version
+       */
+      api_version?: string;
+    }
+  }
+
+  export interface ConnectorFirebaseDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'firebase';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorForeceiptDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'foreceipt';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorGreenhouseDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'greenhouse';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorHeronDiscriminatedConnectorConfig {
+    config: ConnectorHeronDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'heron';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorHeronDiscriminatedConnectorConfig {
+    export interface Config {
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorLunchmoneyDiscriminatedConnectorConfig {
+    config: ConnectorLunchmoneyDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'lunchmoney';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorLunchmoneyDiscriminatedConnectorConfig {
+    export interface Config {
+      accessToken: string;
+    }
+  }
+
+  export interface ConnectorMercuryDiscriminatedConnectorConfig {
+    config: ConnectorMercuryDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'mercury';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMercuryDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * API key auth support
+       */
+      apikeyAuth?: boolean;
+
+      /**
+       * Configure oauth
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Configure oauth
+       */
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+  }
+
+  export interface ConnectorMergeDiscriminatedConnectorConfig {
+    config: ConnectorMergeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'merge';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMergeDiscriminatedConnectorConfig {
+    export interface Config {
+      apiKey: string;
+    }
+  }
+
+  export interface ConnectorMootaDiscriminatedConnectorConfig {
+    config: ConnectorMootaDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'moota';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorMootaDiscriminatedConnectorConfig {
+    export interface Config {
+      token: string;
+    }
+  }
+
+  export interface ConnectorOnebrickDiscriminatedConnectorConfig {
+    config: ConnectorOnebrickDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'onebrick';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOnebrickDiscriminatedConnectorConfig {
+    export interface Config {
+      clientId: string;
+
+      clientSecret: string;
+
+      envName: 'sandbox' | 'production';
+
+      publicToken: string;
+
+      accessToken?: string | null;
+
+      redirectUrl?: string | null;
+    }
+  }
+
+  export interface ConnectorOpenledgerDiscriminatedConnectorConfig {
+    config: ConnectorOpenledgerDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'openledger';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorOpenledgerDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * API endpoint
+       */
+      api_url: string;
+
+      /**
+       * Your developer ID for authentication
+       */
+      developer_id: string;
+
+      /**
+       * Your developer secret
+       */
+      developer_secret: string;
+
+      /**
+       * Switch to "production" for live data
+       */
+      environment: 'development' | 'production';
+    }
+  }
+
+  export interface ConnectorPlaidDiscriminatedConnectorConfig {
+    config: ConnectorPlaidDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'plaid';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorPlaidDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * The name of your application, as it should be displayed in Link. Maximum length
+       * of 30 characters. If a value longer than 30 characters is provided, Link will
+       * display "This Application" instead.
+       */
+      clientName: string;
+
+      countryCodes: Array<
+        | 'US'
+        | 'GB'
+        | 'ES'
+        | 'NL'
+        | 'FR'
+        | 'IE'
+        | 'CA'
+        | 'DE'
+        | 'IT'
+        | 'PL'
+        | 'DK'
+        | 'NO'
+        | 'SE'
+        | 'EE'
+        | 'LT'
+        | 'LV'
+      >;
+
+      envName: 'sandbox' | 'development' | 'production';
+
+      language: 'en' | 'fr' | 'es' | 'nl' | 'de';
+
+      products: Array<
+        | 'assets'
+        | 'auth'
+        | 'balance'
+        | 'identity'
+        | 'investments'
+        | 'liabilities'
+        | 'payment_initiation'
+        | 'identity_verification'
+        | 'transactions'
+        | 'credit_details'
+        | 'income'
+        | 'income_verification'
+        | 'deposit_switch'
+        | 'standing_orders'
+        | 'transfer'
+        | 'employment'
+        | 'recurring_transactions'
+      >;
+
+      credentials?: Config.Credentials | null;
+    }
+
+    export namespace Config {
+      export interface Credentials {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+  }
+
+  export interface ConnectorPostgresDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'postgres';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorRampDiscriminatedConnectorConfig {
+    config: ConnectorRampDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'ramp';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorRampDiscriminatedConnectorConfig {
+    export interface Config {
+      oauth: Config.OAuth;
+    }
+
+    export namespace Config {
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+  }
+
+  export interface ConnectorSaltedgeDiscriminatedConnectorConfig {
+    config: ConnectorSaltedgeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'saltedge';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSaltedgeDiscriminatedConnectorConfig {
+    export interface Config {
+      appId: string;
+
+      secret: string;
+
+      url?: string | null;
+    }
+  }
+
+  export interface ConnectorSharepointOnpremDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'sharepoint-onprem';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'splitwise';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorStripeDiscriminatedConnectorConfig {
+    config: ConnectorStripeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'stripe';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorStripeDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * API key auth support
+       */
+      apikeyAuth?: boolean;
+
+      /**
+       * Configure oauth
+       */
+      oauth?: Config.OAuth | null;
+    }
+
+    export namespace Config {
+      /**
+       * Configure oauth
+       */
+      export interface OAuth {
+        clientId: string;
+
+        clientSecret: string;
+      }
+    }
+  }
+
+  export interface ConnectorTellerDiscriminatedConnectorConfig {
+    config: ConnectorTellerDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'teller';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorTellerDiscriminatedConnectorConfig {
+    export interface Config {
+      applicationId: string;
+
+      token?: string | null;
+    }
+  }
+
+  export interface ConnectorTogglDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'toggl';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorTwentyDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'twenty';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorVenmoDiscriminatedConnectorConfig {
+    config: ConnectorVenmoDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'venmo';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorVenmoDiscriminatedConnectorConfig {
+    export interface Config {
+      proxy?: Config.Proxy | null;
+
+      v1BaseURL?: string | null;
+
+      v5BaseURL?: string | null;
+    }
+
+    export namespace Config {
+      export interface Proxy {
+        cert: string;
+
+        url: string;
+      }
+    }
+  }
+
+  export interface ConnectorWiseDiscriminatedConnectorConfig {
+    config: unknown;
+
+    connector_name: 'wise';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export interface ConnectorYodleeDiscriminatedConnectorConfig {
+    config: ConnectorYodleeDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'yodlee';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorYodleeDiscriminatedConnectorConfig {
+    export interface Config {
+      adminLoginName: string;
+
+      clientId: string;
+
+      clientSecret: string;
+
+      envName: 'sandbox' | 'development' | 'production';
+
+      proxy?: Config.Proxy | null;
+
+      sandboxLoginName?: string | null;
+    }
+
+    export namespace Config {
+      export interface Proxy {
+        cert: string;
+
+        url: string;
       }
     }
   }
@@ -100939,191 +100939,6 @@ export interface GetConnectionParams {
   refresh_policy?: 'none' | 'force' | 'auto';
 }
 
-export interface ListConnectionConfigsParams extends OffsetPaginationParams {
-  connector_names?: Array<
-    | 'accelo'
-    | 'acme-apikey'
-    | 'acme-oauth2'
-    | 'adobe'
-    | 'adyen'
-    | 'aircall'
-    | 'airtable'
-    | 'amazon'
-    | 'apaleo'
-    | 'apollo'
-    | 'asana'
-    | 'attio'
-    | 'auth0'
-    | 'autodesk'
-    | 'aws'
-    | 'bamboohr'
-    | 'basecamp'
-    | 'battlenet'
-    | 'bigcommerce'
-    | 'bitbucket'
-    | 'bitly'
-    | 'blackbaud'
-    | 'boldsign'
-    | 'box'
-    | 'braintree'
-    | 'brex'
-    | 'calendly'
-    | 'clickup'
-    | 'close'
-    | 'coda'
-    | 'confluence'
-    | 'contentful'
-    | 'contentstack'
-    | 'copper'
-    | 'coros'
-    | 'datev'
-    | 'deel'
-    | 'dialpad'
-    | 'digitalocean'
-    | 'discord'
-    | 'docusign'
-    | 'dropbox'
-    | 'ebay'
-    | 'egnyte'
-    | 'envoy'
-    | 'eventbrite'
-    | 'exist'
-    | 'facebook'
-    | 'factorial'
-    | 'figma'
-    | 'finch'
-    | 'firebase'
-    | 'fitbit'
-    | 'foreceipt'
-    | 'fortnox'
-    | 'freshbooks'
-    | 'front'
-    | 'github'
-    | 'gitlab'
-    | 'gong'
-    | 'google-calendar'
-    | 'google-docs'
-    | 'google-drive'
-    | 'google-mail'
-    | 'google-sheet'
-    | 'gorgias'
-    | 'grain'
-    | 'greenhouse'
-    | 'gumroad'
-    | 'gusto'
-    | 'harvest'
-    | 'heron'
-    | 'highlevel'
-    | 'hubspot'
-    | 'instagram'
-    | 'intercom'
-    | 'jira'
-    | 'keap'
-    | 'lever'
-    | 'linear'
-    | 'linkedin'
-    | 'linkhut'
-    | 'lunchmoney'
-    | 'mailchimp'
-    | 'mercury'
-    | 'merge'
-    | 'miro'
-    | 'monday'
-    | 'moota'
-    | 'mural'
-    | 'namely'
-    | 'nationbuilder'
-    | 'netsuite'
-    | 'notion'
-    | 'odoo'
-    | 'okta'
-    | 'onebrick'
-    | 'openledger'
-    | 'osu'
-    | 'oura'
-    | 'outreach'
-    | 'pagerduty'
-    | 'pandadoc'
-    | 'payfit'
-    | 'paypal'
-    | 'pennylane'
-    | 'pinterest'
-    | 'pipedrive'
-    | 'plaid'
-    | 'podium'
-    | 'postgres'
-    | 'productboard'
-    | 'qualtrics'
-    | 'quickbooks'
-    | 'ramp'
-    | 'reddit'
-    | 'sage'
-    | 'salesforce'
-    | 'salesloft'
-    | 'saltedge'
-    | 'segment'
-    | 'servicem8'
-    | 'servicenow'
-    | 'sharepoint'
-    | 'sharepoint-onprem'
-    | 'shopify'
-    | 'signnow'
-    | 'slack'
-    | 'smartsheet'
-    | 'snowflake'
-    | 'splitwise'
-    | 'spotify'
-    | 'squarespace'
-    | 'squareup'
-    | 'stackexchange'
-    | 'strava'
-    | 'stripe'
-    | 'teamwork'
-    | 'teller'
-    | 'ticktick'
-    | 'timely'
-    | 'todoist'
-    | 'toggl'
-    | 'tremendous'
-    | 'tsheetsteam'
-    | 'tumblr'
-    | 'twenty'
-    | 'twinfield'
-    | 'twitch'
-    | 'twitter'
-    | 'typeform'
-    | 'uber'
-    | 'venmo'
-    | 'vimeo'
-    | 'wakatime'
-    | 'wealthbox'
-    | 'webflow'
-    | 'whoop'
-    | 'wise'
-    | 'wordpress'
-    | 'wrike'
-    | 'xero'
-    | 'yahoo'
-    | 'yandex'
-    | 'yodlee'
-    | 'zapier'
-    | 'zendesk'
-    | 'zenefits'
-    | 'zoho'
-    | 'zoho-desk'
-    | 'zoom'
-  >;
-
-  expand?: Array<'connector' | 'connector.schemas' | 'connection_count'>;
-
-  /**
-   * Limit the number of items returned
-   */
-  limit?: number;
-
-  search_query?: string | null;
-}
-
 export interface ListConnectionsParams extends OffsetPaginationParams {
   connection_ids?: Array<string>;
 
@@ -101333,6 +101148,191 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
   repl_id?: string;
 
   search_query?: string;
+}
+
+export interface ListConnectorConfigsParams extends OffsetPaginationParams {
+  connector_names?: Array<
+    | 'accelo'
+    | 'acme-apikey'
+    | 'acme-oauth2'
+    | 'adobe'
+    | 'adyen'
+    | 'aircall'
+    | 'airtable'
+    | 'amazon'
+    | 'apaleo'
+    | 'apollo'
+    | 'asana'
+    | 'attio'
+    | 'auth0'
+    | 'autodesk'
+    | 'aws'
+    | 'bamboohr'
+    | 'basecamp'
+    | 'battlenet'
+    | 'bigcommerce'
+    | 'bitbucket'
+    | 'bitly'
+    | 'blackbaud'
+    | 'boldsign'
+    | 'box'
+    | 'braintree'
+    | 'brex'
+    | 'calendly'
+    | 'clickup'
+    | 'close'
+    | 'coda'
+    | 'confluence'
+    | 'contentful'
+    | 'contentstack'
+    | 'copper'
+    | 'coros'
+    | 'datev'
+    | 'deel'
+    | 'dialpad'
+    | 'digitalocean'
+    | 'discord'
+    | 'docusign'
+    | 'dropbox'
+    | 'ebay'
+    | 'egnyte'
+    | 'envoy'
+    | 'eventbrite'
+    | 'exist'
+    | 'facebook'
+    | 'factorial'
+    | 'figma'
+    | 'finch'
+    | 'firebase'
+    | 'fitbit'
+    | 'foreceipt'
+    | 'fortnox'
+    | 'freshbooks'
+    | 'front'
+    | 'github'
+    | 'gitlab'
+    | 'gong'
+    | 'google-calendar'
+    | 'google-docs'
+    | 'google-drive'
+    | 'google-mail'
+    | 'google-sheet'
+    | 'gorgias'
+    | 'grain'
+    | 'greenhouse'
+    | 'gumroad'
+    | 'gusto'
+    | 'harvest'
+    | 'heron'
+    | 'highlevel'
+    | 'hubspot'
+    | 'instagram'
+    | 'intercom'
+    | 'jira'
+    | 'keap'
+    | 'lever'
+    | 'linear'
+    | 'linkedin'
+    | 'linkhut'
+    | 'lunchmoney'
+    | 'mailchimp'
+    | 'mercury'
+    | 'merge'
+    | 'miro'
+    | 'monday'
+    | 'moota'
+    | 'mural'
+    | 'namely'
+    | 'nationbuilder'
+    | 'netsuite'
+    | 'notion'
+    | 'odoo'
+    | 'okta'
+    | 'onebrick'
+    | 'openledger'
+    | 'osu'
+    | 'oura'
+    | 'outreach'
+    | 'pagerduty'
+    | 'pandadoc'
+    | 'payfit'
+    | 'paypal'
+    | 'pennylane'
+    | 'pinterest'
+    | 'pipedrive'
+    | 'plaid'
+    | 'podium'
+    | 'postgres'
+    | 'productboard'
+    | 'qualtrics'
+    | 'quickbooks'
+    | 'ramp'
+    | 'reddit'
+    | 'sage'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'segment'
+    | 'servicem8'
+    | 'servicenow'
+    | 'sharepoint'
+    | 'sharepoint-onprem'
+    | 'shopify'
+    | 'signnow'
+    | 'slack'
+    | 'smartsheet'
+    | 'snowflake'
+    | 'splitwise'
+    | 'spotify'
+    | 'squarespace'
+    | 'squareup'
+    | 'stackexchange'
+    | 'strava'
+    | 'stripe'
+    | 'teamwork'
+    | 'teller'
+    | 'ticktick'
+    | 'timely'
+    | 'todoist'
+    | 'toggl'
+    | 'tremendous'
+    | 'tsheetsteam'
+    | 'tumblr'
+    | 'twenty'
+    | 'twinfield'
+    | 'twitch'
+    | 'twitter'
+    | 'typeform'
+    | 'uber'
+    | 'venmo'
+    | 'vimeo'
+    | 'wakatime'
+    | 'wealthbox'
+    | 'webflow'
+    | 'whoop'
+    | 'wise'
+    | 'wordpress'
+    | 'wrike'
+    | 'xero'
+    | 'yahoo'
+    | 'yandex'
+    | 'yodlee'
+    | 'zapier'
+    | 'zendesk'
+    | 'zenefits'
+    | 'zoho'
+    | 'zoho-desk'
+    | 'zoom'
+  >;
+
+  expand?: Array<'connector' | 'connector.schemas' | 'connection_count'>;
+
+  /**
+   * Limit the number of items returned
+   */
+  limit?: number;
+
+  search_query?: string | null;
 }
 
 export interface ListConnectorsParams extends OffsetPaginationParams {
@@ -101583,8 +101583,8 @@ export declare namespace TopLevel {
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListAssignmentsResponse as ListAssignmentsResponse,
-    type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
+    type ListConnectorConfigsResponse as ListConnectorConfigsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListCustomersResponse as ListCustomersResponse,
@@ -101592,8 +101592,8 @@ export declare namespace TopLevel {
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
     type UpsertOrganizationResponse as UpsertOrganizationResponse,
-    type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type ListConnectorConfigsResponsesOffsetPagination as ListConnectorConfigsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
     type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
@@ -101605,8 +101605,8 @@ export declare namespace TopLevel {
     type DeleteAssignmentParams as DeleteAssignmentParams,
     type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
-    type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
+    type ListConnectorConfigsParams as ListConnectorConfigsParams,
     type ListConnectorsParams as ListConnectorsParams,
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListCustomersParams as ListCustomersParams,

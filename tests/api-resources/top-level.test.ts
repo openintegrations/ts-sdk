@@ -231,35 +231,6 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
-  test.skip('listConnectionConfigs', async () => {
-    const responsePromise = client.listConnectionConfigs();
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('listConnectionConfigs: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.listConnectionConfigs(
-        {
-          connector_names: ['accelo'],
-          expand: ['connector'],
-          limit: 0,
-          offset: 0,
-          search_query: 'search_query',
-        },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(Openint.NotFoundError);
-  });
-
-  // Prism tests are disabled
   test.skip('listConnections', async () => {
     const responsePromise = client.listConnections();
     const rawResponse = await responsePromise.asResponse();
@@ -287,6 +258,35 @@ describe('top level methods', () => {
           offset: 0,
           refresh_policy: 'none',
           repl_id: 'repl_id',
+          search_query: 'search_query',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
+  test.skip('listConnectorConfigs', async () => {
+    const responsePromise = client.listConnectorConfigs();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('listConnectorConfigs: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.listConnectorConfigs(
+        {
+          connector_names: ['accelo'],
+          expand: ['connector'],
+          limit: 0,
+          offset: 0,
           search_query: 'search_query',
         },
         { path: '/_stainless_unknown_path' },

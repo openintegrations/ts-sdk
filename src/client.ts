@@ -40,12 +40,12 @@ import {
   GetCurrentUserResponse,
   Integration,
   ListAssignmentsResponse,
-  ListConnectionConfigsParams,
-  ListConnectionConfigsResponse,
-  ListConnectionConfigsResponsesOffsetPagination,
   ListConnectionsParams,
   ListConnectionsResponse,
   ListConnectionsResponsesOffsetPagination,
+  ListConnectorConfigsParams,
+  ListConnectorConfigsResponse,
+  ListConnectorConfigsResponsesOffsetPagination,
   ListConnectorsParams,
   ListConnectorsResponse,
   ListConnectorsResponsesOffsetPagination,
@@ -349,23 +349,6 @@ export class Openint {
   }
 
   /**
-   * List Configured Connectors
-   */
-  listConnectionConfigs(
-    query: TopLevelAPI.ListConnectionConfigsParams | null | undefined = {},
-    options?: RequestOptions,
-  ): Pagination.PagePromise<
-    ListConnectionConfigsResponsesOffsetPagination,
-    TopLevelAPI.ListConnectionConfigsResponse
-  > {
-    return this.getAPIList(
-      '/v2/connector-config',
-      Pagination.OffsetPagination<TopLevelAPI.ListConnectionConfigsResponse>,
-      { query, ...options },
-    );
-  }
-
-  /**
    * List all connections with optional filtering. Does not retrieve secrets or
    * perform any connection healthcheck. For that use `getConnection` or
    * `checkConnectionHealth`.
@@ -377,6 +360,23 @@ export class Openint {
     return this.getAPIList(
       '/v2/connection',
       Pagination.OffsetPagination<TopLevelAPI.ListConnectionsResponse>,
+      { query, ...options },
+    );
+  }
+
+  /**
+   * List Configured Connectors
+   */
+  listConnectorConfigs(
+    query: TopLevelAPI.ListConnectorConfigsParams | null | undefined = {},
+    options?: RequestOptions,
+  ): Pagination.PagePromise<
+    ListConnectorConfigsResponsesOffsetPagination,
+    TopLevelAPI.ListConnectorConfigsResponse
+  > {
+    return this.getAPIList(
+      '/v2/connector-config',
+      Pagination.OffsetPagination<TopLevelAPI.ListConnectorConfigsResponse>,
       { query, ...options },
     );
   }
@@ -1021,8 +1021,8 @@ export declare namespace Openint {
     type GetConnectionResponse as GetConnectionResponse,
     type GetCurrentUserResponse as GetCurrentUserResponse,
     type ListAssignmentsResponse as ListAssignmentsResponse,
-    type ListConnectionConfigsResponse as ListConnectionConfigsResponse,
     type ListConnectionsResponse as ListConnectionsResponse,
+    type ListConnectorConfigsResponse as ListConnectorConfigsResponse,
     type ListConnectorsResponse as ListConnectorsResponse,
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListCustomersResponse as ListCustomersResponse,
@@ -1030,8 +1030,8 @@ export declare namespace Openint {
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
     type UpsertOrganizationResponse as UpsertOrganizationResponse,
-    type ListConnectionConfigsResponsesOffsetPagination as ListConnectionConfigsResponsesOffsetPagination,
     type ListConnectionsResponsesOffsetPagination as ListConnectionsResponsesOffsetPagination,
+    type ListConnectorConfigsResponsesOffsetPagination as ListConnectorConfigsResponsesOffsetPagination,
     type ListConnectorsResponsesOffsetPagination as ListConnectorsResponsesOffsetPagination,
     type ListConnnectorConfigsResponsesOffsetPagination as ListConnnectorConfigsResponsesOffsetPagination,
     type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
@@ -1043,8 +1043,8 @@ export declare namespace Openint {
     type DeleteAssignmentParams as DeleteAssignmentParams,
     type GetConectorConfigParams as GetConectorConfigParams,
     type GetConnectionParams as GetConnectionParams,
-    type ListConnectionConfigsParams as ListConnectionConfigsParams,
     type ListConnectionsParams as ListConnectionsParams,
+    type ListConnectorConfigsParams as ListConnectorConfigsParams,
     type ListConnectorsParams as ListConnectorsParams,
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListCustomersParams as ListCustomersParams,
