@@ -24,15 +24,16 @@ Types:
 - <code><a href="./src/resources/top-level.ts">ListEventsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertConnnectorConfigResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertCustomerResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">UpsertOrganizationResponse</a></code>
 
 Methods:
 
-- <code title="put /v2/connection/{id}/assignment/{replId}">client.<a href="./src/index.ts">assignConnection</a>(replID, { ...params }) -> AssignConnectionResponse</code>
+- <code title="put /v2/connection/{id}/assignment/{repl_id}">client.<a href="./src/index.ts">assignConnection</a>(replID, { ...params }) -> AssignConnectionResponse</code>
 - <code title="post /v1/connection/{id}/check">client.<a href="./src/index.ts">checkConnection</a>(id) -> CheckConnectionResponse</code>
 - <code title="post /v2/connection">client.<a href="./src/index.ts">createConnection</a>({ ...params }) -> CreateConnectionResponse</code>
 - <code title="post /v2/connector-config">client.<a href="./src/index.ts">createConnnectorConfig</a>({ ...params }) -> CreateConnnectorConfigResponse</code>
 - <code title="post /v1/customer/{customer_id}/token">client.<a href="./src/index.ts">createToken</a>(customerID, { ...params }) -> CreateTokenResponse</code>
-- <code title="delete /v2/connection/{id}/assignment/{replId}">client.<a href="./src/index.ts">deleteAssignment</a>(replID, { ...params }) -> DeleteAssignmentResponse</code>
+- <code title="delete /v2/connection/{id}/assignment/{repl_id}">client.<a href="./src/index.ts">deleteAssignment</a>(replID, { ...params }) -> DeleteAssignmentResponse</code>
 - <code title="delete /v2/connection/{id}">client.<a href="./src/index.ts">deleteConnection</a>(id) -> DeleteConnectionResponse</code>
 - <code title="delete /v2/connector-config/{id}">client.<a href="./src/index.ts">deleteConnectorConfig</a>(id) -> DeleteConnectorConfigResponse</code>
 - <code title="get /v2/connector-config/{id}">client.<a href="./src/index.ts">getConectorConfig</a>(id, { ...params }) -> GetConectorConfigResponse</code>
@@ -47,3 +48,4 @@ Methods:
 - <code title="get /v1/event">client.<a href="./src/index.ts">listEvents</a>({ ...params }) -> ListEventsResponsesOffsetPagination</code>
 - <code title="put /v2/connector-config/{id}">client.<a href="./src/index.ts">upsertConnnectorConfig</a>(id, { ...params }) -> UpsertConnnectorConfigResponse</code>
 - <code title="put /v1/customer">client.<a href="./src/index.ts">upsertCustomer</a>({ ...params }) -> UpsertCustomerResponse</code>
+- <code title="put /v2/organization/{org_id}">client.<a href="./src/index.ts">upsertOrganization</a>(orgID) -> UpsertOrganizationResponse</code>

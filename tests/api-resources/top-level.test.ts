@@ -10,7 +10,7 @@ const client = new Openint({
 describe('top level methods', () => {
   // Prism tests are disabled
   test.skip('assignConnection: only required params', async () => {
-    const responsePromise = client.assignConnection('replId', { id: 'conn_' });
+    const responsePromise = client.assignConnection('repl_id', { id: 'conn_' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('top level methods', () => {
 
   // Prism tests are disabled
   test.skip('assignConnection: required and optional params', async () => {
-    const response = await client.assignConnection('replId', { id: 'conn_' });
+    const response = await client.assignConnection('repl_id', { id: 'conn_' });
   });
 
   // Prism tests are disabled
@@ -123,7 +123,7 @@ describe('top level methods', () => {
 
   // Prism tests are disabled
   test.skip('deleteAssignment: only required params', async () => {
-    const responsePromise = client.deleteAssignment('replId', { id: 'conn_' });
+    const responsePromise = client.deleteAssignment('repl_id', { id: 'conn_' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -135,7 +135,7 @@ describe('top level methods', () => {
 
   // Prism tests are disabled
   test.skip('deleteAssignment: required and optional params', async () => {
-    const response = await client.deleteAssignment('replId', { id: 'conn_' });
+    const response = await client.deleteAssignment('repl_id', { id: 'conn_' });
   });
 
   // Prism tests are disabled
@@ -407,6 +407,18 @@ describe('top level methods', () => {
   // Prism tests are disabled
   test.skip('upsertCustomer', async () => {
     const responsePromise = client.upsertCustomer({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('upsertOrganization', async () => {
+    const responsePromise = client.upsertOrganization('x');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
