@@ -286,6 +286,7 @@ describe('top level methods', () => {
           limit: 0,
           offset: 0,
           refresh_policy: 'none',
+          repl_id: 'repl_id',
           search_query: 'search_query',
         },
         { path: '/_stainless_unknown_path' },
