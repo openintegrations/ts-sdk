@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.18.0 (2025-08-27)
+
+Full Changelog: [v2.17.0...v2.18.0](https://github.com/openintegrations/ts-sdk/compare/v2.17.0...v2.18.0)
+
+### Features
+
+* **api:** adding preconnect ([04b9c29](https://github.com/openintegrations/ts-sdk/commit/04b9c2919de39e65bc6c2f7b28e2d593f04dc031))
+
 ## 2.17.0 (2025-08-27)
 
 Full Changelog: [v2.16.0...v2.17.0](https://github.com/openintegrations/ts-sdk/compare/v2.16.0...v2.17.0)
