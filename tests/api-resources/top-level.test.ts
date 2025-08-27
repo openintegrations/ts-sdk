@@ -38,6 +38,29 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
+  test.skip('connectorRpc: only required params', async () => {
+    const responsePromise = client.connectorRpc('function_name', {
+      connector_config_id: 'ccfg_',
+      input: { foo: 'bar' },
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('connectorRpc: required and optional params', async () => {
+    const response = await client.connectorRpc('function_name', {
+      connector_config_id: 'ccfg_',
+      input: { foo: 'bar' },
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('createConnection: only required params', async () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
@@ -390,6 +413,23 @@ describe('top level methods', () => {
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
+  });
+
+  // Prism tests are disabled
+  test.skip('preConfigureConnector: only required params', async () => {
+    const responsePromise = client.preConfigureConnector({ connector_name: 'accelo' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('preConfigureConnector: required and optional params', async () => {
+    const response = await client.preConfigureConnector({ connector_name: 'accelo' });
   });
 
   // Prism tests are disabled

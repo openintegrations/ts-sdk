@@ -199,6 +199,7 @@ export interface Integration {
     | 'shopify'
     | 'signnow'
     | 'slack'
+    | 'slack-agent'
     | 'smartsheet'
     | 'snowflake'
     | 'splitwise'
@@ -282,6 +283,8 @@ export interface CheckConnectionResponse {
 
   status_message?: string | null;
 }
+
+export type ConnectorRpcResponse = { [key: string]: unknown };
 
 export type CreateConnectionResponse =
   | CreateConnectionResponse.ConnectorAcceloDiscriminatedConnectionSettings
@@ -447,6 +450,7 @@ export type CreateConnectionResponse =
   | CreateConnectionResponse.ConnectorRampDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorSaltedgeDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorSharepointOnpremDiscriminatedConnectionSettings
+  | CreateConnectionResponse.ConnectorSlackAgentDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorSplitwiseDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorStripeDiscriminatedConnectionSettings
   | CreateConnectionResponse.ConnectorTellerDiscriminatedConnectionSettings
@@ -14062,6 +14066,48 @@ export namespace CreateConnectionResponse {
     }
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectionSettings {
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    settings?: ConnectorSlackAgentDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * Bot OAuth token - xoxb-...
+       */
+      bot_access_token: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
@@ -14663,6 +14709,7 @@ export type CreateConnnectorConfigResponse =
   | CreateConnnectorConfigResponse.ConnectorRampDiscriminatedConnectorConfig
   | CreateConnnectorConfigResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
   | CreateConnnectorConfigResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
+  | CreateConnnectorConfigResponse.ConnectorSlackAgentDiscriminatedConnectorConfig
   | CreateConnnectorConfigResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
   | CreateConnnectorConfigResponse.ConnectorStripeDiscriminatedConnectorConfig
   | CreateConnnectorConfigResponse.ConnectorTellerDiscriminatedConnectorConfig
@@ -22815,6 +22862,85 @@ export namespace CreateConnnectorConfigResponse {
     updated_at?: string;
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectorConfig {
+    config: ConnectorSlackAgentDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Previous challenge code - e.g. challenge_slack_abc123xyz
+       */
+      challenge_code: string;
+
+      /**
+       * USER_PASTED_TOKEN - SLACK_ONETIME_CHALLENGE_CODE
+       */
+      challenge_response: string;
+
+      /**
+       * Initial event subscription URL
+       */
+      event_subscription_url: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token: string;
+
+      /**
+       * App ID - A1234567890
+       */
+      app_id?: string;
+
+      /**
+       * Client ID - 1234567890.1234567890
+       */
+      client_id?: string;
+
+      /**
+       * Client secret - abc123...
+       */
+      client_secret?: string;
+
+      /**
+       * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
+       */
+      initial_oauth_url?: string;
+
+      /**
+       * Signing secret - abc123...
+       */
+      signing_secret?: string;
+
+      /**
+       * Verification token - xyz123...
+       */
+      verification_token?: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
     config: unknown;
 
@@ -23300,6 +23426,7 @@ export type GetConectorConfigResponse =
   | GetConectorConfigResponse.ConnectorRampDiscriminatedConnectorConfig
   | GetConectorConfigResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
   | GetConectorConfigResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
+  | GetConectorConfigResponse.ConnectorSlackAgentDiscriminatedConnectorConfig
   | GetConectorConfigResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
   | GetConectorConfigResponse.ConnectorStripeDiscriminatedConnectorConfig
   | GetConectorConfigResponse.ConnectorTellerDiscriminatedConnectorConfig
@@ -32430,6 +32557,91 @@ export namespace GetConectorConfigResponse {
     updated_at?: string;
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectorConfig {
+    config: ConnectorSlackAgentDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Previous challenge code - e.g. challenge_slack_abc123xyz
+       */
+      challenge_code: string;
+
+      /**
+       * USER_PASTED_TOKEN - SLACK_ONETIME_CHALLENGE_CODE
+       */
+      challenge_response: string;
+
+      /**
+       * Initial event subscription URL
+       */
+      event_subscription_url: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token: string;
+
+      /**
+       * App ID - A1234567890
+       */
+      app_id?: string;
+
+      /**
+       * Client ID - 1234567890.1234567890
+       */
+      client_id?: string;
+
+      /**
+       * Client secret - abc123...
+       */
+      client_secret?: string;
+
+      /**
+       * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
+       */
+      initial_oauth_url?: string;
+
+      /**
+       * Signing secret - abc123...
+       */
+      signing_secret?: string;
+
+      /**
+       * Verification token - xyz123...
+       */
+      verification_token?: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
     config: unknown;
 
@@ -32921,6 +33133,7 @@ export type GetConnectionResponse =
   | GetConnectionResponse.ConnectorRampDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorSaltedgeDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorSharepointOnpremDiscriminatedConnectionSettings
+  | GetConnectionResponse.ConnectorSlackAgentDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorSplitwiseDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorStripeDiscriminatedConnectionSettings
   | GetConnectionResponse.ConnectorTellerDiscriminatedConnectionSettings
@@ -47188,6 +47401,52 @@ export namespace GetConnectionResponse {
     }
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectionSettings {
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    connector?: TopLevelAPI.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: TopLevelAPI.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    settings?: ConnectorSlackAgentDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * Bot OAuth token - xoxb-...
+       */
+      bot_access_token: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
@@ -47839,6 +48098,7 @@ export type ListConnectionsResponse =
   | ListConnectionsResponse.ConnectorRampDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorSaltedgeDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorSharepointOnpremDiscriminatedConnectionSettings
+  | ListConnectionsResponse.ConnectorSlackAgentDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorSplitwiseDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorStripeDiscriminatedConnectionSettings
   | ListConnectionsResponse.ConnectorTellerDiscriminatedConnectionSettings
@@ -62106,6 +62366,52 @@ export namespace ListConnectionsResponse {
     }
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectionSettings {
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    connector?: TopLevelAPI.Connector;
+
+    connector_config_id?: string | null;
+
+    created_at?: string;
+
+    customer_id?: string | null;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integration?: TopLevelAPI.Integration;
+
+    integration_id?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    settings?: ConnectorSlackAgentDiscriminatedConnectionSettings.Settings;
+
+    status?: 'healthy' | 'disconnected' | 'error' | 'manual' | 'unknown' | null;
+
+    status_message?: string | null;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * Bot OAuth token - xoxb-...
+       */
+      bot_access_token: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
@@ -62739,6 +63045,7 @@ export type ListConnectorConfigsResponse =
   | ListConnectorConfigsResponse.ConnectorRampDiscriminatedConnectorConfig
   | ListConnectorConfigsResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
   | ListConnectorConfigsResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
+  | ListConnectorConfigsResponse.ConnectorSlackAgentDiscriminatedConnectorConfig
   | ListConnectorConfigsResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
   | ListConnectorConfigsResponse.ConnectorStripeDiscriminatedConnectorConfig
   | ListConnectorConfigsResponse.ConnectorTellerDiscriminatedConnectorConfig
@@ -71869,6 +72176,91 @@ export namespace ListConnectorConfigsResponse {
     updated_at?: string;
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectorConfig {
+    config: ConnectorSlackAgentDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Previous challenge code - e.g. challenge_slack_abc123xyz
+       */
+      challenge_code: string;
+
+      /**
+       * USER_PASTED_TOKEN - SLACK_ONETIME_CHALLENGE_CODE
+       */
+      challenge_response: string;
+
+      /**
+       * Initial event subscription URL
+       */
+      event_subscription_url: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token: string;
+
+      /**
+       * App ID - A1234567890
+       */
+      app_id?: string;
+
+      /**
+       * Client ID - 1234567890.1234567890
+       */
+      client_id?: string;
+
+      /**
+       * Client secret - abc123...
+       */
+      client_secret?: string;
+
+      /**
+       * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
+       */
+      initial_oauth_url?: string;
+
+      /**
+       * Signing secret - abc123...
+       */
+      signing_secret?: string;
+
+      /**
+       * Verification token - xyz123...
+       */
+      verification_token?: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
     config: unknown;
 
@@ -72361,6 +72753,7 @@ export type ListConnnectorConfigsResponse =
   | ListConnnectorConfigsResponse.ConnectorRampDiscriminatedConnectorConfig
   | ListConnnectorConfigsResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
   | ListConnnectorConfigsResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
+  | ListConnnectorConfigsResponse.ConnectorSlackAgentDiscriminatedConnectorConfig
   | ListConnnectorConfigsResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
   | ListConnnectorConfigsResponse.ConnectorStripeDiscriminatedConnectorConfig
   | ListConnnectorConfigsResponse.ConnectorTellerDiscriminatedConnectorConfig
@@ -81491,6 +81884,91 @@ export namespace ListConnnectorConfigsResponse {
     updated_at?: string;
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectorConfig {
+    config: ConnectorSlackAgentDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    connection_count?: number;
+
+    connector?: TopLevelAPI.Connector;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    integrations?: { [key: string]: TopLevelAPI.Integration };
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Previous challenge code - e.g. challenge_slack_abc123xyz
+       */
+      challenge_code: string;
+
+      /**
+       * USER_PASTED_TOKEN - SLACK_ONETIME_CHALLENGE_CODE
+       */
+      challenge_response: string;
+
+      /**
+       * Initial event subscription URL
+       */
+      event_subscription_url: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token: string;
+
+      /**
+       * App ID - A1234567890
+       */
+      app_id?: string;
+
+      /**
+       * Client ID - 1234567890.1234567890
+       */
+      client_id?: string;
+
+      /**
+       * Client secret - abc123...
+       */
+      client_secret?: string;
+
+      /**
+       * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
+       */
+      initial_oauth_url?: string;
+
+      /**
+       * Signing secret - abc123...
+       */
+      signing_secret?: string;
+
+      /**
+       * Verification token - xyz123...
+       */
+      verification_token?: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
     config: unknown;
 
@@ -82440,6 +82918,8 @@ export namespace ListEventsResponse {
   }
 }
 
+export type PreConfigureConnectorResponse = { [key: string]: unknown };
+
 export type UpsertConnnectorConfigResponse =
   | UpsertConnnectorConfigResponse.ConnectorAcceloDiscriminatedConnectorConfig
   | UpsertConnnectorConfigResponse.ConnectorAcmeApikeyDiscriminatedConnectorConfig
@@ -82604,6 +83084,7 @@ export type UpsertConnnectorConfigResponse =
   | UpsertConnnectorConfigResponse.ConnectorRampDiscriminatedConnectorConfig
   | UpsertConnnectorConfigResponse.ConnectorSaltedgeDiscriminatedConnectorConfig
   | UpsertConnnectorConfigResponse.ConnectorSharepointOnpremDiscriminatedConnectorConfig
+  | UpsertConnnectorConfigResponse.ConnectorSlackAgentDiscriminatedConnectorConfig
   | UpsertConnnectorConfigResponse.ConnectorSplitwiseDiscriminatedConnectorConfig
   | UpsertConnnectorConfigResponse.ConnectorStripeDiscriminatedConnectorConfig
   | UpsertConnnectorConfigResponse.ConnectorTellerDiscriminatedConnectorConfig
@@ -90756,6 +91237,85 @@ export namespace UpsertConnnectorConfigResponse {
     updated_at?: string;
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectorConfig {
+    config: ConnectorSlackAgentDiscriminatedConnectorConfig.Config;
+
+    connector_name: 'slack-agent';
+
+    id?: string;
+
+    created_at?: string;
+
+    disabled?: boolean | null;
+
+    display_name?: string | null;
+
+    /**
+     * JSON object can can be used to associate arbitrary metadata to avoid needing a
+     * separate 1-1 table just for simple key values in your application. During
+     * updates this object will be shallowly merged
+     */
+    metadata?: { [key: string]: unknown } | null;
+
+    org_id?: string;
+
+    updated_at?: string;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectorConfig {
+    export interface Config {
+      /**
+       * Previous challenge code - e.g. challenge_slack_abc123xyz
+       */
+      challenge_code: string;
+
+      /**
+       * USER_PASTED_TOKEN - SLACK_ONETIME_CHALLENGE_CODE
+       */
+      challenge_response: string;
+
+      /**
+       * Initial event subscription URL
+       */
+      event_subscription_url: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token: string;
+
+      /**
+       * App ID - A1234567890
+       */
+      app_id?: string;
+
+      /**
+       * Client ID - 1234567890.1234567890
+       */
+      client_id?: string;
+
+      /**
+       * Client secret - abc123...
+       */
+      client_secret?: string;
+
+      /**
+       * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
+       */
+      initial_oauth_url?: string;
+
+      /**
+       * Signing secret - abc123...
+       */
+      signing_secret?: string;
+
+      /**
+       * Verification token - xyz123...
+       */
+      verification_token?: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectorConfig {
     config: unknown;
 
@@ -91061,6 +91621,18 @@ export interface AssignConnectionParams {
   id: string;
 }
 
+export interface ConnectorRpcParams {
+  /**
+   * Path param: The id of the connector config, starts with `ccfg_`
+   */
+  connector_config_id: string;
+
+  /**
+   * Body param:
+   */
+  input: { [key: string]: unknown };
+}
+
 export interface CreateConnectionParams {
   /**
    * The id of the connector config, starts with `ccfg_`
@@ -91240,6 +91812,7 @@ export interface CreateConnectionParams {
     | CreateConnectionParams.ConnectorRampDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorSaltedgeDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorSharepointOnpremDiscriminatedConnectionSettings
+    | CreateConnectionParams.ConnectorSlackAgentDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorSplitwiseDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorStripeDiscriminatedConnectionSettings
     | CreateConnectionParams.ConnectorTellerDiscriminatedConnectionSettings
@@ -100462,6 +101035,21 @@ export namespace CreateConnectionParams {
     }
   }
 
+  export interface ConnectorSlackAgentDiscriminatedConnectionSettings {
+    connector_name: 'slack-agent';
+
+    settings?: ConnectorSlackAgentDiscriminatedConnectionSettings.Settings;
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectionSettings {
+    export interface Settings {
+      /**
+       * Bot OAuth token - xoxb-...
+       */
+      bot_access_token: string;
+    }
+  }
+
   export interface ConnectorSplitwiseDiscriminatedConnectionSettings {
     connector_name: 'splitwise';
 
@@ -100841,6 +101429,7 @@ export namespace CreateTokenParams {
       | 'shopify'
       | 'signnow'
       | 'slack'
+      | 'slack-agent'
       | 'smartsheet'
       | 'snowflake'
       | 'splitwise'
@@ -101078,6 +101667,7 @@ export interface ListConnectionsParams extends OffsetPaginationParams {
     | 'shopify'
     | 'signnow'
     | 'slack'
+    | 'slack-agent'
     | 'smartsheet'
     | 'snowflake'
     | 'splitwise'
@@ -101282,6 +101872,7 @@ export interface ListConnectorConfigsParams extends OffsetPaginationParams {
     | 'shopify'
     | 'signnow'
     | 'slack'
+    | 'slack-agent'
     | 'smartsheet'
     | 'snowflake'
     | 'splitwise'
@@ -101478,6 +102069,7 @@ export interface ListConnnectorConfigsParams extends OffsetPaginationParams {
     | 'shopify'
     | 'signnow'
     | 'slack'
+    | 'slack-agent'
     | 'smartsheet'
     | 'snowflake'
     | 'splitwise'
@@ -101555,6 +102147,182 @@ export interface ListEventsParams extends OffsetPaginationParams {
   since?: string;
 }
 
+export interface PreConfigureConnectorParams {
+  connector_name:
+    | 'accelo'
+    | 'acme-apikey'
+    | 'acme-oauth2'
+    | 'adobe'
+    | 'adyen'
+    | 'aircall'
+    | 'airtable'
+    | 'amazon'
+    | 'apaleo'
+    | 'apollo'
+    | 'asana'
+    | 'attio'
+    | 'auth0'
+    | 'autodesk'
+    | 'aws'
+    | 'bamboohr'
+    | 'basecamp'
+    | 'battlenet'
+    | 'bigcommerce'
+    | 'bitbucket'
+    | 'bitly'
+    | 'blackbaud'
+    | 'boldsign'
+    | 'box'
+    | 'braintree'
+    | 'brex'
+    | 'calendly'
+    | 'clickup'
+    | 'close'
+    | 'coda'
+    | 'confluence'
+    | 'contentful'
+    | 'contentstack'
+    | 'copper'
+    | 'coros'
+    | 'datev'
+    | 'deel'
+    | 'dialpad'
+    | 'digitalocean'
+    | 'discord'
+    | 'docusign'
+    | 'dropbox'
+    | 'ebay'
+    | 'egnyte'
+    | 'envoy'
+    | 'eventbrite'
+    | 'exist'
+    | 'facebook'
+    | 'factorial'
+    | 'figma'
+    | 'finch'
+    | 'firebase'
+    | 'fitbit'
+    | 'foreceipt'
+    | 'fortnox'
+    | 'freshbooks'
+    | 'front'
+    | 'github'
+    | 'gitlab'
+    | 'gong'
+    | 'google-calendar'
+    | 'google-docs'
+    | 'google-drive'
+    | 'google-mail'
+    | 'google-sheet'
+    | 'gorgias'
+    | 'grain'
+    | 'greenhouse'
+    | 'gumroad'
+    | 'gusto'
+    | 'harvest'
+    | 'heron'
+    | 'highlevel'
+    | 'hubspot'
+    | 'instagram'
+    | 'intercom'
+    | 'jira'
+    | 'keap'
+    | 'lever'
+    | 'linear'
+    | 'linkedin'
+    | 'linkhut'
+    | 'lunchmoney'
+    | 'mailchimp'
+    | 'mercury'
+    | 'merge'
+    | 'miro'
+    | 'monday'
+    | 'moota'
+    | 'mural'
+    | 'namely'
+    | 'nationbuilder'
+    | 'netsuite'
+    | 'notion'
+    | 'odoo'
+    | 'okta'
+    | 'onebrick'
+    | 'openledger'
+    | 'osu'
+    | 'oura'
+    | 'outreach'
+    | 'pagerduty'
+    | 'pandadoc'
+    | 'payfit'
+    | 'paypal'
+    | 'pennylane'
+    | 'pinterest'
+    | 'pipedrive'
+    | 'plaid'
+    | 'podium'
+    | 'postgres'
+    | 'productboard'
+    | 'qualtrics'
+    | 'quickbooks'
+    | 'ramp'
+    | 'reddit'
+    | 'sage'
+    | 'salesforce'
+    | 'salesloft'
+    | 'saltedge'
+    | 'segment'
+    | 'servicem8'
+    | 'servicenow'
+    | 'sharepoint'
+    | 'sharepoint-onprem'
+    | 'shopify'
+    | 'signnow'
+    | 'slack'
+    | 'slack-agent'
+    | 'smartsheet'
+    | 'snowflake'
+    | 'splitwise'
+    | 'spotify'
+    | 'squarespace'
+    | 'squareup'
+    | 'stackexchange'
+    | 'strava'
+    | 'stripe'
+    | 'teamwork'
+    | 'teller'
+    | 'ticktick'
+    | 'timely'
+    | 'todoist'
+    | 'toggl'
+    | 'tremendous'
+    | 'tsheetsteam'
+    | 'tumblr'
+    | 'twenty'
+    | 'twinfield'
+    | 'twitch'
+    | 'twitter'
+    | 'typeform'
+    | 'uber'
+    | 'venmo'
+    | 'vimeo'
+    | 'wakatime'
+    | 'wealthbox'
+    | 'webflow'
+    | 'whoop'
+    | 'wise'
+    | 'wordpress'
+    | 'wrike'
+    | 'xero'
+    | 'yahoo'
+    | 'yandex'
+    | 'yodlee'
+    | 'zapier'
+    | 'zendesk'
+    | 'zenefits'
+    | 'zoho'
+    | 'zoho-desk'
+    | 'zoom';
+}
+
 export interface UpsertConnnectorConfigParams {
   config?: { [key: string]: unknown } | null;
 
@@ -101575,6 +102343,7 @@ export declare namespace TopLevel {
     type Integration as Integration,
     type AssignConnectionResponse as AssignConnectionResponse,
     type CheckConnectionResponse as CheckConnectionResponse,
+    type ConnectorRpcResponse as ConnectorRpcResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateConnnectorConfigResponse as CreateConnnectorConfigResponse,
     type CreateTokenResponse as CreateTokenResponse,
@@ -101591,6 +102360,7 @@ export declare namespace TopLevel {
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
+    type PreConfigureConnectorResponse as PreConfigureConnectorResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
     type UpsertOrganizationResponse as UpsertOrganizationResponse,
@@ -101601,6 +102371,7 @@ export declare namespace TopLevel {
     type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type AssignConnectionParams as AssignConnectionParams,
+    type ConnectorRpcParams as ConnectorRpcParams,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
     type CreateTokenParams as CreateTokenParams,
@@ -101613,6 +102384,7 @@ export declare namespace TopLevel {
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
+    type PreConfigureConnectorParams as PreConfigureConnectorParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
     type UpsertCustomerParams as UpsertCustomerParams,
   };
