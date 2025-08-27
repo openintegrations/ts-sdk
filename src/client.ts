@@ -23,6 +23,8 @@ import {
   AssignConnectionResponse,
   CheckConnectionResponse,
   Connector,
+  ConnectorRpcParams,
+  ConnectorRpcResponse,
   CreateConnectionParams,
   CreateConnectionResponse,
   CreateConnnectorConfigParams,
@@ -58,6 +60,8 @@ import {
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
+  PreConfigureConnectorParams,
+  PreConfigureConnectorResponse,
   UpsertConnnectorConfigParams,
   UpsertConnnectorConfigResponse,
   UpsertCustomerParams,
@@ -261,6 +265,21 @@ export class Openint {
   }
 
   /**
+   * Execute RPC function on connector
+   */
+  connectorRpc(
+    functionName: string,
+    params: TopLevelAPI.ConnectorRpcParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.ConnectorRpcResponse> {
+    const { connector_config_id, ...body } = params;
+    return this.post(path`/v2/connector-config/${connector_config_id}/rpc/${functionName}`, {
+      body,
+      ...options,
+    });
+  }
+
+  /**
    * Import an existing connection after validation
    */
   createConnection(
@@ -435,6 +454,13 @@ export class Openint {
       query,
       ...options,
     });
+  }
+
+  preConfigureConnector(
+    body: TopLevelAPI.PreConfigureConnectorParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.PreConfigureConnectorResponse> {
+    return this.post('/v2/connector-config/pre-configure', { body, ...options });
   }
 
   upsertConnnectorConfig(
@@ -1011,6 +1037,7 @@ export declare namespace Openint {
     type Integration as Integration,
     type AssignConnectionResponse as AssignConnectionResponse,
     type CheckConnectionResponse as CheckConnectionResponse,
+    type ConnectorRpcResponse as ConnectorRpcResponse,
     type CreateConnectionResponse as CreateConnectionResponse,
     type CreateConnnectorConfigResponse as CreateConnnectorConfigResponse,
     type CreateTokenResponse as CreateTokenResponse,
@@ -1027,6 +1054,7 @@ export declare namespace Openint {
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
+    type PreConfigureConnectorResponse as PreConfigureConnectorResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
     type UpsertOrganizationResponse as UpsertOrganizationResponse,
@@ -1037,6 +1065,7 @@ export declare namespace Openint {
     type ListCustomersResponsesOffsetPagination as ListCustomersResponsesOffsetPagination,
     type ListEventsResponsesOffsetPagination as ListEventsResponsesOffsetPagination,
     type AssignConnectionParams as AssignConnectionParams,
+    type ConnectorRpcParams as ConnectorRpcParams,
     type CreateConnectionParams as CreateConnectionParams,
     type CreateConnnectorConfigParams as CreateConnnectorConfigParams,
     type CreateTokenParams as CreateTokenParams,
@@ -1049,6 +1078,7 @@ export declare namespace Openint {
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
+    type PreConfigureConnectorParams as PreConfigureConnectorParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
     type UpsertCustomerParams as UpsertCustomerParams,
   };
