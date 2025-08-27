@@ -22900,16 +22900,6 @@ export namespace CreateConnnectorConfigResponse {
       challenge_response: string;
 
       /**
-       * Initial event subscription URL
-       */
-      event_subscription_url: string;
-
-      /**
-       * Service token - xoxb-...
-       */
-      service_token: string;
-
-      /**
        * App ID - A1234567890
        */
       app_id?: string;
@@ -22925,9 +22915,19 @@ export namespace CreateConnnectorConfigResponse {
       client_secret?: string;
 
       /**
+       * Initial event subscription URL
+       */
+      event_subscription_url?: string;
+
+      /**
        * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
        */
       initial_oauth_url?: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token?: string;
 
       /**
        * Signing secret - abc123...
@@ -32601,16 +32601,6 @@ export namespace GetConectorConfigResponse {
       challenge_response: string;
 
       /**
-       * Initial event subscription URL
-       */
-      event_subscription_url: string;
-
-      /**
-       * Service token - xoxb-...
-       */
-      service_token: string;
-
-      /**
        * App ID - A1234567890
        */
       app_id?: string;
@@ -32626,9 +32616,19 @@ export namespace GetConectorConfigResponse {
       client_secret?: string;
 
       /**
+       * Initial event subscription URL
+       */
+      event_subscription_url?: string;
+
+      /**
        * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
        */
       initial_oauth_url?: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token?: string;
 
       /**
        * Signing secret - abc123...
@@ -72220,16 +72220,6 @@ export namespace ListConnectorConfigsResponse {
       challenge_response: string;
 
       /**
-       * Initial event subscription URL
-       */
-      event_subscription_url: string;
-
-      /**
-       * Service token - xoxb-...
-       */
-      service_token: string;
-
-      /**
        * App ID - A1234567890
        */
       app_id?: string;
@@ -72245,9 +72235,19 @@ export namespace ListConnectorConfigsResponse {
       client_secret?: string;
 
       /**
+       * Initial event subscription URL
+       */
+      event_subscription_url?: string;
+
+      /**
        * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
        */
       initial_oauth_url?: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token?: string;
 
       /**
        * Signing secret - abc123...
@@ -81928,16 +81928,6 @@ export namespace ListConnnectorConfigsResponse {
       challenge_response: string;
 
       /**
-       * Initial event subscription URL
-       */
-      event_subscription_url: string;
-
-      /**
-       * Service token - xoxb-...
-       */
-      service_token: string;
-
-      /**
        * App ID - A1234567890
        */
       app_id?: string;
@@ -81953,9 +81943,19 @@ export namespace ListConnnectorConfigsResponse {
       client_secret?: string;
 
       /**
+       * Initial event subscription URL
+       */
+      event_subscription_url?: string;
+
+      /**
        * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
        */
       initial_oauth_url?: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token?: string;
 
       /**
        * Signing secret - abc123...
@@ -82919,6 +82919,3312 @@ export namespace ListEventsResponse {
 }
 
 export type PreConfigureConnectorResponse = { [key: string]: unknown };
+
+export type PreConnectResponse =
+  | PreConnectResponse.ConnectorAcceloDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAcmeApikeyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAcmeOauth2DiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAdobeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAdyenDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAircallDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAmazonDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorApaleoDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAsanaDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAttioDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAuth0DiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAutodeskDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAwsDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBamboohrDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBasecampDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBattlenetDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBigcommerceDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBitbucketDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBitlyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBlackbaudDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBoldsignDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBoxDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBraintreeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorCalendlyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorClickupDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorCloseDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorConfluenceDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorContentfulDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorContentstackDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorCopperDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorCorosDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDatevDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDeelDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDialpadDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDigitaloceanDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDiscordDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDocusignDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorDropboxDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorEbayDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorEgnyteDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorEnvoyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorEventbriteDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorExistDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFacebookDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFactorialDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFigmaDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFitbitDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFortnoxDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFreshbooksDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFrontDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGitHubDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGitlabDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGongDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGoogleCalendarDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGoogleDocsDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGoogleDriveDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGoogleMailDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGoogleSheetDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGorgiasDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGrainDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGumroadDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGustoDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorHarvestDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorHighlevelDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorHubspotDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorInstagramDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorIntercomDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorJiraDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorKeapDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorLeverDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorLinearDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorLinkedinDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorLinkhutDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMailchimpDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMiroDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMondayDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMuralDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorNamelyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorNationbuilderDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorNetsuiteDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorNotionDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOdooDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOktaDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOsuDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOuraDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOutreachDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPagerdutyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPandadocDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPayfitDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPaypalDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPennylaneDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPinterestDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPipedriveDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPodiumDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorProductboardDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorQualtricsDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorQuickbooksDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorRedditDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSageDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSalesforceDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSalesloftDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSegmentDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorServicem8DiscriminatedConnectInput
+  | PreConnectResponse.ConnectorServicenowDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSharepointDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorShopifyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSignnowDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSlackDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSmartsheetDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSnowflakeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSpotifyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSquarespaceDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSquareupDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorStackexchangeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorStravaDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTeamworkDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTicktickDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTimelyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTodoistDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTremendousDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTsheetsteamDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTumblrDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTwinfieldDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTwitchDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTwitterDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTypeformDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorUberDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorVimeoDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWakatimeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWealthboxDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWebflowDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWhoopDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWordpressDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWrikeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorXeroDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorYahooDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorYandexDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorZapierDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorZendeskDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorZenefitsDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorZohoDeskDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorZohoDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorZoomDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorAirtableDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorApolloDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorBrexDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorCodaDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFinchDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorFirebaseDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorForeceiptDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorGreenhouseDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorHeronDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorLunchmoneyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMercuryDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMergeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorMootaDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOnebrickDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorOpenledgerDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPlaidDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorPostgresDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorRampDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSaltedgeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSharepointOnpremDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSlackAgentDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorSplitwiseDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorStripeDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTellerDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTogglDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorTwentyDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorVenmoDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorWiseDiscriminatedConnectInput
+  | PreConnectResponse.ConnectorYodleeDiscriminatedConnectInput;
+
+export namespace PreConnectResponse {
+  export interface ConnectorAcceloDiscriminatedConnectInput {
+    connect_input: ConnectorAcceloDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'accelo';
+  }
+
+  export namespace ConnectorAcceloDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAcmeApikeyDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'acme-apikey';
+  }
+
+  export interface ConnectorAcmeOauth2DiscriminatedConnectInput {
+    connect_input: ConnectorAcmeOauth2DiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'acme-oauth2';
+  }
+
+  export namespace ConnectorAcmeOauth2DiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedConnectInput {
+    connect_input: ConnectorAdobeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'adobe';
+  }
+
+  export namespace ConnectorAdobeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAdyenDiscriminatedConnectInput {
+    connect_input: ConnectorAdyenDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'adyen';
+  }
+
+  export namespace ConnectorAdyenDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedConnectInput {
+    connect_input: ConnectorAircallDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'aircall';
+  }
+
+  export namespace ConnectorAircallDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAmazonDiscriminatedConnectInput {
+    connect_input: ConnectorAmazonDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'amazon';
+  }
+
+  export namespace ConnectorAmazonDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorApaleoDiscriminatedConnectInput {
+    connect_input: ConnectorApaleoDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'apaleo';
+  }
+
+  export namespace ConnectorApaleoDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAsanaDiscriminatedConnectInput {
+    connect_input: ConnectorAsanaDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'asana';
+  }
+
+  export namespace ConnectorAsanaDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAttioDiscriminatedConnectInput {
+    connect_input: ConnectorAttioDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'attio';
+  }
+
+  export namespace ConnectorAttioDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAuth0DiscriminatedConnectInput {
+    connect_input: ConnectorAuth0DiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'auth0';
+  }
+
+  export namespace ConnectorAuth0DiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAutodeskDiscriminatedConnectInput {
+    connect_input: ConnectorAutodeskDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'autodesk';
+  }
+
+  export namespace ConnectorAutodeskDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAwsDiscriminatedConnectInput {
+    connect_input: ConnectorAwsDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'aws';
+  }
+
+  export namespace ConnectorAwsDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBamboohrDiscriminatedConnectInput {
+    connect_input: ConnectorBamboohrDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'bamboohr';
+  }
+
+  export namespace ConnectorBamboohrDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBasecampDiscriminatedConnectInput {
+    connect_input: ConnectorBasecampDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'basecamp';
+  }
+
+  export namespace ConnectorBasecampDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBattlenetDiscriminatedConnectInput {
+    connect_input: ConnectorBattlenetDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'battlenet';
+  }
+
+  export namespace ConnectorBattlenetDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBigcommerceDiscriminatedConnectInput {
+    connect_input: ConnectorBigcommerceDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'bigcommerce';
+  }
+
+  export namespace ConnectorBigcommerceDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBitbucketDiscriminatedConnectInput {
+    connect_input: ConnectorBitbucketDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'bitbucket';
+  }
+
+  export namespace ConnectorBitbucketDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBitlyDiscriminatedConnectInput {
+    connect_input: ConnectorBitlyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'bitly';
+  }
+
+  export namespace ConnectorBitlyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBlackbaudDiscriminatedConnectInput {
+    connect_input: ConnectorBlackbaudDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'blackbaud';
+  }
+
+  export namespace ConnectorBlackbaudDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBoldsignDiscriminatedConnectInput {
+    connect_input: ConnectorBoldsignDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'boldsign';
+  }
+
+  export namespace ConnectorBoldsignDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBoxDiscriminatedConnectInput {
+    connect_input: ConnectorBoxDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'box';
+  }
+
+  export namespace ConnectorBoxDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorBraintreeDiscriminatedConnectInput {
+    connect_input: ConnectorBraintreeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'braintree';
+  }
+
+  export namespace ConnectorBraintreeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorCalendlyDiscriminatedConnectInput {
+    connect_input: ConnectorCalendlyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'calendly';
+  }
+
+  export namespace ConnectorCalendlyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorClickupDiscriminatedConnectInput {
+    connect_input: ConnectorClickupDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'clickup';
+  }
+
+  export namespace ConnectorClickupDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorCloseDiscriminatedConnectInput {
+    connect_input: ConnectorCloseDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'close';
+  }
+
+  export namespace ConnectorCloseDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedConnectInput {
+    connect_input: ConnectorConfluenceDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'confluence';
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorContentfulDiscriminatedConnectInput {
+    connect_input: ConnectorContentfulDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'contentful';
+  }
+
+  export namespace ConnectorContentfulDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorContentstackDiscriminatedConnectInput {
+    connect_input: ConnectorContentstackDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'contentstack';
+  }
+
+  export namespace ConnectorContentstackDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorCopperDiscriminatedConnectInput {
+    connect_input: ConnectorCopperDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'copper';
+  }
+
+  export namespace ConnectorCopperDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorCorosDiscriminatedConnectInput {
+    connect_input: ConnectorCorosDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'coros';
+  }
+
+  export namespace ConnectorCorosDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDatevDiscriminatedConnectInput {
+    connect_input: ConnectorDatevDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'datev';
+  }
+
+  export namespace ConnectorDatevDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDeelDiscriminatedConnectInput {
+    connect_input: ConnectorDeelDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'deel';
+  }
+
+  export namespace ConnectorDeelDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDialpadDiscriminatedConnectInput {
+    connect_input: ConnectorDialpadDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'dialpad';
+  }
+
+  export namespace ConnectorDialpadDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDigitaloceanDiscriminatedConnectInput {
+    connect_input: ConnectorDigitaloceanDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'digitalocean';
+  }
+
+  export namespace ConnectorDigitaloceanDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedConnectInput {
+    connect_input: ConnectorDiscordDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'discord';
+  }
+
+  export namespace ConnectorDiscordDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDocusignDiscriminatedConnectInput {
+    connect_input: ConnectorDocusignDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'docusign';
+  }
+
+  export namespace ConnectorDocusignDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorDropboxDiscriminatedConnectInput {
+    connect_input: ConnectorDropboxDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'dropbox';
+  }
+
+  export namespace ConnectorDropboxDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorEbayDiscriminatedConnectInput {
+    connect_input: ConnectorEbayDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'ebay';
+  }
+
+  export namespace ConnectorEbayDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorEgnyteDiscriminatedConnectInput {
+    connect_input: ConnectorEgnyteDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'egnyte';
+  }
+
+  export namespace ConnectorEgnyteDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorEnvoyDiscriminatedConnectInput {
+    connect_input: ConnectorEnvoyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'envoy';
+  }
+
+  export namespace ConnectorEnvoyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorEventbriteDiscriminatedConnectInput {
+    connect_input: ConnectorEventbriteDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'eventbrite';
+  }
+
+  export namespace ConnectorEventbriteDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorExistDiscriminatedConnectInput {
+    connect_input: ConnectorExistDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'exist';
+  }
+
+  export namespace ConnectorExistDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFacebookDiscriminatedConnectInput {
+    connect_input: ConnectorFacebookDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'facebook';
+  }
+
+  export namespace ConnectorFacebookDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFactorialDiscriminatedConnectInput {
+    connect_input: ConnectorFactorialDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'factorial';
+  }
+
+  export namespace ConnectorFactorialDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFigmaDiscriminatedConnectInput {
+    connect_input: ConnectorFigmaDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'figma';
+  }
+
+  export namespace ConnectorFigmaDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFitbitDiscriminatedConnectInput {
+    connect_input: ConnectorFitbitDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'fitbit';
+  }
+
+  export namespace ConnectorFitbitDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFortnoxDiscriminatedConnectInput {
+    connect_input: ConnectorFortnoxDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'fortnox';
+  }
+
+  export namespace ConnectorFortnoxDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFreshbooksDiscriminatedConnectInput {
+    connect_input: ConnectorFreshbooksDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'freshbooks';
+  }
+
+  export namespace ConnectorFreshbooksDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorFrontDiscriminatedConnectInput {
+    connect_input: ConnectorFrontDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'front';
+  }
+
+  export namespace ConnectorFrontDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedConnectInput {
+    connect_input: ConnectorGitHubDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'github';
+  }
+
+  export namespace ConnectorGitHubDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGitlabDiscriminatedConnectInput {
+    connect_input: ConnectorGitlabDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'gitlab';
+  }
+
+  export namespace ConnectorGitlabDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGongDiscriminatedConnectInput {
+    connect_input: ConnectorGongDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'gong';
+  }
+
+  export namespace ConnectorGongDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGoogleCalendarDiscriminatedConnectInput {
+    connect_input: ConnectorGoogleCalendarDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'google-calendar';
+  }
+
+  export namespace ConnectorGoogleCalendarDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGoogleDocsDiscriminatedConnectInput {
+    connect_input: ConnectorGoogleDocsDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'google-docs';
+  }
+
+  export namespace ConnectorGoogleDocsDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGoogleDriveDiscriminatedConnectInput {
+    connect_input: ConnectorGoogleDriveDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'google-drive';
+  }
+
+  export namespace ConnectorGoogleDriveDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGoogleMailDiscriminatedConnectInput {
+    connect_input: ConnectorGoogleMailDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'google-mail';
+  }
+
+  export namespace ConnectorGoogleMailDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGoogleSheetDiscriminatedConnectInput {
+    connect_input: ConnectorGoogleSheetDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'google-sheet';
+  }
+
+  export namespace ConnectorGoogleSheetDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGorgiasDiscriminatedConnectInput {
+    connect_input: ConnectorGorgiasDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'gorgias';
+  }
+
+  export namespace ConnectorGorgiasDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGrainDiscriminatedConnectInput {
+    connect_input: ConnectorGrainDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'grain';
+  }
+
+  export namespace ConnectorGrainDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGumroadDiscriminatedConnectInput {
+    connect_input: ConnectorGumroadDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'gumroad';
+  }
+
+  export namespace ConnectorGumroadDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorGustoDiscriminatedConnectInput {
+    connect_input: ConnectorGustoDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'gusto';
+  }
+
+  export namespace ConnectorGustoDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorHarvestDiscriminatedConnectInput {
+    connect_input: ConnectorHarvestDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'harvest';
+  }
+
+  export namespace ConnectorHarvestDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorHighlevelDiscriminatedConnectInput {
+    connect_input: ConnectorHighlevelDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'highlevel';
+  }
+
+  export namespace ConnectorHighlevelDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedConnectInput {
+    connect_input: ConnectorHubspotDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'hubspot';
+  }
+
+  export namespace ConnectorHubspotDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorInstagramDiscriminatedConnectInput {
+    connect_input: ConnectorInstagramDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'instagram';
+  }
+
+  export namespace ConnectorInstagramDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorIntercomDiscriminatedConnectInput {
+    connect_input: ConnectorIntercomDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'intercom';
+  }
+
+  export namespace ConnectorIntercomDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorJiraDiscriminatedConnectInput {
+    connect_input: ConnectorJiraDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'jira';
+  }
+
+  export namespace ConnectorJiraDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorKeapDiscriminatedConnectInput {
+    connect_input: ConnectorKeapDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'keap';
+  }
+
+  export namespace ConnectorKeapDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorLeverDiscriminatedConnectInput {
+    connect_input: ConnectorLeverDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'lever';
+  }
+
+  export namespace ConnectorLeverDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedConnectInput {
+    connect_input: ConnectorLinearDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'linear';
+  }
+
+  export namespace ConnectorLinearDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedConnectInput {
+    connect_input: ConnectorLinkedinDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'linkedin';
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorLinkhutDiscriminatedConnectInput {
+    connect_input: ConnectorLinkhutDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'linkhut';
+  }
+
+  export namespace ConnectorLinkhutDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorMailchimpDiscriminatedConnectInput {
+    connect_input: ConnectorMailchimpDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'mailchimp';
+  }
+
+  export namespace ConnectorMailchimpDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorMiroDiscriminatedConnectInput {
+    connect_input: ConnectorMiroDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'miro';
+  }
+
+  export namespace ConnectorMiroDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorMondayDiscriminatedConnectInput {
+    connect_input: ConnectorMondayDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'monday';
+  }
+
+  export namespace ConnectorMondayDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorMuralDiscriminatedConnectInput {
+    connect_input: ConnectorMuralDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'mural';
+  }
+
+  export namespace ConnectorMuralDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorNamelyDiscriminatedConnectInput {
+    connect_input: ConnectorNamelyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'namely';
+  }
+
+  export namespace ConnectorNamelyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorNationbuilderDiscriminatedConnectInput {
+    connect_input: ConnectorNationbuilderDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'nationbuilder';
+  }
+
+  export namespace ConnectorNationbuilderDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorNetsuiteDiscriminatedConnectInput {
+    connect_input: ConnectorNetsuiteDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'netsuite';
+  }
+
+  export namespace ConnectorNetsuiteDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedConnectInput {
+    connect_input: ConnectorNotionDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'notion';
+  }
+
+  export namespace ConnectorNotionDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorOdooDiscriminatedConnectInput {
+    connect_input: ConnectorOdooDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'odoo';
+  }
+
+  export namespace ConnectorOdooDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorOktaDiscriminatedConnectInput {
+    connect_input: ConnectorOktaDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'okta';
+  }
+
+  export namespace ConnectorOktaDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorOsuDiscriminatedConnectInput {
+    connect_input: ConnectorOsuDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'osu';
+  }
+
+  export namespace ConnectorOsuDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorOuraDiscriminatedConnectInput {
+    connect_input: ConnectorOuraDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'oura';
+  }
+
+  export namespace ConnectorOuraDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorOutreachDiscriminatedConnectInput {
+    connect_input: ConnectorOutreachDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'outreach';
+  }
+
+  export namespace ConnectorOutreachDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPagerdutyDiscriminatedConnectInput {
+    connect_input: ConnectorPagerdutyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'pagerduty';
+  }
+
+  export namespace ConnectorPagerdutyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPandadocDiscriminatedConnectInput {
+    connect_input: ConnectorPandadocDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'pandadoc';
+  }
+
+  export namespace ConnectorPandadocDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPayfitDiscriminatedConnectInput {
+    connect_input: ConnectorPayfitDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'payfit';
+  }
+
+  export namespace ConnectorPayfitDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPaypalDiscriminatedConnectInput {
+    connect_input: ConnectorPaypalDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'paypal';
+  }
+
+  export namespace ConnectorPaypalDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPennylaneDiscriminatedConnectInput {
+    connect_input: ConnectorPennylaneDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'pennylane';
+  }
+
+  export namespace ConnectorPennylaneDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPinterestDiscriminatedConnectInput {
+    connect_input: ConnectorPinterestDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'pinterest';
+  }
+
+  export namespace ConnectorPinterestDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPipedriveDiscriminatedConnectInput {
+    connect_input: ConnectorPipedriveDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'pipedrive';
+  }
+
+  export namespace ConnectorPipedriveDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorPodiumDiscriminatedConnectInput {
+    connect_input: ConnectorPodiumDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'podium';
+  }
+
+  export namespace ConnectorPodiumDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorProductboardDiscriminatedConnectInput {
+    connect_input: ConnectorProductboardDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'productboard';
+  }
+
+  export namespace ConnectorProductboardDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorQualtricsDiscriminatedConnectInput {
+    connect_input: ConnectorQualtricsDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'qualtrics';
+  }
+
+  export namespace ConnectorQualtricsDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedConnectInput {
+    connect_input: ConnectorQuickbooksDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'quickbooks';
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorRedditDiscriminatedConnectInput {
+    connect_input: ConnectorRedditDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'reddit';
+  }
+
+  export namespace ConnectorRedditDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSageDiscriminatedConnectInput {
+    connect_input: ConnectorSageDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'sage';
+  }
+
+  export namespace ConnectorSageDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedConnectInput {
+    connect_input: ConnectorSalesforceDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'salesforce';
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSalesloftDiscriminatedConnectInput {
+    connect_input: ConnectorSalesloftDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'salesloft';
+  }
+
+  export namespace ConnectorSalesloftDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSegmentDiscriminatedConnectInput {
+    connect_input: ConnectorSegmentDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'segment';
+  }
+
+  export namespace ConnectorSegmentDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorServicem8DiscriminatedConnectInput {
+    connect_input: ConnectorServicem8DiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'servicem8';
+  }
+
+  export namespace ConnectorServicem8DiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorServicenowDiscriminatedConnectInput {
+    connect_input: ConnectorServicenowDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'servicenow';
+  }
+
+  export namespace ConnectorServicenowDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSharepointDiscriminatedConnectInput {
+    connect_input: ConnectorSharepointDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'sharepoint';
+  }
+
+  export namespace ConnectorSharepointDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorShopifyDiscriminatedConnectInput {
+    connect_input: ConnectorShopifyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'shopify';
+  }
+
+  export namespace ConnectorShopifyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSignnowDiscriminatedConnectInput {
+    connect_input: ConnectorSignnowDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'signnow';
+  }
+
+  export namespace ConnectorSignnowDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedConnectInput {
+    connect_input: ConnectorSlackDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'slack';
+  }
+
+  export namespace ConnectorSlackDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSmartsheetDiscriminatedConnectInput {
+    connect_input: ConnectorSmartsheetDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'smartsheet';
+  }
+
+  export namespace ConnectorSmartsheetDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSnowflakeDiscriminatedConnectInput {
+    connect_input: ConnectorSnowflakeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'snowflake';
+  }
+
+  export namespace ConnectorSnowflakeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSpotifyDiscriminatedConnectInput {
+    connect_input: ConnectorSpotifyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'spotify';
+  }
+
+  export namespace ConnectorSpotifyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSquarespaceDiscriminatedConnectInput {
+    connect_input: ConnectorSquarespaceDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'squarespace';
+  }
+
+  export namespace ConnectorSquarespaceDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorSquareupDiscriminatedConnectInput {
+    connect_input: ConnectorSquareupDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'squareup';
+  }
+
+  export namespace ConnectorSquareupDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorStackexchangeDiscriminatedConnectInput {
+    connect_input: ConnectorStackexchangeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'stackexchange';
+  }
+
+  export namespace ConnectorStackexchangeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorStravaDiscriminatedConnectInput {
+    connect_input: ConnectorStravaDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'strava';
+  }
+
+  export namespace ConnectorStravaDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTeamworkDiscriminatedConnectInput {
+    connect_input: ConnectorTeamworkDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'teamwork';
+  }
+
+  export namespace ConnectorTeamworkDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTicktickDiscriminatedConnectInput {
+    connect_input: ConnectorTicktickDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'ticktick';
+  }
+
+  export namespace ConnectorTicktickDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTimelyDiscriminatedConnectInput {
+    connect_input: ConnectorTimelyDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'timely';
+  }
+
+  export namespace ConnectorTimelyDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTodoistDiscriminatedConnectInput {
+    connect_input: ConnectorTodoistDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'todoist';
+  }
+
+  export namespace ConnectorTodoistDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTremendousDiscriminatedConnectInput {
+    connect_input: ConnectorTremendousDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'tremendous';
+  }
+
+  export namespace ConnectorTremendousDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTsheetsteamDiscriminatedConnectInput {
+    connect_input: ConnectorTsheetsteamDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'tsheetsteam';
+  }
+
+  export namespace ConnectorTsheetsteamDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTumblrDiscriminatedConnectInput {
+    connect_input: ConnectorTumblrDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'tumblr';
+  }
+
+  export namespace ConnectorTumblrDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTwinfieldDiscriminatedConnectInput {
+    connect_input: ConnectorTwinfieldDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'twinfield';
+  }
+
+  export namespace ConnectorTwinfieldDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTwitchDiscriminatedConnectInput {
+    connect_input: ConnectorTwitchDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'twitch';
+  }
+
+  export namespace ConnectorTwitchDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTwitterDiscriminatedConnectInput {
+    connect_input: ConnectorTwitterDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'twitter';
+  }
+
+  export namespace ConnectorTwitterDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorTypeformDiscriminatedConnectInput {
+    connect_input: ConnectorTypeformDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'typeform';
+  }
+
+  export namespace ConnectorTypeformDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorUberDiscriminatedConnectInput {
+    connect_input: ConnectorUberDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'uber';
+  }
+
+  export namespace ConnectorUberDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorVimeoDiscriminatedConnectInput {
+    connect_input: ConnectorVimeoDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'vimeo';
+  }
+
+  export namespace ConnectorVimeoDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorWakatimeDiscriminatedConnectInput {
+    connect_input: ConnectorWakatimeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'wakatime';
+  }
+
+  export namespace ConnectorWakatimeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorWealthboxDiscriminatedConnectInput {
+    connect_input: ConnectorWealthboxDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'wealthbox';
+  }
+
+  export namespace ConnectorWealthboxDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorWebflowDiscriminatedConnectInput {
+    connect_input: ConnectorWebflowDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'webflow';
+  }
+
+  export namespace ConnectorWebflowDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorWhoopDiscriminatedConnectInput {
+    connect_input: ConnectorWhoopDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'whoop';
+  }
+
+  export namespace ConnectorWhoopDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorWordpressDiscriminatedConnectInput {
+    connect_input: ConnectorWordpressDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'wordpress';
+  }
+
+  export namespace ConnectorWordpressDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorWrikeDiscriminatedConnectInput {
+    connect_input: ConnectorWrikeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'wrike';
+  }
+
+  export namespace ConnectorWrikeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorXeroDiscriminatedConnectInput {
+    connect_input: ConnectorXeroDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'xero';
+  }
+
+  export namespace ConnectorXeroDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorYahooDiscriminatedConnectInput {
+    connect_input: ConnectorYahooDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'yahoo';
+  }
+
+  export namespace ConnectorYahooDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorYandexDiscriminatedConnectInput {
+    connect_input: ConnectorYandexDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'yandex';
+  }
+
+  export namespace ConnectorYandexDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorZapierDiscriminatedConnectInput {
+    connect_input: ConnectorZapierDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'zapier';
+  }
+
+  export namespace ConnectorZapierDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorZendeskDiscriminatedConnectInput {
+    connect_input: ConnectorZendeskDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'zendesk';
+  }
+
+  export namespace ConnectorZendeskDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorZenefitsDiscriminatedConnectInput {
+    connect_input: ConnectorZenefitsDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'zenefits';
+  }
+
+  export namespace ConnectorZenefitsDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorZohoDeskDiscriminatedConnectInput {
+    connect_input: ConnectorZohoDeskDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'zoho-desk';
+  }
+
+  export namespace ConnectorZohoDeskDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorZohoDiscriminatedConnectInput {
+    connect_input: ConnectorZohoDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'zoho';
+  }
+
+  export namespace ConnectorZohoDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorZoomDiscriminatedConnectInput {
+    connect_input: ConnectorZoomDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'zoom';
+  }
+
+  export namespace ConnectorZoomDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * URL to take user to for approval
+       */
+      authorization_url: string;
+
+      /**
+       * Code verifier for PKCE
+       */
+      code_verifier?: string;
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'airtable';
+  }
+
+  export interface ConnectorApolloDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'apollo';
+  }
+
+  export interface ConnectorBrexDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'brex';
+  }
+
+  export interface ConnectorCodaDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'coda';
+  }
+
+  export interface ConnectorFinchDiscriminatedConnectInput {
+    connect_input: ConnectorFinchDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'finch';
+  }
+
+  export namespace ConnectorFinchDiscriminatedConnectInput {
+    export interface ConnectInput {
+      client_id: string;
+
+      products: Array<
+        | 'company'
+        | 'directory'
+        | 'individual'
+        | 'ssn'
+        | 'employment'
+        | 'payment'
+        | 'pay_statement'
+        | 'benefits'
+      >;
+    }
+  }
+
+  export interface ConnectorFirebaseDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'firebase';
+  }
+
+  export interface ConnectorForeceiptDiscriminatedConnectInput {
+    connect_input: ConnectorForeceiptDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'foreceipt';
+  }
+
+  export namespace ConnectorForeceiptDiscriminatedConnectInput {
+    export interface ConnectInput {
+      envName: 'staging' | 'production';
+
+      _id?: unknown;
+
+      credentials?: unknown;
+    }
+  }
+
+  export interface ConnectorGreenhouseDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'greenhouse';
+  }
+
+  export interface ConnectorHeronDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'heron';
+  }
+
+  export interface ConnectorLunchmoneyDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'lunchmoney';
+  }
+
+  export interface ConnectorMercuryDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'mercury';
+  }
+
+  export interface ConnectorMergeDiscriminatedConnectInput {
+    connect_input: ConnectorMergeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'merge';
+  }
+
+  export namespace ConnectorMergeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      link_token: string;
+    }
+  }
+
+  export interface ConnectorMootaDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'moota';
+  }
+
+  export interface ConnectorOnebrickDiscriminatedConnectInput {
+    connect_input: ConnectorOnebrickDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'onebrick';
+  }
+
+  export namespace ConnectorOnebrickDiscriminatedConnectInput {
+    export interface ConnectInput {
+      publicToken?: string | null;
+
+      redirect_url?: string | null;
+    }
+  }
+
+  export interface ConnectorOpenledgerDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'openledger';
+  }
+
+  export interface ConnectorPlaidDiscriminatedConnectInput {
+    connect_input:
+      | ConnectorPlaidDiscriminatedConnectInput.LinkToken
+      | ConnectorPlaidDiscriminatedConnectInput.PublicToken;
+
+    connector_name: 'plaid';
+  }
+
+  export namespace ConnectorPlaidDiscriminatedConnectInput {
+    export interface LinkToken {
+      link_token: string;
+    }
+
+    export interface PublicToken {
+      public_token: string;
+    }
+  }
+
+  export interface ConnectorPostgresDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'postgres';
+  }
+
+  export interface ConnectorRampDiscriminatedConnectInput {
+    connect_input: ConnectorRampDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'ramp';
+  }
+
+  export namespace ConnectorRampDiscriminatedConnectInput {
+    export interface ConnectInput {
+      accessToken?: string | null;
+    }
+  }
+
+  export interface ConnectorSaltedgeDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'saltedge';
+  }
+
+  export interface ConnectorSharepointOnpremDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'sharepoint-onprem';
+  }
+
+  export interface ConnectorSlackAgentDiscriminatedConnectInput {
+    connect_input: ConnectorSlackAgentDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'slack-agent';
+  }
+
+  export namespace ConnectorSlackAgentDiscriminatedConnectInput {
+    export interface ConnectInput {
+      /**
+       * Configuration URL - https://api.slack.com/apps/A1234567890/oauth...
+       */
+      configuration_url: string;
+    }
+  }
+
+  export interface ConnectorSplitwiseDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'splitwise';
+  }
+
+  export interface ConnectorStripeDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'stripe';
+  }
+
+  export interface ConnectorTellerDiscriminatedConnectInput {
+    connect_input: ConnectorTellerDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'teller';
+  }
+
+  export namespace ConnectorTellerDiscriminatedConnectInput {
+    export interface ConnectInput {
+      applicationId: string;
+
+      userToken?: string | null;
+    }
+  }
+
+  export interface ConnectorTogglDiscriminatedConnectInput {
+    connect_input: ConnectorTogglDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'toggl';
+  }
+
+  export namespace ConnectorTogglDiscriminatedConnectInput {
+    export interface ConnectInput {
+      apiToken: string;
+    }
+  }
+
+  export interface ConnectorTwentyDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'twenty';
+  }
+
+  export interface ConnectorVenmoDiscriminatedConnectInput {
+    connect_input: unknown;
+
+    connector_name: 'venmo';
+  }
+
+  export interface ConnectorWiseDiscriminatedConnectInput {
+    connect_input: ConnectorWiseDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'wise';
+  }
+
+  export namespace ConnectorWiseDiscriminatedConnectInput {
+    export interface ConnectInput {
+      clientId: string;
+
+      envName: 'sandbox' | 'live';
+
+      redirectUri: string;
+    }
+  }
+
+  export interface ConnectorYodleeDiscriminatedConnectInput {
+    connect_input: ConnectorYodleeDiscriminatedConnectInput.ConnectInput;
+
+    connector_name: 'yodlee';
+  }
+
+  export namespace ConnectorYodleeDiscriminatedConnectInput {
+    export interface ConnectInput {
+      accessToken: ConnectInput.AccessToken;
+
+      envName: 'sandbox' | 'development' | 'production';
+    }
+
+    export namespace ConnectInput {
+      export interface AccessToken {
+        accessToken: string;
+
+        expiresIn: number;
+
+        issuedAt: string;
+      }
+    }
+  }
+}
 
 export type UpsertConnnectorConfigResponse =
   | UpsertConnnectorConfigResponse.ConnectorAcceloDiscriminatedConnectorConfig
@@ -91275,16 +94581,6 @@ export namespace UpsertConnnectorConfigResponse {
       challenge_response: string;
 
       /**
-       * Initial event subscription URL
-       */
-      event_subscription_url: string;
-
-      /**
-       * Service token - xoxb-...
-       */
-      service_token: string;
-
-      /**
        * App ID - A1234567890
        */
       app_id?: string;
@@ -91300,9 +94596,19 @@ export namespace UpsertConnnectorConfigResponse {
       client_secret?: string;
 
       /**
+       * Initial event subscription URL
+       */
+      event_subscription_url?: string;
+
+      /**
        * Initial OAuth URL - https://slack.com/oauth/v2/authorize?...
        */
       initial_oauth_url?: string;
+
+      /**
+       * Service token - xoxb-...
+       */
+      service_token?: string;
 
       /**
        * Signing secret - abc123...
@@ -102323,6 +105629,2533 @@ export interface PreConfigureConnectorParams {
     | 'zoom';
 }
 
+export interface PreConnectParams {
+  /**
+   * Must correspond to data.connector_name. Technically id should imply
+   * connector_name already but there is no way to specify a discriminated union with
+   * id alone.
+   */
+  connector_config_id: string;
+
+  discriminated_data:
+    | PreConnectParams.ConnectorAcceloDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAcmeApikeyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAcmeOauth2DiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAdobeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAdyenDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAircallDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAmazonDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorApaleoDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAsanaDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAttioDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAuth0DiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAutodeskDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAwsDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBamboohrDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBasecampDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBattlenetDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBigcommerceDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBitbucketDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBitlyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBlackbaudDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBoldsignDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBoxDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBraintreeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorCalendlyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorClickupDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorCloseDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorConfluenceDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorContentfulDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorContentstackDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorCopperDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorCorosDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDatevDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDeelDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDialpadDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDigitaloceanDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDiscordDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDocusignDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorDropboxDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorEbayDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorEgnyteDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorEnvoyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorEventbriteDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorExistDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFacebookDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFactorialDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFigmaDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFitbitDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFortnoxDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFreshbooksDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFrontDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGitHubDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGitlabDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGongDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGoogleCalendarDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGoogleDocsDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGoogleDriveDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGoogleMailDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGoogleSheetDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGorgiasDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGrainDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGumroadDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGustoDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorHarvestDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorHighlevelDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorHubspotDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorInstagramDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorIntercomDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorJiraDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorKeapDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorLeverDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorLinearDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorLinkedinDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorLinkhutDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMailchimpDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMiroDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMondayDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMuralDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorNamelyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorNationbuilderDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorNetsuiteDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorNotionDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOdooDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOktaDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOsuDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOuraDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOutreachDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPagerdutyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPandadocDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPayfitDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPaypalDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPennylaneDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPinterestDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPipedriveDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPodiumDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorProductboardDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorQualtricsDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorQuickbooksDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorRedditDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSageDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSalesforceDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSalesloftDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSegmentDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorServicem8DiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorServicenowDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSharepointDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorShopifyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSignnowDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSlackDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSmartsheetDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSnowflakeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSpotifyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSquarespaceDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSquareupDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorStackexchangeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorStravaDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTeamworkDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTicktickDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTimelyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTodoistDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTremendousDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTsheetsteamDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTumblrDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTwinfieldDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTwitchDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTwitterDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTypeformDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorUberDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorVimeoDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWakatimeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWealthboxDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWebflowDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWhoopDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWordpressDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWrikeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorXeroDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorYahooDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorYandexDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorZapierDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorZendeskDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorZenefitsDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorZohoDeskDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorZohoDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorZoomDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorAirtableDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorApolloDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorBrexDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorCodaDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFinchDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorFirebaseDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorForeceiptDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorGreenhouseDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorHeronDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorLunchmoneyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMercuryDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMergeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorMootaDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOnebrickDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorOpenledgerDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPlaidDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorPostgresDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorRampDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSaltedgeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSharepointOnpremDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSlackAgentDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorSplitwiseDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorStripeDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTellerDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTogglDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorTwentyDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorVenmoDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorWiseDiscriminatedPreConnectInput
+    | PreConnectParams.ConnectorYodleeDiscriminatedPreConnectInput;
+
+  options: PreConnectParams.Options;
+}
+
+export namespace PreConnectParams {
+  export interface ConnectorAcceloDiscriminatedPreConnectInput {
+    connector_name: 'accelo';
+
+    pre_connect_input: ConnectorAcceloDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAcceloDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAcmeApikeyDiscriminatedPreConnectInput {
+    connector_name: 'acme-apikey';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorAcmeOauth2DiscriminatedPreConnectInput {
+    connector_name: 'acme-oauth2';
+
+    pre_connect_input: ConnectorAcmeOauth2DiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAcmeOauth2DiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAdobeDiscriminatedPreConnectInput {
+    connector_name: 'adobe';
+
+    pre_connect_input: ConnectorAdobeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAdobeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAdyenDiscriminatedPreConnectInput {
+    connector_name: 'adyen';
+
+    pre_connect_input: ConnectorAdyenDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAdyenDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAircallDiscriminatedPreConnectInput {
+    connector_name: 'aircall';
+
+    pre_connect_input: ConnectorAircallDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAircallDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAmazonDiscriminatedPreConnectInput {
+    connector_name: 'amazon';
+
+    pre_connect_input: ConnectorAmazonDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAmazonDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorApaleoDiscriminatedPreConnectInput {
+    connector_name: 'apaleo';
+
+    pre_connect_input: ConnectorApaleoDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorApaleoDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAsanaDiscriminatedPreConnectInput {
+    connector_name: 'asana';
+
+    pre_connect_input: ConnectorAsanaDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAsanaDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAttioDiscriminatedPreConnectInput {
+    connector_name: 'attio';
+
+    pre_connect_input: ConnectorAttioDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAttioDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAuth0DiscriminatedPreConnectInput {
+    connector_name: 'auth0';
+
+    pre_connect_input: ConnectorAuth0DiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAuth0DiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAutodeskDiscriminatedPreConnectInput {
+    connector_name: 'autodesk';
+
+    pre_connect_input: ConnectorAutodeskDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAutodeskDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAwsDiscriminatedPreConnectInput {
+    connector_name: 'aws';
+
+    pre_connect_input: ConnectorAwsDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorAwsDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBamboohrDiscriminatedPreConnectInput {
+    connector_name: 'bamboohr';
+
+    pre_connect_input: ConnectorBamboohrDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBamboohrDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBasecampDiscriminatedPreConnectInput {
+    connector_name: 'basecamp';
+
+    pre_connect_input: ConnectorBasecampDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBasecampDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBattlenetDiscriminatedPreConnectInput {
+    connector_name: 'battlenet';
+
+    pre_connect_input: ConnectorBattlenetDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBattlenetDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBigcommerceDiscriminatedPreConnectInput {
+    connector_name: 'bigcommerce';
+
+    pre_connect_input: ConnectorBigcommerceDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBigcommerceDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBitbucketDiscriminatedPreConnectInput {
+    connector_name: 'bitbucket';
+
+    pre_connect_input: ConnectorBitbucketDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBitbucketDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBitlyDiscriminatedPreConnectInput {
+    connector_name: 'bitly';
+
+    pre_connect_input: ConnectorBitlyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBitlyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBlackbaudDiscriminatedPreConnectInput {
+    connector_name: 'blackbaud';
+
+    pre_connect_input: ConnectorBlackbaudDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBlackbaudDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBoldsignDiscriminatedPreConnectInput {
+    connector_name: 'boldsign';
+
+    pre_connect_input: ConnectorBoldsignDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBoldsignDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBoxDiscriminatedPreConnectInput {
+    connector_name: 'box';
+
+    pre_connect_input: ConnectorBoxDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBoxDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorBraintreeDiscriminatedPreConnectInput {
+    connector_name: 'braintree';
+
+    pre_connect_input: ConnectorBraintreeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorBraintreeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorCalendlyDiscriminatedPreConnectInput {
+    connector_name: 'calendly';
+
+    pre_connect_input: ConnectorCalendlyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorCalendlyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorClickupDiscriminatedPreConnectInput {
+    connector_name: 'clickup';
+
+    pre_connect_input: ConnectorClickupDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorClickupDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorCloseDiscriminatedPreConnectInput {
+    connector_name: 'close';
+
+    pre_connect_input: ConnectorCloseDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorCloseDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorConfluenceDiscriminatedPreConnectInput {
+    connector_name: 'confluence';
+
+    pre_connect_input: ConnectorConfluenceDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorConfluenceDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorContentfulDiscriminatedPreConnectInput {
+    connector_name: 'contentful';
+
+    pre_connect_input: ConnectorContentfulDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorContentfulDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorContentstackDiscriminatedPreConnectInput {
+    connector_name: 'contentstack';
+
+    pre_connect_input: ConnectorContentstackDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorContentstackDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorCopperDiscriminatedPreConnectInput {
+    connector_name: 'copper';
+
+    pre_connect_input: ConnectorCopperDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorCopperDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorCorosDiscriminatedPreConnectInput {
+    connector_name: 'coros';
+
+    pre_connect_input: ConnectorCorosDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorCorosDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDatevDiscriminatedPreConnectInput {
+    connector_name: 'datev';
+
+    pre_connect_input: ConnectorDatevDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDatevDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDeelDiscriminatedPreConnectInput {
+    connector_name: 'deel';
+
+    pre_connect_input: ConnectorDeelDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDeelDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDialpadDiscriminatedPreConnectInput {
+    connector_name: 'dialpad';
+
+    pre_connect_input: ConnectorDialpadDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDialpadDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDigitaloceanDiscriminatedPreConnectInput {
+    connector_name: 'digitalocean';
+
+    pre_connect_input: ConnectorDigitaloceanDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDigitaloceanDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDiscordDiscriminatedPreConnectInput {
+    connector_name: 'discord';
+
+    pre_connect_input: ConnectorDiscordDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDiscordDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDocusignDiscriminatedPreConnectInput {
+    connector_name: 'docusign';
+
+    pre_connect_input: ConnectorDocusignDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDocusignDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorDropboxDiscriminatedPreConnectInput {
+    connector_name: 'dropbox';
+
+    pre_connect_input: ConnectorDropboxDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorDropboxDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorEbayDiscriminatedPreConnectInput {
+    connector_name: 'ebay';
+
+    pre_connect_input: ConnectorEbayDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorEbayDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorEgnyteDiscriminatedPreConnectInput {
+    connector_name: 'egnyte';
+
+    pre_connect_input: ConnectorEgnyteDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorEgnyteDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorEnvoyDiscriminatedPreConnectInput {
+    connector_name: 'envoy';
+
+    pre_connect_input: ConnectorEnvoyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorEnvoyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorEventbriteDiscriminatedPreConnectInput {
+    connector_name: 'eventbrite';
+
+    pre_connect_input: ConnectorEventbriteDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorEventbriteDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorExistDiscriminatedPreConnectInput {
+    connector_name: 'exist';
+
+    pre_connect_input: ConnectorExistDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorExistDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFacebookDiscriminatedPreConnectInput {
+    connector_name: 'facebook';
+
+    pre_connect_input: ConnectorFacebookDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFacebookDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFactorialDiscriminatedPreConnectInput {
+    connector_name: 'factorial';
+
+    pre_connect_input: ConnectorFactorialDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFactorialDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFigmaDiscriminatedPreConnectInput {
+    connector_name: 'figma';
+
+    pre_connect_input: ConnectorFigmaDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFigmaDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFitbitDiscriminatedPreConnectInput {
+    connector_name: 'fitbit';
+
+    pre_connect_input: ConnectorFitbitDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFitbitDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFortnoxDiscriminatedPreConnectInput {
+    connector_name: 'fortnox';
+
+    pre_connect_input: ConnectorFortnoxDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFortnoxDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFreshbooksDiscriminatedPreConnectInput {
+    connector_name: 'freshbooks';
+
+    pre_connect_input: ConnectorFreshbooksDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFreshbooksDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorFrontDiscriminatedPreConnectInput {
+    connector_name: 'front';
+
+    pre_connect_input: ConnectorFrontDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFrontDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGitHubDiscriminatedPreConnectInput {
+    connector_name: 'github';
+
+    pre_connect_input: ConnectorGitHubDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGitHubDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGitlabDiscriminatedPreConnectInput {
+    connector_name: 'gitlab';
+
+    pre_connect_input: ConnectorGitlabDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGitlabDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGongDiscriminatedPreConnectInput {
+    connector_name: 'gong';
+
+    pre_connect_input: ConnectorGongDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGongDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGoogleCalendarDiscriminatedPreConnectInput {
+    connector_name: 'google-calendar';
+
+    pre_connect_input: ConnectorGoogleCalendarDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGoogleCalendarDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGoogleDocsDiscriminatedPreConnectInput {
+    connector_name: 'google-docs';
+
+    pre_connect_input: ConnectorGoogleDocsDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGoogleDocsDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGoogleDriveDiscriminatedPreConnectInput {
+    connector_name: 'google-drive';
+
+    pre_connect_input: ConnectorGoogleDriveDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGoogleDriveDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGoogleMailDiscriminatedPreConnectInput {
+    connector_name: 'google-mail';
+
+    pre_connect_input: ConnectorGoogleMailDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGoogleMailDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGoogleSheetDiscriminatedPreConnectInput {
+    connector_name: 'google-sheet';
+
+    pre_connect_input: ConnectorGoogleSheetDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGoogleSheetDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGorgiasDiscriminatedPreConnectInput {
+    connector_name: 'gorgias';
+
+    pre_connect_input: ConnectorGorgiasDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGorgiasDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGrainDiscriminatedPreConnectInput {
+    connector_name: 'grain';
+
+    pre_connect_input: ConnectorGrainDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGrainDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGumroadDiscriminatedPreConnectInput {
+    connector_name: 'gumroad';
+
+    pre_connect_input: ConnectorGumroadDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGumroadDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorGustoDiscriminatedPreConnectInput {
+    connector_name: 'gusto';
+
+    pre_connect_input: ConnectorGustoDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorGustoDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorHarvestDiscriminatedPreConnectInput {
+    connector_name: 'harvest';
+
+    pre_connect_input: ConnectorHarvestDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorHarvestDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorHighlevelDiscriminatedPreConnectInput {
+    connector_name: 'highlevel';
+
+    pre_connect_input: ConnectorHighlevelDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorHighlevelDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorHubspotDiscriminatedPreConnectInput {
+    connector_name: 'hubspot';
+
+    pre_connect_input: ConnectorHubspotDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorHubspotDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorInstagramDiscriminatedPreConnectInput {
+    connector_name: 'instagram';
+
+    pre_connect_input: ConnectorInstagramDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorInstagramDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorIntercomDiscriminatedPreConnectInput {
+    connector_name: 'intercom';
+
+    pre_connect_input: ConnectorIntercomDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorIntercomDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorJiraDiscriminatedPreConnectInput {
+    connector_name: 'jira';
+
+    pre_connect_input: ConnectorJiraDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorJiraDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorKeapDiscriminatedPreConnectInput {
+    connector_name: 'keap';
+
+    pre_connect_input: ConnectorKeapDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorKeapDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorLeverDiscriminatedPreConnectInput {
+    connector_name: 'lever';
+
+    pre_connect_input: ConnectorLeverDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorLeverDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorLinearDiscriminatedPreConnectInput {
+    connector_name: 'linear';
+
+    pre_connect_input: ConnectorLinearDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorLinearDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorLinkedinDiscriminatedPreConnectInput {
+    connector_name: 'linkedin';
+
+    pre_connect_input: ConnectorLinkedinDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorLinkedinDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorLinkhutDiscriminatedPreConnectInput {
+    connector_name: 'linkhut';
+
+    pre_connect_input: ConnectorLinkhutDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorLinkhutDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorMailchimpDiscriminatedPreConnectInput {
+    connector_name: 'mailchimp';
+
+    pre_connect_input: ConnectorMailchimpDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorMailchimpDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorMiroDiscriminatedPreConnectInput {
+    connector_name: 'miro';
+
+    pre_connect_input: ConnectorMiroDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorMiroDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorMondayDiscriminatedPreConnectInput {
+    connector_name: 'monday';
+
+    pre_connect_input: ConnectorMondayDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorMondayDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorMuralDiscriminatedPreConnectInput {
+    connector_name: 'mural';
+
+    pre_connect_input: ConnectorMuralDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorMuralDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorNamelyDiscriminatedPreConnectInput {
+    connector_name: 'namely';
+
+    pre_connect_input: ConnectorNamelyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorNamelyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorNationbuilderDiscriminatedPreConnectInput {
+    connector_name: 'nationbuilder';
+
+    pre_connect_input: ConnectorNationbuilderDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorNationbuilderDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorNetsuiteDiscriminatedPreConnectInput {
+    connector_name: 'netsuite';
+
+    pre_connect_input: ConnectorNetsuiteDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorNetsuiteDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorNotionDiscriminatedPreConnectInput {
+    connector_name: 'notion';
+
+    pre_connect_input: ConnectorNotionDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorNotionDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorOdooDiscriminatedPreConnectInput {
+    connector_name: 'odoo';
+
+    pre_connect_input: ConnectorOdooDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorOdooDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorOktaDiscriminatedPreConnectInput {
+    connector_name: 'okta';
+
+    pre_connect_input: ConnectorOktaDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorOktaDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorOsuDiscriminatedPreConnectInput {
+    connector_name: 'osu';
+
+    pre_connect_input: ConnectorOsuDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorOsuDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorOuraDiscriminatedPreConnectInput {
+    connector_name: 'oura';
+
+    pre_connect_input: ConnectorOuraDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorOuraDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorOutreachDiscriminatedPreConnectInput {
+    connector_name: 'outreach';
+
+    pre_connect_input: ConnectorOutreachDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorOutreachDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPagerdutyDiscriminatedPreConnectInput {
+    connector_name: 'pagerduty';
+
+    pre_connect_input: ConnectorPagerdutyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPagerdutyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPandadocDiscriminatedPreConnectInput {
+    connector_name: 'pandadoc';
+
+    pre_connect_input: ConnectorPandadocDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPandadocDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPayfitDiscriminatedPreConnectInput {
+    connector_name: 'payfit';
+
+    pre_connect_input: ConnectorPayfitDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPayfitDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPaypalDiscriminatedPreConnectInput {
+    connector_name: 'paypal';
+
+    pre_connect_input: ConnectorPaypalDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPaypalDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPennylaneDiscriminatedPreConnectInput {
+    connector_name: 'pennylane';
+
+    pre_connect_input: ConnectorPennylaneDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPennylaneDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPinterestDiscriminatedPreConnectInput {
+    connector_name: 'pinterest';
+
+    pre_connect_input: ConnectorPinterestDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPinterestDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPipedriveDiscriminatedPreConnectInput {
+    connector_name: 'pipedrive';
+
+    pre_connect_input: ConnectorPipedriveDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPipedriveDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorPodiumDiscriminatedPreConnectInput {
+    connector_name: 'podium';
+
+    pre_connect_input: ConnectorPodiumDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPodiumDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorProductboardDiscriminatedPreConnectInput {
+    connector_name: 'productboard';
+
+    pre_connect_input: ConnectorProductboardDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorProductboardDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorQualtricsDiscriminatedPreConnectInput {
+    connector_name: 'qualtrics';
+
+    pre_connect_input: ConnectorQualtricsDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorQualtricsDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorQuickbooksDiscriminatedPreConnectInput {
+    connector_name: 'quickbooks';
+
+    pre_connect_input: ConnectorQuickbooksDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorQuickbooksDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorRedditDiscriminatedPreConnectInput {
+    connector_name: 'reddit';
+
+    pre_connect_input: ConnectorRedditDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorRedditDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSageDiscriminatedPreConnectInput {
+    connector_name: 'sage';
+
+    pre_connect_input: ConnectorSageDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSageDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSalesforceDiscriminatedPreConnectInput {
+    connector_name: 'salesforce';
+
+    pre_connect_input: ConnectorSalesforceDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSalesforceDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSalesloftDiscriminatedPreConnectInput {
+    connector_name: 'salesloft';
+
+    pre_connect_input: ConnectorSalesloftDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSalesloftDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSegmentDiscriminatedPreConnectInput {
+    connector_name: 'segment';
+
+    pre_connect_input: ConnectorSegmentDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSegmentDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorServicem8DiscriminatedPreConnectInput {
+    connector_name: 'servicem8';
+
+    pre_connect_input: ConnectorServicem8DiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorServicem8DiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorServicenowDiscriminatedPreConnectInput {
+    connector_name: 'servicenow';
+
+    pre_connect_input: ConnectorServicenowDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorServicenowDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSharepointDiscriminatedPreConnectInput {
+    connector_name: 'sharepoint';
+
+    pre_connect_input: ConnectorSharepointDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSharepointDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorShopifyDiscriminatedPreConnectInput {
+    connector_name: 'shopify';
+
+    pre_connect_input: ConnectorShopifyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorShopifyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSignnowDiscriminatedPreConnectInput {
+    connector_name: 'signnow';
+
+    pre_connect_input: ConnectorSignnowDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSignnowDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSlackDiscriminatedPreConnectInput {
+    connector_name: 'slack';
+
+    pre_connect_input: ConnectorSlackDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSlackDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSmartsheetDiscriminatedPreConnectInput {
+    connector_name: 'smartsheet';
+
+    pre_connect_input: ConnectorSmartsheetDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSmartsheetDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSnowflakeDiscriminatedPreConnectInput {
+    connector_name: 'snowflake';
+
+    pre_connect_input: ConnectorSnowflakeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSnowflakeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSpotifyDiscriminatedPreConnectInput {
+    connector_name: 'spotify';
+
+    pre_connect_input: ConnectorSpotifyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSpotifyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSquarespaceDiscriminatedPreConnectInput {
+    connector_name: 'squarespace';
+
+    pre_connect_input: ConnectorSquarespaceDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSquarespaceDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorSquareupDiscriminatedPreConnectInput {
+    connector_name: 'squareup';
+
+    pre_connect_input: ConnectorSquareupDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorSquareupDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorStackexchangeDiscriminatedPreConnectInput {
+    connector_name: 'stackexchange';
+
+    pre_connect_input: ConnectorStackexchangeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorStackexchangeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorStravaDiscriminatedPreConnectInput {
+    connector_name: 'strava';
+
+    pre_connect_input: ConnectorStravaDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorStravaDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTeamworkDiscriminatedPreConnectInput {
+    connector_name: 'teamwork';
+
+    pre_connect_input: ConnectorTeamworkDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTeamworkDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTicktickDiscriminatedPreConnectInput {
+    connector_name: 'ticktick';
+
+    pre_connect_input: ConnectorTicktickDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTicktickDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTimelyDiscriminatedPreConnectInput {
+    connector_name: 'timely';
+
+    pre_connect_input: ConnectorTimelyDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTimelyDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTodoistDiscriminatedPreConnectInput {
+    connector_name: 'todoist';
+
+    pre_connect_input: ConnectorTodoistDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTodoistDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTremendousDiscriminatedPreConnectInput {
+    connector_name: 'tremendous';
+
+    pre_connect_input: ConnectorTremendousDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTremendousDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTsheetsteamDiscriminatedPreConnectInput {
+    connector_name: 'tsheetsteam';
+
+    pre_connect_input: ConnectorTsheetsteamDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTsheetsteamDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTumblrDiscriminatedPreConnectInput {
+    connector_name: 'tumblr';
+
+    pre_connect_input: ConnectorTumblrDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTumblrDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTwinfieldDiscriminatedPreConnectInput {
+    connector_name: 'twinfield';
+
+    pre_connect_input: ConnectorTwinfieldDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTwinfieldDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTwitchDiscriminatedPreConnectInput {
+    connector_name: 'twitch';
+
+    pre_connect_input: ConnectorTwitchDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTwitchDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTwitterDiscriminatedPreConnectInput {
+    connector_name: 'twitter';
+
+    pre_connect_input: ConnectorTwitterDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTwitterDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorTypeformDiscriminatedPreConnectInput {
+    connector_name: 'typeform';
+
+    pre_connect_input: ConnectorTypeformDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorTypeformDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorUberDiscriminatedPreConnectInput {
+    connector_name: 'uber';
+
+    pre_connect_input: ConnectorUberDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorUberDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorVimeoDiscriminatedPreConnectInput {
+    connector_name: 'vimeo';
+
+    pre_connect_input: ConnectorVimeoDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorVimeoDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorWakatimeDiscriminatedPreConnectInput {
+    connector_name: 'wakatime';
+
+    pre_connect_input: ConnectorWakatimeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorWakatimeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorWealthboxDiscriminatedPreConnectInput {
+    connector_name: 'wealthbox';
+
+    pre_connect_input: ConnectorWealthboxDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorWealthboxDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorWebflowDiscriminatedPreConnectInput {
+    connector_name: 'webflow';
+
+    pre_connect_input: ConnectorWebflowDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorWebflowDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorWhoopDiscriminatedPreConnectInput {
+    connector_name: 'whoop';
+
+    pre_connect_input: ConnectorWhoopDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorWhoopDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorWordpressDiscriminatedPreConnectInput {
+    connector_name: 'wordpress';
+
+    pre_connect_input: ConnectorWordpressDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorWordpressDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorWrikeDiscriminatedPreConnectInput {
+    connector_name: 'wrike';
+
+    pre_connect_input: ConnectorWrikeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorWrikeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorXeroDiscriminatedPreConnectInput {
+    connector_name: 'xero';
+
+    pre_connect_input: ConnectorXeroDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorXeroDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorYahooDiscriminatedPreConnectInput {
+    connector_name: 'yahoo';
+
+    pre_connect_input: ConnectorYahooDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorYahooDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorYandexDiscriminatedPreConnectInput {
+    connector_name: 'yandex';
+
+    pre_connect_input: ConnectorYandexDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorYandexDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorZapierDiscriminatedPreConnectInput {
+    connector_name: 'zapier';
+
+    pre_connect_input: ConnectorZapierDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorZapierDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorZendeskDiscriminatedPreConnectInput {
+    connector_name: 'zendesk';
+
+    pre_connect_input: ConnectorZendeskDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorZendeskDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorZenefitsDiscriminatedPreConnectInput {
+    connector_name: 'zenefits';
+
+    pre_connect_input: ConnectorZenefitsDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorZenefitsDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorZohoDeskDiscriminatedPreConnectInput {
+    connector_name: 'zoho-desk';
+
+    pre_connect_input: ConnectorZohoDeskDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorZohoDeskDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorZohoDiscriminatedPreConnectInput {
+    connector_name: 'zoho';
+
+    pre_connect_input: ConnectorZohoDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorZohoDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorZoomDiscriminatedPreConnectInput {
+    connector_name: 'zoom';
+
+    pre_connect_input: ConnectorZoomDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorZoomDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      /**
+       * In case of re-connecting, id of the existing connection
+       */
+      connection_id?: string;
+    }
+  }
+
+  export interface ConnectorAirtableDiscriminatedPreConnectInput {
+    connector_name: 'airtable';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorApolloDiscriminatedPreConnectInput {
+    connector_name: 'apollo';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorBrexDiscriminatedPreConnectInput {
+    connector_name: 'brex';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorCodaDiscriminatedPreConnectInput {
+    connector_name: 'coda';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorFinchDiscriminatedPreConnectInput {
+    connector_name: 'finch';
+
+    pre_connect_input: ConnectorFinchDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorFinchDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      state?: string;
+    }
+  }
+
+  export interface ConnectorFirebaseDiscriminatedPreConnectInput {
+    connector_name: 'firebase';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorForeceiptDiscriminatedPreConnectInput {
+    connector_name: 'foreceipt';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorGreenhouseDiscriminatedPreConnectInput {
+    connector_name: 'greenhouse';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorHeronDiscriminatedPreConnectInput {
+    connector_name: 'heron';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorLunchmoneyDiscriminatedPreConnectInput {
+    connector_name: 'lunchmoney';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorMercuryDiscriminatedPreConnectInput {
+    connector_name: 'mercury';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorMergeDiscriminatedPreConnectInput {
+    connector_name: 'merge';
+
+    pre_connect_input: ConnectorMergeDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorMergeDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      categories: Array<unknown>;
+
+      customer_email_address?: string;
+
+      customer_organization_name?: string;
+    }
+  }
+
+  export interface ConnectorMootaDiscriminatedPreConnectInput {
+    connector_name: 'moota';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorOnebrickDiscriminatedPreConnectInput {
+    connector_name: 'onebrick';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorOpenledgerDiscriminatedPreConnectInput {
+    connector_name: 'openledger';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorPlaidDiscriminatedPreConnectInput {
+    connector_name: 'plaid';
+
+    pre_connect_input: ConnectorPlaidDiscriminatedPreConnectInput.PreConnectInput;
+  }
+
+  export namespace ConnectorPlaidDiscriminatedPreConnectInput {
+    export interface PreConnectInput {
+      language?: 'en' | 'fr' | 'es' | 'nl' | 'de';
+
+      sandboxPublicTokenCreate?: boolean;
+    }
+  }
+
+  export interface ConnectorPostgresDiscriminatedPreConnectInput {
+    connector_name: 'postgres';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorRampDiscriminatedPreConnectInput {
+    connector_name: 'ramp';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorSaltedgeDiscriminatedPreConnectInput {
+    connector_name: 'saltedge';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorSharepointOnpremDiscriminatedPreConnectInput {
+    connector_name: 'sharepoint-onprem';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorSlackAgentDiscriminatedPreConnectInput {
+    connector_name: 'slack-agent';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorSplitwiseDiscriminatedPreConnectInput {
+    connector_name: 'splitwise';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorStripeDiscriminatedPreConnectInput {
+    connector_name: 'stripe';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorTellerDiscriminatedPreConnectInput {
+    connector_name: 'teller';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorTogglDiscriminatedPreConnectInput {
+    connector_name: 'toggl';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorTwentyDiscriminatedPreConnectInput {
+    connector_name: 'twenty';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorVenmoDiscriminatedPreConnectInput {
+    connector_name: 'venmo';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorWiseDiscriminatedPreConnectInput {
+    connector_name: 'wise';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface ConnectorYodleeDiscriminatedPreConnectInput {
+    connector_name: 'yodlee';
+
+    pre_connect_input: unknown;
+  }
+
+  export interface Options {
+    connectionExternalId?: string | number | null;
+
+    integrationExternalId?: string | number | null;
+  }
+}
+
 export interface UpsertConnnectorConfigParams {
   config?: { [key: string]: unknown } | null;
 
@@ -102361,6 +108194,7 @@ export declare namespace TopLevel {
     type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
     type PreConfigureConnectorResponse as PreConfigureConnectorResponse,
+    type PreConnectResponse as PreConnectResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
     type UpsertOrganizationResponse as UpsertOrganizationResponse,
@@ -102385,6 +108219,7 @@ export declare namespace TopLevel {
     type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
     type PreConfigureConnectorParams as PreConfigureConnectorParams,
+    type PreConnectParams as PreConnectParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
     type UpsertCustomerParams as UpsertCustomerParams,
   };
