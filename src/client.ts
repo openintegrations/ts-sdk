@@ -62,6 +62,8 @@ import {
   ListEventsResponsesOffsetPagination,
   PreConfigureConnectorParams,
   PreConfigureConnectorResponse,
+  PreConnectParams,
+  PreConnectResponse,
   UpsertConnnectorConfigParams,
   UpsertConnnectorConfigResponse,
   UpsertCustomerParams,
@@ -461,6 +463,13 @@ export class Openint {
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.PreConfigureConnectorResponse> {
     return this.post('/v2/connector-config/pre-configure', { body, ...options });
+  }
+
+  preConnect(
+    body: TopLevelAPI.PreConnectParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.PreConnectResponse> {
+    return this.post('/v1/connect/pre-connect', { body, ...options });
   }
 
   upsertConnnectorConfig(
@@ -1055,6 +1064,7 @@ export declare namespace Openint {
     type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
     type PreConfigureConnectorResponse as PreConfigureConnectorResponse,
+    type PreConnectResponse as PreConnectResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
     type UpsertCustomerResponse as UpsertCustomerResponse,
     type UpsertOrganizationResponse as UpsertOrganizationResponse,
@@ -1079,6 +1089,7 @@ export declare namespace Openint {
     type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
     type PreConfigureConnectorParams as PreConfigureConnectorParams,
+    type PreConnectParams as PreConnectParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
     type UpsertCustomerParams as UpsertCustomerParams,
   };

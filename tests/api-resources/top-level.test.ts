@@ -433,6 +433,31 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
+  test.skip('preConnect: only required params', async () => {
+    const responsePromise = client.preConnect({
+      connector_config_id: 'connector_config_id',
+      discriminated_data: { connector_name: 'accelo', pre_connect_input: {} },
+      options: {},
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('preConnect: required and optional params', async () => {
+    const response = await client.preConnect({
+      connector_config_id: 'connector_config_id',
+      discriminated_data: { connector_name: 'accelo', pre_connect_input: { connection_id: 'connection_id' } },
+      options: { connectionExternalId: 'string', integrationExternalId: 'string' },
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('upsertConnnectorConfig', async () => {
     const responsePromise = client.upsertConnnectorConfig('ccfg_', {});
     const rawResponse = await responsePromise.asResponse();

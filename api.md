@@ -24,6 +24,7 @@ Types:
 - <code><a href="./src/resources/top-level.ts">ListCustomersResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">ListEventsResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">PreConfigureConnectorResponse</a></code>
+- <code><a href="./src/resources/top-level.ts">PreConnectResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertConnnectorConfigResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertCustomerResponse</a></code>
 - <code><a href="./src/resources/top-level.ts">UpsertOrganizationResponse</a></code>
@@ -50,6 +51,7 @@ Methods:
 - <code title="get /v1/customer">client.<a href="./src/index.ts">listCustomers</a>({ ...params }) -> ListCustomersResponsesOffsetPagination</code>
 - <code title="get /v1/event">client.<a href="./src/index.ts">listEvents</a>({ ...params }) -> ListEventsResponsesOffsetPagination</code>
 - <code title="post /v2/connector-config/pre-configure">client.<a href="./src/index.ts">preConfigureConnector</a>({ ...params }) -> PreConfigureConnectorResponse</code>
+- <code title="post /v1/connect/pre-connect">client.<a href="./src/index.ts">preConnect</a>({ ...params }) -> PreConnectResponse</code>
 - <code title="put /v2/connector-config/{id}">client.<a href="./src/index.ts">upsertConnnectorConfig</a>(id, { ...params }) -> UpsertConnnectorConfigResponse</code>
 - <code title="put /v1/customer">client.<a href="./src/index.ts">upsertCustomer</a>({ ...params }) -> UpsertCustomerResponse</code>
 - <code title="put /v2/organization/{org_id}">client.<a href="./src/index.ts">upsertOrganization</a>(orgID) -> UpsertOrganizationResponse</code>
