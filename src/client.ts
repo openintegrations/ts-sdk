@@ -60,6 +60,8 @@ import {
   ListEventsParams,
   ListEventsResponse,
   ListEventsResponsesOffsetPagination,
+  PostConnectParams,
+  PostConnectResponse,
   PreConfigureConnectorParams,
   PreConfigureConnectorResponse,
   PreConnectParams,
@@ -68,6 +70,7 @@ import {
   UpsertConnnectorConfigResponse,
   UpsertCustomerParams,
   UpsertCustomerResponse,
+  UpsertOrganizationParams,
   UpsertOrganizationResponse,
 } from './resources/top-level';
 import { APIPromise } from './core/api-promise';
@@ -284,10 +287,7 @@ export class Openint {
   /**
    * Import an existing connection after validation
    */
-  createConnection(
-    body: TopLevelAPI.CreateConnectionParams,
-    options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.CreateConnectionResponse> {
+  createConnection(body: TopLevelAPI.CreateConnectionParams, options?: RequestOptions): APIPromise<unknown> {
     return this.post('/v2/connection', { body, ...options });
   }
 
@@ -351,7 +351,7 @@ export class Openint {
     id: string,
     query: TopLevelAPI.GetConnectionParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<TopLevelAPI.GetConnectionResponse> {
+  ): APIPromise<unknown> {
     return this.get(path`/v2/connection/${id}`, { query, ...options });
   }
 
@@ -458,6 +458,13 @@ export class Openint {
     });
   }
 
+  postConnect(
+    body: TopLevelAPI.PostConnectParams,
+    options?: RequestOptions,
+  ): APIPromise<TopLevelAPI.PostConnectResponse> {
+    return this.post('/v1/connect/post-connect', { body, ...options });
+  }
+
   preConfigureConnector(
     body: TopLevelAPI.PreConfigureConnectorParams,
     options?: RequestOptions,
@@ -495,9 +502,10 @@ export class Openint {
    */
   upsertOrganization(
     orgID: string,
+    body: TopLevelAPI.UpsertOrganizationParams,
     options?: RequestOptions,
   ): APIPromise<TopLevelAPI.UpsertOrganizationResponse> {
-    return this.put(path`/v2/organization/${orgID}`, options);
+    return this.put(path`/v2/organization/${orgID}`, { body, ...options });
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -1063,6 +1071,7 @@ export declare namespace Openint {
     type ListConnnectorConfigsResponse as ListConnnectorConfigsResponse,
     type ListCustomersResponse as ListCustomersResponse,
     type ListEventsResponse as ListEventsResponse,
+    type PostConnectResponse as PostConnectResponse,
     type PreConfigureConnectorResponse as PreConfigureConnectorResponse,
     type PreConnectResponse as PreConnectResponse,
     type UpsertConnnectorConfigResponse as UpsertConnnectorConfigResponse,
@@ -1088,9 +1097,11 @@ export declare namespace Openint {
     type ListConnnectorConfigsParams as ListConnnectorConfigsParams,
     type ListCustomersParams as ListCustomersParams,
     type ListEventsParams as ListEventsParams,
+    type PostConnectParams as PostConnectParams,
     type PreConfigureConnectorParams as PreConfigureConnectorParams,
     type PreConnectParams as PreConnectParams,
     type UpsertConnnectorConfigParams as UpsertConnnectorConfigParams,
     type UpsertCustomerParams as UpsertCustomerParams,
+    type UpsertOrganizationParams as UpsertOrganizationParams,
   };
 }
