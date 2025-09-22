@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.19.0 (2025-09-22)
+
+Full Changelog: [v2.18.0...v2.19.0](https://github.com/openintegrations/ts-sdk/compare/v2.18.0...v2.19.0)
+
+### Features
+
+* **api:** adding post connect ([f652bae](https://github.com/openintegrations/ts-sdk/commit/f652baeed96bd9a62536c62118065fc8d818b1c9))
+
+
+### Chores
+
+* ci build action ([9990130](https://github.com/openintegrations/ts-sdk/commit/9990130fb4c56a9722fe4e426387ca8fa84d1570))
+* do not install brew dependencies in ./scripts/bootstrap by default ([52b1e72](https://github.com/openintegrations/ts-sdk/commit/52b1e72cdd1ca9e6c7e18f0952997d5efb1a3eea))
+* **internal:** codegen related update ([1adfb94](https://github.com/openintegrations/ts-sdk/commit/1adfb947c426077bf9767aca5bddbf3a06e7f167))
+* **internal:** update global Error reference ([1c3c7d2](https://github.com/openintegrations/ts-sdk/commit/1c3c7d2170bb04a8f458eec6e25a580284316c6f))
+
 ## 2.18.0 (2025-08-27)
 
 Full Changelog: [v2.17.0...v2.18.0](https://github.com/openintegrations/ts-sdk/compare/v2.17.0...v2.18.0)
