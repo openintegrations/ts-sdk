@@ -64,8 +64,7 @@ describe('top level methods', () => {
   test.skip('createConnection: only required params', async () => {
     const responsePromise = client.createConnection({
       connector_config_id: 'ccfg_',
-      customer_id: 'customer_id',
-      data: { connector_name: 'accelo' },
+      data: { connector_name: 'acme-apikey' },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -80,31 +79,9 @@ describe('top level methods', () => {
   test.skip('createConnection: required and optional params', async () => {
     const response = await client.createConnection({
       connector_config_id: 'ccfg_',
-      customer_id: 'customer_id',
-      data: {
-        connector_name: 'accelo',
-        settings: {
-          oauth: {
-            created_at: 'created_at',
-            credentials: {
-              access_token: 'access_token',
-              client_id: 'client_id',
-              expires_at: 'expires_at',
-              expires_in: 0,
-              raw: { foo: 'bar' },
-              refresh_token: 'refresh_token',
-              scope: 'scope',
-              token_type: 'token_type',
-            },
-            last_fetched_at: 'last_fetched_at',
-            metadata: { foo: 'bar' },
-            updated_at: 'updated_at',
-          },
-          subdomain: 'https://26f1kl_-n-71.api.accelo.com',
-          access_token: 'access_token',
-        },
-      },
+      data: { connector_name: 'acme-apikey', settings: { api_key: 'api_key' } },
       check_connection: true,
+      customer_id: 'customer_id',
       metadata: { foo: 'bar' },
     });
   });
@@ -273,7 +250,7 @@ describe('top level methods', () => {
         {
           connection_ids: ['conn_'],
           connector_config_id: 'ccfg_',
-          connector_names: ['accelo'],
+          connector_names: ['acme-apikey'],
           customer_id: 'customer_id',
           expand: ['connector'],
           include_secrets: true,
@@ -306,8 +283,9 @@ describe('top level methods', () => {
     await expect(
       client.listConnectorConfigs(
         {
-          connector_names: ['accelo'],
+          connector_names: ['acme-apikey'],
           expand: ['connector'],
+          include_disabled: true,
           limit: 0,
           offset: 0,
           search_query: 'search_query',
@@ -358,8 +336,9 @@ describe('top level methods', () => {
     await expect(
       client.listConnnectorConfigs(
         {
-          connector_names: ['accelo'],
+          connector_names: ['acme-apikey'],
           expand: ['connector'],
+          include_disabled: true,
           limit: 0,
           offset: 0,
           search_query: 'search_query',
@@ -416,8 +395,38 @@ describe('top level methods', () => {
   });
 
   // Prism tests are disabled
+  test.skip('postConnect: only required params', async () => {
+    const responsePromise = client.postConnect({
+      connector_config_id: 'connector_config_id',
+      discriminated_data: { connect_output: { api_key: 'api_key' }, connector_name: 'acme-apikey' },
+      options: {},
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('postConnect: required and optional params', async () => {
+    const response = await client.postConnect({
+      connector_config_id: 'connector_config_id',
+      discriminated_data: { connect_output: { api_key: 'api_key' }, connector_name: 'acme-apikey' },
+      options: {
+        connectionExternalId: 'string',
+        integrationExternalId: 'string',
+        integrationId: 'integrationId',
+        syncInBand: true,
+      },
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('preConfigureConnector: only required params', async () => {
-    const responsePromise = client.preConfigureConnector({ connector_name: 'accelo' });
+    const responsePromise = client.preConfigureConnector({ connector_name: 'acme-apikey' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -429,16 +438,12 @@ describe('top level methods', () => {
 
   // Prism tests are disabled
   test.skip('preConfigureConnector: required and optional params', async () => {
-    const response = await client.preConfigureConnector({ connector_name: 'accelo' });
+    const response = await client.preConfigureConnector({ connector_name: 'acme-apikey' });
   });
 
   // Prism tests are disabled
   test.skip('preConnect: only required params', async () => {
-    const responsePromise = client.preConnect({
-      connector_config_id: 'connector_config_id',
-      discriminated_data: { connector_name: 'accelo', pre_connect_input: {} },
-      options: {},
-    });
+    const responsePromise = client.preConnect({ connector_config_id: 'connector_config_id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -452,7 +457,7 @@ describe('top level methods', () => {
   test.skip('preConnect: required and optional params', async () => {
     const response = await client.preConnect({
       connector_config_id: 'connector_config_id',
-      discriminated_data: { connector_name: 'accelo', pre_connect_input: { connection_id: 'connection_id' } },
+      discriminated_data: { connector_name: 'acme-apikey', pre_connect_input: {} },
       options: { connectionExternalId: 'string', integrationExternalId: 'string' },
     });
   });
@@ -483,7 +488,7 @@ describe('top level methods', () => {
 
   // Prism tests are disabled
   test.skip('upsertOrganization', async () => {
-    const responsePromise = client.upsertOrganization('x');
+    const responsePromise = client.upsertOrganization('x', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
