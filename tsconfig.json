@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "@openint/sdk/*": ["src/*"],
-      "@openint/sdk": ["src/index.ts"]
+      "@openint/sdk/*": ["./src/*"],
+      "@openint/sdk": ["./src/index.ts"]
     },
     "noEmit": true,
 
