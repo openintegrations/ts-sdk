@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.19.1 (2025-10-21)
+
+Full Changelog: [v2.19.0...v2.19.1](https://github.com/openintegrations/ts-sdk/compare/v2.19.0...v2.19.1)
+
+### Bug Fixes
+
+* **client:** incorrect offset pagination check ([e4d57b6](https://github.com/openintegrations/ts-sdk/commit/e4d57b662b862e3d120556ec17b18534dabe1c4c))
+
+
+### Performance Improvements
+
+* faster formatting ([0a4a117](https://github.com/openintegrations/ts-sdk/commit/0a4a1179df9b992a61fc15b7d83d6cd31e36ffb7))
+
+
+### Chores
+
+* **internal:** codegen related update ([e94a37d](https://github.com/openintegrations/ts-sdk/commit/e94a37d1c04e8359527363a8aa60ee269d9b3e79))
+* **internal:** fix incremental formatting in some cases ([1e8d72b](https://github.com/openintegrations/ts-sdk/commit/1e8d72ba4ecbda2ec926688deb8fff8a42e70ebf))
+* **internal:** ignore .eslintcache ([803da4e](https://github.com/openintegrations/ts-sdk/commit/803da4e618c57a5a776f1365c34287b0c16bd75e))
+* **internal:** remove .eslintcache ([676f854](https://github.com/openintegrations/ts-sdk/commit/676f854f967a1efe5dadff660f4f3aa120499f1d))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([6fdb928](https://github.com/openintegrations/ts-sdk/commit/6fdb92875e94133b691363dbab0c1040f5d0fdd9))
+* **internal:** use npm pack for build uploads ([b60f44c](https://github.com/openintegrations/ts-sdk/commit/b60f44c970da3da1e8ef2d6f422545cbedc0784b))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([1198cc8](https://github.com/openintegrations/ts-sdk/commit/1198cc8574d51095da57d5f59f9da00159b8c3c7))
+
 ## 2.19.0 (2025-09-22)
 
 Full Changelog: [v2.18.0...v2.19.0](https://github.com/openintegrations/ts-sdk/compare/v2.18.0...v2.19.0)
