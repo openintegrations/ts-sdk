@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.19.2 (2025-12-06)
+
+Full Changelog: [v2.19.1...v2.19.2](https://github.com/openintegrations/ts-sdk/compare/v2.19.1...v2.19.2)
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([4517b16](https://github.com/openintegrations/ts-sdk/commit/4517b16e24d2b4a70befb26037e92cdc363314d5))
+* **mcp:** return correct lines on typescript errors ([4e15a9f](https://github.com/openintegrations/ts-sdk/commit/4e15a9f6aa2a99b71e6f5739608786e319834c8f))
+
+
+### Chores
+
+* **client:** fix logger property type ([4867278](https://github.com/openintegrations/ts-sdk/commit/4867278f0eb1c3e92947718265c078b0ce41c8e0))
+* **internal:** codegen related update ([96f4392](https://github.com/openintegrations/ts-sdk/commit/96f4392e3a2524c8fbf8093518a13406c651f1bf))
+* **internal:** upgrade eslint ([a343404](https://github.com/openintegrations/ts-sdk/commit/a343404bd0e591c03a8edeef0e6cba6673066e12))
+
 ## 2.19.1 (2025-10-21)
 
 Full Changelog: [v2.19.0...v2.19.1](https://github.com/openintegrations/ts-sdk/compare/v2.19.0...v2.19.1)
