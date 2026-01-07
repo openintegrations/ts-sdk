@@ -79,7 +79,10 @@ describe('top level methods', () => {
   test.skip('createConnection: required and optional params', async () => {
     const response = await client.createConnection({
       connector_config_id: 'ccfg_',
-      data: { connector_name: 'acme-apikey', settings: { api_key: 'api_key' } },
+      data: {
+        connector_name: 'acme-apikey',
+        settings: { api_key: 'api_key' },
+      },
       check_connection: true,
       customer_id: 'customer_id',
       metadata: { foo: 'bar' },
@@ -200,7 +203,11 @@ describe('top level methods', () => {
     await expect(
       client.getConnection(
         'conn_',
-        { expand: ['connector'], include_secrets: true, refresh_policy: 'none' },
+        {
+          expand: ['connector'],
+          include_secrets: true,
+          refresh_policy: 'none',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -312,7 +319,12 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listConnectors(
-        { connector_name: 'connector_name', expand: ['schemas'], limit: 0, offset: 0 },
+        {
+          connector_name: 'connector_name',
+          expand: ['schemas'],
+          limit: 0,
+          offset: 0,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -365,7 +377,11 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listCustomers(
-        { limit: 0, offset: 0, search_query: 'search_query' },
+        {
+          limit: 0,
+          offset: 0,
+          search_query: 'search_query',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -388,7 +404,13 @@ describe('top level methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.listEvents(
-        { include_prompt: true, limit: 0, offset: 0, search_query: 'search_query', since: 'since' },
+        {
+          include_prompt: true,
+          limit: 0,
+          offset: 0,
+          search_query: 'search_query',
+          since: 'since',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Openint.NotFoundError);
@@ -398,7 +420,10 @@ describe('top level methods', () => {
   test.skip('postConnect: only required params', async () => {
     const responsePromise = client.postConnect({
       connector_config_id: 'connector_config_id',
-      discriminated_data: { connect_output: { api_key: 'api_key' }, connector_name: 'acme-apikey' },
+      discriminated_data: {
+        connect_output: { api_key: 'api_key' },
+        connector_name: 'acme-apikey',
+      },
       options: {},
     });
     const rawResponse = await responsePromise.asResponse();
@@ -414,7 +439,10 @@ describe('top level methods', () => {
   test.skip('postConnect: required and optional params', async () => {
     const response = await client.postConnect({
       connector_config_id: 'connector_config_id',
-      discriminated_data: { connect_output: { api_key: 'api_key' }, connector_name: 'acme-apikey' },
+      discriminated_data: {
+        connect_output: { api_key: 'api_key' },
+        connector_name: 'acme-apikey',
+      },
       options: {
         connectionExternalId: 'string',
         integrationExternalId: 'string',
@@ -457,7 +485,10 @@ describe('top level methods', () => {
   test.skip('preConnect: required and optional params', async () => {
     const response = await client.preConnect({
       connector_config_id: 'connector_config_id',
-      discriminated_data: { connector_name: 'acme-apikey', pre_connect_input: {} },
+      discriminated_data: {
+        connector_name: 'acme-apikey',
+        pre_connect_input: {},
+      },
       options: { connectionExternalId: 'string', integrationExternalId: 'string' },
     });
   });
