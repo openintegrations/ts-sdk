@@ -17343,7 +17343,7 @@ export interface ConnectorRpcParams {
   connector_config_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   input: { [key: string]: unknown };
 }
