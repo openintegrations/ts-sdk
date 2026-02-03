@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.19.3 (2026-02-03)
+
+Full Changelog: [v2.19.2...v2.19.3](https://github.com/openintegrations/ts-sdk/compare/v2.19.2...v2.19.3)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([e782223](https://github.com/openintegrations/ts-sdk/commit/e7822238529b4277bb9a3ff103619dc3723728be))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([32df7cb](https://github.com/openintegrations/ts-sdk/commit/32df7cbbf079ca4dd4d9b0038c7a77670e5e473f))
+* **ci:** upgrade `actions/github-script` ([8d8b561](https://github.com/openintegrations/ts-sdk/commit/8d8b561c749f518ab7f963fcdb1c0511deef7d36))
+* fix typo in descriptions ([a557248](https://github.com/openintegrations/ts-sdk/commit/a55724885ca3108c58e6c039144ae803f89a8900))
+* **internal:** codegen related update ([fe52328](https://github.com/openintegrations/ts-sdk/commit/fe52328fc856166caeaf4a347c37f9f95c3737d0))
+* **internal:** codegen related update ([e8eabc3](https://github.com/openintegrations/ts-sdk/commit/e8eabc3086fa3e1aac0de859539779c07f9ef6d6))
+* **internal:** update `actions/checkout` version ([bacf848](https://github.com/openintegrations/ts-sdk/commit/bacf8488bbeb1d08b6440a6bddc122f8ecef9183))
+* **internal:** upgrade babel, qs, js-yaml ([9c39783](https://github.com/openintegrations/ts-sdk/commit/9c39783469d6696391d3050b1f3c0761614ea510))
+
+
+### Documentation
+
+* add more examples ([b5134d0](https://github.com/openintegrations/ts-sdk/commit/b5134d012e756a4185f94fe707eeaff24129e105))
+
 ## 2.19.2 (2025-12-06)
 
 Full Changelog: [v2.19.1...v2.19.2](https://github.com/openintegrations/ts-sdk/compare/v2.19.1...v2.19.2)
