@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.19.4 (2026-02-06)
+
+Full Changelog: [v2.19.3...v2.19.4](https://github.com/openintegrations/ts-sdk/compare/v2.19.3...v2.19.4)
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([5b6694e](https://github.com/openintegrations/ts-sdk/commit/5b6694e9985eb7fc4185b5debd0fe99f168505f8))
+
+
+### Chores
+
+* **client:** do not parse responses with empty content-length ([8abaeca](https://github.com/openintegrations/ts-sdk/commit/8abaecaee130362662b56652a82379d2d522de03))
+* **client:** restructure abort controller binding ([6d44c17](https://github.com/openintegrations/ts-sdk/commit/6d44c17b0abf197bdeaab1619d00a82dae0a433a))
+
 ## 2.19.3 (2026-02-03)
 
 Full Changelog: [v2.19.2...v2.19.3](https://github.com/openintegrations/ts-sdk/compare/v2.19.2...v2.19.3)
