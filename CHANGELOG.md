@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.19.5 (2026-02-08)
+
+Full Changelog: [v2.19.4...v2.19.5](https://github.com/openintegrations/ts-sdk/compare/v2.19.4...v2.19.5)
+
+### Chores
+
+* **internal:** fix pagination internals not accepting option promises ([3e729f0](https://github.com/openintegrations/ts-sdk/commit/3e729f013f82d0a92ab59ca4983942c32d2d8c40))
+
 ## 2.19.4 (2026-02-06)
 
 Full Changelog: [v2.19.3...v2.19.4](https://github.com/openintegrations/ts-sdk/compare/v2.19.3...v2.19.4)
