@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.19.5 (2026-02-20)
+
+Full Changelog: [v2.19.4...v2.19.5](https://github.com/openintegrations/ts-sdk/compare/v2.19.4...v2.19.5)
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([d185bcc](https://github.com/openintegrations/ts-sdk/commit/d185bcc1b3cc97dbdcddeebebaec4bdc7a9a18ec))
+* **internal:** avoid type checking errors with ts-reset ([7723f64](https://github.com/openintegrations/ts-sdk/commit/7723f64acc77071dbff70ce6647d7abd2748bbc8))
+* **internal:** fix pagination internals not accepting option promises ([3e729f0](https://github.com/openintegrations/ts-sdk/commit/3e729f013f82d0a92ab59ca4983942c32d2d8c40))
+* **internal:** remove mock server code ([0f6104e](https://github.com/openintegrations/ts-sdk/commit/0f6104ee813349493dcad98627c19853e22c6cf8))
+* update mock server docs ([600ba68](https://github.com/openintegrations/ts-sdk/commit/600ba685a40d16b5c78081bdad0cf35c9fcdb637))
+
 ## 2.19.4 (2026-02-06)
 
 Full Changelog: [v2.19.3...v2.19.4](https://github.com/openintegrations/ts-sdk/compare/v2.19.3...v2.19.4)
