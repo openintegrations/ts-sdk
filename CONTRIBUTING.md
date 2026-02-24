@@ -60,7 +60,7 @@ $ yarn link @openint/sdk
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @openint/sdk
+$ pnpm link --global @openint/sdk
 ```
 
 ## Running tests
