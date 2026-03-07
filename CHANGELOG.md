@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.19.6 (2026-03-07)
+
+Full Changelog: [v2.19.5...v2.19.6](https://github.com/openintegrations/ts-sdk/compare/v2.19.5...v2.19.6)
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([96a9601](https://github.com/openintegrations/ts-sdk/commit/96a960175830b53aab994fe636b4985e75bea47a))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([272cafa](https://github.com/openintegrations/ts-sdk/commit/272cafa9d6a28bf0b7d3fff164b48f52f725678c))
+* **internal:** codegen related update ([f060b7b](https://github.com/openintegrations/ts-sdk/commit/f060b7b9955ba6bc1377b76e173e3568db627430))
+* **internal:** move stringifyQuery implementation to internal function ([f93c7d9](https://github.com/openintegrations/ts-sdk/commit/f93c7d92b5b61023370949e6d985de50f5ea67d9))
+
 ## 2.19.5 (2026-02-24)
 
 Full Changelog: [v2.19.4...v2.19.5](https://github.com/openintegrations/ts-sdk/compare/v2.19.4...v2.19.5)
