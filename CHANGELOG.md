@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.19.7 (2026-03-10)
+
+Full Changelog: [v2.19.6...v2.19.7](https://github.com/openintegrations/ts-sdk/compare/v2.19.6...v2.19.7)
+
+### Chores
+
+* **internal:** update dependencies to address dependabot vulnerabilities ([d33c9ce](https://github.com/openintegrations/ts-sdk/commit/d33c9ce9680c0ba648737fc330c433a912bc154a))
+
 ## 2.19.6 (2026-03-07)
 
 Full Changelog: [v2.19.5...v2.19.6](https://github.com/openintegrations/ts-sdk/compare/v2.19.5...v2.19.6)
