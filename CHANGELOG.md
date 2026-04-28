@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.20.0 (2026-04-28)
+
+Full Changelog: [v2.19.6...v2.20.0](https://github.com/openintegrations/ts-sdk/compare/v2.19.6...v2.20.0)
+
+### Features
+
+* support setting headers via env ([afea5c4](https://github.com/openintegrations/ts-sdk/commit/afea5c44170882e897614a9c29842e9066983890))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([5244713](https://github.com/openintegrations/ts-sdk/commit/5244713c4209e12386226b87a93df0a7dcb368e5))
+* **internal:** codegen related update ([2e70240](https://github.com/openintegrations/ts-sdk/commit/2e70240effca4aeee3e44da0bd0b7eedce2a557b))
+* **internal:** codegen related update ([64fa270](https://github.com/openintegrations/ts-sdk/commit/64fa2700a4cd4f591ef64d9093b91b6a02329a27))
+* **internal:** codegen related update ([6fa52f5](https://github.com/openintegrations/ts-sdk/commit/6fa52f5846d96fc19d41625fe0063fde761b56a5))
+* **internal:** codegen related update ([a64bdc9](https://github.com/openintegrations/ts-sdk/commit/a64bdc9dd5f195798fe4a77c001533bced04a4b6))
+* **internal:** more robust bootstrap script ([ab2a726](https://github.com/openintegrations/ts-sdk/commit/ab2a726081d0113150ac2c9091dc24fe0902619d))
+* **internal:** tweak CI branches ([46e995d](https://github.com/openintegrations/ts-sdk/commit/46e995d2be88c657b864595c39def443e9a2bfd2))
+* **internal:** update dependencies to address dependabot vulnerabilities ([d33c9ce](https://github.com/openintegrations/ts-sdk/commit/d33c9ce9680c0ba648737fc330c433a912bc154a))
+* **internal:** update gitignore ([318146e](https://github.com/openintegrations/ts-sdk/commit/318146efc7490ecf4205fe41ac5762ca726b1eca))
+
 ## 2.19.6 (2026-03-07)
 
 Full Changelog: [v2.19.5...v2.19.6](https://github.com/openintegrations/ts-sdk/compare/v2.19.5...v2.19.6)
