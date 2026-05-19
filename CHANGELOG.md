@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.20.1 (2026-05-19)
+
+Full Changelog: [v2.20.0...v2.20.1](https://github.com/openintegrations/ts-sdk/compare/v2.20.0...v2.20.1)
+
+### Bug Fixes
+
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([02aaba0](https://github.com/openintegrations/ts-sdk/commit/02aaba03f97ba63564ea9c2f79bb91f38da91541))
+
+
+### Chores
+
+* **format:** run eslint and prettier separately ([446a5b4](https://github.com/openintegrations/ts-sdk/commit/446a5b4812dc0006dd2151809e8120aa8fc6cfe9))
+* redact api-key headers in debug logs ([aeba63d](https://github.com/openintegrations/ts-sdk/commit/aeba63d52271147aa4d69e308d31ebfd9d037f20))
+* **tests:** remove redundant File import ([98377c4](https://github.com/openintegrations/ts-sdk/commit/98377c48521bdebfd198ca1b3eca32f129f638e6))
+
 ## 2.20.0 (2026-04-28)
 
 Full Changelog: [v2.19.6...v2.20.0](https://github.com/openintegrations/ts-sdk/compare/v2.19.6...v2.20.0)
