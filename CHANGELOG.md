@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.20.2 (2026-06-17)
+
+Full Changelog: [v2.20.1...v2.20.2](https://github.com/openintegrations/ts-sdk/compare/v2.20.1...v2.20.2)
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([b0add65](https://github.com/openintegrations/ts-sdk/commit/b0add65e48d2b89d23fe8506cbf99afbb89d8d42))
+
+
+### Chores
+
+* **internal:** codegen related update ([5a3b362](https://github.com/openintegrations/ts-sdk/commit/5a3b3622d7dde4484f8774415e18c357a6a5820b))
+
 ## 2.20.1 (2026-05-19)
 
 Full Changelog: [v2.20.0...v2.20.1](https://github.com/openintegrations/ts-sdk/compare/v2.20.0...v2.20.1)
