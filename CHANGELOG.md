@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.20.3 (2026-07-11)
+
+Full Changelog: [v2.20.2...v2.20.3](https://github.com/openintegrations/ts-sdk/compare/v2.20.2...v2.20.3)
+
+### Bug Fixes
+
+* **ci:** bump @arethetypeswrong/cli to ^0.18.0 and run CI workflows on Node 24 ([a212b5c](https://github.com/openintegrations/ts-sdk/commit/a212b5caa4b15c06cd72f4697dc307d20a5ef5c4))
+
+
+### Chores
+
+* **internal:** codegen related update ([3d4b0e4](https://github.com/openintegrations/ts-sdk/commit/3d4b0e47f1aeae48759c1d2bbee87bfb8b5b6de5))
+
 ## 2.20.2 (2026-06-17)
 
 Full Changelog: [v2.20.1...v2.20.2](https://github.com/openintegrations/ts-sdk/compare/v2.20.1...v2.20.2)
