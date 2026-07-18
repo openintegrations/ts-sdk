@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.21.0 (2026-07-18)
+
+Full Changelog: [v2.20.3...v2.21.0](https://github.com/openintegrations/ts-sdk/compare/v2.20.3...v2.21.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([0d9c067](https://github.com/openintegrations/ts-sdk/commit/0d9c067ca1a5eecbddba3b36327ef5de85861f74))
+
 ## 2.20.3 (2026-07-11)
 
 Full Changelog: [v2.20.2...v2.20.3](https://github.com/openintegrations/ts-sdk/compare/v2.20.2...v2.20.3)
