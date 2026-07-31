@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.21.1 (2026-07-31)
+
+Full Changelog: [v2.21.0...v2.21.1](https://github.com/openintegrations/ts-sdk/compare/v2.21.0...v2.21.1)
+
+### Bug Fixes
+
+* **stlc:** stop hand-edited CI workflows from blocking seals and builds ([197265d](https://github.com/openintegrations/ts-sdk/commit/197265d6b5015ee4718001689509a9a0b1ef484c))
+
+
+### Chores
+
+* **internal:** codegen related update ([3be17f3](https://github.com/openintegrations/ts-sdk/commit/3be17f31310815eba74f5ce81112e2df96d6a6d1))
+
 ## 2.21.0 (2026-07-18)
 
 Full Changelog: [v2.20.3...v2.21.0](https://github.com/openintegrations/ts-sdk/compare/v2.20.3...v2.21.0)
